@@ -118,6 +118,8 @@ HAVEN is a purely inference-based framework with no training. The database is co
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
@@ -125,5 +127,7 @@ HAVEN is a purely inference-based framework with no training. The database is co
 - [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
 - [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](../../NeurIPS2025/llm_agent/deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
 - [\[CVPR 2026\] ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search](argos_agentic_multi_camera_person_search.md)
+
+</div>
 
 <!-- RELATED:END -->

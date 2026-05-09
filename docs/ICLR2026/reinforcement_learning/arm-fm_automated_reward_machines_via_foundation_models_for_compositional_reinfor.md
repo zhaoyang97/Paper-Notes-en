@@ -113,6 +113,8 @@ ARM-FM consists of two components: (1) **LARM Generation** — FMs generate the 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](optimistic_task_inference_behavior_models.md)
@@ -120,5 +122,7 @@ ARM-FM consists of two components: (1) **LARM Generation** — FMs generate the 
 - [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
 - [\[ICLR 2026\] On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification](on_the_generalization_of_sft_a_reinforcement_learning_perspective_with_reward_re.md)
 - [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

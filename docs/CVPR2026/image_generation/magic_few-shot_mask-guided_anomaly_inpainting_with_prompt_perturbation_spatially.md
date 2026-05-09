@@ -166,6 +166,8 @@ GPP alone significantly reduces KID and improves classification accuracy by appr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation](adaptive_auxiliary_prompt_blending_for_target-faithful_diffusion_generation.md)
@@ -173,5 +175,7 @@ GPP alone significantly reduces KID and improves classification accuracy by appr
 - [\[CVPR 2026\] Few-shot Acoustic Synthesis with Multimodal Flow Matching](few-shot_acoustic_synthesis_with_multimodal_flow_matching.md)
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
 - [\[AAAI 2026\] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting](../../AAAI2026/image_generation/freeinpaint_tuning-free_prompt_alignment_and_visual_rationality_enhancement_in_i.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -155,6 +155,8 @@ Comparison of PEFT methods applied to RLVR:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning](../../AAAI2026/reinforcement_learning/behaviour_policy_optimization_provably_lower_variance_return_estimates_for_off-p.md)
@@ -162,5 +164,7 @@ Comparison of PEFT methods applied to RLVR:
 - [\[NeurIPS 2025\] Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs](retrosynthesis_planning_via_worst-path_policy_optimisation_in_tree-structured_md.md)
 - [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
 - [\[ACL 2026\] GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR](../../ACL2026/reinforcement_learning/geora_geometry-aware_low-rank_adaptation_for_rlvr.md)
+
+</div>
 
 <!-- RELATED:END -->

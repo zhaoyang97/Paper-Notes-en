@@ -125,6 +125,8 @@ Not applicable. However, Lemma 1 establishes relationships among parameters: $|L
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
@@ -132,5 +134,7 @@ Not applicable. However, Lemma 1 establishes relationships among parameters: $|L
 - [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
 - [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](agent-sama_state-aware_mobile_assistant.md)
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
+
+</div>
 
 <!-- RELATED:END -->

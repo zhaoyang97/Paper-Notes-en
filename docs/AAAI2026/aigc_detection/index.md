@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **3** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/aigc_detection/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/aigc_detection/index.md)
+
+🔥 **Top topics:** LLM ×2
+
 **[ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models](actishade_activating_overshadowed_knowledge_to_guide_multi-h.md)**
 
 :   This paper proposes ActiShade, a framework that detects "overshadowed" key phrases in LLM multi-hop reasoning via Gaussian noise perturbation, retrieves supplementary documents using a customized contrastive learning retriever, and iteratively reformulates queries to mitigate error accumulation caused by knowledge overshadowing. ActiShade significantly outperforms DRAGIN and other state-of-the-art methods on HotpotQA, 2WikiMQA, and MuSiQue.

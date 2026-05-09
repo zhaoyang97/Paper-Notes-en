@@ -123,6 +123,8 @@ Seven focus group sessions with 29 participants (11 CS, 4 engineering, 4 psychol
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Bridging the Skills Gap: A Course Model for Modern Generative AI Education](bridging_the_skills_gap_a_course_model_for_modern_generative_ai_education.md)
@@ -130,5 +132,7 @@ Seven focus group sessions with 29 participants (11 CS, 4 engineering, 4 psychol
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
 - [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
+
+</div>
 
 <!-- RELATED:END -->

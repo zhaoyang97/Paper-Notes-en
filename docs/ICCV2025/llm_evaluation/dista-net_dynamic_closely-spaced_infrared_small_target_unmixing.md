@@ -135,6 +135,8 @@ Ablation over sampling grid ratios ($c=5, c=7$): DISTA-Net consistently outperfo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/llm_evaluation/rethinking_evaluation_of_infrared_small_target_detection.md)
@@ -142,5 +144,7 @@ Ablation over sampling grid ratios ($c=5, c=7$): DISTA-Net consistently outperfo
 - [\[ICCV 2025\] Generative Zoo](generative_zoo.md)
 - [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
 - [\[ICCV 2025\] PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing](phatnet_a_physics-guided_haze_transfer_network_for_domain-adaptive_real-world_im.md)
+
+</div>
 
 <!-- RELATED:END -->

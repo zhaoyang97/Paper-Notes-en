@@ -205,6 +205,8 @@ Joint three-task training improves over R→T only: ROUGE-L +9.1%, BLEU-1 +12.2%
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models](../../CVPR2026/3d_vision/scalable_object_relation_encoding_for_better_3d_spatial_reasoning_in_large_langu.md)
@@ -212,5 +214,7 @@ Joint three-task training improves over R→T only: ROUGE-L +9.1%, BLEU-1 +12.2%
 - [\[ICCV 2025\] 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding](../../ICCV2025/3d_vision/3dgraphllm_combining_semantic_graphs_and_large_language_models_for_3d_scene_unde.md)
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
 - [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](../../CVPR2026/3d_vision/back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

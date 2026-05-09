@@ -136,6 +136,8 @@ RAE demonstrates the largest advantage under cosine distance (≥12%); under Euc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Search Arena: Analyzing Search-Augmented LLMs](search_arena_analyzing_search-augmented_llms.md)
@@ -143,5 +145,7 @@ RAE demonstrates the largest advantage under cosine distance (≥12%); under Euc
 - [\[AAAI 2026\] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search](../../AAAI2026/recommender/crops_improving_dense_retrieval_with_cross-perspective_positive_samples_in_short.md)
 - [\[AAAI 2026\] Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling](../../AAAI2026/recommender/semi-supervised_synthetic_data_generation_with_fine-grained_relevance_control_fo.md)
 - [\[ICLR 2026\] In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations](in_agents_we_trust_but_who_do_agents_trust_latent_source_preferences_steer_llm_g.md)
+
+</div>
 
 <!-- RELATED:END -->

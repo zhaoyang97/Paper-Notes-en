@@ -162,6 +162,8 @@ Large gains are observed against high-frequency noise corruptions (+20–28%), w
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
@@ -169,5 +171,7 @@ Large gains are observed against high-frequency noise corruptions (+20–28%), w
 - [\[ICLR 2026\] Tokenizing Single-Channel EEG with Time-Frequency Motif Learning](../../ICLR2026/interpretability/tokenizing_single-channel_eeg_with_time-frequency_motif_learning.md)
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
+
+</div>
 
 <!-- RELATED:END -->

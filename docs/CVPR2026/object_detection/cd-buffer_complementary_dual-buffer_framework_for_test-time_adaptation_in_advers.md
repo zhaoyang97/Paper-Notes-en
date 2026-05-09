@@ -130,6 +130,8 @@ $$\mathcal{L} = \mathcal{L}_{align} + \lambda_{reg} \cdot \mathcal{L}_{mask}$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](../../NeurIPS2025/object_detection/test-time_adaptive_object_detection_with_foundation_model.md)
@@ -137,5 +139,7 @@ $$\mathcal{L} = \mathcal{L}_{align} + \lambda_{reg} \cdot \mathcal{L}_{mask}$$
 - [\[CVPR 2026\] CompAgent: An Agentic Framework for Visual Compliance Verification](compagent_an_agentic_framework_for_visual_compliance_verification.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
 - [\[ICLR 2026\] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection](../../ICLR2026/object_detection/cgsa_class-guided_slot-aware_adaptation_for_source-free_object_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

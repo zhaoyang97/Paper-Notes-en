@@ -117,6 +117,8 @@ The baseline method employs a physics-aware optimization strategy: leveraging th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing](phatnet_a_physics-guided_haze_transfer_network_for_domain-adaptive_real-world_im.md)
@@ -124,5 +126,7 @@ The baseline method employs a physics-aware optimization strategy: leveraging th
 - [\[ICCV 2025\] Supercharging Floorplan Localization with Semantic Rays](supercharging_floorplan_localization_with_semantic_rays.md)
 - [\[ICCV 2025\] ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction](odp-bench_benchmarking_out-of-distribution_performance_prediction.md)
 - [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
+
+</div>
 
 <!-- RELATED:END -->

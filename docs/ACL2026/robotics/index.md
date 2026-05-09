@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **8** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (49)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+
+🔥 **Top topics:** LLM ×3 · Reasoning ×2
+
 **[Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)**
 
 :   Persuaficial is a high-quality multilingual benchmark covering six languages for AI-generated persuasive text. Systematic evaluation reveals that subtle AI persuasion is harder to detect than human persuasion (F1 drops ~20%), while intensified persuasion is paradoxically easier to detect.

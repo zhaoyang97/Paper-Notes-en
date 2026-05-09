@@ -123,6 +123,8 @@ A classical two-stage pipeline is adopted:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
@@ -130,5 +132,7 @@ A classical two-stage pipeline is adopted:
 - [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](../../ICCV2025/medical_imaging/pvchat_personalized_video_chat_with_one-shot_learning.md)
 - [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](unified_all-atom_molecule_generation_with_neural_fields.md)
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+
+</div>
 
 <!-- RELATED:END -->

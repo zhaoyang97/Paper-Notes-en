@@ -137,6 +137,8 @@ Classification uses cross-entropy loss with Bingham regularization. The optimize
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Hierarchical Direction Perception via Atomic Dot-Product Operators for Rotation-Invariant Point Clouds Learning](hierarchical_direction_perception_via_atomic_dot-product_operators_for_rotation-.md)
@@ -144,5 +146,7 @@ Classification uses cross-entropy loss with Bingham regularization. The optimize
 - [\[CVPR 2026\] Global-Aware Edge Prioritization for Pose Graph Initialization](../../CVPR2026/3d_vision/global-aware_edge_prioritization_for_pose_graph_initialization.md)
 - [\[CVPR 2026\] Enhancing Hands in 3D Whole-Body Pose Estimation with Conditional Hands Modulator](../../CVPR2026/3d_vision/enhancing_hands_in_3d_whole-body_pose_estimation_with_conditional_hands_modulato.md)
 - [\[AAAI 2026\] PFAvatar: Pose-Fusion 3D Personalized Avatar Reconstruction from Real-World Outfit-of-the-Day Photos](pfavatar_pose-fusion_3d_personalized_avatar_reconstruction_from_real-world_outfi.md)
+
+</div>
 
 <!-- RELATED:END -->

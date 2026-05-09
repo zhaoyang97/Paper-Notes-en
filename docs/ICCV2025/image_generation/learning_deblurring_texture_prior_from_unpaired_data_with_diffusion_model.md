@@ -137,6 +137,8 @@ TP-Diff achieves the best performance among unpaired methods with the fewest par
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DIIP: Diffusion Image Prior](diffusion_image_prior.md)
@@ -144,5 +146,7 @@ TP-Diff achieves the best performance among unpaired methods with the fewest par
 - [\[NeurIPS 2025\] BlurDM: A Blur Diffusion Model for Image Deblurring](../../NeurIPS2025/image_generation/blurdm_a_blur_diffusion_model_for_image_deblurring.md)
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](../../NeurIPS2025/image_generation/a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
 - [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](../../NeurIPS2025/image_generation/a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
+
+</div>
 
 <!-- RELATED:END -->

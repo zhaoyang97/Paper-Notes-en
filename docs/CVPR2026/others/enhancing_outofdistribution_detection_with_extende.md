@@ -122,6 +122,8 @@ ResNet-18 on CIFAR-10/100: 100 epochs, SGD momentum=0.9, lr=0.1, weight decay 5e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Stronger Normalization-Free Transformers](stronger_normalization-free_transformers.md)
@@ -129,5 +131,7 @@ ResNet-18 on CIFAR-10/100: 100 epochs, SGD momentum=0.9, lr=0.1, weight decay 5e
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
 - [\[CVPR 2026\] Integration of deep generative Anomaly Detection algorithm in high-speed industrial line](integration_of_deep_generative_anomaly_detection_a.md)
 - [\[CVPR 2026\] Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples](novel_anomaly_detection_scenarios_and_evaluation_metrics_to_address_the_ambiguit.md)
+
+</div>
 
 <!-- RELATED:END -->

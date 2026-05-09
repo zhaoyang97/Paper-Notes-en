@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **9** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+
+🔥 **Top topics:** LLM ×2
+
 **[Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity](connectivity-guided_sparsification_of_2-fwl_gnns_preserving_full_expressivity_wi.md)**
 
 :   Co-Sparsify proposes a connectivity-aware sparsification framework that restricts 3-node interactions to biconnected components and 2-node interactions to connected components, eliminating provably redundant computation. It preserves full 2-FWL expressivity while substantially improving efficiency, achieving state-of-the-art results on synthetic substructure counting tasks and benchmarks including ZINC and QM9.

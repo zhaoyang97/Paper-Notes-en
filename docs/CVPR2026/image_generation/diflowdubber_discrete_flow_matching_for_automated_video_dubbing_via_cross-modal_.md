@@ -155,6 +155,8 @@ where $\mathcal{L}_{\text{align}} = \lambda_5 \mathcal{L}_{VT} + \lambda_6 \math
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video](cross-modal_emotion_transfer_for_emotion_editing_in_talking_face_video.md)
@@ -162,5 +164,7 @@ where $\mathcal{L}_{\text{align}} = \lambda_5 \mathcal{L}_{VT} + \lambda_6 \math
 - [\[CVPR 2026\] Score2Instruct: Scaling Up Video Quality-Centric Instructions via Automated Dimension Scoring](score2instruct_scaling_up_video_quality-centric_instructions_via_automated_dimen.md)
 - [\[ICLR 2026\] Discrete Adjoint Matching](../../ICLR2026/image_generation/discrete_adjoint_matching.md)
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

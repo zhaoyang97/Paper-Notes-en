@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **19** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+
+🔥 **Top topics:** LLM ×5
+
 **[Did You Check the Right Pocket? Cost-Sensitive Store Routing for Memory-Augmented Agents](did_you_check_the_right_pocket_cost-sensitive_store_routing_for_memory-augmented.md)**
 
 :   This paper formalizes multi-store retrieval in memory-augmented agents as a cost-sensitive store routing problem, demonstrates that selective retrieval can reduce context tokens by 62% while improving QA accuracy (86% vs. 81%) over exhaustive retrieval, and proposes a semantics-based heuristic routing baseline.

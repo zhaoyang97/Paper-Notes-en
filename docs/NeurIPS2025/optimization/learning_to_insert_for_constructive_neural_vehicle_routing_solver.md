@@ -140,6 +140,8 @@ L2C-Insert adopts an Encoder-Decoder architecture: the Encoder maps node feature
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
@@ -147,5 +149,7 @@ L2C-Insert adopts an Encoder-Decoder architecture: the Encoder maps node feature
 - [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
 - [\[NeurIPS 2025\] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning](neural_thermodynamics_entropic_forces_in_deep_and_universal_representation_learn.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

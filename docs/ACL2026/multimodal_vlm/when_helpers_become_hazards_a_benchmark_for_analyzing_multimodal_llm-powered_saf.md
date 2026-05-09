@@ -121,6 +121,8 @@ This work is a benchmark construction study with no training procedure. Data is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive](../../AAAI2026/multimodal_vlm/oida-qa_a_multimodal_benchmark_for_analyzing_the_opioid_industry_documents_archi.md)
@@ -128,5 +130,7 @@ This work is a benchmark construction study with no training procedure. Data is 
 - [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 - [\[ACL 2026\] When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning](when_slower_isn39t_truer_inverse_scaling_law_of_truthfulness_in_multimodal_reaso.md)
+
+</div>
 
 <!-- RELATED:END -->

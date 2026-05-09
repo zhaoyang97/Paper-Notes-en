@@ -177,6 +177,8 @@ The 7×7 axial convolution achieves the best accuracy-efficiency trade-off.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] VSSD: Vision Mamba with Non-Causal State Space Duality](vssd_vision_mamba_with_non-causal_state_space_duality.md)
@@ -184,5 +186,7 @@ The 7×7 axial convolution achieves the best accuracy-efficiency trade-off.
 - [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
 - [\[ICCV 2025\] Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection](hybrid-tta_continual_test-time_adaptation_via_dynamic_domain_shift_detection.md)
 - [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](../../NeurIPS2025/segmentation/safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -128,6 +128,8 @@ The optimization objective is the cross-entropy loss under zero-shot inference. 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Style over Story: Measuring LLM Narrative Preferences via Structured Selection](style_over_story_measuring_llm_narrative_preferences_via_structured_selection.md)
@@ -135,5 +137,7 @@ The optimization objective is the cross-entropy loss under zero-shot inference. 
 - [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](../../AAAI2026/interpretability/unsupervised_feature_selection_through_group_discovery.md)
 - [\[NeurIPS 2025\] Interpretable Next-token Prediction via the Generalized Induction Head](../../NeurIPS2025/interpretability/interpretable_next-token_prediction_via_the_generalized_induction_head.md)
 - [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](../../AAAI2026/interpretability/finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
+
+</div>
 
 <!-- RELATED:END -->

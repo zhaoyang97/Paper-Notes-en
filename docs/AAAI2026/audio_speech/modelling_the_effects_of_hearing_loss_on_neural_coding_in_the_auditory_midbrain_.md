@@ -158,6 +158,8 @@ Bayesian optimization is used to search for ψ parameters to fit new animals; re
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation](reina_regularized_entropy_information-based_loss_for_efficient_simultaneous_spee.md)
@@ -165,5 +167,7 @@ Bayesian optimization is used to search for ψ parameters to fit new animals; re
 - [\[AAAI 2026\] Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR](hearing_more_with_less_multi-modal_retrieval-and-selection_augmented_conversatio.md)
 - [\[ICLR 2026\] Toward Complex-Valued Neural Networks for Waveform Generation](../../ICLR2026/audio_speech/toward_complex-valued_neural_networks_for_waveform_generation.md)
 - [\[ICLR 2026\] VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation](../../ICLR2026/audio_speech/vowelprompt_hearing_speech_emotions_from_text_via_vowel-level_prosodic_augmentat.md)
+
+</div>
 
 <!-- RELATED:END -->

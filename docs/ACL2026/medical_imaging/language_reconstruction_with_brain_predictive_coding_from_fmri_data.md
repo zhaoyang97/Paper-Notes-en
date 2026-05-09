@@ -139,6 +139,8 @@ The model is trained end-to-end with a joint loss $\mathcal{L} = \mathcal{L}_\te
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
@@ -146,5 +148,7 @@ The model is trained end-to-end with a joint loss $\mathcal{L} = \mathcal{L}_\te
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](../../ICCV2025/medical_imaging/neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
 - [\[CVPR 2026\] X-WIN: Building Chest Radiograph World Model via Predictive Sensing](../../CVPR2026/medical_imaging/x-win_building_chest_radiograph_world_model_via_predictive_sensing.md)
 - [\[ACL 2026\] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling](semi-supervised_diseased_detection_from_speech_dialogues_with_multi-level_data_m.md)
+
+</div>
 
 <!-- RELATED:END -->

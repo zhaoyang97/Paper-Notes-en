@@ -123,6 +123,8 @@ Evaluation covers 30+ VideoQA model configurations, including open-source models
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization](cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med.md)
@@ -130,5 +132,7 @@ Evaluation covers 30+ VideoQA model configurations, including open-source models
 - [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](../../ICCV2025/video_understanding/beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
 - [\[CVPR 2026\] VSI: Visual-Subtitle Integration for Keyframe Selection to Enhance Long Video Understanding](vsi_visual-subtitle_integration_for_keyframe_selection_to_enhance_long_video_un.md)
 - [\[CVPR 2026\] Beyond Single-Sample: Reliable Multi-Sample Distillation for Video Understanding](beyond_singlesample_reliable_multisample_distillat.md)
+
+</div>
 
 <!-- RELATED:END -->

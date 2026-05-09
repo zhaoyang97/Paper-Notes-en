@@ -121,6 +121,8 @@ OpenAI o3, DeepSeek R1, DeepSeek V3, DeepSeek R1 Distill series (1.5B / 14B / 70
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
@@ -128,5 +130,7 @@ OpenAI o3, DeepSeek R1, DeepSeek V3, DeepSeek R1 Distill series (1.5B / 14B / 70
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
 - [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
 - [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
+
+</div>
 
 <!-- RELATED:END -->

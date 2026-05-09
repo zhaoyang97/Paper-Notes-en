@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **37** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (34)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (31)](../../CVPR2026/interpretability/index.md) · [🔬 ICLR2026 (59)](../../ICLR2026/interpretability/index.md) · [🧠 NeurIPS2025 (82)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/interpretability/index.md)
+
+🔥 **Top topics:** LLM ×6 · Layout & Composition ×3 · Agents ×2
+
 **[A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)**
 
 :   To address the overlooked distribution mismatch between teacher ANN continuous features/logits and student SNN discrete sparse spike features/logits in ANN→SNN knowledge distillation, this paper proposes the CKDSNN framework based on Saliency-scaled Activation Map Distillation (SAMD) and Noise-smoothed Logits Distillation (NLD), achieving new state-of-the-art SNN training performance on CIFAR-10/100, ImageNet-1K, and CIFAR10-DVS.

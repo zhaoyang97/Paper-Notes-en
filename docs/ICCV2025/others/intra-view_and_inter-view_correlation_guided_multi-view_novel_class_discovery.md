@@ -152,6 +152,8 @@ IICMVNCD is an end-to-end, single-stage method comprising three core components:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](multi-view_gaze_target_estimation.md)
@@ -159,5 +161,7 @@ IICMVNCD is an end-to-end, single-stage method comprising three core components:
 - [\[ICCV 2025\] Thermal Polarimetric Multi-view Stereo](thermal_polarimetric_multi-view_stereo.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
+
+</div>
 
 <!-- RELATED:END -->

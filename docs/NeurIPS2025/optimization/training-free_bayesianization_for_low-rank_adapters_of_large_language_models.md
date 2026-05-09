@@ -169,6 +169,8 @@ TFB remains competitive under mild distribution shift; accuracy decreases slight
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Large Language Bayes](large_language_bayes.md)
@@ -176,5 +178,7 @@ TFB remains competitive under mild distribution shift; accuracy decreases slight
 - [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
 - [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](doubly_robust_alignment_for_large_language_models.md)
 - [\[NeurIPS 2025\] perturbation bounds for low-rank inverse approximations under noise](perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
+
+</div>
 
 <!-- RELATED:END -->

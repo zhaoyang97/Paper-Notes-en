@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **29** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/llm_safety/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/llm_safety/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_safety/index.md)
+
+🔥 **Top topics:** LLM ×12 · Adversarial Robustness ×5 · Continual Learning ×3 · Watermarking ×2
+
 **[Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)**
 
 :   This paper proposes PromptObfus, which adopts an "anti-adversarial learning" paradigm to replace sensitive tokens in user prompts with semantically distinct yet task-preserving alternatives. The approach eliminates explicit privacy leakage entirely and reduces implicit privacy inference attack success rates by 62.70%, without degrading the task performance of remote LLMs.

@@ -253,6 +253,22 @@
   text-decoration: none;
 }
 
+/* ── Related papers: cross-paper internal links should look clickable ── */
+/* Without this, internal .md→.md links inherit the dark navy primary color
+   (#2b2d42) and look like plain body text. Match the arXiv/code link style
+   so users can immediately tell the entries are clickable. */
+.md-typeset .related-papers a,
+.md-typeset .related-papers a:link,
+.md-typeset .related-papers a:visited {
+  color: var(--md-accent-fg-color);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 2px;
+}
+.md-typeset .related-papers a:hover {
+  opacity: 0.85;
+}
+
 /* ── Mobile: hide heading permalink anchors to prevent accidental taps ── */
 @media (max-width: 960px) {
   .headerlink {

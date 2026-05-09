@@ -123,6 +123,8 @@ GRPO (Group Relative Policy Optimization): For each prompt, a group of outputs i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](../../ACL2026/reinforcement_learning/cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
@@ -130,5 +132,7 @@ GRPO (Group Relative Policy Optimization): For each prompt, a group of outputs i
 - [\[ICLR 2026\] Whatever Remains Must Be True: Filtering Drives Reasoning in LLMs, Shaping Diversity](whatever_remains_must_be_true_filtering_drives_reasoning_in_llms_shaping_diversi.md)
 - [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](routing_cascades_and_user_choice_for_llms.md)
 - [\[ICLR 2026\] References Improve LLM Alignment in Non-Verifiable Domains](references_improve_llm_alignment_in_non-verifiable_domains.md)
+
+</div>
 
 <!-- RELATED:END -->

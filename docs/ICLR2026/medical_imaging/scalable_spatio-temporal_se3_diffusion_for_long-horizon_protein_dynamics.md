@@ -132,6 +132,8 @@ STAR-MD achieves state-of-the-art performance across all metrics.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
@@ -139,5 +141,7 @@ STAR-MD achieves state-of-the-art performance across all metrics.
 - [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](protein_as_a_second_language_for_llms.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](../../NeurIPS2025/medical_imaging/consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
+
+</div>
 
 <!-- RELATED:END -->

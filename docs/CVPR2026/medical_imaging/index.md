@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **154** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (42)](../../ACL2026/medical_imaging/index.md) · [🔬 ICLR2026 (72)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (105)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (138)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (40)](../../ICCV2025/medical_imaging/index.md)
+
+🔥 **Top topics:** Medical Imaging ×52 · Segmentation ×31 · Multimodal/VLM ×20 · Diffusion Models ×12 · Adversarial Robustness ×11
+
 **[A protocol for evaluating robustness to H&E staining variation in computational pathology models](a_protocol_for_evaluating_robustness_to_he_stainin.md)**
 
 :   A three-step evaluation protocol (select reference staining conditions → characterize test-set staining properties → simulate staining conditions for inference) is proposed to systematically quantify the robustness of 306 MSI classification models to H&E staining variation. The study finds a weak negative correlation between robustness and classification performance ($r = -0.28$), indicating that high performance does not imply high robustness.

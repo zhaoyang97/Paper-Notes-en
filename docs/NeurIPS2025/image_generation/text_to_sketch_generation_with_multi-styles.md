@@ -140,6 +140,8 @@ $$\tilde{\epsilon}_t = \epsilon_\theta(z_t^{tar}, t, \emptyset) + \omega_1 \cdot
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation](scenedesigner_controllable_multi-object_image_generation_with_9-dof_pose_manipul.md)
@@ -147,5 +149,7 @@ $$\tilde{\epsilon}_t = \epsilon_\theta(z_t^{tar}, t, \emptyset) + \omega_1 \cdot
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](../../CVPR2026/image_generation/multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
 - [\[NeurIPS 2025\] One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting](one_stone_with_two_birds_a_null-text-null_frequency-aware_diffusion_models_for_t.md)
+
+</div>
 
 <!-- RELATED:END -->

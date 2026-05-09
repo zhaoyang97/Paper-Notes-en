@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **45** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/optimization/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/optimization/index.md) · [🤖 AAAI2026 (24)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (113)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/optimization/index.md)
+
+🔥 **Top topics:** Reasoning ×3 · LLM ×3 · Federated Learning ×3
+
 **[A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)**
 
 :   This paper establishes the first theoretical framework for analyzing the convergence of adaptive optimizers under floating-point quantization. By imposing a relative error quantization model simultaneously on gradients, weights, and optimizer states (first and second moments), it proves that quantized Adam and Muon achieve the same $\tilde{O}(T^{-1/4})$ convergence rate as their full-precision counterparts when the mantissa length grows only logarithmically in the number of iterations. The analysis further reveals that Adam is highly sensitive to the quantization of weights and second moments, whereas Muon is theoretically more robust.

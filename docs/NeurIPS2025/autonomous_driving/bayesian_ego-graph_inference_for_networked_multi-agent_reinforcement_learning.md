@@ -103,6 +103,8 @@ Agent $i$'s policy is conditioned on a sampled subgraph: $\pi_i(u_i, G_{\mathcal
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems](causality_meets_locality_provably_generalizable_and_scalable_policy_learning_for.md)
@@ -110,5 +112,7 @@ Agent $i$'s policy is conditioned on a sampled subgraph: $\pi_i(u_i, G_{\mathcal
 - [\[NeurIPS 2025\] Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems](regret_lower_bounds_for_decentralized_multi-agent_stochastic_shortest_path_probl.md)
 - [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
 - [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
+
+</div>
 
 <!-- RELATED:END -->

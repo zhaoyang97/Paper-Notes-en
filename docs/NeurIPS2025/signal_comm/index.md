@@ -10,6 +10,8 @@ description: >-
 
 **🧠 NeurIPS2025** · **13** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+
 **[Angular Steering: Behavior Control via Rotation in Activation Space](angular_steering_behavior_control_via_rotation_in_activation_space.md)**
 
 :   This paper proposes Angular Steering, which unifies LLM activation steering as rotation operations within a fixed 2D subspace — providing a continuous, fine-grained, norm-preserving behavior control knob spanning 0°–360° via rotation angle. The framework subsumes activation addition and directional ablation as special cases of rotation, and demonstrates robust behavior control on Llama 3 / Qwen 2.5 / Gemma 2 (3B–14B).

@@ -99,6 +99,8 @@ Laytrol constructs a parallel layout control network on top of FLUX's MM-DiT. In
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers](relactrl_relevance-guided_efficient_control_for_diffusion_transformers.md)
@@ -106,5 +108,7 @@ Laytrol constructs a parallel layout control network on top of FLUX's MM-DiT. In
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](../../ICCV2025/image_generation/lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 - [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
 - [\[AAAI 2026\] Improved Masked Image Generation with Knowledge-Augmented Token Representations](improved_masked_image_generation_with_knowledge-augmented_token_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -129,6 +129,8 @@ MLP linear layers in a pretrained LLM are replaced by NSN layers (initialized vi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](tracing_pharmacological_knowledge_in_large_language_models.md)
@@ -136,5 +138,7 @@ MLP linear layers in a pretrained LLM are replaced by NSN layers (initialized vi
 - [\[CVPR 2026\] Automated Detection of Malignant Lesions in the Ovary Using Deep Learning Models and XAI](../../CVPR2026/medical_imaging/automated_detection_of_malignant_lesions_in_the_ovary_using_deep_learning_models.md)
 - [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](../../NeurIPS2025/medical_imaging/position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
+
+</div>
 
 <!-- RELATED:END -->

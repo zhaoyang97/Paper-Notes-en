@@ -88,6 +88,8 @@ The paradigm of integrating external solvers into LLMs via special tokens is tra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
@@ -95,5 +97,7 @@ The paradigm of integrating external solvers into LLMs via special tokens is tra
 - [\[ICLR 2026\] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre](../../ICLR2026/llm_agent/hamlet_a_hierarchical_and_adaptive_multi-agent_framework_for_live_embodied_theat.md)
 - [\[NeurIPS 2025\] Hogwild! Inference: Parallel LLM Generation via Concurrent Attention](../../NeurIPS2025/llm_agent/hogwild_inference_parallel_llm_generation_via_concurrent_attention.md)
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](../../ACL2026/llm_agent/toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
+
+</div>
 
 <!-- RELATED:END -->

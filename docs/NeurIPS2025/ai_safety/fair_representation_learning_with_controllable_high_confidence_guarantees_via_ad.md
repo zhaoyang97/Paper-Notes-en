@@ -131,6 +131,8 @@ Under $\varepsilon \in \{0.04, 0.08, 0.12, 0.16\}$ and $\delta=0.1$: FRG consist
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](../../ICCV2025/ai_safety/towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
@@ -138,5 +140,7 @@ Under $\varepsilon \in \{0.04, 0.08, 0.12, 0.16\}$ and $\delta=0.1$: FRG consist
 - [\[NeurIPS 2025\] Environment Inference for Learning Generalizable Dynamical System](environment_inference_for_learning_generalizable_dynamical_system.md)
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference.md)
 - [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
+
+</div>
 
 <!-- RELATED:END -->

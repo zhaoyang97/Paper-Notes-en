@@ -177,6 +177,8 @@ Compared to Costello et al. (2024) on AI persuasion, this work shifts focus from
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Factor(U,T): Controlling Untrusted AI by Monitoring their Plans](factorut_controlling_untrusted_ai_by_monitoring_their_plans.md)
@@ -184,5 +186,7 @@ Compared to Costello et al. (2024) on AI persuasion, this work shifts focus from
 - [\[NeurIPS 2025\] Accelerate Creation of Product Claims Using Generative AI](../../NeurIPS2025/audio_speech/accelerate_creation_of_product_claims_using_generative_ai.md)
 - [\[CVPR 2026\] ViDscribe: Multimodal AI for Customizing Audio Description and Question Answering in Online Videos](../../CVPR2026/audio_speech/vidscribe_multimodal_ai_customizing_audio_description_videos.md)
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](../../NeurIPS2025/audio_speech/echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
+
+</div>
 
 <!-- RELATED:END -->

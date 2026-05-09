@@ -138,6 +138,8 @@ Default configuration: rollout length of 10 steps, 5 candidate trajectories. Pla
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](../../ICCV2025/multimodal_vlm/scaling_inferencetime_search_with_vision_value_model_for_imp.md)
@@ -145,5 +147,7 @@ Default configuration: rollout length of 10 steps, 5 candidate trajectories. Pla
 - [\[NeurIPS 2025\] ADMN: A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources](admn_a_layerwise_adaptive_multimodal_network_for_dynamic_inp.md)
 - [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
 - [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
+
+</div>
 
 <!-- RELATED:END -->

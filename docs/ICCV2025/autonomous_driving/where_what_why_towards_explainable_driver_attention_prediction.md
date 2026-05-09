@@ -156,6 +156,8 @@ All three dimensions are mutually reinforcing: spatial attention provides locali
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance](../../CVPR2026/autonomous_driving/drivergaze360_omnidirectional_driver_attention_with_object-level_guidance.md)
@@ -163,5 +165,7 @@ All three dimensions are mutually reinforcing: spatial attention provides locali
 - [\[ICCV 2025\] ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation](acam_kd_adaptive_cooperative_attention_masking_knowledge_distillation.md)
 - [\[ICCV 2025\] SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement](srefiner_soft-braid_attention_for_multi-agent_trajectory_refinement.md)
 - [\[ICCV 2025\] DONUT: A Decoder-Only Model for Trajectory Prediction](donut_a_decoder-only_model_for_trajectory_prediction.md)
+
+</div>
 
 <!-- RELATED:END -->

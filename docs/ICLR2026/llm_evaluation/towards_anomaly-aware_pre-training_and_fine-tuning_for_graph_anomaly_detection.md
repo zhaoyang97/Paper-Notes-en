@@ -142,6 +142,8 @@ where $p^a \leq p^n$, guiding anomalous nodes to rely more heavily on high-pass 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Soft Quality-Diversity Optimization](soft_quality-diversity_optimization.md)
@@ -149,5 +151,7 @@ where $p^a \leq p^n$, guiding anomalous nodes to rely more heavily on high-pass 
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/llm_evaluation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
 - [\[CVPR 2026\] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning](../../CVPR2026/llm_evaluation/weakly_supervised_video_anomaly_detection_with_anomaly-connected_components_and_.md)
 - [\[NeurIPS 2025\] Normal-Abnormal Guided Generalist Anomaly Detection](../../NeurIPS2025/llm_evaluation/normal-abnormal_guided_generalist_anomaly_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -170,6 +170,8 @@ Figure 2 demonstrates the advantages of the adaptive scheduling strategy in redu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains](../../NeurIPS2025/optimization/memory-augmented_potential_field_theory_a_framework_for_adaptive_control_in_non-.md)
@@ -177,5 +179,7 @@ Figure 2 demonstrates the advantages of the adaptive scheduling strategy in redu
 - [\[NeurIPS 2025\] Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems](../../NeurIPS2025/optimization/extragradient_method_for_l_0_l_1-lipschitz_root-finding_problems.md)
 - [\[NeurIPS 2025\] Revisiting Orbital Minimization Method for Neural Operator Decomposition](../../NeurIPS2025/optimization/revisiting_orbital_minimization_method_for_neural_operator_decomposition.md)
 - [\[NeurIPS 2025\] MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control](../../NeurIPS2025/optimization/mdns_masked_diffusion_neural_sampler_via_stochastic_optimal_control.md)
+
+</div>
 
 <!-- RELATED:END -->

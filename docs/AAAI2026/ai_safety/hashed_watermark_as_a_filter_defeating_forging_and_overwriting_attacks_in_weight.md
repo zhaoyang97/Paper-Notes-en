@@ -125,6 +125,8 @@ Architecture generalization: ViT-B/16 (39.22%), Swin-V2-B (53.57%), VGG-16 (72.6
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking](yours_or_mine_overwriting_attacks_against_neural_audio_watermarking.md)
@@ -132,5 +134,7 @@ Architecture generalization: ViT-B/16 (39.22%), Swin-V2-B (53.57%), VGG-16 (72.6
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
 - [\[AAAI 2026\] Privacy on the Fly: A Predictive Adversarial Transformation Network for Mobile Sensor Data](privacy_on_the_fly_a_predictive_adversarial_transformation_network_for_mobile_se.md)
 - [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
+
+</div>
 
 <!-- RELATED:END -->

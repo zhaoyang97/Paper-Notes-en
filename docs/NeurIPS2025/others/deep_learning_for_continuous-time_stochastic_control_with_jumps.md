@@ -171,6 +171,8 @@ GPI-PINN vs. GPI-CBU:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
@@ -178,5 +180,7 @@ GPI-PINN vs. GPI-CBU:
 - [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 - [\[NeurIPS 2025\] Deep Legendre Transform](deep_legendre_transform.md)
+
+</div>
 
 <!-- RELATED:END -->

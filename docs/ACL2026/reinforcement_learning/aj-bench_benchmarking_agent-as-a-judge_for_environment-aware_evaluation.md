@@ -119,6 +119,8 @@ AJ-Bench is an evaluation benchmark rather than a training framework. F1 score i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Don't Just Fine-tune the Agent, Tune the Environment](../../ICLR2026/reinforcement_learning/dont_just_fine-tune_the_agent_tune_the_environment.md)
@@ -126,5 +128,7 @@ AJ-Bench is an evaluation benchmark rather than a training framework. F1 score i
 - [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](../../ICLR2026/reinforcement_learning/paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
 - [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](../../AAAI2026/reinforcement_learning/bamas_structuring_budget-aware_multi-agent_systems.md)
 - [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](../../AAAI2026/reinforcement_learning/a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
+
+</div>
 
 <!-- RELATED:END -->

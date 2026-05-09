@@ -125,6 +125,8 @@ Results on online regression benchmarks (RMSE↓) and real-time control experime
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
@@ -132,5 +134,7 @@ Results on online regression benchmarks (RMSE↓) and real-time control experime
 - [\[AAAI 2026\] TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization](trace_a_generalizable_drift_detector_for_streaming_data-driven_optimization.md)
 - [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](../../NeurIPS2025/llm_evaluation/conformal_online_learning_of_deep_koopman_linear_embeddings.md)
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](../../CVPR2026/llm_evaluation/enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
+
+</div>
 
 <!-- RELATED:END -->

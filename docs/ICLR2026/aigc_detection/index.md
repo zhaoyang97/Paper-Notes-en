@@ -10,6 +10,8 @@ description: >-
 
 **🔬 ICLR2026** · **6** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/aigc_detection/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/aigc_detection/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/aigc_detection/index.md)
+
 **[Calibrating Verbalized Confidence with Self-Generated Distractors](calibrating_verbalized_confidence_with_self-generated_distractors.md)**
 
 :   This paper proposes DiNCo, a method that exposes the "suggestibility bias" of LLMs by having them **independently** evaluate automatically generated distractor options (plausible but incorrect alternative answers). It normalizes confidence using the total confidence assigned to distractors, and integrates two complementary dimensions—generation consistency and verification consistency—to significantly improve confidence calibration on both short-form QA and long-form generation tasks.

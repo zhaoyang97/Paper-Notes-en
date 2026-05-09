@@ -129,6 +129,8 @@ Four loss functions are employed: (1) point cloud reconstruction loss $L_{rec} =
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](../../ICLR2026/medical_imaging/discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
@@ -136,5 +138,7 @@ Four loss functions are employed: (1) point cloud reconstruction loss $L_{rec} =
 - [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
 - [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
 - [\[CVPR 2026\] SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation](../../CVPR2026/medical_imaging/semitooth_a_generalizable_semisupervised_framework.md)
+
+</div>
 
 <!-- RELATED:END -->

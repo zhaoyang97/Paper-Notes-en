@@ -158,6 +158,8 @@ The sharpness-based approach to unsupervised sample differentiation has broad ap
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
@@ -165,5 +167,7 @@ The sharpness-based approach to unsupervised sample differentiation has broad ap
 - [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
 - [\[AAAI 2026\] Improving the Convergence Rate of Ray Search Optimization for Query-Efficient Hard-Label Attacks](improving_the_convergence_rate_of_ray_search_optimization_for_query-efficient_ha.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](robust_watermarking_on_gradient_boosting_decision_trees.md)
+
+</div>
 
 <!-- RELATED:END -->

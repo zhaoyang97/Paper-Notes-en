@@ -147,6 +147,8 @@ Training data: VFHQ (16K+ high-quality speech clips) and MEAD (60 subjects × 8 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging](hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging.md)
@@ -154,5 +156,7 @@ Training data: VFHQ (16K+ high-quality speech clips) and MEAD (60 subjects × 8 
 - [\[ICCV 2025\] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity](hineus_high-fidelity_neural_surface_mitigating_low-texture_and_reflective_ambigu.md)
 - [\[ICCV 2025\] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training](failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per.md)
 - [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](../../ICLR2026/others/condition_matters_in_full-head_3d_gans.md)
+
+</div>
 
 <!-- RELATED:END -->

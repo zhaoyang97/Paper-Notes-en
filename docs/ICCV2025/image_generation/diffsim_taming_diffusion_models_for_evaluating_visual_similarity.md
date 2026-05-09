@@ -156,6 +156,8 @@ DiffSim is **fully unsupervised** and requires no fine-tuning or training. Pretr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SliderSpace: Decomposing the Visual Capabilities of Diffusion Models](sliderspace_decomposing_the_visual_capabilities_of_diffusion_models.md)
@@ -163,5 +165,7 @@ DiffSim is **fully unsupervised** and requires no fine-tuning or training. Pretr
 - [\[CVPR 2026\] Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models](../../CVPR2026/image_generation/erasure_or_erosion_evaluating_compositional_degradation_in_unlearned_text-to-ima.md)
 - [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
 - [\[ICLR 2026\] Conjuring Semantic Similarity](../../ICLR2026/image_generation/conjuring_semantic_similarity.md)
+
+</div>
 
 <!-- RELATED:END -->

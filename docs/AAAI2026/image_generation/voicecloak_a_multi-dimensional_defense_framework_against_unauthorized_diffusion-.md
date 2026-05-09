@@ -142,6 +142,8 @@ Ablation of quality degradation components:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification](../../ICCV2025/image_generation/towards_robust_defense_against_customization_via_protective_perturbation_resista.md)
@@ -149,5 +151,7 @@ Ablation of quality degradation components:
 - [\[AAAI 2026\] Creating Blank Canvas Against AI-Enabled Image Forgery](creating_blank_canvas_against_ai-enabled_image_forgery.md)
 - [\[CVPR 2026\] coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation](../../CVPR2026/image_generation/codrawagents_a_multiagent_dialogue_framework_for_c.md)
 - [\[ICCV 2025\] Anti-Tamper Protection for Unauthorized Individual Image Generation](../../ICCV2025/image_generation/anti-tamper_protection_for_unauthorized_individual_image_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

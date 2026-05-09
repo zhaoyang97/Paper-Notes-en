@@ -143,6 +143,8 @@ Transfer experiments on Waymo Open Dataset:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks](wavelet_policy_lifting_scheme_for_policy_learning_in_long-horizon_tasks.md)
@@ -150,5 +152,7 @@ Transfer experiments on Waymo Open Dataset:
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 - [\[ICCV 2025\] Where am I? Cross-View Geo-localization with Natural Language Descriptions](where_am_i_cross-view_geo-localization_with_natural_language_descriptions.md)
 - [\[NeurIPS 2025\] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery](../../NeurIPS2025/autonomous_driving/l2rsi_cross-view_lidar-based_place_recognition_for_large-scale_urban_scenes_via_.md)
+
+</div>
 
 <!-- RELATED:END -->

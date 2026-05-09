@@ -157,6 +157,8 @@ DynaAvatar comprehensively outperforms existing single-image methods on all thre
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
@@ -164,5 +166,7 @@ DynaAvatar comprehensively outperforms existing single-image methods on all thre
 - [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
 - [\[ICLR 2026\] CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions](../../ICLR2026/3d_vision/clods_visual-only_unsupervised_cloth_dynamics_learning_in_unknown_conditions.md)
 - [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -167,6 +167,8 @@ The key distinction of this work lies in its focus on **scene-level** contextual
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Supercharging Floorplan Localization with Semantic Rays](../../ICCV2025/llm_evaluation/supercharging_floorplan_localization_with_semantic_rays.md)
@@ -174,5 +176,7 @@ The key distinction of this work lies in its focus on **scene-level** contextual
 - [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](benchmarking_llms_for_political_science_a_united_nations_perspective.md)
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](../../ICLR2026/llm_evaluation/in-context_learning_for_pure_exploration.md)
 - [\[CVPR 2026\] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation](../../CVPR2026/llm_evaluation/tacsim_a_dataset_and_benchmark_for_football_tactical_style_imitation.md)
+
+</div>
 
 <!-- RELATED:END -->

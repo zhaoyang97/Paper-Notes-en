@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **13** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (30)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (17)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md)
+
+🔥 **Top topics:** Speech & Audio ×6 · Multimodal/VLM ×3
+
 **[2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining](25_years_in_class_a_multimodal_textbook_for_vision-language_pretraining.md)**
 
 :   This work extracts keyframes and text (via ASR and OCR) from YouTube instructional videos to construct a high-quality interleaved image-text "multimodal textbook" dataset for VLM pretraining, achieving substantial improvements over web-crawled interleaved datasets on knowledge-intensive and reasoning benchmarks.

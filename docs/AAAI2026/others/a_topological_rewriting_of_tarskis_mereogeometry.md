@@ -126,6 +126,8 @@ All proofs are carried out in Coq 8.x, with semi-automated proofs completed via 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] On Topological Descriptors for Graph Products](../../NeurIPS2025/others/on_topological_descriptors_for_graph_products.md)
@@ -133,5 +135,7 @@ All proofs are carried out in Coq 8.x, with semi-automated proofs completed via 
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
 - [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
 - [\[AAAI 2026\] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)
+
+</div>
 
 <!-- RELATED:END -->

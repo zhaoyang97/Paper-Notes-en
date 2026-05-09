@@ -145,6 +145,8 @@ Since a closed-form solution exists, no iterative optimization is required; the 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
@@ -152,5 +154,7 @@ Since a closed-form solution exists, no iterative optimization is required; the 
 - [\[CVPR 2026\] MAGIC: Few-Shot Mask-Guided Anomaly Inpainting with Prompt Perturbation, Spatially Adaptive Guidance, and Context Awareness](magic_few-shot_mask-guided_anomaly_inpainting_with_prompt_perturbation_spatially.md)
 - [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)
 - [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
+
+</div>
 
 <!-- RELATED:END -->

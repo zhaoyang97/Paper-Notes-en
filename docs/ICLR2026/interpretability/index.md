@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **59** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (34)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (31)](../../CVPR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (82)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/interpretability/index.md)
+
+🔥 **Top topics:** Reasoning ×8 · LLM ×6 · Agents ×3 · Multimodal/VLM ×2 · Alignment/RLHF ×2
+
 **[A Cortically Inspired Architecture for Modular Perceptual AI](a_cortically_inspired_architecture_for_modular_perceptual_ai.md)**
 
 :   This paper proposes a cortically inspired modular perceptual AI architecture blueprint grounded in neuroscience, comprising four components — dedicated encoders, a shared cross-modal latent space, a routing controller, and a recursive predictive feedback loop — and validates through sparse autoencoder experiments that modular decomposition improves within-domain feature stability (+15.4pp Jaccard overlap).

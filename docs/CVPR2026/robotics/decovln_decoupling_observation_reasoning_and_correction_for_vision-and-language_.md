@@ -137,6 +137,8 @@ $$DM(s_t) = \min_{s^* \in P_{exp}} d_g(s_t, s^*)$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
@@ -144,5 +146,7 @@ $$DM(s_t) = \min_{s^* \in P_{exp}} d_g(s_t, s^*)$$
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
 - [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
 - [\[ICCV 2025\] COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation](../../ICCV2025/robotics/cosmo_combination_of_selective_memorization_for_low-cost_vision-and-language_nav.md)
+
+</div>
 
 <!-- RELATED:END -->

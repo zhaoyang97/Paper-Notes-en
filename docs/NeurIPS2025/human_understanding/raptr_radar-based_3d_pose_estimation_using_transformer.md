@@ -120,6 +120,8 @@ DETR-style bipartite matching is used to associate predictions with ground truth
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
@@ -127,5 +129,7 @@ DETR-style bipartite matching is used to associate predictions with ground truth
 - [\[ICCV 2025\] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation](../../ICCV2025/human_understanding/perspose_3d_human_pose_estimation_with_perspective_encoding_and_perspective_rota.md)
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](../../ICCV2025/human_understanding/fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
 - [\[NeurIPS 2025\] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization](cycle-sync_robust_global_camera_pose_estimation_through_enhanced_cycle-consisten.md)
+
+</div>
 
 <!-- RELATED:END -->

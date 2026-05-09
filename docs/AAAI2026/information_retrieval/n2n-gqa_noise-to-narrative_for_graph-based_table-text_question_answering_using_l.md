@@ -134,6 +134,8 @@ Fine-tuned systems (non-zero-shot) for reference: CORE 49.0 EM, COS 56.9 EM.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
@@ -141,5 +143,7 @@ Fine-tuned systems (non-zero-shot) for reference: CORE 49.0 EM, COS 56.9 EM.
 - [\[ACL 2026\] DQA: Diagnostic Question Answering for IT Support](../../ACL2026/information_retrieval/dqa_diagnostic_question_answering_for_it_support.md)
 - [\[AAAI 2026\] ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning](comorag_a_cognitive-inspired_memory-organized_rag_for_stateful_long_narrative_re.md)
 - [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](../../NeurIPS2025/information_retrieval/benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ Relative gains vs. HippoRAG: EM +8.7% on 2Wiki, +12.0% on HotpotQA, +32.6% on Mu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
@@ -134,5 +136,7 @@ Relative gains vs. HippoRAG: EM +8.7% on 2Wiki, +12.0% on HotpotQA, +32.6% on Mu
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](../../NeurIPS2025/graph_learning/preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
+
+</div>
 
 <!-- RELATED:END -->

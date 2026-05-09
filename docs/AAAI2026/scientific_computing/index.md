@@ -10,6 +10,8 @@ description: >-
 
 **🤖 AAAI2026** · **8** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/scientific_computing/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/scientific_computing/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/scientific_computing/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/scientific_computing/index.md)
+
 **[Just Few States are Enough: Randomized Sparse Feedback for Stability of Dynamical Systems](just_few_states_are_enough_randomized_sparse_feedback_for_stability_of_dynamical.md)**
 
 :   This paper proposes a randomized sparse feedback control framework in which the controller accesses only a random subset of the state vector at each time step. Feedback gain matrices and Bernoulli sparsification parameters are jointly designed via LMIs to guarantee asymptotic mean-square stability (AMSS) while minimizing the required number of active sensors. Experiments demonstrate that as few as 0.3% of state components suffice to achieve performance comparable to full-state feedback.

@@ -156,6 +156,8 @@ $$L = L_{rgb} + \lambda_{geo}L_{geo} + \lambda_{obj}L_{obj} + \lambda_{road}L_{r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting](6dope-gs_online_6d_object_pose_estimation_using_gaussian_splatting.md)
@@ -163,5 +165,7 @@ $$L = L_{rgb} + \lambda_{geo}L_{geo} + \lambda_{obj}L_{obj} + \lambda_{road}L_{r
 - [\[AAAI 2026\] Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction](../../AAAI2026/autonomous_driving/visiononly_gaussian_splatting_for_collaborative_semantic_occupancy_p.md)
 - [\[ICCV 2025\] GaussRender: Learning 3D Occupancy with Gaussian Rendering](gaussrender_learning_3d_occupancy_with_gaussian_rendering.md)
 - [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
+
+</div>
 
 <!-- RELATED:END -->

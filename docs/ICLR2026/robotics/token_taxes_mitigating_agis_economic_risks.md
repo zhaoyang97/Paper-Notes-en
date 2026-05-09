@@ -141,6 +141,8 @@ Traditional robot tax proposals include raising corporate tax rates, levying "au
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Explaining and Mitigating Crosslingual Tokenizer Inequities](../../NeurIPS2025/robotics/explaining_and_mitigating_crosslingual_tokenizer_inequities.md)
@@ -148,5 +150,7 @@ Traditional robot tax proposals include raising corporate tax rates, levying "au
 - [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](../../ACL2026/robotics/on_safety_risks_in_experience-driven_self-evolving_agents.md)
 - [\[ICCV 2025\] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning](../../ICCV2025/robotics/resolving_token-space_gradient_conflicts_token_space_manipulation_for_transforme.md)
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](../../NeurIPS2025/robotics/toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

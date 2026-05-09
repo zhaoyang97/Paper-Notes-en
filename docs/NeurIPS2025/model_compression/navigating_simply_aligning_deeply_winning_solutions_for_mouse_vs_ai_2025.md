@@ -118,6 +118,8 @@ The Track 2 findings are consistent with the hierarchical organization of the vi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
@@ -125,5 +127,7 @@ The Track 2 findings are consistent with the hierarchical organization of the vi
 - [\[NeurIPS 2025\] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills](on_the_creation_of_narrow_ai_hierarchy_and_nonlocality_of_neural_network_skills.md)
 - [\[ICLR 2026\] Textual Equilibrium Propagation for Deep Compound AI Systems](../../ICLR2026/model_compression/textual_equilibrium_propagation_for_deep_compound_ai_systems.md)
 - [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](../../CVPR2026/model_compression/iapl_aigenerated_image_detection_adaptive_prompt.md)
+
+</div>
 
 <!-- RELATED:END -->

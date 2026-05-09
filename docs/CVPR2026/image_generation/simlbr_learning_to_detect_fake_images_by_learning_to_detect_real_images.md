@@ -177,6 +177,8 @@ On Chameleon, SimLBR's fake image recall surges from AIDE's 5.04% to 75.80% (Pro
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Group Editing: Edit Multiple Images in One Go](group_editing_edit_multiple_images_in_one_go.md)
@@ -184,5 +186,7 @@ On Chameleon, SimLBR's fake image recall surges from AIDE's 5.04% to 75.80% (Pro
 - [\[CVPR 2026\] RewardFlow: Generate Images by Optimizing What You Reward](rewardflow_generate_images_by_optimizing_what_you_reward.md)
 - [\[CVPR 2026\] HazeMatching: Dehazing Light Microscopy Images with Guided Conditional Flow Matching](hazematching_dehazing_light_microscopy_images_with_guided_conditional_flow_match.md)
 - [\[AAAI 2026\] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images](../../AAAI2026/image_generation/beautiful_images_toxic_words_understanding_and_addressing_offensive_text_in_gene.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -156,6 +156,8 @@ Diffusion vs. non-diffusion backbone comparison:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model](../../CVPR2026/segmentation/videomt_encoder_only_video_segmentation.md)
@@ -163,5 +165,7 @@ Diffusion vs. non-diffusion backbone comparison:
 - [\[ICCV 2025\] VSC: Visual Search Compositional Text-to-Image Diffusion Model](../../ICCV2025/segmentation/vsc_visual_search_compositional_text-to-image_diffusion_model.md)
 - [\[CVPR 2026\] Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains](../../CVPR2026/segmentation/promptdriven_lightweight_foundation_model_for_inst.md)
 - [\[CVPR 2026\] Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training](../../CVPR2026/segmentation/data_warmup_complexity-aware_curricula_for_efficient_diffusion_training.md)
+
+</div>
 
 <!-- RELATED:END -->

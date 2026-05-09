@@ -141,6 +141,8 @@ IM-RM accuracy collapses to near zero under token distribution shift (paraphrasi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Estimating the Empowerment of Language Model Agents](estimating_the_empowerment_of_language_model_agents.md)
@@ -148,5 +150,7 @@ IM-RM accuracy collapses to near zero under token distribution shift (paraphrasi
 - [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](../../NeurIPS2025/llm_reasoning/one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
 - [\[ACL 2026\] Dissecting Failure Dynamics in Large Language Model Reasoning](../../ACL2026/llm_reasoning/dissecting_failure_dynamics_in_large_language_model_reasoning.md)
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
+
+</div>
 
 <!-- RELATED:END -->

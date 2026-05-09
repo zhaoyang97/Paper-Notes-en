@@ -174,6 +174,8 @@ where $S$ is the tool-calling sequence of a candidate solution, and the solution
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](../../ICLR2026/llm_agent/judge_reliability_harness_stress_testing_the_reliability_of_llm_judges.md)
@@ -181,5 +183,7 @@ where $S$ is the tool-calling sequence of a candidate solution, and the solution
 - [\[NeurIPS 2025\] Attractive Metadata Attack: Inducing LLM Agents to Invoke Malicious Tools](attractive_metadata_attack_inducing_llm_agents_to_invoke_malicious_tools.md)
 - [\[NeurIPS 2025\] Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve](lessons_learned_a_multi-agent_framework_for_code_llms_to_learn_and_improve.md)
 - [\[ACL 2026\] Creating ConLangs to Probe the Metalinguistic Grammatical Knowledge of LLMs](../../ACL2026/llm_agent/creating_conlangs_to_probe_the_metalinguistic_grammatical_knowledge_of_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

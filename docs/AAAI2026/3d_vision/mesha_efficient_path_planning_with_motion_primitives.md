@@ -132,6 +132,8 @@ Both algorithms are optimal at $w=1$. Under weighting, MeshA* yields slightly lo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping](../../CVPR2026/3d_vision/magician_efficient_long-term_planning_with_imagined_gaussians_for_active_mapping.md)
@@ -139,5 +141,7 @@ Both algorithms are optimal at $w=1$. Under weighting, MeshA* yields slightly lo
 - [\[AAAI 2026\] EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios](epsegfz_efficient_point_cloud_semantic_segmentation_for_few-_and_zero-shot_scena.md)
 - [\[AAAI 2026\] RadarLLM: Empowering Large Language Models to Understand Human Motion from Millimeter-Wave Point Cloud Sequence](radarllm_empowering_large_language_models_to_understand_human_motion_from_millim.md)
 - [\[ICLR 2026\] CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives](../../ICLR2026/3d_vision/crisp_contact-guided_real2sim_from_monocular_video_with_planar_scene_primitives.md)
+
+</div>
 
 <!-- RELATED:END -->

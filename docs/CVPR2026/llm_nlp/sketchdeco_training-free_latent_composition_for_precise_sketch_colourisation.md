@@ -150,6 +150,8 @@ This method is entirely training-free. All components utilize pre-trained Stable
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](../../NeurIPS2025/llm_nlp/speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
@@ -157,5 +159,7 @@ This method is entirely training-free. All components utilize pre-trained Stable
 - [\[AAAI 2026\] Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs](../../AAAI2026/llm_nlp/guess_or_recall_training_cnns_to_classify_and_localize_memorization_in_llms.md)
 - [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](../../ICLR2026/llm_nlp/pt2-llm_post-training_ternarization_for_large_language_models.md)
 - [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

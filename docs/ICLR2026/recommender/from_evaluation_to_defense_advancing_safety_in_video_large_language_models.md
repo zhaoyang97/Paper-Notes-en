@@ -119,6 +119,8 @@ VideoSafety-R1 is a post-training framework comprising three innovative componen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](../../NeurIPS2025/recommender/inference-time_reward_hacking_in_large_language_models.md)
@@ -126,5 +128,7 @@ VideoSafety-R1 is a post-training framework comprising three innovative componen
 - [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](../../NeurIPS2025/recommender/r2ec_towards_large_recommender_models_with_reasoning.md)
 - [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](../../NeurIPS2025/recommender/measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
 - [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
+
+</div>
 
 <!-- RELATED:END -->

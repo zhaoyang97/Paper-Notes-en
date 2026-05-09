@@ -158,6 +158,8 @@ where $L_p$ is the denoised motion pseudo-label loss, $L_s$ is the shape consist
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization](../../NeurIPS2025/human_understanding/cycle-sync_robust_global_camera_pose_estimation_through_enhanced_cycle-consisten.md)
@@ -165,5 +167,7 @@ where $L_p$ is the denoised motion pseudo-label loss, $L_s$ is the shape consist
 - [\[CVPR 2026\] Face Time Traveller: Travel Through Ages Without Losing Identity](../../CVPR2026/human_understanding/face_time_traveller_travel_through_ages_without_losing_identity.md)
 - [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
 - [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](../../ICCV2025/human_understanding/bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

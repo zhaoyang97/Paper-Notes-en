@@ -115,6 +115,8 @@ The paper reveals an interesting insight: the failure mode of existing trackers 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](../../ICCV2025/video_understanding/general_compression_framework_for_efficient_transformer_object_tracking.md)
@@ -122,5 +124,7 @@ The paper reveals an interesting insight: the failure mode of existing trackers 
 - [\[CVPR 2026\] Event6D: Event-based Novel Object 6D Pose Tracking](../../CVPR2026/video_understanding/event6d_event-based_novel_object_6d_pose_tracking.md)
 - [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](../../CVPR2026/video_understanding/uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
 - [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](../../CVPR2026/video_understanding/storm_referring_multi_object_tracking.md)
+
+</div>
 
 <!-- RELATED:END -->

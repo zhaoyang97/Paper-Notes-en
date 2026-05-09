@@ -102,6 +102,8 @@ The triple depth supervision paradigm of PDF is transferable to any BEV percepti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
@@ -109,5 +111,7 @@ The triple depth supervision paradigm of PDF is transferable to any BEV percepti
 - [\[ICCV 2025\] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection](../../ICCV2025/3d_vision/g2sf_geometry-guided_score_fusion_for_multimodal_industrial_anomaly_detection.md)
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial_projection_alignment_mono3d.md)
 - [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
+
+</div>
 
 <!-- RELATED:END -->

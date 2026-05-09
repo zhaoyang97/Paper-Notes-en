@@ -125,6 +125,8 @@ LampQ is a post-training quantization (PTQ) method and requires no retraining. A
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
@@ -132,5 +134,7 @@ LampQ is a post-training quantization (PTQ) method and requires no retraining. A
 - [\[NeurIPS 2025\] Generalizable Insights for Graph Transformers in Theory and Practice](../../NeurIPS2025/object_detection/generalizable_insights_for_graph_transformers_in_theory_and_practice.md)
 - [\[ICCV 2025\] Adversarial Attention Perturbations for Large Object Detection Transformers](../../ICCV2025/object_detection/adversarial_attention_perturbations_for_large_object_detection_transformers.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](../../CVPR2026/object_detection/mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
+
+</div>
 
 <!-- RELATED:END -->

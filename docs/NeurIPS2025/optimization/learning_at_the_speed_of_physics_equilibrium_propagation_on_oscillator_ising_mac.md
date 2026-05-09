@@ -149,6 +149,8 @@ The paradigm of "physical dynamics as ML optimization" is broadly applicable to 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
@@ -156,5 +158,7 @@ The paradigm of "physical dynamics as ML optimization" is broadly applicable to 
 - [\[NeurIPS 2025\] Wasserstein Transfer Learning](wasserstein_transfer_learning.md)
 - [\[NeurIPS 2025\] Learning from Interval Targets](learning_from_interval_targets.md)
 - [\[NeurIPS 2025\] Learning Parameterized Skills from Demonstrations](learning_parameterized_skills_from_demonstrations.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -121,6 +121,8 @@ The findings carry broader implications: for SLAM researchers, online calibratio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields](geoprog3d_compositional_visual_reasoning_for_city-scale_3d_language_fields.md)
@@ -128,5 +130,7 @@ The findings carry broader implications: for SLAM researchers, online calibratio
 - [\[ICCV 2025\] Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps](outdoor_monocular_slam_with_global_scale-consistent_3d_gaussian_pointmaps.md)
 - [\[ICCV 2025\] Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation](benchmarking_and_learning_multi-dimensional_quality_evaluator_for_text-to-3d_gen.md)
 - [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](egom2p_egocentric_multimodal_multitask_pretraining.md)
+
+</div>
 
 <!-- RELATED:END -->

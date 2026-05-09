@@ -130,6 +130,8 @@ Relative change in Brier score (higher = worse calibration):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)
@@ -137,5 +139,7 @@ Relative change in Brier score (higher = worse calibration):
 - [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](../../NeurIPS2025/medical_imaging/unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
 - [\[ACL 2026\] Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction](efficient_and_effective_internal_memory_retrieval_for_llm-based_healthcare_predi.md)
 - [\[AAAI 2026\] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology](../../AAAI2026/medical_imaging/measuring_stability_beyond_accuracy_in_small_open-source_medical_large_language_.md)
+
+</div>
 
 <!-- RELATED:END -->

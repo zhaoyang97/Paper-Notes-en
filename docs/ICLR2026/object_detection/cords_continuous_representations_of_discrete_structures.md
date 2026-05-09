@@ -117,6 +117,8 @@ The input is a variable-size set $S = \{(\mathbf{r}_i, \mathbf{x}_i)\}_{i=1}^N$ 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Evaluating Memory Capability in Continuous Lifelog Scenario](../../ACL2026/object_detection/evaluating_memory_capability_in_continuous_lifelog_scenario.md)
@@ -124,5 +126,7 @@ The input is a variable-size set $S = \{(\mathbf{r}_i, \mathbf{x}_i)\}_{i=1}^N$ 
 - [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
 - [\[ICLR 2026\] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection](cgsa_class-guided_slot-aware_adaptation_for_source-free_object_detection.md)
 - [\[ICLR 2026\] ForestPersons: A Large-Scale Dataset for Under-Canopy Missing Person Detection](forestpersons_a_large-scale_dataset_for_under-canopy_missing_person_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

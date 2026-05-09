@@ -139,6 +139,8 @@ $\text{Bias} = \text{Bias}_{\text{mesa}} + \text{Bias}_{\text{spec}}$, where the
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](../../AAAI2026/others/intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
@@ -146,5 +148,7 @@ $\text{Bias} = \text{Bias}_{\text{mesa}} + \text{Bias}_{\text{spec}}$, where the
 - [\[AAAI 2026\] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation](../../AAAI2026/others/how_wide_and_how_deep_mitigating_over-squashing_of_gnns_via_channel_capacity_con.md)
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](../../AAAI2026/others/how_to_marginalize_in_causal_structure_learning.md)
 - [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](speculative_actions_faster_ai_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

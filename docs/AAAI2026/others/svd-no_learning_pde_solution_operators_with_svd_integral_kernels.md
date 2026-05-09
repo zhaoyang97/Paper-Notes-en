@@ -138,6 +138,8 @@ All improvements are statistically significant at the 0.05 level via paired t-te
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Parametric SVD of Koopman Operator for Stochastic Dynamical Systems](../../NeurIPS2025/others/efficient_parametric_svd_of_koopman_operator_for_stochastic_dynamical_systems.md)
@@ -145,5 +147,7 @@ All improvements are statistically significant at the 0.05 level via paired t-te
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 - [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](../../ICLR2026/others/latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
 - [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](learning_fair_representations_with_kolmogorov-arnold_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

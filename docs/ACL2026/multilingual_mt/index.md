@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **24** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
+
+🔥 **Top topics:** Translation ×6 · Speech & Audio ×2 · LLM ×2
+
 **[A Multilingual Dataset and Empirical Validation for the Mutual Reinforcement Effect in Information Extraction](a_multilingual_dataset_and_empirical_validation_for_the_mutual_reinforcement_eff.md)**
 
 :   This work constructs the first multilingual MRE Mix dataset (MMM, 21 subsets covering English, Chinese, and Japanese) and systematically validates through large-scale ablation experiments that the Mutual Reinforcement Effect (MRE) between word-level and text-level information extraction tasks exists universally across languages.

@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **54** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/others/index.md) · [🔬 ICLR2026 (76)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (126)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (150)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/others/index.md)
+
+🔥 **Top topics:** Anomaly Detection ×3 · Adversarial Robustness ×3 · Multimodal/VLM ×3 · Few-/Zero-Shot Learning ×2
+
 **[AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)**
 
 :   This paper proposes AdaSFormer, a serialized Transformer framework for indoor Monocular Semantic Scene Completion (MSSC), achieving state-of-the-art performance on NYUv2 and Occ-ScanNet through three core designs: Adaptive Serialization Attention (with learnable offsets), Center-Relative Position Encoding, and Convolutional Modulation Layer Normalization.

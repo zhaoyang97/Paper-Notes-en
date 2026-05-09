@@ -124,6 +124,8 @@ No model training is involved in this work. The merging algorithm uses cosine di
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
@@ -131,5 +133,7 @@ No model training is involved in this work. The merging algorithm uses cosine di
 - [\[ACL 2026\] Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis](analytical_ffn-to-moe_restructuring_via_activation_pattern_analysis.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](../../NeurIPS2025/model_compression/towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
 - [\[NeurIPS 2025\] DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method](../../NeurIPS2025/model_compression/deltaflow_an_efficient_multi-frame_scene_flow_estimation_method.md)
+
+</div>
 
 <!-- RELATED:END -->

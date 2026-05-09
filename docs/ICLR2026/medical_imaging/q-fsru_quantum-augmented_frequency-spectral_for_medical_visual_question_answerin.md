@@ -120,6 +120,8 @@ Q-FSRU consists of four core modules: (1) multimodal feature extraction, (2) FFT
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
@@ -127,5 +129,7 @@ Q-FSRU consists of four core modules: (1) multimodal feature extraction, (2) FFT
 - [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
 - [\[ICLR 2026\] SONIC: Spectral Oriented Neural Invariant Convolutions](sonic_spectral_oriented_neural_invariant_convolutions.md)
 - [\[ICLR 2026\] Augmenting Representations with Scientific Papers](augmenting_representations_with_scientific_papers.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -197,6 +197,8 @@ Data-dependent RoPE is the key to state tracking: Mamba-2 fails entirely (near r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](../../AAAI2026/video_understanding/state-space_hierarchical_compression_with_gated_attention_an.md)
@@ -204,5 +206,7 @@ Data-dependent RoPE is the key to state tracking: Mamba-2 fails entirely (near r
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](../../NeurIPS2025/video_understanding/structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[NeurIPS 2025\] PASS: Path-Selective State Space Model for Event-Based Recognition](../../NeurIPS2025/video_understanding/pass_path-selective_state_space_model_for_event-based_recognition.md)
 - [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](../../CVPR2026/video_understanding/hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
+
+</div>
 
 <!-- RELATED:END -->

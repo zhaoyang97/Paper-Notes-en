@@ -146,6 +146,8 @@ All ratings exceed 4.0 (15 evaluators), indicating that human participants broad
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
@@ -153,5 +155,7 @@ All ratings exceed 4.0 (15 evaluators), indicating that human participants broad
 - [\[NeurIPS 2025\] Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning](mind_the_gap_the_challenges_of_scale_in_pixel-based_deep_reinforcement_learning.md)
 - [\[NeurIPS 2025\] STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning](stair_addressing_stage_misalignment_through_temporal-aligned_preference_reinforc.md)
 - [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
+
+</div>
 
 <!-- RELATED:END -->

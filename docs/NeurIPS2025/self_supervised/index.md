@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **36** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (2)](../../ACL2026/self_supervised/index.md) · [📷 CVPR2026 (38)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (14)](../../AAAI2026/self_supervised/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/self_supervised/index.md)
+
+🔥 **Top topics:** Self-Supervised Learning ×6 · Continual Learning ×2 · LLM ×2 · Reinforcement Learning ×2
+
 **[A Joint Learning Approach to Hardware Caching and Prefetching](a_joint_learning_approach_to_hardware_caching_and_prefetching.md)**
 
 :   This paper proposes a joint training framework that unifies hardware cache replacement and prefetching policies. By constructing shared feature representations via a joint encoder and contrastive learning, the framework breaks the performance bottleneck imposed by independently trained policies.

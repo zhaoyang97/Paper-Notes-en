@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **61** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/human_understanding/index.md)
+
+🔥 **Top topics:** Human Pose ×9 · Face & Gaze ×5 · Multimodal/VLM ×5 · Avatars ×4 · Alignment/RLHF ×3
+
 **[A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)**
 
 :   A two-stage dual-modality framework for facial expression recognition is proposed: Stage I adapts a DINOv2 encoder on external datasets via padding-aware augmentation and a training-only MoE head; Stage II performs frame-level audio-visual expression classification using multi-scale facial crops, Wav2Vec 2.0 audio features, and a gated fusion module, achieving 0.5368 Macro-F1 in the ABAW 2026 competition.

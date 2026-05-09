@@ -171,6 +171,8 @@ $$\hat{f}(y_{neu}) = g(\mathcal{T}_\theta^{resp,s}(\boldsymbol{h}_{neu}) + \math
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
@@ -178,5 +180,7 @@ $$\hat{f}(y_{neu}) = g(\mathcal{T}_\theta^{resp,s}(\boldsymbol{h}_{neu}) + \math
 - [\[CVPR 2026\] Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation](../../CVPR2026/image_generation/adaptive_auxiliary_prompt_blending_for_target-faithful_diffusion_generation.md)
 - [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
 - [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
+
+</div>
 
 <!-- RELATED:END -->

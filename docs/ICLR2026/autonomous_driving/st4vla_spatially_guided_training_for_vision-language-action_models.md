@@ -171,6 +171,8 @@ On long-horizon tasks including table tidying, drawer organization, and sandwich
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](../../CVPR2026/autonomous_driving/vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
@@ -178,5 +180,7 @@ On long-horizon tasks including table tidying, drawer organization, and sandwich
 - [\[CVPR 2026\] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](../../CVPR2026/autonomous_driving/drive_my_way_preference_alignment_of_vision-language-action_model_for_personaliz.md)
 - [\[ICLR 2026\] SEAL: Segment Any Events with Language](segment_any_events_with_language.md)
 - [\[ICLR 2026\] SPACeR: Self-Play Anchoring with Centralized Reference Models](spacer_self-play_anchoring_with_centralized_reference_models.md)
+
+</div>
 
 <!-- RELATED:END -->

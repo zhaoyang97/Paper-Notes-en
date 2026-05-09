@@ -130,6 +130,8 @@ Traj-CoA comprises three core components: (1) a data preprocessing pipeline (XML
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
@@ -137,5 +139,7 @@ Traj-CoA comprises three core components: (1) a data preprocessing pipeline (XML
 - [\[NeurIPS 2025\] ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling](shapecraft_llm_agents_for_structured_textured_and_interactive_3d_modeling.md)
 - [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](../../CVPR2026/llm_agent/hats_hardnessaware_trajectory_synthesis_gui_agent.md)
 - [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](../../AAAI2026/llm_agent/structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
+
+</div>
 
 <!-- RELATED:END -->

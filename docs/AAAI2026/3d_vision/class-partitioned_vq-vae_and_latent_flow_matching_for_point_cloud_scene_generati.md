@@ -151,6 +151,8 @@ The class-partitioned codebook concept is transferable to any scenario requiring
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
@@ -158,5 +160,7 @@ The class-partitioned codebook concept is transferable to any scenario requiring
 - [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](../../CVPR2026/3d_vision/geodesicnvs_flow_matching_novel_view_synthesis.md)
 - [\[NeurIPS 2025\] Rectified Point Flow: Generic Point Cloud Pose Estimation](../../NeurIPS2025/3d_vision/rectified_point_flow_generic_point_cloud_pose_estimation.md)
 - [\[AAAI 2026\] ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation](assist-3d_adapted_scene_synthesis_for_class-agnostic_3d_instance_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

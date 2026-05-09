@@ -131,6 +131,8 @@ Any one of point cloud / multi-view images / text is accepted as input → encod
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning](../../NeurIPS2025/others/orbitzoo_real_orbital_systems_challenges_for_reinforcement_learning.md)
@@ -138,5 +140,7 @@ Any one of point cloud / multi-view images / text is accepted as input → encod
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
 - [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
 - [\[CVPR 2026\] Rooftop Wind Field Reconstruction Using Sparse Sensors: From Deterministic to Generative Learning Methods](../../CVPR2026/others/rooftop_wind_field_reconstruction_using_sparse_sen.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **4** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/llm_agent/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/llm_agent/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_agent/index.md)
+
+🔥 **Top topics:** Agents ×2
+
 **[Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions](embodied_image_captioning_self-supervised_learning_agents_for_spatially_coherent.md)**
 
 :   A three-stage self-supervised framework is proposed that significantly improves cross-view description consistency and accuracy for the same object in indoor environments, achieved through agent-driven multi-view observation collection, LLM consensus-based pseudo-label generation, and contrastive fine-tuning of the captioner.

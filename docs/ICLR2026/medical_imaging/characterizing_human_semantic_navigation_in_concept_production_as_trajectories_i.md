@@ -121,6 +121,8 @@ Generalized Linear Mixed Models (GLMMs) are employed with participants and conce
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation](exo-plore_exploring_exoskeleton_control_space_through_human-aligned_simulation.md)
@@ -128,5 +130,7 @@ Generalized Linear Mixed Models (GLMMs) are employed with participants and conce
 - [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
 - [\[CVPR 2026\] Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos](../../CVPR2026/medical_imaging/uncertainty-aware_concept_and_motion_segmentation_for_semi-supervised_angiograph.md)
 - [\[NeurIPS 2025\] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](../../NeurIPS2025/medical_imaging/a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)
+
+</div>
 
 <!-- RELATED:END -->

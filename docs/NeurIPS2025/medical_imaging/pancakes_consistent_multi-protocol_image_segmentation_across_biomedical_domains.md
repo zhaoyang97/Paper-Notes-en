@@ -149,6 +149,8 @@ Pancakes outperforms all baselines on all 7 held-out datasets, typically by 20+ 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orochi: Versatile Biomedical Image Processor](orochi_versatile_biomedical_image_processor.md)
@@ -156,5 +158,7 @@ Pancakes outperforms all baselines on all 7 held-out datasets, typically by 20+ 
 - [\[NeurIPS 2025\] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing](unpaired_image-to-image_translation_for_segmentation_and_signal_unmixing.md)
 - [\[CVPR 2026\] BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation](../../CVPR2026/medical_imaging/biclip_bidirectional_and_consistent_languageimage.md)
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](../../ICCV2025/medical_imaging/multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
+
+</div>
 
 <!-- RELATED:END -->

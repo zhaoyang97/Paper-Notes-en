@@ -106,6 +106,8 @@ No training is involved. LLMs operate via zero-shot inference, and the ILP is so
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Training-Free Bayesianization for Low-Rank Adapters of Large Language Models](training-free_bayesianization_for_low-rank_adapters_of_large_language_models.md)
@@ -113,5 +115,7 @@ No training is involved. LLMs operate via zero-shot inference, and the ILP is so
 - [\[NeurIPS 2025\] Large Language Bayes](large_language_bayes.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 - [\[NeurIPS 2025\] DynaAct: Large Language Model Reasoning with Dynamic Action Spaces](dynaact_large_language_model_reasoning_with_dynamic_action_spaces.md)
+
+</div>
 
 <!-- RELATED:END -->

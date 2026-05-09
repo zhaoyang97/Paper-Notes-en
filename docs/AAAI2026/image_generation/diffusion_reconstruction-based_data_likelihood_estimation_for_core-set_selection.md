@@ -174,6 +174,8 @@ Using too few noise samples (#ε = 5) leads to significant performance degradati
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models](realistic_face_reconstruction_from_facial_embeddings_via_diffusion_models.md)
@@ -181,5 +183,7 @@ Using too few noise samples (#ε = 5) leads to significant performance degradati
 - [\[ICLR 2026\] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection](../../ICLR2026/image_generation/sample-efficient_evidence_estimation_of_score_based_priors_for_model_selection.md)
 - [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](../../ICLR2026/image_generation/learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
 - [\[AAAI 2026\] Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data](difficulty_controlled_diffusion_model_for_synthesizing_effec.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -169,6 +169,8 @@ Compared to the best prior desmoking method SelfSVD, the proposed method achieve
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
@@ -176,5 +178,7 @@ Compared to the best prior desmoking method SelfSVD, the proposed method achieve
 - [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
 - [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](../../CVPR2026/medical_imaging/lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
 - [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](../../CVPR2026/medical_imaging/event_level_detection_of_surgical_instrument_handovers_in_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

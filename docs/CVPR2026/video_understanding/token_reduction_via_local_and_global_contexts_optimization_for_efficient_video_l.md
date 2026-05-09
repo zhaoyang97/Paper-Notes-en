@@ -157,6 +157,8 @@ Aggregation strategy comparison: No Merging (56.4) vs. Cosine Merging (52.4) vs.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
@@ -164,5 +166,7 @@ Aggregation strategy comparison: No Merging (56.4) vs. Cosine Merging (52.4) vs.
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
 - [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](../../NeurIPS2025/video_understanding/fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
 - [\[NeurIPS 2025\] Less is More: Local Intrinsic Dimensions of Contextual Language Models](../../NeurIPS2025/video_understanding/less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

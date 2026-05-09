@@ -143,6 +143,8 @@ To be supplemented after thorough reading.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
@@ -150,5 +152,7 @@ To be supplemented after thorough reading.
 - [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](../../NeurIPS2025/llm_agent/benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
 - [\[NeurIPS 2025\] Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection](../../NeurIPS2025/llm_agent/automated_composition_of_agents_a_knapsack_approach_for_agentic_component_select.md)
 - [\[AAAI 2026\] Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets](../../AAAI2026/llm_agent/loss-guided_auxiliary_agents_for_overcoming_mode_collapse_in_gflownets.md)
+
+</div>
 
 <!-- RELATED:END -->

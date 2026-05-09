@@ -145,6 +145,8 @@ Demographic sensitivity (average accuracy, diagnosis/monitoring categories, all 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset](../../ACL2026/medical_imaging/omnicompliance-100k_a_multi-domain_rule-grounded_real-world_safety_compliance_da.md)
@@ -152,5 +154,7 @@ Demographic sensitivity (average accuracy, diagnosis/monitoring categories, all 
 - [\[AAAI 2026\] Experience with Single Domain Generalization in Real World Medical Imaging Deployments](../../AAAI2026/medical_imaging/experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo.md)
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](../../NeurIPS2025/medical_imaging/mira_medical_time_series_foundation_model_for_real-world_health_data.md)
 - [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
+
+</div>
 
 <!-- RELATED:END -->

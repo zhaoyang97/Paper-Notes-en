@@ -167,6 +167,8 @@ Three perturbation strategies are compared:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures](sad_neural_networks_divergent_gradient_flows_and_asymptotic_optimality_via_o-min.md)
@@ -174,5 +176,7 @@ Three perturbation strategies are compared:
 - [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
 - [\[NeurIPS 2025\] Sharpness-Aware Minimization with Z-Score Gradient Filtering](sharpness-aware_minimization_with_z-score_gradient_filtering.md)
+
+</div>
 
 <!-- RELATED:END -->

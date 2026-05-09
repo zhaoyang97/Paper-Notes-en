@@ -126,6 +126,8 @@ The front end consists of a chat interface and a GPT-4 reasoning engine; the bac
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](autoglm_autonomous_foundation_agents_for_guis.md)
@@ -133,5 +135,7 @@ The front end consists of a chat interface and a GPT-4 reasoning engine; the bac
 - [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](../../ICLR2026/llm_agent/physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
 - [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](../../ACL2026/llm_agent/bayesian_social_deduction_with_graph-informed_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

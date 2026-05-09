@@ -145,6 +145,8 @@ ICL yields consistent improvements across all settings; paired t-tests confirm s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](speculative_actions_faster_ai_agents.md)
@@ -152,5 +154,7 @@ ICL yields consistent improvements across all settings; paired t-tests confirm s
 - [\[ICLR 2026\] Jackpot: Optimal Budgeted Rejection Sampling for Extreme Actor-Policy Mismatch RL](jackpot_optimal_budgeted_rejection_sampling_for_extreme_actor-policy_mismatch_re.md)
 - [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](../../NeurIPS2025/others/a_unified_framework_for_variable_selection_in_modelbased_clu.md)
 - [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](../../AAAI2026/others/finding_diverse_solutions_parameterized_by_cliquewidth.md)
+
+</div>
 
 <!-- RELATED:END -->

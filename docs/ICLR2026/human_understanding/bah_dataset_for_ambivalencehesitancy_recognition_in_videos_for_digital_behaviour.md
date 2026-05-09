@@ -141,6 +141,8 @@ Given the severe class imbalance, three metrics are employed: positive-class F1 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Team LEYA in 10th ABAW Competition: Multimodal Ambivalence/Hesitancy Recognition Approach](../../CVPR2026/human_understanding/team_leya_in_10th_abaw_competition_multimodal_ambivalencehesitancy_recognition_a.md)
@@ -148,5 +150,7 @@ Given the severe class imbalance, three metrics are employed: positive-class F1 
 - [\[AAAI 2026\] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis](../../AAAI2026/human_understanding/facial-r1_aligning_reasoning_and_recognition_for_facial_emotion_analysis.md)
 - [\[CVPR 2026\] Editing Physiological Signals in Videos Using Latent Representations](../../CVPR2026/human_understanding/editing_physiological_signals_in_videos_using_latent_representations.md)
 - [\[ICLR 2026\] NeuroGaze-Distill: Brain-informed Distillation and Depression-Inspired Geometric Priors for Robust Facial Emotion Recognition](neurogaze-distill_brain-informed_distillation_and_depression-inspired_geometric_.md)
+
+</div>
 
 <!-- RELATED:END -->

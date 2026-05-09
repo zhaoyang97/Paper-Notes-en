@@ -131,6 +131,8 @@ SCNP is integrated into 8 loss functions on the FIVES dataset: **$\beta_{0e}$ de
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)
@@ -138,5 +140,7 @@ SCNP is integrated into 8 loss functions on the FIVES dataset: **$\beta_{0e}$ de
 - [\[ICCV 2025\] TopoTTA: Topology-Enhanced Test-Time Adaptation for Tubular Structure Segmentation](../../ICCV2025/segmentation/topotta_topology-enhanced_test-time_adaptation_for_tubular_structure_segmentatio.md)
 - [\[NeurIPS 2025\] SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning](../../NeurIPS2025/segmentation/srsr_enhancing_semantic_accuracy_in_real-world_image_super-resolution_with_spati.md)
 - [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](../../ICCV2025/segmentation/inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
+
+</div>
 
 <!-- RELATED:END -->

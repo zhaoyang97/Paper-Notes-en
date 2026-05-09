@@ -124,6 +124,8 @@ PIE-Bench (700 editing tasks) on the FLUX model:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](../../ICCV2025/image_generation/flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
@@ -131,5 +133,7 @@ PIE-Bench (700 editing tasks) on the FLUX model:
 - [\[NeurIPS 2025\] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing](../../NeurIPS2025/image_generation/splitflow_flow_decomposition_for_inversion-free_text-to-image_editing.md)
 - [\[NeurIPS 2025\] Balanced Conic Rectified Flow](../../NeurIPS2025/image_generation/balanced_conic_rectified_flow.md)
 - [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](../../NeurIPS2025/image_generation/rectified-cfg_for_flow_based_models.md)
+
+</div>
 
 <!-- RELATED:END -->

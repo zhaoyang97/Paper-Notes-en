@@ -128,6 +128,8 @@ The suffix generator uses Llama-3.1-8B; the auxiliary LLM uses the same weights 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] LumiCtrl: Learning Illuminant Prompts for Lighting Control in Personalized Text-to-Image Models](../../CVPR2026/image_generation/lumictrl_learning_illuminant_prompts_for_lighting_control_in_personalized_text-t.md)
@@ -135,5 +137,7 @@ The suffix generator uses Llama-3.1-8B; the auxiliary LLM uses the same weights 
 - [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](../../CVPR2026/image_generation/autodebias_automated_framework_for_debiasing_text-to-image_models.md)
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
 - [\[ICLR 2026\] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](../../ICLR2026/image_generation/exposing_hidden_biases_in_text-to-image_models_via_automated_prompt_search.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -130,6 +130,8 @@ CPF consists of a visual backbone and two core modules: (1) **Text-Enhanced Obje
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](batclip_bimodal_online_test-time_adaptation_for_clip.md)
@@ -137,5 +139,7 @@ CPF consists of a visual backbone and two core modules: (1) **Text-Enhanced Obje
 - [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
 - [\[ICCV 2025\] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild](intersyn_interleaved_learning_for_dynamic_motion_synthesis_in_the_wild.md)
 - [\[AAAI 2026\] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](../../AAAI2026/llm_evaluation/granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri.md)
+
+</div>
 
 <!-- RELATED:END -->

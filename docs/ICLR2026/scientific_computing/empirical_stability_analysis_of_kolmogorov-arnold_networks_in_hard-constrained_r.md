@@ -143,6 +143,8 @@ Overall assessment: A systematic negative-result paper whose empirical claims ab
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](astral_training_physics-informed_neural_networks_with_error_majorants.md)
@@ -150,5 +152,7 @@ Overall assessment: A systematic negative-result paper whose empirical claims ab
 - [\[NeurIPS 2025\] Neuro-Spectral Architectures for Causal Physics-Informed Networks](../../NeurIPS2025/scientific_computing/neuro-spectral_architectures_for_causal_physics-informed_networks.md)
 - [\[NeurIPS 2025\] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data](../../NeurIPS2025/scientific_computing/multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze.md)
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/scientific_computing/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
+
+</div>
 
 <!-- RELATED:END -->

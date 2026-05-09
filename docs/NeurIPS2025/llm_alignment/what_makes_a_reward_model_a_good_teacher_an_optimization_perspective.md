@@ -127,6 +127,8 @@ $$\phi_{\mathrm{RLHF}}(\theta) = \mathbb{E}_x\left[\mathbb{E}_{y \sim \pi_\theta
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
@@ -134,5 +136,7 @@ $$\phi_{\mathrm{RLHF}}(\theta) = \mathbb{E}_x\left[\mathbb{E}_{y \sim \pi_\theta
 - [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
 - [\[NeurIPS 2025\] Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons](towards_understanding_safety_alignment_a_mechanistic_perspective_from_safety_neu.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **4** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/llm_efficiency/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+
 **[GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)**
 
 :   The first PhD-level code generation benchmark for 3D geometric computer vision, GeoCodeBench, comprising 100 function completion tasks curated from top-venue 2025 papers and codebases, with automated diverse unit tests. The strongest model GPT-5 achieves only 36.6% pass rate, revealing a significant gap in LLM scientific-level 3D code implementation.

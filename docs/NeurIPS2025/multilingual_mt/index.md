@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **13** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/multilingual_mt/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
+
+🔥 **Top topics:** LLM ×4 · Translation ×2
+
 **[Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation](adaptive_originality_filtering_rejection_based_prompting_and_riddlescore_for_cul.md)**
 
 :   This paper proposes Adaptive Originality Filtering (AOF)—a semantic rejection-sampling prompting strategy that filters repetitive or templated outputs via MiniLM embedding cosine similarity, compelling LLMs to generate more novel, diverse, and culturally grounded multilingual riddles. It also introduces the RiddleScore composite evaluation metric (Novelty + Diversity + Fluency + Alignment), achieving a human correlation of $\rho=0.83$.

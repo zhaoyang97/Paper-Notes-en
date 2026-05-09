@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **92** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/video_understanding/index.md) · [🔬 ICLR2026 (24)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (58)](../../ICCV2025/video_understanding/index.md)
+
+🔥 **Top topics:** Object Tracking ×22 · Agents ×9 · Compression ×8 · Reasoning ×7 · Face & Gaze ×4
+
 **[A4VL: A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a4vl_multiagent_long_video_reasoning.md)**
 
 :   This paper proposes A4VL, a training-free multi-agent perception-action alliance framework in which multiple heterogeneous VLM agents perform iterative perception exploration (event-based segmentation + CLIP-guided clue alignment for keyframe localization) and action exploration (independent reasoning → cross-scoring → consensus/pruning). A4VL comprehensively outperforms 18 VLMs and 11 long-video-specialized methods across 5 VideoQA benchmarks, with significantly lower inference latency (74s vs. GPT-4o's 127s on MLVU).

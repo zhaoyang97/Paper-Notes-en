@@ -163,6 +163,8 @@ Cross-domain transferability (OOD generalization):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
@@ -170,5 +172,7 @@ Cross-domain transferability (OOD generalization):
 - [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/robotics/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
 - [\[AAAI 2026\] Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance](../../AAAI2026/robotics/towards_reinforcement_learning_from_neural_feedback_mapping_.md)
 - [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](../../ICLR2026/robotics/tracing_and_reversing_edits_in_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

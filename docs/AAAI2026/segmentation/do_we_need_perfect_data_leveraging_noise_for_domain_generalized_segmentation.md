@@ -166,6 +166,8 @@ Sigmoid decay vs. linear decay vs. no decay: Sigmoid 38.04% > no decay 36.82% > 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
@@ -173,5 +175,7 @@ Sigmoid decay vs. linear decay vs. no decay: Sigmoid 38.04% > no decay 36.82% > 
 - [\[CVPR 2026\] UnrealPose: Leveraging Game Engine Kinematics for Large-Scale Synthetic Human Pose Data](../../CVPR2026/segmentation/unrealpose_leveraging_game_engine_kinematics_for_large-scale_synthetic_human_pos.md)
 - [\[CVPR 2026\] Low-Data Supervised Adaptation Outperforms Prompting for Cloud Segmentation Under Domain Shift](../../CVPR2026/segmentation/low_data_supervised_adaptation_outperforms_prompting_for_cloud_segmentation.md)
 - [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](../../CVPR2026/segmentation/phrase-instance_alignment_for_generalized_referring_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

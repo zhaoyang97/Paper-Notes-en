@@ -156,6 +156,8 @@ Lower MDAD is better: an MDAD of 2 means the micro-benchmark can reliably distin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
@@ -163,5 +165,7 @@ Lower MDAD is better: an MDAD of 2 means the micro-benchmark can reliably distin
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Model Task Adaptation](prompt_and_parameter_co-optimization_for_large_language_model_task_adaptation.md)
 - [\[ACL 2026\] Language Model as Planner and Formalizer under Constraints](../../ACL2026/llm_evaluation/language_model_as_planner_and_formalizer_under_constraints.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/llm_evaluation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+
+</div>
 
 <!-- RELATED:END -->

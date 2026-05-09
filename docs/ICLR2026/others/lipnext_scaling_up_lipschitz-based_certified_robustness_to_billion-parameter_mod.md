@@ -164,6 +164,8 @@ A depth of 32 layers is optimal under a fixed parameter budget. Both width and d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](lipschitz_bandits_with_stochastic_delayed_feedback.md)
@@ -171,5 +173,7 @@ A depth of 32 layers is optimal under a fixed parameter budget. Both width and d
 - [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](../../NeurIPS2025/others/the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
 - [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](the_price_of_robustness_stable_classifiers_need_overparameterization.md)
 - [\[AAAI 2026\] Certified but Fooled! Breaking Certified Defences with Ghost Certificates](../../AAAI2026/others/certified_but_fooled_breaking_certified_defences_with_ghost_certificates.md)
+
+</div>
 
 <!-- RELATED:END -->

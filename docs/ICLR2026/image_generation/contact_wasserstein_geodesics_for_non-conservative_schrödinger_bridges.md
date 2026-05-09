@@ -113,6 +113,8 @@ The three terms respectively enforce terminal marginal matching, intermediate ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](branched_schrödinger_bridge_matching.md)
@@ -120,5 +122,7 @@ The three terms respectively enforce terminal marginal matching, intermediate ma
 - [\[ICLR 2026\] Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers](contact-guided_3d_genome_structure_generation_of_e_coli_via_diffusion_transforme.md)
 - [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/image_generation/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
 - [\[ICLR 2026\] Does FLUX Already Know How to Perform Physically Plausible Image Composition?](does_flux_already_know_how_to_perform_physically_plausible_image_composition.md)
+
+</div>
 
 <!-- RELATED:END -->

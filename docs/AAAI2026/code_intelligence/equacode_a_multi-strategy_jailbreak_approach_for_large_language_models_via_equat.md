@@ -129,6 +129,8 @@ No training required—purely black-box attack with a single query (no iterative
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models](span_benchmarking_and_improving_cross-calendar_temporal_reasoning_of_large_langu.md)
@@ -136,5 +138,7 @@ No training required—purely black-box attack with a single query (no iterative
 - [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](../../ICLR2026/code_intelligence/training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](../../NeurIPS2025/code_intelligence/a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
 - [\[AAAI 2026\] Towards Better Code Understanding in Decoder-Only Models with Contrastive Learning](towards_better_code_understanding_in_decoder-only_models_with_contrastive_learni.md)
+
+</div>
 
 <!-- RELATED:END -->

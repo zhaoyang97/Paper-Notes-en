@@ -226,6 +226,8 @@ Even the baseline version substantially outperforms CAT baselines, confirming th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](personalized_federated_learning_with_bidirectional_communication_compression_via.md)
@@ -233,5 +235,7 @@ Even the baseline version substantially outperforms CAT baselines, confirming th
 - [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](../../ICCV2025/optimization/class-wise_federated_averaging_for_efficient_personalization.md)
 - [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
 - [\[NeurIPS 2025\] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees](../../NeurIPS2025/optimization/verbalized_algorithms.md)
+
+</div>
 
 <!-- RELATED:END -->

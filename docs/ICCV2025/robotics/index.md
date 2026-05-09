@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **26** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (49)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/robotics/index.md)
+
+🔥 **Top topics:** Robotics ×8 · Multimodal/VLM ×3 · Navigation ×3 · Alignment/RLHF ×2 · Self-Supervised Learning ×2
+
 **[Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)**
 
 :   This paper proposes AdaRPG, a framework that leverages foundation vision-language models for part-level segmentation and affordance reasoning on articulated objects, and employs GPT-4o to generate high-level control code for adaptively scheduling atomic manipulation skills, achieving cross-category zero-shot generalization in both simulation and real-world environments.

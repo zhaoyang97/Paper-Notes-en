@@ -115,6 +115,8 @@ Canary injection: embed random non-semantic tokens into retrieved chunks → Dua
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] RAGFort: Dual-Path Defense Against Proprietary Knowledge Base Extraction in Retrieval-Augmented Generation](../../AAAI2026/information_retrieval/ragfort_dual-path_defense_against_proprietary_knowledge_base_extraction_in_retri.md)
@@ -122,5 +124,7 @@ Canary injection: embed random non-semantic tokens into retrieved chunks → Dua
 - [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
 - [\[AAAI 2026\] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](../../AAAI2026/information_retrieval/cog-rag_cognitive-inspired_dual-hypergraph_with_theme_alignment_retrieval-augmen.md)
 - [\[ACL 2026\] How Retrieved Context Shapes Internal Representations in RAG](how_retrieved_context_shapes_internal_representations_in_rag.md)
+
+</div>
 
 <!-- RELATED:END -->

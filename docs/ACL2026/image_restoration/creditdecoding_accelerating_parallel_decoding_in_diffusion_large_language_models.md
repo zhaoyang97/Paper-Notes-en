@@ -127,6 +127,8 @@ CreditDecoding is a fully training-free inference-time method that only modifies
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models](lost_in_diffusion_uncovering_hallucination_patterns_and_failure_modes_in_diffusi.md)
@@ -134,5 +136,7 @@ CreditDecoding is a fully training-free inference-time method that only modifies
 - [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](../../AAAI2026/image_restoration/large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](../../ICLR2026/image_restoration/wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 - [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](../../AAAI2026/image_restoration/hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
+
+</div>
 
 <!-- RELATED:END -->

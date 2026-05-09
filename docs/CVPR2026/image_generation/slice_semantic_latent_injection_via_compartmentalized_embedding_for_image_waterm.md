@@ -123,6 +123,8 @@ SLICE is entirely training-free. Image generation uses Stable Diffusion V2; sema
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Gaussian Shannon: High-Precision Diffusion Model Watermarking Based on Communication](gaussian_shannon_high-precision_diffusion_model_watermarking_based_on_communicat.md)
@@ -130,5 +132,7 @@ SLICE is entirely training-free. Image generation uses Stable Diffusion V2; sema
 - [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusionbased_image_man.md)
 - [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
 - [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](self-corrected_image_generation_with_explainable_latent_rewards.md)
+
+</div>
 
 <!-- RELATED:END -->

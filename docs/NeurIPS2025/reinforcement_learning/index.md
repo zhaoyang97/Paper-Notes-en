@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **169** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/reinforcement_learning/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (142)](../../ICLR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (71)](../../AAAI2026/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+
+🔥 **Top topics:** Reinforcement Learning ×62 · Agents ×16 · Adversarial Robustness ×11 · Reasoning ×11 · LLM ×4
+
 **[A Differential and Pointwise Control Approach to Reinforcement Learning](a_differential_and_pointwise_control_approach_to_reinforceme.md)**
 
 :   This paper reformulates the RL problem via the differential dual form of continuous-time control, embeds physical priors through Hamiltonian structure, and proposes the dfPO algorithm for pointwise policy optimization. On scientific computing tasks (surface modeling, grid-based control, molecular dynamics), dfPO surpasses 12 RL baselines with fewer samples.

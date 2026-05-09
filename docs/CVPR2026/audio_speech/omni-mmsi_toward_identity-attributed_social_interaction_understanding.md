@@ -178,6 +178,8 @@ Raw references and tool-extracted cues are complementary; their combination yiel
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval](omniret_efficient_and_high-fidelity_omni_modality_retrieval.md)
@@ -185,5 +187,7 @@ Raw references and tool-extracted cues are complementary; their combination yiel
 - [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](../../ACL2026/audio_speech/computational_narrative_understanding_for_expressive_text-to-speech.md)
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](../../ACL2026/audio_speech/musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
 - [\[AAAI 2026\] Towards Authentic Movie Dubbing with Retrieve-Augmented Director-Actor Interaction Learning](../../AAAI2026/audio_speech/towards_authentic_movie_dubbing_with_retrieve-augmented_director-actor_interacti.md)
+
+</div>
 
 <!-- RELATED:END -->

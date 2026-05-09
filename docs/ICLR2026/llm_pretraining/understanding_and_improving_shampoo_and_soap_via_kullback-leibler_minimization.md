@@ -135,6 +135,8 @@ Fair comparison using 150 random hyperparameter searches:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Reducing Class-Wise Performance Disparity via Margin Regularization](reducing_class-wise_performance_disparity_via_margin_regularization.md)
@@ -142,5 +144,7 @@ Fair comparison using 150 random hyperparameter searches:
 - [\[ICLR 2026\] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors](understanding_the_emergence_of_seemingly_useless_features_in_next-token_predicto.md)
 - [\[ACL 2026\] Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding](../../ACL2026/llm_pretraining/commonsense_knowledge_with_negation_a_resource_to_enhance_negation_understanding.md)
 - [\[NeurIPS 2025\] Understanding and Enhancing Mask-Based Pretraining towards Universal Representations](../../NeurIPS2025/llm_pretraining/understanding_and_enhancing_mask-based_pretraining_towards_universal_representat.md)
+
+</div>
 
 <!-- RELATED:END -->

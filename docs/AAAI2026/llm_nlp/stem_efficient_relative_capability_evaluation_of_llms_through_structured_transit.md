@@ -137,6 +137,8 @@ GPQA has the highest anomaly rate—nearly two-thirds of its samples fail the mo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts](soft_filtering_guiding_zero-shot_composed_image_retrieval_with_prescriptive_and_.md)
@@ -144,5 +146,7 @@ GPQA has the highest anomaly rate—nearly two-thirds of its samples fail the mo
 - [\[ICLR 2026\] KVComm: Enabling Efficient LLM Communication through Selective KV Sharing](../../ICLR2026/llm_nlp/kvcomm_enabling_efficient_llm_communication_through_selective_kv_sharing.md)
 - [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
 - [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
+
+</div>
 
 <!-- RELATED:END -->

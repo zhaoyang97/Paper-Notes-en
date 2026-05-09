@@ -159,6 +159,8 @@ The method consists of three stages:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
@@ -166,5 +168,7 @@ The method consists of three stages:
 - [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](imanip_skill-incremental_learning_for_robotic_manipulation.md)
 - [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
 - [\[ICCV 2025\] TesserAct: Learning 4D Embodied World Models](learning_4d_embodied_world_models.md)
+
+</div>
 
 <!-- RELATED:END -->

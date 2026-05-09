@@ -151,6 +151,8 @@ $$\mathcal{L} = \mathcal{L}_{\text{N2N}} + \lambda_1 \mathcal{L}_{\text{geo}} + 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising](../../ICCV2025/3d_vision/noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md)
@@ -158,5 +160,7 @@ $$\mathcal{L} = \mathcal{L}_{\text{N2N}} + \lambda_1 \mathcal{L}_{\text{geo}} + 
 - [\[NeurIPS 2025\] Rectified Point Flow: Generic Point Cloud Pose Estimation](rectified_point_flow_generic_point_cloud_pose_estimation.md)
 - [\[NeurIPS 2025\] Flux4D: Flow-based Unsupervised 4D Reconstruction](flux4d_flow-based_unsupervised_4d_reconstruction.md)
 - [\[NeurIPS 2025\] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion](pointmac_meta-learned_adaptation_for_robust_test-time_point_cloud_completion.md)
+
+</div>
 
 <!-- RELATED:END -->

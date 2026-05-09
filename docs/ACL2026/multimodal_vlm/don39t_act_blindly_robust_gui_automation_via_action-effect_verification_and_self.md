@@ -120,6 +120,8 @@ Stage 1: Standard cross-entropy loss, 2 epochs, learning rate $1 \times 10^{-5}$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](what39s_missing_in_screen-to-action_towards_a_ui-in-the-loop_paradigm_for_multim.md)
@@ -127,5 +129,7 @@ Stage 1: Standard cross-entropy loss, 2 epochs, learning rate $1 \times 10^{-5}$
 - [\[CVPR 2026\] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation](../../CVPR2026/multimodal_vlm/training_high-level_schedulers_with_execution-feedback_reinforcement_learning_fo.md)
 - [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/multimodal_vlm/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
 - [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](../../CVPR2026/multimodal_vlm/see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
+
+</div>
 
 <!-- RELATED:END -->

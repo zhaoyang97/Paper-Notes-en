@@ -134,6 +134,8 @@ Input 2D skeleton keypoints (extracted by RTM-Pose) → grouped by body part (bo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms](../../AAAI2026/llm_safety/lost_in_translation_a_comparative_study_on_the_cross-lingual_transfer_of_composi.md)
@@ -141,5 +143,7 @@ Input 2D skeleton keypoints (extracted by RTM-Pose) → grouped by body part (bo
 - [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](../../AAAI2026/llm_safety/stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
 - [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](self-refining_language_model_anonymizers_via_adversarial_distillation.md)
 - [\[NeurIPS 2025\] Demystifying Language Model Forgetting with Low-Rank Example Associations](demystifying_language_model_forgetting_with_low-rank_example_associations.md)
+
+</div>
 
 <!-- RELATED:END -->

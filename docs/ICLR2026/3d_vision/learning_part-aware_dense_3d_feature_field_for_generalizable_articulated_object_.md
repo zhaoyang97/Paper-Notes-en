@@ -150,6 +150,8 @@ Generalization analysis on the Open Bottle task (real-world, completion rate % o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation](ctrlshift_high-quality_geometry-aware_object_manipulation_in_visual_generation.md)
@@ -157,5 +159,7 @@ Generalization analysis on the Open Bottle task (real-world, completion rate % o
 - [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
 - [\[ICLR 2026\] Splat Feature Solver](splat_feature_solver.md)
 - [\[ICCV 2025\] CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud](../../ICCV2025/3d_vision/constraint-aware_feature_learning_for_parametric_point_cloud.md)
+
+</div>
 
 <!-- RELATED:END -->

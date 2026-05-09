@@ -183,6 +183,8 @@ Decoupled optimization substantially improves rendering quality (+4.66 dB PSNR) 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
@@ -190,5 +192,7 @@ Decoupled optimization substantially improves rendering quality (+4.66 dB PSNR) 
 - [\[CVPR 2026\] ReLaGS: Relational Language Gaussian Splatting](../../CVPR2026/3d_vision/relags_relational_language_gaussian_splatting.md)
 - [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](../../CVPR2026/3d_vision/onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
+
+</div>
 
 <!-- RELATED:END -->

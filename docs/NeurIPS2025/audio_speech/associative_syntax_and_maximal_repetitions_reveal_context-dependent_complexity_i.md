@@ -136,6 +136,8 @@ As a workshop paper, the contribution lies in the methodological cross-disciplin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)
@@ -143,5 +145,7 @@ As a workshop paper, the contribution lies in the methodological cross-disciplin
 - [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](levo_high-quality_song_generation_with_multi-processing_refined_supervision.md)
 - [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
 - [\[NeurIPS 2025\] Merlin L48 Spectrogram Dataset](merlin_l48_spectrogram_dataset.md)
+
+</div>
 
 <!-- RELATED:END -->

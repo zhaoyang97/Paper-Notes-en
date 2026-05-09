@@ -163,6 +163,8 @@ OracleAD F1 gains: PSM +19.95 pp, SMD +10.87 pp, SWaT +0.9 pp. VUS-PR gains: PSM
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)
@@ -170,5 +172,7 @@ OracleAD F1 gains: PSM +19.95 pp, SMD +10.87 pp, SWaT +0.9 pp. VUS-PR gains: PSM
 - [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/time_series/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
 - [\[NeurIPS 2025\] Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning](less_is_more_unlocking_specialization_of_time_series_foundation_models_via_struc.md)
 - [\[NeurIPS 2025\] Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data](exploring_neural_granger_causality_with_xlstms_unveiling_temporal_dependencies_i.md)
+
+</div>
 
 <!-- RELATED:END -->

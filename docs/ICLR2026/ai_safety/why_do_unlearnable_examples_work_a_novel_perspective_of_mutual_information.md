@@ -182,6 +182,8 @@ Removing the similarity term causes accuracy to surge from 9.95% to 51.65%, conf
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective](adaptive_methods_are_preferable_in_high_privacy_settings_an_sde_perspective.md)
@@ -189,5 +191,7 @@ Removing the similarity term causes accuracy to surge from 9.95% to 51.65%, conf
 - [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
 - [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](../../AAAI2026/ai_safety/infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
 - [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](../../NeurIPS2025/ai_safety/preserving_task-relevant_information_under_linear_concept_removal.md)
+
+</div>
 
 <!-- RELATED:END -->

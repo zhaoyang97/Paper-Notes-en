@@ -134,6 +134,8 @@ Given a 3D scene (point clouds, fixture bounding boxes), a task text prompt, and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
@@ -141,5 +143,7 @@ Given a 3D scene (point clouds, fixture bounding boxes), a task text prompt, and
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](../../NeurIPS2025/image_generation/value_gradient_guidance_for_flow_matching_alignment.md)
 - [\[CVPR 2026\] HazeMatching: Dehazing Light Microscopy Images with Guided Conditional Flow Matching](hazematching_dehazing_light_microscopy_images_with_guided_conditional_flow_match.md)
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

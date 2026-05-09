@@ -118,6 +118,8 @@ $\mathcal{L} = \mathcal{L}_{photo} + \lambda_{reg}\mathcal{L}_{continuity} + \la
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
@@ -125,5 +127,7 @@ $\mathcal{L} = \mathcal{L}_{photo} + \lambda_{reg}\mathcal{L}_{continuity} + \la
 - [\[NeurIPS 2025\] DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection](dithub_a_modular_framework_for_incremental_openvocabulary_ob.md)
 - [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
 - [\[NeurIPS 2025\] Generalizable Insights for Graph Transformers in Theory and Practice](generalizable_insights_for_graph_transformers_in_theory_and_practice.md)
+
+</div>
 
 <!-- RELATED:END -->

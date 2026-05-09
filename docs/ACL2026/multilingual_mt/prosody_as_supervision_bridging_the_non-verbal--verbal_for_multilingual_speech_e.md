@@ -124,6 +124,8 @@ The overall objective is: $\mathcal{L} = L_S(\mathcal{B}_S) + \lambda_{\text{OPT
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Training for Cross-lingual Speech Language Models](efficient_training_for_cross-lingual_speech_language_models.md)
@@ -131,5 +133,7 @@ The overall objective is: $\mathcal{L} = L_S(\mathcal{B}_S) + \lambda_{\text{OPT
 - [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](../../AAAI2026/multilingual_mt/bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
 - [\[AAAI 2026\] X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework](../../AAAI2026/multilingual_mt/x-mutest_a_multilingual_benchmark_for_explainable_hate_speech_detection_and_a_no.md)
 - [\[AAAI 2026\] NADIR: Differential Attention Flow for Non-Autoregressive Transliteration in Indic Languages](../../AAAI2026/multilingual_mt/nadir_differential_attention_flow_for_non-autoregressive_transliteration_in_indi.md)
+
+</div>
 
 <!-- RELATED:END -->

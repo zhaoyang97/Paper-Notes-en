@@ -122,6 +122,8 @@ Learning objective: $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Single-Index Models via Harmonic Decomposition](learning_single-index_models_via_harmonic_decomposition.md)
@@ -129,5 +131,7 @@ Learning objective: $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \m
 - [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
 - [\[NeurIPS 2025\] PROFIT: A Specialized Optimizer for Deep Fine Tuning](profit_a_specialized_optimizer_for_deep_fine_tuning.md)
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
+
+</div>
 
 <!-- RELATED:END -->

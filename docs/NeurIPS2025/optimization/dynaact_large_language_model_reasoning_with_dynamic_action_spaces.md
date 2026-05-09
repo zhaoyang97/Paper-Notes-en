@@ -143,6 +143,8 @@ DynaAct incurs only 5% more latency than rStar while achieving 6.8% higher accur
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Large Language Bayes](large_language_bayes.md)
@@ -150,5 +152,7 @@ DynaAct incurs only 5% more latency than rStar while achieving 6.8% higher accur
 - [\[NeurIPS 2025\] Constrained Network Slice Assignment via Large Language Models](constrained_network_slice_assignment_via_llms.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 - [\[NeurIPS 2025\] Training-Free Bayesianization for Low-Rank Adapters of Large Language Models](training-free_bayesianization_for_low-rank_adapters_of_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

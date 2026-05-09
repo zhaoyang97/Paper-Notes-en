@@ -118,6 +118,8 @@ Joint training employs a segmentation loss (Dice + BCE), a detection loss (L1 + 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](segment_anything_across_shots_a_method_and_benchmark.md)
@@ -125,5 +127,7 @@ Joint training employs a segmentation loss (Dice + BCE), a detection loss (L1 + 
 - [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
 - [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](../../CVPR2026/segmentation/robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
 - [\[CVPR 2026\] SAP: Segment Any 4K Panorama](../../CVPR2026/segmentation/sap_segment_any_4k_panorama.md)
+
+</div>
 
 <!-- RELATED:END -->

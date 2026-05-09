@@ -167,6 +167,8 @@ A fairness ratio close to 1.0 indicates balanced allocation. MetaCUB achieves ra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](../../ICLR2026/reinforcement_learning/virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
@@ -174,5 +176,7 @@ A fairness ratio close to 1.0 indicates balanced allocation. MetaCUB achieves ra
 - [\[ACL 2026\] Optimizing User Profiles via Contextual Bandits for Retrieval-Augmented LLM Personalization](../../ACL2026/reinforcement_learning/optimizing_user_profiles_via_contextual_bandits_for_retrieval-augmented_llm_pers.md)
 - [\[ICLR 2026\] Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions](../../ICLR2026/reinforcement_learning/single_index_bandits_generalized_linear_contextual_bandits_with_unknown_reward_f.md)
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](../../NeurIPS2025/reinforcement_learning/variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
+
+</div>
 
 <!-- RELATED:END -->

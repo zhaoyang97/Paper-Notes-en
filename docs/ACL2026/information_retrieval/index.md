@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **44** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (30)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/information_retrieval/index.md)
+
+🔥 **Top topics:** RAG ×16 · LLM ×5 · Question Answering ×4 · Adversarial Robustness ×3 · Reasoning ×3
+
 **[All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)**
 
 :   This paper systematically reveals severe language bias (favoring English and the query language) in the reranking stage of multilingual RAG systems, and proposes the LAURA framework, which aligns the reranker via supervision signals driven by downstream generation quality, effectively mitigating bias and improving generation performance.

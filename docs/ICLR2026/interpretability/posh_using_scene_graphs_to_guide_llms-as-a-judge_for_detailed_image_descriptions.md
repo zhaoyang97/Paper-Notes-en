@@ -126,6 +126,8 @@ PoSh is an inference-time metric with no training process. The QA scorer Ψ uses
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](../../CVPR2026/interpretability/on_the_possible_detectability_of_image-in-image_steganography.md)
@@ -133,5 +135,7 @@ PoSh is an inference-time metric with no training process. The QA scorer Ψ uses
 - [\[CVPR 2026\] Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing](../../CVPR2026/interpretability/edit-as-act_goal-regressive_planning_for_open-vocabulary_3d_indoor_scene_editing.md)
 - [\[NeurIPS 2025\] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training](../../NeurIPS2025/interpretability/urls_help_topics_guide_understanding_metadata_utility_in_llm_training.md)
 - [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](../../ACL2026/interpretability/aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -154,6 +154,8 @@ This paper generalizes the FV extraction pipeline of Todd et al. (2024) from few
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](shap_values_via_sparse_fourier_representation.md)
@@ -161,5 +163,7 @@ This paper generalizes the FV extraction pipeline of Todd et al. (2024) from few
 - [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
 - [\[NeurIPS 2025\] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?](the_non-linear_representation_dilemma_is_causal_abstraction_enough_for_mechanist.md)
 - [\[ICLR 2026\] Information Shapes Koopman Representation](../../ICLR2026/interpretability/information_shapes_koopman_representation.md)
+
+</div>
 
 <!-- RELATED:END -->

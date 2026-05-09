@@ -154,6 +154,8 @@ The ICA module contributes a +21.6% gain in SRCC and a +5.8% improvement in micr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] RefTon: Reference Person Shot Assist Virtual Try-on](refton_reference_person_shot_assist_virtual_try-on.md)
@@ -161,5 +163,7 @@ The ICA module contributes a +21.6% gain in SRCC and a +5.8% improvement in micr
 - [\[CVPR 2026\] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training](rppg_vqa_video_quality_assessment.md)
 - [\[CVPR 2026\] How to Take a Memorable Picture? Empowering Users with Actionable Feedback](how_to_take_a_memorable_picture_empowering_users_with_actionable_feedback.md)
 - [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
+
+</div>
 
 <!-- RELATED:END -->

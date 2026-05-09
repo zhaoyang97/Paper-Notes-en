@@ -146,6 +146,8 @@ BOOM comprises three tightly coupled components: a **policy network $\pi$**, an 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Bootstrap Off-policy with World Model](boundary-to-region_supervision_for_offline_safe_reinforcement_learning.md)
@@ -153,5 +155,7 @@ BOOM comprises three tightly coupled components: a **policy network $\pi$**, an 
 - [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
 - [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
+
+</div>
 
 <!-- RELATED:END -->

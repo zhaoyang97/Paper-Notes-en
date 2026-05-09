@@ -142,6 +142,8 @@ DiffDoctor reduces the artifact frequency of FLUX.1 from 82.66% to 22.00% (a red
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
@@ -149,5 +151,7 @@ DiffDoctor reduces the artifact frequency of FLUX.1 from 82.66% to 22.00% (a red
 - [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](../../NeurIPS2025/image_generation/understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
 - [\[CVPR 2026\] Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval](../../CVPR2026/image_generation/imagine_before_concentration_diffusion-guided_registers_enhance_partially_releva.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
+
+</div>
 
 <!-- RELATED:END -->

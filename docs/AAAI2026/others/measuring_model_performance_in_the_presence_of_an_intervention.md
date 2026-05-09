@@ -137,6 +137,8 @@ Evaluation is conducted on synthetic data (subsampled to $N=200$), AMR-UTI ($N=1
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
@@ -144,5 +146,7 @@ Evaluation is conducted on synthetic data (subsampled to $N=200$), AMR-UTI ($N=1
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
 - [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
 - [\[AAAI 2026\] UniShape: A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
+
+</div>
 
 <!-- RELATED:END -->

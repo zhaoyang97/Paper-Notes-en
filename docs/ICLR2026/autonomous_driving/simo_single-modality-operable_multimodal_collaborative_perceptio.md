@@ -164,6 +164,8 @@ After LAMMA, inter-modal feature discrepancy is reduced from 0.67 to 0.05, empir
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
@@ -171,5 +173,7 @@ After LAMMA, inter-modal feature discrepancy is reduced from 0.67 to 0.05, empir
 - [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](../../NeurIPS2025/autonomous_driving/layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
 - [\[ICCV 2025\] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception](../../ICCV2025/autonomous_driving/instinct_instance-level_interaction_architecture_for_query-based_collaborative_p.md)
 - [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](../../CVPR2026/autonomous_driving/learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -135,6 +135,8 @@ Hosmer–Lemeshow goodness-of-fit test (p-value > 0.05 indicates no statisticall
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](../../ACL2026/llm_evaluation/exploring_the_capability_boundaries_of_llms_in_mastering_of_chinese_chouxiang_la.md)
@@ -142,5 +144,7 @@ Hosmer–Lemeshow goodness-of-fit test (p-value > 0.05 indicates no statisticall
 - [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
 - [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](../../ACL2026/llm_evaluation/beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
 - [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](../../ACL2026/llm_evaluation/modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
+
+</div>
 
 <!-- RELATED:END -->

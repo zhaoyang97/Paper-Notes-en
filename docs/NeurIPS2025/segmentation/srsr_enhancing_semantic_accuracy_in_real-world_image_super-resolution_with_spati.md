@@ -121,6 +121,8 @@ SRSR requires no training and operates entirely at inference time. It uses the o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Panoptic Captioning: An Equivalence Bridge for Image and Text](panoptic_captioning_an_equivalence_bridge_for_image_and_text.md)
@@ -128,5 +130,7 @@ SRSR requires no training and operates entirely at inference time. It uses the o
 - [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
 - [\[CVPR 2026\] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation](../../CVPR2026/segmentation/realvlg-r1_a_large-scale_real-world_visual-language_grounding_benchmark_for_robo.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
+
+</div>
 
 <!-- RELATED:END -->

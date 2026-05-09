@@ -130,6 +130,8 @@ When the head in the reference view is visible, the proposed method reduces Dist
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
@@ -137,5 +139,7 @@ When the head in the reference view is visible, the proposed method reduces Dist
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
 - [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
 - [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](../../CVPR2026/others/gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
+
+</div>
 
 <!-- RELATED:END -->

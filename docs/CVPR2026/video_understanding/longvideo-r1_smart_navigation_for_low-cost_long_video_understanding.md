@@ -154,6 +154,8 @@ $$R = w_{\text{ans}} \cdot r_{\text{ans}} + w_{\text{loc}} \cdot r_{\text{loc}} 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
@@ -161,5 +163,7 @@ $$R = w_{\text{ans}} \cdot r_{\text{ans}} + w_{\text{loc}} \cdot r_{\text{loc}} 
 - [\[CVPR 2026\] Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry](dual-agent_reinforcement_learning_for_adaptive_and_cost-aware_visual-inertial_od.md)
 - [\[CVPR 2026\] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)
 - [\[CVPR 2026\] VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding](virtuebench_evaluating_trustworthiness_under_uncertainty_in_long_video_understan.md)
+
+</div>
 
 <!-- RELATED:END -->

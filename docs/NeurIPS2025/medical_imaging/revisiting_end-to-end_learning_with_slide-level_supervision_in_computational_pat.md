@@ -153,6 +153,8 @@ Standard losses are employed according to the specific task (cross-entropy for c
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] UniSite: The First Cross-Structure Dataset and Learning Framework for End-to-End Ligand Binding Site Detection](unisite_the_first_cross-structure_dataset_and_learning_framework_for_end-to-end_.md)
@@ -160,5 +162,7 @@ Standard losses are employed according to the specific task (cross-entropy for c
 - [\[ICLR 2026\] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology](../../ICLR2026/medical_imaging/fusing_pixels_and_genes_spatially-aware_learning_in_computational_pathology.md)
 - [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
 - [\[CVPR 2026\] A protocol for evaluating robustness to H&E staining variation in computational pathology models](../../CVPR2026/medical_imaging/a_protocol_for_evaluating_robustness_to_he_stainin.md)
+
+</div>
 
 <!-- RELATED:END -->

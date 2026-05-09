@@ -145,6 +145,8 @@ Individual terms: $\mathcal{L}_c$ (rendering loss), $\mathcal{L}_n$ (normal cons
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Discretized Gaussian Representation for Tomographic Reconstruction](discretized_gaussian_representation_for_tomographic_reconstruction.md)
@@ -152,5 +154,7 @@ Individual terms: $\mathcal{L}_c$ (rendering loss), $\mathcal{L}_n$ (normal cons
 - [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](../../NeurIPS2025/3d_vision/becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
 - [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
 - [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
+
+</div>
 
 <!-- RELATED:END -->

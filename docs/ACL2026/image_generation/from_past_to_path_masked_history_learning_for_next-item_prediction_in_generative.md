@@ -128,6 +128,8 @@ where $\mathcal{L}_{next}$ is the standard cross-entropy loss for next-item sema
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](../../AAAI2026/image_generation/multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
@@ -135,5 +137,7 @@ where $\mathcal{L}_{next}$ is the standard cross-entropy loss for next-item sema
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](../../NeurIPS2025/image_generation/next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
 - [\[ICCV 2025\] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction](../../ICCV2025/image_generation/animegamer_infinite_anime_life_simulation_with_next_game_state_prediction.md)
 - [\[CVPR 2026\] AS-Bridge: A Bidirectional Generative Framework Bridging Next-Generation Astronomical Surveys](../../CVPR2026/image_generation/as-bridge_a_bidirectional_generative_framework_bridging_next-generation_astronom.md)
+
+</div>
 
 <!-- RELATED:END -->

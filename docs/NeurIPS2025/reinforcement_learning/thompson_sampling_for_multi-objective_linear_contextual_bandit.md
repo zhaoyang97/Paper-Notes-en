@@ -116,6 +116,8 @@ Parameter estimation uses regularized least squares (RLS): $V_t = \sum_{s=1}^{t-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
@@ -123,5 +125,7 @@ Parameter estimation uses regularized least squares (RLS): $V_t = \sum_{s=1}^{t-
 - [\[NeurIPS 2025\] Thompson Sampling in Function Spaces via Neural Operators](thompson_sampling_in_function_spaces_via_neural_operators.md)
 - [\[NeurIPS 2025\] DCcluster-Opt: Benchmarking Dynamic Multi-Objective Optimization for Geo-Distributed Data Center Workloads](dccluster-opt_benchmarking_dynamic_multi-objective_optimization_for_geo-distribu.md)
 - [\[NeurIPS 2025\] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities](tractable_multinomial_logit_contextual_bandits_with_non-linear_utilities.md)
+
+</div>
 
 <!-- RELATED:END -->

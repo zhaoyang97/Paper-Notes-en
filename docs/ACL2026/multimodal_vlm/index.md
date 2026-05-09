@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **52** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (287)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (93)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (92)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (151)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (142)](../../ICCV2025/multimodal_vlm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×35 · Reasoning ×11 · LLM ×11 · Adversarial Robustness ×4 · Agents ×3
+
 **[A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends](a_survey_on_mllm-based_visually_rich_document_understanding_methods_challenges_a.md)**
 
 :   This paper presents a systematic survey of Multimodal Large Language Model (MLLM)-based Visually Rich Document Understanding (VRDU), organizing OCR-based and OCR-free methods along two dimensions—feature representation/fusion and training paradigms—while discussing emerging directions such as data scarcity, multi-page documents, multilingual support, RAG, and agent-based frameworks.

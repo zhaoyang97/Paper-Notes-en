@@ -158,6 +158,8 @@ The inflated inter-model Cohen's Kappa values arise from decision bias introduce
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
@@ -165,5 +167,7 @@ The inflated inter-model Cohen's Kappa values arise from decision bias introduce
 - [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
 - [\[NeurIPS 2025\] Learning in Compact Spaces with Approximately Normalized Transformer](learning_in_compact_spaces_with_approximately_normalized_transformer.md)
 - [\[NeurIPS 2025\] Does Object Binding Naturally Emerge in Large Pretrained Vision Transformers?](does_object_binding_naturally_emerge_in_large_pretrained_vision_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

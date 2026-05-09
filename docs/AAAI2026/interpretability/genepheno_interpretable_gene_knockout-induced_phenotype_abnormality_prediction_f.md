@@ -142,6 +142,8 @@ Evaluation is conducted on four datasets (MPO, HPO, GWAS, CAFA2 wPPI), stratifie
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Interpretable Next-token Prediction via the Generalized Induction Head](../../NeurIPS2025/interpretability/interpretable_next-token_prediction_via_the_generalized_induction_head.md)
@@ -149,5 +151,7 @@ Evaluation is conducted on four datasets (MPO, HPO, GWAS, CAFA2 wPPI), stratifie
 - [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
 - [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment](../../ICLR2026/interpretability/when_thinking_backfires_mechanistic_insights_into_reasoning-induced_misalignment.md)
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/interpretability/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
+
+</div>
 
 <!-- RELATED:END -->

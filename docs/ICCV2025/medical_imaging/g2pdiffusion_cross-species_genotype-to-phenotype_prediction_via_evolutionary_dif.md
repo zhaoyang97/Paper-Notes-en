@@ -141,6 +141,8 @@ G2PDiffusion comprises three core components: (1) an MSA retrieval engine that r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Forecasting Epileptic Seizures from Contactless Camera via Cross-Species Transfer Learning](../../CVPR2026/medical_imaging/forecasting_epileptic_seizures_from_contactless_ca.md)
@@ -148,5 +150,7 @@ G2PDiffusion comprises three core components: (1) an MSA retrieval engine that r
 - [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
 - [\[AAAI 2026\] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction](../../AAAI2026/medical_imaging/cross-sample_augmented_test-time_adaptation_for_personalized_intraoperative_hypo.md)
 - [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](../../ICLR2026/medical_imaging/evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
+
+</div>
 
 <!-- RELATED:END -->

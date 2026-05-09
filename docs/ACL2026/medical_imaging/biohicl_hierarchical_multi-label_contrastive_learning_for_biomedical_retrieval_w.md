@@ -120,6 +120,8 @@ Total loss: $\mathcal{L} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_{\text
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives](../../AAAI2026/medical_imaging/bica_effective_biomedical_dense_retrieval_with_citation-aware_hard_negatives.md)
@@ -127,5 +129,7 @@ Total loss: $\mathcal{L} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_{\text
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](../../AAAI2026/medical_imaging/learning_cell-aware_hierarchical_multi-modal_representations.md)
 - [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](../../CVPR2026/medical_imaging/a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
 - [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](../../AAAI2026/medical_imaging/semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
+
+</div>
 
 <!-- RELATED:END -->

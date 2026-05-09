@@ -190,6 +190,8 @@ The HTI and NAA modules can be plugged into other RL-based methods as drop-in en
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping](../../ICCV2025/segmentation/ragnet_large-scale_reasoning-based_affordance_segmentation_benchmark_towards_gen.md)
@@ -197,5 +199,7 @@ The HTI and NAA modules can be plugged into other RL-based methods as drop-in en
 - [\[AAAI 2026\] EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization](eagle_episodic_appearance-_and_geometry-aware_memory_for_unified_2d-3d_visual_qu.md)
 - [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](../../NeurIPS2025/segmentation/haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
 - [\[AAAI 2026\] Guideline-Consistent Segmentation via Multi-Agent Refinement](guideline-consistent_segmentation_via_multi-agent_refinement.md)
+
+</div>
 
 <!-- RELATED:END -->

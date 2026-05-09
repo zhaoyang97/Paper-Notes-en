@@ -147,6 +147,8 @@ Block-1 = DeltaNet-FFN-Mamba2-FFN; Block-2 = Attention-FFN-Mamba2-FFN. Training 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
@@ -154,5 +156,7 @@ Block-1 = DeltaNet-FFN-Mamba2-FFN; Block-2 = Attention-FFN-Mamba2-FFN. Training 
 - [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
 - [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
 - [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
+
+</div>
 
 <!-- RELATED:END -->

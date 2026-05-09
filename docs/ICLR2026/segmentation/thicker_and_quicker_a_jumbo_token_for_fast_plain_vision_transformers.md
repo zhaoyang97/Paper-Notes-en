@@ -161,6 +161,8 @@ Jumbo introduces minimal modifications to the standard ViT: (1) the CLS token wi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
@@ -168,5 +170,7 @@ Jumbo introduces minimal modifications to the standard ViT: (1) the CLS token wi
 - [\[ICLR 2026\] Locality-Attending Vision Transformer](locality-attending_vision_transformer.md)
 - [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](../../NeurIPS2025/segmentation/vision_transformers_with_self-distilled_registers.md)
 - [\[ICCV 2025\] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity](../../ICCV2025/segmentation/legrad_an_explainability_method_for_vision_transformers_via_feature_formation_se.md)
+
+</div>
 
 <!-- RELATED:END -->

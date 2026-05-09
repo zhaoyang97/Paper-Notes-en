@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **93** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (52)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (287)](../../CVPR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (92)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (151)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (142)](../../ICCV2025/multimodal_vlm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×45 · Reasoning ×22 · LLM ×5 · Agents ×4 · Robotics ×4
+
 **[A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)**
 
 :   This paper proposes the A-TPT framework, which promotes angular diversity by maximizing the minimum pairwise angular distance among normalized text features on the unit hypersphere. It addresses the miscalibration caused by overconfident predictions in test-time prompt tuning (TPT) of VLMs, achieving superior performance over existing TPT calibration methods on both natural distribution shifts and medical datasets.

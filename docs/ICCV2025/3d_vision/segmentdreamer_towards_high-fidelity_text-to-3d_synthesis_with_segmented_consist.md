@@ -137,6 +137,8 @@ SegmentDreamer adopts the following pipeline: (1) initialize 3D Gaussians with P
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation](../../NeurIPS2025/3d_vision/walking_the_schrödinger_bridge_a_direct_trajectory_for_text-to-3d_generation.md)
@@ -144,5 +146,7 @@ SegmentDreamer adopts the following pipeline: (1) initialize 3D Gaussians with P
 - [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
 - [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Stable Score Distillation](stable_score_distillation.md)
+
+</div>
 
 <!-- RELATED:END -->

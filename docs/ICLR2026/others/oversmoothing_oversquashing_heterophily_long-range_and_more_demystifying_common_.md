@@ -143,6 +143,8 @@ This paper is an analytical work and proposes no new model. Experiments replicat
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
@@ -150,5 +152,7 @@ This paper is an analytical work and proposes no new model. Experiments replicat
 - [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_long_horizon_planning.md)
 - [\[AAAI 2026\] Life, Machine Learning, and the Search for Habitability: Predicting Biosignature Fluxes for the Habitable Worlds Observatory](../../AAAI2026/others/life_machine_learning_and_the_search_for_habitability_predicting_biosignature_fl.md)
 - [\[NeurIPS 2025\] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning](../../NeurIPS2025/others/directional_non-commutative_monoidal_structures_for_compositional_embeddings_in_.md)
+
+</div>
 
 <!-- RELATED:END -->

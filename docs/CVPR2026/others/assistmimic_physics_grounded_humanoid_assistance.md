@@ -115,6 +115,8 @@ Total reward = 0.5 × task reward + 0.5 × AMP adversarial reward. Supporter's f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](../../AAAI2026/others/local_guidance_for_configuration-based_multi-agent_pathfinding.md)
@@ -122,5 +124,7 @@ Total reward = 0.5 × task reward + 0.5 × AMP adversarial reward. Supporter's f
 - [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](../../ICLR2026/others/completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
 - [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](../../AAAI2026/others/symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
 - [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](../../NeurIPS2025/others/maszero_designing_multiagent_systems_with_zero_supervision.md)
+
+</div>
 
 <!-- RELATED:END -->

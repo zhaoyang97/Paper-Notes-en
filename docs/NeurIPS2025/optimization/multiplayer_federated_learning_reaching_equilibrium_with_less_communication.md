@@ -124,6 +124,8 @@ Each player minimizes its own expected loss $f_i(x^i; x^{-i}) = \mathbb{E}_{\xi^
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
@@ -131,5 +133,7 @@ Each player minimizes its own expected loss $f_i(x^i; x^{-i}) = \mathbb{E}_{\xi^
 - [\[NeurIPS 2025\] Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines](learning_at_the_speed_of_physics_equilibrium_propagation_on_oscillator_ising_mac.md)
 - [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
 - [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+
+</div>
 
 <!-- RELATED:END -->

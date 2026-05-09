@@ -117,6 +117,8 @@ Both stages use MSE loss. LLM parameters are frozen; only the LoRA adapter and l
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SPARE: Single-Pass Annotation with Reference-Guided Evaluation for Automatic Process Supervision](../../AAAI2026/llm_reasoning/spare_single-pass_annotation_with_reference-guided_evaluation_for_automatic_proc.md)
@@ -124,5 +126,7 @@ Both stages use MSE loss. LLM parameters are frozen; only the LoRA adapter and l
 - [\[AAAI 2026\] Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment](../../AAAI2026/llm_reasoning/dropouts_in_confidence_moral_uncertainty_in_human-llm_alignment.md)
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

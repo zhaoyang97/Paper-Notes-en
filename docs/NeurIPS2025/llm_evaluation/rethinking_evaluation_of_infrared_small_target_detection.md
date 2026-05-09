@@ -154,6 +154,8 @@ Cross-dataset evaluation reveals significant performance degradation across all 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing](../../ICCV2025/llm_evaluation/dista-net_dynamic_closely-spaced_infrared_small_target_unmixing.md)
@@ -161,5 +163,7 @@ Cross-dataset evaluation reveals significant performance degradation across all 
 - [\[NeurIPS 2025\] Normal-Abnormal Guided Generalist Anomaly Detection](normal-abnormal_guided_generalist_anomaly_detection.md)
 - [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
 - [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](bayesian_evaluation_of_large_language_model_behavior.md)
+
+</div>
 
 <!-- RELATED:END -->

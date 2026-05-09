@@ -145,6 +145,8 @@ As a benchmark paper, no training is involved. All VLMs are evaluated in a zero-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
@@ -152,5 +154,7 @@ As a benchmark paper, no training is involved. All VLMs are evaluated in a zero-
 - [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](../../NeurIPS2025/multimodal_vlm/mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
 - [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
 - [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
+
+</div>
 
 <!-- RELATED:END -->

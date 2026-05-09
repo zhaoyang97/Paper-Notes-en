@@ -120,6 +120,8 @@ Thirteen MLLMs (7 closed-source + 6 open-source) are evaluated in a zero-shot se
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets](../../AAAI2026/robotics/when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
@@ -127,5 +129,7 @@ Thirteen MLLMs (7 closed-source + 6 open-source) are evaluated in a zero-shot se
 - [\[NeurIPS 2025\] Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling](rethinking_the_simulation_vs_rendering_dichotomy_no_free_lunch_in_spatial_world_.md)
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
+
+</div>
 
 <!-- RELATED:END -->

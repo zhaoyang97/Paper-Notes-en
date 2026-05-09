@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **50** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/llm_agent/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+
+🔥 **Top topics:** LLM ×24 · Agents ×18 · Adversarial Robustness ×3 · Reasoning ×2
+
 **[A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)**
 
 :   This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM agents. Each memory entry automatically generates a structured note (keywords/tags/contextual description), dynamically establishes inter-memory links, and triggers evolutionary updates to existing memories upon the insertion of new ones. A-Mem substantially outperforms baselines such as MemGPT on the LoCoMo long-conversation QA benchmark.

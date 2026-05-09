@@ -134,6 +134,8 @@ The loss is the normalized mean absolute error: $\text{NMAE} = \int |\rho_{\text
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting](dc4gs_directional_consistency-driven_adaptive_density_control_for_3d_gaussian_sp.md)
@@ -141,5 +143,7 @@ The loss is the normalized mean absolute error: $\text{NMAE} = \int |\rho_{\text
 - [\[NeurIPS 2025\] Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction](object-centric_representation_learning_for_enhanced_3d_semantic_scene_graph_pred.md)
 - [\[NeurIPS 2025\] MaNGO: Adaptable Graph Network Simulators via Meta-Learning](mango_-_adaptable_graph_network_simulators_via_meta-learning.md)
 - [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -136,6 +136,8 @@ The Gumbel-Softmax token selection approach is extensible to other scenarios req
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation](../../CVPR2026/robotics/finecog_nav_fine_grained_cognitive_modules_for_zero_shot_uav_navigation.md)
@@ -143,5 +145,7 @@ The Gumbel-Softmax token selection approach is extensible to other scenarios req
 - [\[NeurIPS 2025\] FALCON: Fine-grained Activation Manipulation by Contrastive Orthogonal Unalignment for Large Language Model](../../NeurIPS2025/robotics/falcon_fine-grained_activation_manipulation_by_contrastive_orthogonal_unalignmen.md)
 - [\[AAAI 2026\] Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment](dexterous_manipulation_transfer_via_progressive_kinematic-dynamic_alignment.md)
 - [\[AAAI 2026\] More Than Irrational: Modeling Belief-Biased Agents](more_than_irrational_modeling_belief-biased_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

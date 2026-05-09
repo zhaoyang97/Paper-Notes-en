@@ -128,6 +128,8 @@ The paper proves that C-RASP can capture only **linear** counting properties. Ex
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Stronger Normalization-Free Transformers](../../CVPR2026/others/stronger_normalization-free_transformers.md)
@@ -135,5 +137,7 @@ The paper proves that C-RASP can capture only **linear** counting properties. Ex
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](../../AAAI2026/others/model_counting_for_dependency_quantified_boolean_formulas.md)
 - [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](../../AAAI2026/others/tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
 - [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](../../AAAI2026/others/variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -153,6 +153,8 @@ $$\mathcal{L} = \lambda_{\text{pos}} w_d \mathcal{L}_{\text{mse}}(\mathbf{P}_r, 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
@@ -160,5 +162,7 @@ $$\mathcal{L} = \lambda_{\text{pos}} w_d \mathcal{L}_{\text{mse}}(\mathbf{P}_r, 
 - [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
 - [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](../../ICCV2025/human_understanding/bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
+
+</div>
 
 <!-- RELATED:END -->

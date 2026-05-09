@@ -216,6 +216,8 @@ A ratio of 0.25 is selected as the optimal balance between performance and effic
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
@@ -223,5 +225,7 @@ A ratio of 0.25 is selected as the optimal balance between performance and effic
 - [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
 - [\[NeurIPS 2025\] Video Finetuning Improves Reasoning Between Frames](../../NeurIPS2025/video_understanding/video_finetuning_improves_reasoning_between_frames.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](../../CVPR2026/video_understanding/ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
+
+</div>
 
 <!-- RELATED:END -->

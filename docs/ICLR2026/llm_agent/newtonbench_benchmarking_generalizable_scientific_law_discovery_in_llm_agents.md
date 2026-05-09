@@ -126,6 +126,8 @@ This paper proposes NewtonBench, a benchmark for LLM-based scientific law discov
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
@@ -133,5 +135,7 @@ This paper proposes NewtonBench, a benchmark for LLM-based scientific law discov
 - [\[ICLR 2026\] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development](featurebench_benchmarking_agentic_coding_for_complex_feature_development.md)
 - [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

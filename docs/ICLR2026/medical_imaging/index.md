@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **72** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (42)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (154)](../../CVPR2026/medical_imaging/index.md) · [🤖 AAAI2026 (105)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (138)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (40)](../../ICCV2025/medical_imaging/index.md)
+
+🔥 **Top topics:** Medical Imaging ×14 · Diffusion Models ×10 · Biomolecules ×9 · LLM ×5 · Reasoning ×4
+
 **[Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)**
 
 :   This paper proposes CDTSDE, a framework that embeds a learnable spatial-adaptive domain mixing field $\Lambda_t$ into the reverse SDE of diffusion models, enabling cross-modality translation paths to traverse low-energy manifolds. The approach achieves higher fidelity with fewer denoising steps on MRI modality conversion, SAR→Optical, and industrial defect semantic mapping tasks.

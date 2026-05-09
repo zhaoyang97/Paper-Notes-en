@@ -149,6 +149,8 @@ Validation is performed on a 20-dimensional state, 5-dimensional input linear ti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
@@ -156,5 +158,7 @@ Validation is performed on a 20-dimensional state, 5-dimensional input linear ti
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 - [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

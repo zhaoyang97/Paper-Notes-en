@@ -151,6 +151,8 @@ On the top 1% hardest samples, SAML achieves minADE₅ = 6.21 m, which is 17.2% 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
@@ -158,5 +160,7 @@ On the top 1% hardest samples, SAML achieves minADE₅ = 6.21 m, which is 17.2% 
 - [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](../../NeurIPS2025/autonomous_driving/unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
 - [\[AAAI 2026\] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions](walking_further_semantic-aware_multimodal_gait_recognition_under_long-range_cond.md)
 - [\[AAAI 2026\] Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction](visiononly_gaussian_splatting_for_collaborative_semantic_occupancy_p.md)
+
+</div>
 
 <!-- RELATED:END -->

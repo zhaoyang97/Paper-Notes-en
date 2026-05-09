@@ -97,6 +97,8 @@ Standard instruction-following training, with fine-tuning performed on a self-co
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](../../AAAI2026/llm_nlp/identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
@@ -104,5 +106,7 @@ Standard instruction-following training, with fine-tuning performed on a self-co
 - [\[NeurIPS 2025\] StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model](../../NeurIPS2025/llm_nlp/streambridge_turning_your_offline_video_large_language_model_into_a_proactive_st.md)
 - [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](../../NeurIPS2025/llm_nlp/solving_inequality_proofs_with_large_language_models.md)
 - [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](../../NeurIPS2025/llm_nlp/scaling_up_active_testing_to_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

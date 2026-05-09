@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **44** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (24)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (22)](../../ICCV2025/ai_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×18 · Watermarking ×6 · Federated Learning ×3 · Speech & Audio ×2 · Recommendation ×2
+
 **[Alternative Fairness and Accuracy Optimization in Criminal Justice](alternative_fairness_and_accuracy_optimization_in_criminal_j.md)**
 
 :   This paper provides a systematic review of three dimensions of algorithmic fairness (group fairness, individual fairness, and procedural fairness), proposes an improved group fairness optimization formulation based on tolerance constraints, and constructs a "Three Pillars of Fairness" deployment framework for public decision-making systems.

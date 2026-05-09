@@ -135,6 +135,8 @@ $$\mathcal{L} = \mathcal{L}_{TDCL} + \mathcal{L}_{NDCR} + \mathcal{L}_{CE}$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Unlocking the Potential of Diffusion Priors in Blind Face Restoration](unlocking_the_potential_of_diffusion_priors_in_blind_face_restoration.md)
@@ -142,5 +144,7 @@ $$\mathcal{L} = \mathcal{L}_{TDCL} + \mathcal{L}_{NDCR} + \mathcal{L}_{CE}$$
 - [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](pla_prompt_learning_attack_against_text-to-image_generative_models.md)
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
+
+</div>
 
 <!-- RELATED:END -->

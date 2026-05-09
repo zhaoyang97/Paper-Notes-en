@@ -186,6 +186,8 @@ On 256×256, FID improves from 5.15 to 4.18 (−18.8%), reaching a level compara
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Amortized Sampling with Transferable Normalizing Flows](../../NeurIPS2025/image_generation/amortized_sampling_with_transferable_normalizing_flows.md)
@@ -193,5 +195,7 @@ On 256×256, FID improves from 5.15 to 4.18 (−18.8%), reaching a level compara
 - [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](multi-metric_preference_alignment_for_generative_speech_restoration.md)
 - [\[AAAI 2026\] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval](hyperbolic_hierarchical_alignment_reasoning_network_for_text-3d_retrieval.md)
 - [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
+
+</div>
 
 <!-- RELATED:END -->

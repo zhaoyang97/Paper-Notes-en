@@ -131,6 +131,8 @@ When onboarding a new agent, only a lightweight extractor needs to be initialize
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning](janus-pro-r1_advancing_collaborative_visual_comprehension_and_generation_via_rei.md)
@@ -138,5 +140,7 @@ When onboarding a new agent, only a lightweight extractor needs to be initialize
 - [\[CVPR 2026\] Heterogeneous Decentralized Diffusion Models](../../CVPR2026/image_generation/heterogeneous_decentralized_diffusion_models.md)
 - [\[NeurIPS 2025\] Multimodal Generative Flows for LHC Jets](multimodal_generative_flows_for_lhc_jets.md)
 - [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

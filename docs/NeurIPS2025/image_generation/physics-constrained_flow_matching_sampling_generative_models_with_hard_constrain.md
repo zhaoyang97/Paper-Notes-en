@@ -139,6 +139,8 @@ PCFM augments a pretrained Functional Flow Matching (FFM) model with zero-shot i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
@@ -146,5 +148,7 @@ PCFM augments a pretrained Functional Flow Matching (FFM) model with zero-shot i
 - [\[NeurIPS 2025\] Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch](shortcutting_pre-trained_flow_matching_diffusion_models_is_almost_free_lunch.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
+
+</div>
 
 <!-- RELATED:END -->

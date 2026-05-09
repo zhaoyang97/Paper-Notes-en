@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **4** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/causal_inference/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/causal_inference/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+
+🔥 **Top topics:** Diffusion Models ×3
+
 **[Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](cipher_counterfactual_diffusion_hallucination_sup.md)**
 
 :   This paper proposes CIPHER, a training-free test-time hallucination suppression method. It generates semantically altered yet structurally preserved counterfactual images via a diffusion model, applies SVD decomposition to the representation differences between original and counterfactual images in LVLM hidden layers to extract a hallucination subspace, and then projects hidden states onto the orthogonal complement of this subspace during inference. CIPHER is the first method to localize and mitigate LVLM hallucinations by intervening on the visual modality.

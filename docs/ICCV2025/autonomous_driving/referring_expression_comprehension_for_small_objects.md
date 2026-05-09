@@ -157,6 +157,8 @@ where $\mathbf{x}_i$ is the cropped image region at step $i$.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Counting Stacked Objects](counting_stacked_objects.md)
@@ -164,5 +166,7 @@ where $\mathbf{x}_i$ is the cropped image region at step $i$.
 - [\[ICCV 2025\] TrackAny3D: Transferring Pretrained 3D Models for Category-unified 3D Point Cloud Tracking](trackany3d_transferring_pretrained_3d_models_for_category-unified_3d_point_cloud.md)
 - [\[ICCV 2025\] Occupancy Learning with Spatiotemporal Memory](occupancy_learning_with_spatiotemporal_memory.md)
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
+
+</div>
 
 <!-- RELATED:END -->

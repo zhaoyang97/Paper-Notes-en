@@ -126,6 +126,8 @@ $$\arg\min_x \sum_{(q,y) \in \mathcal{Q}'} \mathbb{E}_{l,r,s}[\mathcal{L}_{\text
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
@@ -133,5 +135,7 @@ $$\arg\min_x \sum_{(q,y) \in \mathcal{Q}'} \mathbb{E}_{l,r,s}[\mathcal{L}_{\text
 - [\[ICLR 2026\] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks](jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde.md)
 - [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](../../ACL2026/llm_alignment/s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)
 - [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
+
+</div>
 
 <!-- RELATED:END -->

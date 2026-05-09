@@ -103,6 +103,8 @@ ArgMatch achieves performance competitive with SOTA at significantly lower compu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
@@ -110,5 +112,7 @@ ArgMatch achieves performance competitive with SOTA at significantly lower compu
 - [\[NeurIPS 2025\] EUGens: Efficient, Unified, and General Dense Layers](../../NeurIPS2025/3d_vision/eugens_efficient_unified_and_general_dense_layers.md)
 - [\[ICCV 2025\] one look is enough seamless patchwise refinement for zero-shot monocular depth e](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
 - [\[ICCV 2025\] A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks](a_simple_yet_mighty_hartley_diffusion_versatilist_for_genera.md)
+
+</div>
 
 <!-- RELATED:END -->

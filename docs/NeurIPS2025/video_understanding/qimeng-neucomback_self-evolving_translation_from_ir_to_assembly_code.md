@@ -145,6 +145,8 @@ There is no training loss in the conventional sense. Prompt optimization is driv
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
@@ -152,5 +154,7 @@ There is no training loss in the conventional sense. Prompt optimization is driv
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[NeurIPS 2025\] Less is More: Local Intrinsic Dimensions of Contextual Language Models](less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)
 - [\[NeurIPS 2025\] Tracking and Understanding Object Transformations](tracking_and_understanding_object_transformations.md)
+
+</div>
 
 <!-- RELATED:END -->

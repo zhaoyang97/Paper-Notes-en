@@ -136,6 +136,8 @@ Using realistic anatomical geometry from the Visible Human Project with full 3D 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface](../../NeurIPS2025/medical_imaging/surf2ct_cascaded_3d_flow_matching_models_for_torso_3d_ct_synthesis_from_skin_sur.md)
@@ -143,5 +145,7 @@ Using realistic anatomical geometry from the Visible Human Project with full 3D 
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
 - [\[NeurIPS 2025\] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology](../../NeurIPS2025/medical_imaging/semantic_and_visual_crop-guided_diffusion_models_for_heterogeneous_tissue_synthe.md)
 - [\[CVPR 2026\] Decoupling Vision and Language: Codebook Anchored Visual Adaptation](../../CVPR2026/medical_imaging/decoupling_vision_and_language_codebook_anchored_visual_adaptation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **60** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (51)](../../ICCV2025/video_generation/index.md)
+
+🔥 **Top topics:** Video Generation ×31 · Diffusion Models ×11 · Speech & Audio ×5 · Compression ×3 · Dynamic Scenes ×3
+
 **[ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)**
 
 :   This work introduces the first activity-level video forgery localization task and the large-scale ActivityForensics benchmark (6K+ forged clips). A grounding-assisted automated data construction pipeline is proposed to produce highly realistic activity manipulations, and a baseline method, Temporal Artifact Diffuser (TADiff), is presented to amplify forgery cues via diffusion-based feature regularization.

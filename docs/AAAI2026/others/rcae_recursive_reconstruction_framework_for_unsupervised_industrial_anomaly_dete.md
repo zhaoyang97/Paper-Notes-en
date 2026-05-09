@@ -178,6 +178,8 @@ Key finding: RcAE achieves the best pixel-level P-AUROC of 98.7% across all meth
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Integration of deep generative Anomaly Detection algorithm in high-speed industrial line](../../CVPR2026/others/integration_of_deep_generative_anomaly_detection_a.md)
@@ -185,5 +187,7 @@ Key finding: RcAE achieves the best pixel-level P-AUROC of 98.7% across all meth
 - [\[CVPR 2026\] Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples](../../CVPR2026/others/novel_anomaly_detection_scenarios_and_evaluation_metrics_to_address_the_ambiguit.md)
 - [\[AAAI 2026\] Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast](radar-aplanc_unsupervised_radar-based_heartbeat_sensing_via_augmented_pseudo-lab.md)
 - [\[NeurIPS 2025\] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](../../NeurIPS2025/others/an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -138,6 +138,8 @@ When $a > 1$ (as is typical in real data), the recall rate asymptotically approa
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](../../ACL2026/others/are_large_language_models_economically_viable_for_industry_deployment.md)
@@ -145,5 +147,7 @@ When $a > 1$ (as is typical in real data), the recall rate asymptotically approa
 - [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2026/others/sldprtnet_a_largescale_multimodal_dataset_for_cad.md)
 - [\[NeurIPS 2025\] On the Surprising Effectiveness of Large Learning Rates under Standard Width Scaling](../../NeurIPS2025/others/on_the_surprising_effectiveness_of_large_learning_rates_under_standard_width_sca.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
+
+</div>
 
 <!-- RELATED:END -->

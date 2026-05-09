@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **1** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/aigc_detection/index.md)
+
 **[Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks](fine-grained_image_aesthetic_assessment_learning_discriminative_scores_from_rela.md)**
 
 :   This paper introduces a new task of "fine-grained image aesthetic assessment," constructs the FGAesthetics benchmark containing 32,217 images across 10,028 series, and proposes FGAesQ: a model that learns discriminative aesthetic scores from relative rankings via Difference-Preserving Tokenization (DiffToken), Contrastive Text-Guided Alignment (CTAlign), and Ranking-Aware Regression (RankReg). The model achieves 0.779 pairwise accuracy on fine-grained scenes while maintaining a coarse-grained SRCC of 0.770.

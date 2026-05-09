@@ -120,6 +120,8 @@ $\mathcal{L} = \alpha \mathcal{L}_{pce} + \beta \mathcal{L}_{i2tce}$, where $\ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
@@ -127,5 +129,7 @@ $\mathcal{L} = \alpha \mathcal{L}_{pce} + \beta \mathcal{L}_{i2tce}$, where $\ma
 - [\[NeurIPS 2025\] Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization](../../NeurIPS2025/self_supervised/minimal_semantic_sufficiency_meets_unsupervised_domain_generalization.md)
 - [\[CVPR 2026\] MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration](mine-jepa_in-domain_self-supervised_learning_for_mine-like_object_classification.md)
 - [\[CVPR 2026\] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)
+
+</div>
 
 <!-- RELATED:END -->

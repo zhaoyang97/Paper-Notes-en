@@ -120,6 +120,8 @@ The training loss is a weighted sum of L1, gIoU, and Focal Loss, computed separa
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](../../CVPR2026/object_detection/span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
@@ -127,5 +129,7 @@ The training loss is a weighted sum of L1, gIoU, and Focal Loss, computed separa
 - [\[CVPR 2026\] Detecting Unknown Objects via Energy-based Separation for Open World Object Detection](../../CVPR2026/object_detection/detecting_unknown_objects_via_energy-based_separation_for_open_world_object_dete.md)
 - [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2026/object_detection/show_dont_tell_detecting_novel_objects_by_watching_human_videos.md)
 - [\[NeurIPS 2025\] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning](../../NeurIPS2025/object_detection/detree_detecting_human-ai_collaborative_texts_via_tree-structured_hierarchical_r.md)
+
+</div>
 
 <!-- RELATED:END -->

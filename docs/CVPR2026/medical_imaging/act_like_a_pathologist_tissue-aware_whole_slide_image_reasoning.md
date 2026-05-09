@@ -153,6 +153,8 @@ Trained on 356K QA pairs; achieves consistent state-of-the-art results across al
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](../../AAAI2026/medical_imaging/towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
@@ -160,5 +162,7 @@ Trained on 356K QA pairs; achieves consistent state-of-the-art results across al
 - [\[ICLR 2026\] Exploiting Low-Dimensional Manifold of Features for Few-Shot Whole Slide Image Classification](../../ICLR2026/medical_imaging/exploiting_low-dimensional_manifold_of_features_for_few-shot_whole_slide_image_c.md)
 - [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
 - [\[CVPR 2026\] Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in Whole-Slide Image Prognosis](sparse_task_vector_mixup_with_hypernetworks_for_efficient_knowledge_transfer_in_.md)
+
+</div>
 
 <!-- RELATED:END -->

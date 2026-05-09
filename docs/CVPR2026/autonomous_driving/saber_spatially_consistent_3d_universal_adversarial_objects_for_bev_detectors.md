@@ -138,6 +138,8 @@ Compared with UAP (Tab. 3): SABER substantially outperforms UAP at low-to-medium
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] RESBev: Making BEV Perception More Robust](resbev_making_bev_perception_more_robust.md)
@@ -145,5 +147,7 @@ Compared with UAP (Tab. 3): SABER substantially outperforms UAP at low-to-medium
 - [\[ICCV 2025\] Counting Stacked Objects](../../ICCV2025/autonomous_driving/counting_stacked_objects.md)
 - [\[ICLR 2026\] ST4VLA: Spatially Guided Training for Vision-Language-Action Models](../../ICLR2026/autonomous_driving/st4vla_spatially_guided_training_for_vision-language-action_models.md)
 - [\[AAAI 2026\] Invisible Triggers, Visible Threats! Road-Style Adversarial Creation Attack for Visual 3D Detection in Autonomous Driving](../../AAAI2026/autonomous_driving/invisible_triggers_visible_threats_road-style_adversarial_creation_attack_for_vi.md)
+
+</div>
 
 <!-- RELATED:END -->

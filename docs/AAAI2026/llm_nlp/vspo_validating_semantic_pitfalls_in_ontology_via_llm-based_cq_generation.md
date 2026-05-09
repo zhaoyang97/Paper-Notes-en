@@ -139,6 +139,8 @@ Under the Type 4 aligned setting, VSPO achieves 96.7 precision and 80.4 F1, indi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
@@ -146,5 +148,7 @@ Under the Type 4 aligned setting, VSPO achieves 96.7 precision and 80.4 F1, indi
 - [\[AAAI 2026\] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation](c3tg_conflict-aware_composite_and_collaborative_controlled_text_generation.md)
 - [\[AAAI 2026\] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation](loopllm_transferable_energy-latency_attacks_in_llms_via_repetitive_generation.md)
 - [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/llm_nlp/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -129,6 +129,8 @@ The four CopyGuard components execute in parallel: OCR + search ($T_1$) and quer
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/multimodal_vlm/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
@@ -136,5 +138,7 @@ The four CopyGuard components execute in parallel: OCR + search ($T_1$) and quer
 - [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
 - [\[CVPR 2026\] SciPostGen: Bridging the Gap between Scientific Papers and Poster Layouts](../../CVPR2026/multimodal_vlm/scipostgen_bridging_the_gap_between_scientific_papers_and_poster_layouts.md)
 - [\[AAAI 2026\] OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding](omnipt_unleashing_the_potential_of_large_vision_language_models_for_pedestrian_t.md)
+
+</div>
 
 <!-- RELATED:END -->

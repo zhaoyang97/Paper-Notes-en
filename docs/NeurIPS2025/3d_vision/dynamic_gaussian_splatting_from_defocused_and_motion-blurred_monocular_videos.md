@@ -151,6 +151,8 @@ The decoupled design of blur kernel prediction and blur intensity prediction is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](../../ICCV2025/3d_vision/comogaussian_continuous_motionaware_gaussian_splatting_from.md)
@@ -158,5 +160,7 @@ The decoupled design of blur kernel prediction and blur intensity prediction is 
 - [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](../../CVPR2026/3d_vision/learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 - [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

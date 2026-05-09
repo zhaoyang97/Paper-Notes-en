@@ -152,6 +152,8 @@ Methods such as TD3 + curiosity, TD3 + RND, and TD3 + count-based exploration fa
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Thermodynamics of Reinforcement Learning Curricula](../../ICLR2026/reinforcement_learning/thermodynamics_of_reinforcement_learning_curricula.md)
@@ -159,5 +161,7 @@ Methods such as TD3 + curiosity, TD3 + RND, and TD3 + count-based exploration fa
 - [\[NeurIPS 2025\] Risk-Averse Total-Reward Reinforcement Learning](risk-averse_total-reward_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
+
+</div>
 
 <!-- RELATED:END -->

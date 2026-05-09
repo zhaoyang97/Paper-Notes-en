@@ -161,6 +161,8 @@ The authors find a structural correspondence between SSD and the single-step inv
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
@@ -168,5 +170,7 @@ The authors find a structural correspondence between SSD and the single-step inv
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
 - [\[ICCV 2025\] Generating Physically Stable and Buildable Brick Structures from Text](generating_physically_stable_and_buildable_brick_structures_from_text.md)
 - [\[ICCV 2025\] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection](g2sf_geometry-guided_score_fusion_for_multimodal_industrial_anomaly_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

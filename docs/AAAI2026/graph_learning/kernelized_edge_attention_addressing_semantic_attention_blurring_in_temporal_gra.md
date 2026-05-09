@@ -123,6 +123,8 @@ Standard link prediction training objective (binary cross-entropy loss) is used 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Spiking Heterogeneous Graph Attention Networks](spiking_heterogeneous_graph_attention_networks.md)
@@ -130,5 +132,7 @@ Standard link prediction training objective (binary cross-entropy loss) is used 
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
 - [\[AAAI 2026\] Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks](magnitude-modulated_equivariant_adapter_for_parameter-efficient_fine-tuning_of_e.md)
 - [\[AAAI 2026\] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks](bugsweeper_function-level_detection_of_smart_contract_vulnerabilities_using_grap.md)
+
+</div>
 
 <!-- RELATED:END -->

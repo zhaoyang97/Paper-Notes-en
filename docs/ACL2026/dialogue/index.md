@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **10** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/dialogue/index.md)
+
+🔥 **Top topics:** Dialogue ×8 · Reasoning ×2
+
 **[Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)**
 
 :   This paper proposes ConvAgent, which trains a conversational search agent to alternate between retrieval and reasoning across multi-turn interactions by decomposing the RL training reward into three complementary components: outcome reward, information gain reward, and mixed-initiative action reward.

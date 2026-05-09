@@ -138,6 +138,8 @@ This is a purely theoretical/philosophical paper and contains no quantitative ex
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
@@ -145,5 +147,7 @@ This is a purely theoretical/philosophical paper and contains no quantitative ex
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[AAAI 2026\] TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models](taylorpoda_a_taylor_expansion-based_method_to_improve_post-hoc_attributions_for_.md)
 - [\[AAAI 2026\] Why Isn't Relational Learning Taking Over the World?](why_isnt_relational_learning_taking_over_the_world.md)
+
+</div>
 
 <!-- RELATED:END -->

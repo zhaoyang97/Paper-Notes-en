@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **15** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (2)](../../ACL2026/self_supervised/index.md) · [📷 CVPR2026 (38)](../../CVPR2026/self_supervised/index.md) · [🤖 AAAI2026 (14)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (36)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/self_supervised/index.md)
+
+🔥 **Top topics:** Self-Supervised Learning ×5
+
 **[Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)**
 
 :   This paper provides rigorous theoretical proof via a similarity graph model that *difficult examples* (cross-class sample pairs with high similarity) hurt unsupervised contrastive learning — they strictly worsen the generalization error bound. Three theoretically grounded mitigation strategies are proposed: removing difficult examples, adjusting margins, and temperature scaling. On TinyImageNet, the approach yields up to a 10.42% improvement in linear probing accuracy. This finding is counterintuitive: while "more data is better" is a common principle in deep learning, carefully removing difficult examples in contrastive learning is in fact beneficial.

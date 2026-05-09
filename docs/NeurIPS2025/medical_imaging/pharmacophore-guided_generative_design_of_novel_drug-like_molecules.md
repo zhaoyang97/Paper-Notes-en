@@ -134,6 +134,8 @@ Case study: targeting the alpha estrogen receptor (PDB ID: 8AWG) for breast canc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GFlowNets for Learning Better Drug-Drug Interaction Representations](gflownets_for_learning_better_drug-drug_interaction_representations.md)
@@ -141,5 +143,7 @@ Case study: targeting the alpha estrogen receptor (PDB ID: 8AWG) for breast canc
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
 - [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
 - [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](protein_design_with_dynamic_protein_vocabulary.md)
+
+</div>
 
 <!-- RELATED:END -->

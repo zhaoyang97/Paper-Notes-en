@@ -105,6 +105,8 @@ Entirely training-free; no parameters are modified. Hyperparameters: $P=3$, $\de
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] E-SAM: Training-Free Segment Every Entity Model](e-sam_training-free_segment_every_entity_model.md)
@@ -112,5 +114,7 @@ Entirely training-free; no parameters are modified. Hyperparameters: $P=3$, $\de
 - [\[NeurIPS 2025\] Robust Ego-Exo Correspondence with Long-Term Memory](../../NeurIPS2025/segmentation/robust_ego-exo_correspondence_with_long-term_memory.md)
 - [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](../../CVPR2026/segmentation/insid3_training-free_in-context_segmentation_with_dinov3.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -138,6 +138,8 @@ Each token is represented as the sum of convex combinations over a small set of 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
@@ -145,5 +147,7 @@ Each token is represented as the sum of convex combinations over a small set of 
 - [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
 - [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
 - [\[ICLR 2026\] Universal Beta Splatting](universal_beta_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -132,6 +132,8 @@ DeepPersona is a generation framework rather than a trained model. GPT-4.1 and G
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
@@ -139,5 +141,7 @@ DeepPersona is a generation framework rather than a trained model. GPT-4.1 and G
 - [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
 - [\[ICLR 2026\] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference](../../ICLR2026/llm_safety/purifying_generative_llms_from_backdoors_without_prior_knowledge_or_clean_refere.md)
 - [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](simu_selective_influence_machine_unlearning.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -117,6 +117,8 @@ Significant improvements from SSA+COIN are observed across six datasets (MoNuSeg
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation](alleviating_textual_reliance_in_medical_language-guided_segmentation_via_prototy.md)
@@ -124,5 +126,7 @@ Significant improvements from SSA+COIN are observed across six datasets (MoNuSeg
 - [\[NeurIPS 2025\] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging](../../NeurIPS2025/medical_imaging/ewc-guided_diffusion_replay_for_exemplar-free_continual_learning_in_medical_imag.md)
 - [\[ICCV 2025\] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines](integrating_biological_knowledge_for_robust_microscopy_image_profiling_on_de_nov.md)
 - [\[AAAI 2026\] Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy](../../AAAI2026/medical_imaging/pairing-free_group-level_knowledge_distillation_for_robust_gastrointestinal_lesi.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -124,6 +124,8 @@ AsynDM is a plug-and-play, training-free framework. The core idea is to extend t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
@@ -131,5 +133,7 @@ AsynDM is a plug-and-play, training-free framework. The core idea is to extend t
 - [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](../../NeurIPS2025/image_generation/aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
 - [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 - [\[ICLR 2026\] RefAny3D: 3D Asset-Referenced Diffusion Models for Image Generation](refany3d_3d_asset-referenced_diffusion_models_for_image_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

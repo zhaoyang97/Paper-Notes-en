@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **45** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (17)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/object_detection/index.md)
+
+🔥 **Top topics:** Object Detection ×19 · Few-/Zero-Shot Learning ×6 · Alignment/RLHF ×4 · 3D Object Detection ×4 · Multimodal/VLM ×4
+
 **[A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps](a_closer_look_at_cross-domain_few-shot_object_detection_fine-tuning_matters_and_.md)**
 
 :   This paper proposes a Hybrid Ensemble Decoder (HED) and a progressive fine-tuning strategy for cross-domain few-shot object detection (CD-FSOD). By parallelizing a subset of decoder layers and randomly initializing denoising queries to introduce prediction diversity, the method achieves state-of-the-art performance on three benchmarks — CD-FSOD, ODinW-13, and RF100-VL — without introducing any additional parameters.

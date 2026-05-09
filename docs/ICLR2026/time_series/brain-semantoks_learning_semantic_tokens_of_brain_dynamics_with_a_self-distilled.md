@@ -150,6 +150,8 @@ Brain-Semantoks employs a student–teacher architecture. Given an input fMRI ti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Human Brain as a Combinatorial Complex](../../NeurIPS2025/time_series/the_human_brain_as_a_combinatorial_complex.md)
@@ -157,5 +159,7 @@ Brain-Semantoks employs a student–teacher architecture. Given an input fMRI ti
 - [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning of Time-Series Data](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-ser.md)
 - [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
 - [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
+
+</div>
 
 <!-- RELATED:END -->

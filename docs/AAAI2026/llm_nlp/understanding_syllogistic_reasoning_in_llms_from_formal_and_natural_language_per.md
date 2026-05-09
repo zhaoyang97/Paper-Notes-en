@@ -162,6 +162,8 @@ $C_{\text{all}}$ measures the proportion of syllogisms on which a model is fully
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TEMPLE: Incentivizing Temporal Understanding of Video LLMs via Progressive Pre-SFT Alignment](temple_incentivizing_temporal_understanding_of_video_large_language_models_via_p.md)
@@ -169,5 +171,7 @@ $C_{\text{all}}$ measures the proportion of syllogisms on which a model is fully
 - [\[AAAI 2026\] Language Models and Logic Programs for Trustworthy Tax Reasoning](language_models_and_logic_programs_for_trustworthy_tax_reasoning.md)
 - [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
 - [\[AAAI 2026\] Collaborative LLM Numerical Reasoning with Local Data Protection](collaborative_llm_numerical_reasoning_with_local_data_protection.md)
+
+</div>
 
 <!-- RELATED:END -->

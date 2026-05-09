@@ -10,6 +10,8 @@ description: >-
 
 **🤖 AAAI2026** · **2** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/physics/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/physics/index.md) · [🧠 NeurIPS2025 (20)](../../NeurIPS2025/physics/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/physics/index.md)
+
 **[Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)**
 
 :   This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs), characterizes noise propagation via control-flow-aware random walks, quantifies circuit complexity through spectral features of the propagation operator, and achieves adaptive measurement budget allocation — significantly reducing the number of measurement shots while maintaining fidelity accuracy.

@@ -141,6 +141,8 @@ A three-stage pipeline: (1) **Mechanistic Analysis** — ablation experiments re
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
@@ -148,5 +150,7 @@ A three-stage pipeline: (1) **Mechanistic Analysis** — ablation experiments re
 - [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
 - [\[NeurIPS 2025\] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery](../../NeurIPS2025/llm_safety/unlearning_as_ablation_toward_a_falsifiable_benchmark_for_generative_scientific_.md)
 - [\[NeurIPS 2025\] DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas](../../NeurIPS2025/llm_safety/deeppersona_a_generative_engine_for_scaling_deep_synthetic_personas.md)
+
+</div>
 
 <!-- RELATED:END -->

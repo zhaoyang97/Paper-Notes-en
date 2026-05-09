@@ -162,6 +162,8 @@ where $\lambda = 1$, $\beta = 0.001$, with training resumed from the checkpoint 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas](self-supervised_synthetic_pretraining_for_inference_of_stellar_mass_embedded_in_.md)
@@ -169,5 +171,7 @@ where $\lambda = 1$, $\beta = 0.001$, with training resumed from the checkpoint 
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
 - [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](vision_transformers_with_self-distilled_registers.md)
 - [\[CVPR 2026\] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](../../CVPR2026/segmentation/follow_the_saliency_supervised_saliency_for_retrieval-augmented_dense_video_capt.md)
+
+</div>
 
 <!-- RELATED:END -->

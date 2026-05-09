@@ -123,6 +123,8 @@ Target protein MSA → extract K-mer frequency distributions ($k=1,3,5$) → dra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](protein_design_with_dynamic_protein_vocabulary.md)
@@ -130,5 +132,7 @@ Target protein MSA → extract K-mer frequency distributions ($k=1,3,5$) → dra
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 - [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
 - [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](../../ICLR2026/medical_imaging/ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **1** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/llm_efficiency/index.md)
+
 **[MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation](mixant_observation-dependent_memory_propagation_for_stochastic_dense_action_anti.md)**
 
 :   This paper proposes MixANT, which introduces input-dependence into the forgetting gate (A matrix) of Mamba via a Mixture-of-Experts approach. A lightweight router dynamically selects context-aware A matrices to control temporal memory propagation, achieving state-of-the-art performance across all three dense action anticipation benchmarks: 50Salads, Breakfast, and Assembly101.

@@ -139,6 +139,8 @@ Main training: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_S \mathcal{L}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] ChemAmp: Amplified Chemistry Tools via Composable Agents](chemamp_amplified_chemistry_tools_via_composable_agents.md)
@@ -146,5 +148,7 @@ Main training: $\mathcal{L}_{total} = \mathcal{L}_{task} + \lambda_S \mathcal{L}
 - [\[ACL 2026\] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents](yield_a_large-scale_dataset_and_evaluation_framework_for_information_elicitation.md)
 - [\[ACL 2026\] IMPACT: Importance-Aware Activation Space Reconstruction](impact_importance-aware_activation_space_reconstruction.md)
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

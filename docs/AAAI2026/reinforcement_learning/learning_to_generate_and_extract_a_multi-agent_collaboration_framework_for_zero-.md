@@ -210,6 +210,8 @@ $$\nabla_{\mathcal{E}} \mathbb{E}[\alpha] = \mathbb{E}[\alpha_i \nabla_{\mathcal
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](../../NeurIPS2025/reinforcement_learning/multi-agent_collaboration_via_evolving_orchestration.md)
@@ -217,5 +219,7 @@ $$\nabla_{\mathcal{E}} \mathbb{E}[\alpha] = \mathbb{E}[\alpha_i \nabla_{\mathcal
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
 - [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -134,6 +134,8 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{KT} + \alpha \mathcal{L}_{
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] ConlangCrafter: Constructing Languages with a Multi-Hop LLM Pipeline](../../ACL2026/self_supervised/conlangcrafter_constructing_languages_with_a_multi-hop_llm_pipeline.md)
@@ -141,5 +143,7 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{KT} + \alpha \mathcal{L}_{
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
 - [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](../../ICLR2026/self_supervised/ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](../../CVPR2026/self_supervised/an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
+
+</div>
 
 <!-- RELATED:END -->

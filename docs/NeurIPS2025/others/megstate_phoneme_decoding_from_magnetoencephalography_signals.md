@@ -125,6 +125,8 @@ Dataset: LibriBrain, comprising MEG recordings from a single subject listening t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
@@ -132,5 +134,7 @@ Dataset: LibriBrain, comprising MEG recordings from a single subject listening t
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/others/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](../../AAAI2026/others/cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
 - [\[AAAI 2026\] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](../../AAAI2026/others/mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)
+
+</div>
 
 <!-- RELATED:END -->

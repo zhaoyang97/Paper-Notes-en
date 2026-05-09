@@ -111,6 +111,8 @@ The paper evaluates on 6 benchmarks spanning Lagrangian and Eulerian systems:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](../../CVPR2026/3d_vision/can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
@@ -118,5 +120,7 @@ The paper evaluates on 6 benchmarks spanning Lagrangian and Eulerian systems:
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](../../CVPR2026/3d_vision/long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
 - [\[ICLR 2026\] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields](learning_physics-grounded_4d_dynamics_with_neural_gaussian_force_fields.md)
 - [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](../../CVPR2026/3d_vision/lumimotion_gaussian_relighting_dynamics.md)
+
+</div>
 
 <!-- RELATED:END -->

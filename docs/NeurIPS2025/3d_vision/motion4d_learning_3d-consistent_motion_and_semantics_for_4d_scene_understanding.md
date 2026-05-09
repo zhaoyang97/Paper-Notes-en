@@ -145,6 +145,8 @@ Sequential optimization is critical because 2D networks rely on short-term memor
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](../../CVPR2026/3d_vision/extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
@@ -152,5 +154,7 @@ Sequential optimization is critical because 2D networks rely on short-term memor
 - [\[ICCV 2025\] Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion](../../ICCV2025/3d_vision/global_motion_corresponder_for_3d_point-based_scene_interpolation_under_large_mo.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[NeurIPS 2025\] Pixel-Perfect Depth with Semantics-Prompted Diffusion Transformers](pixel-perfect_depth_with_semantics-prompted_diffusion_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

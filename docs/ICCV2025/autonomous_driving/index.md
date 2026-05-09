@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **98** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (105)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (58)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/autonomous_driving/index.md)
+
+🔥 **Top topics:** 3D Gaussian Splatting ×14 · Autonomous Driving ×13 · Diffusion Models ×8 · 3D Object Detection ×5 · Adversarial Robustness ×4
+
 **[3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multi-view_robust_physical_adversarial_camouflage_g.md)**
 
 :   This paper proposes PGA, the first physical adversarial attack framework based on 3DGS, which generates cross-view robust physical adversarial camouflage through fast and accurate target reconstruction, resolution of Gaussian mutual/self-occlusion issues, and a min-max background adversarial optimization strategy. PGA surpasses state-of-the-art methods in both digital and physical domains.

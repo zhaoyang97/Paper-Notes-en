@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **13** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (6)](../../ACL2026/image_restoration/index.md) · [📷 CVPR2026 (47)](../../CVPR2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+
+🔥 **Top topics:** Image Restoration ×4 · LLM ×2 · Super-Resolution ×2
+
 **[Blur-Robust Detection via Feature Restoration: An End-to-End Framework for Prior-Guided Infrared UAV Target Detection](blur-robust_detection_via_feature_restoration_an_end-to-end_framework_for_prior-.md)**
 
 :   This paper proposes JFD3, an end-to-end dual-branch framework that performs deblurring in the feature domain rather than the image domain, and leverages frequency structure priors to guide the detection network, achieving high-accuracy real-time infrared UAV target detection under motion blur conditions.

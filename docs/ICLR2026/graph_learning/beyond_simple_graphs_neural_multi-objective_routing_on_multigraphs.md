@@ -140,6 +140,8 @@ Evaluated on MOTSP, MOCVRP (simple graphs) and MGMOTSP, MGMOCVRP (multigraphs), 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
@@ -147,5 +149,7 @@ Evaluated on MOTSP, MOCVRP (simple graphs) and MGMOTSP, MGMOCVRP (multigraphs), 
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](revisiting_node_affinity_prediction_in_temporal_graphs.md)
+
+</div>
 
 <!-- RELATED:END -->

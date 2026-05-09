@@ -189,6 +189,8 @@ Note: DeepRAHT saves an average of 16.4% bitrate over G-PCCv23 and 7.3% over Uni
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
@@ -196,5 +198,7 @@ Note: DeepRAHT saves an average of 16.4% bitrate over G-PCCv23 and 7.3% over Uni
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](../../CVPR2026/3d_vision/deformation-based_in-context_learning_for_point_cloud_understanding.md)
 - [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
 - [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

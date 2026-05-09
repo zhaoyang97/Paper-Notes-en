@@ -145,6 +145,8 @@ $$L_{commit} = \sum_{\mathbf{p}_i} \|\text{sg}[\mathbf{c}_{k_i}] - \mathbf{p}_i\
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
@@ -152,5 +154,7 @@ $$L_{commit} = \sum_{\mathbf{p}_i} \|\text{sg}[\mathbf{c}_{k_i}] - \mathbf{p}_i\
 - [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](joint_self-supervised_video_alignment_and_action_segmentation.md)
 - [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](what_if_understanding_motion_through_sparse_interactions.md)
+
+</div>
 
 <!-- RELATED:END -->

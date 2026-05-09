@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **16** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/llm_safety/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×4
+
 **[Association and Consolidation: Evolutionary Memory-Enhanced Incremental Multi-View Clustering](association_and_consolidation_evolutionary_memory-enhanced_incremental_multi-vie.md)**
 
 :   This paper proposes EMIMC, a framework inspired by the hippocampus–prefrontal cortex collaborative memory mechanism in the brain. Three coordinated modules — a Rapid Associative Module (orthogonal mapping to ensure plasticity), a Cognitive Forgetting Module (power-law decay to simulate the forgetting curve), and a Knowledge Consolidation Module (temporal tensor low-rank decomposition to distill long-term memory) — jointly address the stability-plasticity dilemma in incremental multi-view clustering.

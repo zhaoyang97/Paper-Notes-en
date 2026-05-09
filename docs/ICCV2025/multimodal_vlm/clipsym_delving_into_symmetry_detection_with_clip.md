@@ -174,6 +174,8 @@ Equivariance evaluation (DENDI Reflection, ±45° random rotation):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] GTA-CLIP: Generate, Transduct, Adapt — Iterative Transduction with VLMs](generate_transduct_adapt_iterative_transduction_with_vlms.md)
@@ -181,5 +183,7 @@ Equivariance evaluation (DENDI Reflection, ±45° random rotation):
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
 - [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
 - [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](../../NeurIPS2025/multimodal_vlm/enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

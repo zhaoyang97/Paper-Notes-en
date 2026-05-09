@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **113** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/optimization/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (45)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (24)](../../AAAI2026/optimization/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/optimization/index.md)
+
+🔥 **Top topics:** Federated Learning ×12 · LLM ×11 · Adversarial Robustness ×9 · Reasoning ×7 · Alignment/RLHF ×3
+
 **[A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)**
 
 :   For bilevel optimization problems with coupled linear constraints in the lower-level problem, this paper proposes SFLCB, a single-loop first-order algorithm that eliminates Hessian dependence via a penalty-based reformulation combined with augmented Lagrangian, improving the iteration complexity from $O(\epsilon^{-3}\log(\epsilon^{-1}))$ to $O(\epsilon^{-3})$.

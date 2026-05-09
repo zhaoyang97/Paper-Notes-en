@@ -136,6 +136,8 @@ Structured description quality evaluation (F1):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking](../../CVPR2026/multimodal_vlm/virc_enhancing_visual_interleaved_mathematical_cot_with_reason_chunking.md)
@@ -143,5 +145,7 @@ Structured description quality evaluation (F1):
 - [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
 - [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
 - [\[CVPR 2026\] CodePercept: Code-Grounded Visual STEM Perception for MLLMs](../../CVPR2026/multimodal_vlm/codepercept_code-grounded_visual_stem_perception_for_mllms.md)
+
+</div>
 
 <!-- RELATED:END -->

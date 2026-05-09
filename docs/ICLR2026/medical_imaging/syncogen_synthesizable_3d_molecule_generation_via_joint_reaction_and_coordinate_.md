@@ -130,6 +130,8 @@ SynCoGen achieves substantial improvements in synthetic feasibility (AiZyn +12, 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](../../AAAI2026/medical_imaging/apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
@@ -137,5 +139,7 @@ SynCoGen achieves substantial improvements in synthetic feasibility (AiZyn +12, 
 - [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](../../NeurIPS2025/medical_imaging/unified_all-atom_molecule_generation_with_neural_fields.md)
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](../../NeurIPS2025/medical_imaging/towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
+
+</div>
 
 <!-- RELATED:END -->

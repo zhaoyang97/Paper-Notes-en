@@ -129,6 +129,8 @@ Average PSNR gains on the Normal Set across five backbone networks: FocalNet +1.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](../../CVPR2026/image_restoration/evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
@@ -136,5 +138,7 @@ Average PSNR gains on the Normal Set across five backbone networks: FocalNet +1.
 - [\[NeurIPS 2025\] GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights](gc4nc_a_benchmark_framework_for_graph_condensation_on_node_classification_with_n.md)
 - [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](../../CVPR2026/image_restoration/toward_real-world_infrared_image_super-resolution_a_unified_autoregressive_frame.md)
 - [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](../../ICCV2025/image_restoration/mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
+
+</div>
 
 <!-- RELATED:END -->

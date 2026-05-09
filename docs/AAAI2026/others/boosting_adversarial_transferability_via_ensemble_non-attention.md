@@ -192,6 +192,8 @@ Even against the strong diffusion-based defense DiffPure, NAMEA outperforms base
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
@@ -199,5 +201,7 @@ Even against the strong diffusion-based defense DiffPure, NAMEA outperforms base
 - [\[AAAI 2026\] Parameterized Approximation Algorithms for TSP on Non-Metric Graphs](parameterized_approximation_algorithms_for_tsp_on_non-metric_graphs.md)
 - [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](../../ICCV2025/others/nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
 - [\[NeurIPS 2025\] Revisiting Agnostic Boosting](../../NeurIPS2025/others/revisiting_agnostic_boosting.md)
+
+</div>
 
 <!-- RELATED:END -->

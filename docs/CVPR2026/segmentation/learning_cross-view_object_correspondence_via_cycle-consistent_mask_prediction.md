@@ -122,6 +122,8 @@ An end-to-end conditional binary segmentation framework: given a source image $I
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting](fov-net_rotation-invariant_cad_b-rep_learning_via_field-of-view_ray_casting.md)
@@ -129,5 +131,7 @@ An end-to-end conditional binary segmentation framework: given a source image $I
 - [\[ICCV 2025\] O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views](../../ICCV2025/segmentation/o-mama_learning_object_mask_matching_between_egocentric_and_exocentric_views.md)
 - [\[CVPR 2026\] GenMask: Adapting DiT for Segmentation via Direct Mask Generation](genmask_adapting_dit_for_segmentation_via_direct_mask_generation.md)
 - [\[CVPR 2026\] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](fcl-cod_weakly_supervised_camouflaged_object_detection_with_frequency-aware_and_.md)
+
+</div>
 
 <!-- RELATED:END -->

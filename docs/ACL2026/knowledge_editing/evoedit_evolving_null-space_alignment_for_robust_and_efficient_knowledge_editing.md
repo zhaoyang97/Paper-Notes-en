@@ -138,6 +138,8 @@ GPU Memory (1000 edits, Llama-3-8B):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](../../ICLR2026/knowledge_editing/eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
@@ -145,5 +147,7 @@ GPU Memory (1000 edits, Llama-3-8B):
 - [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](aligning_language_models_with_real-time_knowledge_editing.md)
 - [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 - [\[ACL 2026\] FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing](fable_fine-grained_fact_anchoring_for_unstructured_model_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

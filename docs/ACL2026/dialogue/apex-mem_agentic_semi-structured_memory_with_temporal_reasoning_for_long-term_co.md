@@ -142,6 +142,8 @@ To be supplemented after thorough reading.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
@@ -149,5 +151,7 @@ To be supplemented after thorough reading.
 - [\[ICLR 2026\] ReIn: Conversational Error Recovery with Reasoning Inception](../../ICLR2026/dialogue/rein_conversational_error_recovery_with_reasoning_inception.md)
 - [\[ICLR 2026\] Think-While-Generating: On-the-Fly Reasoning for Personalized Long-Form Generation](../../ICLR2026/dialogue/think-while-generating_on-the-fly_reasoning_for_personalized_long-form_generatio.md)
 - [\[AAAI 2026\] TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech](../../AAAI2026/dialogue/talksketch_multimodal_generative_ai_for_real-time_sketch_ideation_with_speech.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **16** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/human_understanding/index.md) · [📷 CVPR2026 (61)](../../CVPR2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/human_understanding/index.md)
+
+🔥 **Top topics:** Face & Gaze ×4 · Human Pose ×4
+
 **[AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification](ahan_asymmetric_hierarchical_attention_network_for_identical.md)**
 
 :   To address the extreme fine-grained recognition challenge of identical twin face verification, this paper proposes AHAN, a multi-stream architecture that performs multi-scale analysis of semantic facial regions via Hierarchical Cross-Attention (HCA), captures left-right facial asymmetry signatures through a Facial Asymmetry Attention Module (FAAM), and incorporates Twin-Aware Pair-Wise Cross-Attention (TA-PWCA) as a training regularizer. On the ND_TWIN dataset, AHAN improves twin verification accuracy from 88.9% to 92.3% (+3.4%).

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **52** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/graph_learning/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/graph_learning/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/graph_learning/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/graph_learning/index.md)
+
+🔥 **Top topics:** GNNs ×10 · LLM ×5 · Reasoning ×5 · RAG ×3 · Few-/Zero-Shot Learning ×3
+
 **[Agint: Agentic Graph Compilation for Software Engineering Agents](agint_agentic_graph_compilation_for_software_engineering_age.md)**
 
 :   This paper proposes Agint, a graph compiler that progressively compiles natural language intent into typed DAGs through a six-level type floor (TEXT→TYPED→SPEC→STUB→SHIM→PURE), paired with a hybrid JIT runtime and a Unix-style toolchain. This transforms AI code generation from brittle single-pass text prediction into a structured, parallelizable, and reproducible compilation process.

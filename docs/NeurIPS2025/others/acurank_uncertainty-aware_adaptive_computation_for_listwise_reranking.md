@@ -268,6 +268,8 @@ AcuRank employs an iterative refinement strategy: (1) initialize the TrueSkill m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
@@ -275,5 +277,7 @@ AcuRank employs an iterative refinement strategy: (1) initialize the TrueSkill m
 - [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
 - [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](adaptive_data_analysis_for_growing_data.md)
 - [\[NeurIPS 2025\] Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics](uncertainty_quantification_for_reduced-order_surrogate_models_applied_to_cloud_m.md)
+
+</div>
 
 <!-- RELATED:END -->

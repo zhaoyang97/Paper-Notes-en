@@ -138,6 +138,8 @@ The dataset contribution is solid and comprehensive, and the four experimental s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising](tidmad_time_series_dataset_for_discovering_dark_matter_with_ai_denoising.md)
@@ -145,5 +147,7 @@ The dataset contribution is solid and comprehensive, and the four experimental s
 - [\[NeurIPS 2025\] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)
 - [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](../../ICCV2025/image_generation/inference-time_diffusion_model_distillation.md)
 - [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
+
+</div>
 
 <!-- RELATED:END -->

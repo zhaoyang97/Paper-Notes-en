@@ -170,6 +170,8 @@ Core insight: **The quality of synthetic prior design determines the generalizat
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
@@ -177,5 +179,7 @@ Core insight: **The quality of synthetic prior design determines the generalizat
 - [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](../../CVPR2026/llm_evaluation/temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
 - [\[ICLR 2026\] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)
 - [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_evaluation/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -146,6 +146,8 @@ TAPIP3D builds on the iterative refinement framework of CoTracker3, replacing 2D
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Segment Any 3D Thing as Instance Tracking](online_segment_any_3d_thing_as_instance_tracking.md)
@@ -153,5 +155,7 @@ TAPIP3D builds on the iterative refinement framework of CoTracker3, replacing 2D
 - [\[ICCV 2025\] Multi-View 3D Point Tracking](../../ICCV2025/3d_vision/multi-view_3d_point_tracking.md)
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](../../ICCV2025/3d_vision/alltracker_efficient_dense_point_tracking_at_high_resolution.md)
 - [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

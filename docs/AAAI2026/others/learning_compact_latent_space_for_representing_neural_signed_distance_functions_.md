@@ -159,6 +159,8 @@ Training details: grid feature learning rate $10^{-1}$, shape code learning rate
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](../../ICLR2026/others/out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
@@ -166,5 +168,7 @@ Training details: grid feature learning rate $10^{-1}$, shape code learning rate
 - [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](../../ICLR2026/others/a_single_architecture_for_representing_invariance_under_any_space_group.md)
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
 - [\[ICCV 2025\] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity](../../ICCV2025/others/hineus_high-fidelity_neural_surface_mitigating_low-texture_and_reflective_ambigu.md)
+
+</div>
 
 <!-- RELATED:END -->

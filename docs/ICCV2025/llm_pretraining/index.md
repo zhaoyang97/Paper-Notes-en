@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **10** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (6)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_pretraining/index.md)
+
 **[ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training](ace-g_improving_generalization_of_scene_coordinate_regression_through_query_pre-.md)**
 
 :   ACE-G decomposes a scene coordinate regressor (SCR) into a general-purpose Transformer and a scene-specific map code, and pre-trains the Transformer across tens of thousands of scenes to learn generalization from mapping images to unseen query images. This significantly improves relocalization robustness under illumination and viewpoint changes while maintaining computational efficiency.

@@ -125,6 +125,8 @@ This paper does **not** train new models. Instead, intermediate checkpoints from
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](../../ACL2026/llm_evaluation/retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
@@ -132,5 +134,7 @@ This paper does **not** train new models. Instead, intermediate checkpoints from
 - [\[ACL 2026\] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning](../../ACL2026/llm_evaluation/revisiting_the_uniform_information_density_hypothesis_in_llm_reasoning.md)
 - [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
 - [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -137,6 +137,8 @@ Based on GRPO + Qwen2.5-VL-3B-Instruct:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Anticipatory Planning for Multimodal AI Agents](../../CVPR2026/reinforcement_learning/anticipatory_planning_for_multimodal_ai_agents.md)
@@ -144,5 +146,7 @@ Based on GRPO + Qwen2.5-VL-3B-Instruct:
 - [\[CVPR 2026\] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](../../CVPR2026/reinforcement_learning/lifelong_imitation_learning_multimodal_latent_rep.md)
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](../../ICLR2026/reinforcement_learning/a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
 - [\[ICLR 2026\] Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL](../../ICLR2026/reinforcement_learning/retaining_suboptimal_actions_to_follow_shifting_optima_in_multi-agent_reinforcem.md)
+
+</div>
 
 <!-- RELATED:END -->

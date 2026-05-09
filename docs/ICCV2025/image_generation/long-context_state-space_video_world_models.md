@@ -133,6 +133,8 @@ Autoregressive per-frame generation requires only: ① a fixed-length KV-cache o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](../../NeurIPS2025/image_generation/rlvr-world_training_world_models_with_reinforcement_learning.md)
@@ -140,5 +142,7 @@ Autoregressive per-frame generation requires only: ① a fixed-length KV-cache o
 - [\[ICCV 2025\] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction](animegamer_infinite_anime_life_simulation_with_next_game_state_prediction.md)
 - [\[ICCV 2025\] Aether: Geometric-Aware Unified World Modeling](aether_geometric-aware_unified_world_modeling.md)
 - [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
+
+</div>
 
 <!-- RELATED:END -->

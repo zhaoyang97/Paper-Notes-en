@@ -132,6 +132,8 @@ Total loss: $\mathcal{L} = \mathcal{L}_{dis} + \lambda_1\mathcal{L}_{inv} + \lam
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models](representing_3d_shapes_with_64_latent_vectors_for_3d_diffusion_models.md)
@@ -139,5 +141,7 @@ Total loss: $\mathcal{L} = \mathcal{L}_{dis} + \lambda_1\mathcal{L}_{inv} + \lam
 - [\[ICCV 2025\] NeuraLeaf: Neural Parametric Leaf Models with Shape and Deformation Disentanglement](neuraleaf_neural_parametric_leaf_models_with_shape_and_deformation_disentangleme.md)
 - [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -126,6 +126,8 @@ This update is applied only during early timesteps $t > T_1$, where coarse struc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection](synthesizing_near-boundary_ood_samples_for_out-of-distribution_detection.md)
@@ -133,5 +135,7 @@ This update is applied only during early timesteps $t > T_1$, where coarse struc
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
 - [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
+
+</div>
 
 <!-- RELATED:END -->

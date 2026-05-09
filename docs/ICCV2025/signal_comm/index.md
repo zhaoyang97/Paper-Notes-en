@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **3** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/signal_comm/index.md)
+
 **[Boosting Multimodal Learning via Disentangled Gradient Learning](boosting_multimodal_learning_via_disentangled_gradient_learning.md)**
 
 :   This paper reveals an optimization conflict between modality encoders and fusion modules in multimodal learning — the fusion module suppresses gradients propagated back to individual modality encoders, causing even the dominant modality to underperform its unimodal counterpart. The paper proposes the Disentangled Gradient Learning (DGL) framework, which addresses this issue by cutting the gradient path from the fusion module to the encoders and replacing it with independent unimodal losses.

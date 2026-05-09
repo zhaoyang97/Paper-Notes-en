@@ -111,6 +111,8 @@ DiPVNet consists of three core components: (1) the L2DP operator for local direc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Enhancing Rotation-Invariant 3D Learning with Global Pose Awareness and Attention Mechanisms](enhancing_rotation-invariant_3d_learning_with_global_pose_awareness_and_attentio.md)
@@ -118,5 +120,7 @@ DiPVNet consists of three core components: (1) the L2DP operator for local direc
 - [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](../../CVPR2026/3d_vision/pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
 - [\[AAAI 2026\] Point-SRA: Self-Representation Alignment for 3D Representation Learning](point-sra_self-representation_alignment_for_3d_representation_learning.md)
 - [\[AAAI 2026\] TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds](tosc_task-oriented_shape_completion_for_open-world_dexterous_grasp_generation_fr.md)
+
+</div>
 
 <!-- RELATED:END -->

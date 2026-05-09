@@ -164,8 +164,12 @@ The combination of dual conditioning (text + image) and dual routing (TS) achiev
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](../../ICLR2026/moe/moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

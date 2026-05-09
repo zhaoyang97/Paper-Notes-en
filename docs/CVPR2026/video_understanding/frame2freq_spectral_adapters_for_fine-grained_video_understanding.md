@@ -133,6 +133,8 @@ The advantage is particularly pronounced on symmetric action pairs: +10.5% on th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
@@ -140,5 +142,7 @@ The advantage is particularly pronounced on symmetric action pairs: +10.5% on th
 - [\[ICLR 2026\] Let's Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding](../../ICLR2026/video_understanding/lets_split_up_zero-shot_classifier_edits_for_fine-grained_video_understanding.md)
 - [\[AAAI 2026\] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion](../../AAAI2026/video_understanding/finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d.md)
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](../../ICCV2025/video_understanding/fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

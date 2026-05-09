@@ -119,6 +119,8 @@ Average gain: synthetic-only +3.87%, joint training +3.37%.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Non-Asymptotic Analysis of Data Augmentation for Precision Matrix Estimation](non-asymptotic_analysis_of_data_augmentation_for_precision_matrix_estimation.md)
@@ -126,5 +128,7 @@ Average gain: synthetic-only +3.87%, joint training +3.37%.
 - [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
 - [\[NeurIPS 2025\] Increasing the Utility of Synthetic Images through Chamfer Guidance](increasing_the_utility_of_synthetic_images_through_chamfer_guidance.md)
 - [\[ICLR 2026\] Pseudo-Nonlinear Data Augmentation: A Constrained Energy Minimization Viewpoint](../../ICLR2026/image_generation/pseudo-nonlinear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
+
+</div>
 
 <!-- RELATED:END -->

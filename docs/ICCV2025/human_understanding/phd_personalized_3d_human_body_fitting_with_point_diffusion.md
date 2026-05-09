@@ -179,6 +179,8 @@ SHAPify leverages height and weight constraints to achieve body shape accuracy f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di.md)
@@ -186,5 +188,7 @@ SHAPify leverages height and weight constraints to achieve body shape accuracy f
 - [\[ICCV 2025\] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding](his-gpt_towards_3d_human-in-scene_multimodal_understanding.md)
 - [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](../../CVPR2026/human_understanding/vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
+
+</div>
 
 <!-- RELATED:END -->

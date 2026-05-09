@@ -141,6 +141,8 @@ On the Large model (1.1B dense → 3.6B MoE): UMoE achieves PPL 15.95 vs. FFN-Mo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads](let_the_experts_speak_improving_survival_prediction_calibration_via_mixture-of-e.md)
@@ -148,5 +150,7 @@ On the Large model (1.1B dense → 3.6B MoE): UMoE achieves PPL 15.95 vs. FFN-Mo
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
 - [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
 - [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](tensor_product_attention_is_all_you_need.md)
+
+</div>
 
 <!-- RELATED:END -->

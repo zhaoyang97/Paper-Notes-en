@@ -176,6 +176,8 @@ SAOT achieves best performance on Darcy, NS, Airfoil, and Plasticity, with the m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
@@ -183,5 +185,7 @@ SAOT achieves best performance on Darcy, NS, Airfoil, and Plasticity, with the m
 - [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](../../CVPR2026/scientific_computing/nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/scientific_computing/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
 - [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -141,6 +141,8 @@ Three concrete models are derived: iPVAE (Poisson), iGVAE (Gaussian), and $\text
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Least Squares Variational Inference](least_squares_variational_inference.md)
@@ -148,5 +150,7 @@ Three concrete models are derived: iPVAE (Poisson), iGVAE (Gaussian), and $\text
 - [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
+
+</div>
 
 <!-- RELATED:END -->

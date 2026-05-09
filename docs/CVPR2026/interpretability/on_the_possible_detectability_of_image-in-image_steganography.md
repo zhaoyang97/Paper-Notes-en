@@ -155,6 +155,8 @@ SRM+SVM achieves detection accuracy exceeding 99% across all tested schemes with
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](why_does_it_look_there_structured_explanations_for_image_classification.md)
@@ -162,5 +164,7 @@ SRM+SVM achieves detection accuracy exceeding 99% across all tested schemes with
 - [\[CVPR 2026\] DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification](dino-qpm_adapting_visual_foundation_models_for_globally_interpretable_image_clas.md)
 - [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
 - [\[CVPR 2026\] RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation](riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -170,6 +170,8 @@ Effect of additional conditions:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
@@ -177,5 +179,7 @@ Effect of additional conditions:
 - [\[ICCV 2025\] Deeply Supervised Flow-Based Generative Models](deeply_supervised_flow-based_generative_models.md)
 - [\[ICCV 2025\] Domain Generalizable Portrait Style Transfer](domain_generalizable_portrait_style_transfer.md)
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](../../NeurIPS2025/image_generation/physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
+
+</div>
 
 <!-- RELATED:END -->

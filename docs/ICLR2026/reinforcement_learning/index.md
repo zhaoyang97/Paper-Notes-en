@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **142** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/reinforcement_learning/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (71)](../../AAAI2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (169)](../../NeurIPS2025/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+
+🔥 **Top topics:** Reinforcement Learning ×44 · Reasoning ×23 · LLM ×15 · Adversarial Robustness ×14 · Agents ×13
+
 **[A Unifying View of Coverage in Linear Off-Policy Evaluation](a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)**
 
 :   This paper proposes a novel coverage parameter—**feature-dynamics coverage**—and conducts a new finite-sample analysis of the classical LSTDQ algorithm through an instrumental variable lens, unifying the various fragmented coverage definitions in linear off-policy evaluation.

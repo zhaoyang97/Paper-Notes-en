@@ -128,6 +128,8 @@ During training, a shared visual encoder (ResNet-50) encodes both annotated patc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](../../CVPR2026/medical_imaging/act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
@@ -135,5 +137,7 @@ During training, a shared visual encoder (ResNet-50) encodes both annotated patc
 - [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
 - [\[AAAI 2026\] WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images](wdt-md_wavelet_diffusion_transformers_for_microaneurysm_detection_in_fundus_imag.md)
 - [\[CVPR 2026\] Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in Whole-Slide Image Prognosis](../../CVPR2026/medical_imaging/sparse_task_vector_mixup_with_hypernetworks_for_efficient_knowledge_transfer_in_.md)
+
+</div>
 
 <!-- RELATED:END -->

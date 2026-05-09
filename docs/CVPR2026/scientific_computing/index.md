@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **4** paper notes
 
+📌 **Same area in other venues:** [🔬 ICLR2026 (10)](../../ICLR2026/scientific_computing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/scientific_computing/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/scientific_computing/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/scientific_computing/index.md)
+
 **[Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)**
 
 :   This paper proposes an exposure-time-dependent modulation transfer function (ET-MTF) that treats exposure time as a continuous variable, and constructs a large-scale synthetic turbulence dataset ET-Turb (5,083 videos, 2 million frames), significantly improving the generalization of turbulence restoration models on real-world data.

@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **17** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/object_detection/index.md) · [📷 CVPR2026 (45)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/object_detection/index.md)
+
+🔥 **Top topics:** Object Detection ×8 · Remote Sensing ×3 · Object Tracking ×2 · 3D Object Detection ×2
+
 **[AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios](aerialmind_towards_referring_multi-object_tracking_in_uav_sc.md)**
 
 :   This paper introduces AerialMind, the first large-scale Referring Multi-Object Tracking (RMOT) benchmark dataset for UAV scenarios, and proposes HawkEyeTrack (HETrack), a method that achieves language-guided multi-object tracking in aerial UAV scenes via a co-evolutionary fusion encoder and a scale-adaptive contextual refinement module.

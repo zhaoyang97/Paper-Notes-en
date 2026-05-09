@@ -189,6 +189,8 @@ SLCA employs a small learning rate for backbone training to mitigate forgetting,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/llm_evaluation/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
@@ -196,5 +198,7 @@ SLCA employs a small learning rate for backbone training to mitigate forgetting,
 - [\[ICLR 2026\] PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment](planetalign_a_comprehensive_python_library_for_benchmarking_network_alignment.md)
 - [\[NeurIPS 2025\] Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](../../NeurIPS2025/llm_evaluation/exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
+
+</div>
 
 <!-- RELATED:END -->

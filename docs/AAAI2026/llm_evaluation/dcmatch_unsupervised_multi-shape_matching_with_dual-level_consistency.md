@@ -191,6 +191,8 @@ Training: Adam optimizer, learning rate 0.001, $\lambda_{bij}=\lambda_{orth}=\la
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Combinative Matching for Geometric Shape Assembly](../../ICCV2025/llm_evaluation/combinative_matching_for_geometric_shape_assembly.md)
@@ -198,5 +200,7 @@ Training: Adam optimizer, learning rate 0.001, $\lambda_{bij}=\lambda_{orth}=\la
 - [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
 - [\[AAAI 2026\] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](maps_multi-agent_personality_shaping_for_collaborative_reaso.md)
 - [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
+
+</div>
 
 <!-- RELATED:END -->

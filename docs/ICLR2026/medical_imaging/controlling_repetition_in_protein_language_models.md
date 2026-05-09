@@ -103,6 +103,8 @@ UCCS is an inference-time intervention that **does not modify model parameters**
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](protein_as_a_second_language_for_llms.md)
@@ -110,5 +112,7 @@ UCCS is an inference-time intervention that **does not modify model parameters**
 - [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[CVPR 2026\] Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation](../../CVPR2026/medical_imaging/multimodal_protein_language_models_for_enzyme_kinetic_parameters_from_substrate_.md)
 - [\[ICLR 2026\] Reverse Distillation: Consistently Scaling Protein Language Model Representations](reverse_distillation_consistently_scaling_protein_language_model_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -124,6 +124,8 @@ The Planner provides strong security but significantly sacrifices utility; the V
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents](../../ICLR2026/llm_agent/chatinject_abusing_chat_templates_for_prompt_injection_in_llm_agents.md)
@@ -131,5 +133,7 @@ The Planner provides strong security but significantly sacrifices utility; the V
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
 - [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](../../ICLR2026/llm_agent/gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
 - [\[NeurIPS 2025\] LLM Agents for Knowledge Discovery in Atomic Layer Processing](llm_agents_for_knowledge_discovery_in_atomic_layer_processing.md)
+
+</div>
 
 <!-- RELATED:END -->

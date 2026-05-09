@@ -121,6 +121,8 @@ The scoping task is defined as follows: given a target domain (e.g., "answer onl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Align to Structure: Aligning Large Language Models with Structural Information](align_to_structure_aligning_large_language_models_with_struc.md)
@@ -128,5 +130,7 @@ The scoping task is defined as follows: given a target domain (e.g., "answer onl
 - [\[AAAI 2026\] Exploring the Effects of Alignment on Numerical Bias in Large Language Models](exploring_the_effects_of_alignment_on_numerical_bias_in_large_language_models.md)
 - [\[AAAI 2026\] BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](biasjailbreakanalyzing_ethical_biases_and_jailbreak_vulnerabilities_in_large_lan.md)
 - [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](../../NeurIPS2025/llm_alignment/alignment_of_large_language_models_with_constrained_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

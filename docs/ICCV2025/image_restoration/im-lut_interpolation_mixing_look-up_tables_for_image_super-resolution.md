@@ -137,6 +137,8 @@ PSNR (dB) comparison for arbitrary-scale super-resolution on standard benchmarks
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration](../../CVPR2026/image_restoration/shiftlut_spatial_shift_enhanced_look-up_tables_for_efficient_image_restoration.md)
@@ -144,5 +146,7 @@ PSNR (dB) comparison for arbitrary-scale super-resolution on standard benchmarks
 - [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
 - [\[ICCV 2025\] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables](lightweight_and_fast_real-time_image_enhancement_via_decomposition_of_the_spatia.md)
 - [\[ICCV 2025\] Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis](benchmarking_burst_super-resolution_for_polarization_images_noise_dataset_and_an.md)
+
+</div>
 
 <!-- RELATED:END -->

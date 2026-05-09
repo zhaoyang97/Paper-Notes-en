@@ -154,6 +154,8 @@ $$\mathcal{L}_{LDM} = \mathbb{E}_{\varepsilon(x), y, \epsilon \sim \mathcal{N}(0
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] 3D Visual Illusion Depth Estimation](3d_visual_illusion_depth_estimation.md)
@@ -161,5 +163,7 @@ $$\mathcal{L}_{LDM} = \mathbb{E}_{\varepsilon(x), y, \epsilon \sim \mathcal{N}(0
 - [\[NeurIPS 2025\] Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation](cue3d_quantifying_the_role_of_image_cues_in_single-image_3d_generation.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](../../ICCV2025/3d_vision/repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 - [\[NeurIPS 2025\] Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation](walking_the_schrödinger_bridge_a_direct_trajectory_for_text-to-3d_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

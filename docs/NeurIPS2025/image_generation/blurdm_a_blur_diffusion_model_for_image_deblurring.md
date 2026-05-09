@@ -134,6 +134,8 @@ Necessity of three-stage training:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](../../ICCV2025/image_generation/learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
@@ -141,5 +143,7 @@ Necessity of three-stage training:
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
 - [\[NeurIPS 2025\] BADiff: Bandwidth Adaptive Diffusion Model](badiff_bandwidth_adaptive_diffusion_model.md)
 - [\[NeurIPS 2025\] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models](perturb_a_model_not_an_image_towards_robust_privacy_protection_via_anti-personal.md)
+
+</div>
 
 <!-- RELATED:END -->

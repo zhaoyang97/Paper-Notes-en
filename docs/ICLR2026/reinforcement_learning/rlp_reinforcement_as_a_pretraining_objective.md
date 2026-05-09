@@ -121,6 +121,8 @@ RLP **does not include a standard NTP loss** and optimizes solely the informatio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control](towards_bridging_the_gap_between_large-scale_pretraining_and_efficient_finetunin.md)
@@ -128,5 +130,7 @@ RLP **does not include a standard NTP loss** and optimizes solely the informatio
 - [\[ICLR 2026\] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification](amped_adaptive_multi-objective_projection_for_balancing_exploration_and_skill_di.md)
 - [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](../../AAAI2026/reinforcement_learning/scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](../../NeurIPS2025/reinforcement_learning/provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
+
+</div>
 
 <!-- RELATED:END -->

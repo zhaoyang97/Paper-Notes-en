@@ -186,6 +186,8 @@ Under comparable runtime (SD3.5, 512×512), Rectified-CFG++ achieves FID 74.47 w
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Balanced Conic Rectified Flow](balanced_conic_rectified_flow.md)
@@ -193,5 +195,7 @@ Under comparable runtime (SD3.5, 512×512), Rectified-CFG++ achieves FID 74.47 w
 - [\[NeurIPS 2025\] GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer](guideflow3d_optimization-guided_rectified_flow_for_appearance_transfer.md)
 - [\[ICCV 2025\] Straighten Viscous Rectified Flow via Noise Optimization](../../ICCV2025/image_generation/straighten_viscous_rectified_flow_via_noise_optimization.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
+
+</div>
 
 <!-- RELATED:END -->

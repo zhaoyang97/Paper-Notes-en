@@ -165,6 +165,8 @@ DiffusionBlend mixes diffusion scores via 3D patch training to enhance 3D consis
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Marker-Based 3D Reconstruction of Aggregates with a Comparative Analysis of 2D and 3D Morphologies](../../CVPR2026/medical_imaging/marker-based_3d_reconstruction_of_aggregates_with_a_comparative_analysis_of_2d_a.md)
@@ -172,5 +174,7 @@ DiffusionBlend mixes diffusion scores via 3D patch training to enhance 3D consis
 - [\[ICLR 2026\] Fine-Tuning Diffusion Models via Intermediate Distribution Shaping](fine-tuning_diffusion_models_via_intermediate_distribution_shaping.md)
 - [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
 - [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](../../AAAI2026/medical_imaging/apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
+
+</div>
 
 <!-- RELATED:END -->

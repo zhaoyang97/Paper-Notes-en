@@ -170,6 +170,8 @@ The learning rate is scaled via the grafting trick. Both SGD and AdamW are suppo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](../../NeurIPS2025/optimization/efficient_adaptive_federated_optimization.md)
@@ -177,5 +179,7 @@ The learning rate is scaled via the grafting trick. Both SGD and AdamW are suppo
 - [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](class-wise_federated_averaging_for_efficient_personalization.md)
 - [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](../../NeurIPS2025/optimization/adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 - [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](../../AAAI2026/optimization/fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -114,6 +114,8 @@ No training is required. Theoretical guarantee: under the relaxed update $u^c = 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](../../NeurIPS2025/scientific_computing/enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
@@ -121,5 +123,7 @@ No training is required. Theoretical guarantee: under the relaxed update $u^c = 
 - [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](../../NeurIPS2025/scientific_computing/eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
 - [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/scientific_computing/astral_training_physics-informed_neural_networks_with_error_majorants.md)
 - [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](../../NeurIPS2025/scientific_computing/stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
+
+</div>
 
 <!-- RELATED:END -->

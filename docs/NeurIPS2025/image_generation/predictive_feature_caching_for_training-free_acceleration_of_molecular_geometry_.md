@@ -133,6 +133,8 @@ The proposed method is **entirely training-free**, applied directly to the pretr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
@@ -140,5 +142,7 @@ The proposed method is **entirely training-free**, applied directly to the pretr
 - [\[NeurIPS 2025\] Training-Free Constrained Generation with Stable Diffusion Models](training-free_constrained_generation_with_stable_diffusion_models.md)
 - [\[ICCV 2025\] MosaicDiff: Training-free Structural Pruning for Diffusion Model Acceleration Reflecting Pretraining Dynamics](../../ICCV2025/image_generation/mosaicdiff_training-free_structural_pruning_for_diffusion_model_acceleration_ref.md)
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](../../CVPR2026/image_generation/just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

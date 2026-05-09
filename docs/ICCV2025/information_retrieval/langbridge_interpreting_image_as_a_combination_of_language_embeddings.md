@@ -137,6 +137,8 @@ A vocabulary size of 19,200 significantly outperforms larger vocabularies on MME
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching](aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md)
@@ -144,5 +146,7 @@ A vocabulary size of 19,200 significantly outperforms larger vocabularies on MME
 - [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](../../NeurIPS2025/information_retrieval/the_narrow_gate_localized_imagetext_communication_in_native.md)
 - [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
 - [\[ICCV 2025\] aligning information capacity between vision and language via dense-to-sparse fe](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)
+
+</div>
 
 <!-- RELATED:END -->

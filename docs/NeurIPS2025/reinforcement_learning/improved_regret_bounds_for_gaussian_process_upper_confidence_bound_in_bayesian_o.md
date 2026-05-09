@@ -135,6 +135,8 @@ The analysis relies on three sample path conditions (Lemma 2): (1) $f$ has a uni
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality](improved_regret_and_contextual_linear_extension_for_pandoras_box_and_prophet_ine.md)
@@ -142,5 +144,7 @@ The analysis relies on three sample path conditions (Lemma 2): (1) $f$ has a uni
 - [\[NeurIPS 2025\] ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition](aline_joint_amortization_for_bayesian_inference_and_active_data_acquisition.md)
 - [\[NeurIPS 2025\] Dynamic Regret Reduces to Kernelized Static Regret](dynamic_regret_reduces_to_kernelized_static_regret.md)
 - [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
+
+</div>
 
 <!-- RELATED:END -->

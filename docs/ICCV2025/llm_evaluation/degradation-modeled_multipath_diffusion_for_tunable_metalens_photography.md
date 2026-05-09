@@ -123,6 +123,8 @@ The training loss is a weighted combination of L2 loss and LPIPS perceptual loss
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation](lay2story_extending_diffusion_transformers_for_layout-togglable_story_generation.md)
@@ -130,5 +132,7 @@ The training loss is a weighted combination of L2 loss and LPIPS perceptual loss
 - [\[ICCV 2025\] Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating](spectral_sensitivity_estimation_with_an_uncalibrated_diffraction_grating.md)
 - [\[ICCV 2025\] DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing](dista-net_dynamic_closely-spaced_infrared_small_target_unmixing.md)
 - [\[ICCV 2025\] A Real-world Display Inverse Rendering Dataset](a_real-world_display_inverse_rendering_dataset.md)
+
+</div>
 
 <!-- RELATED:END -->

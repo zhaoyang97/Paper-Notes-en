@@ -129,6 +129,8 @@ GeoBPE's BPR is only 27–36% of ProToken's (>10× compression advantage) and 1.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](../../NeurIPS2025/medical_imaging/towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
@@ -136,5 +138,7 @@ GeoBPE's BPR is only 27–36% of ProToken's (>10× compression advantage) and 1.
 - [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](../../NeurIPS2025/medical_imaging/quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](protein_as_a_second_language_for_llms.md)
 - [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/medical_imaging/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
+
+</div>
 
 <!-- RELATED:END -->

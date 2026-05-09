@@ -119,6 +119,8 @@ ChInf is a post-hoc interpretability tool. Given a trained MTS model, ChInf comp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
@@ -126,5 +128,7 @@ ChInf is a post-hoc interpretability tool. Given a trained MTS model, ChInf comp
 - [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](../../ICLR2026/time_series/t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
 - [\[AAAI 2026\] C3RL: Rethinking the Combination of Channel-independence and Channel-mixing from Representation Learning](../../AAAI2026/time_series/c3rl_rethinking_the_combination_of_channel-independence_and_channel-mixing_from_.md)
 - [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **31** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (34)](../../ACL2026/interpretability/index.md) · [🔬 ICLR2026 (59)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (82)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/interpretability/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×5 · Layout & Composition ×2 · Watermarking ×2 · Reasoning ×2
+
 **[Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP](beyond_semantics_disentangling_information_scope_in_sparse_autoencoders_for_clip.md)**
 
 :   This paper proposes "information scope" as a novel dimension for SAE feature interpretability. By introducing the Contextual Dependency Score (CDS), it partitions CLIP's SAE features into local features (low CDS) and global features (high CDS), revealing their differentiated functional roles in classification, segmentation, and depth estimation.

@@ -300,6 +300,8 @@ FIPER is evaluated across 5 diverse environments (simulation + real world) using
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
@@ -307,5 +309,7 @@ FIPER is evaluated across 5 diverse environments (simulation + real world) using
 - [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](real-time_execution_of_action_chunking_flow_policies.md)
 - [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
 - [\[NeurIPS 2025\] GenIR: Generative Visual Feedback for Mental Image Retrieval](genir_generative_visual_feedback_for_mental_image_retrieval.md)
+
+</div>
 
 <!-- RELATED:END -->

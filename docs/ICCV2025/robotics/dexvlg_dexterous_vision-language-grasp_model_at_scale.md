@@ -145,6 +145,8 @@ DexVLG maintains a 79.1% Wrap grasp success rate on unseen objects and 76.3% zer
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](../../NeurIPS2025/robotics/grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
@@ -152,5 +154,7 @@ DexVLG maintains a 79.1% Wrap grasp success rate on unseen objects and 76.3% zer
 - [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
 - [\[ICCV 2025\] CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games](combatvla_an_efficient_vision-language-action_model_for_combat_tasks_in_3d_actio.md)
 - [\[ICCV 2025\] COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation](cosmo_combination_of_selective_memorization_for_low-cost_vision-and-language_nav.md)
+
+</div>
 
 <!-- RELATED:END -->

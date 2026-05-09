@@ -128,6 +128,8 @@ Two-stage training:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing](dista-net_dynamic_closely-spaced_infrared_small_target_unmixing.md)
@@ -135,5 +137,7 @@ Two-stage training:
 - [\[CVPR 2026\] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion](../../CVPR2026/llm_evaluation/prism_video_dataset_condensation_with_progressive_refinement_and_insertion_for_s.md)
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](../../ACL2026/llm_evaluation/from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
 - [\[AAAI 2026\] MindVote: When AI Meets the Wild West of Social Media Opinion](../../AAAI2026/llm_evaluation/mindvote_when_ai_meets_the_wild_west_of_social_media_opinion.md)
+
+</div>
 
 <!-- RELATED:END -->

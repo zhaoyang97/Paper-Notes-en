@@ -138,6 +138,8 @@ Evaluation spans **91 regression + 112 classification tasks**, with dataset size
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
@@ -145,5 +147,7 @@ Evaluation spans **91 regression + 112 classification tasks**, with dataset size
 - [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](../../ACL2026/signal_comm/ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
 - [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](../../ICLR2026/signal_comm/spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/signal_comm/fasa_frequency-aware_sparse_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

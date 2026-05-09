@@ -159,6 +159,8 @@ Value ★★★☆☆: Requires training both a flow generation model and an RL 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data](../../NeurIPS2025/image_generation/composite_flow_matching_for_reinforcement_learning_with_shifted-dynamics_data.md)
@@ -166,5 +168,7 @@ Value ★★★☆☆: Requires training both a flow generation model and an RL 
 - [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](../../ICLR2026/image_generation/hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
 - [\[ICLR 2026\] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)](../../ICLR2026/image_generation/improved_object-centric_diffusion_learning_with_registers_and_contrastive_alignm.md)
 - [\[ICCV 2025\] Pretrained Reversible Generation as Unsupervised Visual Representation Learning](pretrained_reversible_generation_as_unsupervised_visual_representation_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

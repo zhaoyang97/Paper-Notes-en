@@ -148,6 +148,8 @@ The paper validates its theoretical results through numerical simulation on synt
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] ETA: Energy-based Test-time Adaptation for Depth Completion](../../ICCV2025/llm_pretraining/eta_energy-based_test-time_adaptation_for_depth_completion.md)
@@ -155,5 +157,7 @@ The paper validates its theoretical results through numerical simulation on synt
 - [\[NeurIPS 2025\] Global Minimizers of Sigmoid Contrastive Loss](../../NeurIPS2025/llm_pretraining/global_minimizers_of_sigmoid_contrastive_loss.md)
 - [\[ICLR 2026\] Intrinsic Training Dynamics of Deep Neural Networks](intrinsic_training_dynamics_of_deep_neural_networks.md)
 - [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](../../NeurIPS2025/llm_pretraining/the_curse_of_depth_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

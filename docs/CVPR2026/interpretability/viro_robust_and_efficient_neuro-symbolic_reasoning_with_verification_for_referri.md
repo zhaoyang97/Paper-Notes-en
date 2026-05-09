@@ -130,6 +130,8 @@ VIRO adopts a two-stage decoupled pipeline: (1) **Pre-execution stage**: an LLM 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning](../../ACL2026/interpretability/forest_before_trees_latent_superposition_for_efficient_visual_reasoning.md)
@@ -137,5 +139,7 @@ VIRO adopts a two-stage decoupled pipeline: (1) **Pre-execution stage**: an LLM 
 - [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
 - [\[ACL 2026\] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents](../../ACL2026/interpretability/pv-sql_synergizing_database_probing_and_rule-based_verification_for_text-to-sql_.md)
 - [\[NeurIPS 2025\] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces](../../NeurIPS2025/interpretability/tangledfeatures_robust_feature_selection_in_highly_correlated_spaces.md)
+
+</div>
 
 <!-- RELATED:END -->

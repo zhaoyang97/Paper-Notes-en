@@ -138,6 +138,8 @@ Two-stage training: FP phase ($D_{fp}$ tokens) → QAT phase ($D_{qat}$ tokens),
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
@@ -145,5 +147,7 @@ Two-stage training: FP phase ($D_{fp}$ tokens) → QAT phase ($D_{qat}$ tokens),
 - [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 - [\[ICLR 2026\] What Layers When: Learning to Skip Compute in LLMs with Residual Gates](what_layers_when_learning_to_skip_compute_in_llms_with_residual_gates.md)
+
+</div>
 
 <!-- RELATED:END -->

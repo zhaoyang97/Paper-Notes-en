@@ -145,6 +145,8 @@ Definition: Recovery ratio $= \frac{\text{LAPO-slots/masks} - \text{LAPO}}{\text
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](object-centric_world_models_for_causality-aware_reinforcement_learning.md)
@@ -152,5 +154,7 @@ Definition: Recovery ratio $= \frac{\text{LAPO-slots/masks} - \text{LAPO}}{\text
 - [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](efficient_multiagent_planning_via_shared_action_suggestions.md)
 - [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
 - [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ This paper systematically compares the scaling laws of xLSTM and Transformer, de
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
@@ -129,5 +131,7 @@ This paper systematically compares the scaling laws of xLSTM and Transformer, de
 - [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
 - [\[ICLR 2026\] IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling](iterresearch_rethinking_long-horizon_agents_with_interaction_scaling.md)
 - [\[AAAI 2026\] MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm](../../AAAI2026/llm_efficiency/moetta_test-time_adaptation_under_mixed_distribution_shifts_with_moe-layernorm.md)
+
+</div>
 
 <!-- RELATED:END -->

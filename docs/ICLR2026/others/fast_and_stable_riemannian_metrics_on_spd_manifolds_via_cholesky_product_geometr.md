@@ -200,6 +200,8 @@ The Log-Cholesky metric (DLM/LCM) fails nearly 100% of the time under small eige
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds](../../NeurIPS2025/others/finite-time_analysis_of_stochastic_nonconvex_nonsmooth_optimization_on_the_riema.md)
@@ -207,5 +209,7 @@ The Log-Cholesky metric (DLM/LCM) fails nearly 100% of the time under small eige
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
 - [\[ICLR 2026\] Evaluating GFlowNet from Partial Episodes for Stable and Flexible Policy-Based Training](evaluating_gflownet_from_partial_episodes_for_stable_and_flexible_policy-based_t.md)
 - [\[ICLR 2026\] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields](refine_now_query_fast_a_decoupled_refinement_paradigm_for_implicit_neural_fields.md)
+
+</div>
 
 <!-- RELATED:END -->

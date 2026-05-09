@@ -215,6 +215,8 @@ In the high-dimensional proportional limit $N, D \to \infty$ with $\alpha = N/D 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Rethinking Uncertainty Estimation in LLMs: A Principled Single-Sequence Measure](rethinking_uncertainty_estimation_in_llms_a_principled_single-sequence_measure.md)
@@ -222,5 +224,7 @@ In the high-dimensional proportional limit $N, D \to \infty$ with $\alpha = N/D 
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)
 - [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](../../AAAI2026/llm_nlp/vision_transformers_are_circulant_attention_learners.md)
 - [\[ACL 2026\] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models](../../ACL2026/llm_nlp/lost_in_the_prompt_order_revealing_the_limitations_of_causal_attention_in_langua.md)
+
+</div>
 
 <!-- RELATED:END -->

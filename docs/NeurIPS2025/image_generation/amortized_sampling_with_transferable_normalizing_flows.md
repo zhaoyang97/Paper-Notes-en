@@ -137,6 +137,8 @@ Prose comprehensively outperforms 1μs MD under equal energy evaluation budgets,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
@@ -144,5 +146,7 @@ Prose comprehensively outperforms 1μs MD under equal energy evaluation budgets,
 - [\[NeurIPS 2025\] Multimodal Generative Flows for LHC Jets](multimodal_generative_flows_for_lhc_jets.md)
 - [\[NeurIPS 2025\] Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models](transferable_black-box_one-shot_forging_of_watermarks_via_image_preference_model.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
+
+</div>
 
 <!-- RELATED:END -->

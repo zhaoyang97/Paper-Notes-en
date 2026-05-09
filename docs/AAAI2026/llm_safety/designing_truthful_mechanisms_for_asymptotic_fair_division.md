@@ -173,6 +173,8 @@ This paper is a purely theoretical contribution with no experimental data. The c
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] When AI Democratizes Exploitation: LLM-Assisted Strategic Manipulation of Fair Division Algorithms](../../NeurIPS2025/llm_safety/when_ai_democratizes_exploitation_llm-assisted_strategic_manipulation_of_fair_di.md)
@@ -180,5 +182,7 @@ This paper is a purely theoretical contribution with no experimental data. The c
 - [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
 - [\[NeurIPS 2025\] A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing](../../NeurIPS2025/llm_safety/a_cramrvon_mises_approach_to_incentivizing_truthful_data_sha.md)
 - [\[AAAI 2026\] Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms](lost_in_translation_a_comparative_study_on_the_cross-lingual_transfer_of_composi.md)
+
+</div>
 
 <!-- RELATED:END -->

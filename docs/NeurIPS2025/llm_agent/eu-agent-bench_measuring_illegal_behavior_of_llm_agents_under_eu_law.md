@@ -164,6 +164,8 @@ Providing relevant EU legal provisions directly in the system prompt yields:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents](agentmisalignment_measuring_the_propensity_for_misaligned_behaviour_in_llm-based.md)
@@ -171,5 +173,7 @@ Providing relevant EU legal provisions directly in the system prompt yields:
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](../../ICLR2026/llm_agent/newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
 - [\[NeurIPS 2025\] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions](contextagent_context-aware_proactive_llm_agents_with_open-world_sensory_percepti.md)
 - [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](../../ACL2026/llm_agent/why_agents_compromise_safety_under_pressure.md)
+
+</div>
 
 <!-- RELATED:END -->

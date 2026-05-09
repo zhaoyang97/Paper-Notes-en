@@ -117,6 +117,8 @@ Training uses a flow-matching objective $\mathcal{L} = \mathbb{E}[\|u_\theta(x_t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
@@ -124,5 +126,7 @@ Training uses a flow-matching objective $\mathcal{L} = \mathbb{E}[\|u_\theta(x_t
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](../../ICCV2025/3d_vision/vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
 - [\[CVPR 2026\] Scene Grounding In the Wild](scene_grounding_in_the_wild.md)
 - [\[CVPR 2026\] DROID-W: DROID-SLAM in the Wild](droid-slam_in_the_wild.md)
+
+</div>
 
 <!-- RELATED:END -->

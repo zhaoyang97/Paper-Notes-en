@@ -135,6 +135,8 @@ How can the fundamental gap between computational optimization objectives (likel
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Discovering and Steering Interpretable Concepts in Large Generative Music Models](../../ICLR2026/audio_speech/discovering_and_steering_interpretable_concepts_in_large_generative_music_models.md)
@@ -142,5 +144,7 @@ How can the fundamental gap between computational optimization objectives (likel
 - [\[NeurIPS 2025\] Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders](../../NeurIPS2025/audio_speech/perceptually_aligning_representations_of_music_via_noise-augmented_autoencoders.md)
 - [\[NeurIPS 2025\] Ethics Statements in AI Music Papers: The Effective and the Ineffective](../../NeurIPS2025/audio_speech/ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)
 - [\[AAAI 2026\] Factor(U,T): Controlling Untrusted AI by Monitoring their Plans](factorut_controlling_untrusted_ai_by_monitoring_their_plans.md)
+
+</div>
 
 <!-- RELATED:END -->

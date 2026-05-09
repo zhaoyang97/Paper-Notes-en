@@ -132,6 +132,8 @@ The NW method yields the tightest upper bounds across all four synthetic functio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](tabstruct_measuring_structural_fidelity_of_tabular_data.md)
@@ -139,5 +141,7 @@ The NW method yields the tightest upper bounds across all four synthetic functio
 - [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](../../ACL2026/llm_evaluation/made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
 - [\[NeurIPS 2025\] On the Entropy Calibration of Language Models](../../NeurIPS2025/llm_evaluation/on_the_entropy_calibration_of_language_models.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](../../AAAI2026/llm_evaluation/sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

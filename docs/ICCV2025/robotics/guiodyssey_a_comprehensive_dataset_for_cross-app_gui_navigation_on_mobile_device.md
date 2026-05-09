@@ -157,6 +157,8 @@ Fine-tuned methods substantially outperform zero-shot baselines; OdysseyAgent wi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/robotics/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
@@ -164,5 +166,7 @@ Fine-tuned methods substantially outperform zero-shot baselines; OdysseyAgent wi
 - [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
 - [\[ICLR 2026\] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](../../ICLR2026/robotics/rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)
 - [\[NeurIPS 2025\] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval](../../NeurIPS2025/robotics/efficientnav_towards_on-device_object-goal_navigation_with_navigation_map_cachin.md)
+
+</div>
 
 <!-- RELATED:END -->

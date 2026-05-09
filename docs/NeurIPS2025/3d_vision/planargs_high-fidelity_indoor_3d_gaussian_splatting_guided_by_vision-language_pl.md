@@ -135,6 +135,8 @@ $\lambda_1=0.05, \lambda_2=0.5, \lambda_3=0.05, \lambda_4=0.2$. Training runs fo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting](../../ICCV2025/3d_vision/autoocc_automatic_openended_semantic_occupancy_annotation_vi.md)
@@ -142,5 +144,7 @@ $\lambda_1=0.05, \lambda_2=0.5, \lambda_3=0.05, \lambda_4=0.2$. Training runs fo
 - [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 - [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](../../ICCV2025/3d_vision/gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting](plana3r_zero-shot_metric_planar_3d_reconstruction_via_feed-forward_planar_splatt.md)
+
+</div>
 
 <!-- RELATED:END -->

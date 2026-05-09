@@ -172,6 +172,8 @@ AL-GCD is plugged into three distinct GCD pipelines (CMS-CLIP, SimGCD-CLIP, SelE
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/llm_evaluation/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
@@ -179,5 +181,7 @@ AL-GCD is plugged into three distinct GCD pipelines (CMS-CLIP, SimGCD-CLIP, SelE
 - [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
 - [\[AAAI 2026\] Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering](../../AAAI2026/llm_evaluation/break_the_tie_learning_cluster-customized_category_relationships_for_categorical.md)
 - [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
+
+</div>
 
 <!-- RELATED:END -->

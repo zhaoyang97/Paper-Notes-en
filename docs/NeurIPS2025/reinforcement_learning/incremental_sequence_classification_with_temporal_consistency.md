@@ -159,6 +159,8 @@ Sequence classification is framed as an absorption probability estimation proble
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](temporal-difference_variational_continual_learning.md)
@@ -166,5 +168,7 @@ Sequence classification is framed as an absorption probability estimation proble
 - [\[NeurIPS 2025\] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL](oryx_a_scalable_sequence_model_for_many-agent_coordination_in_offline_marl.md)
 - [\[ICLR 2026\] When Sensors Fail: Temporal Sequence Models for Robust PPO under Sensor Drift](../../ICLR2026/reinforcement_learning/when_sensors_fail_temporal_sequence_models_for_robust_ppo_under_sensor_drift.md)
 - [\[NeurIPS 2025\] STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning](stair_addressing_stage_misalignment_through_temporal-aligned_preference_reinforc.md)
+
+</div>
 
 <!-- RELATED:END -->

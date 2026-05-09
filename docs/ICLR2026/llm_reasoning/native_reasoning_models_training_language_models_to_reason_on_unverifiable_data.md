@@ -136,6 +136,8 @@ $J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO wi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
@@ -143,5 +145,7 @@ $J(\theta) = \mathbb{E}_{z \sim \pi_\theta}[R(z,\theta)]$, optimized via GRPO wi
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/llm_reasoning/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
 - [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](../../ACL2026/llm_reasoning/efficient_prm_training_data_synthesis_via_formal_verification.md)
 - [\[ICLR 2026\] SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models](sealqa_raising_the_bar_for_reasoning_in_search-augmented_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

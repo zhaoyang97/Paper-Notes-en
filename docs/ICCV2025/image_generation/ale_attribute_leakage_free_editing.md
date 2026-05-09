@@ -113,6 +113,8 @@ This paper identifies semantic entanglement in the EOS embeddings of autoregress
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-based Image Editing](addressing_text_embedding_leakage_in_diffusion_based_image_editing.md)
@@ -120,5 +122,7 @@ This paper identifies semantic entanglement in the EOS embeddings of autoregress
 - [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
 - [\[ICCV 2025\] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing](anchor_token_matching_implicit_structure_locking_for_training-free_ar_image_edit.md)
 - [\[NeurIPS 2025\] SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing](../../NeurIPS2025/image_generation/splitflow_flow_decomposition_for_inversion-free_text-to-image_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

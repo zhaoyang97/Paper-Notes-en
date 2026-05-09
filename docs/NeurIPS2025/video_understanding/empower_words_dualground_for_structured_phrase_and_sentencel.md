@@ -145,6 +145,8 @@ DualGround achieves state-of-the-art performance on both benchmarks across MR an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] DualGround: Structured Phrase and Sentence-Level Temporal Grounding](dualground_phrase_temporal.md)
@@ -152,5 +154,7 @@ DualGround achieves state-of-the-art performance on both benchmarks across MR an
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[NeurIPS 2025\] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](tempsamp_r1_temporal_grounding.md)
 - [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](../../ICCV2025/video_understanding/timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -148,6 +148,8 @@ The pre-training dataset spans four cell lines (HepG2, HCT116, IMR90, WTC11), yi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training](qoq-med_building_multimodal_clinical_foundation_models_with_domain-aware_grpo_tr.md)
@@ -155,5 +157,7 @@ The pre-training dataset spans four cell lines (HepG2, HCT116, IMR90, WTC11), yi
 - [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](../../ICCV2025/medical_imaging/boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
 - [\[ICCV 2025\] TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation](../../ICCV2025/medical_imaging/teethgenerator_a_two-stage_framework_for_paired_pre-_and_post-orthodontic_3d_den.md)
 - [\[AAAI 2026\] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](../../AAAI2026/medical_imaging/mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)
+
+</div>
 
 <!-- RELATED:END -->

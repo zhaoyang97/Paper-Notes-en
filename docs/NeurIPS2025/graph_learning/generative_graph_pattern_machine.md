@@ -180,6 +180,8 @@ The paper analyzes the structural basis for MSM's effectiveness from three persp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] P-DRUM: Post-hoc Descriptor-based Residual Uncertainty Modeling for Machine Learning Potentials](p-drum_post-hoc_descriptor-based_residual_uncertainty_modeling_for_machine_learn.md)
@@ -187,5 +189,7 @@ The paper analyzes the structural basis for MSM's effectiveness from three persp
 - [\[AAAI 2026\] GSAP-ERE: Fine-Grained Scholarly Entity and Relation Extraction Focused on Machine Learning](../../AAAI2026/graph_learning/gsap-ere_fine-grained_scholarly_entity_and_relation_extraction_focused_on_machin.md)
 - [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Graph Persistence goes Spectral](graph_persistence_goes_spectral.md)
+
+</div>
 
 <!-- RELATED:END -->

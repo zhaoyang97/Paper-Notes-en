@@ -127,6 +127,8 @@ TimeSliver is an explainability-driven deep learning framework that jointly leve
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](../../AAAI2026/time_series/counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
@@ -134,5 +136,7 @@ TimeSliver is an explainability-driven deep learning framework that jointly leve
 - [\[ICLR 2026\] WARP: Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
 - [\[ICLR 2026\] scits scientific time series understanding and generation with llms](scits_scientific_time_series_understanding_and_generation_with_llms.md)
 - [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
+
+</div>
 
 <!-- RELATED:END -->

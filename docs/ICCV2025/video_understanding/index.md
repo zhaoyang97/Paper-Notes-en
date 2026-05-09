@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **58** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (92)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (24)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/video_understanding/index.md)
+
+🔥 **Top topics:** Object Tracking ×9 · LLM ×6 · Human Pose ×5 · Model Compression ×4 · Dynamic Scenes ×3
+
 **[4D-Bench: Benchmarking Multi-Modal Large Language Models for 4D Object Understanding](4d-bench_benchmarking_multi-modal_large_language_models_for_4d_object_understand.md)**
 
 :   4D-Bench is the first benchmark for evaluating multi-modal large language models (MLLMs) on 4D object understanding. It encompasses two tasks—4D object question answering and captioning—and reveals that even the state-of-the-art GPT-4o achieves only 63% accuracy against a human baseline of 91%, exposing significant deficiencies in multi-view temporal reasoning among current MLLMs.

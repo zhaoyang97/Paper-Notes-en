@@ -129,6 +129,8 @@ The paper revisits oversmoothing from a linear-algebraic perspective, redefining
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
@@ -136,5 +138,7 @@ The paper revisits oversmoothing from a linear-algebraic perspective, redefining
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
 - [\[CVPR 2026\] Hyperbolic Busemann Neural Networks](../../CVPR2026/graph_learning/hyperbolic_busemann_neural_networks.md)
 - [\[CVPR 2026\] Adaptive Learned Image Compression with Graph Neural Networks](../../CVPR2026/graph_learning/adaptive_learned_image_compression_with_graph_neural_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

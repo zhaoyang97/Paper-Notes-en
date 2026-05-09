@@ -155,6 +155,8 @@ Key Finding: **IFA-Net surpasses dedicated tampering detection methods in a zero
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes](../../ICCV2025/segmentation/rethinking_detecting_salient_and_camouflaged_objects_in_unconstrained_scenes.md)
@@ -162,5 +164,7 @@ Key Finding: **IFA-Net surpasses dedicated tampering detection methods in a zero
 - [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)
 - [\[CVPR 2026\] HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding](hippomm_hippocampal-inspired_multimodal_memory_for_long_audiovisual_event_unders.md)
 - [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](phrase-instance_alignment_for_generalized_referring_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

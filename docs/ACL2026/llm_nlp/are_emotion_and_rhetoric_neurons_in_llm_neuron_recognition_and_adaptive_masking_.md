@@ -127,6 +127,8 @@ Accuracy change ($\Delta$ACC %) under different masking methods:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning](grass_gradient-based_adaptive_layer-wise_importance_sampling_for_memory-efficien.md)
@@ -134,5 +136,7 @@ Accuracy change ($\Delta$ACC %) under different masking methods:
 - [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](../../CVPR2026/llm_nlp/sign_language_recognition_llms.md)
 - [\[AAAI 2026\] Smart: A GNN-LLM Hybrid Surrogate Model for Dragonfly System Application Runtime Prediction](../../AAAI2026/llm_nlp/smart_a_surrogate_model_for_predicting_application_runtime_in_dragonfly_systems.md)
 - [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
+
+</div>
 
 <!-- RELATED:END -->

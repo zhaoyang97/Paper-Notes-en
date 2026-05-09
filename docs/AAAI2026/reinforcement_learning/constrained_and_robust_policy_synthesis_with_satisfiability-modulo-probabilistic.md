@@ -128,6 +128,8 @@ Evaluation is conducted on hundreds of benchmarks covering two major problem cla
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Boolean Satisfiability via Imitation Learning](../../ICLR2026/reinforcement_learning/boolean_satisfiability_via_imitation_learning.md)
@@ -135,5 +137,7 @@ Evaluation is conducted on hundreds of benchmarks covering two major problem cla
 - [\[NeurIPS 2025\] Bootstrap Off-policy with World Model](../../NeurIPS2025/reinforcement_learning/boundary-to-region_supervision_for_offline_safe_reinforcement_learning.md)
 - [\[ACL 2026\] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning](../../ACL2026/reinforcement_learning/bridging_sft_and_rl_dynamic_policy_optimization_for_robust_reasoning.md)
 - [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](../../NeurIPS2025/reinforcement_learning/bootstrap_off-policy_with_world_model.md)
+
+</div>
 
 <!-- RELATED:END -->

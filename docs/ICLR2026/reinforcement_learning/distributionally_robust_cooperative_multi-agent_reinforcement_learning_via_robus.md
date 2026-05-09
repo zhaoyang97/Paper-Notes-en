@@ -147,6 +147,8 @@ Robust VDN and QMIX significantly improve OOD test win rates at small values of 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
@@ -154,5 +156,7 @@ Robust VDN and QMIX significantly improve OOD test win rates at small values of 
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
 - [\[AAAI 2026\] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning](../../AAAI2026/reinforcement_learning/beyond_monotonicity_revisiting_factorization_principles_in_multi-agent_q-learnin.md)
 - [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

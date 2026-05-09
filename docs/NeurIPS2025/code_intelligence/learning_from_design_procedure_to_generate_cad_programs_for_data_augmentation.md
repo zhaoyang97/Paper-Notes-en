@@ -134,6 +134,8 @@ The effect of removing the reference surface prompt is evaluated:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](automated_multi-agent_workflows_for_rtl_design.md)
@@ -141,5 +143,7 @@ The effect of removing the reference surface prompt is evaluated:
 - [\[ICLR 2026\] Sharing State Between Prompts and Programs](../../ICLR2026/code_intelligence/sharing_state_between_prompts_and_programs.md)
 - [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](../../ICLR2026/code_intelligence/card_towards_conditional_design_of_multi-agent_topological_structures.md)
 - [\[ACL 2026\] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases](../../ACL2026/code_intelligence/codewiki_evaluating_ai39s_ability_to_generate_holistic_documentation_for_large-s.md)
+
+</div>
 
 <!-- RELATED:END -->

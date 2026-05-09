@@ -167,6 +167,8 @@ GTR achieves a **7×** improvement in success rate over the SOTA method (RL4VLM)
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training](../../CVPR2026/multimodal_vlm/gtr_turbo_merged_checkpoint_free_teacher.md)
@@ -174,5 +176,7 @@ GTR achieves a **7×** improvement in success rate over the SOTA method (RL4VLM)
 - [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
 - [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](../../NeurIPS2025/multimodal_vlm/praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
 - [\[NeurIPS 2025\] What Can RL Bring to VLA Generalization? An Empirical Study](../../NeurIPS2025/multimodal_vlm/what_can_rl_bring_to_vla_generalization_an_empirical_study.md)
+
+</div>
 
 <!-- RELATED:END -->

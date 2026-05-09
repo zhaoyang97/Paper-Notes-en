@@ -137,6 +137,8 @@ $$\dot{\tilde{w}}^\circ(t)=-\mathrm{grad}_{\mathcal{M}}\ell_2(\tilde{w}^\circ(t)
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
@@ -144,5 +146,7 @@ $$\dot{\tilde{w}}^\circ(t)=-\mathrm{grad}_{\mathcal{M}}\ell_2(\tilde{w}^\circ(t)
 - [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
 - [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
 - [\[NeurIPS 2025\] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering](mutualvpr_a_mutual_learning_framework_for_resolving_supervision_inconsistencies_.md)
+
+</div>
 
 <!-- RELATED:END -->

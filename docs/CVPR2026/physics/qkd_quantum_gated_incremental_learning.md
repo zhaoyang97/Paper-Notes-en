@@ -110,6 +110,8 @@ Cross-entropy classification loss + correlation-weighted feature distillation lo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](../../NeurIPS2025/physics/knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
@@ -117,5 +119,7 @@ Cross-entropy classification loss + correlation-weighted feature distillation lo
 - [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
 - [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](../../AAAI2026/physics/data_verification_is_the_future_of_quantum_computing_copilots.md)
 - [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
+
+</div>
 
 <!-- RELATED:END -->

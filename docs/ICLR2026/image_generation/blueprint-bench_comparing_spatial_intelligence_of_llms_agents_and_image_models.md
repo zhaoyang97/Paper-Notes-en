@@ -143,6 +143,8 @@ The dataset comprises 50 apartments, each with approximately 20 interior photogr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models](everything_in_its_place_benchmarking_spatial_intelligence_of_text-to-image_model.md)
@@ -150,5 +152,7 @@ The dataset comprises 50 apartments, each with approximately 20 interior photogr
 - [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
 - [\[NeurIPS 2025\] Is Artificial Intelligence Generated Image Detection a Solved Problem?](../../NeurIPS2025/image_generation/is_artificial_intelligence_generated_image_detection_a_solved_problem.md)
 - [\[ICLR 2026\] Step-Aware Residual-Guided Diffusion for EEG Spatial Super-Resolution](step-aware_residual-guided_diffusion_for_eeg_spatial_super-resolution.md)
+
+</div>
 
 <!-- RELATED:END -->

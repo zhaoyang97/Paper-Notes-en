@@ -118,6 +118,8 @@ As a benchmark paper, no model training is involved. Four representative memory 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] CORDS: Continuous Representations of Discrete Structures](../../ICLR2026/object_detection/cords_continuous_representations_of_discrete_structures.md)
@@ -125,5 +127,7 @@ As a benchmark paper, no model training is involved. Four representative memory 
 - [\[CVPR 2026\] The COTe Score: A Decomposable Framework for Evaluating Document Layout Analysis Models](../../CVPR2026/object_detection/the_cote_score_a_decomposable_framework_for_evaluating_document_layout_analysis_.md)
 - [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
 - [\[ACL 2026\] Evolutionary Negative Module Pruning for Better LoRA Merging](evolutionary_negative_module_pruning_for_better_lora_merging.md)
+
+</div>
 
 <!-- RELATED:END -->

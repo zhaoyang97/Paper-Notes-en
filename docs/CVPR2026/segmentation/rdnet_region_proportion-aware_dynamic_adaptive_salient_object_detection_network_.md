@@ -152,6 +152,8 @@ $$L_{total} = \frac{1}{N} \sum_{i=1}^{N} (L_{bce} + L_{iou} + L_{fm} + L_{mse})$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] RSONet: Region-guided Selective Optimization Network for RGB-T Salient Object Detection](rsonet_regionguided_selective_optimization_network.md)
@@ -159,5 +161,7 @@ $$L_{total} = \frac{1}{N} \sum_{i=1}^{N} (L_{bce} + L_{iou} + L_{fm} + L_{mse})$
 - [\[CVPR 2026\] Efficient RGB-D Scene Understanding via Multi-task Adaptive Learning and Cross-dimensional Feature Guidance](efficient_rgb-d_scene_understanding_via_multi-task_adaptive_learning_and_cross-d.md)
 - [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
 - [\[CVPR 2026\] Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains](prompt-driven_lightweight_foundation_model_for_instance_segmentation-based_fault.md)
+
+</div>
 
 <!-- RELATED:END -->

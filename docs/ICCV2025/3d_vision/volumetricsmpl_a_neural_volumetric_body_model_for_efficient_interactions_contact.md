@@ -154,6 +154,8 @@ Adam optimizer with learning rate annealed from $10^{-4}$ to $10^{-5}$, trained 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SceneMI: Motion In-betweening for Modeling Human-Scene Interactions](scenemi_motion_in-betweening_for_modeling_human-scene_interaction.md)
@@ -161,5 +163,7 @@ Adam optimizer with learning rate annealed from $10^{-4}$ to $10^{-5}$, trained 
 - [\[ICCV 2025\] ETCH: Generalizing Body Fitting to Clothed Humans via Equivariant Tightness](etch_generalizing_body_fitting_to_clothed_humans_via_equivariant_tightness.md)
 - [\[ICCV 2025\] GUAVA: Generalizable Upper Body 3D Gaussian Avatar](guava_generalizable_upper_body_3d_gaussian_avatar.md)
 - [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
+
+</div>
 
 <!-- RELATED:END -->

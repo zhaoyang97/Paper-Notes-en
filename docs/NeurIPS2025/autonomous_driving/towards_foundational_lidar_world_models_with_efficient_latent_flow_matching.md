@@ -140,6 +140,8 @@ Cosmos is an RGB foundation world model targeting both indoor and outdoor scenes
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](flow_matching-based_autonomous_driving_planning_with_advanced_interactive_behavi.md)
@@ -147,5 +149,7 @@ Cosmos is an RGB foundation world model targeting both indoor and outdoor scenes
 - [\[ICCV 2025\] Towards Open-World Generation of Stereo Images and Unsupervised Matching](../../ICCV2025/autonomous_driving/towards_open-world_generation_of_stereo_images_and_unsupervised_matching.md)
 - [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](../../AAAI2026/autonomous_driving/unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
 - [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
+
+</div>
 
 <!-- RELATED:END -->

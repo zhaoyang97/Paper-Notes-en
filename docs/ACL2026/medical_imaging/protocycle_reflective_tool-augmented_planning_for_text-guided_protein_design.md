@@ -139,6 +139,8 @@ To be supplemented upon full reading of the paper.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](../../NeurIPS2025/medical_imaging/protein_design_with_dynamic_protein_vocabulary.md)
@@ -146,5 +148,7 @@ To be supplemented upon full reading of the paper.
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](../../NeurIPS2025/medical_imaging/pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
 - [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](../../ICLR2026/medical_imaging/protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
 - [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](../../NeurIPS2025/medical_imaging/prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ GS-4 (guideline + 3 systematic reviews; only 4 documents) ranks first in overall
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_imaging/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
@@ -134,5 +136,7 @@ GS-4 (guideline + 3 systematic reviews; only 4 documents) ranks first in overall
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
 - [\[NeurIPS 2025\] Demo: Generative AI helps Radiotherapy Planning with User Preference](demo_generative_ai_helps_radiotherapy_planning_with_user_preference.md)
 - [\[NeurIPS 2025\] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation](bidirectional_representations_augmented_autoregressive_biological_sequence_gener.md)
+
+</div>
 
 <!-- RELATED:END -->

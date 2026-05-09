@@ -143,6 +143,8 @@ SUSD's latent skill embeddings contain the richest factor information.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Periodic Skill Discovery](../../NeurIPS2025/reinforcement_learning/periodic_skill_discovery.md)
@@ -150,5 +152,7 @@ SUSD's latent skill embeddings contain the richest factor information.
 - [\[ICLR 2026\] How Far Can Unsupervised RLVR Scale LLM Training?](how_far_can_unsupervised_rlvr_scale_llm_training.md)
 - [\[ICLR 2026\] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization](autoqd_diverse_behaviors.md)
 - [\[ICLR 2026\] unsupervised learning of efficient exploration pre-training adaptive policies vi](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
+
+</div>
 
 <!-- RELATED:END -->

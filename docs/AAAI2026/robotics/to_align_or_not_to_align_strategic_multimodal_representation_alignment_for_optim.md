@@ -122,6 +122,8 @@ This work engages in an interesting dialogue with the Platonic Representation Hy
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Embodied Representation Alignment with Mirror Neurons](../../ICCV2025/robotics/embodied_representation_alignment_with_mirror_neurons.md)
@@ -129,5 +131,7 @@ This work engages in an interesting dialogue with the Platonic Representation Hy
 - [\[AAAI 2026\] Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment](dexterous_manipulation_transfer_via_progressive_kinematic-dynamic_alignment.md)
 - [\[AAAI 2026\] Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling](cross_modal_fine-grained_alignment_via_granularity-aware_and_region-uncertain_mo.md)
 - [\[AAAI 2026\] Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance](towards_reinforcement_learning_from_neural_feedback_mapping_.md)
+
+</div>
 
 <!-- RELATED:END -->

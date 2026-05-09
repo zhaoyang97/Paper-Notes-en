@@ -245,6 +245,8 @@ $$\mathcal{L} = \mathcal{L}_{gcd} + \lambda \sum_{l=1}^{L-1}\mathcal{L}_{ce}^l$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
@@ -252,5 +254,7 @@ $$\mathcal{L} = \mathcal{L}_{gcd} + \lambda \sum_{l=1}^{L-1}\mathcal{L}_{ce}^l$$
 - [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
 - [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](../../NeurIPS2025/others/generalized_linear_mode_connectivity_for_transformers.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
+
+</div>
 
 <!-- RELATED:END -->

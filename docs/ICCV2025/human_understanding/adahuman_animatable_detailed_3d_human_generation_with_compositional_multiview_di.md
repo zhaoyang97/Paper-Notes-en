@@ -132,6 +132,8 @@ In a user study, AdaHuman achieves preference rates of 88.3%, 99.2%, 79.7%, and 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
@@ -139,5 +141,7 @@ In a user study, AdaHuman achieves preference rates of 88.3%, 99.2%, 79.7%, and 
 - [\[ICCV 2025\] TriDi: Trilateral Diffusion of 3D Humans, Objects, and Interactions](tridi_trilateral_diffusion_of_3d_humans_objects_and_interactions.md)
 - [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](../../CVPR2026/human_understanding/humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
 - [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -126,6 +126,8 @@ The method requires no training whatsoever and is a purely inference-time strate
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning](../../ICCV2025/llm_reasoning/corvid_improving_multimodal_large_language_models_towards_chain-of-thought_reaso.md)
@@ -133,5 +135,7 @@ The method requires no training whatsoever and is a purely inference-time strate
 - [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](../../AAAI2026/llm_reasoning/improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
 - [\[ICLR 2026\] SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models](sealqa_raising_the_bar_for_reasoning_in_search-augmented_language_models.md)
 - [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](../../NeurIPS2025/llm_reasoning/one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
+
+</div>
 
 <!-- RELATED:END -->

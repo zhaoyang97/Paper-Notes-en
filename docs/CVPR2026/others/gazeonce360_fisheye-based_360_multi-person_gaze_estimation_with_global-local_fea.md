@@ -112,6 +112,8 @@ A multi-task joint loss is used: $\mathcal{L} = \lambda_1\mathcal{L}_c + \lambda
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](../../ICCV2025/others/multi-view_gaze_target_estimation.md)
@@ -119,5 +121,7 @@ A multi-task joint loss is used: $\mathcal{L} = \lambda_1\mathcal{L}_c + \lambda
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](../../AAAI2026/others/local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 - [\[CVPR 2026\] V-Nutri: Dish-Level Nutrition Estimation from Egocentric Cooking Videos](v_nutri_nutrition_estimation_cooking_videos.md)
 - [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)
+
+</div>
 
 <!-- RELATED:END -->

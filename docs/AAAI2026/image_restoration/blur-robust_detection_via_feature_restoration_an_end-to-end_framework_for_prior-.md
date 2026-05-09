@@ -126,6 +126,8 @@ FDD contributes the most (+10.0% AP), while FSGM yields a further gain of +3.0% 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)](../../ICCV2025/image_restoration/generic_event_boundary_detection_via_denoising_diffusion.md)
@@ -133,5 +135,7 @@ FDD contributes the most (+10.0% AP), while FSGM yields a further gain of +3.0% 
 - [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](../../CVPR2026/image_restoration/real_iisr_infrared_image_super_resolution_autoregressive.md)
 - [\[ICCV 2025\] Exploiting Diffusion Prior for Task-driven Image Restoration](../../ICCV2025/image_restoration/exploiting_diffusion_prior_for_task-driven_image_restoration.md)
 - [\[AAAI 2026\] TMDC: A Two-Stage Modality Denoising and Complementation Framework for Multimodal Sentiment Analysis](tmdc_a_two-stage_modality_denoising_and_complementation_framework_for_multimodal.md)
+
+</div>
 
 <!-- RELATED:END -->

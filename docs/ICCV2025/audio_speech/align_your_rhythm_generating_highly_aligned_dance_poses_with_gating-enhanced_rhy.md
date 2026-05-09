@@ -124,6 +124,8 @@ Danceba follows the VQ-VAE + autoregressive framework of Bailando: a pre-trained
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation](../../NeurIPS2025/audio_speech/megadance_mixture-of-experts_architecture_for_genre-aware_3d_dance_generation.md)
@@ -131,5 +133,7 @@ Danceba follows the VQ-VAE + autoregressive framework of Bailando: a pre-trained
 - [\[NeurIPS 2025\] Generating Physically Sound Designs from Text and a Set of Physical Constraints](../../NeurIPS2025/audio_speech/generating_physically_sound_designs_from_text_and_a_set_of_physical_constraints.md)
 - [\[ICCV 2025\] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing](mug_pseudo_labeling_augmented_audio-visual_mamba_network_for_audio-visual_video_.md)
 - [\[NeurIPS 2025\] Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization](../../NeurIPS2025/audio_speech/unifying_symbolic_music_arrangement_track-aware_reconstruction_and_structured_to.md)
+
+</div>
 
 <!-- RELATED:END -->

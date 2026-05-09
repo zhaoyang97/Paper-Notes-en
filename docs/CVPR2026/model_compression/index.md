@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **57** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/model_compression/index.md) · [🔬 ICLR2026 (92)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (54)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (134)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/model_compression/index.md)
+
+🔥 **Top topics:** Compression ×8 · Model Compression ×8 · Diffusion Models ×7 · Adversarial Robustness ×4 · Personalized Generation ×2
+
 **[4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation](4d_rgpt_toward_region_level_4d_understanding_via_perceptual_distillation.md)**
 
 :   This paper proposes 4D-RGPT and the Perceptual 4D Distillation (P4D) framework, which enhances 4D perception in MLLMs by distilling knowledge of depth and optical flow from frozen 4D perceptual expert models. It also introduces R4D-Bench, the first region-level 4D video question-answering benchmark.

@@ -131,6 +131,8 @@ where $\lambda_0 = 1.0$ and $\lambda_1 = \lambda_2 = 0.1$. Training adopts a sel
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
@@ -138,5 +140,7 @@ where $\lambda_0 = 1.0$ and $\lambda_1 = \lambda_2 = 0.1$. Training adopts a sel
 - [\[ICLR 2026\] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](../../ICLR2026/image_generation/pi-light_physics-inspired_diffusion_for_full-image_relighting.md)
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
+
+</div>
 
 <!-- RELATED:END -->

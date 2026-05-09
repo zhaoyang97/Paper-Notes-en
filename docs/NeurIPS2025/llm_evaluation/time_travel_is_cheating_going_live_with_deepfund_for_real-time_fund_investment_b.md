@@ -140,6 +140,8 @@ No model training is involved. DeepFund is an evaluation framework that performs
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](test-time_adaptation_by_causal_trimming.md)
@@ -147,5 +149,7 @@ No model training is involved. DeepFund is an evaluation framework that performs
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
 - [\[AAAI 2026\] OptScale: Probabilistic Optimality for Inference-time Scaling](../../AAAI2026/llm_evaluation/optscale_probabilistic_optimality_for_inference-time_scaling.md)
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
+
+</div>
 
 <!-- RELATED:END -->

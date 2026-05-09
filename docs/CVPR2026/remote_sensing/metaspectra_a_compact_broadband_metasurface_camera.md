@@ -120,6 +120,8 @@ Both DWDN and DDPM are trained on synthetic data derived from the Harvard and IC
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
@@ -127,5 +129,7 @@ Both DWDN and DDPM are trained on synthetic data derived from the Harvard and IC
 - [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
 - [\[CVPR 2026\] No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors](no_labels_no_look-ahead_unsupervised_online_video_stabilization_with_classical_p.md)
 - [\[CVPR 2026\] Conflated Inverse Modeling for Urban Vegetation Patterns](conflated_inverse_urban_vegetation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -141,6 +141,8 @@ Mirror-CFE achieves optimal or near-optimal proximity (L1/LPIPS) and realism (FI
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching](../../NeurIPS2025/image_generation/leapfactual_reliable_visual_counterfactual_explanation_using_conditional_flow_ma.md)
@@ -148,5 +150,7 @@ Mirror-CFE achieves optimal or near-optimal proximity (L1/LPIPS) and realism (FI
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
 - [\[NeurIPS 2025\] V-CECE: Visual Counterfactual Explanations via Conceptual Edits](../../NeurIPS2025/image_generation/v-cece_visual_counterfactual_explanations_via_conceptual_edits.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](../../NeurIPS2025/image_generation/why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
+
+</div>
 
 <!-- RELATED:END -->

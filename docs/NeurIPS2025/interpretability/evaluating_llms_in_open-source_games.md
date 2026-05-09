@@ -119,6 +119,8 @@ A three-stage evaluation architecture: Tier 1 — SPARC benchmark assesses code 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](../../AAAI2026/interpretability/beyond_hallucinations_a_composite_score_for_measuring_reliability_in_open-source.md)
@@ -126,5 +128,7 @@ A three-stage evaluation architecture: Tier 1 — SPARC benchmark assesses code 
 - [\[ICCV 2025\] Minerva: Evaluating Complex Video Reasoning](../../ICCV2025/interpretability/minerva_evaluating_complex_video_reasoning.md)
 - [\[NeurIPS 2025\] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning](beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u.md)
 - [\[NeurIPS 2025\] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions](explaining_similarity_in_vision-language_encoders_with_weighted_banzhaf_interact.md)
+
+</div>
 
 <!-- RELATED:END -->

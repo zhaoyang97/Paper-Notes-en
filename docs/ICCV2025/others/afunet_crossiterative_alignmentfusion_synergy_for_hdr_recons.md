@@ -109,6 +109,8 @@ Three multi-exposure LDR images $(y_1, y_2, y_3)$ → SFEM shallow feature extra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes](adaptiveae_an_adaptive_exposure_strategy_for_hdr_capturing_i.md)
@@ -116,5 +118,7 @@ Three multi-exposure LDR images $(y_1, y_2, y_3)$ → SFEM shallow feature extra
 - [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](../../AAAI2026/others/cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
 - [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
 - [\[NeurIPS 2025\] Graph Alignment via Birkhoff Relaxation](../../NeurIPS2025/others/graph_alignment_via_birkhoff_relaxation.md)
+
+</div>
 
 <!-- RELATED:END -->

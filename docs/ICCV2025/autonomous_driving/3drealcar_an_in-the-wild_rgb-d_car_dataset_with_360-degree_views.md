@@ -125,6 +125,8 @@ The dataset construction pipeline consists of three stages: (1) **Data Collectio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting](6dope-gs_online_6d_object_pose_estimation_using_gaussian_splatting.md)
@@ -132,5 +134,7 @@ The dataset construction pipeline consists of three stages: (1) **Data Collectio
 - [\[ICCV 2025\] Detect Anything 3D in the Wild](detect_anything_3d_in_the_wild.md)
 - [\[ICCV 2025\] MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion](mgsfm_multi-camera_geometry_driven_global_structure-from-motion.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
+
+</div>
 
 <!-- RELATED:END -->

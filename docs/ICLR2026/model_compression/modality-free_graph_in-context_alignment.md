@@ -120,6 +120,8 @@ An episodic cross-entropy loss is used: $\mathcal{L}_{\text{episode}} = -\frac{1
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Stress-Testing Alignment Audits with Prompt-Level Strategic Deception](stress-testing_alignment_audits_with_prompt-level_strategic_deception.md)
@@ -127,5 +129,7 @@ An episodic cross-entropy loss is used: $\mathcal{L}_{\text{episode}} = -\frac{1
 - [\[ICLR 2026\] The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM](the_unseen_frontier_pushing_the_limits_of_llm_sparsity_with_surrogate-free_admm.md)
 - [\[NeurIPS 2025\] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning](../../NeurIPS2025/model_compression/graver_generative_graph_vocabularies_for_robust_graph_foundation_models_fine-tun.md)
 - [\[NeurIPS 2025\] Graph Your Own Prompt](../../NeurIPS2025/model_compression/graph_your_own_prompt.md)
+
+</div>
 
 <!-- RELATED:END -->

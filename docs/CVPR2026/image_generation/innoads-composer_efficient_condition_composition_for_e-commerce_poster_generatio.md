@@ -143,6 +143,8 @@ Efficiency comparison:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
@@ -150,5 +152,7 @@ Efficiency comparison:
 - [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](../../ICLR2026/image_generation/condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
 - [\[CVPR 2026\] EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation](edgedit_hardware-aware_diffusion_transformers_for_efficient_on-device_image_gene.md)
 - [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
+
+</div>
 
 <!-- RELATED:END -->

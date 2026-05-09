@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **30** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (71)](../../ICLR2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (67)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+
+🔥 **Top topics:** Reasoning ×17 · LLM ×5 · Adversarial Robustness ×3 · Code Intelligence ×2 · Reinforcement Learning ×2
+
 **[A Reasoning Paradigm for Named Entity Recognition](a_reasoning_paradigm_for_named_entity_recognition.md)**
 
 :   This paper proposes ReasoningNER, which reframes named entity recognition from "implicit pattern matching" to an "explicit reasoning" paradigm. Through a three-stage pipeline (CoT data construction → CoT fine-tuning → GRPO reinforcement enhancement), the model first reasons and then extracts entities. Under zero-shot settings, ReasoningNER surpasses GPT-4 by 12.3 F1 points, and the 8B model achieves an average F1 of 72.4 on CrossNER.

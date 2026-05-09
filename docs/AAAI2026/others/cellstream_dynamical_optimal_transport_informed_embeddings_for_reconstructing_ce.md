@@ -170,6 +170,8 @@ Hyperparameter settings: $\lambda_{AE}=10, \lambda_{WFR}=1, \lambda_{Match}=5, \
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
@@ -177,5 +179,7 @@ Hyperparameter settings: $\lambda_{AE}=10, \lambda_{WFR}=1, \lambda_{Match}=5, \
 - [\[NeurIPS 2025\] Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action](../../NeurIPS2025/others/variational_regularized_unbalanced_optimal_transport_single_network_least_action.md)
 - [\[AAAI 2026\] Optimal Welfare in Noncooperative Network Formation under Attack](optimal_welfare_in_noncooperative_network_formation_under_attack.md)
 - [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
+
+</div>
 
 <!-- RELATED:END -->

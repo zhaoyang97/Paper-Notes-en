@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **18** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/social_computing/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/social_computing/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+
+🔥 **Top topics:** LLM ×4
+
 **[Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)**
 
 :   This paper proposes the **Active Slice Discovery** problem framework, integrating active learning into LLM error slice discovery. By combining uncertainty sampling with LLM internal representations (raw embeddings or SAE features), the method achieves slice detection accuracy comparable to fully supervised settings using only 2–10% of labeled data.

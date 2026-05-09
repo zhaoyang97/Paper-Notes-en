@@ -145,6 +145,8 @@ Five-stage hierarchical pipeline: byte embedding → Local Encoder (byte-level c
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](../../CVPR2026/segmentation/masked_representation_modeling_for_domain-adaptive_segmentation.md)
@@ -152,5 +154,7 @@ Five-stage hierarchical pipeline: byte embedding → Local Encoder (byte-level c
 - [\[AAAI 2026\] Adaptive Morph-Patch Transformer for Aortic Vessel Segmentation](../../AAAI2026/segmentation/adaptive_morph-patch_transformer_for_aortic_vessel_segmentat.md)
 - [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](../../CVPR2026/segmentation/seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
 - [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](../../CVPR2026/segmentation/wsrvos_weakly_supervised_rvos.md)
+
+</div>
 
 <!-- RELATED:END -->

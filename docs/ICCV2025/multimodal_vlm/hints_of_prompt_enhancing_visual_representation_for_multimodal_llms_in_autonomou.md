@@ -148,6 +148,8 @@ HoP trained on only 25% of the data achieves a Lingo-Judge score of 64.0, surpas
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
@@ -155,5 +157,7 @@ HoP trained on only 25% of the data achieves a Lingo-Judge score of 64.0, surpas
 - [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
 - [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
+
+</div>
 
 <!-- RELATED:END -->

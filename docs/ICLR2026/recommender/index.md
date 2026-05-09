@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **10** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+
+🔥 **Top topics:** Recommendation ×4 · LLM ×3
+
 **[C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)**
 
 :   This paper proposes C2AL (Cohort-Contrastive Auxiliary Learning), which data-drivenly identifies user cohort pairs with maximal distributional divergence and constructs contrastive auxiliary binary classification tasks to regularize the shared encoder. This transforms FM attention weights from sparse to dense, mitigating representation bias for minority cohorts in large-scale recommendation systems. The approach is validated on 6 Meta production models with billions of data points.

@@ -152,6 +152,8 @@ Experiments use MNIST with noisy checkerboard backgrounds (digit 9 excluded to a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
@@ -159,5 +161,7 @@ Experiments use MNIST with noisy checkerboard backgrounds (digit 9 excluded to a
 - [\[ICLR 2026\] The Invisibility Hypothesis: Promises of AGI and the Future of the Global South](the_invisibility_hypothesis_promises_of_agi_and_the_future_of_the_global_south.md)
 - [\[ICLR 2026\] Latent Fourier Transform](latent_fourier_transform.md)
 - [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](../../AAAI2026/others/formal_abductive_latent_explanations_for_prototype-based_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

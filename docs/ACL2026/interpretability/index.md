@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **34** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (31)](../../CVPR2026/interpretability/index.md) · [🔬 ICLR2026 (59)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (82)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/interpretability/index.md)
+
+🔥 **Top topics:** LLM ×11 · Reasoning ×6
+
 **[A Structured Clustering Approach for Inducing Media Narratives](a_structured_clustering_approach_for_inducing_media_narratives.md)**
 
 :   This paper proposes a framework for automatically inducing media narrative patterns from large-scale news corpora. By jointly modeling causal event chains and character roles (hero/villain/victim), the framework employs a role-constrained clustering algorithm to organize narrative chains into semantically coherent narrative patterns. The approach generates interpretable narrative patterns consistent with framing theory in two domains: immigration and gun control.

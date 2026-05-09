@@ -107,6 +107,8 @@ Experiments estimate empirical privacy via membership inference attacks (MIA) to
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](../../NeurIPS2025/ai_safety/mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
@@ -114,5 +116,7 @@ Experiments estimate empirical privacy via membership inference attacks (MIA) to
 - [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
 - [\[AAAI 2026\] Enhancing DPSGD via Per-Sample Momentum and Low-Pass Filtering](enhancing_dpsgd_via_per-sample_momentum_and_low-pass_filtering.md)
 - [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](../../NeurIPS2025/ai_safety/differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
+
+</div>
 
 <!-- RELATED:END -->

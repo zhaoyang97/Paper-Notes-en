@@ -161,6 +161,8 @@ Notably, training on 10% of the data (FAD=0.73) outperforms training on 100% (FA
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/image_generation/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
@@ -168,5 +170,7 @@ Notably, training on 10% of the data (FAD=0.73) outperforms training on 100% (FA
 - [\[ICCV 2025\] Structure-Guided Diffusion Models for High-Fidelity Portrait Shadow Removal](../../ICCV2025/image_generation/structure-guided_diffusion_models_for_high-fidelity_portrait_shadow_removal.md)
 - [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
 - [\[ICCV 2025\] PersonalVideo: High ID-Fidelity Video Customization without Dynamic and Semantic Degradation](../../ICCV2025/image_generation/personalvideo_high_id-fidelity_video_customization_without_dynamic_and_semantic_.md)
+
+</div>
 
 <!-- RELATED:END -->

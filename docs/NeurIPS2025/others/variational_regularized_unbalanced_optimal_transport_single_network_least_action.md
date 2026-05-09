@@ -136,6 +136,8 @@ The joint objective $L = L_\text{Recon} + \gamma_\text{HJB} \cdot L_\text{HJB} +
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
@@ -143,5 +145,7 @@ The joint objective $L = L_\text{Recon} + \gamma_\text{HJB} \cdot L_\text{HJB} +
 - [\[AAAI 2026\] Optimal Welfare in Noncooperative Network Formation under Attack](../../AAAI2026/others/optimal_welfare_in_noncooperative_network_formation_under_attack.md)
 - [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
 - [\[NeurIPS 2025\] Neural Network for Simulating Radio Emission from Extensive Air Showers](neural_network_for_simulating_radio_emission_from_extensive_air_showers.md)
+
+</div>
 
 <!-- RELATED:END -->

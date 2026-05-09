@@ -123,6 +123,8 @@ A population of kernel functions $\mathbb{K}$ is maintained. At each BO iteratio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs](presto_preimage-informed_instruction_optimization_for_prompting_black-box_llms.md)
@@ -130,5 +132,7 @@ A population of kernel functions $\mathbb{K}$ is maintained. At each BO iteratio
 - [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](../../ACL2026/llm_nlp/chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
 - [\[NeurIPS 2025\] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization](evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)
+
+</div>
 
 <!-- RELATED:END -->

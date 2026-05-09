@@ -180,6 +180,8 @@ When $f(x, \epsilon) = x + \epsilon$ and $p(\epsilon)$ is uniform, NAPPure reduc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](../../AAAI2026/others/boosting_adversarial_transferability_via_ensemble_non-attention.md)
@@ -187,5 +189,7 @@ When $f(x, \epsilon) = x + \epsilon$ and $p(\epsilon)$ is uniform, NAPPure reduc
 - [\[ICCV 2025\] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization](iap_invisible_adversarial_patch_attack_through_perceptibility-aware_localization.md)
 - [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](../../ICLR2026/others/distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -111,6 +111,8 @@ CMNet consistently outperforms the previous state-of-the-art PMTR across all met
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] DcMatch: Unsupervised Multi-Shape Matching with Dual-Level Consistency](../../AAAI2026/llm_evaluation/dcmatch_unsupervised_multi-shape_matching_with_dual-level_consistency.md)
@@ -118,5 +120,7 @@ CMNet consistently outperforms the previous state-of-the-art PMTR across all met
 - [\[NeurIPS 2025\] Learning Generalizable Shape Completion with SIM(3) Equivariance](../../NeurIPS2025/llm_evaluation/learning_generalizable_shape_completion_with_sim3_equivariance.md)
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](../../CVPR2026/llm_evaluation/unified_primitive_proxies_for_structured_shape_completion.md)
 - [\[ICCV 2025\] Generative Zoo](generative_zoo.md)
+
+</div>
 
 <!-- RELATED:END -->

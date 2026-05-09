@@ -117,6 +117,8 @@ Total loss = cross-entropy captioning loss + $\lambda_{tr}$ × triplet loss ($\l
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Gen-n-Val: Agentic Image Data Generation and Validation](../../CVPR2026/llm_agent/gen_n_val_agentic_image_data_generation_and_validation.md)
@@ -124,5 +126,7 @@ Total loss = cross-entropy captioning loss + $\lambda_{tr}$ × triplet loss ($\l
 - [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](../../NeurIPS2025/llm_agent/mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
 - [\[AAAI 2026\] Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](../../AAAI2026/llm_agent/cook_and_clean_together_teaching_embodied_agents_for_paralle.md)
 - [\[ICCV 2025\] UIPro: Unleashing Superior Interaction Capability for GUI Agents](uipro_unleashing_superior_interaction_capability_for_gui_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

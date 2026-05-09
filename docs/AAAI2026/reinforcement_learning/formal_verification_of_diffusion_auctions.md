@@ -164,6 +164,8 @@ The paper is primarily a theoretical contribution; detailed running examples rep
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
@@ -171,5 +173,7 @@ The paper is primarily a theoretical contribution; detailed running examples rep
 - [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](../../CVPR2026/reinforcement_learning/graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
 - [\[AAAI 2026\] Where to Start Alignment? Diffusion Large Language Model May Demand a Distinct Position](where_to_start_alignment_diffusion_large_language_model_may_demand_a_distinct_po.md)
 - [\[NeurIPS 2025\] Comparing Uniform Price and Discriminatory Multi-Unit Auctions through Regret Minimization](../../NeurIPS2025/reinforcement_learning/comparing_uniform_price_and_discriminatory_multi-unit_auctions_through_regret_mi.md)
+
+</div>
 
 <!-- RELATED:END -->

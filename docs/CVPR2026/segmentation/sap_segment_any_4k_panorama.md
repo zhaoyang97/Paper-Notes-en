@@ -146,6 +146,8 @@ $$M^{ERP}(u,v) = \max_{i: (u,v) \in \mathcal{V}_i} \tilde{M}_i(u,v)$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](../../ICCV2025/segmentation/wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
@@ -153,5 +155,7 @@ $$M^{ERP}(u,v) = \max_{i: (u,v) \in \mathcal{V}_i} \tilde{M}_i(u,v)$$
 - [\[CVPR 2026\] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera](unified_spherical_frontend_learning_rotation-equivariant_representations_of_sphe.md)
 - [\[CVPR 2026\] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation](discover_segment_and_select_a_progressive_mechanism_for_zero-shot_camouflaged_ob.md)
 - [\[CVPR 2026\] Combining Boundary Supervision and Segment-Level Regularization for Fine-Grained Action Segmentation](boundary_segment_action_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -174,6 +174,8 @@ Deep memorization not only facilitates direct retrieval but also enhances revers
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Data in LLMs](rote_learning_considered_useful_generalizing_over_memorized_data_in_llms.md)
@@ -181,5 +183,7 @@ Deep memorization not only facilitates direct retrieval but also enhances revers
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 - [\[ICLR 2026\] Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)
 - [\[ICLR 2026\] PICS: Pairwise Image Compositing with Spatial Interactions](pics_pairwise_image_compositing_with_spatial_interactions.md)
+
+</div>
 
 <!-- RELATED:END -->

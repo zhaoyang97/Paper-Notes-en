@@ -161,6 +161,8 @@ Worker alignment (cosine similarity):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
@@ -168,5 +170,7 @@ Worker alignment (cosine similarity):
 - [\[ICLR 2026\] Adaptive Rollout Allocation for Online RL with Verifiable Rewards (VIP)](adaptive_rollout_allocation_for_online_reinforcement_learning_with_verifiable_re.md)
 - [\[ICLR 2026\] Rethinking Consistent Multi-Label Classification Under Inexact Supervision](rethinking_consistent_multi-label_classification_under_inexact_supervision.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
+
+</div>
 
 <!-- RELATED:END -->

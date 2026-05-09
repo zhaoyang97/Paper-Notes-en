@@ -131,6 +131,8 @@ The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{self}$. The su
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels](../../ICCV2025/3d_vision/do_it_yourself_learning_semantic_correspondence_from_pseudo-labels.md)
@@ -138,5 +140,7 @@ The total loss is $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{self}$. The su
 - [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
 - [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
 - [\[ICLR 2026\] A Genetic Algorithm for Navigating Synthesizable Molecular Spaces](../../ICLR2026/3d_vision/a_genetic_algorithm_for_navigating_synthesizable_molecular_spaces.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **126** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/others/index.md) · [📷 CVPR2026 (54)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (76)](../../ICLR2026/others/index.md) · [🧠 NeurIPS2025 (150)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/others/index.md)
+
+🔥 **Top topics:** Agents ×10 · Adversarial Robustness ×5 · Diffusion Models ×5 · Alignment/RLHF ×3 · Reasoning ×2
+
 **[A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles](a_fast_heuristic_search_approach_for_energy-optimal_profile_.md)**
 
 :   This paper proposes Pr-A*, a label-setting method based on multi-objective A* search for efficiently solving energy-optimal profile routing for electric vehicles (EVs) when the initial state of charge (SoC) is unknown. By using profile dominance pruning, the method avoids the complex profile merge operations required by traditional approaches, achieving performance close to standard A* with known initial SoC on large-scale road networks.

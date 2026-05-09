@@ -125,6 +125,8 @@ Parameters are set as $m \geq O(\nu^2 f_{max}^2 / \varepsilon^2 \cdot (n + \log(
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)
@@ -132,5 +134,7 @@ Parameters are set as $m \geq O(\nu^2 f_{max}^2 / \varepsilon^2 \cdot (n + \log(
 - [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
 - [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
+
+</div>
 
 <!-- RELATED:END -->

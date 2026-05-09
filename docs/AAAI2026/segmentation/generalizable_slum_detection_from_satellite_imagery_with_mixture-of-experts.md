@@ -169,6 +169,8 @@ Key findings: $\mathcal{L}_{MI}$ is the most critical component (removing it cau
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Spatio-Semantic Expert Routing Architecture with Mixture-of-Experts for Referring Image Segmentation](../../CVPR2026/segmentation/spatio-semantic_expert_routing_architecture_with_mixture-of-experts_for_referrin.md)
@@ -176,5 +178,7 @@ Key findings: $\mathcal{L}_{MI}$ is the most critical component (removing it cau
 - [\[CVPR 2026\] Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/generalizable_knowledge_distillation_from_vision_foundation_models_for_semantic_.md)
 - [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
 - [\[AAAI 2026\] From Attribution to Action: Jointly ALIGNing Predictions and Explanations](from_attribution_to_action_jointly_aligning_predictions_and_explanations.md)
+
+</div>
 
 <!-- RELATED:END -->

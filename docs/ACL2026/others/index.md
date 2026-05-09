@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **5** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (54)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (76)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (126)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (150)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/others/index.md)
+
+🔥 **Top topics:** LLM ×2
+
 **[Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations](agree_disagree_explain_decomposing_human_label_variation_in_nli_through_the_lens.md)**
 
 :   This paper extends the LiTEx reasoning taxonomy from "label-consistent, explanation-variant" settings to label-disagreement scenarios, finding that annotators may share similar reasoning strategies despite assigning different labels, and that reasoning category agreement better reflects the semantic similarity of explanations than label agreement alone.

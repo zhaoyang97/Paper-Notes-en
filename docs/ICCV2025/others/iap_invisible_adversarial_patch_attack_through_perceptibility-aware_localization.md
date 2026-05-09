@@ -142,6 +142,8 @@ This design is grounded in the psychophysical observation that the human eye is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] C4D: 4D Made from 3D through Dual Correspondences](c4d_4d_made_from_3d_through_dual_correspondences.md)
@@ -149,5 +151,7 @@ This design is grounded in the psychophysical observation that the human eye is 
 - [\[NeurIPS 2025\] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata](../../NeurIPS2025/others/ortholoc_uav_6-dof_localization_and_calibration_using_orthographic_geodata.md)
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](lacoot_layer_collapse_through_optimal_transport.md)
 - [\[NeurIPS 2025\] Rethinking PCA Through Duality](../../NeurIPS2025/others/rethinking_pca_through_duality.md)
+
+</div>
 
 <!-- RELATED:END -->

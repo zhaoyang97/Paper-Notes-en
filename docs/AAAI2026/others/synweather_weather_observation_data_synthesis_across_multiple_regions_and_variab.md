@@ -132,6 +132,8 @@ The autoencoder is trained with pixel reconstruction loss + KL divergence + adve
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](../../ICCV2025/others/layertracer_cognitive-aligned_layered_svg_synthesis_via_diffusion_transformer.md)
@@ -139,5 +141,7 @@ The autoencoder is trained with pixel reconstruction loss + KL divergence + adve
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
 - [\[AAAI 2026\] The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques](the_limitations_and_power_of_np-oracle-based_functional_synthesis_techniques.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
+
+</div>
 
 <!-- RELATED:END -->

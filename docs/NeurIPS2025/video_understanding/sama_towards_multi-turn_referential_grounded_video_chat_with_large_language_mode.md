@@ -148,6 +148,8 @@ SAMA addresses the above issues comprehensively along three core dimensions — 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/video_understanding/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
@@ -155,5 +157,7 @@ SAMA addresses the above issues comprehensively along three core dimensions — 
 - [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](../../ICCV2025/video_understanding/factorized_learning_for_temporally_grounded_video-language_models.md)
 - [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](seeing_the_arrow_of_time_in_large_multimodal_models.md)
+
+</div>
 
 <!-- RELATED:END -->

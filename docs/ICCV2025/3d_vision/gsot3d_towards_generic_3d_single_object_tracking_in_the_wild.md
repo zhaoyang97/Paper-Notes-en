@@ -161,6 +161,8 @@ All trackers suffer a 70–80% performance collapse on GSOT3D, highlighting the 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
@@ -168,5 +170,7 @@ All trackers suffer a 70–80% performance collapse on GSOT3D, highlighting the 
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
 - [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
 - [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -125,6 +125,8 @@ A two-stage pipeline: (1) **Training phase**: the dancer listens to personally m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Human Brain as a Combinatorial Complex](the_human_brain_as_a_combinatorial_complex.md)
@@ -132,5 +134,7 @@ A two-stage pipeline: (1) **Training phase**: the dancer listens to personally m
 - [\[NeurIPS 2025\] PlanU: Large Language Model Reasoning through Planning under Uncertainty](planu_large_language_model_reasoning_through_planning_under_uncertainty.md)
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 - [\[ICLR 2026\] Tuning the Burn-in Phase in RNN Training Improves Performance](../../ICLR2026/time_series/tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **45** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (14)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (71)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (67)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+
+🔥 **Top topics:** Reasoning ×28 · LLM ×8 · Alignment/RLHF ×4 · Agents ×2
+
 **[AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)**
 
 :   This paper proposes AIM-CoT, a framework driven by Information Foraging Theory that addresses two core problems in Interleaved Multimodal Chain-of-Thought (I-MCoT)—*what to see* and *when to see*—through Active Visual Probing (AVP) based on information gain and a Dynamic Attention-shift Trigger (DAT) mechanism.

@@ -195,6 +195,8 @@ Core observation: The practical runtime of the FPT algorithm is consistent with 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](the_parameterized_complexity_of_computing_the_vc-dimension.md)
@@ -202,5 +204,7 @@ Core observation: The practical runtime of the FPT algorithm is consistent with 
 - [\[NeurIPS 2025\] Regression Trees Know Calculus](regression_trees_know_calculus.md)
 - [\[NeurIPS 2025\] Rethinking PCA Through Duality](rethinking_pca_through_duality.md)
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](../../AAAI2026/others/approximation_algorithm_for_constrained_k-center_clustering_.md)
+
+</div>
 
 <!-- RELATED:END -->

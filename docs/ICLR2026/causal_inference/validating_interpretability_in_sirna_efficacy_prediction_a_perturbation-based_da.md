@@ -122,6 +122,8 @@ $\mathcal{L}_{total} = \mathcal{L}_{pred} + \lambda(t) \mathcal{L}_{bio} + \lamb
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
@@ -129,5 +131,7 @@ $\mathcal{L}_{total} = \mathcal{L}_{pred} + \lambda(t) \mathcal{L}_{bio} + \lamb
 - [\[NeurIPS 2025\] LLM Interpretability with Identifiable Temporal-Instantaneous Representation](../../NeurIPS2025/causal_inference/llm_interpretability_with_identifiable_temporal-instantaneous_representation.md)
 - [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_perturbations.md)
 - [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
+
+</div>
 
 <!-- RELATED:END -->

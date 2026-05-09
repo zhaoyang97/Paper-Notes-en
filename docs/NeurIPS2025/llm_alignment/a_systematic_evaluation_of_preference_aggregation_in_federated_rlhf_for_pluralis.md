@@ -147,6 +147,8 @@ Standard PPO loss is used for policy updates, with the key reward signal $r_{fin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma](position_the_complexity_of_perfect_ai_alignment_--_formalizing_the_rlhf_trilemma.md)
@@ -154,5 +156,7 @@ Standard PPO loss is used for policy updates, with the key reward signal $r_{fin
 - [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](../../ACL2026/llm_alignment/reward_modeling_for_scientific_writing_evaluation.md)
 - [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](../../ICLR2026/llm_alignment/beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
 - [\[NeurIPS 2025\] Greedy Sampling Is Provably Efficient for RLHF](greedy_sampling_is_provably_efficient_for_rlhf.md)
+
+</div>
 
 <!-- RELATED:END -->

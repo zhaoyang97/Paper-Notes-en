@@ -178,6 +178,8 @@ $$\mathcal{L}_{total} = Loss_{(CD)} + \lambda L_{sp} + \beta L_{ch}$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
@@ -185,5 +187,7 @@ $$\mathcal{L}_{total} = Loss_{(CD)} + \lambda L_{sp} + \beta L_{ch}$$
 - [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](../../CVPR2026/3d_vision/mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
 - [\[ICCV 2025\] DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning](../../ICCV2025/3d_vision/dapmae_domainadaptive_point_cloud_masked_autoencoder_for_eff.md)
+
+</div>
 
 <!-- RELATED:END -->

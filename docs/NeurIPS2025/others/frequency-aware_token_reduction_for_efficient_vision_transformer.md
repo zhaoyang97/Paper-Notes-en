@@ -126,6 +126,8 @@ Proposition 3.1 proves that both pruning and merging satisfy $\|H_f[SA(MX)]\|_F 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
@@ -133,5 +135,7 @@ Proposition 3.1 proves that both pruning and merging satisfy $\|H_f[SA(MX)]\|_F 
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
 - [\[NeurIPS 2025\] ConTextTab: A Semantics-Aware Tabular In-Context Learner](contexttab_a_semantics-aware_tabular_in-context_learner.md)
 - [\[NeurIPS 2025\] AcuRank: Uncertainty-Aware Adaptive Computation for Listwise Reranking](acurank_uncertainty-aware_adaptive_computation_for_listwise_reranking.md)
+
+</div>
 
 <!-- RELATED:END -->

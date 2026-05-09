@@ -129,6 +129,8 @@ With only 123M parameters, ZipVoice-Dialog achieves comprehensive superiority: i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment](codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm.md)
@@ -136,5 +138,7 @@ With only 123M parameters, ZipVoice-Dialog achieves comprehensive superiority: i
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](../../ICLR2026/image_generation/multi-agent_coordination_via_flow_matching.md)
 - [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](../../CVPR2026/image_generation/egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](../../CVPR2026/image_generation/vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -139,6 +139,8 @@ BATCLIP operates in an online TTA setting: test batches arrive sequentially, and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/llm_evaluation/test-time_adaptation_by_causal_trimming.md)
@@ -146,5 +148,7 @@ BATCLIP operates in an online TTA setting: test batches arrive sequentially, and
 - [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
 - [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](a_conditional_probability_framework_for_compositional_zero-shot_learning.md)
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
+
+</div>
 
 <!-- RELATED:END -->

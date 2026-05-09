@@ -131,6 +131,8 @@ QLoRA energy paradox (LoRA-FP16 vs. QLoRA-INT4):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2026/others/sldprtnet_a_largescale_multimodal_dataset_for_cad.md)
@@ -138,5 +140,7 @@ QLoRA energy paradox (LoRA-FP16 vs. QLoRA-INT4):
 - [\[AAAI 2026\] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](../../AAAI2026/others/intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[CVPR 2026\] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](../../CVPR2026/others/rethinking_snn_online_training_and_deployment_gradient-coherent_learning_via_hyb.md)
+
+</div>
 
 <!-- RELATED:END -->

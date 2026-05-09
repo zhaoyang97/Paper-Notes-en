@@ -126,6 +126,8 @@ Evaluated on CIFAR10/100-LT, CelebA-5, and ImageNet-LT ($64\times64$).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
@@ -133,5 +135,7 @@ Evaluated on CIFAR10/100-LT, CelebA-5, and ImageNet-LT ($64\times64$).
 - [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](when_are_concepts_erased_from_diffusion_models.md)
 - [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
+
+</div>
 
 <!-- RELATED:END -->

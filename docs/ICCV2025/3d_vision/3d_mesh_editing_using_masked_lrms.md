@@ -120,6 +120,8 @@ The paradigm of "conditional reconstruction = editing" is generalizable to other
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild](maskhand_generative_masked_modeling_for_robust_hand_mesh_reconstruction_in_the_w.md)
@@ -127,5 +129,7 @@ The paradigm of "conditional reconstruction = editing" is generalizable to other
 - [\[ICCV 2025\] Monocular Semantic Scene Completion via Masked Recurrent Networks](monocular_semantic_scene_completion_via_masked_recurrent_networks.md)
 - [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
 - [\[ICCV 2025\] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

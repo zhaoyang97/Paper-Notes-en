@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **30** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (6)](../../ACL2026/image_restoration/index.md) · [📷 CVPR2026 (47)](../../CVPR2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md)
+
+🔥 **Top topics:** Image Restoration ×14 · Super-Resolution ×5 · Diffusion Models ×3
+
 **[Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis](benchmarking_burst_super-resolution_for_polarization_images_noise_dataset_and_an.md)**
 
 :   This paper addresses the lack of datasets and noise models for polarization image burst super-resolution (SR) by constructing two dedicated datasets—PolarNS (noise statistics) and PolarBurstSR (SR benchmark)—proposing a polarization noise propagation analysis model, and systematically benchmarking existing burst SR methods on polarization scenes, thereby establishing a standardized evaluation framework for polarization image reconstruction.

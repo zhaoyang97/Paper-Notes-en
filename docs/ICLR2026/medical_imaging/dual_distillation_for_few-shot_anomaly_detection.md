@@ -117,6 +117,8 @@ with $\lambda = 0.1$ (TSD is down-weighted; SSD dominates).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](../../CVPR2026/medical_imaging/bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
@@ -124,5 +126,7 @@ with $\lambda = 0.1$ (TSD is down-weighted; SSD dominates).
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](../../CVPR2026/medical_imaging/visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[ICLR 2026\] Exploiting Low-Dimensional Manifold of Features for Few-Shot Whole Slide Image Classification](exploiting_low-dimensional_manifold_of_features_for_few-shot_whole_slide_image_c.md)
 - [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](../../ICCV2025/medical_imaging/dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
+
+</div>
 
 <!-- RELATED:END -->

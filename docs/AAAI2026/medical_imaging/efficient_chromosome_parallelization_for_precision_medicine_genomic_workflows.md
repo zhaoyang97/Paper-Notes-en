@@ -183,6 +183,8 @@ The complete dynamic scheduler closes approximately 13% of the gap to the theore
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
@@ -190,5 +192,7 @@ The complete dynamic scheduler closes approximately 13% of the gap to the theore
 - [\[AAAI 2026\] From Policy to Logic for Efficient and Interpretable Coverage Assessment](from_policy_to_logic_for_efficient_and_interpretable_coverage_assessment.md)
 - [\[AAAI 2026\] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification](federated_clip_for_resource-efficient_heterogeneous_medical_image_classification.md)
 - [\[ACL 2026\] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine](../../ACL2026/medical_imaging/ritek_a_dataset_for_large_language_models_complex_reasoning_over_textual_knowled.md)
+
+</div>
 
 <!-- RELATED:END -->

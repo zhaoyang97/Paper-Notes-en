@@ -156,6 +156,8 @@ The recommendation loss $\mathcal{L}_R$ is cross-entropy. During inference, Top-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
@@ -163,5 +165,7 @@ The recommendation loss $\mathcal{L}_R$ is cross-entropy. During inference, Top-
 - [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[AAAI 2026\] MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation](../../AAAI2026/graph_learning/motorec_sparse-regularized_multimodal_tokenization_for_cold-start_recommendation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -119,6 +119,8 @@ Numerical simulations are conducted on DistilBERT, validated on AG News (4 class
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](../../NeurIPS2025/signal_comm/perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
@@ -126,5 +128,7 @@ Numerical simulations are conducted on DistilBERT, validated on AG News (4 class
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
 - [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
 - [\[ICLR 2026\] Robust Preference Alignment via Directional Neighborhood Consensus](robust_preference_alignment_via_directional_neighborhood_consensus.md)
+
+</div>
 
 <!-- RELATED:END -->

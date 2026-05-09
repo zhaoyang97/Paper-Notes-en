@@ -118,6 +118,8 @@ Watermark injection: $\eta' = \sqrt{1-\alpha}\eta + \sqrt{\alpha}A'$ (weighted m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](../../ICCV2025/image_generation/lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
@@ -125,5 +127,7 @@ Watermark injection: $\eta' = \sqrt{1-\alpha}\eta + \sqrt{\alpha}A'$ (weighted m
 - [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
 - [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
 - [\[ICLR 2026\] RefAny3D: 3D Asset-Referenced Diffusion Models for Image Generation](refany3d_3d_asset-referenced_diffusion_models_for_image_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

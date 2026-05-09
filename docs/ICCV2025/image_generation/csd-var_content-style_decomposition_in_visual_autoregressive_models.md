@@ -133,6 +133,8 @@ CSD-VAR comprehensively outperforms existing methods on both content alignment a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
@@ -140,5 +142,7 @@ CSD-VAR comprehensively outperforms existing methods on both content alignment a
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
 - [\[ICCV 2025\] StyleKeeper: Prevent Content Leakage using Negative Visual Query Guidance](stylekeeper_prevent_content_leakage_using_negative_visual_query_guidance.md)
 - [\[ICCV 2025\] Randomized Autoregressive Visual Generation](randomized_autoregressive_visual_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -117,6 +117,8 @@ The OrthoLoC localization pipeline proceeds as follows: (1) *Initial localizatio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](scaling_image_geo-localization_to_continent_level.md)
@@ -124,5 +126,7 @@ The OrthoLoC localization pipeline proceeds as follows: (1) *Initial localizatio
 - [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](../../ICCV2025/remote_sensing/geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
 - [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](../../ICCV2025/remote_sensing/geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
 - [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
+
+</div>
 
 <!-- RELATED:END -->

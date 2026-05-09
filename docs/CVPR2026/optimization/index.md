@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **10** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/optimization/index.md) · [🔬 ICLR2026 (45)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (24)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (113)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/optimization/index.md)
+
+🔥 **Top topics:** Federated Learning ×6 · Adversarial Robustness ×2
+
 **[BlazeFL: Fast and Deterministic Federated Learning Simulation](blazefl_fast_and_deterministic_federated_learning_simulation.md)**
 
 :   BlazeFL is a lightweight single-machine federated learning simulation framework built on Python free-threading. By combining shared-memory execution with per-client isolated RNG streams, it achieves up to 3.1× speedup and bit-level reproducibility.

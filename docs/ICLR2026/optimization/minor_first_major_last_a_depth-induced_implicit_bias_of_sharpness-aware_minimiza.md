@@ -141,6 +141,8 @@ For the single-sample dataset, a rescaled flow is obtained by removing the loss 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](../../NeurIPS2025/optimization/the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
@@ -148,5 +150,7 @@ For the single-sample dataset, a rescaled flow is obtained by removing the loss 
 - [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](../../NeurIPS2025/optimization/the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
 - [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
 - [\[CVPR 2026\] UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation](../../CVPR2026/optimization/unifusion_a_unified_image_fusion_framework_with_robust_representation_and_source.md)
+
+</div>
 
 <!-- RELATED:END -->

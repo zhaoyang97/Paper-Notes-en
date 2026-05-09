@@ -116,6 +116,8 @@ AgentDAM consists of three components: (1) **Task Design**: 246 tasks, each comp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Web-Shepherd: Advancing PRMs for Reinforcing Web Agents](web-shepherd_advancing_prms_for_reinforcing_web_agents.md)
@@ -123,5 +125,7 @@ AgentDAM consists of three components: (1) **Task Design**: 246 tasks, each comp
 - [\[NeurIPS 2025\] CORE: Full-Path Evaluation of LLM Agents Beyond Final State](core_full-path_evaluation_of_llm_agents_beyond_final_state.md)
 - [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
 - [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](../../AAAI2026/llm_agent/autoglm_autonomous_foundation_agents_for_guis.md)
+
+</div>
 
 <!-- RELATED:END -->

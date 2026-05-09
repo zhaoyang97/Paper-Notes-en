@@ -131,6 +131,8 @@ Optimization proceeds via alternating minimization: given fixed $w$, solve for $
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Normal-Abnormal Guided Generalist Anomaly Detection](../../NeurIPS2025/llm_evaluation/normal-abnormal_guided_generalist_anomaly_detection.md)
@@ -138,5 +140,7 @@ Optimization proceeds via alternating minimization: given fixed $w$, solve for $
 - [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](../../NeurIPS2025/llm_evaluation/scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)
 - [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
 - [\[ICCV 2025\] SVTRv2: CTC Beats Encoder-Decoder Models in Scene Text Recognition](svtrv2_ctc_beats_encoder-decoder_models_in_scene_text_recognition.md)
+
+</div>
 
 <!-- RELATED:END -->

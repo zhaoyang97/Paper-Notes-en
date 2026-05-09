@@ -134,6 +134,8 @@ Three application scenarios validate the generality of the method:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Safe and Stable Control via Lyapunov-Guided Diffusion Models](safe_and_stable_control_via_lyapunov-guided_diffusion_models.md)
@@ -141,5 +143,7 @@ Three application scenarios validate the generality of the method:
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](constrained_discrete_diffusion.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 - [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
+
+</div>
 
 <!-- RELATED:END -->

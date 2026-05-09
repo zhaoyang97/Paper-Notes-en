@@ -160,6 +160,8 @@ The approach is conceptually clear, methodologically concise, and practically ef
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](../../NeurIPS2025/image_generation/scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
@@ -167,5 +169,7 @@ The approach is conceptually clear, methodologically concise, and practically ef
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
 - [\[ICCV 2025\] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution](patchscaler_an_efficient_patch-independent_diffusion_model_for_image_super-resol.md)
 - [\[ICCV 2025\] MaskControl: Spatio-Temporal Control for Masked Motion Synthesis](maskcontrol_spatio-temporal_control_for_masked_motion_synthesis.md)
+
+</div>
 
 <!-- RELATED:END -->

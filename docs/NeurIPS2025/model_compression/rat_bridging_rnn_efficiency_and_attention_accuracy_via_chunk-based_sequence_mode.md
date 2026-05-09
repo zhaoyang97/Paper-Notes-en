@@ -139,6 +139,8 @@ A 1.3B model is pretrained from scratch on the FineWeb-Edu dataset for 100B toke
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](linear_attention_for_efficient_bidirectional_sequence_modeling.md)
@@ -146,5 +148,7 @@ A 1.3B model is pretrained from scratch on the FineWeb-Edu dataset for 100B toke
 - [\[NeurIPS 2025\] LT-Soups: Bridging Head and Tail Classes via Subsampled Model Soups](lt-soups_bridging_head_and_tail_classes_via_subsampled_model_soups.md)
 - [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](specattn_speculating_sparse_attention.md)
 - [\[NeurIPS 2025\] Spark Transformer: Reactivating Sparsity in FFN and Attention](spark_transformer_reactivating_sparsity_in_ffn_and_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

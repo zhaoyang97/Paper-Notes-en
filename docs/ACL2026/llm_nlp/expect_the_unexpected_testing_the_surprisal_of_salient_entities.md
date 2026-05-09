@@ -124,6 +124,8 @@ This is an analytical study and involves no model training. Surprisal (negative 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal](an_existence_proof_for_neural_language_models_that_can_explain_garden-path_effec.md)
@@ -131,5 +133,7 @@ This is an analytical study and involves no model training. Surprisal (negative 
 - [\[NeurIPS 2025\] PluralisticBehaviorSuite: Stress-Testing Multi-Turn Adherence to Custom Behavioral Policies](../../NeurIPS2025/llm_nlp/pluralistic_behavior_suite_stress-testing_multi-turn_adherence_to_custom_behavio.md)
 - [\[ACL 2026\] Prefix Parsing is Just Parsing](prefix_parsing_is_just_parsing.md)
 - [\[ACL 2026\] Automatic Combination of Sample Selection Strategies for Few-Shot Learning](automatic_combination_of_sample_selection_strategies_for_few-shot_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

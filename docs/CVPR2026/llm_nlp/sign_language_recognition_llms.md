@@ -111,6 +111,8 @@ Pure zero-shot evaluation with no training.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering](../../ACL2026/llm_nlp/are_emotion_and_rhetoric_neurons_in_llm_neuron_recognition_and_adaptive_masking_.md)
@@ -118,5 +120,7 @@ Pure zero-shot evaluation with no training.
 - [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
 - [\[ACL 2026\] A Study of LLMs' Preferences for Libraries and Programming Languages](../../ACL2026/llm_nlp/a_study_of_llms39_preferences_for_libraries_and_programming_languages.md)
 - [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
+
+</div>
 
 <!-- RELATED:END -->

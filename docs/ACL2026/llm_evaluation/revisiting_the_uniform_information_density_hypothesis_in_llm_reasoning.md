@@ -142,6 +142,8 @@ This paper is an analytical study and does not involve model training. DeepSeek-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](../../ICLR2026/llm_evaluation/predicting_llm_reasoning_performance_with_small_proxy_model.md)
@@ -149,5 +151,7 @@ This paper is an analytical study and does not involve model training. DeepSeek-
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_evaluation/llm_unlearning_with_llm_beliefs.md)
+
+</div>
 
 <!-- RELATED:END -->

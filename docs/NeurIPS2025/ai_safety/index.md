@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **73** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (24)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [📹 ICCV2025 (22)](../../ICCV2025/ai_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×16 · Federated Learning ×7 · Alignment/RLHF ×2 · GNNs ×2 · Speech & Audio ×2
+
 **[A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers](a_set_of_generalized_components_to_achieve_effective_poison-only_clean-label_bac.md)**
 
 :   This paper proposes a set of generalized components (Component A/B/C) that establish a bidirectional collaborative relationship between sample selection and trigger design, simultaneously improving the attack success rate (ASR) and stealthiness of Poison-only Clean-label Backdoor Attacks (PCBA), with strong generalizability across multiple attack types.

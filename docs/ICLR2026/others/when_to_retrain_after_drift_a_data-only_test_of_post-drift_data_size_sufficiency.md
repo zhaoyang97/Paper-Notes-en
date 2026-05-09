@@ -130,6 +130,8 @@ CALIPER consistently matches or surpasses the best fixed-data-size retraining ac
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Autonomous Concept Drift Threshold Determination](../../AAAI2026/others/autonomous_concept_drift_threshold_determination.md)
@@ -137,5 +139,7 @@ CALIPER consistently matches or surpasses the best fixed-data-size retraining ac
 - [\[ICLR 2026\] On the Impact of the Utility in Semivalue-based Data Valuation](on_the_impact_of_the_utility_in_semivalue-based_data_valuation.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[ICLR 2026\] CaDrift: A Time-dependent Causal Generator of Drifting Data Streams](cadrift_a_time-dependent_causal_generator_of_drifting_data_streams.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -140,6 +140,8 @@ $$\frac{\partial \mathcal{L}_{mae}(\theta_{p-1})}{\partial \alpha} = -\nabla_\th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction](den_tp_a_density_balanced_data_curation_and_evaluation_framework_for_trajectory.md)
@@ -147,5 +149,7 @@ $$\frac{\partial \mathcal{L}_{mae}(\theta_{p-1})}{\partial \alpha} = -\nabla_\th
 - [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
 - [\[CVPR 2026\] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction](recover_to_predict_progressive_retrospective_learning_for_variable-length_trajec.md)
 - [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
+
+</div>
 
 <!-- RELATED:END -->

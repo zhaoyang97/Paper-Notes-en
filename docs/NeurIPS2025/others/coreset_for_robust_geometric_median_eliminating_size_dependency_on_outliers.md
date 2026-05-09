@@ -121,6 +121,8 @@ Condition 2 of Assumption 1.4 ($\max_p \text{dist}(p, C^*)^z \leq 4k \cdot \text
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
@@ -128,5 +130,7 @@ Condition 2 of Assumption 1.4 ($\max_p \text{dist}(p, C^*)^z \leq 4k \cdot \text
 - [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)
 - [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](overfitting_in_adaptive_robust_optimization.md)
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

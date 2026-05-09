@@ -153,6 +153,8 @@ Effect of textual inversion settings on pruning rate and performance (Waterbirds
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness](../../CVPR2026/segmentation/concept-guided_fine-tuning_steering_vits_away_from_spurious_correlations_to_impr.md)
@@ -160,5 +162,7 @@ Effect of textual inversion settings on pruning rate and performance (Waterbirds
 - [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
 - [\[ICCV 2025\] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](know_no_better_a_data-driven_approach_for_enhancing_negation_awareness_in_clip.md)
 - [\[ICCV 2025\] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation](corrclip_reconstructing_patch_correlations_in_clip_for_openv.md)
+
+</div>
 
 <!-- RELATED:END -->

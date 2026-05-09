@@ -127,6 +127,8 @@ $$\left\| \frac{\partial \text{RMSNorm}(X + \eta \Delta X)}{\partial X} \right\|
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
@@ -134,5 +136,7 @@ $$\left\| \frac{\partial \text{RMSNorm}(X + \eta \Delta X)}{\partial X} \right\|
 - [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
 - [\[NeurIPS 2025\] Dense Associative Memory with Epanechnikov Energy](dense_associative_memory_with_epanechnikov_energy.md)
 - [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
+
+</div>
 
 <!-- RELATED:END -->

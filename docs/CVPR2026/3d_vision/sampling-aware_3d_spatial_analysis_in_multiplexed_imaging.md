@@ -125,6 +125,8 @@ Localization errors are well below typical cell diameters (e.g., neutrophils ~8 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation](context-nav_context-driven_exploration_and_viewpoint-aware_3d_spatial_reasoning_.md)
@@ -132,5 +134,7 @@ Localization errors are well below typical cell diameters (e.g., neutrophils ~8 
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial_projection_alignment_mono3d.md)
 - [\[NeurIPS 2025\] Metropolis-Hastings Sampling for 3D Gaussian Reconstruction](../../NeurIPS2025/3d_vision/metropolis-hastings_sampling_for_3d_gaussian_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

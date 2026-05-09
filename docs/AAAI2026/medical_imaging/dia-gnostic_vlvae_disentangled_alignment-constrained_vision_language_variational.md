@@ -124,6 +124,8 @@ $\mathcal{L}_{total} = \mathcal{L}_{CE} + \mathcal{L}_{ELBO} + \lambda_1 \mathca
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
@@ -131,5 +133,7 @@ $\mathcal{L}_{total} = \mathcal{L}_{CE} + \mathcal{L}_{ELBO} + \lambda_1 \mathca
 - [\[CVPR 2026\] Prototype-Based Knowledge Guidance for Fine-Grained Structured Radiology Reporting](../../CVPR2026/medical_imaging/prototype-based_knowledge_guidance_for_fine-grained_structured_radiology_reporti.md)
 - [\[AAAI 2026\] Constrained Best Arm Identification with Tests for Feasibility](constrained_best_arm_identification_with_tests_for_feasibility.md)
 - [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
+
+</div>
 
 <!-- RELATED:END -->

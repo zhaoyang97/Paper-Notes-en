@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **33** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (30)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/information_retrieval/index.md)
+
+🔥 **Top topics:** RAG ×8 · LLM ×5 · Multimodal/VLM ×3 · Reasoning ×3
+
 **[AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations](amemgym_interactive_memory_benchmarking_for_assistants_in_long-horizon_conversat.md)**
 
 :   This paper proposes AMemGym — the first long-horizon conversational memory benchmark environment supporting on-policy interactive evaluation. It drives LLM-simulated users via structured data sampling (user profile → state evolution → personalized QA), reveals ranking biases inherent in off-policy evaluation, and systematically diagnoses write/read/utilization failure modes across RAG, long-context, and agent-based memory systems.

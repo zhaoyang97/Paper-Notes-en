@@ -116,6 +116,8 @@ Crucible does not involve conventional model training. The formal definition of 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
@@ -123,5 +125,7 @@ Crucible does not involve conventional model training. The formal definition of 
 - [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
 - [\[NeurIPS 2025\] LLM Agents for Knowledge Discovery in Atomic Layer Processing](llm_agents_for_knowledge_discovery_in_atomic_layer_processing.md)
 - [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](../../ACL2026/llm_agent/when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
+
+</div>
 
 <!-- RELATED:END -->

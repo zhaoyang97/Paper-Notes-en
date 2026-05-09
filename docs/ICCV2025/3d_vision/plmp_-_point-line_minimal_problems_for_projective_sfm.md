@@ -134,6 +134,8 @@ Distribution statistics for the 291 minimal problems:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
@@ -141,5 +143,7 @@ Distribution statistics for the 291 minimal problems:
 - [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
 - [\[ICCV 2025\] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising](noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md)
+
+</div>
 
 <!-- RELATED:END -->

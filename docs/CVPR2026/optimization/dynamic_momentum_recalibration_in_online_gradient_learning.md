@@ -130,6 +130,8 @@ SGDF augments standard SGD with momentum by incorporating an online-computed gai
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
@@ -137,5 +139,7 @@ SGDF augments standard SGD with momentum by incorporating an online-computed gai
 - [\[NeurIPS 2025\] DynaAct: Large Language Model Reasoning with Dynamic Action Spaces](../../NeurIPS2025/optimization/dynaact_large_language_model_reasoning_with_dynamic_action_spaces.md)
 - [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](../../NeurIPS2025/optimization/effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
+
+</div>
 
 <!-- RELATED:END -->

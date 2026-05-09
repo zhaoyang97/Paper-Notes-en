@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **5** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/social_computing/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/social_computing/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+
 **[As Language Models Scale, Low-order Linear Depth Dynamics Emerge](as_language_models_scale_low-order_linear_depth_dynamics_emerge.md)**
 
 :   This paper treats the layer depth of a Transformer as a discrete-time system, demonstrating that the inter-layer propagation and intervention response of GPT-2 can be approximated near a given context by a 32-dimensional low-order linear state-space surrogate. Notably, as model scale increases, this surrogate becomes more accurate. The framework further enables the derivation of energy-efficient multi-layer intervention strategies that outperform heuristic injection baselines.

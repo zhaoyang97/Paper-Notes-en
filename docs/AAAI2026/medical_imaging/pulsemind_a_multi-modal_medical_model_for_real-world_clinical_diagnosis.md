@@ -163,6 +163,8 @@ On the PulseMind Benchmark, PulseMind achieves win rates of 94% (MedDiagnose) an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Experience with Single Domain Generalization in Real World Medical Imaging Deployments](experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo.md)
@@ -170,5 +172,7 @@ On the PulseMind Benchmark, PulseMind achieves win rates of 94% (MedDiagnose) an
 - [\[NeurIPS 2025\] RAD: Towards Trustworthy Retrieval-Augmented Multi-modal Clinical Diagnosis](../../NeurIPS2025/medical_imaging/rad_towards_trustworthy_retrieval-augmented_multi-modal_clinical_diagnosis.md)
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](../../NeurIPS2025/medical_imaging/mira_medical_time_series_foundation_model_for_real-world_health_data.md)
 - [\[AAAI 2026\] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes](note2chat_improving_llms_for_multi-turn_clinical_history_taking_using_medical_no.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -131,6 +131,8 @@ DreamOn enables DLMs to **surpass** state-of-the-art autoregressive models on mu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
@@ -138,5 +140,7 @@ DreamOn enables DLMs to **surpass** state-of-the-art autoregressive models on mu
 - [\[ICLR 2026\] Rethinking Code Similarity for Automated Algorithm Design with LLMs](rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)
 - [\[ICCV 2025\] Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation](../../ICCV2025/llm_nlp/beyond_isolated_words_diffusion_brush_for_handwritten_text-line_generation.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
+
+</div>
 
 <!-- RELATED:END -->

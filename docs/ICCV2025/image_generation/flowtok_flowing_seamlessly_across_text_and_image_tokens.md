@@ -141,6 +141,8 @@ $$\mathcal{L} = \mathcal{L}_{\text{fm}} + \gamma_1 \cdot \mathcal{L}_{\text{kld}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
@@ -148,5 +150,7 @@ $$\mathcal{L} = \mathcal{L}_{\text{fm}} + \gamma_1 \cdot \mathcal{L}_{\text{kld}
 - [\[ICCV 2025\] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?](what_makes_for_text_to_360-degree_panorama_generation_with_stable_diffusion.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
 - [\[ICCV 2025\] Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting](trans-adapter_a_plug-and-play_framework_for_transparent_image_inpainting.md)
+
+</div>
 
 <!-- RELATED:END -->

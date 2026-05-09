@@ -143,6 +143,8 @@ Variance reduction ratio of R2-G2 across different model depths:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
@@ -150,5 +152,7 @@ Variance reduction ratio of R2-G2 across different model depths:
 - [\[NeurIPS 2025\] Brain-like Variational Inference](brain-like_variational_inference.md)
 - [\[NeurIPS 2025\] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery](deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -175,6 +175,8 @@ Each component contributes consistent improvements; scaling training data (LVISâ
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Training Examples](rote_learning_considered_useful_generalizing_over_memorized_training_examples.md)
@@ -182,5 +184,7 @@ Each component contributes consistent improvements; scaling training data (LVISâ
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 - [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Data in LLMs](rote_learning_considered_useful_generalizing_over_memorized_data_in_llms.md)
 - [\[ICLR 2026\] Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -120,6 +120,8 @@ The system comprises three core modules: (1) **Initialization**: YOLOv9 generate
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes](mega_memory-efficient_4d_gaussian_splatting_for_dynamic_scenes.md)
@@ -127,5 +129,7 @@ The system comprises three core modules: (1) **Initialization**: YOLOv9 generate
 - [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](../../CVPR2026/3d_vision/varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
 - [\[ICCV 2025\] Benchmarking Egocentric Visual-Inertial SLAM at City Scale](benchmarking_egocentric_visualinertial_slam_at_city_scale.md)
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](../../CVPR2026/3d_vision/4c4d_4_camera_4d_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

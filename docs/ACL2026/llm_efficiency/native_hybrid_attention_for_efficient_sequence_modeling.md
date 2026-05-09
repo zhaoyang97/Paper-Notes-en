@@ -56,6 +56,8 @@ Native Hybrid Attention (NHA) concatenates linear RNN long-term memory slots wit
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](../../NeurIPS2025/llm_efficiency/linear_attention_for_efficient_bidirectional_sequence_modeling.md)
@@ -63,5 +65,7 @@ Native Hybrid Attention (NHA) concatenates linear RNN long-term memory slots wit
 - [\[ACL 2026\] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs](bosch_black-box_binary_optimization_for_short-context_attention-head_selection_i.md)
 - [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](../../NeurIPS2025/llm_efficiency/zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 - [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](../../NeurIPS2025/llm_efficiency/jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
+
+</div>
 
 <!-- RELATED:END -->

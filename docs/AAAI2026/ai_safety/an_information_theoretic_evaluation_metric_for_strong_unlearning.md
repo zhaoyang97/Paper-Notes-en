@@ -130,6 +130,8 @@ The paper makes two core contributions: (1) **IDI (Information Difference Index)
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
@@ -137,5 +139,7 @@ The paper makes two core contributions: (1) **IDI (Information Difference Index)
 - [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](../../NeurIPS2025/ai_safety/efficient_verified_machine_unlearning_for_distillation.md)
 - [\[ACL 2026\] When Bigger Isn't Better: A Comprehensive Fairness Evaluation of Political Bias in Multi-News Summarisation](../../ACL2026/ai_safety/when_bigger_isn39t_better_a_comprehensive_fairness_evaluation_of_political_bias_.md)
+
+</div>
 
 <!-- RELATED:END -->

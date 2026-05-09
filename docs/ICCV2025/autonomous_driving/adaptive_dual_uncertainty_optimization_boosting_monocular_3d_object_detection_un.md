@@ -165,6 +165,8 @@ Average improvement over existing methods: +18%.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations](monosowa_scalable_monocular_3d_object_detector_without_human_annotations.md)
@@ -172,5 +174,7 @@ Average improvement over existing methods: +18%.
 - [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
 - [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

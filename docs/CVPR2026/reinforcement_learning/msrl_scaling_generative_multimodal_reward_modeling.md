@@ -134,6 +134,8 @@ MSRL 8B with voting@16 achieves 77.5% on VL-RewardBench, surpassing Claude-3.7-S
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning](cccaption_dual-reward_reinforcement_learning_for_complete_and_correct_image_capt.md)
@@ -141,5 +143,7 @@ MSRL 8B with voting@16 achieves 77.5% on VL-RewardBench, surpassing Claude-3.7-S
 - [\[CVPR 2026\] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](lifelong_imitation_learning_with_multimodal_latent_replay_and_incremental_adjust.md)
 - [\[CVPR 2026\] Anticipatory Planning for Multimodal AI Agents](anticipatory_planning_for_multimodal_ai_agents.md)
 - [\[CVPR 2026\] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning](cross-modal_identity_mapping_minimizing_information_loss_in_modality_conversion_.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -118,6 +118,8 @@ The framework is nonparametric — nuisance components $f(X)$ and $g(X)$ are est
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
@@ -125,5 +127,7 @@ The framework is nonparametric — nuisance components $f(X)$ and $g(X)$ are est
 - [\[NeurIPS 2025\] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation](an_analysis_of_causal_effect_estimation_using_outcome_invariant_data_augmentatio.md)
 - [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
 - [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](../../ICLR2026/causal_inference/direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
+
+</div>
 
 <!-- RELATED:END -->

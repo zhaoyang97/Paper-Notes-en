@@ -149,6 +149,8 @@ Both methods approximate the expectation with 50 samples, are model-agnostic, an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models](blind_strong_gravitational_lensing_inversion_joint_inference_of_source_and_lens_.md)
@@ -156,5 +158,7 @@ Both methods approximate the expectation with 50 samples, are model-agnostic, an
 - [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
 - [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
 - [\[NeurIPS 2025\] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold](stella_subspace_learning_in_low-rank_adaptation_using_stiefel_manifold.md)
+
+</div>
 
 <!-- RELATED:END -->

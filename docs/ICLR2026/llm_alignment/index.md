@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **42** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (12)](../../CVPR2026/llm_alignment/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/llm_alignment/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+
+🔥 **Top topics:** Alignment/RLHF ×22 · LLM ×10 · Adversarial Robustness ×5 · Reasoning ×3 · Multimodal/VLM ×2
+
 **[A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)**
 
 :   A2D is proposed, a token-level safety alignment method for diffusion language models (dLLMs) that trains the model to output [EOS] tokens at masked positions containing harmful content, enabling robust defense across any decoding order and any decoding step. It reduces DIJA template attack success rates from 80%+ to near zero (1.3%/0.0%) while supporting early rejection for a 19.3× speedup.

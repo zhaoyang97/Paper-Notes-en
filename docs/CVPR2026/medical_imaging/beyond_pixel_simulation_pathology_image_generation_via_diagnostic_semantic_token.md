@@ -152,6 +152,8 @@ The paper comprises 6 tables and 17 figures across 32 pages. Ablation experiment
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation](../../ICLR2026/medical_imaging/exo-plore_exploring_exoskeleton_control_space_through_human-aligned_simulation.md)
@@ -159,5 +161,7 @@ The paper comprises 6 tables and 17 figures across 32 pages. Ablation experiment
 - [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
 - [\[ACL 2026\] Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering](../../ACL2026/medical_imaging/beyond_prompt_fine-grained_simulation_of_cognitively_impaired_standardized_patie.md)
 - [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -131,6 +131,8 @@ The model takes $N=8$ RGB views and a text query as input. Two parallel branches
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
@@ -138,5 +140,7 @@ The model takes $N=8$ RGB views and a text query as input. Two parallel branches
 - [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
 - [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
 - [\[CVPR 2026\] Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas](stepper_stepwise_immersive_scene_generation_with_multiview_panoramas.md)
+
+</div>
 
 <!-- RELATED:END -->

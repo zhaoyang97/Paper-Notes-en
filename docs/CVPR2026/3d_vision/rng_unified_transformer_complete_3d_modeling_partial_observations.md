@@ -120,6 +120,8 @@ $\mathcal{L} = \mathcal{L}_{RGB} + \lambda_{pmap}\mathcal{L}_{pmap} + \lambda_c\
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
@@ -127,5 +129,7 @@ $\mathcal{L} = \mathcal{L}_{RGB} + \lambda_{pmap}\mathcal{L}_{pmap} + \lambda_c\
 - [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
 - [\[CVPR 2026\] FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views](ff3r_feedforward_feature_3d_reconstruction_from_unconstrained_views.md)
 - [\[CVPR 2026\] Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging](sampling-aware_3d_spatial_analysis_in_multiplexed_imaging.md)
+
+</div>
 
 <!-- RELATED:END -->

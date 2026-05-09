@@ -154,6 +154,8 @@ Key finding: Under free lunch covariate shift, the corrected $\text{SNR}_\alpha 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination](information-computation_tradeoffs_for_noiseless_linear_regression_with_oblivious.md)
@@ -161,5 +163,7 @@ Key finding: Under free lunch covariate shift, the corrected $\text{SNR}_\alpha 
 - [\[NeurIPS 2025\] Regression Trees Know Calculus](regression_trees_know_calculus.md)
 - [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](../../AAAI2026/others/online_linear_regression_with_paid_stochastic_features.md)
 - [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
+
+</div>
 
 <!-- RELATED:END -->

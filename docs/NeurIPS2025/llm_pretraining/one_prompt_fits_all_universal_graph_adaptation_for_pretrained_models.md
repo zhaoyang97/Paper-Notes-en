@@ -130,6 +130,8 @@ Given a frozen pretrained graph encoder $f_\theta$ and a downstream few-shot tas
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Understanding and Enhancing Mask-Based Pretraining towards Universal Representations](understanding_and_enhancing_mask-based_pretraining_towards_universal_representat.md)
@@ -137,5 +139,7 @@ Given a frozen pretrained graph encoder $f_\theta$ and a downstream few-shot tas
 - [\[CVPR 2026\] Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation](../../CVPR2026/llm_pretraining/evidential_transformation_network_post_hoc_uncertainty_estimation.md)
 - [\[ICCV 2025\] ETA: Energy-based Test-time Adaptation for Depth Completion](../../ICCV2025/llm_pretraining/eta_energy-based_test-time_adaptation_for_depth_completion.md)
 - [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

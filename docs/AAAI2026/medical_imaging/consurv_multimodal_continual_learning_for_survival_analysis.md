@@ -130,6 +130,8 @@ Comparison with multiple continual learning methods on the MSAIL benchmark.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](learning_with_preserving_for_continual_multitask_learning.md)
@@ -137,5 +139,7 @@ Comparison with multiple continual learning methods on the MSAIL benchmark.
 - [\[NeurIPS 2025\] Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis](../../NeurIPS2025/medical_imaging/dual_mixture-of-experts_framework_for_discrete-time_survival_analysis.md)
 - [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
 - [\[CVPR 2026\] Residual SODAP: Residual Self-Organizing Domain-Adaptive Prompting with Structural Knowledge Preservation for Continual Learning](../../CVPR2026/medical_imaging/residual_sodap_residual_self-organizing_domain-adaptive_prompting_with_structura.md)
+
+</div>
 
 <!-- RELATED:END -->

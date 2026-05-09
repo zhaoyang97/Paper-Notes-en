@@ -125,6 +125,8 @@ Standard detection training (classification + regression losses + weight decay).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation](../../AAAI2026/ai_safety/matrix-free_two-to-infinity_and_one-to-two_norms_estimation.md)
@@ -132,5 +134,7 @@ Standard detection training (classification + regression losses + weight decay).
 - [\[AAAI 2026\] DeepTracer: Tracing Stolen Model via Deep Coupled Watermarks](../../AAAI2026/ai_safety/deeptracer_tracing_stolen_model_via_deep_coupled_watermarks.md)
 - [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](../../NeurIPS2025/ai_safety/stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -104,6 +104,8 @@ Ensemble++ maintains a shared matrix factor $\mathbf{A}_t \in \mathbb{R}^{d \tim
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Credal Ensemble Distillation for Uncertainty Quantification](../../AAAI2026/model_compression/credal_ensemble_distillation_for_uncertainty_quantification.md)
@@ -111,5 +113,7 @@ Ensemble++ maintains a shared matrix factor $\mathbf{A}_t \in \mathbb{R}^{d \tim
 - [\[ICLR 2026\] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning](../../ICLR2026/model_compression/flyprompt_brain-inspired_random-expanded_routing.md)
 - [\[CVPR 2026\] LLaVA-LE: Large Language-and-Vision Assistant for Lunar Exploration](../../CVPR2026/model_compression/llava-le_large_language-and-vision_assistant_for_lunar_exploration.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
+
+</div>
 
 <!-- RELATED:END -->

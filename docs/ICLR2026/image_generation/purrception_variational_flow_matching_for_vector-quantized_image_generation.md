@@ -188,6 +188,8 @@ Evaluation on unconditional/class-conditional image generation on ImageNet-1k 25
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation](senseflow_scaling_distribution_matching_for_flow-based_text-to-image_distillatio.md)
@@ -195,5 +197,7 @@ Evaluation on unconditional/class-conditional image generation on ImageNet-1k 25
 - [\[ICLR 2026\] Diffusion Alignment as Variational Expectation-Maximization](diffusion_alignment_as_variational_expectation-maximization.md)
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
 - [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](../../CVPR2026/image_generation/unified_vector_floorplan_generation_via_markup_representation.md)
+
+</div>
 
 <!-- RELATED:END -->

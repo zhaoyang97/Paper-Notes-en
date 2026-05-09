@@ -133,6 +133,8 @@ Via Trevisan's non-uniform sparse cut framework, prior methods are unified as fo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm](dynamic_algorithm_for_explainable_k-medians_clustering_under_lp_norm.md)
@@ -140,5 +142,7 @@ Via Trevisan's non-uniform sparse cut framework, prior methods are unified as fo
 - [\[NeurIPS 2025\] Additive Models Explained: A Computational Complexity Approach](additive_models_explained_a_computational_complexity_approach.md)
 - [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
 - [\[NeurIPS 2025\] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference](dynamic_features_adaptation_in_networking_toward_flexible_training_and_explainab.md)
+
+</div>
 
 <!-- RELATED:END -->

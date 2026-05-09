@@ -136,6 +136,8 @@ vs. **MetaGPT/CrewAI**: These frameworks focus on role definition and conversati
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/llm_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
@@ -143,5 +145,7 @@ vs. **MetaGPT/CrewAI**: These frameworks focus on role definition and conversati
 - [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](../../ACL2026/llm_agent/diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
 - [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
 - [\[AAAI 2026\] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)
+
+</div>
 
 <!-- RELATED:END -->

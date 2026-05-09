@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **9** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/graph_learning/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/graph_learning/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/graph_learning/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/graph_learning/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×4 · RAG ×2 · Reasoning ×2
+
 **[Adaptive Learned Image Compression with Graph Neural Networks](adaptive_learned_image_compression_with_graph_neural_networks.md)**
 
 :   GLIC reformulates the nonlinear transforms in learned image compression (LIC) from fixed convolutions or window-based attention into content-adaptive graph neural network operations. A dual-scale graph determines *where to connect*, while a complexity-aware mechanism determines *how much to connect*, enabling more effective modeling of both local and long-range redundancies. GLIC consistently outperforms traditional codecs and recent LIC baselines across three standard benchmarks.

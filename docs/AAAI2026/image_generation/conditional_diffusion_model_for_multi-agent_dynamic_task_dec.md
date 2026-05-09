@@ -115,6 +115,8 @@ CD3T is a two-level hierarchical MARL framework: (1) a conditional diffusion mod
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](../../ICLR2026/image_generation/multi-agent_coordination_via_flow_matching.md)
@@ -122,5 +124,7 @@ CD3T is a two-level hierarchical MARL framework: (1) a conditional diffusion mod
 - [\[CVPR 2026\] coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation](../../CVPR2026/image_generation/codrawagents_a_multi-agent_dialogue_framework_for_compositional_image_generation.md)
 - [\[ICLR 2026\] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation](../../ICLR2026/image_generation/jointdiff_bridging_continuous_and_discrete_in_multi-agent_trajectory_generation.md)
 - [\[AAAI 2026\] Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines](backdoors_in_conditional_diffusion_threats_to_responsible_synthetic_data_pipelin.md)
+
+</div>
 
 <!-- RELATED:END -->

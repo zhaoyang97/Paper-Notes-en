@@ -166,6 +166,8 @@ Optimal setting: 400 training epochs in total, $start=200$, $end=300$ (first 200
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](../../ICLR2026/image_generation/autoregressive_image_generation_with_randomized_parallel_decoding.md)
@@ -173,5 +175,7 @@ Optimal setting: 400 training epochs in total, $start=200$, $end=300$ (first 200
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
 - [\[NeurIPS 2025\] Watermarking Autoregressive Image Generation](../../NeurIPS2025/image_generation/watermarking_autoregressive_image_generation.md)
 - [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
+
+</div>
 
 <!-- RELATED:END -->

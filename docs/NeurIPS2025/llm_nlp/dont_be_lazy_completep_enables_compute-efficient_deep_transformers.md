@@ -136,6 +136,8 @@ Further training at 200 TPP on 50M and 300M models shows that CompleteP achieves
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales](hyperparameter_transfer_enables_consistent_gains_of_matrix-preconditioned_optimi.md)
@@ -143,5 +145,7 @@ Further training at 200 TPP on 50M and 300M models shows that CompleteP achieves
 - [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
 - [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
 - [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
+
+</div>
 
 <!-- RELATED:END -->

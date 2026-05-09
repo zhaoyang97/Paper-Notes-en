@@ -139,6 +139,8 @@ The listwise formulation captures global expression patterns, outperforming pair
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](../../CVPR2026/medical_imaging/cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
@@ -146,5 +148,7 @@ The listwise formulation captures global expression patterns, outperforming pair
 - [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](../../ICCV2025/medical_imaging/aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
 - [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](../../AAAI2026/medical_imaging/hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
 - [\[NeurIPS 2025\] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology](revisiting_end-to-end_learning_with_slide-level_supervision_in_computational_pat.md)
+
+</div>
 
 <!-- RELATED:END -->

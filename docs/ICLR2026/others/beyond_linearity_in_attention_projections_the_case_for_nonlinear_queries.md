@@ -115,6 +115,8 @@ Bottleneck MLP: $f_\theta(X) = \text{LN}(\text{GELU}(\text{RMSNorm}(X) \cdot W_1
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](hilbert-guided_sparse_local_attention.md)
@@ -122,5 +124,7 @@ Bottleneck MLP: $f_\theta(X) = \text{LN}(\text{GELU}(\text{RMSNorm}(X) \cdot W_1
 - [\[CVPR 2026\] NaiLIA: Multimodal Nail Design Retrieval Based on Dense Intent Descriptions and Palette Queries](../../CVPR2026/others/nailia_multimodal_nail_design_retrieval_based_on_dense_intent_descriptions_and_p.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
+
+</div>
 
 <!-- RELATED:END -->

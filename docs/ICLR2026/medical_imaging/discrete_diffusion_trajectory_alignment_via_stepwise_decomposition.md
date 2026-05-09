@@ -159,6 +159,8 @@ Average time per training step: DRAKES 6.02s, diffu-GRPO 1.51s, **SDPO only 0.77
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
@@ -166,5 +168,7 @@ Average time per training step: DRAKES 6.02s, diffu-GRPO 1.51s, **SDPO only 0.77
 - [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
 - [\[NeurIPS 2025\] Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion](../../NeurIPS2025/medical_imaging/why_masking_diffusion_works_condition_on_the_jump_schedule_for_improved_discrete.md)
 - [\[AAAI 2026\] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning](../../AAAI2026/medical_imaging/taligndiff_automatic_tooth_alignment_assisted_by_diffusion-based_transformation_.md)
+
+</div>
 
 <!-- RELATED:END -->

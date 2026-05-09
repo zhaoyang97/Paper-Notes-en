@@ -98,6 +98,8 @@ No training is involved—this is a purely inference-time evaluation study. Metr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
@@ -105,5 +107,7 @@ No training is involved—this is a purely inference-time evaluation study. Metr
 - [\[NeurIPS 2025\] Accelerate Creation of Product Claims Using Generative AI](../../NeurIPS2025/audio_speech/accelerate_creation_of_product_claims_using_generative_ai.md)
 - [\[CVPR 2026\] ViDscribe: Multimodal AI for Customizing Audio Description and Question Answering in Online Videos](../../CVPR2026/audio_speech/vidscribe_multimodal_ai_for_customizing_audio_description_and_question_answering.md)
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](../../NeurIPS2025/audio_speech/echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
+
+</div>
 
 <!-- RELATED:END -->

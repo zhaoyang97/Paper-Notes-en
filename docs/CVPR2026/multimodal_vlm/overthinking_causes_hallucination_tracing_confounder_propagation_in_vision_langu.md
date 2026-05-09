@@ -140,6 +140,8 @@ OOD generalization (AMBER + LLaVA-1.5): **Ours GB 86.11 AUC / 71.58 F1** vs. Met
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking](circuit_tracing_in_vision-language_models_understanding_the_internal_mechanisms_.md)
@@ -147,5 +149,7 @@ OOD generalization (AMBER + LLaVA-1.5): **Ours GB 86.11 AUC / 71.58 F1** vs. Met
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](../../ACL2026/multimodal_vlm/benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 - [\[CVPR 2026\] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing](kvsmooth_mitigating_hallucination_in_multimodal_la.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/multimodal_vlm/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
+
+</div>
 
 <!-- RELATED:END -->

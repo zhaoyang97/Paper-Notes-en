@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **30** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/information_retrieval/index.md)
+
+🔥 **Top topics:** RAG ×16 · Multimodal/VLM ×5 · Reasoning ×4 · Question Answering ×3 · LLM ×2
+
 **[Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)**
 
 :   This paper introduces the MMDocRAG benchmark (4,055 expert-annotated QA pairs) to systematically evaluate 60 VLMs/LLMs and 14 retrievers on quote selection and interleaved text-image answer generation in multimodal document RAG. Results reveal that the strongest model, GPT-4.1, achieves only 70.2% Quote Selection F1, while fine-tuning yields substantial performance gains.

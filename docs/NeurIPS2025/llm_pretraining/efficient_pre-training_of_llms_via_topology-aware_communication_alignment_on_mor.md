@@ -126,6 +126,8 @@ A reservation mechanism is adopted: after an LPJ is planned, its nodes are reser
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_pretraining/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
@@ -133,5 +135,7 @@ A reservation mechanism is adopted: after an LPJ is planned, its nodes are reser
 - [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
 - [\[NeurIPS 2025\] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks](gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica.md)
 - [\[NeurIPS 2025\] Vocabulary Customization for Efficient Domain-Specific LLM Deployment](vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)
+
+</div>
 
 <!-- RELATED:END -->

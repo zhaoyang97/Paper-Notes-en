@@ -164,6 +164,8 @@ Traditional metrics (PPL, DSI) perform extremely poorly across domains (Kappa ne
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
@@ -171,5 +173,7 @@ Traditional metrics (PPL, DSI) perform extremely poorly across domains (Kappa ne
 - [\[ICLR 2026\] First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation](first_is_not_really_better_than_last_evaluating_layer_choice_and_aggregation_str.md)
 - [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](../../ACL2026/llm_nlp/why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
 - [\[ACL 2026\] Detoxification for LLM from Dataset Itself](../../ACL2026/llm_nlp/detoxification_for_llm_from_dataset_itself.md)
+
+</div>
 
 <!-- RELATED:END -->

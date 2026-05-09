@@ -129,6 +129,8 @@ For the baseline, the method builds on BUTD-DETR: PointNet++ encodes LiDAR point
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification](gsalign_geometric_and_semantic_alignment_network_for_aerial-ground_person_re-ide.md)
@@ -136,5 +138,7 @@ For the baseline, the method builds on BUTD-DETR: PointNet++ encodes LiDAR point
 - [\[CVPR 2026\] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR](../../CVPR2026/autonomous_driving/terraseg_self-supervised_ground_segmentation_for_any_lidar.md)
 - [\[NeurIPS 2025\] OpenBox: Annotate Any Bounding Boxes in 3D](openbox_annotate_any_bounding_boxes_in_3d.md)
 - [\[NeurIPS 2025\] LabelAny3D: Label Any Object 3D in the Wild](labelany3d_label_any_object_3d_in_the_wild.md)
+
+</div>
 
 <!-- RELATED:END -->

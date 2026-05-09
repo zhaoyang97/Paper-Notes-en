@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **10** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/llm_pretraining/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (6)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_pretraining/index.md)
+
 **[Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)**
 
 :   This paper proposes MergeGuard, a proactive dual-stage weight protection framework: Stage 1 disperses task-critical weights via L2 regularization, and Stage 2 injects structured perturbations to disrupt merging compatibility. The protected model retains <1.5% performance loss while causing merged model accuracy to drop by up to 90%.

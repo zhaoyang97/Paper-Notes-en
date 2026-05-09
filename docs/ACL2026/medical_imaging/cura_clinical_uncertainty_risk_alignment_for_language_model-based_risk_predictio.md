@@ -120,6 +120,8 @@ The total loss is $L_{total} = L_{base} + L_{ind} + L_{coh}$. $L_{base}$ is a we
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](../../AAAI2026/medical_imaging/deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
@@ -127,5 +129,7 @@ The total loss is $L_{total} = L_{base} + L_{ind} + L_{coh}$. $L_{base}$ is a we
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](../../NeurIPS2025/medical_imaging/cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
 - [\[NeurIPS 2025\] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation](../../NeurIPS2025/medical_imaging/aanet_virtual_screening_under_structural_uncertainty_via_alignment_and_aggregati.md)
 - [\[ACL 2026\] Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction](efficient_and_effective_internal_memory_retrieval_for_llm-based_healthcare_predi.md)
+
+</div>
 
 <!-- RELATED:END -->

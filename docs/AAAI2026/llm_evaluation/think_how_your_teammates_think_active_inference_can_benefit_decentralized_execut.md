@@ -142,6 +142,8 @@ where $\mathcal{L}_{TD}$ is the TD loss from QMIX, $\mathcal{L}_{MD}$ is the tri
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Think in Latent Thoughts: A New Paradigm for Gloss-Free Sign Language Translation](../../ACL2026/llm_evaluation/think_in_latent_thoughts_a_new_paradigm_for_gloss-free_sign_language_translation.md)
@@ -149,5 +151,7 @@ where $\mathcal{L}_{TD}$ is the TD loss from QMIX, $\mathcal{L}_{MD}$ is the tri
 - [\[AAAI 2026\] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search](mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s.md)
 - [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
 - [\[AAAI 2026\] Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?](perspective_from_a_broader_context_can_room_style_knowledge_help_visual_floorpla.md)
+
+</div>
 
 <!-- RELATED:END -->

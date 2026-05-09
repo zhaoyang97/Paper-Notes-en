@@ -134,6 +134,8 @@ The total loss is $\mathcal{L} = \mathcal{L}_{detect} + \beta \text{KL}(p(E|Z) \
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
@@ -141,5 +143,7 @@ The total loss is $\mathcal{L} = \mathcal{L}_{detect} + \beta \text{KL}(p(E|Z) \
 - [\[ACL 2026\] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents](../../ACL2026/model_compression/yield_a_large-scale_dataset_and_evaluation_framework_for_information_elicitation.md)
 - [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](distilling_cross-modal_knowledge_via_feature_disentanglement.md)
 - [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
+
+</div>
 
 <!-- RELATED:END -->

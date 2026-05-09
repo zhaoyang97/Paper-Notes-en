@@ -136,6 +136,8 @@ Rather than proposing a solution, the paper presents a systematic vulnerability 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
@@ -143,5 +145,7 @@ Rather than proposing a solution, the paper presents a systematic vulnerability 
 - [\[AAAI 2026\] PocketLLM: Ultimate Compression of Large Language Models via Meta Networks](pocketllm_ultimate_compression_of_large_language_models_via_meta_networks.md)
 - [\[AAAI 2026\] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](../../ACL2026/model_compression/compositional_steering_of_large_language_models_with_steering_tokens.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **76** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_evaluation/index.md) · [📷 CVPR2026 (28)](../../CVPR2026/llm_evaluation/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/llm_evaluation/index.md) · [🤖 AAAI2026 (39)](../../AAAI2026/llm_evaluation/index.md) · [📹 ICCV2025 (29)](../../ICCV2025/llm_evaluation/index.md)
+
+🔥 **Top topics:** LLM ×11 · Alignment/RLHF ×6 · Adversarial Robustness ×4 · Domain Adaptation ×2 · Few-/Zero-Shot Learning ×2
+
 **[A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning](a_highdimensional_statistical_method_for_optimizing_transfer.md)**
 
 :   This paper proposes a theoretical framework based on K-L divergence and high-dimensional statistical analysis to determine the optimal number of samples to transfer from each source task in multi-source transfer learning. The framework avoids the negative transfer caused by naively using all source data, and the resulting algorithm OTQMS surpasses the state of the art by 1.0–1.5% on DomainNet and Office-Home while reducing sample usage by 47.85% and training time by 35.19%.

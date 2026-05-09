@@ -157,6 +157,8 @@ MS-BART achieves comprehensive improvements on similarity metrics on NPLIB1: MCE
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] UniBlendNet: Unified Global, Multi-Scale, and Region-Adaptive Modeling for Ambient Lighting Normalization](../../CVPR2026/image_restoration/uniblendnet_unified_global_multi_scale_and_region_adaptive_modeling_for_ambient_lighting_normalization.md)
@@ -164,5 +166,7 @@ MS-BART achieves comprehensive improvements on similarity metrics on NPLIB1: MCE
 - [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
 - [\[ICCV 2025\] UniPhys: Unified Planner and Controller with Diffusion for Flexible Physics-Based Character Control](../../ICCV2025/image_restoration/uniphys_unified_planner_and_controller_with_diffusion_for_flexible_physics-based.md)
 - [\[NeurIPS 2025\] DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration](denoiserotator_enhance_pruning_robustness_for_llms_via_importance_concentration.md)
+
+</div>
 
 <!-- RELATED:END -->

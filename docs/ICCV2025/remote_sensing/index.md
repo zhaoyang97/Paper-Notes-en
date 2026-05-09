@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/remote_sensing/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/remote_sensing/index.md)
+
+🔥 **Top topics:** Remote Sensing ×5
+
 **[AstroLoc: Robust Space to Ground Image Localizer](astroloc_robust_space_to_ground_image_localizer.md)**
 
 :   This paper proposes AstroLoc, the first space-to-ground localization model trained on 300K manually annotated astronaut photographs. Through a query-satellite pairwise loss and unsupervised mining technique, the model learns robust representations of Earth's surface, achieving an average improvement of 35% in Recall@1, consistently exceeding 99% in Recall@100, and has already localized over 500K photographs in real-world deployment.

@@ -116,6 +116,8 @@ The paper's analysis of depth vs. CoT suggests an interesting direction: since i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](../../ICCV2025/video_understanding/flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
@@ -123,5 +125,7 @@ The paper's analysis of depth vs. CoT suggests an interesting direction: since i
 - [\[ICLR 2026\] The Expressive Limits of Diagonal SSMs for State-Tracking](../../ICLR2026/video_understanding/the_expressive_limits_of_diagonal_ssms_for_state-tracking.md)
 - [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)
 - [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

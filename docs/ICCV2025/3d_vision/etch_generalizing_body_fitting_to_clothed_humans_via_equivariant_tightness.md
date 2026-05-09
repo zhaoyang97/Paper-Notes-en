@@ -145,6 +145,8 @@ Key findings:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene](event-driven_storytelling_with_multiple_lifelike_humans_in_a_3d_scene.md)
@@ -152,5 +154,7 @@ Key findings:
 - [\[ICCV 2025\] VolumetricSMPL: A Neural Volumetric Body Model for Efficient Interactions, Contacts, and Collisions](volumetricsmpl_a_neural_volumetric_body_model_for_efficient_interactions_contact.md)
 - [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
 - [\[ICCV 2025\] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis](humanolat_a_large-scale_dataset_for_full-body_human_relighting_and_novel-view_sy.md)
+
+</div>
 
 <!-- RELATED:END -->

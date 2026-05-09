@@ -120,6 +120,8 @@ The Sa2VA★ fine-tuned variant applies LoRA to the visual encoder and is traine
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
@@ -127,5 +129,7 @@ The Sa2VA★ fine-tuned variant applies LoRA to the visual encoder and is traine
 - [\[ICCV 2025\] DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding](../../ICCV2025/video_understanding/dynimg_key_frames_with_visual_prompts_are_good_representation_for_multi-modal_vi.md)
 - [\[ICCV 2025\] OVG-HQ: Online Video Grounding with Hybrid-modal Queries](../../ICCV2025/video_understanding/ovg-hq_online_video_grounding_with_hybrid-modal_queries.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

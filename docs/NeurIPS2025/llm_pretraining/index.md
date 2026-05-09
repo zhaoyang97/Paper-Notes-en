@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **50** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (6)](../../AAAI2026/llm_pretraining/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_pretraining/index.md)
+
+🔥 **Top topics:** LLM ×8 · Alignment/RLHF ×4 · Diffusion Models ×2 · Face & Gaze ×2
+
 **[A Practical Guide for Incorporating Symmetry in Diffusion Policy](a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)**
 
 :   This paper presents a practical guide for incorporating symmetry into diffusion policies. Through three simple and composable methods — invariant representations (relative trajectory actions + eye-in-hand perception), equivariant visual encoders, and Frame Averaging — the proposed approach achieves performance on par with or exceeding fully equivariant diffusion policies across 12 MimicGen tasks, while substantially reducing implementation complexity.

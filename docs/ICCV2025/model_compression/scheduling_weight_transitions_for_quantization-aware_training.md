@@ -136,6 +136,8 @@ The optimal TR factor lies in the range of 4e-3 to 6e-3. Sensitivity to this hyp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
@@ -143,5 +145,7 @@ The optimal TR factor lies in the range of 4e-3 to 6e-3. Sensitivity to this hyp
 - [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
 - [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
 - [\[ICCV 2025\] Time-Aware Auto White Balance in Mobile Photography](time-aware_auto_white_balance_in_mobile_photography.md)
+
+</div>
 
 <!-- RELATED:END -->

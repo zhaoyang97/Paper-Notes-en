@@ -168,6 +168,8 @@ Both components contribute independently: DC-based split decisions primarily red
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](../../CVPR2026/3d_vision/stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
@@ -175,5 +177,7 @@ Both components contribute independently: DC-based split decisions primarily red
 - [\[NeurIPS 2025\] Metropolis-Hastings Sampling for 3D Gaussian Reconstruction](metropolis-hastings_sampling_for_3d_gaussian_reconstruction.md)
 - [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

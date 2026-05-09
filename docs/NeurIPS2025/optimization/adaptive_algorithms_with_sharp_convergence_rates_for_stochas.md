@@ -116,6 +116,8 @@ Ada-Minimax targets $\min_x \max_y f(x, y)$ (with $f$ strongly concave in $y$); 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sharper Convergence Rates for Nonconvex Optimisation via Reduction Mappings](sharper_convergence_rates_for_nonconvex_optimisation_via_reduction_mappings.md)
@@ -123,5 +125,7 @@ Ada-Minimax targets $\min_x \max_y f(x, y)$ (with $f$ strongly concave in $y$); 
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
 - [\[NeurIPS 2025\] Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery](deep_taxonomic_networks_for_unsupervised_hierarchical_prototype_discovery.md)
+
+</div>
 
 <!-- RELATED:END -->

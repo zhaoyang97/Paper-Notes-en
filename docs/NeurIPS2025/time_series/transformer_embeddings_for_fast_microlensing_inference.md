@@ -132,6 +132,8 @@ $$\theta \rightarrow \text{Simulated Light Curves} \rightarrow \text{Data Augmen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Decomposition of Small Transformer Models](decomposition_of_small_transformer_models.md)
@@ -139,5 +141,7 @@ $$\theta \rightarrow \text{Simulated Light Curves} \rightarrow \text{Data Augmen
 - [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](../../ICLR2026/time_series/relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
 - [\[NeurIPS 2025\] Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification](diffusion_transformers_for_imputation_statistical_efficiency_and_uncertainty_qua.md)
 - [\[NeurIPS 2025\] BubbleFormer: Forecasting Boiling with Transformers](bubbleformer_forecasting_boiling_with_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

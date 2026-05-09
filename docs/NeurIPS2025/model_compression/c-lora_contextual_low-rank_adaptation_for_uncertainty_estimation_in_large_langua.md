@@ -135,6 +135,8 @@ $$\mathcal{L} = \sum_{i=1}^{N}[\mathbb{E}_{q_\phi} \log p_\theta(y_i|\mathbf{x}_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
@@ -142,5 +144,7 @@ $$\mathcal{L} = \sum_{i=1}^{N}[\mathbb{E}_{q_\phi} \log p_\theta(y_i|\mathbf{x}_
 - [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
 - [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
+
+</div>
 
 <!-- RELATED:END -->

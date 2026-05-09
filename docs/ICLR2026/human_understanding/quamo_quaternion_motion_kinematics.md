@@ -130,6 +130,8 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{local} + \mathcal{L}_{glob
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](../../ICCV2025/human_understanding/fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
@@ -137,5 +139,7 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{local} + \mathcal{L}_{glob
 - [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](../../CVPR2026/human_understanding/hum4d_markerless_motion_capture.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/human_understanding/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
+
+</div>
 
 <!-- RELATED:END -->

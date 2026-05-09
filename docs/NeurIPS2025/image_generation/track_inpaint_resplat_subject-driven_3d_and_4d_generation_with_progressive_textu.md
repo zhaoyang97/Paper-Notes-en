@@ -152,6 +152,8 @@ TIRE takes the output of existing 3D/4D generation models (e.g., LGM, L4GM) as i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation](mind-the-glitch_visual_correspondence_for_detecting_inconsistencies_in_subject-d.md)
@@ -159,5 +161,7 @@ TIRE takes the output of existing 3D/4D generation models (e.g., LGM, L4GM) as i
 - [\[NeurIPS 2025\] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](omnivcus_feedforward_subject-driven_video_customization_with_multimodal_control_.md)
 - [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](../../ICCV2025/image_generation/freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
 - [\[CVPR 2026\] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](../../CVPR2026/image_generation/taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -123,6 +123,8 @@ Under a linear Gaussian setting:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
@@ -130,5 +132,7 @@ Under a linear Gaussian setting:
 - [\[NeurIPS 2025\] Root Cause Analysis of Outliers with Missing Structural Knowledge](root_cause_analysis_of_outliers_with_missing_structural_knowledge.md)
 - [\[NeurIPS 2025\] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation](its_hard_to_be_normal_the_impact_of_noise_on_structure-agnostic_estimation.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
+
+</div>
 
 <!-- RELATED:END -->

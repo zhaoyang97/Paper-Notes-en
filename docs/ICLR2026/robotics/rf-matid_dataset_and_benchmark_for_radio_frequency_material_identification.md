@@ -126,6 +126,8 @@ RF-MatID is constructed at three levels: (1) **Data collection** — a custom UW
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception](../../AAAI2026/robotics/touchformer_a_robust_transformer-based_framework_for_multimodal_material_percept.md)
@@ -133,5 +135,7 @@ RF-MatID is constructed at three levels: (1) **Data collection** — a custom UW
 - [\[ICCV 2025\] GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices](../../ICCV2025/robotics/guiodyssey_a_comprehensive_dataset_for_cross-app_gui_navigation_on_mobile_device.md)
 - [\[ACL 2026\] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](../../ACL2026/robotics/can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)
 - [\[NeurIPS 2025\] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](../../NeurIPS2025/robotics/mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark.md)
+
+</div>
 
 <!-- RELATED:END -->

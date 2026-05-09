@@ -155,6 +155,8 @@ Two-stage training procedure:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning](resolving_token-space_gradient_conflicts_token_space_manipulation_for_transforme.md)
@@ -162,5 +164,7 @@ Two-stage training procedure:
 - [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](../../AAAI2026/robotics/attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
 - [\[CVPR 2026\] Influence Malleability in Linearized Attention: Dual Implications of Non-Convergent NTK Dynamics](../../CVPR2026/robotics/influence_malleability_in_linearized_attention_dual_implications_of_non-converge.md)
 - [\[ICCV 2025\] Certifiably Optimal Anisotropic Rotation Averaging](certifiably_optimal_anisotropic_rotation_averaging.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **103** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (78)](../../ICCV2025/segmentation/index.md)
+
+🔥 **Top topics:** Segmentation ×54 · Object Detection ×6 · Remote Sensing ×6 · Diffusion Models ×5 · Domain Adaptation ×5
+
 **[3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)**
 
 :   This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework that performs implicit alignment and fusion of uncalibrated RGB–thermal infrared image pairs via a Cross-modal Self-attention Module (CSM) in the VAE latent space. Combined with a misalignment augmentation strategy, the method achieves state-of-the-art performance on mobile thermal imaging super-resolution and significantly improves downstream object detection and semantic segmentation.

@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **48** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (57)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (92)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (54)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (134)](../../NeurIPS2025/model_compression/index.md)
+
+🔥 **Top topics:** Model Compression ×10 · Compression ×4 · Continual Learning ×3 · LLM ×2 · Adversarial Robustness ×2
+
 **[A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)**
 
 :   This paper identifies the root cause of the teacher–student capacity gap in knowledge distillation as **intra-class distribution mismatch in the output distributions**, and proposes AID (Adapted Intra-class Distribution), a method that fine-tunes the teacher model prior to distillation to align its intra-class distribution with the student's learning capacity, achieving state-of-the-art performance across diverse architecture combinations.

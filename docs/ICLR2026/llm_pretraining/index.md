@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **27** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (6)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_pretraining/index.md)
+
+🔥 **Top topics:** LLM ×3
+
 **[A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)**
 
 :   This paper establishes a data reconstruction law in random feature models from information-theoretic and algebraic perspectives: when the parameter count $p \gg dn$ (where $d$ is the data dimension and $n$ is the number of samples), training data can be fully reconstructed. A projection-loss-based optimization method is proposed and the universality of this threshold is validated on RF models, two-layer networks, and ResNets.

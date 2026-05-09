@@ -129,6 +129,8 @@ Note: SDP-O(3)-aniso (anisotropic cost + conventional O(3) relaxation) **complet
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/robotics/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
@@ -136,5 +138,7 @@ Note: SDP-O(3)-aniso (anisotropic cost + conventional O(3) relaxation) **complet
 - [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
 - [\[ICCV 2025\] Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning](interaction-merged_motion_planning_effectively_leveraging_diverse_motion_dataset.md)
 - [\[ICCV 2025\] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations](bridging_domain_generalization_to_multimodal_domain_generalization_via_unified_r.md)
+
+</div>
 
 <!-- RELATED:END -->

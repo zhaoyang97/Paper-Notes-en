@@ -175,6 +175,8 @@ At maximum batch size, EVA incurs only 0.7% overhead; reducing batch size to 4 b
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](continual_knowledge_adaptation_for_reinforcement_learning.md)
@@ -182,5 +184,7 @@ At maximum batch size, EVA incurs only 0.7% overhead; reducing batch size to 4 b
 - [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/reinforcement_learning/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
+
+</div>
 
 <!-- RELATED:END -->

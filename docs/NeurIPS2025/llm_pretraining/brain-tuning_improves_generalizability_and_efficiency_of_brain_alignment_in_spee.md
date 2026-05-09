@@ -128,6 +128,8 @@ The unified projection head combined with anchor-stimulus training is transferab
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models](leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m.md)
@@ -135,5 +137,7 @@ The unified projection head combined with anchor-stimulus training is transferab
 - [\[NeurIPS 2025\] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs](efficient_pre-training_of_llms_via_topology-aware_communication_alignment_on_mor.md)
 - [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](../../ICLR2026/llm_pretraining/taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
 - [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

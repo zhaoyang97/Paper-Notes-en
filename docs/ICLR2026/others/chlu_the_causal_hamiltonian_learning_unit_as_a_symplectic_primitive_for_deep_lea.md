@@ -130,6 +130,8 @@ The internal state of CHLU, $\mathbf{z} = (\mathbf{q}, \mathbf{p})$, represents 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](../../AAAI2026/others/how_to_marginalize_in_causal_structure_learning.md)
@@ -137,5 +139,7 @@ The internal state of CHLU, $\mathbf{z} = (\mathbf{q}, \mathbf{p})$, represents 
 - [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
 - [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
+
+</div>
 
 <!-- RELATED:END -->

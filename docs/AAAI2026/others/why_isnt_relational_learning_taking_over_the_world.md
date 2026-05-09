@@ -125,6 +125,8 @@ This paper is a position paper and includes no new experiments. The following ke
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
@@ -132,5 +134,7 @@ This paper is a position paper and includes no new experiments. The following ke
 - [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](../../CVPR2026/others/crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
 - [\[AAAI 2026\] Bandit Learning in Housing Markets](bandit_learning_in_housing_markets.md)
+
+</div>
 
 <!-- RELATED:END -->

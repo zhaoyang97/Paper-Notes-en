@@ -164,6 +164,8 @@ vs. **AIRiskDilemmas** (Chiu 2025b): the latter also uses Bradley-Terry but reli
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Generative Value Conflicts Reveal LLM Priorities](generative_value_conflicts_reveal_llm_priorities.md)
@@ -171,5 +173,7 @@ vs. **AIRiskDilemmas** (Chiu 2025b): the latter also uses Bradley-Terry but reli
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Models](predicting_llm_reasoning_performance_with_small_proxy_models.md)
 - [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
 - [\[ICLR 2026\] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -119,6 +119,8 @@ The pipeline is training-free. Three LLMs are used: GPT-4, Claude-3, and LLaMA-3
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events](../../CVPR2026/interpretability/cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events.md)
@@ -126,5 +128,7 @@ The pipeline is training-free. Three LLMs are used: GPT-4, Claude-3, and LLaMA-3
 - [\[ACL 2026\] Similarity-Distance-Magnitude Activations](similarity-distance-magnitude_activations.md)
 - [\[ACL 2026\] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning](nose_neural_olfactory-semantic_embedding_with_tri-modal_orthogonal_contrastive_l.md)
 - [\[ACL 2026\] HistLens: Mapping Idea Change across Concepts and Corpora](histlens_mapping_idea_change_across_concepts_and_corpora.md)
+
+</div>
 
 <!-- RELATED:END -->

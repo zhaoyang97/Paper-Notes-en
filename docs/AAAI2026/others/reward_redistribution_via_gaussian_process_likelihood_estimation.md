@@ -194,6 +194,8 @@ No universally optimal initialization exists — HalfCheetah favors large values
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](../../NeurIPS2025/others/gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
@@ -201,5 +203,7 @@ No universally optimal initialization exists — HalfCheetah favors large values
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
 - [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)
 - [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
+
+</div>
 
 <!-- RELATED:END -->

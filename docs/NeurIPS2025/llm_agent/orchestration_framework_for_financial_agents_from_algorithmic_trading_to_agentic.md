@@ -165,6 +165,8 @@ $$w_{\text{model}}(q_t) = \begin{cases} 0.10, & q_t < 0.05 \\ 0.20, & 0.05 \leq 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/llm_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
@@ -172,5 +174,7 @@ $$w_{\text{model}}(q_t) = \begin{cases} 0.10, & q_t < 0.05 \\ 0.20, & 0.05 \leq 
 - [\[NeurIPS 2025\] Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection](automated_composition_of_agents_a_knapsack_approach_for_agentic_component_select.md)
 - [\[NeurIPS 2025\] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents](agentic_plan_caching_test-time_memory_for_fast_and_cost-efficient_llm_agents.md)
 - [\[NeurIPS 2025\] Agentic NL2SQL to Reduce Computational Costs](agentic_nl2sql_to_reduce_computational_costs.md)
+
+</div>
 
 <!-- RELATED:END -->

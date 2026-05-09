@@ -106,6 +106,8 @@ $\mathcal{L}(\phi, \psi) = -\text{ELBO} + \lambda \mathcal{L}_{guide}$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](token-importance_guided_direct_preference_optimization.md)
@@ -113,5 +115,7 @@ $\mathcal{L}(\phi, \psi) = -\text{ELBO} + \lambda \mathcal{L}_{guide}$
 - [\[ICLR 2026\] General Exploratory Bonus for Optimistic Exploration in RLHF](general_exploratory_bonus_for_optimistic_exploration_in_rlhf.md)
 - [\[ICLR 2026\] Unifying Stable Optimization and Reference Regularization in RLHF (DAR)](unifying_stable_optimization_and_reference_regularization_in_rlhf.md)
 - [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
+
+</div>
 
 <!-- RELATED:END -->

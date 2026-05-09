@@ -146,6 +146,8 @@ The three-modality model improves accuracy by +4.6% over the best single-modalit
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/multimodal_vlm/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
@@ -153,5 +155,7 @@ The three-modality model improves accuracy by +4.6% over the best single-modalit
 - [\[NeurIPS 2025\] Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition](uni-mumer_unified_multi-task_fine-tuning_of_vision-language_model_for_handwritte.md)
 - [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](../../ICCV2025/multimodal_vlm/a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
 - [\[ICCV 2025\] ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition](../../ICCV2025/multimodal_vlm/probres_probabilistic_jump_diffusion_for_open-world_egocentric_activity_recognit.md)
+
+</div>
 
 <!-- RELATED:END -->

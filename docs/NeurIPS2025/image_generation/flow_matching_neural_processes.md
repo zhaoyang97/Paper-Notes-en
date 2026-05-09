@@ -190,6 +190,8 @@ TNP's generation time scales linearly with the number of target points $N$ (auto
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
@@ -197,5 +199,7 @@ TNP's generation time scales linearly with the number of target points $N$ (auto
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](../../CVPR2026/image_generation/renderflow_single-step_neural_rendering_via_flow_matching.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
 - [\[NeurIPS 2025\] Neural Entropy](neural_entropy.md)
+
+</div>
 
 <!-- RELATED:END -->

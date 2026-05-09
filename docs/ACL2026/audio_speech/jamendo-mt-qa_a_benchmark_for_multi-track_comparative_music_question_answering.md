@@ -112,6 +112,8 @@ This paper presents a benchmark construction effort and involves no model traini
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Music Audio-Visual Question Answering Requires Specialized Multimodal Designs](music_audio-visual_question_answering_requires_specialized_multimodal_designs.md)
@@ -119,5 +121,7 @@ This paper presents a benchmark construction effort and involves no model traini
 - [\[ACL 2026\] Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification](retrieving_to_recover_towards_incomplete_audio-visual_question_answering_via_sem.md)
 - [\[ICLR 2026\] SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables](../../ICLR2026/audio_speech/sparta_scalable_and_principled_benchmark_of_tree-structured_multi-hop_qa_over_te.md)
 - [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](../../ICLR2026/audio_speech/query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
+
+</div>
 
 <!-- RELATED:END -->

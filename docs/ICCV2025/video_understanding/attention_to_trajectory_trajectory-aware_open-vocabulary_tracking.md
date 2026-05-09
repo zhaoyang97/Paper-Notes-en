@@ -121,6 +121,8 @@ The TCR module requires no training. TraCLIP is initialized from CLIP ViT-L/14 w
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
@@ -128,5 +130,7 @@ The TCR module requires no training. TraCLIP is initialized from CLIP ViT-L/14 w
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
 - [\[CVPR 2026\] TrajTok: Learning Trajectory Tokens Enhances Video Understanding](../../CVPR2026/video_understanding/trajtok_trajectory_token_video_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

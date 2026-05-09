@@ -108,6 +108,8 @@ Weights are computed using **Attenuated Encoding**: $\delta_j^{(i)} = \exp(-\alp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](tokmem_one-token_procedural_memory_for_large_language_models.md)
@@ -115,5 +117,7 @@ Weights are computed using **Attenuated Encoding**: $\delta_j^{(i)} = \exp(-\alp
 - [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/information_retrieval/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
 - [\[AAAI 2026\] OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description](../../AAAI2026/information_retrieval/oad-promoter_enhancing_zero-shot_vqa_using_large_language_models_with_object_att.md)
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
+
+</div>
 
 <!-- RELATED:END -->

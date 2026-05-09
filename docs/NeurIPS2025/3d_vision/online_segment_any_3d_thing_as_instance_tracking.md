@@ -126,6 +126,8 @@ Real-time FPS is maintained on par with ESAM (0.7 for SAM, 10.1 for FastSAM).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TAPIP3D: Tracking Any Point in Persistent 3D Geometry](tapip3d_tracking_any_point_in_persistent_3d_geometry.md)
@@ -133,5 +135,7 @@ Real-time FPS is maintained on par with ESAM (0.7 for SAM, 10.1 for FastSAM).
 - [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](../../ICCV2025/3d_vision/tapnext_tracking_any_point_tap_as_next_token_prediction.md)
 - [\[NeurIPS 2025\] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting](segment_then_splat_unified_3d_open-vocabulary_segmentation_via_gaussian_splattin.md)
 - [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
+
+</div>
 
 <!-- RELATED:END -->

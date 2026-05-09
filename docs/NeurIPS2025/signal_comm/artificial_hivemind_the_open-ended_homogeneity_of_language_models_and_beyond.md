@@ -128,6 +128,8 @@ In the experimental setup, the same query is sampled multiple times from a singl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](../../ACL2026/signal_comm/policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)
@@ -135,5 +137,7 @@ In the experimental setup, the same query is sampled multiple times from a singl
 - [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](../../CVPR2026/signal_comm/clay_conditional_visual_similarity.md)
 - [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)
+
+</div>
 
 <!-- RELATED:END -->

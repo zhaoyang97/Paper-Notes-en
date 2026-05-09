@@ -122,6 +122,8 @@ All HSI bands falling within the S2 spectral range are aggregated via weighted s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction](../../AAAI2026/remote_sensing/m3sr_multi-scale_multi-perceptual_mamba_for_efficient_spectral_reconstruction.md)
@@ -129,5 +131,7 @@ All HSI bands falling within the S2 spectral range are aggregated via weighted s
 - [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](../../CVPR2026/remote_sensing/exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
 - [\[CVPR 2026\] MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging](../../CVPR2026/remote_sensing/metaspectra_a_compact_broadband_metasurface_camera.md)
 - [\[AAAI 2026\] Perceive, Act and Correct: Confidence Is Not Enough for Hyperspectral Classification](../../AAAI2026/remote_sensing/perceive_act_and_correct_confidence_is_not_enough_for_hyperspectral_classificati.md)
+
+</div>
 
 <!-- RELATED:END -->

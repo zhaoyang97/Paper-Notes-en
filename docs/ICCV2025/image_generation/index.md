@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **219** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/image_generation/index.md) · [📷 CVPR2026 (239)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (154)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (246)](../../NeurIPS2025/image_generation/index.md)
+
+🔥 **Top topics:** Diffusion Models ×90 · Text-to-Image ×17 · Image Editing ×15 · Adversarial Robustness ×12 · Few-/Zero-Shot Learning ×9
+
 **[A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_affordance_aware_hierarchical_model_robotic_manipulation.md)**
 
 :   This paper proposes A₀, an affordance-aware hierarchical diffusion model that decomposes manipulation tasks into high-level spatial affordance understanding (predicting contact points and trajectories) and low-level action execution. Pretrained on 1M contact point data and fine-tuned with minimal task-specific data, A₀ achieves cross-platform deployment across Franka/Kinova/Realman/Dobot, reaching a 45% success rate on complex trajectory tasks such as whiteboard wiping.

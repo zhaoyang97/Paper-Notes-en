@@ -180,6 +180,8 @@ Jointly applying IoU and distance constraints reduces candidate triplets to 34, 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](../../CVPR2026/3d_vision/towards_spatio-temporal_world_scene_graph_generation_from_monocular_videos.md)
@@ -187,5 +189,7 @@ Jointly applying IoU and distance constraints reduces candidate triplets to 34, 
 - [\[AAAI 2026\] OpenScan: A Benchmark for Generalized Open-Vocabulary 3D Scene Understanding](openscan_a_benchmark_for_generalized_open-vocabulary_3d_scene_understanding.md)
 - [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](../../ICCV2025/3d_vision/open-vocabulary_octree-graph_for_3d_scene_understanding.md)
 - [\[ICLR 2026\] CORE-3D: Context-aware Open-vocabulary Retrieval by Embeddings in 3D](../../ICLR2026/3d_vision/core-3d_context-aware_open-vocabulary_retrieval_by_embeddings_in_3d.md)
+
+</div>
 
 <!-- RELATED:END -->

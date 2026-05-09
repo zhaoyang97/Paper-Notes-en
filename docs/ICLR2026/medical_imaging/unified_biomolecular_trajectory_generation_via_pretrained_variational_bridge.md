@@ -126,6 +126,8 @@ PVB adopts an encoder-decoder architecture. The input is a molecular conformatio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
@@ -133,5 +135,7 @@ PVB adopts an encoder-decoder architecture. The input is a molecular conformatio
 - [\[ICLR 2026\] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding](human_behavior_atlas_benchmarking_unified_psychological_and_social_behavior_unde.md)
 - [\[NeurIPS 2025\] Fractional Diffusion Bridge Models](../../NeurIPS2025/medical_imaging/fractional_diffusion_bridge_models.md)
 - [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
+
+</div>
 
 <!-- RELATED:END -->

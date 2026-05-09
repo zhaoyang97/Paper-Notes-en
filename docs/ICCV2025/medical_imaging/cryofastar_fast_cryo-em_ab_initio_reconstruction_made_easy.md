@@ -129,6 +129,8 @@ Effect of SNR:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
@@ -136,5 +138,7 @@ Effect of SNR:
 - [\[ICCV 2025\] CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations](cumperlay_learning_cubical_multiparameter_persistence_vectorizations.md)
 - [\[ICCV 2025\] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis](gemex_a_large-scale_groundable_and_explainable_medical_vqa_benchmark_for_chest_x.md)
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
+
+</div>
 
 <!-- RELATED:END -->

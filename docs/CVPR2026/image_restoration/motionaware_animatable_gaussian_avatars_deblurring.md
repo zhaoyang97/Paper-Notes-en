@@ -101,6 +101,8 @@ $\mathcal{L} = \mathcal{L}_1(\text{synthesized blurry frame},\ \text{observed bl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
@@ -108,5 +110,7 @@ $\mathcal{L} = \mathcal{L}_1(\text{synthesized blurry frame},\ \text{observed bl
 - [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
 - [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 - [\[ICLR 2026\] Sharpness-Aware Machine Unlearning](../../ICLR2026/image_restoration/sharpness-aware_machine_unlearning.md)
+
+</div>
 
 <!-- RELATED:END -->

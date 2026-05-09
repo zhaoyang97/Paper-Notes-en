@@ -133,6 +133,8 @@ Discriminative fine-tuning employs a hierarchical binary cross-entropy loss, com
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
@@ -140,5 +142,7 @@ Discriminative fine-tuning employs a hierarchical binary cross-entropy loss, com
 - [\[ACL 2026\] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark](sessionintentbench_a_multi-task_inter-session_intention-shift_modeling_benchmark.md)
 - [\[NeurIPS 2025\] A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification](../../NeurIPS2025/llm_evaluation/a_standardized_benchmark_for_multilabel_antimicrobial_peptide_classification.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
+
+</div>
 
 <!-- RELATED:END -->

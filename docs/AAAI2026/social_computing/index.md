@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/social_computing/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/social_computing/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/social_computing/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+
+🔥 **Top topics:** Agents ×2 · Reasoning ×2
+
 **[Argumentative Debates for Transparent Bias Detection](argumentative_debates_for_transparent_bias_detection_technic.md)**
 
 :   This paper proposes ABIDE (Argumentative BIas Detection by DEbate), which constructs Quantitative Bipolar Argumentation Frameworks (QBAFs) via neighborhood-based argument schemes, models the bias detection process as a structured debate, enables transparent bias reasoning from individual neighborhoods to the global level, and formally proves the correspondence between QBAF semantics and the expected behavior of bias detection.

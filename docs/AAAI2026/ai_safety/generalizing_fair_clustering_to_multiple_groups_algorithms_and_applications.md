@@ -125,6 +125,8 @@ This paper is a **theoretical work** containing no empirical experiments; comple
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Fair Model-Based Clustering](fair_model-based_clustering.md)
@@ -132,5 +134,7 @@ This paper is a **theoretical work** containing no empirical experiments; comple
 - [\[NeurIPS 2025\] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering](../../NeurIPS2025/ai_safety/unifying_proportional_fairness_in_centroid_and_non-centroid_clustering.md)
 - [\[NeurIPS 2025\] Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity](../../NeurIPS2025/ai_safety/fair_minimum_labeling_efficient_temporal_network_activations_for_reachability_an.md)
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](../../CVPR2026/ai_safety/clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
+
+</div>
 
 <!-- RELATED:END -->

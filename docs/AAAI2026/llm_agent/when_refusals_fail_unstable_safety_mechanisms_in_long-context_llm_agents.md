@@ -130,6 +130,8 @@ GPT-4.1-nano (1M), GPT-5 (400K), DeepSeek-V3.1 (128K), Grok 4 Fast (2M).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](../../ACL2026/llm_agent/why_agents_compromise_safety_under_pressure.md)
@@ -137,5 +139,7 @@ GPT-4.1-nano (1M), GPT-5 (400K), DeepSeek-V3.1 (128K), Grok 4 Fast (2M).
 - [\[NeurIPS 2025\] AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents](../../NeurIPS2025/llm_agent/agentauditor_humanlevel_safety_and_security_evaluation_for_l.md)
 - [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](../../ICLR2026/llm_agent/st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
 - [\[ICLR 2026\] Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/harnessing_uncertainty_entropy-modulated_policy_gradients_for_long-horizon_llm_a.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -147,6 +147,8 @@ The input is a VAE-encoded latent $z \in \mathbb{R}^{32 \times 32 \times 4}$ (Im
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](ditic_aligned_diffusion_transformer_for_efficient.md)
@@ -154,5 +156,7 @@ The input is a VAE-encoded latent $z \in \mathbb{R}^{32 \times 32 \times 4}$ (Im
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](../../ICLR2026/image_generation/multi-agent_coordination_via_flow_matching.md)
 - [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

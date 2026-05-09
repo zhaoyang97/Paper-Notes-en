@@ -125,6 +125,8 @@ Empirical coverage strictly falls within the theoretical bounds across all exper
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
@@ -132,5 +134,7 @@ Empirical coverage strictly falls within the theoretical bounds across all exper
 - [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/llm_evaluation/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
 - [\[ICCV 2025\] ForCenNet: Foreground-Centric Network for Document Image Rectification](../../ICCV2025/llm_evaluation/forcennet_foreground-centric_network_for_document_image_rectification.md)
 - [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](../../AAAI2026/llm_evaluation/improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
+
+</div>
 
 <!-- RELATED:END -->

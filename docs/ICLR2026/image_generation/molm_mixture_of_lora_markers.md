@@ -126,6 +126,8 @@ Overall objective: $\min_{\Psi, \eta} [\mathcal{L}_{\text{ver}} + \lambda \mathc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] T-LoRA: Single Image Diffusion Model Customization Without Overfitting](../../AAAI2026/image_generation/t-lora_single_image_diffusion_model_customization_without_overfitting.md)
@@ -133,5 +135,7 @@ Overall objective: $\min_{\Psi, \eta} [\mathcal{L}_{\text{ver}} + \lambda \mathc
 - [\[CVPR 2026\] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge](../../CVPR2026/image_generation/quantization_with_unified_adaptive_distillation_to_enable_multi-lora_based_one-f.md)
 - [\[CVPR 2026\] Mixture of States: Routing Token-Level Dynamics for Multimodal Generation](../../CVPR2026/image_generation/mixture_of_states_routing_token-level_dynamics_for_multimodal_generation.md)
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](../../AAAI2026/image_generation/mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
+
+</div>
 
 <!-- RELATED:END -->

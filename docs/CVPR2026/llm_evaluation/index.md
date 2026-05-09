@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **28** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_evaluation/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/llm_evaluation/index.md) · [🤖 AAAI2026 (39)](../../AAAI2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (29)](../../ICCV2025/llm_evaluation/index.md)
+
+🔥 **Top topics:** Layout & Composition ×2 · Continual Learning ×2
+
 **[ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)**
 
 :   This paper theoretically proves that fine-tuning weight deltas encode input covariance information, and proposes ACE-Merging, which achieves data-free closed-form model merging through three steps: adaptive covariance estimation, collective structural prior, and spectral refinement. ACE-Merging achieves an average improvement of 4% over prior methods on GPT-2 and 5% on RoBERTa-Base.

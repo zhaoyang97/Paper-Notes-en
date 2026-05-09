@@ -183,6 +183,8 @@ MaskHand follows a two-stage training pipeline. The first stage trains VQ-MANO t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] 3D Mesh Editing using Masked LRMs](3d_mesh_editing_using_masked_lrms.md)
@@ -190,5 +192,7 @@ MaskHand follows a two-stage training pipeline. The first stage trains VQ-MANO t
 - [\[ICCV 2025\] HORT: Monocular Hand-held Objects Reconstruction with Transformers](hort_monocular_hand-held_objects_reconstruction_with_transformers.md)
 - [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
 - [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

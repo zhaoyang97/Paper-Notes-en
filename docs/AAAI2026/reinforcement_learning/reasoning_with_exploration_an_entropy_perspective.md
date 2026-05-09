@@ -201,6 +201,8 @@ Qwen2.5-Math-Base-7B + GRPO:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](../../ACL2026/reinforcement_learning/healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
@@ -208,5 +210,7 @@ Qwen2.5-Math-Base-7B + GRPO:
 - [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](../../ACL2026/reinforcement_learning/semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 - [\[AAAI 2026\] Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination](reasoning_or_memorization_unreliable_results_of_reinforcement_learning_due_to_da.md)
 - [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
+
+</div>
 
 <!-- RELATED:END -->

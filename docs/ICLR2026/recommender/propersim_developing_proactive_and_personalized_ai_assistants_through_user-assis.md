@@ -126,6 +126,8 @@ The system comprises three components: (1) a persona-driven user agent that gene
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](../../ACL2026/recommender/learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
@@ -133,5 +135,7 @@ The system comprises three components: (1) a persona-driven user agent that gene
 - [\[NeurIPS 2025\] VisualLens: Personalization through Task-Agnostic Visual History](../../NeurIPS2025/recommender/visuallens_personalization_through_task-agnostic_visual_history.md)
 - [\[ACL 2026\] Scripts Through Time: A Survey of the Evolving Role of Transliteration in NLP](../../ACL2026/recommender/scripts_through_time_a_survey_of_the_evolving_role_of_transliteration_in_nlp.md)
 - [\[ACL 2026\] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling](../../ACL2026/recommender/horizon_a_benchmark_for_in-the-wild_user_behaviour_modeling.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **24** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/recommender/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md)
+
+🔥 **Top topics:** LLM ×8 · Recommendation ×6 · Face & Gaze ×3 · Personalized Generation ×2 · Alignment/RLHF ×2
+
 **[ASAP: An Agentic Solution to Auto-Optimize Performance of Large-Scale LLM Training](asap_an_agentic_solution_to_auto-optimize_performance_of_large-scale_llm_trainin.md)**
 
 :   ASAP is a multi-agent system (Coordinator + Analyzer + Proposal) that automatically diagnoses bottleneck types (compute/memory/communication) in large-scale LLM distributed training and proposes sharding configurations. Across 3 experimental scenarios, it matches human expert solutions and achieves up to 2.58× throughput improvement.

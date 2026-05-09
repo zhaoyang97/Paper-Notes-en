@@ -176,6 +176,8 @@ Diff-V2M achieves comprehensive superiority on the in-domain test set and attain
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling](../../ICCV2025/image_generation/music-aligned_holistic_3d_dance_generation_via_hierarchical_motion_modeling.md)
@@ -183,5 +185,7 @@ Diff-V2M achieves comprehensive superiority on the in-domain test set and attain
 - [\[AAAI 2026\] Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines](backdoors_in_conditional_diffusion_threats_to_responsible_synthetic_data_pipelin.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
 - [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
+
+</div>
 
 <!-- RELATED:END -->

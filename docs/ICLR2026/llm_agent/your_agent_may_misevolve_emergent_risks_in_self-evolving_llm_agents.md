@@ -315,6 +315,8 @@ The authors propose the conceptual framework of "Misevolution," decomposing the 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] InfiAgent: Self-Evolving Pyramid Agent Framework for Infinite Scenarios](infiagent_self-evolving_pyramid_agent_framework_for_infinite_scenarios.md)
@@ -322,5 +324,7 @@ The authors propose the conceptual framework of "Misevolution," decomposing the 
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
 - [\[ACL 2026\] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](../../ACL2026/llm_agent/your_llm_agents_are_temporally_blind_the_misalignment_between_tool_use_decisions.md)
 - [\[ICLR 2026\] ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents](chatinject_abusing_chat_templates_for_prompt_injection_in_llm_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -154,6 +154,8 @@ PersonalVideo achieves a substantial lead in face similarity (62.35 vs. 53.22), 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](../../CVPR2026/image_generation/high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
@@ -161,5 +163,7 @@ PersonalVideo achieves a substantial lead in face similarity (62.35 vs. 53.22), 
 - [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](../../NeurIPS2025/image_generation/model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
 - [\[CVPR 2026\] DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning](../../CVPR2026/image_generation/dreamvideoomni_omnimotion_controlled_multisubject.md)
 - [\[NeurIPS 2025\] From Cradle to Cane: A Two-Pass Framework for High-Fidelity Lifespan Face Aging](../../NeurIPS2025/image_generation/from_cradle_to_cane_a_two-pass_framework_for_high-fidelity_lifespan_face_aging.md)
+
+</div>
 
 <!-- RELATED:END -->

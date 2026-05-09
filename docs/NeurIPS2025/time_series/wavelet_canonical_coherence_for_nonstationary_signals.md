@@ -153,6 +153,8 @@ By contrast, the LSP (Fourier-based) method yields no significant differences un
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](../../AAAI2026/time_series/revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
@@ -160,5 +162,7 @@ By contrast, the LSP (Fourier-based) method yields no significant differences un
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
 - [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
 - [\[NeurIPS 2025\] Improving Time Series Forecasting via Instance-aware Post-hoc Revision (PIR)](improving_time_series_forecasting_via_instance-aware_post-hoc_revision.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -119,6 +119,8 @@ The method is entirely training-free. OT is solved via Sinkhorn iteration; k-mea
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
@@ -126,5 +128,7 @@ The method is entirely training-free. OT is solved via Sinkhorn iteration; k-mea
 - [\[CVPR 2026\] LoViF 2026 Challenge on Human-oriented Semantic Image Quality Assessment](../../CVPR2026/others/lovif_2026_semantic_quality_assessment_challenge.md)
 - [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
 - [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
+
+</div>
 
 <!-- RELATED:END -->

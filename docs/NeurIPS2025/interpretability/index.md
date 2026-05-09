@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **82** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (34)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (31)](../../CVPR2026/interpretability/index.md) · [🔬 ICLR2026 (59)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/interpretability/index.md)
+
+🔥 **Top topics:** LLM ×10 · Reasoning ×9 · Multimodal/VLM ×4 · Model Compression ×3 · Alignment/RLHF ×3
+
 **[A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)**
 
 :   This paper identifies and systematically studies the phenomenon of "feature absorption" in SAEs: apparently monosemantic SAE latents fail to activate on certain tokens because their feature directions are "absorbed" by more specific sub-latents. This is shown to be an inevitable consequence of hierarchical features combined with sparsity loss, posing a fundamental challenge to using SAEs for reliable LLM interpretation.

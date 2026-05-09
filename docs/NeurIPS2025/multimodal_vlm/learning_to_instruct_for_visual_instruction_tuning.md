@@ -128,6 +128,8 @@ Captioning yields the largest gains (up to 17.6%), as description tasks most hea
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](visual_instruction_bottleneck_tuning.md)
@@ -135,5 +137,7 @@ Captioning yields the largest gains (up to 17.6%), as description tasks most hea
 - [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](../../ICCV2025/multimodal_vlm/smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
 - [\[ICCV 2025\] orderchain towards general instruct-tuning for stimulating the ordinal understan](../../ICCV2025/multimodal_vlm/orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
 - [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](../../ICCV2025/multimodal_vlm/dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
+
+</div>
 
 <!-- RELATED:END -->

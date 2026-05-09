@@ -124,6 +124,8 @@ On the Census dataset, FMC is approximately 50× faster than FCA, the fastest ba
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications](generalizing_fair_clustering_to_multiple_groups_algorithms_and_applications.md)
@@ -131,5 +133,7 @@ On the Census dataset, FMC is approximately 50× faster than FCA, the fastest ba
 - [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
 - [\[NeurIPS 2025\] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering](../../NeurIPS2025/ai_safety/unifying_proportional_fairness_in_centroid_and_non-centroid_clustering.md)
 - [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](../../CVPR2026/ai_safety/fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
+
+</div>
 
 <!-- RELATED:END -->

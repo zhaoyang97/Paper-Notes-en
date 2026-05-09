@@ -159,6 +159,8 @@ This paper follows a line of interaction-analysis work (Li and Zhang 2023, Ren e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting](../../NeurIPS2025/3d_vision/metags_a_meta-learned_gaussian-phong_model_for_out-of-distribution_3d_scene_reli.md)
@@ -166,5 +168,7 @@ This paper follows a line of interaction-analysis work (Li and Zhang 2023, Ren e
 - [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](faster_and_better_3d_splatting_via_group_training.md)
 - [\[ICCV 2025\] 4D Visual Pre-training for Robot Learning](4d_visual_pre-training_for_robot_learning.md)
 - [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
+
+</div>
 
 <!-- RELATED:END -->

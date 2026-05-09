@@ -114,6 +114,8 @@ Domain AUC ≈ 0.5 indicates that source and target features are indistinguishab
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
@@ -121,5 +123,7 @@ Domain AUC ≈ 0.5 indicates that source and target features are indistinguishab
 - [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
 - [\[NeurIPS 2025\] The Platonic Universe: Do Foundation Models See the Same Sky?](the_platonic_universe_do_foundation_models_see_the_same_sky.md)
 - [\[NeurIPS 2025\] The Pareto Frontier of Resilient Jet Tagging](the_pareto_frontier_of_resilient_jet_tagging.md)
+
+</div>
 
 <!-- RELATED:END -->

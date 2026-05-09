@@ -179,6 +179,8 @@ The frequency-domain consistency idea may transfer to other temporal generation 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI](../../AAAI2026/image_generation/efficientflow_efficient_equivariant_flow_policy_learning_for_embodied_ai.md)
@@ -186,5 +188,7 @@ The frequency-domain consistency idea may transfer to other temporal generation 
 - [\[NeurIPS 2025\] Riemannian Consistency Model](riemannian_consistency_model.md)
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](efficient_rectified_flow_for_image_fusion.md)
 - [\[ICLR 2026\] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning](../../ICLR2026/image_generation/flow-based_single-step_completion_for_efficient_and_expressive_policy_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

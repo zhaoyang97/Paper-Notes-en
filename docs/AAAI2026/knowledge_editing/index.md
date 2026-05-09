@@ -10,6 +10,8 @@ description: >-
 
 **🤖 AAAI2026** · **5** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/knowledge_editing/index.md) · [📷 CVPR2026 (3)](../../CVPR2026/knowledge_editing/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+
 **[Catastrophic Forgetting in Kolmogorov-Arnold Networks](catastrophic_forgetting_in_kolmogorov-arnold_networks.md)**
 
 :   The first systematic study of catastrophic forgetting in Kolmogorov-Arnold Networks (KANs): establishes a theoretical framework linking forgetting to activation support overlap and intrinsic data dimensionality, and proposes KAN-LoRA for continual fine-tuning knowledge editing in language models.

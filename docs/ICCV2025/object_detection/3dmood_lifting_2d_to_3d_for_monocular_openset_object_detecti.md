@@ -138,6 +138,8 @@ The **2D→3D lifting paradigm** is broadly applicable: given a strong 2D open-s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction](boosting_multi-view_indoor_3d_object_detection_via_adaptive_3d_volume.md)
@@ -145,5 +147,7 @@ The **2D→3D lifting paradigm** is broadly applicable: given a strong 2D open-s
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/object_detection/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](../../CVPR2026/object_detection/towards_intrinsic-aware_monocular_3d_object_detection.md)
 - [\[ICCV 2025\] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning](accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning.md)
+
+</div>
 
 <!-- RELATED:END -->

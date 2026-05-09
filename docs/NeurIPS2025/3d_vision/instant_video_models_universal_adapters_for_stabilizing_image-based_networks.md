@@ -163,6 +163,8 @@ Prediction collapse is confirmed at $\lambda=8 > \tau-1$ (instability $< 10^{-3}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Styl3R: Instant 3D Stylized Reconstruction for Arbitrary Scenes and Styles](styl3r_instant_3d_stylized_reconstruction_for_arbitrary_scenes_and_styles.md)
@@ -170,5 +172,7 @@ Prediction collapse is confirmed at $\lambda=8 > \tau-1$ (instability $< 10^{-3}
 - [\[NeurIPS 2025\] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models](more_than_generation_unifying_generation_and_depth_estimation_via_text-to-image_.md)
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
 - [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](../../ICCV2025/3d_vision/from_image_to_video_an_empirical_study_of_diffusion_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

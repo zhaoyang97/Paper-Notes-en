@@ -138,6 +138,8 @@ PAMM operates in two stages: (1) during the forward pass, $X$ is compressed into
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] LLMs Encode Their Failures: Predicting Success from Pre-Generation Activations](llms_encode_their_failures_predicting_success_from_pre-generation_activations.md)
@@ -145,5 +147,7 @@ PAMM operates in two stages: (1) during the forward pass, $X$ is compressed into
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](../../ICCV2025/model_compression/a_good_teacher_adapts_their_knowledge_for_distillation.md)
 - [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](../../ACL2026/model_compression/memp_exploring_agent_procedural_memory.md)
 - [\[ICCV 2025\] MSQ: Memory-Efficient Bit Sparsification Quantization](../../ICCV2025/model_compression/msq_memory-efficient_bit_sparsification_quantization.md)
+
+</div>
 
 <!-- RELATED:END -->

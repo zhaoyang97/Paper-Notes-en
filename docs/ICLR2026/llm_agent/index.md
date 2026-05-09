@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **47** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/llm_agent/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/llm_agent/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+
+🔥 **Top topics:** LLM ×18 · Agents ×15 · Reasoning ×7 · Adversarial Robustness ×2
+
 **[A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)**
 
 :   This paper proposes DeepSynth, a benchmark comprising 120 real-world information synthesis tasks spanning 7 domains and 67 countries (averaging 5.5 hours of expert annotation per task). The benchmark requires agents to collect information from multiple web sources and perform structured reasoning. The strongest current agent (o3-deep-research) achieves only 8.97 F1 / 17.5% LLM-Judge, exposing a critical gap in LLM agents' information synthesis capabilities.

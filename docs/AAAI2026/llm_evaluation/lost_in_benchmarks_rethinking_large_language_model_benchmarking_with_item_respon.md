@@ -122,6 +122,8 @@ Input: binary response matrices of 12 LLMs $\times$ 11 benchmarks $\rightarrow$ 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](../../ICLR2026/llm_evaluation/how_reliable_is_language_model_micro-benchmarking.md)
@@ -129,5 +131,7 @@ Input: binary response matrices of 12 LLMs $\times$ 11 benchmarks $\rightarrow$ 
 - [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Model Task Adaptation](../../ICLR2026/llm_evaluation/prompt_and_parameter_co-optimization_for_large_language_model_task_adaptation.md)
 - [\[AAAI 2026\] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -176,6 +176,8 @@ The problem is important and practically motivated, and the framework design is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](../../ICCV2025/autonomous_driving/maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
@@ -183,5 +185,7 @@ The problem is important and practically motivated, and the framework design is 
 - [\[AAAI 2026\] Multimodal Data Fusion to Capture Dynamic Interactions between Built Environment and Vulnerable Older Adults](multimodal_data_fusion_to_capture_dynamic_interactions_between_built_environment.md)
 - [\[ICCV 2025\] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic](../../ICCV2025/autonomous_driving/duet_dual_incremental_object_detection_via_exemplar-free_task_arithmetic.md)
 - [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
+
+</div>
 
 <!-- RELATED:END -->

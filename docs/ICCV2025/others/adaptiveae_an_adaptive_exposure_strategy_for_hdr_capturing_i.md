@@ -139,6 +139,8 @@ The paradigm of **RL for camera control** can generalize to other imaging tasks,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] AFUNet: Cross-Iterative Alignment-Fusion Synergy for HDR Reconstruction via Deep Unfolding Paradigm](afunet_crossiterative_alignmentfusion_synergy_for_hdr_recons.md)
@@ -146,5 +148,7 @@ The paradigm of **RL for camera control** can generalize to other imaging tasks,
 - [\[NeurIPS 2025\] Contextual Dynamic Pricing with Heterogeneous Buyers](../../NeurIPS2025/others/contextual_dynamic_pricing_with_heterogeneous_buyers.md)
 - [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](../../NeurIPS2025/others/overfitting_in_adaptive_robust_optimization.md)
 - [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](../../NeurIPS2025/others/adaptive_data_analysis_for_growing_data.md)
+
+</div>
 
 <!-- RELATED:END -->

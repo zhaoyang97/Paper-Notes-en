@@ -123,6 +123,8 @@ Input ultrasound images → shared ConvNeXt-Tiny encoder → dual decoders (stan
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
@@ -130,5 +132,7 @@ Input ultrasound images → shared ConvNeXt-Tiny encoder → dual decoders (stan
 - [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 - [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
 - [\[ACL 2026\] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling](../../ACL2026/medical_imaging/semi-supervised_diseased_detection_from_speech_dialogues_with_multi-level_data_m.md)
+
+</div>
 
 <!-- RELATED:END -->

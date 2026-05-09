@@ -116,6 +116,8 @@ The overall pipeline proceeds as follows. Given a cover text, part-of-speech tag
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
@@ -123,5 +125,7 @@ The overall pipeline proceeds as follows. Given a cover text, part-of-speech tag
 - [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](learning_spatial_decay_for_vision_transformers.md)
 - [\[AAAI 2026\] Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs](guess_or_recall_training_cnns_to_classify_and_localize_memorization_in_llms.md)
 - [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

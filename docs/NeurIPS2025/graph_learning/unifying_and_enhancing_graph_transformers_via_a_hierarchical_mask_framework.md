@@ -132,6 +132,8 @@ $\mathbf{H}^l = \text{ACT}(\text{BiMoE}^l(\text{Norm}^l(\mathbf{H}^{l-1}), \math
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Relieving the Over-Aggregating Effect in Graph Transformers](relieving_the_over-aggregating_effect_in_graph_transformers.md)
@@ -139,5 +141,7 @@ $\mathbf{H}^l = \text{ACT}(\text{BiMoE}^l(\text{Norm}^l(\mathbf{H}^{l-1}), \math
 - [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
 - [\[NeurIPS 2025\] From Sequence to Structure: Uncovering Substructure Reasoning in Transformers](from_sequence_to_structure_uncovering_substructure_reasoning_in_transformers.md)
 - [\[NeurIPS 2025\] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design](falcon_an_ml_framework_for_fully_automated_layout-constrained_analog_circuit_des.md)
+
+</div>
 
 <!-- RELATED:END -->

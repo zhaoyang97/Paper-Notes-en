@@ -185,6 +185,8 @@ THOR is an end-to-end framework for enhancing tool-integrated mathematical reaso
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] On Entropy Control in LLM-RL Algorithms](on_entropy_control_in_llm-rl_algorithms.md)
@@ -192,5 +194,7 @@ THOR is an end-to-end framework for enhancing tool-integrated mathematical reaso
 - [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
 - [\[AAAI 2026\] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation](../../AAAI2026/robotics/h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re.md)
 - [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](../../AAAI2026/robotics/generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **150** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/others/index.md) · [📷 CVPR2026 (54)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (76)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (126)](../../AAAI2026/others/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/others/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×7 · Reasoning ×4 · Anomaly Detection ×3 · Alignment/RLHF ×3 · Face & Gaze ×2
+
 **[3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization](3did_direct_3d_inverse_design_for_aerodynamics_with_physics-aware_optimization.md)**
 
 :   This paper proposes the 3DID framework, which learns a unified physics-geometry triplane latent representation, performs objective-gradient-guided diffusion sampling, and applies a two-stage topology-preserving refinement strategy to conduct inverse design directly in the full 3D space starting from random noise. On vehicle aerodynamic shape optimization, 3DID reduces simulated drag (Sim-Drag) by 13.6% compared to the best baseline.

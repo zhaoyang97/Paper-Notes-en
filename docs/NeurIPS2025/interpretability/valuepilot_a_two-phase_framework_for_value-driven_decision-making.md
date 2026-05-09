@@ -184,6 +184,8 @@ DMM outperforms GPT-5 by approximately 3.93% on OS-Sim and by 8.13% on First-Act
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](../../ACL2026/interpretability/idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
@@ -191,5 +193,7 @@ DMM outperforms GPT-5 by approximately 3.93% on OS-Sim and by 8.13% on First-Act
 - [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/interpretability/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
 - [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
 - [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
+
+</div>
 
 <!-- RELATED:END -->

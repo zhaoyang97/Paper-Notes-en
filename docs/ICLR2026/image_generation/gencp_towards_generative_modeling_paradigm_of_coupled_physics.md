@@ -151,6 +151,8 @@ With the FNO* backbone, GenCP reduces mean error by ~26.77% and achieves 14× fa
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](laplacian_multi-scale_flow_matching_for_generative_modeling.md)
@@ -158,5 +160,7 @@ With the FNO* backbone, GenCP reduces mean error by ~26.77% and achieves 14× fa
 - [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](../../CVPR2026/image_generation/test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
 - [\[ICLR 2026\] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](pi-light_physics-inspired_diffusion_for_full-image_relighting.md)
 - [\[ICLR 2026\] Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek](seek-cad_a_self-refined_generative_modeling_for_3d_parametric_cad_using_local_in.md)
+
+</div>
 
 <!-- RELATED:END -->

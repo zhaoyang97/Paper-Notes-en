@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **49** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/human_understanding/index.md) · [📷 CVPR2026 (61)](../../CVPR2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/human_understanding/index.md)
+
+🔥 **Top topics:** Human Pose ×11 · Face & Gaze ×7 · Diffusion Models ×6 · Re-Identification ×4 · Speech & Audio ×3
+
 **[AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di.md)**
 
 :   AdaHuman is proposed as a framework that generates high-fidelity, animatable 3D human avatars from a single image via a pose-conditioned 3D joint diffusion model and a compositional 3DGS refinement module.

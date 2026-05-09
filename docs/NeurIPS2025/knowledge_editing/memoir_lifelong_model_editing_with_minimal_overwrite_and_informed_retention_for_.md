@@ -126,6 +126,8 @@ Standard cross-entropy loss is applied to $\mathbf{W}_m$ for a few gradient desc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs](edit_less_achieve_more_dynamic_sparse_neuron_masking_for_lifelong_knowledge_edit.md)
@@ -133,5 +135,7 @@ Standard cross-entropy loss is applied to $\mathbf{W}_m$ for a few gradient desc
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
 - [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 - [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Data in LLMs](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_data_in_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

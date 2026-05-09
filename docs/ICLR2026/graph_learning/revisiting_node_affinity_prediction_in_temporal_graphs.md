@@ -123,6 +123,8 @@ NAViS outperforms TGNv2 (the best-performing TGNN) by +12.8% on tgbn-trade.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](../../NeurIPS2025/graph_learning/tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
@@ -130,5 +132,7 @@ NAViS outperforms TGNv2 (the best-performing TGNN) by +12.8% on tgbn-trade.
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
 - [\[ICLR 2026\] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs](beyond_simple_graphs_neural_multi-objective_routing_on_multigraphs.md)
 - [\[ICLR 2026\] Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs](explore-on-graph_incentivizing_autonomous_exploration_of_large_language_models_o.md)
+
+</div>
 
 <!-- RELATED:END -->

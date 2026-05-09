@@ -160,6 +160,8 @@ CDE also demonstrates significant OOD generalization advantages on multi-object 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
@@ -167,5 +169,7 @@ CDE also demonstrates significant OOD generalization advantages on multi-object 
 - [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](../../NeurIPS2025/causal_inference/a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] Self-Supervised Learning from Structural Invariance](self-supervised_learning_from_structural_invariance.md)
 - [\[ACL 2026\] CausalDetox: Causal Head Selection and Intervention for Language Model Detoxification](../../ACL2026/causal_inference/causaldetox_causal_head_selection_and_intervention_for_language_model_detoxifica.md)
+
+</div>
 
 <!-- RELATED:END -->

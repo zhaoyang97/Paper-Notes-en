@@ -117,6 +117,8 @@ The MC model is optimized via gradient descent with adaptive step sizes (backtra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning to Condition: A Neural Heuristic for Scalable MPE Inference](learning_to_condition_a_neural_heuristic_for_scalable_mpe_inference.md)
@@ -124,5 +126,7 @@ The MC model is optimized via gradient descent with adaptive step sizes (backtra
 - [\[NeurIPS 2025\] Statistical Inference Under Performativity](statistical_inference_under_performativity.md)
 - [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
+
+</div>
 
 <!-- RELATED:END -->

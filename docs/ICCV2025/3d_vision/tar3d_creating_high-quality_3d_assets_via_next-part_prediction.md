@@ -171,6 +171,8 @@ TAR3D consists of two core modules: a **3D VQ-VAE** that encodes 3D shapes into 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
@@ -178,5 +180,7 @@ TAR3D consists of two core modules: a **3D VQ-VAE** that encodes 3D shapes into 
 - [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](../../NeurIPS2025/3d_vision/armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
 - [\[ICCV 2025\] Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](bridging_3d_anomaly_localization_and_repair_via_high-quality_continuous_geometri.md)
 - [\[ICCV 2025\] Find Any Part in 3D](find_any_part_in_3d.md)
+
+</div>
 
 <!-- RELATED:END -->

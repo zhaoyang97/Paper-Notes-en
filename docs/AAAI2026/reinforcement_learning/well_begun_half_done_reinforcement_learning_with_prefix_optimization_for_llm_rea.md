@@ -201,6 +201,8 @@ $$R_i = \sum_{j=1}^{G} \mathbb{1}(\hat{y}_{\mathbf{c}_j} = a) + \mathbb{1}(\hat{
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
@@ -208,5 +210,7 @@ $$R_i = \sum_{j=1}^{G} \mathbb{1}(\hat{y}_{\mathbf{c}_j} = a) + \mathbb{1}(\hat{
 - [\[AAAI 2026\] Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination](reasoning_or_memorization_unreliable_results_of_reinforcement_learning_due_to_da.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
 - [\[AAAI 2026\] Reasoning with Exploration: An Entropy Perspective](reasoning_with_exploration_an_entropy_perspective.md)
+
+</div>
 
 <!-- RELATED:END -->

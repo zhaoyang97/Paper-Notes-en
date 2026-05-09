@@ -120,6 +120,8 @@ Built upon InternVL 2.5. Input: an image (continuous features via a vision encod
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Seg-VAR: Image Segmentation with Visual Autoregressive Modeling](seg-var_image_segmentation_with_visual_autoregressive_modeling.md)
@@ -127,5 +129,7 @@ Built upon InternVL 2.5. Input: an image (continuous features via a vision encod
 - [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](../../ICCV2025/segmentation/latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
 - [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

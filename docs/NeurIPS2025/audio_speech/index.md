@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **49** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (30)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (17)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/audio_speech/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/audio_speech/index.md)
+
+🔥 **Top topics:** Speech & Audio ×12 · Adversarial Robustness ×4 · Multimodal/VLM ×3 · Alignment/RLHF ×3 · Recommendation ×2
+
 **[A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)**
 
 :   This paper proposes LongBioBench, which uses synthetically generated fictional biographies as both needles and haystacks to construct a long-context LLM evaluation framework satisfying three core principles: seamless context, controllable settings, and reliable evaluation. Evaluating 18 models, the benchmark reveals that current LCLMs exhibit substantial deficiencies in reasoning and trustworthiness despite adequate retrieval performance.

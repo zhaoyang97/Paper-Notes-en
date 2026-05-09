@@ -178,6 +178,8 @@ The optimal configuration is $T_{inLLM}=8, T_{inGNN}=2, F_t=8$: a longer LLM win
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
@@ -185,5 +187,7 @@ The optimal configuration is $T_{inLLM}=8, T_{inGNN}=2, F_t=8$: a longer LLM win
 - [\[ACL 2026\] Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering](../../ACL2026/llm_nlp/are_emotion_and_rhetoric_neurons_in_llm_neuron_recognition_and_adaptive_masking_.md)
 - [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/llm_nlp/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -125,6 +125,8 @@ Both representation trimming and prototype trimming contribute individually, and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
@@ -132,5 +134,7 @@ Both representation trimming and prototype trimming contribute individually, and
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](../../AAAI2026/llm_evaluation/test-time_diverse_reasoning_by_riemannian_activation_steering.md)
 - [\[NeurIPS 2025\] Decoupled Entropy Minimization](decoupled_entropy_minimization.md)
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
+
+</div>
 
 <!-- RELATED:END -->

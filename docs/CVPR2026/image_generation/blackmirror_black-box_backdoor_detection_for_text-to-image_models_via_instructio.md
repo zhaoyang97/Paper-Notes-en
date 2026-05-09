@@ -129,6 +129,8 @@ Removing MirrorVerify causes FPR to spike to nearly 100% across almost all attac
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](../../ACL2026/image_generation/mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
@@ -136,5 +138,7 @@ Removing MirrorVerify causes FPR to spike to nearly 100% across almost all attac
 - [\[NeurIPS 2025\] Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models](../../NeurIPS2025/image_generation/transferable_black-box_one-shot_forging_of_watermarks_via_image_preference_model.md)
 - [\[AAAI 2026\] Copyright Infringement Detection in Text-to-Image Diffusion Models via Differential Privacy](../../AAAI2026/image_generation/copyright_infringement_detection_in_text-to-image_diffusion_models_via_different.md)
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](../../ICCV2025/image_generation/efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
+
+</div>
 
 <!-- RELATED:END -->

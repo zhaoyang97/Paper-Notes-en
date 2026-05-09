@@ -132,6 +132,8 @@ Cross-entropy loss (classification tasks) or preference loss (alignment tasks) i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](../../ICLR2026/llm_nlp/ap-ood_attention_pooling_for_out-of-distribution_detection.md)
@@ -139,5 +141,7 @@ Cross-entropy loss (classification tasks) or preference loss (alignment tasks) i
 - [\[ICLR 2026\] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning](../../ICLR2026/llm_nlp/compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason.md)
 - [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](../../ICLR2026/llm_nlp/function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
 - [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](../../ICLR2026/llm_nlp/is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
+
+</div>
 
 <!-- RELATED:END -->

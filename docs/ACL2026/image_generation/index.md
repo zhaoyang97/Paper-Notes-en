@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **11** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (239)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (154)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (246)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (219)](../../ICCV2025/image_generation/index.md)
+
+🔥 **Top topics:** Dialogue ×2 · Speech & Audio ×2 · Text-to-Image ×2
+
 **[AFMRL: Attribute-Enhanced Fine-Grained Multi-Modal Representation Learning in E-commerce](afmrl_attribute-enhanced_fine-grained_multi-modal_representation_learning_in_e-c.md)**
 
 :   This paper proposes the AFMRL framework, which formulates fine-grained product understanding in e-commerce as an attribute generation task. An MLLM generates key attributes to enhance contrastive learning (AGCL), while retrieval performance serves as a reward signal to inversely optimize the attribute generator (RAR), achieving state-of-the-art retrieval performance on large-scale e-commerce datasets.

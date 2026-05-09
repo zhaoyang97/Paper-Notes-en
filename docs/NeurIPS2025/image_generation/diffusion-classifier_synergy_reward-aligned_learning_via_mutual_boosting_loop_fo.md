@@ -145,6 +145,8 @@ The core idea of DCS is to establish a bidirectional mutual boosting loop betwee
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMG: Mutual Information Estimation via the MMSE Gap in Diffusion](mmg_mutual_information_estimation_via_the_mmse_gap_in_diffusion.md)
@@ -152,5 +154,7 @@ The core idea of DCS is to establish a bidirectional mutual boosting loop betwee
 - [\[NeurIPS 2025\] CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop](cadmorph_geometry-driven_parametric_cad_editing_via_a_plan-generate-verify_loop.md)
 - [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](../../ICLR2026/image_generation/editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
 - [\[ICCV 2025\] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences](../../ICCV2025/image_generation/cycle_consistency_as_reward_learning_image-text_alignment_without_human_preferen.md)
+
+</div>
 
 <!-- RELATED:END -->

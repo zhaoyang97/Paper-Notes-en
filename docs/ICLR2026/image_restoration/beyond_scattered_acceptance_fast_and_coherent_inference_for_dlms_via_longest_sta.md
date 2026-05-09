@@ -126,6 +126,8 @@ LSP is a training-free, model-agnostic inference scheduler. At each denoising it
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
@@ -133,5 +135,7 @@ LSP is a training-free, model-agnostic inference scheduler. At each denoising it
 - [\[ICLR 2026\] Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training](breaking_scale_anchoring_frequency_representation_learning_for_accurate_high-res.md)
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](../../CVPR2026/image_restoration/beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
 - [\[ICCV 2025\] Efficient Concertormer for Image Deblurring and Beyond](../../ICCV2025/image_restoration/efficient_concertormer_for_image_deblurring_and_beyond.md)
+
+</div>
 
 <!-- RELATED:END -->

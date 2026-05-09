@@ -138,6 +138,8 @@ The method is entirely **training-free** and introduces no learnable parameters.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](../../NeurIPS2025/information_retrieval/scaling_language-centric_omnimodal_representation_learning.md)
@@ -145,5 +147,7 @@ The method is entirely **training-free** and introduces no learnable parameters.
 - [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](../../NeurIPS2025/information_retrieval/hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
 - [\[ACL 2026\] CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs](../../ACL2026/information_retrieval/codepromptzip_code-specific_prompt_compression_for_retrieval-augmented_generatio.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](../../ACL2026/information_retrieval/tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
+
+</div>
 
 <!-- RELATED:END -->

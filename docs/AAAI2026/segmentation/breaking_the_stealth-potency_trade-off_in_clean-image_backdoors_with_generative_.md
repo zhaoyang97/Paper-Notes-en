@@ -167,6 +167,8 @@ The C-InfoGAN framework models "finding effective triggers" as "maximizing featu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models](symmetrical_flow_matching_unified_image_generation_segmentation_and_classificati.md)
@@ -174,5 +176,7 @@ The C-InfoGAN framework models "finding effective triggers" as "maximizing featu
 - [\[ACL 2026\] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech](../../ACL2026/segmentation/hierarchical_policy_optimization_for_simultaneous_translation_of_unbounded_speec.md)
 - [\[AAAI 2026\] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries](vista_scene-aware_optimization_for_streaming_video_question_answering_under_post.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](../../CVPR2026/segmentation/making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
+
+</div>
 
 <!-- RELATED:END -->

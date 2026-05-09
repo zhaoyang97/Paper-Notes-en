@@ -147,6 +147,8 @@ Goal R1 is the most challenging setting; BR-LaCAM exhibits higher cost variance 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
@@ -154,5 +156,7 @@ Goal R1 is the most challenging setting; BR-LaCAM exhibits higher cost variance 
 - [\[AAAI 2026\] Finding Diverse Solutions Parameterized by Cliquewidth](finding_diverse_solutions_parameterized_by_cliquewidth.md)
 - [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 - [\[AAAI 2026\] Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning](bilevel_mcts_for_amortized_o1_node_selection_in_classical_planning.md)
+
+</div>
 
 <!-- RELATED:END -->

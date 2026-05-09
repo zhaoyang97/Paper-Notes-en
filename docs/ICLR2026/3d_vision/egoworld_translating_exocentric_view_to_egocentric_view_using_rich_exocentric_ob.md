@@ -160,6 +160,8 @@ EgoWorld consistently outperforms CFLD on three additional datasets, with FID re
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views](../../NeurIPS2025/3d_vision/look_and_tell_a_dataset_for_multimodal_grounding_across_egocentric_and_exocentri.md)
@@ -167,5 +169,7 @@ EgoWorld consistently outperforms CFLD on three additional datasets, with FID re
 - [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](dynamic_novel_view_synthesis_in_high_dynamic_range.md)
 - [\[ICLR 2026\] Sharp Monocular View Synthesis in Less Than a Second](sharp_monocular_view_synthesis_in_less_than_a_second.md)
 - [\[ICLR 2026\] Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting](stylos_multi-view_3d_stylization_with_single-forward_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

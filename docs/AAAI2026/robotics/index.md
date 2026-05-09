@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **38** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (49)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+
+🔥 **Top topics:** Robotics ×12 · Navigation ×6 · Multimodal/VLM ×5 · Agents ×5 · Alignment/RLHF ×5
+
 **[10 Open Challenges Steering the Future of Vision-Language-Action Models](10_open_challenges_steering_the_future_of_vision-language-ac.md)**
 
 :   This paper systematically surveys 10 open challenges facing VLA models — multimodal perception, robust reasoning, high-quality training data, evaluation, cross-robot action generalization, resource efficiency, whole-body coordination, safety assurance, agent frameworks, and human-robot collaboration — and discusses four emerging trends: spatial understanding, world dynamics modeling, post-training, and data synthesis.

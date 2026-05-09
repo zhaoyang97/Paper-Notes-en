@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **26** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (6)](../../ACL2026/image_restoration/index.md) · [📷 CVPR2026 (47)](../../CVPR2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+
+🔥 **Top topics:** Image Restoration ×10 · Super-Resolution ×4 · Adversarial Robustness ×3 · Diffusion Models ×3 · Model Compression ×2
+
 **[Adaptive Discretization for Consistency Models](adaptive_discretization_for_consistency_models.md)**
 
 :   This paper proposes ADCM, which formalizes the discretization step size of consistency models as a constrained optimization problem balancing local consistency (trainability) and global consistency (stability), derives a closed-form solution via the Gauss-Newton method, and achieves adaptive discretization that surpasses all prior CMs on CIFAR-10 using less than 25% of the training budget.

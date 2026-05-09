@@ -151,6 +151,8 @@ $$\mathcal{L}_{\text{IDPO}} = \mathbb{E}_{(x, \tau^+, \tau^-) \sim \mathcal{D}} 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs](tokensqueeze_performance-preserving_compression_for_reasoning_llms.md)
@@ -158,5 +160,7 @@ $$\mathcal{L}_{\text{IDPO}} = \mathbb{E}_{(x, \tau^+, \tau^-) \sim \mathcal{D}} 
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[NeurIPS 2025\] Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs](benfords_curse_tracing_digit_bias_to_numerical_hallucination_in_llms.md)
 - [\[NeurIPS 2025\] CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs](codegemm_a_codebook-centric_approach_to_efficient_gemm_in_quantized_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

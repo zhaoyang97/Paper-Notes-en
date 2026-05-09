@@ -115,6 +115,8 @@ Theoretical predictions are validated on the associative recall task, a simplifi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
@@ -122,5 +124,7 @@ Theoretical predictions are validated on the associative recall task, a simplifi
 - [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

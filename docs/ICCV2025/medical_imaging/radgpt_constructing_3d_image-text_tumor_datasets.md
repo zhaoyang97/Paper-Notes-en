@@ -138,6 +138,8 @@ Internal validation on the AbdomenAtlas 3.0 test split and external validation o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
@@ -145,5 +147,7 @@ Internal validation on the AbdomenAtlas 3.0 test split and external validation o
 - [\[ICCV 2025\] Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data](scaling_tumor_segmentation_best_lessons_from_real_and_synthetic_data.md)
 - [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
 - [\[NeurIPS 2025\] Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling](../../NeurIPS2025/medical_imaging/convolutional_monge_mapping_between_eeg_datasets_to_support_independent_componen.md)
+
+</div>
 
 <!-- RELATED:END -->

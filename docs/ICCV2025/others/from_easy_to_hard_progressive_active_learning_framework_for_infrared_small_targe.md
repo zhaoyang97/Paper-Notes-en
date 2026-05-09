@@ -196,6 +196,8 @@ where $\lambda$ is the decay factor and $N_n$ is the candidate region mask
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering](../../NeurIPS2025/others/mutualvpr_a_mutual_learning_framework_for_resolving_supervision_inconsistencies_.md)
@@ -203,5 +205,7 @@ where $\lambda$ is the decay factor and $N_n$ is the candidate region mask
 - [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](../../NeurIPS2025/others/on_agnostic_pac_learning_in_the_small_error_regime.md)
 - [\[ICCV 2025\] A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks](a_linear_n-point_solver_for_structure_and_motion_from_asynchronous_tracks.md)
 - [\[ICCV 2025\] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents](adversarial_data_augmentation_for_single_domain_generalization_via_lyapunov_expo.md)
+
+</div>
 
 <!-- RELATED:END -->

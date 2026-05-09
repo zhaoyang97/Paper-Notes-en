@@ -135,6 +135,8 @@ LogitGap can serve as a plug-in replacement for the scoring function in existing
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection](../../ICCV2025/multimodal_vlm/adaptive_prompt_learning_via_gaussian_outlier_synthesis_for_out_of_distribution_detection.md)
@@ -142,5 +144,7 @@ LogitGap can serve as a plug-in replacement for the scoring function in existing
 - [\[NeurIPS 2025\] AQuaMaM: An Autoregressive, Quaternion Manifold Model for Rapidly Estimating Complex SO(3) Distributions](aquamam_an_autoregressive_quaternion_manifold_model_for_rapidly_estimating_compl.md)
 - [\[NeurIPS 2025\] Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention](dont_just_chase_highlighted_tokens_in_mllms_revisiting_visual_holistic_context_r.md)
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -186,6 +186,8 @@ ESTimator achieves state-of-the-art performance while maintaining real-time proc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
@@ -193,5 +195,7 @@ ESTimator achieves state-of-the-art performance while maintaining real-time proc
 - [\[NeurIPS 2025\] Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation](../../NeurIPS2025/segmentation/re-coding_for_uncertainties_edge-awareness_semantic_concordance_for_resilient_ev.md)
 - [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
 - [\[CVPR 2026\] HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding](../../CVPR2026/segmentation/hippomm_hippocampal-inspired_multimodal_memory_for_long_audiovisual_event_unders.md)
+
+</div>
 
 <!-- RELATED:END -->

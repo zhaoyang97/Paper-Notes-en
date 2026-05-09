@@ -170,6 +170,8 @@ KSZ19 introduces the non-clashing teaching model and proves NP-completeness of N
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)
@@ -177,5 +179,7 @@ KSZ19 introduces the non-clashing teaching model and proves NP-completeness of N
 - [\[NeurIPS 2025\] Tight Lower Bounds and Improved Convergence in Performative Prediction](../../NeurIPS2025/llm_evaluation/tight_lower_bounds_and_improved_convergence_in_performative_prediction.md)
 - [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](../../NeurIPS2025/llm_evaluation/a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
 - [\[ICLR 2026\] Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures](rethinking_benign_relearning_syntax_as_the_hidden_driver_of_the_safety_tax.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -123,6 +123,8 @@ The total training loss comprises $\mathcal{L}_{RF}$ (rectified flow) + $\mathca
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis](openfs_multi-hand-capable_fingerspelling_recognition_with_implicit_signing-hand_.md)
@@ -130,5 +132,7 @@ The total training loss comprises $\mathcal{L}_{RF}$ (rectified flow) + $\mathca
 - [\[CVPR 2026\] MMGait: Towards Multi-Modal Gait Recognition](mmgait_multi_modal_gait_recognition.md)
 - [\[ICCV 2025\] DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance](../../ICCV2025/human_understanding/dreamactor-m1_holistic_expressive_and_robust_human_image_animation_with_hybrid_g.md)
 - [\[AAAI 2026\] PressTrack-HMR: Pressure-Based Top-Down Multi-Person Global Human Mesh Recovery](../../AAAI2026/human_understanding/presstrack-hmr_pressure-based_top-down_multi-person_global_human_mesh_recovery.md)
+
+</div>
 
 <!-- RELATED:END -->

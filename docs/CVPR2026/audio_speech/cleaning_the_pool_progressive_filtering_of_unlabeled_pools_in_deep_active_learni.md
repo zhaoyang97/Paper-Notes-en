@@ -140,6 +140,8 @@ Two-stage selection: (1) progressive filtering to iteratively refine the unlabel
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/audio_speech/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
@@ -147,5 +149,7 @@ Two-stage selection: (1) progressive filtering to iteratively refine the unlabel
 - [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](../../ICLR2026/audio_speech/pace_pretrained_audio_continual_learning.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/audio_speech/gene_incremental_learning_for_single-cell_transcriptomics.md)
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
+
+</div>
 
 <!-- RELATED:END -->

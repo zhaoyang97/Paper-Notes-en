@@ -135,6 +135,8 @@ MemoryExplorer is an end-to-end MLLM-based embodied exploration framework. Input
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
@@ -142,5 +144,7 @@ MemoryExplorer is an end-to-end MLLM-based embodied exploration framework. Input
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](../../ACL2026/multimodal_vlm/multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 - [\[ACL 2026\] Targeted Exploration via Unified Entropy Control for Reinforcement Learning](../../ACL2026/multimodal_vlm/targeted_exploration_via_unified_entropy_control_for_reinforcement_learning.md)
 - [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
+
+</div>
 
 <!-- RELATED:END -->

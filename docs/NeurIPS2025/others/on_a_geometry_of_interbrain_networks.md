@@ -126,6 +126,8 @@ The paper uses simulations of small-world networks (Watts-Strogatz model) to ill
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry](johnson-lindenstrauss_lemma_beyond_euclidean_geometry.md)
@@ -133,5 +135,7 @@ The paper uses simulations of small-world networks (Watts-Strogatz model) to ill
 - [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](on_universality_classes_of_equivariant_networks.md)
 - [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
 - [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
+
+</div>
 
 <!-- RELATED:END -->

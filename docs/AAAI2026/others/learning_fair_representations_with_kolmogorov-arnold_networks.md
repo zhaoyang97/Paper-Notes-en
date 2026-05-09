@@ -146,6 +146,8 @@ On the larger dataset D₂, the KAN+ADOPT configuration simultaneously achieves 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations](parameta_towards_learning_disentangled_paralinguistic_speaking_styles_representa.md)
@@ -153,5 +155,7 @@ On the larger dataset D₂, the KAN+ADOPT configuration simultaneously achieves 
 - [\[AAAI 2026\] Decomposition and Preprocessing of Ternary Constraint Networks](decomposition_and_preprocessing_of_ternary_constraint_networks.md)
 - [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
 - [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](formal_abductive_latent_explanations_for_prototype-based_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

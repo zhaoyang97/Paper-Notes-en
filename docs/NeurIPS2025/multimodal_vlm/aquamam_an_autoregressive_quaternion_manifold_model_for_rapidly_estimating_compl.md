@@ -123,6 +123,8 @@ IPDF would theoretically require approximately 6 trillion grid cells to match AQ
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
@@ -130,5 +132,7 @@ IPDF would theoretically require approximately 6 trillion grid cells to match AQ
 - [\[CVPR 2026\] Beyond the Mean: Modelling Annotation Distributions in Continuous Affect Prediction](../../CVPR2026/multimodal_vlm/beyond_the_mean_modelling_annotation_distributions_in_continuous_affect_predicti.md)
 - [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
 - [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](attention_your_vision_language_model_could_be_maliciously_manipulated.md)
+
+</div>
 
 <!-- RELATED:END -->

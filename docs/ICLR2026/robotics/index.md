@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **47** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (49)](../../CVPR2026/robotics/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+
+🔥 **Top topics:** Robotics ×9 · LLM ×8 · Agents ×8 · Multimodal/VLM ×5 · Reasoning ×3
+
 **[All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)**
 
 :   This paper proposes Tucker Adaptation (TuKA), which represents multi-level navigation knowledge across multiple scenes and environments as a high-order tensor, decomposed via Tucker decomposition into a shared subspace (core tensor + encoder/decoder) and scene/environment expert vectors. Combined with a Decoupled Knowledge Incremental Learning (DKIL) strategy, TuKA enables all-day multi-scene lifelong VLN, achieving superior SR and lower forgetting rates over LoRA variants across 24 navigation scenarios.

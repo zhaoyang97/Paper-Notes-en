@@ -135,6 +135,8 @@ Performance of wilda-s continues to improve as the number of subsets increases, 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](../../ACL2026/model_compression/latent-condensed_transformer_for_efficient_long_context_modeling.md)
@@ -142,5 +144,7 @@ Performance of wilda-s continues to improve as the number of subsets increases, 
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
 - [\[NeurIPS 2025\] Order-Level Attention Similarity Across Language Models: A Latent Commonality](order-level_attention_similarity_across_language_models_a_latent_commonality.md)
 - [\[NeurIPS 2025\] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning](train_with_perturbation_infer_after_merging_a_two-stage_framework_for_continual_.md)
+
+</div>
 
 <!-- RELATED:END -->

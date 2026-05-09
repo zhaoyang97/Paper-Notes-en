@@ -121,6 +121,8 @@ The overall training objective is $\mathcal{L}_{\text{CORAL}} = \mathcal{L}_{\te
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
@@ -128,5 +130,7 @@ The overall training objective is $\mathcal{L}_{\text{CORAL}} = \mathcal{L}_{\te
 - [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
 - [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
 - [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -134,6 +134,8 @@ Evaluated using Falcon-7B-Instruct (4-bit NF4 quantization) on the HotpotQA data
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](../../ACL2026/dialogue/voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
@@ -141,5 +143,7 @@ Evaluated using Falcon-7B-Instruct (4-bit NF4 quantization) on the HotpotQA data
 - [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
 - [\[ACL 2026\] Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky](../../ACL2026/dialogue/disambiguation-centric_finetuning_makes_enterprise_tool-calling_llms_more_realis.md)
 - [\[NeurIPS 2025\] AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs](../../NeurIPS2025/dialogue/aclora_almost_trainingfree_access_controlaware_multimodal_ll.md)
+
+</div>
 
 <!-- RELATED:END -->

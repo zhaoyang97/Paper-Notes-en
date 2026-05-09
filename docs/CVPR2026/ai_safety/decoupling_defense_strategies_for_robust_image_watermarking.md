@@ -139,6 +139,8 @@ AdvMark adopts a two-stage decoupled design. Stage 1 EAT focuses on adversarial 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_robust_watermarking_autoregressive_image_generators.md)
@@ -146,5 +148,7 @@ AdvMark adopts a two-stage decoupled design. Stage 1 EAT focuses on adversarial 
 - [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
 - [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
+
+</div>
 
 <!-- RELATED:END -->

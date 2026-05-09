@@ -152,6 +152,8 @@ The core contribution of this paper lies in cross-domain paradigm transfer (natu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
@@ -159,5 +161,7 @@ The core contribution of this paper lies in cross-domain paradigm transfer (natu
 - [\[ICCV 2025\] Controllable Latent Space Augmentation for Digital Pathology](controllable_latent_space_augmentation_for_digital_pathology.md)
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
 - [\[ICCV 2025\] Semi-supervised Deep Transfer for Regression without Domain Alignment](semi-supervised_deep_transfer_for_regression_without_domain_alignment.md)
+
+</div>
 
 <!-- RELATED:END -->

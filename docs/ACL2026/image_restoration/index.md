@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **6** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (47)](../../CVPR2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+
+🔥 **Top topics:** Diffusion Models ×3 · LLM ×2 · Reinforcement Learning ×2
+
 **[CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)**
 
 :   CreditDecoding is a training-free parallel decoding acceleration method that accumulates token-level historical evidence (trace credit) to boost correct but low-confidence tokens, achieving up to 5.48x speedup with +0.48 accuracy gain on LLaDA-8B-Instruct.

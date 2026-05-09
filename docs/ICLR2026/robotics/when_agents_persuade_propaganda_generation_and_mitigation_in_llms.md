@@ -133,6 +133,8 @@ All fine-tuning uses QLoRA (4-bit quantization + LoRA) on an A100 80 GB GPU with
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)
@@ -140,5 +142,7 @@ All fine-tuning uses QLoRA (4-bit quantization + LoRA) on an A100 80 GB GPU with
 - [\[ICLR 2026\] When would Vision-Proprioception Policies Fail in Robotic Manipulation?](when_would_vision-proprioception_policies_fail_in_robotic_manipulation.md)
 - [\[AAAI 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets](../../AAAI2026/robotics/when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
 - [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](tracing_and_reversing_edits_in_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

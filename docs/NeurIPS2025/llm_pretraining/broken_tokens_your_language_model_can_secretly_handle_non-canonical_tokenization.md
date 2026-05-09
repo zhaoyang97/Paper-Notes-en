@@ -122,6 +122,8 @@ Performance retention rates of various models under random splitting:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](lm_behavioral_phases.md)
@@ -129,5 +131,7 @@ Performance retention rates of various models under random splitting:
 - [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
 - [\[NeurIPS 2025\] Differentiable Hierarchical Visual Tokenization](differentiable_hierarchical_visual_tokenization.md)
 - [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](../../ICLR2026/llm_pretraining/taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
+
+</div>
 
 <!-- RELATED:END -->

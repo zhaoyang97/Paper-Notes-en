@@ -121,6 +121,8 @@ Final objective: $\mathcal{L} = \mathcal{L}_{task} + \lambda \mathcal{L}_{diff}$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](../../ICLR2026/image_generation/visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
@@ -128,5 +130,7 @@ Final objective: $\mathcal{L} = \mathcal{L}_{task} + \lambda \mathcal{L}_{diff}$
 - [\[ICCV 2025\] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](../../ICCV2025/image_generation/superedit_rectifying_and_facilitating_supervision_for_instruction-based_image_ed.md)
 - [\[ACL 2026\] CoDial: Interpretable Task-Oriented Dialogue Systems Through Dialogue Flow Alignment](../../ACL2026/image_generation/codial_interpretable_task-oriented_dialogue_systems_through_dialogue_flow_alignm.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](../../CVPR2026/image_generation/care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

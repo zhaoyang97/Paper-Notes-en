@@ -161,6 +161,8 @@ Improvement from CoT prompting strategies:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining](iris_breaking_gui_complexity_with_adaptive_focus_and_self-refining.md)
@@ -168,5 +170,7 @@ Improvement from CoT prompting strategies:
 - [\[ICCV 2025\] Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness](mastering_collaborative_multi-modal_data_selection_a_focus_on_informativeness_un.md)
 - [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
 - [\[ICCV 2025\] DOGR: Towards Versatile Visual Document Grounding and Referring](dogr_towards_versatile_visual_document_grounding_and_referring.md)
+
+</div>
 
 <!-- RELATED:END -->

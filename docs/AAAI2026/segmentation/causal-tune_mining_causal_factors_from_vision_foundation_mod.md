@@ -119,6 +119,8 @@ Standard cross-entropy loss for semantic segmentation. The VFM (DINOv2) is froze
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/generalizable_knowledge_distillation_from_vision_foundation_models_for_semantic_.md)
@@ -126,5 +128,7 @@ Standard cross-entropy loss for semantic segmentation. The VFM (DINOv2) is froze
 - [\[AAAI 2026\] Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation](do_we_need_perfect_data_leveraging_noise_for_domain_generalized_segmentation.md)
 - [\[ICCV 2025\] VSSD: Vision Mamba with Non-Causal State Space Duality](../../ICCV2025/segmentation/vssd_vision_mamba_with_non-causal_state_space_duality.md)
 - [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
+
+</div>
 
 <!-- RELATED:END -->

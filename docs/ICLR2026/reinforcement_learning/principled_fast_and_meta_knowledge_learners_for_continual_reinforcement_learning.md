@@ -166,6 +166,8 @@ The two learners operate alternately: upon the arrival of a new task, the meta l
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/continual_knowledge_adaptation_for_reinforcement_learning.md)
@@ -173,5 +175,7 @@ The two learners operate alternately: upon the arrival of a new task, the meta l
 - [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/reinforcement_learning/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
 - [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](../../AAAI2026/reinforcement_learning/scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -162,6 +162,8 @@ Action sequence $a_{1:T}$ ($T$ steps × $D$ degrees of freedom) → **B-spline f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
@@ -169,5 +171,7 @@ Action sequence $a_{1:T}$ ($T$ steps × $D$ degrees of freedom) → **B-spline f
 - [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](../../AAAI2026/reinforcement_learning/efficient_multiagent_planning_via_shared_action_suggestions.md)
 - [\[NeurIPS 2025\] Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization](learning_human-like_rl_agents_through_trajectory_optimization_with_action_quanti.md)
 - [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
+
+</div>
 
 <!-- RELATED:END -->

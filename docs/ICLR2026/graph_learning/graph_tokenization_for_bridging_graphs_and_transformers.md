@@ -137,6 +137,8 @@ GT+GTE achieves state-of-the-art on the majority of 14 benchmarks using a standa
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](../../AAAI2026/graph_learning/gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
@@ -144,5 +146,7 @@ GT+GTE achieves state-of-the-art on the majority of 14 benchmarks using a standa
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
 - [\[NeurIPS 2025\] Relieving the Over-Aggregating Effect in Graph Transformers](../../NeurIPS2025/graph_learning/relieving_the_over-aggregating_effect_in_graph_transformers.md)
 - [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](revisiting_node_affinity_prediction_in_temporal_graphs.md)
+
+</div>
 
 <!-- RELATED:END -->

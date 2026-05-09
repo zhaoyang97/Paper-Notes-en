@@ -142,6 +142,8 @@ Intersectional group (race × gender) analysis:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Minimizing Inequity in Facility Location Games](minimizing_inequity_in_facility_location_games.md)
@@ -149,5 +151,7 @@ Intersectional group (race × gender) analysis:
 - [\[AAAI 2026\] FairGSE: Fairness-Aware Graph Neural Network without High False Positive Rates](fairgse_fairness-aware_graph_neural_network_without_high_false_positive_rates.md)
 - [\[AAAI 2026\] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity](breaking_the_dyadic_barrier_rethinking_fairness_in_link_prediction_beyond_demogr.md)
 - [\[AAAI 2026\] Alternative Fairness and Accuracy Optimization in Criminal Justice](alternative_fairness_and_accuracy_optimization_in_criminal_j.md)
+
+</div>
 
 <!-- RELATED:END -->

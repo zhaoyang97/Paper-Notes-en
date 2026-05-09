@@ -199,6 +199,8 @@ Ablation on acoustic conditioning schemes:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](multi-metric_preference_alignment_for_generative_speech_restoration.md)
@@ -206,5 +208,7 @@ Ablation on acoustic conditioning schemes:
 - [\[AAAI 2026\] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting](freeinpaint_tuning-free_prompt_alignment_and_visual_rationality_enhancement_in_i.md)
 - [\[ICLR 2026\] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening](../../ICLR2026/image_generation/motion_prior_distillation_in_time_reversal_sampling_for_generative_inbetweening.md)
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -174,6 +174,8 @@ Core insight: **LLM safety should not be treated as a static classification prob
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks](graphomni_a_comprehensive_and_extensible_benchmark_framework_for_large_language_.md)
@@ -181,5 +183,7 @@ Core insight: **LLM safety should not be treated as a static classification prob
 - [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
 - [\[NeurIPS 2025\] TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning](../../NeurIPS2025/reinforcement_learning/trico_triadic_game-theoretic_co-training_for_robust_semi-supervised_learning.md)
 - [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](../../NeurIPS2025/reinforcement_learning/multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
+
+</div>
 
 <!-- RELATED:END -->

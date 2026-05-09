@@ -143,6 +143,8 @@ NeurIPS 2025 Spotlight. The paper presents clear motivation, well-grounded desig
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
@@ -150,5 +152,7 @@ NeurIPS 2025 Spotlight. The paper presents clear motivation, well-grounded desig
 - [\[NeurIPS 2025\] Probability Calibration for Precipitation Nowcasting](probability_calibration_for_precipitation_nowcasting.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
 - [\[ICCV 2025\] V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction](../../ICCV2025/time_series/v2xpnp_vehicle-to-everything_spatio-temporal_fusion_for_multi-agent_perception_a.md)
+
+</div>
 
 <!-- RELATED:END -->

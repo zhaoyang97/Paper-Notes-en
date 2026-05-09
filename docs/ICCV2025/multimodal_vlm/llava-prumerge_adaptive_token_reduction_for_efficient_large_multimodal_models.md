@@ -126,6 +126,8 @@ Efficiency analysis: PruMerge reduces LLM Prefill FLOPs from 9.3 TB to 0.91 TB (
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
@@ -133,5 +135,7 @@ Efficiency analysis: PruMerge reduces LLM Prefill FLOPs from 9.3 TB to 0.91 TB (
 - [\[ICCV 2025\] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](dynamic-vlm_simple_dynamic_visual_token_compression_for_videollm.md)
 - [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
 - [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
+
+</div>
 
 <!-- RELATED:END -->

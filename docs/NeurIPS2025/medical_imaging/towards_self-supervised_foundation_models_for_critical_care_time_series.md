@@ -131,6 +131,8 @@ Experiments use three datasets — MIMIC-III, MIMIC-IV, and eICU — with 52 cli
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
@@ -138,5 +140,7 @@ Experiments use three datasets — MIMIC-III, MIMIC-IV, and eICU — with 52 cli
 - [\[NeurIPS 2025\] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)
 - [\[NeurIPS 2025\] Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum](ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro.md)
 - [\[NeurIPS 2025\] Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing](generating_multi-table_time_series_ehr_from_latent_space_with_minimal_preprocess.md)
+
+</div>
 
 <!-- RELATED:END -->

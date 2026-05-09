@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **105** paper notes
 
+📌 **Same area in other venues:** [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (58)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (98)](../../ICCV2025/autonomous_driving/index.md)
+
+🔥 **Top topics:** Autonomous Driving ×17 · Adversarial Robustness ×10 · 3D Object Detection ×8 · Multimodal/VLM ×8 · Segmentation ×6
+
 **[A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)**
 
 :   Inspired by the brain's predictive perception mechanism, this paper proposes the PAP framework, which injects trajectory prediction outputs from previous frames as queries into the current frame's perception module, achieving a 10% improvement in tracking accuracy and a 15% speedup in inference on UniAD.

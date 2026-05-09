@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **24** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/optimization/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (45)](../../ICLR2026/optimization/index.md) · [🧠 NeurIPS2025 (113)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/optimization/index.md)
+
+🔥 **Top topics:** Federated Learning ×6 · LLM ×4 · Adversarial Robustness ×3 · Personalized Generation ×3
+
 **[A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds](a_distributed_asynchronous_generalized_momentum_algorithm_wi.md)**
 
 :   This paper proposes a totally asynchronous Generalized Momentum (GM) distributed optimization algorithm that guarantees linear convergence without assuming any upper bound on communication or computation delays. On a Fashion-MNIST classification task, the proposed method requires 71% fewer iterations than gradient descent, 41% fewer than Heavy Ball, and 19% fewer than Nesterov accelerated gradient.

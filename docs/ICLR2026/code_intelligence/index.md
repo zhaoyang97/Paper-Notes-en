@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **23** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (20)](../../ACL2026/code_intelligence/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/code_intelligence/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/code_intelligence/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/code_intelligence/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/code_intelligence/index.md)
+
+🔥 **Top topics:** LLM ×5 · Reasoning ×4 · Code Intelligence ×3 · Adversarial Robustness ×3 · Reinforcement Learning ×2
+
 **[A Problem-Oriented Perspective and Anchor Verification for Code Optimization](a_problem-oriented_perspective_and_anchor_verification_for_code_optimization.md)**
 
 :   This paper proposes a problem-oriented (rather than user-oriented) approach to constructing optimization pairs that integrates the strategic diversity of multiple programmers, and designs an anchor verification framework that leverages "slow but correct code" to generate test cases for mitigating the "optimization tax" (correctness loss), improving the optimization rate from 31.24% to 71.06% and the speedup ratio from 2.95x to 6.08x.

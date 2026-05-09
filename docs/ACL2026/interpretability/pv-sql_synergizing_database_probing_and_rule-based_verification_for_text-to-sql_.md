@@ -125,6 +125,8 @@ The framework is training-free and supports 6 base LLMs (GPT-4o/4.1, Claude 3.5/
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](../../NeurIPS2025/interpretability/agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
@@ -132,5 +134,7 @@ The framework is training-free and supports 6 base LLMs (GPT-4o/4.1, Claude 3.5/
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
 - [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text-Driven Reasoning](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_driven_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

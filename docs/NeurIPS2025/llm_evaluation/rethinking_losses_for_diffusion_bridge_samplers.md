@@ -125,6 +125,8 @@ The training loss is the rKL divergence, with gradients computed via the log-der
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](rethinking_evaluation_of_infrared_small_target_detection.md)
@@ -132,5 +134,7 @@ The training loss is the rKL divergence, with gradients computed via the log-der
 - [\[ICCV 2025\] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation](../../ICCV2025/llm_evaluation/lay2story_extending_diffusion_transformers_for_layout-togglable_story_generation.md)
 - [\[NeurIPS 2025\] Not All Splits Are Equal: Rethinking Attribute Generalization Across Unrelated Categories](not_all_splits_are_equal_rethinking_attribute_generalization_across_unrelated_ca.md)
 - [\[ICCV 2025\] Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting](../../ICCV2025/llm_evaluation/rethinking_few_shot_clip_benchmarks_a_critical_analysis_in_the_inductive_setting.md)
+
+</div>
 
 <!-- RELATED:END -->

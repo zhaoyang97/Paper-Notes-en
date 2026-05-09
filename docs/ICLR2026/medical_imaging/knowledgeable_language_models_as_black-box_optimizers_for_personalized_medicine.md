@@ -139,6 +139,8 @@ Five real-world personalized medicine optimization tasks (distribution shift set
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] DesignX: Human-Competitive Algorithm Designer for Black-Box Optimization](../../NeurIPS2025/medical_imaging/designx_human-competitive_algorithm_designer_for_black-box_optimization.md)
@@ -146,5 +148,7 @@ Five real-world personalized medicine optimization tasks (distribution shift set
 - [\[ACL 2026\] RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine](../../ACL2026/medical_imaging/ritek_a_dataset_for_large_language_models_complex_reasoning_over_textual_knowled.md)
 - [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
+
+</div>
 
 <!-- RELATED:END -->

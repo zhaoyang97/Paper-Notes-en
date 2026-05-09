@@ -119,6 +119,8 @@ LatentFT consists of three components: (1) an encoder that maps audio to a laten
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Deep Legendre Transform](../../NeurIPS2025/others/deep_legendre_transform.md)
@@ -126,5 +128,7 @@ LatentFT consists of three components: (1) an encoder that maps audio to a laten
 - [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
+
+</div>
 
 <!-- RELATED:END -->

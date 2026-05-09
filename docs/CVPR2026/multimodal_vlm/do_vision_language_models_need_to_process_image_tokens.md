@@ -124,6 +124,8 @@ For RQ4, distillation-based LoRA fine-tuning is applied using the full model's o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
@@ -131,5 +133,7 @@ For RQ4, distillation-based LoRA fine-tuning is applied using the full model's o
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/multimodal_vlm/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
 - [\[CVPR 2026\] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](do_vision-language_models_leak_what_they_learn_adaptive_token-weighted_model_inv.md)
 - [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

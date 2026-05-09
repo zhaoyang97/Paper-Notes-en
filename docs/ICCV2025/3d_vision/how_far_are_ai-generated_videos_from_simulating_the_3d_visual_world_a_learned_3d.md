@@ -141,6 +141,8 @@ The L3DE Fusion score substantially outperforms existing metrics in correlation 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] EA3D: Online Open-World 3D Object Extraction from Streaming Videos](../../NeurIPS2025/3d_vision/ea3d_online_open-world_3d_object_extraction_from_streaming_videos.md)
@@ -148,5 +150,7 @@ The L3DE Fusion score substantially outperforms existing metrics in correlation 
 - [\[ICCV 2025\] From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos](from_gallery_to_wrist_realistic_3d_bracelet_insertion_in_videos.md)
 - [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
 - [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
+
+</div>
 
 <!-- RELATED:END -->

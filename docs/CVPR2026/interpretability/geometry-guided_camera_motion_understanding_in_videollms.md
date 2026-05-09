@@ -140,6 +140,8 @@ Classifier: $\mathcal{L}_{bce} + \mathcal{L}_{inc} + \mathcal{L}_{card}$, with $
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
@@ -147,5 +149,7 @@ Classifier: $\mathcal{L}_{bce} + \mathcal{L}_{inc} + \mathcal{L}_{card}$, with $
 - [\[CVPR 2026\] Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP](beyond_semantics_disentangling_information_scope_in_sparse_autoencoders_for_clip.md)
 - [\[CVPR 2026\] Measuring the (Un)Faithfulness of Concept-Based Explanations](measuring_the_unfaithfulness_of_concept-based_explanations.md)
 - [\[CVPR 2026\] Feature Attribution Stability Suite: How Stable Are Post-Hoc Attributions?](feature_attribution_stability_suite_how_stable_are_post-hoc_attributions.md)
+
+</div>
 
 <!-- RELATED:END -->

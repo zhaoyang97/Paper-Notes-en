@@ -143,6 +143,8 @@ Removing the subject branch causes a dramatic performance collapse (FID from 26.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](../../AAAI2026/llm_evaluation/hybridla_hybrid_generation_for_document_layout_analysis.md)
@@ -150,5 +152,7 @@ Removing the subject branch causes a dramatic performance collapse (FID from 26.
 - [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
 - [\[NeurIPS 2025\] Rethinking Losses for Diffusion Bridge Samplers](../../NeurIPS2025/llm_evaluation/rethinking_losses_for_diffusion_bridge_samplers.md)
 - [\[NeurIPS 2025\] HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild](../../NeurIPS2025/llm_evaluation/houselayout3d_a_benchmark_and_training-free_baseline_for_3d_layout_estimation_in.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,8 @@ description: >-
 
 **🔬 ICLR2026** · **1** paper notes
 
+📌 **Same area in other venues:** [🧠 NeurIPS2025 (1)](../../NeurIPS2025/moe/index.md)
+
 **[MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)**
 
 :   This paper proposes MoE-GS, the first framework to introduce a Mixture-of-Experts architecture into dynamic Gaussian Splatting. Through a Volume-aware Pixel Router, it adaptively fuses multiple heterogeneous deformation priors (HexPlane / per-Gaussian / polynomial / interpolation), consistently surpassing state-of-the-art methods on the N3V and Technicolor datasets, while maintaining efficiency via single-pass rendering, gate-aware pruning, and knowledge distillation.

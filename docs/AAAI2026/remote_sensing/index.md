@@ -10,6 +10,8 @@ description: >-
 
 **🤖 AAAI2026** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/remote_sensing/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+
 **[Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency](asymmetric_cross-modal_knowledge_distillation_bridging_modalities_with_weak_sema.md)**
 
 :   This paper proposes a novel paradigm termed Asymmetric Cross-modal Knowledge Distillation (ACKD), realized through the SemBridge framework — comprising two plug-and-play modules, namely self-supervised semantic matching and optimal transport alignment — to enable cross-modal knowledge distillation under weak semantic consistency. This allows multispectral (MS) images collected from different geographic regions to effectively guide RGB-based remote sensing scene classification.

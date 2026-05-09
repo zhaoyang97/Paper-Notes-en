@@ -132,6 +132,8 @@ Explanation quality improves consistently with language model scale, with no sig
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language](../../ICLR2026/interpretability/semantic_regexes_auto-interpreting_llm_features_with_a_structured_language.md)
@@ -139,5 +141,7 @@ Explanation quality improves consistently with language model scale, with no sig
 - [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
 - [\[NeurIPS 2025\] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](../../NeurIPS2025/interpretability/fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)
 - [\[CVPR 2026\] Pixel2Phys: Distilling Governing Laws from Visual Dynamics](pixel2phys_distilling_governing_laws_from_visual_dynamics.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -100,6 +100,8 @@ LeapAlign consistently outperforms both GRPO-based and direct gradient methods a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
@@ -107,5 +109,7 @@ LeapAlign consistently outperforms both GRPO-based and direct gradient methods a
 - [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultra-fast_training-free_high-resolution_image_generation_via_one-step.md)
 - [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](../../ICLR2026/image_generation/soflow_solution_flow_models_for_one-step_generative_modeling.md)
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

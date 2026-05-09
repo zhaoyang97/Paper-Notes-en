@@ -121,6 +121,8 @@ PoC experiment: sparse autoencoders (SAE) are trained on layer-15 activations (4
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](modal_logical_neural_networks_for_financial_ai.md)
@@ -128,5 +130,7 @@ PoC experiment: sparse autoencoders (SAE) are trained on layer-15 activations (4
 - [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/interpretability/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
 - [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](../../NeurIPS2025/interpretability/agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
 - [\[AAAI 2026\] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution](../../AAAI2026/interpretability/can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -154,6 +154,8 @@ Ablation on Hamming distance threshold (SEDD-small, Euler, 32 steps):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](non-markovian_discrete_diffusion_with_causal_language_models.md)
@@ -161,5 +163,7 @@ Ablation on Hamming distance threshold (SEDD-small, Euler, 32 steps):
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](constrained_discrete_diffusion.md)
 - [\[NeurIPS 2025\] Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking](beyond_masked_and_unmasked_discrete_diffusion_models_via_par.md)
 - [\[NeurIPS 2025\] Information-Theoretic Discrete Diffusion](information-theoretic_discrete_diffusion.md)
+
+</div>
 
 <!-- RELATED:END -->

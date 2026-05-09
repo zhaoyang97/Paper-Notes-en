@@ -195,6 +195,8 @@ $$\max_Q \mathcal{J}^\star(Q) = \mathbb{E}_{\rho^\star}[\phi((\mathcal{F}_p^\sta
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
@@ -202,5 +204,7 @@ $$\max_Q \mathcal{J}^\star(Q) = \mathbb{E}_{\rho^\star}[\phi((\mathcal{F}_p^\sta
 - [\[AAAI 2026\] Reasoning with Exploration: An Entropy Perspective](reasoning_with_exploration_an_entropy_perspective.md)
 - [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](../../ICLR2026/reinforcement_learning/the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
 - [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
+
+</div>
 
 <!-- RELATED:END -->

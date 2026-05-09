@@ -151,6 +151,8 @@ Wormhole completely fails on MERFISH ($R^2 = -3.6$), while RG-se unconstrained a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](../../CVPR2026/3d_vision/fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
@@ -158,5 +160,7 @@ Wormhole completely fails on MERFISH ($R^2 = -3.6$), while RG-se unconstrained a
 - [\[ICCV 2025\] Unleashing Vecset Diffusion Model for Fast Shape Generation (FlashVDM)](../../ICCV2025/3d_vision/unleashing_vecset_diffusion_model_for_fast_shape_generation.md)
 - [\[ICCV 2025\] CF³: Compact and Fast 3D Feature Fields](../../ICCV2025/3d_vision/cf3_compact_and_fast_3d_feature_fields.md)
 - [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](../../ICCV2025/3d_vision/sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
+
+</div>
 
 <!-- RELATED:END -->

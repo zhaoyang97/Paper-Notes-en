@@ -110,6 +110,8 @@ The paper demonstrates the value of revisiting foundational NLP components throu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] zip2zip: Inference-Time Adaptive Tokenization via Online Compression](zip2zip_inference-time_adaptive_tokenization_via_online_compression.md)
@@ -117,5 +119,7 @@ The paper demonstrates the value of revisiting foundational NLP components throu
 - [\[NeurIPS 2025\] CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs](codegemm_a_codebook-centric_approach_to_efficient_gemm_in_quantized_llms.md)
 - [\[NeurIPS 2025\] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models](learning_to_factorize_and_adapt_a_versatile_approach_toward_universal_spatio-tem.md)
 - [\[ICCV 2025\] SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation](../../ICCV2025/model_compression/samo_a_lightweight_sharpness-aware_approach_for_multi-task_optimization_with_joi.md)
+
+</div>
 
 <!-- RELATED:END -->

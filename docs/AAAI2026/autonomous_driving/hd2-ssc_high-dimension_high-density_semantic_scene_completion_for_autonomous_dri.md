@@ -158,6 +158,8 @@ HD2-SSC = Image Encoder (ResNet50 + FPN for 2D feature extraction) → HSD Modul
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
@@ -165,5 +167,7 @@ HD2-SSC = Image Encoder (ResNet50 + FPN for 2D feature extraction) → HSD Modul
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
 - [\[CVPR 2026\] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective](../../CVPR2026/autonomous_driving/occufly_a_3d_vision_benchmark_for_semantic_scene_completion_from_the_aerial_pers.md)
 - [\[NeurIPS 2025\] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability](../../NeurIPS2025/autonomous_driving/x-scene_large-scale_driving_scene_generation_with_high_fidelity_and_flexible_con.md)
+
+</div>
 
 <!-- RELATED:END -->

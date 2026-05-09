@@ -158,6 +158,8 @@ The HMB-R (motion blur residual ratio) of 0.1167 is half that of OSDHuman, demon
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss](../../ICCV2025/segmentation/prompt_guidance_and_human_proximal_perception_for_hot_prediction_with_regional_j.md)
@@ -165,5 +167,7 @@ The HMB-R (motion blur residual ratio) of 0.1167 is half that of OSDHuman, demon
 - [\[NeurIPS 2025\] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis](fast_foreground-aware_diffusion_with_accelerated_sampling_trajectory_for_segment.md)
 - [\[NeurIPS 2025\] STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking](step_a_unified_spiking_transformer_evaluation_platform_for_fair_and_reproducible.md)
 - [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
+
+</div>
 
 <!-- RELATED:END -->

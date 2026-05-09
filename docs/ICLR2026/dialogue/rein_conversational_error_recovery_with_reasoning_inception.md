@@ -155,6 +155,8 @@ ReIn surpasses both prompt-modifying baselines without requiring any modificatio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](../../ACL2026/dialogue/agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
@@ -162,5 +164,7 @@ ReIn surpasses both prompt-modifying baselines without requiring any modificatio
 - [\[ICLR 2026\] Think-While-Generating: On-the-Fly Reasoning for Personalized Long-Form Generation](think-while-generating_on-the-fly_reasoning_for_personalized_long-form_generatio.md)
 - [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](../../CVPR2026/dialogue/evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
 - [\[ICLR 2026\] AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](aqua_toward_strategic_response_generation_for_ambiguous_visual_questions.md)
+
+</div>
 
 <!-- RELATED:END -->

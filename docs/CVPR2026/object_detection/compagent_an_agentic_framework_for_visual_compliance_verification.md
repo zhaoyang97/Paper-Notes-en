@@ -138,6 +138,8 @@ Analysis of decision trajectories reveals 95 distinct tool-usage patterns on the
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning](../../AAAI2026/object_detection/connecting_the_dots_training-free_visual_grounding_via_agent.md)
@@ -145,5 +147,7 @@ Analysis of decision trajectories reveals 95 distinct tool-usage patterns on the
 - [\[CVPR 2026\] Evaluating Few-Shot Pill Recognition Under Visual Domain Shift](evaluating_fewshot_pill_recognition_under_visual_d.md)
 - [\[CVPR 2026\] The COTe Score: A Decomposable Framework for Evaluating Document Layout Analysis Models](the_cote_score_a_decomposable_framework_for_evaluating_document_layout_analysis_.md)
 - [\[CVPR 2026\] PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training](pet-dino_unifying_visual_cues_into_grounding_dino_with_prompt-enriched_training.md)
+
+</div>
 
 <!-- RELATED:END -->

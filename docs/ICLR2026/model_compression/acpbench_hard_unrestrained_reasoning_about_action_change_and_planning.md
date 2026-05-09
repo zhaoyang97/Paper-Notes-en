@@ -135,6 +135,8 @@ Including formal PDDL descriptions improves average accuracy from 39% to 47%; ho
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](efficient_reasoning_with_balanced_thinking.md)
@@ -142,5 +144,7 @@ Including formal PDDL descriptions improves average accuracy from 39% to 47%; ho
 - [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
 - [\[AAAI 2026\] Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)](../../AAAI2026/model_compression/satisficing_and_optimal_generalised_planning_via_goal_regression_extended_versio.md)
 - [\[CVPR 2026\] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model](../../CVPR2026/model_compression/planning_in_8_tokens_a_compact_discrete_tokenizer_for_latent_world_model.md)
+
+</div>
 
 <!-- RELATED:END -->

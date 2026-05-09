@@ -110,6 +110,8 @@ The paper validates the theory on two synthetic settings (Setting A: 1D→2D sto
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control](mdns_masked_diffusion_neural_sampler_via_stochastic_optimal_control.md)
@@ -117,5 +119,7 @@ The paper validates the theory on two synthetic settings (Setting A: 1D→2D sto
 - [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
 - [\[NeurIPS 2025\] On Minimax Estimation of Parameters in Softmax-Contaminated Mixture of Experts](on_minimax_estimation_of_parameters_in_softmax-contaminated_mixture_of_experts.md)
 - [\[NeurIPS 2025\] Near-Exponential Savings for Mean Estimation with Active Learning](near-exponential_savings_for_mean_estimation_with_active_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

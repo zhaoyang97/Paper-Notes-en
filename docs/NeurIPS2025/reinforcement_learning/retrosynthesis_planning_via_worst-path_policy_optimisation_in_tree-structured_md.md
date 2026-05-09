@@ -120,6 +120,8 @@ Value network loss (Bellman TD): $\mathcal{L}(\phi) = \mathbb{E}[(V_\phi(s) - (r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
@@ -127,5 +129,7 @@ Value network loss (Bellman TD): $\mathcal{L}(\phi) = \mathbb{E}[(V_\phi(s) - (r
 - [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
 - [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
 - [\[NeurIPS 2025\] The Path Not Taken: RLVR Provably Learns Off the Principals](the_path_not_taken_rlvr_provably_learns_off_the_principals.md)
+
+</div>
 
 <!-- RELATED:END -->

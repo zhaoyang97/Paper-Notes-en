@@ -132,6 +132,8 @@ SOCIA-EVO does not perform model training; instead, it optimizes the simulator t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
@@ -139,5 +141,7 @@ SOCIA-EVO does not perform model training; instead, it optimizes the simulator t
 - [\[ICLR 2026\] The Limits of Long-Context Reasoning in Automated Bug Fixing](../../ICLR2026/code_intelligence/the_limits_of_long-context_reasoning_in_automated_bug_fixing.md)
 - [\[ICLR 2026\] A Problem-Oriented Perspective and Anchor Verification for Code Optimization](../../ICLR2026/code_intelligence/a_problem-oriented_perspective_and_anchor_verification_for_code_optimization.md)
 - [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
+
+</div>
 
 <!-- RELATED:END -->

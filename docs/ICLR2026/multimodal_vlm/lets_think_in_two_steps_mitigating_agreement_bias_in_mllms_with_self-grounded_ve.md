@@ -137,6 +137,8 @@ Majority voting relies on the mode of the output distribution, but agreement bia
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/multimodal_vlm/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
@@ -144,5 +146,7 @@ Majority voting relies on the mode of the output distribution, but agreement bia
 - [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](../../AAAI2026/multimodal_vlm/sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
 - [\[CVPR 2026\] Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](../../CVPR2026/multimodal_vlm/mitigating_multimodal_hallucinations_via_gradient-based_self-reflection.md)
 - [\[CVPR 2026\] GACD: Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](../../CVPR2026/multimodal_vlm/gacd_gradient_self_reflection_hallucination.md)
+
+</div>
 
 <!-- RELATED:END -->

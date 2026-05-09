@@ -154,6 +154,8 @@ Comprehensive evaluation across 5 backbones (DINOv2-Base/Large, CLIP-Base/Large,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
@@ -161,5 +163,7 @@ Comprehensive evaluation across 5 backbones (DINOv2-Base/Large, CLIP-Base/Large,
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](../../AAAI2026/others/rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
 - [\[CVPR 2026\] Integration of deep generative Anomaly Detection algorithm in high-speed industrial line](../../CVPR2026/others/integration_of_deep_generative_anomaly_detection_a.md)
 - [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)
+
+</div>
 
 <!-- RELATED:END -->

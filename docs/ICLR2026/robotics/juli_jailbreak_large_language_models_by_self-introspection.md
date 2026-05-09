@@ -123,6 +123,8 @@ BiasNet $F_\theta$ takes the log probability output $\log p_\alpha(x_n)$ from th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)
@@ -130,5 +132,7 @@ BiasNet $F_\theta$ takes the log probability output $\log p_\alpha(x_n)$ from th
 - [\[ACL 2026\] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models](../../ACL2026/robotics/grasprune_global_gating_for_budgeted_structured_pruning_of_large_language_models.md)
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](../../NeurIPS2025/robotics/uncovering_strategic_egoism_behaviors_in_large_language_models.md)
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](../../ACL2026/robotics/decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
+
+</div>
 
 <!-- RELATED:END -->

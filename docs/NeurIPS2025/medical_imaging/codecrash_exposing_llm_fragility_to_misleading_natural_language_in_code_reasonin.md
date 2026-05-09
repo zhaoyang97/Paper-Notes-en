@@ -146,6 +146,8 @@ LRMs are nearly unaffected by PSC-ALL and MCC/MPS, but token consumption under M
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
@@ -153,5 +155,7 @@ LRMs are nearly unaffected by PSC-ALL and MCC/MPS, but token consumption under M
 - [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_imaging/medagentgym_agentic_training_biomedical.md)
 - [\[NeurIPS 2025\] MuSLR: Multimodal Symbolic Logical Reasoning](muslr_multimodal_symbolic_logical_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

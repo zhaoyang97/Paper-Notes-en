@@ -119,6 +119,8 @@ No training is required (purely an inference-time method). The DTO optimization 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Meta-Adaptation with Self-Synthesis](test-time_meta-adaptation_with_self-synthesis.md)
@@ -126,5 +128,7 @@ No training is required (purely an inference-time method). The DTO optimization 
 - [\[AAAI 2026\] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering](../../AAAI2026/optimization/instance_generation_for_meta-black-box_optimization_through_latent_space_reverse.md)
 - [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
 - [\[ICLR 2026\] RS-ORT: A Reduced-Space Branch-and-Bound Algorithm for Optimal Regression Trees](rs-ort_a_reduced-space_branch-and-bound_algorithm_for_optimal_regression_trees.md)
+
+</div>
 
 <!-- RELATED:END -->

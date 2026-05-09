@@ -129,6 +129,8 @@ OmniSegmentor introduces two main contributions: (1) the **ImageNeXt** dataset â
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Torch-Uncertainty: A Deep Learning Framework for Uncertainty Quantification](torch-uncertainty_a_deep_learning_framework_for_uncertainty_quantification.md)
@@ -136,5 +138,7 @@ OmniSegmentor introduces two main contributions: (1) the **ImageNeXt** dataset â
 - [\[NeurIPS 2025\] Diffusion-Driven Two-Stage Active Learning for Low-Budget Semantic Segmentation](diffusion-driven_two-stage_active_learning_for_low-budget_semantic_segmentation.md)
 - [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
 - [\[CVPR 2026\] SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation](../../CVPR2026/segmentation/semitooth_a_generalizable_semisupervised_framework.md)
+
+</div>
 
 <!-- RELATED:END -->

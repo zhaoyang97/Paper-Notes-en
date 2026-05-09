@@ -152,6 +152,8 @@ The problem is important and practically relevant; the method offers mathematica
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
@@ -159,5 +161,7 @@ The problem is important and practically relevant; the method offers mathematica
 - [\[ICLR 2026\] Self-Destructive Language Model](../../ICLR2026/llm_safety/self-destructive_language_model.md)
 - [\[NeurIPS 2025\] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery](../../NeurIPS2025/llm_safety/trust_--_transformer-driven_u-net_for_sparse_target_recovery.md)
 - [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](../../ACL2026/llm_safety/indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -133,6 +133,8 @@ ErrorRadar is an evaluation benchmark and does not involve training. More than 2
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](../../ICLR2026/multimodal_vlm/visiomath_benchmarking_figure-based_mathematical_reasoning_in_lmms.md)
@@ -140,5 +142,7 @@ ErrorRadar is an evaluation benchmark and does not involve training. More than 2
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 - [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
 - [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
+
+</div>
 
 <!-- RELATED:END -->

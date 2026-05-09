@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **8** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (35)](../../NeurIPS2025/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+
+🔥 **Top topics:** Alignment/RLHF ×2
+
 **[BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs](bosch_black-box_binary_optimization_for_short-context_attention-head_selection_i.md)**
 
 :   BOSCH is a training-free head-level SWA mixing method that models SWA head selection as a large neighborhood search problem decomposed into three stages (layer importance probing → adaptive ratio allocation → grouped head selection), systematically outperforming layer-level heuristics and 6 static head-level methods across 4 models and 4 ratio settings.

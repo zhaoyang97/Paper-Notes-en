@@ -134,6 +134,8 @@ Without CTC regularization, the 12.5 TPS model's WER surges to 33.0%, demonstrat
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] The Devil behind the Mask: An Emergent Safety Vulnerability of Diffusion LLMs](the_devil_behind_the_mask_an_emergent_safety_vulnerability_of_diffusion_llms.md)
@@ -141,5 +143,7 @@ Without CTC regularization, the 12.5 TPS model's WER surges to 33.0%, demonstrat
 - [\[NeurIPS 2025\] Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders](../../NeurIPS2025/audio_speech/perceptually_aligning_representations_of_music_via_noise-augmented_autoencoders.md)
 - [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](../../ACL2026/audio_speech/breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
 - [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
+
+</div>
 
 <!-- RELATED:END -->

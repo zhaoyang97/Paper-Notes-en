@@ -124,6 +124,8 @@ Both pre-trained encoders are frozen, and lightweight alignment functions (linea
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
@@ -131,5 +133,7 @@ Both pre-trained encoders are frozen, and lightweight alignment functions (linea
 - [\[NeurIPS 2025\] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning](midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le.md)
 - [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
 - [\[NeurIPS 2025\] Learning Shared Representations from Unpaired Data](learning_shared_representations_from_unpaired_data.md)
+
+</div>
 
 <!-- RELATED:END -->

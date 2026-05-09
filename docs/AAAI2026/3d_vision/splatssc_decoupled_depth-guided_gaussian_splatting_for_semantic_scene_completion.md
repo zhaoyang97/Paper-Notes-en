@@ -232,6 +232,8 @@ Loss weights: $\lambda_1=10, \lambda_2=20, \lambda_3=\lambda_4=0.5, \lambda_5=10
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Monocular Semantic Scene Completion via Masked Recurrent Networks](../../ICCV2025/3d_vision/monocular_semantic_scene_completion_via_masked_recurrent_networks.md)
@@ -239,5 +241,7 @@ Loss weights: $\lambda_1=10, \lambda_2=20, \lambda_3=\lambda_4=0.5, \lambda_5=10
 - [\[AAAI 2026\] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction](oceansplat_object-aware_gaussian_splatting_with_trinocular_view_consistency_for_.md)
 - [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](../../ICCV2025/3d_vision/global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
 - [\[AAAI 2026\] Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting](gaussian_blending_rethinking_alpha_blending_in_3d_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -137,6 +137,8 @@ GUI-Rise executes a cycle of three subtasks at each interaction step: (1) **Stru
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices](../../ICCV2025/robotics/guiodyssey_a_comprehensive_dataset_for_cross-app_gui_navigation_on_mobile_device.md)
@@ -144,5 +146,7 @@ GUI-Rise executes a cycle of three subtasks at each interaction step: (1) **Stru
 - [\[NeurIPS 2025\] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval](efficientnav_towards_on-device_object-goal_navigation_with_navigation_map_cachin.md)
 - [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
 - [\[NeurIPS 2025\] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation](dynanav_dynamic_feature_and_layer_selection_for_efficient_visual_navigation.md)
+
+</div>
 
 <!-- RELATED:END -->

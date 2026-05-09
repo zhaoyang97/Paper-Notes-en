@@ -156,6 +156,8 @@ The SOS script abstraction — encoding motion control as a concise triplet of "
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](../../CVPR2026/human_understanding/lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
@@ -163,5 +165,7 @@ The SOS script abstraction — encoding motion control as a concise triplet of "
 - [\[CVPR 2026\] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](../../CVPR2026/human_understanding/idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)
 - [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](generating_attribute-aware_human_motions_from_textual_prompt.md)
 - [\[AAAI 2026\] mmPred: Radar-based Human Motion Prediction in the Dark](mmpred_radar-based_human_motion_prediction_in_the_dark.md)
+
+</div>
 
 <!-- RELATED:END -->

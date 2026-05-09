@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **3** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (71)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (67)](../../NeurIPS2025/llm_reasoning/index.md)
+
+🔥 **Top topics:** Reasoning ×2
+
 **[CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning](corvid_improving_multimodal_large_language_models_towards_chain-of-thought_reaso.md)**
 
 :   This paper proposes Corvid, which comprehensively enhances the chain-of-thought reasoning capability of MLLMs through a hybrid visual encoder, a GateMixer connector, a high-quality CoT dataset, and a test-time self-verification strategy, surpassing open-source models of comparable parameter scale on mathematical reasoning and scientific problem solving.

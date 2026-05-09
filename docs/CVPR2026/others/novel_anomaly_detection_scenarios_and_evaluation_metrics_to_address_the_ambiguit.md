@@ -129,6 +129,8 @@ Evaluated on the MVTec AD dataset using S-AUROC to measure specification-change 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Integration of deep generative Anomaly Detection algorithm in high-speed industrial line](integration_of_deep_generative_anomaly_detection_a.md)
@@ -136,5 +138,7 @@ Evaluated on the MVTec AD dataset using S-AUROC to measure specification-change 
 - [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](../../NeurIPS2025/others/adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
 - [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](../../AAAI2026/others/casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
 - [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](../../ICCV2025/others/generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
+
+</div>
 
 <!-- RELATED:END -->

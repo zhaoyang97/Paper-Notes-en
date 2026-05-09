@@ -140,6 +140,8 @@ This paper proposes TABLeT, which leverages a pretrained 2D natural image autoen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
@@ -147,5 +149,7 @@ This paper proposes TABLeT, which leverages a pretrained 2D natural image autoen
 - [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](../../ICLR2026/3d_vision/improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
 - [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
 - [\[CVPR 2026\] CUBE: Representing 3D Faces with Learnable B-Spline Volumes](cube_bspline_3d_faces.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -128,6 +128,8 @@ Evaluated on a standard OOD structural shift benchmark measuring the combined su
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes](../../CVPR2026/medical_imaging/extending_zach-vit_to_robust_medical_imaging_corruption_and_adversarial_stress_t.md)
@@ -135,5 +137,7 @@ Evaluated on a standard OOD structural shift benchmark measuring the combined su
 - [\[ICLR 2026\] Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems](../../ICLR2026/medical_imaging/distributional_consistency_loss_beyond_pointwise_data_terms_in_inverse_problems.md)
 - [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](../../ICLR2026/medical_imaging/protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](../../NeurIPS2025/medical_imaging/pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
+
+</div>
 
 <!-- RELATED:END -->

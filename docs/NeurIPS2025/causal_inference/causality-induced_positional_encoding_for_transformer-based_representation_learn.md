@@ -126,6 +126,8 @@ Using scGPT as the backbone:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] LLM Interpretability with Identifiable Temporal-Instantaneous Representation](llm_interpretability_with_identifiable_temporal-instantaneous_representation.md)
@@ -133,5 +135,7 @@ Using scGPT as the backbone:
 - [\[NeurIPS 2025\] Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks](domain-adapted_granger_causality_for_real-time_cross-slice_attack_attribution_in.md)
 - [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Demystifying Spectral Feature Learning for Instrumental Variable Regression](demystifying_spectral_feature_learning_for_instrumental_variable_regression.md)
+
+</div>
 
 <!-- RELATED:END -->

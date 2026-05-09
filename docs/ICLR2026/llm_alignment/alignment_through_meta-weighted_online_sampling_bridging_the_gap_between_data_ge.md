@@ -121,6 +121,8 @@ MetaAPO consistently outperforms offline, online, and hybrid baselines across al
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms](../../ACL2026/llm_alignment/towards_bridging_the_reward-generation_gap_in_direct_alignment_algorithms.md)
@@ -128,5 +130,7 @@ MetaAPO consistently outperforms offline, online, and hybrid baselines across al
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
 - [\[ICLR 2026\] Mitigating Mismatch within Reference-based Preference Optimization](mitigating_mismatch_within_reference-based_preference_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

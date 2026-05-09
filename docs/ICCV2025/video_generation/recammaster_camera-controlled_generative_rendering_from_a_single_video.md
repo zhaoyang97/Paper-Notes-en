@@ -131,6 +131,8 @@ Training strategy ablation:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](../../CVPR2026/video_generation/unified_camera_positional_encoding_for_controlled_video_generation.md)
@@ -138,5 +140,7 @@ Training strategy ablation:
 - [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
 - [\[ICCV 2025\] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation](free-form_motion_control_controlling_the_6d_poses_of_camera_and_objects_in_video.md)
 - [\[ICCV 2025\] Reangle-A-Video: 4D Video Generation as Video-to-Video Translation](reangle-a-video_4d_video_generation_as_video-to-video_translation.md)
+
+</div>
 
 <!-- RELATED:END -->

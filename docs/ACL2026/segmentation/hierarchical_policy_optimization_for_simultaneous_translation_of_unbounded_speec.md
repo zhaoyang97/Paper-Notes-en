@@ -119,6 +119,8 @@ On the ACL 60/60 dev set for En→Zh/De/Ja three directions, HPO significantly o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Universal Multi-Domain Translation via Diffusion Routers](../../ICLR2026/segmentation/universal_multi-domain_translation_via_diffusion_routers.md)
@@ -126,5 +128,7 @@ On the ACL 60/60 dev set for En→Zh/De/Ja three directions, HPO significantly o
 - [\[CVPR 2026\] ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization](../../CVPR2026/segmentation/conceptprism_concept_disentanglement_in_personalized_diffusion_models_via_residu.md)
 - [\[CVPR 2026\] RSONet: Region-guided Selective Optimization Network for RGB-T Salient Object Detection](../../CVPR2026/segmentation/rsonet_regionguided_selective_optimization_network.md)
 - [\[AAAI 2026\] Breaking the Stealth-Potency Trade-off in Clean-Image Backdoors with Generative Trigger Optimization](../../AAAI2026/segmentation/breaking_the_stealth-potency_trade-off_in_clean-image_backdoors_with_generative_.md)
+
+</div>
 
 <!-- RELATED:END -->

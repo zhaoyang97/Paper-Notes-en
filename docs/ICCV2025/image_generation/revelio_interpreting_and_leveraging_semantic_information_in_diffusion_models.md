@@ -153,6 +153,8 @@ On Oxford-IIIT Pet, Diff-C (SD 1.5 up_ft1, $t=25$) achieves competitive classifi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models](looking_in_the_mirror_a_faithful_counterfactual_explanation_method_for_interpret.md)
@@ -160,5 +162,7 @@ On Oxford-IIIT Pet, Diff-C (SD 1.5 up_ft1, $t=25$) achieves competitive classifi
 - [\[NeurIPS 2025\] Information Theoretic Learning for Diffusion Models with Warm Start](../../NeurIPS2025/image_generation/information_theoretic_learning_for_diffusion_models_with_warm_start.md)
 - [\[NeurIPS 2025\] Information-Theoretic Discrete Diffusion](../../NeurIPS2025/image_generation/information-theoretic_discrete_diffusion.md)
 - [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](../../ICLR2026/image_generation/the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
+
+</div>
 
 <!-- RELATED:END -->

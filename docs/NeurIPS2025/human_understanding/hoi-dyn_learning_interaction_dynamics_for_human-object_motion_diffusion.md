@@ -162,6 +162,8 @@ The dynamics model is **not used at inference**, preserving runtime efficiency.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](../../ICCV2025/human_understanding/raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
@@ -169,5 +171,7 @@ The dynamics model is **not used at inference**, preserving runtime efficiency.
 - [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
 - [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](mospa_human_motion_generation_driven_by_spatial_audio.md)
 - [\[CVPR 2026\] HandX: Scaling Bimanual Motion and Interaction Generation](../../CVPR2026/human_understanding/handx_scaling_bimanual_motion_and_interaction_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

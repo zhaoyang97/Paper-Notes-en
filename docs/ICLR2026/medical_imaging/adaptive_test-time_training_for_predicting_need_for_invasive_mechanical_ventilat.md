@@ -126,6 +126,8 @@ AdaTTT also achieves the best Brier scores (Site A: 0.086, Site B: 0.085, MIMIC-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards](../../AAAI2026/medical_imaging/advancing_safe_mechanical_ventilation_using_offline_rl_with_.md)
@@ -133,5 +135,7 @@ AdaTTT also achieves the best Brier scores (Site A: 0.086, Site B: 0.085, MIMIC-
 - [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
 - [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](../../CVPR2026/medical_imaging/spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
 - [\[AAAI 2026\] Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction](../../AAAI2026/medical_imaging/cross-sample_augmented_test-time_adaptation_for_personalized_intraoperative_hypo.md)
+
+</div>
 
 <!-- RELATED:END -->

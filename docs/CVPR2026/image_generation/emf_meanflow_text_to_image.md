@@ -129,6 +129,8 @@ Approximately 170K samples are used (BLIP3o-60k + shareGPT-4o + Echo-4o), with a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
@@ -136,5 +138,7 @@ Approximately 170K samples are used (BLIP3o-60k + shareGPT-4o + Echo-4o), with a
 - [\[CVPR 2026\] Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](improving_text-to-image_generation_with_intrinsic_self-confidence_rewards.md)
 - [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_text-to-image_generation.md)
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
+
+</div>
 
 <!-- RELATED:END -->

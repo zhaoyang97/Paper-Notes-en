@@ -131,6 +131,8 @@ $$\mathcal{L}_{IMSS} = 2 \cdot \mathcal{L}_{SGF} + 1 \cdot \mathcal{L}_{MAS}$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
@@ -138,5 +140,7 @@ $$\mathcal{L}_{IMSS} = 2 \cdot \mathcal{L}_{SGF} + 1 \cdot \mathcal{L}_{MAS}$$
 - [\[CVPR 2026\] Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training](data_warmup_complexity-aware_curricula_for_efficient_diffusion_training.md)
 - [\[CVPR 2026\] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](semlayer_semantic-aware_generative_segmentation_and_layer_construction_for_abstr.md)
 - [\[CVPR 2026\] PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation](pixdlm_uav_reasoning_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

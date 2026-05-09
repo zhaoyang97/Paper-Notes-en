@@ -144,6 +144,8 @@ Module contributions validated on the MultiDex dataset (4-step):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DexVLG: Dexterous Vision-Language-Grasp Model at Scale](dexvlg_dexterous_vision-language-grasp_model_at_scale.md)
@@ -151,5 +153,7 @@ Module contributions validated on the MultiDex dataset (4-step):
 - [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](../../NeurIPS2025/robotics/grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
 - [\[ICCV 2025\] PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency](pacgdc_label-efficient_generalizable_depth_completion_with_projection_ambiguity_.md)
 - [\[ICCV 2025\] CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games](combatvla_an_efficient_vision-language-action_model_for_combat_tasks_in_3d_actio.md)
+
+</div>
 
 <!-- RELATED:END -->

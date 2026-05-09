@@ -142,6 +142,8 @@ The protocol does not involve model training. Key algorithmic configurations inc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
@@ -149,5 +151,7 @@ The protocol does not involve model training. Key algorithmic configurations inc
 - [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](../../NeurIPS2025/others/exact_learning_of_arithmetic_with_differentiable_agents.md)
 - [\[CVPR 2026\] GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents](../../CVPR2026/others/gardendesigner_encoding_aesthetic_principles_into_jiangnan_garden_construction_v.md)
 - [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](provably_data-driven_projection_method_for_quadratic_programming.md)
+
+</div>
 
 <!-- RELATED:END -->

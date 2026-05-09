@@ -133,6 +133,8 @@ Performance of different visual-text encoder combinations on infrastructure impr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Beta Distribution Learning for Reliable Roadway Crash Risk Assessment](../../AAAI2026/autonomous_driving/beta_distribution_learning_for_reliable_roadway_crash_risk_a.md)
@@ -140,5 +142,7 @@ Performance of different visual-text encoder combinations on infrastructure impr
 - [\[ICCV 2025\] GM-MoE: Low-Light Enhancement with Gated-Mechanism Mixture-of-Experts](gm-moe_low-light_enhancement_with_gated-mechanism_mixture-of-experts.md)
 - [\[ICCV 2025\] Language Driven Occupancy Prediction (LOcc)](language_driven_occupancy_prediction.md)
 - [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
+
+</div>
 
 <!-- RELATED:END -->

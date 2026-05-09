@@ -143,6 +143,8 @@ The proposed method achieves a substantially lower FID (3.61 vs. the second-best
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
@@ -150,5 +152,7 @@ The proposed method achieves a substantially lower FID (3.61 vs. the second-best
 - [\[AAAI 2026\] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models](../../AAAI2026/image_generation/realistic_face_reconstruction_from_facial_embeddings_via_diffusion_models.md)
 - [\[CVPR 2026\] CognitionCapturerPro: Towards High-Fidelity Visual Decoding from EEG/MEG via Multi-modal Information and Asymmetric Alignment](cognitioncapturerpro_towards_high-fidelity_visual_decoding_from_eegmeg_via_multi.md)
 - [\[CVPR 2026\] ExpressEdit: Fast Editing of Stylized Facial Expressions with Diffusion Models in Photoshop](expressedit_fast_editing_of_stylized_facial_expressions_with_diffusion_models_in.md)
+
+</div>
 
 <!-- RELATED:END -->

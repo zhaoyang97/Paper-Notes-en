@@ -175,6 +175,8 @@ Key distinction: Point-Cache uses high-confidence caching with per-sample k-mean
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Parameter-Free Fine-tuning via Redundancy Elimination for Vision Foundation Models](parameter-free_fine-tuning_via_redundancy_elimination_for_vision_foundation_mode.md)
@@ -182,5 +184,7 @@ Key distinction: Point-Cache uses high-confidence caching with per-sample k-mean
 - [\[ICCV 2025\] 3D Test-time Adaptation via Graph Spectral Driven Point Shift](../../ICCV2025/3d_vision/3d_testtime_adaptation_via_graph_spectral_driven_point_shift.md)
 - [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](../../CVPR2026/3d_vision/tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
 - [\[AAAI 2026\] Enhancing Generalization of Depth Estimation Foundation Model via Weakly-Supervised Adaptation with Regularization](enhancing_generalization_of_depth_estimation_foundation_model_via_weakly-supervi.md)
+
+</div>
 
 <!-- RELATED:END -->

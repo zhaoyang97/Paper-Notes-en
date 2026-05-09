@@ -131,6 +131,8 @@ NDM's average Gini substantially exceeds all baselines (surpassing the >0.6 thre
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
@@ -138,5 +140,7 @@ NDM's average Gini substantially exceeds all baselines (surpassing the >0.6 thre
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
 - [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 - [\[ICLR 2026\] NIMO: a Nonlinear Interpretable MOdel](nimo_a_nonlinear_interpretable_model.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **13** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (12)](../../CVPR2026/llm_alignment/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_alignment/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/llm_alignment/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+
+🔥 **Top topics:** Alignment/RLHF ×4 · LLM ×3 · Agents ×2 · Adversarial Robustness ×2
+
 **[Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)**
 
 :   This paper proposes Plan-RewardBench, a trajectory-level preference benchmark targeting complex tool-augmented scenarios, designed to evaluate the ability of reward models to distinguish superior from inferior agent trajectories across multi-step planning, tool usage, and error recovery settings.

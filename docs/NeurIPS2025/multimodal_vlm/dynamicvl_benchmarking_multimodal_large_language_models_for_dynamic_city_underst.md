@@ -150,6 +150,8 @@ The underlying MLLM is Qwen2.5-VL, though the architecture is MLLM-agnostic.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] in the eye of mllm benchmarking egocentric video intent understanding with gaze-](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
@@ -157,5 +159,7 @@ The underlying MLLM is Qwen2.5-VL, though the architecture is MLLM-agnostic.
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](../../ICCV2025/multimodal_vlm/spatial_preference_rewarding_for_mllms_spatial_understanding.md)
 - [\[NeurIPS 2025\] rtv-bench benchmarking mllm continuous perception understanding and reasoning th](rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
 - [\[ICLR 2026\] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](../../ICLR2026/multimodal_vlm/tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

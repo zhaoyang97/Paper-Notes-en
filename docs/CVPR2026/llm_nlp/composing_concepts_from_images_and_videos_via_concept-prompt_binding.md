@@ -129,6 +129,8 @@ BiCo improves subjective Overall Quality by **+54.67%** over DualReal (3.00 → 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)
@@ -136,5 +138,7 @@ BiCo improves subjective Overall Quality by **+54.67%** over DualReal (3.00 → 
 - [\[ICLR 2026\] Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure](../../ICLR2026/llm_nlp/is_the_reversal_curse_a_binding_problem_uncovering_limitations_of_transformers_f.md)
 - [\[ACL 2026\] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models](../../ACL2026/llm_nlp/lost_in_the_prompt_order_revealing_the_limitations_of_causal_attention_in_langua.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
+
+</div>
 
 <!-- RELATED:END -->

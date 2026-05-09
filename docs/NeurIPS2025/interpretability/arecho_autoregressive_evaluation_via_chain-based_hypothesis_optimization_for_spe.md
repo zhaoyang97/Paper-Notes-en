@@ -132,6 +132,8 @@ Speech signal $\mathbf{S}$ → WavLM audio encoder → shared representation →
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
@@ -139,5 +141,7 @@ Speech signal $\mathbf{S}$ → WavLM audio encoder → shared representation →
 - [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
 - [\[NeurIPS 2025\] Sloth: Scaling Laws for LLM Skills to Predict Multi-Benchmark Performance Across Families](sloth_scaling_laws_for_llm_skills_to_predict_multi-benchmark_performance_across_.md)
 - [\[ACL 2026\] TabReX: Tabular Referenceless eXplainable Evaluation](../../ACL2026/interpretability/tabrex_tabular_referenceless_explainable_evaluation.md)
+
+</div>
 
 <!-- RELATED:END -->

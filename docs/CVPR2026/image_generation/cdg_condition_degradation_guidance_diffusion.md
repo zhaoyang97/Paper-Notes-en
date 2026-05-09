@@ -141,6 +141,8 @@ GenAI-Bench compositional reasoning (SD3.5): CDG achieves a +3.64 gain in Differ
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
@@ -148,5 +150,7 @@ GenAI-Bench compositional reasoning (SD3.5): CDG achieves a +3.64 gain in Differ
 - [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
 - [\[CVPR 2026\] Guiding a Diffusion Model by Swapping Its Tokens](guiding_a_diffusion_model_by_swapping_its_tokens.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
+
+</div>
 
 <!-- RELATED:END -->

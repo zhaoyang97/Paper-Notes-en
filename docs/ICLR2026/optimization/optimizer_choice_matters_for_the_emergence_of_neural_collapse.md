@@ -138,6 +138,8 @@ Final NC metrics of ResNet9 on FashionMNIST (lower is better):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Rolling Ball Optimizer: Learning by Ironing Out Loss Landscape Wrinkles](rolling_ball_optimizer_learning_by_ironing_out_loss_landscape_wrinkles.md)
@@ -145,5 +147,7 @@ Final NC metrics of ResNet9 on FashionMNIST (lower is better):
 - [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming](constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
 - [\[ICLR 2026\] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] PROFIT: A Specialized Optimizer for Deep Fine Tuning](../../NeurIPS2025/optimization/profit_a_specialized_optimizer_for_deep_fine_tuning.md)
+
+</div>
 
 <!-- RELATED:END -->

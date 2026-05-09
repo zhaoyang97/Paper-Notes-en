@@ -115,6 +115,8 @@ SpectRe achieves 100% discrimination on all Cayley graphs and ranks as the best-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
@@ -122,5 +124,7 @@ SpectRe achieves 100% discrimination on all Cayley graphs and ranks as the best-
 - [\[NeurIPS 2025\] Relieving the Over-Aggregating Effect in Graph Transformers](relieving_the_over-aggregating_effect_in_graph_transformers.md)
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Generative Graph Pattern Machine](generative_graph_pattern_machine.md)
+
+</div>
 
 <!-- RELATED:END -->

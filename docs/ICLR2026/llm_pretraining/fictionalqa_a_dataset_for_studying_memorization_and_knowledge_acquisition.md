@@ -132,6 +132,8 @@ Standard next-token prediction loss (cross-entropy) is used. The core contributi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding](../../ACL2026/llm_pretraining/commonsense_knowledge_with_negation_a_resource_to_enhance_negation_understanding.md)
@@ -139,5 +141,7 @@ Standard next-token prediction loss (cross-entropy) is used. The core contributi
 - [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
 - [\[ICLR 2026\] Lossless Vocabulary Reduction for Auto-Regressive Language Models](lossless_vocabulary_reduction_for_auto-regressive_language_models.md)
 - [\[ICLR 2026\] Emergent Misalignment is Easy, Narrow Misalignment is Hard](emergent_misalignment_is_easy_narrow_misalignment_is_hard.md)
+
+</div>
 
 <!-- RELATED:END -->

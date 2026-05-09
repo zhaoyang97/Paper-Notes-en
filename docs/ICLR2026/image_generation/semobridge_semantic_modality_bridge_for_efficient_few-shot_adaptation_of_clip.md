@@ -152,6 +152,8 @@ SeMoBridge-T achieves the highest accuracy with only 27 seconds of training.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](../../CVPR2026/image_generation/uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
@@ -159,5 +161,7 @@ SeMoBridge-T achieves the highest accuracy with only 27 seconds of training.
 - [\[ICLR 2026\] When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models](when_one_modality_rules_them_all_backdoor_modality_collapse_in_multimodal_diffus.md)
 - [\[ICLR 2026\] Conjuring Semantic Similarity](conjuring_semantic_similarity.md)
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](branched_schrödinger_bridge_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

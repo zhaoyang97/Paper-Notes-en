@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **17** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (30)](../../ACL2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/audio_speech/index.md)
+
+🔥 **Top topics:** Speech & Audio ×7 · Multimodal/VLM ×7 · Personalized Generation ×2 · Question Answering ×2
+
 **[BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)**
 
 :   This paper proposes BabyVLM-V2, a framework that constructs three formats of pretraining data (768K image pairs + 181K video pairs + 63K interleaved sequences) from the SAYCam longitudinal egocentric corpus, designs the DevCV Toolbox (10 developmental cognitive tasks) grounded in the NIH Baby Toolbox®, and demonstrates that a compact model trained from scratch surpasses GPT-4o on selected mathematical tasks — representing the first systematic exploration of Artificial Developmental Intelligence (ADI).

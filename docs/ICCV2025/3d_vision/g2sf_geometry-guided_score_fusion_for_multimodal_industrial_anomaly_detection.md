@@ -131,6 +131,8 @@ Ablation of geometric reasoning (score aggregation) comparing mean, max, and min
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
@@ -138,5 +140,7 @@ Ablation of geometric reasoning (score aggregation) comparing mean, max, and min
 - [\[ICCV 2025\] Stable Score Distillation](stable_score_distillation.md)
 - [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 - [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
+
+</div>
 
 <!-- RELATED:END -->

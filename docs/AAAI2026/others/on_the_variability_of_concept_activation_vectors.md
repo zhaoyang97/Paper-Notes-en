@@ -133,6 +133,8 @@ Variance decreases at a rate of $1/s$, consistent with Conjecture 1.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Autonomous Concept Drift Threshold Determination](autonomous_concept_drift_threshold_determination.md)
@@ -140,5 +142,7 @@ Variance decreases at a rate of $1/s$, consistent with Conjecture 1.
 - [\[CVPR 2026\] U-F²-CBM: CLIP-Free, Label Free, Unsupervised Concept Bottleneck Models](../../CVPR2026/others/clipfree_label_free_unsupervised_concept_bottlenec.md)
 - [\[NeurIPS 2025\] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure](../../NeurIPS2025/others/obliviator_reveals_the_cost_of_nonlinear_guardedness_in_concept_erasure.md)
 - [\[AAAI 2026\] A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles](a_fast_heuristic_search_approach_for_energy-optimal_profile_.md)
+
+</div>
 
 <!-- RELATED:END -->

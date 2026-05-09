@@ -207,6 +207,8 @@ $$F_{i+1} = \text{FeedbackAgent}(J, E_{i+1})$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] MoNE: Replacing Redundant Experts with Lightweight Novices for Structured Pruning of MoE](../../ICLR2026/model_compression/mone_replacing_redundant_experts_with_lightweight_novices_for_structured_pruning.md)
@@ -214,5 +216,7 @@ $$F_{i+1} = \text{FeedbackAgent}(J, E_{i+1})$$
 - [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
 - [\[ICCV 2025\] StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data](../../ICCV2025/model_compression/stolenlora_exploring_lora_extraction_attacks_via_synthetic_data.md)
+
+</div>
 
 <!-- RELATED:END -->

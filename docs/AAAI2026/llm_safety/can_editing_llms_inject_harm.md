@@ -124,6 +124,8 @@ Knowledge editing is modeled as a triple transformation: modifying existing know
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Inoculation Prompting: Eliciting Traits from LLMs during Training Can Suppress Them at Test-Time](../../ICLR2026/llm_safety/inoculation_prompting_eliciting_traits_from_llms_during_training_can_suppress_th.md)
@@ -131,5 +133,7 @@ Knowledge editing is modeled as a triple transformation: modifying existing know
 - [\[AAAI 2026\] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs](the_confidence_trap_gender_bias_and_predictive_certainty_in_llms.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs](../../CVPR2026/llm_safety/hulluedit_subspace_editing_hallucination.md)
 - [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](../../ACL2026/llm_safety/meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
+
+</div>
 
 <!-- RELATED:END -->

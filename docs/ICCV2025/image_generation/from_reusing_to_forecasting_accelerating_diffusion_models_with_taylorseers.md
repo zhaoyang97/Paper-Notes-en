@@ -157,6 +157,8 @@ At 4.53× speedup, TaylorSeer achieves an FID of only 2.65 (vs. 6.58 for FORA an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Accelerating Diffusion Sampling via Exploiting Local Transition Coherence](accelerating_diffusion_sampling_via_exploiting_local_transition_coherence.md)
@@ -164,5 +166,7 @@ At 4.53× speedup, TaylorSeer achieves an FID of only 2.65 (vs. 6.58 for FORA an
 - [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
 - [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](../../CVPR2026/image_generation/seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
 - [\[NeurIPS 2025\] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](../../NeurIPS2025/image_generation/elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)
+
+</div>
 
 <!-- RELATED:END -->

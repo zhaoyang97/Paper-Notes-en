@@ -129,6 +129,8 @@ The NIAT benchmark comprises 750 tables and 287K test samples, covering three ta
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
@@ -136,5 +138,7 @@ The NIAT benchmark comprises 750 tables and 287K test samples, covering three ta
 - [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
 - [\[NeurIPS 2025\] Context Informs Pragmatic Interpretation in Vision-Language Models](context_informs_pragmatic_interpretation_in_vision-language_models.md)
 - [\[NeurIPS 2025\] FlySearch: Exploring how vision-language models explore](flysearch_exploring_how_vision-language_models_explore.md)
+
+</div>
 
 <!-- RELATED:END -->

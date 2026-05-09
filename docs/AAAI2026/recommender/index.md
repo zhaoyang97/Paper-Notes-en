@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **26** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/recommender/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+
+🔥 **Top topics:** Recommendation ×11 · LLM ×4
+
 **[Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](align3gr_unified_multi-level_alignment_for_llm-based_generat.md)**
 
 :   This paper proposes Align³GR, a unified three-level alignment framework that systematically bridges the semantic-behavioral gap between LLMs and recommender systems at the token level (dual-side SCID), the behavior modeling level (multi-task SFT), and the preference level (progressive DPO).

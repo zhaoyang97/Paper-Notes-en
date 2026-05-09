@@ -122,6 +122,8 @@ This is a systematic and analytically rigorous evaluation framework. Its core co
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](../../ACL2026/video_understanding/vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
@@ -129,5 +131,7 @@ This is a systematic and analytically rigorous evaluation framework. Its core co
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](../../ACL2026/video_understanding/rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
 - [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
 - [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](../../ACL2026/video_understanding/gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -133,6 +133,8 @@ A two-stage pipeline. **Stage 1** (personalized colorizer training): select a ke
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_ima.md)
@@ -140,5 +142,7 @@ A two-stage pipeline. **Stage 1** (personalized colorizer training): select a ke
 - [\[AAAI 2026\] FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting](../../AAAI2026/3d_vision/fantasystyle_controllable_stylized_distillation_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds](../../CVPR2026/3d_vision/s2am3d_scale-controllable_part_segmentation_of_3d_point_cloud.md)
 - [\[ICCV 2025\] LACONIC: A 3D Layout Adapter for Controllable Image Creation](../../ICCV2025/3d_vision/laconic_a_3d_layout_adapter_for_controllable_image_creation.md)
+
+</div>
 
 <!-- RELATED:END -->

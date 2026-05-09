@@ -191,6 +191,8 @@ Aggregating only visual prompts yields the best performance, validating the hypo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Interpretable Queries for Explainable Image Classification with Information Pursuit](learning_interpretable_queries_for_explainable_image_classification_with_informa.md)
@@ -198,5 +200,7 @@ Aggregating only visual prompts yields the best performance, validating the hypo
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](../../NeurIPS2025/optimization/optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 - [\[ICCV 2025\] Federated Continual Instruction Tuning](federated_continual_instruction_tuning.md)
 - [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](class-wise_federated_averaging_for_efficient_personalization.md)
+
+</div>
 
 <!-- RELATED:END -->

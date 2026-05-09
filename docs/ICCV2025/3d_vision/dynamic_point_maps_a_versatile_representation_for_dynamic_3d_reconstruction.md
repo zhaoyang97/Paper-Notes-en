@@ -154,6 +154,8 @@ where $L_{\text{reg}}$ is a scale-normalized per-pixel regression loss that allo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](../../NeurIPS2025/3d_vision/d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
@@ -161,5 +163,7 @@ where $L_{\text{reg}}$ is a scale-normalized per-pixel regression loss that allo
 - [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

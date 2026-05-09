@@ -152,6 +152,8 @@ Depending on the downstream task:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions](scalable_signature_kernel_computations_for_long_time_series_via_local_neumann_se.md)
@@ -159,5 +161,7 @@ Depending on the downstream task:
 - [\[AAAI 2026\] CometNet: Contextual Motif-guided Long-term Time Series Forecasting](../../AAAI2026/time_series/cometnet_contextual_motif-guided_long-term_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency](abstain_mask_retain_core_time_series_prediction_by_adaptive.md)
 - [\[AAAI 2026\] XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs](../../AAAI2026/time_series/xlinear_a_lightweight_and_accurate_mlp-based_model_for_long-term_time_series_for.md)
+
+</div>
 
 <!-- RELATED:END -->

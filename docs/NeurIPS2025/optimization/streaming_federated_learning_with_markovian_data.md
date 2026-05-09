@@ -133,6 +133,8 @@ Experiments use the Beijing Multi-Site Air Quality dataset (12 stations, 2013–
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
@@ -140,5 +142,7 @@ Experiments use the Beijing Multi-Site Air Quality dataset (12 stations, 2013–
 - [\[NeurIPS 2025\] Optimality and NP-Hardness of Transformers in Learning Markovian Dynamical Functions](optimality_and_np-hardness_of_transformers_in_learning_markovian_dynamical_funct.md)
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
 - [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -105,6 +105,8 @@ The GLS-theoretic insight that "invariant representation learning is insufficien
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](../../ICCV2025/others/multi-view_gaze_target_estimation.md)
@@ -112,5 +114,7 @@ The GLS-theoretic insight that "invariant representation learning is insufficien
 - [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
 - [\[NeurIPS 2025\] MaxSup: Overcoming Representation Collapse in Label Smoothing](maxsup_overcoming_representation_collapse_in_label_smoothing.md)
 - [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -150,6 +150,8 @@ Each of the three components is indispensable and addresses a distinct challenge
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Formal Verification of Diffusion Auctions](formal_verification_of_diffusion_auctions.md)
@@ -157,5 +159,7 @@ Each of the three components is indispensable and addresses a distinct challenge
 - [\[AAAI 2026\] One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow](one-step_generative_policies_with_q-learning_a_reformulation_of_meanflow.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 - [\[NeurIPS 2025\] Adaptive Cooperative Transmission Design for URLLC via Deep RL](../../NeurIPS2025/reinforcement_learning/adaptive_cooperative_transmission_design_for_ultra-reliable_low-latency_communic.md)
+
+</div>
 
 <!-- RELATED:END -->

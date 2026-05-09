@@ -194,6 +194,8 @@ AttrMoGen reduces FID from MoMask's 0.245 to 0.089 (−63.7%) and MM-Dist from 2
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](../../ICLR2026/human_understanding/quamo_quaternion_motion_kinematics.md)
@@ -201,5 +203,7 @@ AttrMoGen reduces FID from MoMask's 0.245 to 0.089 (−63.7%) and MM-Dist from 2
 - [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
 - [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](../../ICCV2025/human_understanding/kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
 - [\[ACL 2026\] ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images](../../ACL2026/human_understanding/generating_attribution_reports_for_manipulated_facial_images_a_dataset_and_basel.md)
+
+</div>
 
 <!-- RELATED:END -->

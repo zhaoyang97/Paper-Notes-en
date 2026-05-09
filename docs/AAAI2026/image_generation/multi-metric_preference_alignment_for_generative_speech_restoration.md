@@ -133,6 +133,8 @@ Single-metric alignment improves only the target metric, while non-target metric
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](../../ICLR2026/image_generation/diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
@@ -140,5 +142,7 @@ Single-metric alignment improves only the target metric, while non-target metric
 - [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
 - [\[AAAI 2026\] MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment](macs_multi-source_audio-to-image_generation_with_contextual_significance_and_sem.md)
 - [\[ICLR 2026\] GenDR: Lighten Generative Detail Restoration](../../ICLR2026/image_generation/gendr_lighten_generative_detail_restoration.md)
+
+</div>
 
 <!-- RELATED:END -->

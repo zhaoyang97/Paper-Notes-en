@@ -109,6 +109,8 @@ Evaluation is conducted on CMU-MOSI/MOSEI/CH-SIMS-v2 (sentiment) and UR-FUNNY (h
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
@@ -116,5 +118,7 @@ Evaluation is conducted on CMU-MOSI/MOSEI/CH-SIMS-v2 (sentiment) and UR-FUNNY (h
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
 - [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](../../ICLR2026/audio_speech/pace_pretrained_audio_continual_learning.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/audio_speech/gene_incremental_learning_for_single-cell_transcriptomics.md)
+
+</div>
 
 <!-- RELATED:END -->

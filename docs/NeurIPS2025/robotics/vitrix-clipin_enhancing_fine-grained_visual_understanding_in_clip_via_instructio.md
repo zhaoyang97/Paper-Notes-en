@@ -150,6 +150,8 @@ $$\mathcal{L} = \mathcal{L}_{\text{CLIP}} + \alpha \mathcal{L}_{\text{HN}} + \be
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
@@ -157,5 +159,7 @@ $$\mathcal{L} = \mathcal{L}_{\text{CLIP}} + \alpha \mathcal{L}_{\text{HN}} + \be
 - [\[ICLR 2026\] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection](../../ICLR2026/robotics/enhancing_instruction_following_of_llms_via_activation_steering_with_dynamic_rej.md)
 - [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
 - [\[NeurIPS 2025\] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation](robocerebra_a_large-scale_benchmark_for_long-horizon_robotic_manipulation_evalua.md)
+
+</div>
 
 <!-- RELATED:END -->

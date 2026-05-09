@@ -138,6 +138,8 @@ Latent prediction guidance adds only 1.6 GB over pure inference, while velocity-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SynCity: Training-Free Generation of 3D Worlds](../../ICCV2025/llm_pretraining/syncity_training-free_generation_of_3d_worlds.md)
@@ -145,5 +147,7 @@ Latent prediction guidance adds only 1.6 GB over pure inference, while velocity-
 - [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](../../NeurIPS2025/llm_pretraining/through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
 - [\[AAAI 2026\] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding](../../AAAI2026/llm_pretraining/learning_procedural-aware_video_representations_through_state-grounded_hierarchy.md)
 - [\[NeurIPS 2025\] Deep Compositional Phase Diffusion for Long Motion Sequence Generation](../../NeurIPS2025/llm_pretraining/deep_compositional_phase_diffusion_for_long_motion_sequence_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

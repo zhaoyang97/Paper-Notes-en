@@ -165,6 +165,8 @@ The pipeline consists of four stages: (1) three parallel encoders extract modali
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
@@ -172,5 +174,7 @@ The pipeline consists of four stages: (1) three parallel encoders extract modali
 - [\[ICLR 2026\] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation](../../ICLR2026/3d_vision/ctrlshift_high-quality_geometry-aware_object_manipulation_in_visual_generation.md)
 - [\[CVPR 2026\] Ada3Drift: Adaptive Training-Time Drifting for One-Step 3D Visuomotor Robotic Manipulation](ada3drift_adaptive_trainingtime_drifting_for_onest.md)
 - [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
+
+</div>
 
 <!-- RELATED:END -->

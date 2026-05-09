@@ -137,6 +137,8 @@ $$\hat{\mathbf{O}}_k^{(tgt)} = \text{Softmax}\left(\frac{\mathbf{Q}_k^{(tgt)} [\
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Editing Physiological Signals in Videos Using Latent Representations](../../CVPR2026/human_understanding/editing_physiological_signals_in_videos_using_latent_representations.md)
@@ -144,5 +146,7 @@ $$\hat{\mathbf{O}}_k^{(tgt)} = \text{Softmax}\left(\frac{\mathbf{Q}_k^{(tgt)} [\
 - [\[AAAI 2026\] CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation](../../AAAI2026/human_understanding/coordar_one-reference_6d_pose_estimation_of_novel_objects_via_autoregressive_coo.md)
 - [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](../../CVPR2026/human_understanding/lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
 - [\[CVPR 2026\] TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement](../../CVPR2026/human_understanding/trilite_efficient_weakly_supervised_object_localization_with_universal_visual_fe.md)
+
+</div>
 
 <!-- RELATED:END -->

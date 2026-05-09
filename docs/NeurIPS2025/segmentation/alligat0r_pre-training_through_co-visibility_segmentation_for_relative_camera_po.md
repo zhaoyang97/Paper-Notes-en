@@ -119,6 +119,8 @@ RUBIK Benchmark: Overall success rate of 60.3% ranks first, surpassing DUSt3R (5
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition](instructsam_a_training-free_framework_for_instruction-oriented_remote_sensing_ob.md)
@@ -126,5 +128,7 @@ RUBIK Benchmark: Overall success rate of 60.3% ranks first, surpassing DUSt3R (5
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](../../ICCV2025/segmentation/enhancing_transformers_through_conditioned_embedded_tokens.md)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](../../ICCV2025/segmentation/what_if_understanding_motion_through_sparse_interactions.md)
+
+</div>
 
 <!-- RELATED:END -->

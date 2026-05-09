@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (2)](../../ACL2026/self_supervised/index.md) · [📷 CVPR2026 (38)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (14)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (36)](../../NeurIPS2025/self_supervised/index.md)
+
 **[A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)](a_tokenlevel_text_image_foundation_model_for_document_unders.md)**
 
 :   This paper proposes TokenFD, the first token-level text image foundation model, pre-trained on 20 million images and 1.8 billion BPE token-mask pairs via token-level vision-language alignment to achieve image-as-text semantic understanding. Built upon TokenFD, TokenVL is introduced as a document understanding MLLM, achieving a score of 860 on OCRBench (highest among 8B-class models) and an average improvement of 8.8% across ten VQA benchmarks including DocVQA.

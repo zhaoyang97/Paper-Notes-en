@@ -130,6 +130,8 @@ Evaluation is conducted on 5 NLP benchmarks, 27 datasets, and 3 model families (
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
@@ -137,5 +139,7 @@ Evaluation is conducted on 5 NLP benchmarks, 27 datasets, and 3 model families (
 - [\[CVPR 2026\] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy](../../CVPR2026/model_compression/preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
 - [\[CVPR 2026\] Bilevel Layer-Positioning LoRA for Real Image Dehazing](../../CVPR2026/model_compression/bilevel_layer-positioning_lora_for_real_image_dehazing.md)
+
+</div>
 
 <!-- RELATED:END -->

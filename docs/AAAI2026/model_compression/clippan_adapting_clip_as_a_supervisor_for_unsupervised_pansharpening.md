@@ -169,6 +169,8 @@ The joint use of the semantic loss $\mathcal{L}_d$ and pseudo-supervision $\math
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
@@ -176,5 +178,7 @@ The joint use of the semantic loss $\mathcal{L}_d$ and pseudo-supervision $\math
 - [\[ICCV 2025\] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning](../../ICCV2025/model_compression/soft_separation_and_distillation_toward_global_uniformity_in_federated_unsupervi.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](../../NeurIPS2025/model_compression/towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
 - [\[ICLR 2026\] Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks](../../ICLR2026/model_compression/distilling_and_adapting_a_topology-aware_framework_for_zero-shot_interaction_pre.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -150,6 +150,8 @@ Here $\eta$ and $\gamma$ depend on the choice of sampling distribution. The boun
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally](words_that_unite_the_world_a_unified_framework_for_deciphering_central_bank_comm.md)
@@ -157,5 +159,7 @@ Here $\eta$ and $\gamma$ depend on the choice of sampling distribution. The boun
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
 - [\[NeurIPS 2025\] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](../../CVPR2026/llm_evaluation/unified_primitive_proxies_for_structured_shape_completion.md)
+
+</div>
 
 <!-- RELATED:END -->

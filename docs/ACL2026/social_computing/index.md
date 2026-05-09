@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **9** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/social_computing/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/social_computing/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/social_computing/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+
+🔥 **Top topics:** LLM ×2 · Reasoning ×2
+
 **[Among Us: Language of Conspiracy Theorists on Mainstream Reddit](among_us_language_of_conspiracy_theorists_on_mainstream_reddit.md)**
 
 :   Analyzing 500 million Reddit comments over 10 years of longitudinal data, this study finds that users active in conspiracy theory communities exhibit detectable unique language patterns in mainstream communities (average 87% classification accuracy), but these patterns are highly context-dependent, with community-specific models outperforming global models by up to 17 percentage points.

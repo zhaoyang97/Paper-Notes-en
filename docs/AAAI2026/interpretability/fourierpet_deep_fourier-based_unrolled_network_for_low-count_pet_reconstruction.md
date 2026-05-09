@@ -137,6 +137,8 @@ $$\mathcal{L}_{total} = 0.5 \cdot \mathcal{L}_{Smooth\text{-}L1} + 0.3 \cdot \ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network](enhancing_binary_encoded_crime_linkage_analysis_using_siamese_network.md)
@@ -144,5 +146,7 @@ $$\mathcal{L}_{total} = 0.5 \cdot \mathcal{L}_{Smooth\text{-}L1} + 0.3 \cdot \ma
 - [\[AAAI 2026\] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games](elementarynet_a_non-strategic_neural_network_for_predicting_human_behavior_in_no.md)
 - [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](../../NeurIPS2025/interpretability/shap_values_via_sparse_fourier_representation.md)
 - [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](../../NeurIPS2025/interpretability/deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
+
+</div>
 
 <!-- RELATED:END -->

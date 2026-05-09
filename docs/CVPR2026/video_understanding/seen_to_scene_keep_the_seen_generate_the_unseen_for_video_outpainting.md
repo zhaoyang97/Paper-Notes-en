@@ -98,6 +98,8 @@ Seen-to-Scene outperforms all prior methods on all metrics across DAVIS and YouT
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](sava-x_ego-to-exo_imitation_error_detection_via_scene-adaptive_view_alignment_an.md)
@@ -105,5 +107,7 @@ Seen-to-Scene outperforms all prior methods on all metrics across DAVIS and YouT
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
 - [\[CVPR 2026\] EgoPointVQA: Gesture-Based Egocentric Video Question Answering](egopointvqa_gesture_based_egocentric_video_qa.md)
 - [\[CVPR 2026\] VidTAG: Temporally Aligned Video to GPS Geolocalization](vidtag_video_gps_geolocalization.md)
+
+</div>
 
 <!-- RELATED:END -->

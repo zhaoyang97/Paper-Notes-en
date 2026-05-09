@@ -154,6 +154,8 @@ $$\mathcal{L}(\mathcal{S}_r) = \sum_{(h_i,r,t_i) \in \mathcal{S}_r} \max\{0, \te
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
@@ -161,5 +163,7 @@ $$\mathcal{L}(\mathcal{S}_r) = \sum_{(h_i,r,t_i) \in \mathcal{S}_r} \max\{0, \te
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
 - [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](learning_repetition-invariant_representations_for_polymer_informatics.md)
+
+</div>
 
 <!-- RELATED:END -->

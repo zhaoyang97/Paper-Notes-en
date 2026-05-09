@@ -137,6 +137,8 @@ The SIB-GRPO objective is: $J_{SIB-GRPO}(\theta) = \mathbb{E}[\frac{1}{G}\sum_{i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](../../AAAI2026/multimodal_vlm/conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)
@@ -144,5 +146,7 @@ The SIB-GRPO objective is: $J_{SIB-GRPO}(\theta) = \mathbb{E}[\frac{1}{G}\sum_{i
 - [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
 - [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
 - [\[AAAI 2026\] EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens](../../AAAI2026/multimodal_vlm/em-kd_distilling_efficient_multimodal_large_language_model_w.md)
+
+</div>
 
 <!-- RELATED:END -->

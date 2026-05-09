@@ -120,6 +120,8 @@ Standard sequence-level cross-entropy loss combined with a thought continuity lo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution](../../AAAI2026/llm_evaluation/think_how_your_teammates_think_active_inference_can_benefit_decentralized_execut.md)
@@ -127,5 +129,7 @@ Standard sequence-level cross-entropy loss combined with a thought continuity lo
 - [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/llm_evaluation/free-grained_hierarchical_visual_recognition.md)
 - [\[NeurIPS 2025\] RGB-to-Polarization Estimation: A New Task and Benchmark Study](../../NeurIPS2025/llm_evaluation/rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)
+
+</div>
 
 <!-- RELATED:END -->

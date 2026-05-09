@@ -117,6 +117,8 @@ Five loss terms: ligand position MSE + ligand atom type KL divergence + pocket t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](../../ICLR2026/medical_imaging/syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
@@ -124,5 +126,7 @@ Five loss terms: ligand position MSE + ligand atom type KL divergence + pocket t
 - [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](../../NeurIPS2025/medical_imaging/atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 - [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](../../NeurIPS2025/medical_imaging/prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
+
+</div>
 
 <!-- RELATED:END -->

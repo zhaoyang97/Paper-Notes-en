@@ -153,6 +153,8 @@ Each component contributes meaningfully. Weakly supervised fine-tuning is the mo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation](../../AAAI2026/object_detection/saga_learning_signal-aligned_distributions_for_improved_text-to-image_generation.md)
@@ -160,5 +162,7 @@ Each component contributes meaningfully. Weakly supervised fine-tuning is the mo
 - [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](../../NeurIPS2025/object_detection/instanceassemble_layoutaware_image_generation_via_instance_a.md)
 - [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](large-scale_pre-training_for_grounded_video_caption_generation.md)
 - [\[ICCV 2025\] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)
+
+</div>
 
 <!-- RELATED:END -->

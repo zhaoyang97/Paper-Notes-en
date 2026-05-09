@@ -119,6 +119,8 @@ User preference study: DCM vs. LCM: 82.67% prefer DCM; DCM vs. PCM: 77.33% prefe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation](dh-facevid-1k_a_large-scale_high-quality_dataset_for_face_video_generation.md)
@@ -126,5 +128,7 @@ User preference study: DCM vs. LCM: 82.67% prefer DCM; DCM vs. PCM: 77.33% prefe
 - [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
 - [\[ICCV 2025\] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization](dollar_few-step_video_generation_via_distillation_and_latent_reward_optimization.md)
 - [\[ICLR 2026\] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation](../../ICLR2026/video_generation/precisecache_precise_feature_caching_for_efficient_and_high-fidelity_video_gener.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **67** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (71)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+
+🔥 **Top topics:** Reasoning ×45 · LLM ×12 · Multimodal/VLM ×4 · Reinforcement Learning ×4 · Model Compression ×2
+
 **[AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling](abbie_autoregressive_block-based_iterative_encoder_for_efficient_sequence_modeli.md)**
 
 :   This paper proposes AbbIE, an architecture that recursively iterates the intermediate layers (Body) of a decoder-only Transformer. Trained with only 2 iterations, AbbIE achieves upward generalization at inference time by increasing the number of iterations, surpassing standard Transformers on both language modeling perplexity and zero-shot ICL benchmarks, while serving as a drop-in replacement for standard Transformers.

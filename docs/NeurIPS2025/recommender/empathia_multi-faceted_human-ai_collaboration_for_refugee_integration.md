@@ -123,6 +123,8 @@ The framework relies on pre-trained LLM inference and involves no model training
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Position: Towards Bidirectional Human-AI Alignment](position_towards_bidirectional_human-ai_alignment.md)
@@ -130,5 +132,7 @@ The framework relies on pre-trained LLM inference and involves no model training
 - [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](mmpb_its_time_for_multi-modal_personalization.md)
 - [\[NeurIPS 2025\] NeurIPS Should Lead Scientific Consensus on AI Policy](neurips_should_lead_scientific_consensus_on_ai_policy.md)
 - [\[AAAI 2026\] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback](../../AAAI2026/recommender/moral_change_or_noise_on_problems_of_aligning_ai_with_temporally_unstable_human_.md)
+
+</div>
 
 <!-- RELATED:END -->

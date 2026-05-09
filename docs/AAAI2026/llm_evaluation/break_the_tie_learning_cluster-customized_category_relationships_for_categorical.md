@@ -141,6 +141,8 @@ Results validate the compatibility of the learned categorical distances with Euc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](../../CVPR2026/llm_evaluation/learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
@@ -148,5 +150,7 @@ Results validate the compatibility of the learned categorical distances with Euc
 - [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
 - [\[NeurIPS 2025\] Exploiting Task Relationships in Continual Learning via Transferability-Aware Task Embeddings](../../NeurIPS2025/llm_evaluation/exploiting_task_relationships_in_continual_learning_via_transferability-aware_ta.md)
 - [\[AAAI 2026\] TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization](trace_a_generalizable_drift_detector_for_streaming_data-driven_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

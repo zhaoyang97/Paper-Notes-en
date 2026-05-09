@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **19** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (60)](../../CVPR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (51)](../../ICCV2025/video_generation/index.md)
+
+🔥 **Top topics:** Video Generation ×11 · Diffusion Models ×6 · Robotics ×2 · Speech & Audio ×2 · Compression ×2
+
 **[Arbitrary Generative Video Interpolation](arbitrary_generative_video_interpolation.md)**
 
 :   ArbInterp proposes a generative video frame interpolation framework supporting arbitrary timestamps and arbitrary sequence lengths. It achieves precise temporal control via Timestamp-aware Rotary Position Embedding (TaRoPE) and enables seamless long-sequence stitching through an appearance-motion decoupled conditioning strategy.

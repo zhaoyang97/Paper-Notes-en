@@ -126,6 +126,8 @@ UniShape follows a pretrain-then-finetune paradigm: (1) a Shape-Aware Adapter en
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation](lost_in_time_a_meta-learning_framework_for_time-shift-tolerant_physiological_sig.md)
@@ -133,5 +135,7 @@ UniShape follows a pretrain-then-finetune paradigm: (1) a Shape-Aware Adapter en
 - [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](../../NeurIPS2025/others/a_unified_framework_for_variable_selection_in_modelbased_clu.md)
 - [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
 - [\[AAAI 2026\] Measuring Model Performance in the Presence of an Intervention](measuring_model_performance_in_the_presence_of_an_intervention.md)
+
+</div>
 
 <!-- RELATED:END -->

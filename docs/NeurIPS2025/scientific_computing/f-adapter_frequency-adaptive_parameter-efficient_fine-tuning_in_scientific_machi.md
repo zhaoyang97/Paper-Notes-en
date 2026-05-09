@@ -124,6 +124,8 @@ Among frequency-domain Adapter variants: Chebyshev Adapter achieves slightly low
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](../../AAAI2026/scientific_computing/scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
@@ -131,5 +133,7 @@ Among frequency-domain Adapter variants: Chebyshev Adapter achieves slightly low
 - [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 - [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 - [\[NeurIPS 2025\] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -192,6 +192,8 @@ CT-CIG achieves a substantially leading overall FID of 52.88, and the highest CL
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion](ctrlfuse_mask-prompt_guided_controllable_infrared_and_visible_image_fusion.md)
@@ -199,5 +201,7 @@ CT-CIG achieves a substantially leading overall FID of 52.88, and the highest CL
 - [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](../../ACL2026/segmentation/boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 - [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](../../NeurIPS2025/segmentation/seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
 - [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](../../ICCV2025/segmentation/uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
+
+</div>
 
 <!-- RELATED:END -->

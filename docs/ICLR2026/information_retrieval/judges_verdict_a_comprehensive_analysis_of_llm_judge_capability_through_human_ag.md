@@ -140,6 +140,8 @@ The core advancement of this paper is the shift from asking "is the LLM judge su
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
@@ -147,5 +149,7 @@ The core advancement of this paper is the shift from asking "is the LLM judge su
 - [\[ICLR 2026\] LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference](lightretriever_a_llm-based_text_retrieval_architecture_with_extremely_faster_que.md)
 - [\[AAAI 2026\] RRRA: Resampling and Reranking through a Retriever Adapter](../../AAAI2026/information_retrieval/rrra_resampling_and_reranking_through_a_retriever_adapter.md)
 - [\[ACL 2026\] FAITH: Factuality Alignment through Integrating Trustworthiness and Honestness](../../ACL2026/information_retrieval/faith_factuality_alignment_through_integrating_trustworthiness_and_honestness.md)
+
+</div>
 
 <!-- RELATED:END -->

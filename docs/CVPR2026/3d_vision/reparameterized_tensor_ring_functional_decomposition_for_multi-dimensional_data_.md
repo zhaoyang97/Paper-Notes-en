@@ -131,6 +131,8 @@ A general framework of a data fidelity term $\mathsf{L}_{\text{data}}$ plus an o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition](quadsync_quadrifocal_tensor_synchronization_via_tucker_decomposition.md)
@@ -138,5 +140,7 @@ A general framework of a data fidelity term $\mathsf{L}_{\text{data}}$ plus an o
 - [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
 - [\[CVPR 2026\] DeepShapeMatchingKit: Accelerated Functional Map Solver and Shape Matching Pipelines Revisited](deepshapematchingkit_accelerated_functional_map_solver.md)
 - [\[CVPR 2026\] Regularizing INR with Diffusion Prior for Self-Supervised 3D Reconstruction of Neutron Computed Tomography Data](regularizing_inr_with_diffusion_prior_selfsupervis.md)
+
+</div>
 
 <!-- RELATED:END -->

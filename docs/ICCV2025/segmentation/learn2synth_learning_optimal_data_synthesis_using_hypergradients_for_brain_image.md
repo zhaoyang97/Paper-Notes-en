@@ -154,6 +154,8 @@ The inferred parameters closely match the preset values, validating the effectiv
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation](clot_closed_loop_optimal_transport_for_unsupervised_action_segmentation.md)
@@ -161,5 +163,7 @@ The inferred parameters closely match the preset values, validating the effectiv
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
 - [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -138,6 +138,8 @@ That is, the influence of removing a single data point on the model output does 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
@@ -145,5 +147,7 @@ That is, the influence of removing a single data point on the model output does 
 - [\[AAAI 2026\] Privacy on the Fly: A Predictive Adversarial Transformation Network for Mobile Sensor Data](../../AAAI2026/ai_safety/privacy_on_the_fly_a_predictive_adversarial_transformation_network_for_mobile_se.md)
 - [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](distributional_adversarial_attacks_and_training_in_deep_hedging.md)
 - [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)
+
+</div>
 
 <!-- RELATED:END -->

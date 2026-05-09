@@ -111,6 +111,8 @@ Intent Graph accuracy → Shape Score (VLM visual evaluation) → DRC pass rate 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Accuracy: Unveiling Inefficiency Patterns in Tool-Integrated Reasoning](../../ACL2026/others/beyond_accuracy_unveiling_inefficiency_patterns_in_tool-integrated_reasoning.md)
@@ -118,5 +120,7 @@ Intent Graph accuracy → Shape Score (VLM visual evaluation) → DRC pass rate 
 - [\[AAAI 2026\] Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation](lost_in_time_a_meta-learning_framework_for_time-shift-tolerant_physiological_sig.md)
 - [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
 - [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](agent-sama_state-aware_mobile_assistant.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ $$W_q = \mathcal{C}[A] \circ \text{sign}(L_s)$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
@@ -134,5 +136,7 @@ $$W_q = \mathcal{C}[A] \circ \text{sign}(L_s)$$
 - [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](../../CVPR2026/model_compression/rdvq_differentiable_vq_image_compression.md)
 - [\[AAAI 2026\] SIGN: Schema-Induced Games for Naming](../../AAAI2026/model_compression/sign_schema-induced_games_for_naming.md)
 - [\[ICLR 2026\] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models](../../ICLR2026/model_compression/kbvq-moe_klt-guided_svd_with_bias-corrected_vector_quantization_for_moe_large_la.md)
+
+</div>
 
 <!-- RELATED:END -->

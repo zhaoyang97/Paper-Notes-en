@@ -125,6 +125,8 @@ The final loss is $\min_\mathcal{A}(\mathcal{J}_{L \rightarrow V} + \mathcal{J}_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
@@ -132,5 +134,7 @@ The final loss is $\min_\mathcal{A}(\mathcal{J}_{L \rightarrow V} + \mathcal{J}_
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
 - [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
 - [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](online_dense_point_tracking_with_streaming_memory.md)
+
+</div>
 
 <!-- RELATED:END -->

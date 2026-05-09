@@ -111,6 +111,8 @@ The paradigm of using a "physics model as a decoder branch" is generalizable to 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
@@ -118,5 +120,7 @@ The paradigm of using a "physics model as a decoder branch" is generalizable to 
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/scientific_computing/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
 - [\[NeurIPS 2025\] Neuro-Spectral Architectures for Causal Physics-Informed Networks](../../NeurIPS2025/scientific_computing/neuro-spectral_architectures_for_causal_physics-informed_networks.md)
 - [\[ICLR 2026\] Learning-guided Kansa Collocation for Forward and Inverse PDE Problems](../../ICLR2026/scientific_computing/learning-guided_kansa_collocation_for_forward_and_inverse_pde_problems.md)
+
+</div>
 
 <!-- RELATED:END -->

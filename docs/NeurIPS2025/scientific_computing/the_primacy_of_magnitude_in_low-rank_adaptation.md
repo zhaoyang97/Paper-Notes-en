@@ -167,6 +167,8 @@ Analytical Framework (Magnitude Principle) → Mechanistic Analysis (Demystifyin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
@@ -174,5 +176,7 @@ Analytical Framework (Magnitude Principle) → Mechanistic Analysis (Demystifyin
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
 - [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 - [\[NeurIPS 2025\] Collapsing Taylor Mode Automatic Differentiation](collapsing_taylor_mode_automatic_differentiation.md)
+
+</div>
 
 <!-- RELATED:END -->

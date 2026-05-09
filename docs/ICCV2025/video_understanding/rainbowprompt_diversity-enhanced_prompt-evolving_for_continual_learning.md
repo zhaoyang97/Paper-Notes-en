@@ -145,6 +145,8 @@ Component ablation (ImageNet-R 10-task):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](../../NeurIPS2025/video_understanding/tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)
@@ -152,5 +154,7 @@ Component ablation (ImageNet-R 10-task):
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
 - [\[NeurIPS 2025\] QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code](../../NeurIPS2025/video_understanding/qimeng-neucomback_self-evolving_translation_from_ir_to_assembly_code.md)
 - [\[NeurIPS 2025\] INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning](../../NeurIPS2025/video_understanding/inst-it_boosting_instance_understanding_via_explicit_visual_prompt_instruction_t.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **10** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (20)](../../ACL2026/code_intelligence/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/code_intelligence/index.md) · [🔬 ICLR2026 (23)](../../ICLR2026/code_intelligence/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/code_intelligence/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/code_intelligence/index.md)
+
+🔥 **Top topics:** LLM ×4 · Code Intelligence ×2 · Self-Supervised Learning ×2
+
 **[DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation](diffbench_meets_diffagent_end-to-end_llm-driven_diffusion_ac.md)**
 
 :   This paper proposes DiffBench (an evaluation benchmark comprising 604 diffusion model acceleration tasks across 5 difficulty levels) and DiffAgent (a closed-loop framework integrating Planning, Coding, and Debugging agents with a genetic algorithm-based selector). On Claude Sonnet 4, the framework improves the pass rate for diffusion acceleration code generation from 54.30% to 81.59%, achieving a 68.27% success rate on complex optimization tasks.

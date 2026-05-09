@@ -124,6 +124,8 @@ The segmentation loss employs Focal-Tversky loss with recall-biased weighting ($
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](partnext_a_next-generation_dataset_for_fine-grained_and_hierarchical_3d_part_und.md)
@@ -131,5 +133,7 @@ The segmentation loss employs Focal-Tversky loss with recall-biased weighting ($
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](../../ICCV2025/segmentation/himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[CVPR 2026\] HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding](../../CVPR2026/segmentation/hippomm_hippocampal-inspired_multimodal_memory_for_long_audiovisual_event_unders.md)
 - [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](../../ICCV2025/segmentation/advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ DisCo achieves state-of-the-art performance **simultaneously** on both subject s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
@@ -129,5 +131,7 @@ DisCo achieves state-of-the-art performance **simultaneously** on both subject s
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 - [\[CVPR 2026\] Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](improving_text-to-image_generation_with_intrinsic_self-confidence_rewards.md)
 - [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_text-to-image_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

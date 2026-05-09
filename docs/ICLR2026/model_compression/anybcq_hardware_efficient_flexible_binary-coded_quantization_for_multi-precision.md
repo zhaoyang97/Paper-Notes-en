@@ -112,6 +112,8 @@ AnyBCQ surpasses competing methods at 2-bit MMLU by more than 10 percentage poin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Highly Efficient and Effective LLMs with Multi-Boolean Architectures](highly_efficient_and_effective_llms_with_multi-boolean_architectures.md)
@@ -119,5 +121,7 @@ AnyBCQ surpasses competing methods at 2-bit MMLU by more than 10 percentage poin
 - [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
 - [\[NeurIPS 2025\] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression](../../NeurIPS2025/model_compression/binary_quadratic_quantization_beyond_first-order_quantization_for_real-valued_ma.md)
 - [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -137,6 +137,8 @@ $$\mathcal{L} = \mathcal{L}_{GC} + \alpha\mathcal{L}_{dim} + \beta\mathcal{L}_{c
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
@@ -144,5 +146,7 @@ $$\mathcal{L} = \mathcal{L}_{GC} + \alpha\mathcal{L}_{dim} + \beta\mathcal{L}_{c
 - [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Improved Balanced Classification with Theoretically Grounded Loss Functions](improved_balanced_classification_with_theoretically_grounded_loss_functions.md)
 - [\[NeurIPS 2025\] DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning](design_encrypted_gnn_inference_via_server-side_input_graph_pruning.md)
+
+</div>
 
 <!-- RELATED:END -->

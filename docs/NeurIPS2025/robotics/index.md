@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **57** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (49)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+
+🔥 **Top topics:** Robotics ×9 · Reasoning ×8 · Agents ×7 · Navigation ×5 · LLM ×4
+
 **[A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning](a_snapshot_of_influence_a_local_data_attribution_framework_f.md)**
 
 :   This work is the first to introduce data attribution into online reinforcement learning. It proposes a local attribution framework to quantify each training record's contribution to policy updates, and builds upon it an Iterative Influence Filtering (IIF) algorithm that substantially improves sample efficiency and final performance on both classical RL benchmarks and LLM RLHF.

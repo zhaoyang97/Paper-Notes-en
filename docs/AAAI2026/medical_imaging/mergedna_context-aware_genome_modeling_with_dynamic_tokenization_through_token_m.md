@@ -127,6 +127,8 @@ NT Benchmark (18 tasks): MergeDNA achieves an average MCC of 78.39%, surpassing 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
@@ -134,5 +136,7 @@ NT Benchmark (18 tasks): MergeDNA achieves an average MCC of 78.39%, surpassing 
 - [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](learning_cell-aware_hierarchical_multi-modal_representations.md)
 - [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/medical_imaging/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
+
+</div>
 
 <!-- RELATED:END -->

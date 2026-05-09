@@ -113,6 +113,8 @@ A two-stage HOI detection pipeline is adopted: (1) a frozen DETR detector locali
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](../../ICCV2025/social_computing/learning_visual_proxy_for_compositional_zero-shot_learning.md)
@@ -120,5 +122,7 @@ A two-stage HOI detection pipeline is adopted: (1) a frozen DETR detector locali
 - [\[NeurIPS 2025\] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding](deeptraverse_a_depth-first_search_inspired_network_for_algorithmic_visual_unders.md)
 - [\[NeurIPS 2025\] GraphKeeper: Graph Domain-Incremental Learning via Knowledge Disentanglement and Preservation](graphkeeper_graph_domain-incremental_learning_via_knowledge_disentanglement_and_.md)
 - [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
+
+</div>
 
 <!-- RELATED:END -->

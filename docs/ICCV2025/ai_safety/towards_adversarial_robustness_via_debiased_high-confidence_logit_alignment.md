@@ -180,6 +180,8 @@ Intuition: maximizing the orthogonal component of $\check{z}$ (i.e., the portion
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference](../../NeurIPS2025/ai_safety/fair_representation_learning_with_controllable_high_confidence_guarantees_via_ad.md)
@@ -187,5 +189,7 @@ Intuition: maximizing the orthogonal component of $\check{z}$ (i.e., the portion
 - [\[NeurIPS 2025\] Boosting Adversarial Transferability with Spatial Adversarial Alignment](../../NeurIPS2025/ai_safety/boosting_adversarial_transferability_with_spatial_adversarial_alignment.md)
 - [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](../../NeurIPS2025/ai_safety/understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
 - [\[ICCV 2025\] Backdooring Self-Supervised Contrastive Learning by Noisy Alignment](backdooring_self-supervised_contrastive_learning_by_noisy_alignment.md)
+
+</div>
 
 <!-- RELATED:END -->

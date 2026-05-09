@@ -147,6 +147,8 @@ FECO surpasses BSTRO by 11.3% and DECO by 16.8% in F1 on MMVP. On joint-level fo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](../../NeurIPS2025/others/learning_dense_hand_contact_estimation_from_imbalanced_data.md)
@@ -154,5 +156,7 @@ FECO surpasses BSTRO by 11.3% and DECO by 16.8% in F1 on MMVP. On joint-level fo
 - [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](../../AAAI2026/others/spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
 - [\[ICCV 2025\] Magic Insert: Style-Aware Drag-and-Drop](../../ICCV2025/others/magic_insert_style-aware_drag-and-drop.md)
 - [\[CVPR 2026\] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning](mitigating_instance_entanglement_in_instance-dependent_partial_label_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

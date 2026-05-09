@@ -135,6 +135,8 @@ Key finding: VC is detrimental to DRR-Net; VP-S is the most robust augmentation 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
@@ -142,5 +144,7 @@ Key finding: VC is detrimental to DRR-Net; VP-S is the most robust augmentation 
 - [\[ICLR 2026\] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry](fast_and_stable_riemannian_metrics_on_spd_manifolds_via_cholesky_product_geometr.md)
 - [\[ICLR 2026\] Key and Value Weights Are Probably All You Need: On the Necessity of the Query, Key, and Value Weight Triplet in Self-Attention](key_and_value_weights_are_probably_all_you_need_on_the_necessity_of_the_query_ke.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](../../AAAI2026/others/detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
+
+</div>
 
 <!-- RELATED:END -->

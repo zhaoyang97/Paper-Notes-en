@@ -149,6 +149,8 @@ The theoretical motivation is clear, the method design is elegant, and the mathe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](../../ICCV2025/llm_nlp/fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
@@ -156,5 +158,7 @@ The theoretical motivation is clear, the method design is elegant, and the mathe
 - [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](an_invariant_latent_space_perspective_on_language_model_inve.md)
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
 - [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](icl-router_in-context_learned_model_representations_for_llm_routing.md)
+
+</div>
 
 <!-- RELATED:END -->

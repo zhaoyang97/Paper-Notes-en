@@ -127,6 +127,8 @@ Through systematic mechanistic interpretability analysis, this paper reveals tha
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] One Language, Two Scripts: Probing Script-Invariance in LLM Concept Representations](../../ICLR2026/interpretability/one_language_two_scripts_probing_script-invariance_in_llm_concept_representation.md)
@@ -134,5 +136,7 @@ Through systematic mechanistic interpretability analysis, this paper reveals tha
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ACL 2026\] Style over Story: Measuring LLM Narrative Preferences via Structured Selection](style_over_story_measuring_llm_narrative_preferences_via_structured_selection.md)
 - [\[ACL 2026\] Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards](curing_miracle_steps_in_llm_mathematical_reasoning_with_rubric_rewards.md)
+
+</div>
 
 <!-- RELATED:END -->

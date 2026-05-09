@@ -142,6 +142,8 @@ Evaluated on the human-centric video benchmarks EMDB and PROX:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](../../ICCV2025/3d_vision/vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
@@ -149,5 +151,7 @@ Evaluated on the human-centric video benchmarks EMDB and PROX:
 - [\[AAAI 2026\] MoBGS: Motion Deblurring Dynamic 3D Gaussian Splatting for Blurry Monocular Video](../../AAAI2026/3d_vision/mobgs_motion_deblurring_dynamic_3d_gaussian_splatting_for_blurry_monocular_video.md)
 - [\[ICLR 2026\] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation](scenetransporter_optimal_transport-guided_compositional_latent_diffusion_for_sin.md)
 - [\[ICCV 2025\] SuperDec: 3D Scene Decomposition with Superquadric Primitives](../../ICCV2025/3d_vision/superdec_3d_scene_decomposition_with_superquadrics_primitives.md)
+
+</div>
 
 <!-- RELATED:END -->

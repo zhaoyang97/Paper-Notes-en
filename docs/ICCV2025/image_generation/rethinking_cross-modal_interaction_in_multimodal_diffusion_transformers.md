@@ -146,6 +146,8 @@ Comparisons show that TACA substantially amplifies the attention from visual tok
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
@@ -153,5 +155,7 @@ Comparisons show that TACA substantially amplifies the attention from visual tok
 - [\[ICCV 2025\] IRGPT: Understanding Real-world Infrared Image with Bi-cross-modal Curriculum on Large-scale Benchmark](irgpt_understanding_real-world_infrared_image_with_bi-cross-modal_curriculum_on_.md)
 - [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](end-to-end_multi-modal_diffusion_mamba.md)
 - [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](../../CVPR2026/image_generation/ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
+
+</div>
 
 <!-- RELATED:END -->

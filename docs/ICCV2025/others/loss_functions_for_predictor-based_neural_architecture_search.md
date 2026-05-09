@@ -154,6 +154,8 @@ All experiments employ a unified GCN-based performance predictor. Each loss func
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](joint_asymmetric_loss_for_learning_with_noisy_labels.md)
@@ -161,5 +163,7 @@ All experiments employ a unified GCN-based performance predictor. Each loss func
 - [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](../../NeurIPS2025/others/research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
+
+</div>
 
 <!-- RELATED:END -->

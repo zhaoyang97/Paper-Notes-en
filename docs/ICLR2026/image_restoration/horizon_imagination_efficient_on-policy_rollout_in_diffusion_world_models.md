@@ -114,6 +114,8 @@ The world model is trained with a standard diffusion denoising loss. The policy 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
@@ -121,5 +123,7 @@ The world model is trained with a standard diffusion denoising loss. The policy 
 - [\[AAAI 2026\] RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation](../../AAAI2026/image_restoration/refidiff_progressive_refinement_diffusion_for_efficient_missing_data_imputation.md)
 - [\[ICLR 2026\] Are Deep Speech Denoising Models Robust to Adversarial Noise?](are_deep_speech_denoising_models_robust_to_adversarial_noise.md)
 - [\[ACL 2026\] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models](../../ACL2026/image_restoration/lost_in_diffusion_uncovering_hallucination_patterns_and_failure_modes_in_diffusi.md)
+
+</div>
 
 <!-- RELATED:END -->

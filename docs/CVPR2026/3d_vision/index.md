@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **252** paper notes
 
+📌 **Same area in other venues:** [🔬 ICLR2026 (65)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (74)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (268)](../../ICCV2025/3d_vision/index.md)
+
+🔥 **Top topics:** 3D Gaussian Splatting ×48 · 3D Reconstruction ×24 · Dynamic Scenes ×22 · Point Cloud ×18 · Few-/Zero-Shot Learning ×13
+
 **[3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)**
 
 :   This paper proposes a novel paradigm termed *in-place completion*, which extends pretrained object-level generative priors to the scene level, directly completing fragmented geometry at its original spatial location without explicit pose alignment. The authors also construct ARSG-110K, a 110K-scale scene-level dataset, and substantially outperform baselines such as MIDI and Gen3DSR.

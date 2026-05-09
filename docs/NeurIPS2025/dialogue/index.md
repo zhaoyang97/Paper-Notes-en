@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **5** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md)
+
+🔥 **Top topics:** LLM ×2
+
 **[AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs](aclora_almost_trainingfree_access_controlaware_multimodal_ll.md)**
 
 :   AC-LoRA is an end-to-end system that trains independent LoRA adapters for datasets with different permission levels. At inference time, it dynamically retrieves and training-freely merges multiple LoRA outputs based on cosine similarity and user permissions, achieving strong information isolation while matching or surpassing SOTA LoRA mixture methods in response quality.

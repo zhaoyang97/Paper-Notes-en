@@ -125,6 +125,8 @@ Human evaluators consistently and strongly prefer GOATex across all comparisons,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion](geocomplete_geometry-aware_diffusion_for_reference-driven_image_completion.md)
@@ -132,5 +134,7 @@ Human evaluators consistently and strongly prefer GOATex across all comparisons,
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](../../ICCV2025/3d_vision/occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
 - [\[ICCV 2025\] Geometry Distributions](../../ICCV2025/3d_vision/geometry_distributions.md)
 - [\[NeurIPS 2025\] TAPIP3D: Tracking Any Point in Persistent 3D Geometry](tapip3d_tracking_any_point_in_persistent_3d_geometry.md)
+
+</div>
 
 <!-- RELATED:END -->

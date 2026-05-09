@@ -133,6 +133,8 @@ Perspective reasoning accuracy comparison on the synthetic benchmark (Spatial-Ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Global and Local Entailment Learning for Natural World Imagery](global_and_local_entailment_learning_for_natural_world_imagery.md)
@@ -140,5 +142,7 @@ Perspective reasoning accuracy comparison on the synthetic benchmark (Spatial-Ma
 - [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](../../CVPR2026/multimodal_vlm/simpact_simulation-enabled_action_planning_using_vision-language_models.md)
 - [\[ICCV 2025\] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](capture_evaluating_spatial_reasoning_in_vision_language_models_via_occluded_obje.md)
 - [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/multimodal_vlm/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
+
+</div>
 
 <!-- RELATED:END -->

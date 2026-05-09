@@ -138,6 +138,8 @@ The recycling paradigm is generalizable to other communication-constrained setti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
@@ -145,5 +147,7 @@ The recycling paradigm is generalizable to other communication-constrained setti
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[NeurIPS 2025\] FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning](fedqs_optimizing_gradient_and_model_aggregation_for_semi-asynchronous_federated_.md)
 - [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](../../ICCV2025/optimization/class-wise_federated_averaging_for_efficient_personalization.md)
+
+</div>
 
 <!-- RELATED:END -->

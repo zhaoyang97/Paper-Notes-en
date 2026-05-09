@@ -160,6 +160,8 @@ The NVS capability of AnySplat is not degraded but actually improved after stitc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](../../CVPR2026/video_generation/moviedrive_multimodal_multiview_video_diffusion.md)
@@ -167,5 +169,7 @@ The NVS capability of AnySplat is not degraded but actually improved after stitc
 - [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](../../CVPR2026/video_generation/rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
 - [\[CVPR 2026\] Semantic Satellite Communications for Synchronized Audiovisual Reconstruction](../../CVPR2026/video_generation/semantic_satellite_communications_for_synchronized_audiovisual_reconstruction.md)
 - [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](../../CVPR2026/video_generation/orbital_video_3d_foundation_priors.md)
+
+</div>
 
 <!-- RELATED:END -->

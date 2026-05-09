@@ -140,6 +140,8 @@ BrainCoDec operates through two stages of hierarchical inference:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/3d_vision/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
@@ -147,5 +149,7 @@ BrainCoDec operates through two stages of hierarchical inference:
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
 - [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
 - [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
+
+</div>
 
 <!-- RELATED:END -->

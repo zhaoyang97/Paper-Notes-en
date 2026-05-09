@@ -124,6 +124,8 @@ $\mathcal{L} = \mathcal{L}_{CFM} + \lambda \cdot \text{FABO}$. Evaluated on 12 t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning](../../ICLR2026/image_generation/flow-based_single-step_completion_for_efficient_and_expressive_policy_learning.md)
@@ -131,5 +133,7 @@ $\mathcal{L} = \mathcal{L}_{CFM} + \lambda \cdot \text{FABO}$. Evaluated on 12 t
 - [\[NeurIPS 2025\] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency](../../NeurIPS2025/image_generation/freqpolicy_efficient_flow-based_visuomotor_policy_via_frequency_consistency.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](../../NeurIPS2025/image_generation/equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
 - [\[AAAI 2026\] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models](dogfit_domain-guided_fine-tuning_for_efficient_transfer_learning_of_diffusion_mo.md)
+
+</div>
 
 <!-- RELATED:END -->

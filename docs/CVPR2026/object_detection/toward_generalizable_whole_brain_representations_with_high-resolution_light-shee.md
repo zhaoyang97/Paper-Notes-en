@@ -127,6 +127,8 @@ The CANVAS dataset construction pipeline proceeds as follows: mouse brain tissue
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding](mrd_multi-resolution_retrieval-detection_fusion_for_high-resolution_image_unders.md)
@@ -134,5 +136,7 @@ The CANVAS dataset construction pipeline proceeds as follows: mouse brain tissue
 - [\[ICLR 2026\] CORDS: Continuous Representations of Discrete Structures](../../ICLR2026/object_detection/cords_continuous_representations_of_discrete_structures.md)
 - [\[NeurIPS 2025\] Generalizable Insights for Graph Transformers in Theory and Practice](../../NeurIPS2025/object_detection/generalizable_insights_for_graph_transformers_in_theory_and_practice.md)
 - [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
+
+</div>
 
 <!-- RELATED:END -->

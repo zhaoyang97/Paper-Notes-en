@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **14** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_reasoning/index.md) · [🔬 ICLR2026 (71)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (67)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+
+🔥 **Top topics:** Reasoning ×12 · Multimodal/VLM ×3
+
 **[Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)**
 
 :   A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. A dual-path architecture decouples global depth style from local artistic effects, learning directorial intent from professional 3D film data.

@@ -153,6 +153,8 @@ If the spectral norm of the Hessian at a point $p$ on the landscape is $\sigma =
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
@@ -160,5 +162,7 @@ If the spectral norm of the Hessian at a point $p$ on the landscape is $\sigma =
 - [\[ICLR 2026\] Optimizer Choice Matters for the Emergence of Neural Collapse](optimizer_choice_matters_for_the_emergence_of_neural_collapse.md)
 - [\[NeurIPS 2025\] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers](../../NeurIPS2025/optimization/generalization_or_hallucination_understanding_out-of-context_reasoning_in_transf.md)
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

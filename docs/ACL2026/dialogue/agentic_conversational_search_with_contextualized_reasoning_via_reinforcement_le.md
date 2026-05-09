@@ -121,6 +121,8 @@ The total reward is $\mathcal{R}(\tau) = \mathcal{R}_{outcome} + 0.5 \times (\ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI](apex-mem_agentic_semi-structured_memory_with_temporal_reasoning_for_long-term_co.md)
@@ -128,5 +130,7 @@ The total reward is $\mathcal{R}(\tau) = \mathcal{R}_{outcome} + 0.5 \times (\ma
 - [\[ACL 2026\] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings](template-assisted_contrastive_learning_of_task-oriented_dialogue_sentence_embedd.md)
 - [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
 - [\[ACL 2026\] Towards Proactive Information Probing: Customer Service Chatbots Harvesting Value from Conversation](towards_proactive_information_probing_customer_service_chatbots_harvesting_value.md)
+
+</div>
 
 <!-- RELATED:END -->

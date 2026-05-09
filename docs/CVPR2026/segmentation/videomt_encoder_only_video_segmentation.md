@@ -105,6 +105,8 @@ Video Panoptic Segmentation (VIPSeg): VidEoMT VPQ 55.2 vs. CAVIS 56.9, at 75 vs.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
@@ -112,5 +114,7 @@ Video Panoptic Segmentation (VIPSeg): VidEoMT VPQ 55.2 vs. CAVIS 56.9, at 75 vs.
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
 - [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
 - [\[CVPR 2026\] A Mixed Diet Makes DINO An Omnivorous Vision Encoder](mixed_diet_dino_omnivorous_encoder.md)
+
+</div>
 
 <!-- RELATED:END -->

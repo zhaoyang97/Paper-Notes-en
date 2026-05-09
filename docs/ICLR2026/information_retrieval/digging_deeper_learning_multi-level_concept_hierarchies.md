@@ -126,6 +126,8 @@ Training proceeds in two independent stages. **Stage 1**: A standard CEM is trai
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](hierarchical_concept-based_interpretable_models.md)
@@ -133,5 +135,7 @@ Training proceeds in two independent stages. **Stage 1**: A standard CEM is trai
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](query-level_uncertainty_in_large_language_models.md)
 - [\[NeurIPS 2025\] Deep Research Brings Deeper Harm](../../NeurIPS2025/information_retrieval/deep_research_brings_deeper_harm.md)
 - [\[ICLR 2026\] Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding](token-guard_towards_token-level_hallucination_control_via_self-checking_decoding.md)
+
+</div>
 
 <!-- RELATED:END -->

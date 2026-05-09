@@ -118,6 +118,8 @@ PIArena does not involve model training. The adaptive attack uses an LLM as the 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] vCache: Verified Semantic Prompt Caching](../../ICLR2026/llm_evaluation/vcache_verified_semantic_prompt_caching.md)
@@ -125,5 +127,7 @@ PIArena does not involve model training. The adaptive attack uses an LLM as the 
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](../../ICLR2026/llm_evaluation/prompt_and_parameter_co-optimization_for_large_language_models.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Model Task Adaptation](../../ICLR2026/llm_evaluation/prompt_and_parameter_co-optimization_for_large_language_model_task_adaptation.md)
+
+</div>
 
 <!-- RELATED:END -->

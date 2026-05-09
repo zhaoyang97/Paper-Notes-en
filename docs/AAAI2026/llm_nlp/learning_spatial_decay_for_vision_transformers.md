@@ -126,6 +126,8 @@ Standard training on ImageNet-1K for 300 epochs with the AdamW optimizer. RoPE a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](vision_transformers_are_circulant_attention_learners.md)
@@ -133,5 +135,7 @@ Standard training on ImageNet-1K for 300 epochs with the AdamW optimizer. RoPE a
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[AAAI 2026\] Improving Sustainability of Adversarial Examples in Class-Incremental Learning](improving_sustainability_of_adversarial_examples_in_class-incremental_learning.md)
 - [\[ICLR 2026\] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning](../../ICLR2026/llm_nlp/compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ Documents are split into chunks and placed in the same batch. The retriever comp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/information_retrieval/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
@@ -129,5 +131,7 @@ Documents are split into chunks and placed in the same batch. The retriever comp
 - [\[ICCV 2025\] aligning information capacity between vision and language via dense-to-sparse fe](../../ICCV2025/information_retrieval/aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)
 - [\[CVPR 2026\] NanoVDR: Distilling a 2B Vision-Language Retriever into a 70M Text-Only Encoder for Visual Document Retrieval](../../CVPR2026/information_retrieval/nanovdr_distilling_a_2b_visionlanguage_retriever_i.md)
 - [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](../../NeurIPS2025/information_retrieval/scaling_language-centric_omnimodal_representation_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

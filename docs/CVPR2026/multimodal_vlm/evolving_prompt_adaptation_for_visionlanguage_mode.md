@@ -134,6 +134,8 @@ Total loss: $\mathcal{L} = \mathcal{L}_{InfoNCE} + \gamma \mathcal{L}_{fgr} + \e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models](evolving_prompt_adaptation_for_vision-language_models.md)
@@ -141,5 +143,7 @@ Total loss: $\mathcal{L} = \mathcal{L}_{InfoNCE} + \gamma \mathcal{L}_{fgr} + \e
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
 - [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

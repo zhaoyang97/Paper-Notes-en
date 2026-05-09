@@ -191,6 +191,8 @@ Optical flow estimation (MVSEC dataset) + denoising combination:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
@@ -198,5 +200,7 @@ Optical flow estimation (MVSEC dataset) + denoising combination:
 - [\[ICCV 2025\] egoPPG: Heart Rate Estimation from Eye-Tracking Cameras in Egocentric Systems to Benefit Downstream Vision Tasks](egoppg_heart_rate_estimation_from_eye-tracking_cameras_in_egocentric_systems_to_.md)
 - [\[ICCV 2025\] MikuDance: Animating Character Art with Mixed Motion Dynamics](mikudance_animating_character_art_with_mixed_motion_dynamics.md)
 - [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -130,6 +130,8 @@ The Frankentext pipeline has two main stages: first, randomly sample 1500 human 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
@@ -137,5 +139,7 @@ The Frankentext pipeline has two main stages: first, randomly sample 1500 human 
 - [\[ICLR 2026\] DMAP: A Distribution Map for Text](../../ICLR2026/aigc_detection/dmap_a_distribution_map_for_text.md)
 - [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
 - [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
+
+</div>
 
 <!-- RELATED:END -->

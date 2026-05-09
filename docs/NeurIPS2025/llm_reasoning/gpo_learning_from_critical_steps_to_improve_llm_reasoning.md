@@ -129,6 +129,8 @@ Base model: DeepSeek-R1-Distill-Qwen-7B, fine-tuned with LoRA.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
@@ -136,5 +138,7 @@ Base model: DeepSeek-R1-Distill-Qwen-7B, fine-tuned with LoRA.
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
 - [\[NeurIPS 2025\] Curriculum Abductive Learning](curriculum_abductive_learning.md)
 - [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

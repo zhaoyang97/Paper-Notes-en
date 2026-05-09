@@ -141,6 +141,8 @@ Evaluated on DrawBench and MSCOCO, covering 6 models and 4 enhancement technique
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation](ficgen_frequency-inspired_contextual_disentanglement_for_layout-driven_degraded_.md)
@@ -148,5 +150,7 @@ Evaluated on DrawBench and MSCOCO, covering 6 models and 4 enhancement technique
 - [\[ICCV 2025\] LIFT: Latent Implicit Functions for Task- and Data-Agnostic Encoding](lift_latent_implicit_functions_for_task-_and_data-agnostic_encoding.md)
 - [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
 - [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
+
+</div>
 
 <!-- RELATED:END -->

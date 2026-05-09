@@ -150,6 +150,8 @@ The two-phase prediction–validation design is generalizable to other multimoda
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CharaConsist: Fine-Grained Consistent Character Generation](../../ICCV2025/image_generation/characonsist_fine-grained_consistent_character_generation.md)
@@ -157,5 +159,7 @@ The two-phase prediction–validation design is generalizable to other multimoda
 - [\[CVPR 2026\] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](../../CVPR2026/image_generation/beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)
 - [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](../../ICCV2025/image_generation/taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
 - [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_diffusion_model_quantization.md)
+
+</div>
 
 <!-- RELATED:END -->

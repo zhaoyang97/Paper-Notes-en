@@ -155,6 +155,8 @@ Objaverse-OA dataset construction (VLM preprocessing + human correction) → Fin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
@@ -162,5 +164,7 @@ Objaverse-OA dataset construction (VLM preprocessing + human correction) → Fin
 - [\[NeurIPS 2025\] SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction](synchuman_synchronizing_2d_and_3d_generative_models_for_single-view_human_recons.md)
 - [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
 - [\[NeurIPS 2025\] TP-MDDN: Task-Preferenced Multi-Demand-Driven Navigation with Autonomous Decision-Making](tp-mddn_task-preferenced_multi-demand-driven_navigation_with_autonomous_decision.md)
+
+</div>
 
 <!-- RELATED:END -->

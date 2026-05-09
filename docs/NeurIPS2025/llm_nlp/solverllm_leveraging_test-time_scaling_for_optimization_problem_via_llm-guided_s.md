@@ -138,6 +138,8 @@ Comparison with learning-based methods:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
@@ -145,5 +147,7 @@ Comparison with learning-based methods:
 - [\[NeurIPS 2025\] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization](evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)
 - [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
 - [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](../../ICCV2025/llm_nlp/fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

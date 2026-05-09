@@ -113,6 +113,8 @@ The framework adopts a two-stage generation process: (1) graph structures are en
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences](verification_of_the_implicit_world_model_in_a_generative_model_via_adversarial_s.md)
@@ -120,5 +122,7 @@ The framework adopts a two-stage generation process: (1) graph structures are en
 - [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
 - [\[AAAI 2026\] Rectified Noise: A Generative Model Using Positive-incentive Noise](../../AAAI2026/image_generation/rectified_noise_a_generative_model_using_positive-incentive_noise.md)
 - [\[ICLR 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
+
+</div>
 
 <!-- RELATED:END -->

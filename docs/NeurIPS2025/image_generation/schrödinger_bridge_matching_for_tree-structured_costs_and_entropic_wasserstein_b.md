@@ -151,6 +151,8 @@ TreeDSB exhibits training instability at low regularization $\varepsilon$; TreeD
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](../../ICLR2026/image_generation/branched_schrödinger_bridge_matching.md)
@@ -158,5 +160,7 @@ TreeDSB exhibits training instability at low regularization $\varepsilon$; TreeD
 - [\[NeurIPS 2025\] Tree-Guided Diffusion Planner](tree-guided_diffusion_planner.md)
 - [\[NeurIPS 2025\] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data](composite_flow_matching_for_reinforcement_learning_with_shifted-dynamics_data.md)
 - [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
+
+</div>
 
 <!-- RELATED:END -->

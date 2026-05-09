@@ -132,6 +132,8 @@ Evaluated on Llama 3 (3B/8B), Qwen 2.5 (3B/7B/14B), and Gemma 2 (9B). Sweeping Î
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](../../CVPR2026/signal_comm/actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
@@ -139,5 +141,7 @@ Evaluated on Llama 3 (3B/8B), Qwen 2.5 (3B/7B/14B), and Gemma 2 (9B). Sweeping Î
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
 - [\[NeurIPS 2025\] The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning](the_surprising_effectiveness_of_negative_reinforcement_in_llm_reasoning.md)
 - [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
+
+</div>
 
 <!-- RELATED:END -->

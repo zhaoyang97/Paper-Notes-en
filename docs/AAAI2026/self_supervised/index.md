@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **14** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (2)](../../ACL2026/self_supervised/index.md) · [📷 CVPR2026 (38)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/self_supervised/index.md) · [🧠 NeurIPS2025 (36)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/self_supervised/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×4 · Alignment/RLHF ×3 · Self-Supervised Learning ×3
+
 **[BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)**
 
 :   BCE3S is proposed, a binary cross-entropy (BCE)-based tripartite synergistic learning framework that integrates BCE-based joint learning, BCE-based contrastive learning, and BCE-based classifier uniformity learning. By decoupling per-class logits via Sigmoid, it suppresses the imbalance effects inherent to long-tailed distributions, achieving state-of-the-art performance on CIFAR10/100-LT, ImageNet-LT, and iNaturalist2018.

@@ -102,6 +102,8 @@ Given a hierarchy tree $\mathcal{T}$ with $n$ nodes, Hier-COS assigns each node 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)
@@ -109,5 +111,7 @@ Given a hierarchy tree $\mathcal{T}$ with $n$ nodes, Hier-COS assigns each node 
 - [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](unified_primitive_proxies_for_structured_shape_completion.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
+
+</div>
 
 <!-- RELATED:END -->

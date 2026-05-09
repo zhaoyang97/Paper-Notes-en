@@ -120,6 +120,8 @@ CLIP+BACL improves R@1 on LAION-400M from 35.2 to 46.5 (+32% relative gain).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
@@ -127,5 +129,7 @@ CLIP+BACL improves R@1 on LAION-400M from 35.2 to 46.5 (+32% relative gain).
 - [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
 - [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](../../AAAI2026/multimodal_vlm/aligning_the_true_semantics_constrained_decoupling_and_distr.md)
 - [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](../../CVPR2026/multimodal_vlm/falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
+
+</div>
 
 <!-- RELATED:END -->

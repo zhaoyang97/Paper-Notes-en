@@ -152,6 +152,8 @@ A scGPT-style Transformer (6 layers, 8 heads, hidden dimension 256) is trained o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Incremental Maintenance of DatalogMTL Materialisations](incremental_maintenance_of_datalogmtl_materialisations.md)
@@ -159,5 +161,7 @@ A scGPT-style Transformer (6 layers, 8 heads, hidden dimension 256) is trained o
 - [\[ICLR 2026\] PACE: Pretrained Audio Continual Learning](../../ICLR2026/audio_speech/pace_pretrained_audio_continual_learning.md)
 - [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/audio_speech/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
 - [\[AAAI 2026\] Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning](do_llms_feel_teaching_emotion_recognition_with_prompts_retrieval_and_curriculum_.md)
+
+</div>
 
 <!-- RELATED:END -->

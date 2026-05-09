@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **30** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (17)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/audio_speech/index.md)
+
+🔥 **Top topics:** Speech & Audio ×19 · Question Answering ×3 · Multimodal/VLM ×3 · Adversarial Robustness ×3 · LLM ×2
+
 **[Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations](affectron_emotional_speech_synthesis_with_affective_and_contextually_aligned_non.md)**
 
 :   This paper proposes Affectron, a framework that achieves diverse and emotionally aligned nonverbal vocalization (NV) synthesis—such as laughter and sighs—on small-scale open-source disentangled corpora, via two training-time augmentation strategies: emotion-driven Top-K NV matching and emotion-aware Top-K routing. The proposed method substantially outperforms the purely language-pretrained VoiceCraft baseline.

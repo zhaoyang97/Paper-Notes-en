@@ -155,6 +155,8 @@ The core advantage of GSAlign lies in **explicitly** handling both geometric and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework](../../AAAI2026/autonomous_driving/when_person_re-identification_meets_event_camera_a_benchmark_dataset_and_an_attr.md)
@@ -162,5 +164,7 @@ The core advantage of GSAlign lies in **explicitly** handling both geometric and
 - [\[AAAI 2026\] Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification](../../AAAI2026/autonomous_driving/debiased_dual-invariant_defense_for_adversarially_robust_person_re-identificatio.md)
 - [\[ICCV 2025\] SkyDiffusion: Leveraging BEV Paradigm for Ground-to-Aerial Image Synthesis](../../ICCV2025/autonomous_driving/leveraging_bev_paradigm_for_ground-to-aerial_image_synthesis.md)
 - [\[NeurIPS 2025\] 3EED: Ground Everything Everywhere in 3D](3eed_ground_everything_everywhere_in_3d.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -129,6 +129,8 @@ Augmentation improves distribution quality (1-NNA); guidance and the interaction
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
@@ -136,5 +138,7 @@ Augmentation improves distribution quality (1-NNA); guidance and the interaction
 - [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
 - [\[NeurIPS 2025\] BEDLAM2.0: Synthetic Humans and Cameras in Motion](../../NeurIPS2025/human_understanding/bedlam20_synthetic_humans_and_cameras_in_motion.md)
 - [\[ICCV 2025\] DynFaceRestore: Balancing Fidelity and Quality in Diffusion-Guided Blind Face Restoration](dynfacerestore_balancing_fidelity_and_quality_in_diffusion-guided_blind_face_res.md)
+
+</div>
 
 <!-- RELATED:END -->

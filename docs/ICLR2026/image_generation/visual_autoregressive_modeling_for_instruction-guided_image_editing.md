@@ -134,6 +134,8 @@ For $512\times512$ editing, VAREdit-8B requires only 1.2 seconds, which is **2.2
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
@@ -141,5 +143,7 @@ For $512\times512$ editing, VAREdit-8B requires only 1.2 seconds, which is **2.2
 - [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](../../ICCV2025/image_generation/early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[NeurIPS 2025\] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation](../../NeurIPS2025/image_generation/infinitystar_unified_spacetime_autoregressive_modeling_for_v.md)
+
+</div>
 
 <!-- RELATED:END -->

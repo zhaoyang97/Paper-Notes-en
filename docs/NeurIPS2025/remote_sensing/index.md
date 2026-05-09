@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/remote_sensing/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+
+🔥 **Top topics:** Time-Series Forecasting ×2 · Remote Sensing ×2
+
 **[C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)**
 
 :   This paper introduces the C3 dataset comprising 90K ground photo–floor plan pairs (597 scenes, 153M pixel-level correspondences, and 85K camera poses), exposes the limitations of existing correspondence models under cross-view cross-modality settings (e.g., ground photos vs. floor plans), and demonstrates that training on this dataset reduces the RMSE of the best-performing baseline by 34%.

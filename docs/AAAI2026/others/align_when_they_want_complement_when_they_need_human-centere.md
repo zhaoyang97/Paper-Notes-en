@@ -114,6 +114,8 @@ Two specialist models are trained—an alignment expert $m_a$ and a complementar
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
@@ -121,5 +123,7 @@ Two specialist models are trained—an alignment expert $m_a$ and a complementar
 - [\[ICLR 2026\] When to Retrain after Drift: A Data-Only Test of Post-Drift Data Size Sufficiency](../../ICLR2026/others/when_to_retrain_after_drift_a_data-only_test_of_post-drift_data_size_sufficiency.md)
 - [\[CVPR 2026\] LoViF 2026 Challenge on Human-oriented Semantic Image Quality Assessment](../../CVPR2026/others/lovif_2026_semantic_quality_assessment_challenge.md)
 - [\[CVPR 2026\] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](../../CVPR2026/others/teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)
+
+</div>
 
 <!-- RELATED:END -->

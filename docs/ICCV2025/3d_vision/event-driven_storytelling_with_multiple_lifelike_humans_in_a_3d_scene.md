@@ -129,6 +129,8 @@ OA = Object Arrangement Reasoning, RC = Regional Context Reasoning, SS = Scene S
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
@@ -136,5 +138,7 @@ OA = Object Arrangement Reasoning, RC = Regional Context Reasoning, SS = Scene S
 - [\[ICCV 2025\] 3D Test-time Adaptation via Graph Spectral Driven Point Shift](3d_test-time_adaptation_via_graph_spectral_driven_point_shift.md)
 - [\[ICCV 2025\] Event-based Tiny Object Detection: A Benchmark Dataset and Baseline](event-based_tiny_object_detection_a_benchmark_dataset_and_baseline.md)
 - [\[ICCV 2025\] EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images](evagaussians_event_stream_assisted_gaussian_splatting_from_blurry_images.md)
+
+</div>
 
 <!-- RELATED:END -->

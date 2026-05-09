@@ -148,6 +148,8 @@ Radial Attention is a static sparse attention mechanism that replaces dense atte
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
@@ -155,5 +157,7 @@ Radial Attention is a static sparse attention mechanism that replaces dense atte
 - [\[NeurIPS 2025\] S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation](s2q-vdit_accurate_quantized_video_diffusion_transformer_with_salient_data_and_sp.md)
 - [\[NeurIPS 2025\] Scaling RL to Long Videos](scaling_rl_to_long_videos.md)
 - [\[NeurIPS 2025\] Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models](video_killed_the_energy_budget_characterizing_the_latency_and_power_regimes_of_o.md)
+
+</div>
 
 <!-- RELATED:END -->

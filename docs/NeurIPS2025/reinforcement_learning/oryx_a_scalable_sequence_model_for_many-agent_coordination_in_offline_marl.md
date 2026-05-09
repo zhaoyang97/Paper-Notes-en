@@ -129,6 +129,8 @@ $$J_Q(\phi) = \mathbb{E}_\mathcal{B}\left[\left(r + \gamma \frac{\exp(Q_{\phi^-}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models](communicating_plans_not_percepts_scalable_multi-agent_coordination_with_embodied.md)
@@ -136,5 +138,7 @@ $$J_Q(\phi) = \mathbb{E}_\mathcal{B}\left[\left(r + \gamma \frac{\exp(Q_{\phi^-}
 - [\[NeurIPS 2025\] Incremental Sequence Classification with Temporal Consistency](incremental_sequence_classification_with_temporal_consistency.md)
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
 - [\[NeurIPS 2025\] Horizon Reduction Makes RL Scalable](horizon_reduction_makes_rl_scalable.md)
+
+</div>
 
 <!-- RELATED:END -->

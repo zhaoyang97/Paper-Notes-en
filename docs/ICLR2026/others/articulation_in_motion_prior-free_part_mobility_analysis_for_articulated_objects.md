@@ -126,6 +126,8 @@ AiM takes as input an interaction video of a human manipulating an articulated o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
@@ -133,5 +135,7 @@ AiM takes as input an interaction video of a human manipulating an articulated o
 - [\[CVPR 2026\] Stronger Normalization-Free Transformers](../../CVPR2026/others/stronger_normalization-free_transformers.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](../../CVPR2026/others/next-scale_autoregressive_models_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] DirPA: Addressing Prior Shift in Imbalanced Few-shot Crop-type Classification](../../CVPR2026/others/dirpa_addressing_prior_shift_in_imbalanced_few-shot_crop-type_classification.md)
+
+</div>
 
 <!-- RELATED:END -->

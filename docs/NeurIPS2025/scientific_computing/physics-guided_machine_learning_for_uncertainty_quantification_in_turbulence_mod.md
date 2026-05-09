@@ -131,6 +131,8 @@ The hybrid ML–EPM framework operates on two levels. At the physics level, EPM 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](../../AAAI2026/scientific_computing/scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
@@ -138,5 +140,7 @@ The hybrid ML–EPM framework operates on two levels. At the physics level, EPM 
 - [\[NeurIPS 2025\] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data](neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin.md)
 - [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
 - [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
+
+</div>
 
 <!-- RELATED:END -->

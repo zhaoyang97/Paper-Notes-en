@@ -135,6 +135,8 @@ Images of a known-spectrum light source transmitted through an uncalibrated diff
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](../../ICLR2026/llm_evaluation/spectral_attention_steering_for_prompt_highlighting.md)
@@ -142,5 +144,7 @@ Images of a known-spectrum light source transmitted through an uncalibrated diff
 - [\[NeurIPS 2025\] HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild](../../NeurIPS2025/llm_evaluation/houselayout3d_a_benchmark_and_training-free_baseline_for_3d_layout_estimation_in.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/llm_evaluation/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
 - [\[CVPR 2026\] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](../../CVPR2026/llm_evaluation/hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)
+
+</div>
 
 <!-- RELATED:END -->

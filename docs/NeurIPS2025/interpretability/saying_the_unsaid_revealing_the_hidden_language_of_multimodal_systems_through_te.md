@@ -112,6 +112,8 @@ This paper does not involve model training. The entire framework is a purely tes
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Evaluating LLMs in Open-Source Games](evaluating_llms_in_open-source_games.md)
@@ -119,5 +121,7 @@ This paper does not involve model training. The entire framework is a purely tes
 - [\[NeurIPS 2025\] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement](far_from_the_shallow_brain-predictive_reasoning_embedding_through_residual_disen.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
 - [\[NeurIPS 2025\] The Trilemma of Truth in Large Language Models](the_trilemma_of_truth_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

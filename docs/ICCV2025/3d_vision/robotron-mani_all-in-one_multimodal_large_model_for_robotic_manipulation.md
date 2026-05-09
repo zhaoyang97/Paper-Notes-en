@@ -136,6 +136,8 @@ Note: RoboTron-Mani is the only generalist policy evaluated simultaneously acros
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
@@ -143,5 +145,7 @@ Note: RoboTron-Mani is the only generalist policy evaluated simultaneously acros
 - [\[CVPR 2026\] Ada3Drift: Adaptive Training-Time Drifting for One-Step 3D Visuomotor Robotic Manipulation](../../CVPR2026/3d_vision/ada3drift_adaptive_training-time_drifting_for_one-step_3d_visuomotor_robotic_man.md)
 - [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](../../NeurIPS2025/3d_vision/dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
 - [\[NeurIPS 2025\] SceneWeaver: All-in-One 3D Scene Synthesis with an Extensible and Self-Reflective Agent](../../NeurIPS2025/3d_vision/sceneweaver_all-in-one_3d_scene_synthesis_with_an_extensible_and_self-reflective.md)
+
+</div>
 
 <!-- RELATED:END -->

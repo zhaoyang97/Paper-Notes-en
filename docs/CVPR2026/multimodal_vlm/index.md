@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **287** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (52)](../../ACL2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (93)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (92)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (151)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (142)](../../ICCV2025/multimodal_vlm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×162 · Reasoning ×27 · LLM ×25 · Adversarial Robustness ×16 · Alignment/RLHF ×13
+
 **[A3: Towards Advertising Aesthetic Assessment](a3_towards_advertising_aesthetic_assessment.md)**
 
 :   This paper proposes the A3 framework, comprising a theory-driven three-stage advertising aesthetic assessment paradigm A3-Law (Perceptual Attention → Formal Interest → Desire Impact), a 120K-annotation dataset A3-Dataset, an SFT+GRPO aligned model A3-Align, and the evaluation benchmark A3-Bench. A3-Align surpasses existing MLLMs on automated advertising aesthetic assessment.

@@ -154,6 +154,8 @@ Note: Competing methods are deterministic models; their multiple predictions are
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness](../../ACL2026/image_restoration/purging_the_gray_zone_latent-geometric_denoising_for_precise_knowledge_boundary_.md)
@@ -161,5 +163,7 @@ Note: Competing methods are deterministic models; their multiple predictions are
 - [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
 - [\[ICCV 2025\] Consistent Time-of-Flight Depth Denoising via Graph-Informed Geometric Attention](consistent_time-of-flight_depth_denoising_via_graph-informed_geometric_attention.md)
 - [\[ICCV 2025\] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising](self-calibrated_variance-stabilizing_transformations_for_real-world_image_denois.md)
+
+</div>
 
 <!-- RELATED:END -->

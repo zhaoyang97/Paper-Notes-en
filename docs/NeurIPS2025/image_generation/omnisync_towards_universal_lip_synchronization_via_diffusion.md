@@ -146,6 +146,8 @@ User study (5-point scale, 39 participants): OmniSync leads across all five dime
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
@@ -153,5 +155,7 @@ User study (5-point scale, 39 participants): OmniSync leads across all five dime
 - [\[NeurIPS 2025\] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations](unleashing_diffusion_transformers_for_visual_correspondence_by_modulating_massiv.md)
 - [\[CVPR 2026\] The Universal Normal Embedding](../../CVPR2026/image_generation/the_universal_normal_embedding.md)
 - [\[ICCV 2025\] OmniVTON: Training-Free Universal Virtual Try-On](../../ICCV2025/image_generation/omnivton_training-free_universal_virtual_try-on.md)
+
+</div>
 
 <!-- RELATED:END -->

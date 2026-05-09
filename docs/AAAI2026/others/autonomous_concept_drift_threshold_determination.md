@@ -178,6 +178,8 @@ The core ablations for DTD are established theoretically through the three theor
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] On the Variability of Concept Activation Vectors](on_the_variability_of_concept_activation_vectors.md)
@@ -185,5 +187,7 @@ The core ablations for DTD are established theoretically through the three theor
 - [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
 - [\[NeurIPS 2025\] FACE: Faithful Automatic Concept Extraction](../../NeurIPS2025/others/face_faithful_automatic_concept_extraction.md)
 - [\[CVPR 2026\] U-F²-CBM: CLIP-Free, Label Free, Unsupervised Concept Bottleneck Models](../../CVPR2026/others/clipfree_label_free_unsupervised_concept_bottlenec.md)
+
+</div>
 
 <!-- RELATED:END -->

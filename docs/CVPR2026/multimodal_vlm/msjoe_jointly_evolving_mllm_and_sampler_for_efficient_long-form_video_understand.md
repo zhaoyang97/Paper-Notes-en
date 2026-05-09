@@ -117,6 +117,8 @@ A four-step inference pipeline: (1) MLLM-guided query generation — the MLLM in
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
@@ -124,5 +126,7 @@ A four-step inference pipeline: (1) MLLM-guided query generation — the MLLM in
 - [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](docseeker_long_document_understanding.md)
 - [\[AAAI 2026\] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding](../../AAAI2026/multimodal_vlm/exo2ego_exocentric_knowledge_guided_mllm_for_egocentric_vide.md)
 - [\[NeurIPS 2025\] in the eye of mllm benchmarking egocentric video intent understanding with gaze-](../../NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ After RLPA training, the 3B model surpasses GPT-4o and Claude-3.5-Sonnet in alig
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
@@ -134,5 +136,7 @@ After RLPA training, the 3B model surpasses GPT-4o and Claude-3.5-Sonnet in alig
 - [\[NeurIPS 2025\] Behavior Injection: Preparing Language Models for Reinforcement Learning](behavior_injection_preparing_language_models_for_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning](router-r1_teaching_llms_multi-round_routing_and_aggregation_via_reinforcement_le.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
+
+</div>
 
 <!-- RELATED:END -->

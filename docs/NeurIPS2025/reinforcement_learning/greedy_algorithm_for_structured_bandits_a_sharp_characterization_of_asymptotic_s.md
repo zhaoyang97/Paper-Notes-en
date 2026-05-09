@@ -131,6 +131,8 @@ $$f_t = \arg\min_{f \in \mathcal{F}} \sum_{s \in [t]} (f(x_s,a_s) - r_s)^2, \qua
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
@@ -138,5 +140,7 @@ $$f_t = \arg\min_{f \in \mathcal{F}} \sum_{s \in [t]} (f(x_s,a_s) - r_s)^2, \qua
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
 - [\[NeurIPS 2025\] Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm](trust_region_reward_optimization_and_proximal_inverse_reward_optimization_algori.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -193,6 +193,8 @@ $$D_\phi(\lambda^*, \lambda_t) \leq (1 - \mu\eta)^t \cdot D_\phi(\lambda^*, \lam
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
@@ -200,5 +202,7 @@ $$D_\phi(\lambda^*, \lambda_t) \leq (1 - \mu\eta)^t \cdot D_\phi(\lambda^*, \lam
 - [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
 - [\[NeurIPS 2025\] Non-Stationary Bandit Convex Optimization: A Comprehensive Study](non-stationary_bandit_convex_optimization_a_comprehensive_study.md)
 - [\[NeurIPS 2025\] Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful](small_batch_size_training_for_language_models_when_vanilla_sgd_works_and_why_gra.md)
+
+</div>
 
 <!-- RELATED:END -->

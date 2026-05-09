@@ -183,6 +183,8 @@ Robustness test (point cloud noise / sparsity / LangSAM errors):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GOATex: Geometry & Occlusion-Aware Texturing](goatex_geometry_occlusion-aware_texturing.md)
@@ -190,5 +192,7 @@ Robustness test (point cloud noise / sparsity / LangSAM errors):
 - [\[NeurIPS 2025\] WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild](wildcat3d_appearance-aware_multi-view_diffusion_in_the_wild.md)
 - [\[NeurIPS 2025\] SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference](singref6d_monocular_novel_object_pose_estimation_with_a_single_rgb_reference.md)
 - [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](../../ICCV2025/3d_vision/from_image_to_video_an_empirical_study_of_diffusion_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

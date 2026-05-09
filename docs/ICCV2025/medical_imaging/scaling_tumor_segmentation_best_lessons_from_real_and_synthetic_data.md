@@ -164,6 +164,8 @@ Key finding: **500 real cases + 3× synthetic data ≈ 1,500 real-only cases in 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
@@ -171,5 +173,7 @@ Key finding: **500 real cases + 3× synthetic data ≈ 1,500 real-only cases in 
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](../../NeurIPS2025/medical_imaging/mira_medical_time_series_foundation_model_for_real-world_health_data.md)
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
 - [\[AAAI 2026\] Constrained Best Arm Identification with Tests for Feasibility](../../AAAI2026/medical_imaging/constrained_best_arm_identification_with_tests_for_feasibility.md)
+
+</div>
 
 <!-- RELATED:END -->

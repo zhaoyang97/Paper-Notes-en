@@ -125,6 +125,8 @@ Between two learning phases (e.g., task transitions, midpoint of RL training), e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Plasticity as the Mirror of Empowerment](../../NeurIPS2025/others/plasticity_as_the_mirror_of_empowerment.md)
@@ -132,5 +134,7 @@ Between two learning phases (e.g., task transitions, midpoint of RL training), e
 - [\[AAAI 2026\] Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance](../../AAAI2026/others/guided_perturbation_sensitivity_gps_detecting_adversarial_text_via_embedding_sta.md)
 - [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](../../CVPR2026/others/your_classifier_can_do_more_towards_balancing_the.md)
 - [\[NeurIPS 2025\] Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback](../../NeurIPS2025/others/meta-learning_three-factor_plasticity_rules_for_structured_credit_assignment_wit.md)
+
+</div>
 
 <!-- RELATED:END -->

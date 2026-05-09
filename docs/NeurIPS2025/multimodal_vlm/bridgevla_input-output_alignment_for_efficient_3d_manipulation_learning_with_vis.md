@@ -150,6 +150,8 @@ $$H_i^{gt}(\mathbf{x}) = \begin{cases} \exp(-\|\mathbf{x}-\hat{\mathbf{x}_i}\|^2
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
@@ -157,5 +159,7 @@ $$H_i^{gt}(\mathbf{x}) = \begin{cases} \exp(-\|\mathbf{x}-\hat{\mathbf{x}_i}\|^2
 - [\[NeurIPS 2025\] Learning to Steer: Input-dependent Steering for Multimodal LLMs](learning_to_steer_input-dependent_steering_for_multimodal_llms.md)
 - [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](../../CVPR2026/multimodal_vlm/pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
 - [\[NeurIPS 2025\] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging](better_tokens_for_better_3d_advancing_vision-language_modeling_in_3d_medical_ima.md)
+
+</div>
 
 <!-- RELATED:END -->

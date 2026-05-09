@@ -157,6 +157,8 @@ Additional findings:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations](../../ACL2026/others/agree_disagree_explain_decomposing_human_label_variation_in_nli_through_the_lens.md)
@@ -164,5 +166,7 @@ Additional findings:
 - [\[ICCV 2025\] I Am Big, You Are Little; I Am Right, You Are Wrong](i_am_big_you_are_little_i_am_right_you_are_wrong.md)
 - [\[ICCV 2025\] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery](generate_refine_and_encode_leveraging_synthesized_novel_samples_for_on-the-fly_f.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
+
+</div>
 
 <!-- RELATED:END -->

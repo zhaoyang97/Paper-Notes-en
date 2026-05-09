@@ -172,6 +172,8 @@ ToC models patent claim optimization as a **sequential decision problem**: given
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
@@ -179,5 +181,7 @@ ToC models patent claim optimization as a **sequential decision problem**: given
 - [\[ICLR 2026\] MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning](../../ICLR2026/interpretability/mata_a_trainable_hierarchical_automaton_system_for_multi-agent_visual_reasoning.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
 - [\[ACL 2026\] To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems](../../ACL2026/interpretability/to_trust_or_not_to_trust_attention-based_trust_management_for_llm_multi-agent_sy.md)
+
+</div>
 
 <!-- RELATED:END -->

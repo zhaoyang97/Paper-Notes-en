@@ -162,6 +162,8 @@ PlanU improves task completion rate on TravelPlanner by 61% (vs. LATS) and succe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](../../ACL2026/time_series/learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)
@@ -169,5 +171,7 @@ PlanU improves task completion rate on TravelPlanner by 61% (vs. LATS) and succe
 - [\[NeurIPS 2025\] Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition](human-machine_ritual_synergic_performance_through_real-time_motion_recognition.md)
 - [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
 - [\[NeurIPS 2025\] Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification](diffusion_transformers_for_imputation_statistical_efficiency_and_uncertainty_qua.md)
+
+</div>
 
 <!-- RELATED:END -->

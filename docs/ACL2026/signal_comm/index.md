@@ -10,6 +10,8 @@ description: >-
 
 **💬 ACL2026** · **3** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+
 **[PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)**
 
 :   This paper proposes PolicyBench (a 21K-question cross-system policy understanding benchmark spanning China and the US) and PolicyMoE (a cognitive-level-aligned Mixture of Experts model), systematically evaluating 11 SOTA LLMs across memory/understanding/application cognitive levels and finding that models perform well on structured reasoning but remain weak on abstract policy concepts.

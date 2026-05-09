@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (103)](../../CVPR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (78)](../../ICCV2025/segmentation/index.md)
+
+🔥 **Top topics:** Diffusion Models ×2
+
 **[AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)**
 
 :   This paper proposes an Alignment-aware Masked Learning (AML) strategy that quantifies vision-language patch-level alignment and filters low-alignment pixels, enabling RIS models to focus on reliable regions during training. Without any architectural modifications, AML achieves state-of-the-art performance across all 8 splits of RefCOCO benchmarks.

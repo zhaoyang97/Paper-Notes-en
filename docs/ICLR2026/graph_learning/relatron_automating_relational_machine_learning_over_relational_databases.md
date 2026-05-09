@@ -122,6 +122,8 @@ Relatron achieves up to 18.5% improvement over strong baselines in joint HPO, at
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Relational Graph Transformer](relational_graph_transformer.md)
@@ -129,5 +131,7 @@ Relatron achieves up to 18.5% improvement over strong baselines in joint HPO, at
 - [\[NeurIPS 2025\] When No Paths Lead to Rome: Benchmarking Systematic Neural Relational Reasoning](../../NeurIPS2025/graph_learning/when_no_paths_lead_to_rome_benchmarking_systematic_neural_relational_reasoning.md)
 - [\[ICLR 2026\] A Geometric Perspective on the Difficulties of Learning GNN-based SAT Solvers](a_geometric_perspective_on_the_difficulties_of_learning_gnn-based_sat_solvers.md)
 - [\[AAAI 2026\] GSAP-ERE: Fine-Grained Scholarly Entity and Relation Extraction Focused on Machine Learning](../../AAAI2026/graph_learning/gsap-ere_fine-grained_scholarly_entity_and_relation_extraction_focused_on_machin.md)
+
+</div>
 
 <!-- RELATED:END -->

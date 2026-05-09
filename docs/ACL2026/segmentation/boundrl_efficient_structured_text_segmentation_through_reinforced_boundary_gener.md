@@ -131,6 +131,8 @@ SFT stage uses standard cross-entropy loss training for 1 epoch. RLVR stage uses
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](../../CVPR2026/segmentation/wsrvos_weakly_supervised_rvos.md)
@@ -138,5 +140,7 @@ SFT stage uses standard cross-entropy loss training for 1 epoch. RLVR stage uses
 - [\[NeurIPS 2025\] TabRAG: Improving Tabular Document Question Answering for Retrieval Augmented Generation via Structured Representations](../../NeurIPS2025/segmentation/tabrag_improving_tabular_document_question_answering_for_retrieval_augmented_gen.md)
 - [\[CVPR 2026\] PRUE: A Practical Recipe for Field Boundary Segmentation at Scale](../../CVPR2026/segmentation/prue_a_practical_recipe_for_field_boundary_segmentation_at_scale.md)
 - [\[CVPR 2026\] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation](../../CVPR2026/segmentation/lemma_laplacian_pyramids_for_efficient_marine_semantic_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

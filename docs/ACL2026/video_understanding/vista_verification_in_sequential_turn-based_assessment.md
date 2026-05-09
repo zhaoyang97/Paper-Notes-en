@@ -137,6 +137,8 @@ VISTA requires no training—it is a prompt-based evaluation framework that invo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/video_understanding/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
@@ -144,5 +146,7 @@ VISTA requires no training—it is a prompt-based evaluation framework that invo
 - [\[ICLR 2026\] AnveshanaAI: A Multimodal Platform for Adaptive AI/ML Education through Automated Question Generation and Interactive Assessment](../../ICLR2026/video_understanding/anveshanaai_a_multimodal_platform_for_adaptive_aiml_education_through_automated_.md)
 - [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
+
+</div>
 
 <!-- RELATED:END -->

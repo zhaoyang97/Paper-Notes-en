@@ -128,6 +128,8 @@ BabyLLaVA follows the standard LLaVA training procedure on the curated developme
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining](../../NeurIPS2025/multimodal_vlm/adalrs_lossguided_adaptive_learning_rate_search_for_efficien.md)
@@ -135,5 +137,7 @@ BabyLLaVA follows the standard LLaVA training procedure on the curated developme
 - [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
 - [\[CVPR 2026\] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning](../../CVPR2026/multimodal_vlm/similarity-as-evidence_calibrating_overconfident_vlms_for_interpretable_and_labe.md)
 - [\[NeurIPS 2025\] Learning Shared Representations from Unpaired Data](../../NeurIPS2025/multimodal_vlm/learning_shared_representations_from_unpaired_data.md)
+
+</div>
 
 <!-- RELATED:END -->

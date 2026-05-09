@@ -151,6 +151,8 @@ where $\bar{n}_I = \text{mean}_{j \in I} \|\bm{m}_j\|_2$ is the typical norm of 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](query-level_uncertainty_in_large_language_models.md)
@@ -158,5 +160,7 @@ where $\bar{n}_I = \text{mean}_{j \in I} \|\bm{m}_j\|_2$ is the typical norm of 
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
 - [\[ICLR 2026\] Flow of Spans: Generalizing Language Models to Dynamic Span-Vocabulary via GFlowNets](flow_of_spans_generalizing_language_models_to_dynamic_span-vocabulary_via_gflown.md)
 - [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/information_retrieval/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
+
+</div>
 
 <!-- RELATED:END -->

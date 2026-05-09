@@ -155,6 +155,8 @@ GFP establishes a bidirectional learning paradigm between an encoder–decoder a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](general_compression_framework_for_efficient_transformer_object_tracking.md)
@@ -162,5 +164,7 @@ GFP establishes a bidirectional learning paradigm between an encoder–decoder a
 - [\[ICCV 2025\] BlinkTrack: Feature Tracking over 80 FPS via Events and Images](blinktrack_feature_tracking_over_80_fps_via_events_and_images.md)
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
+
+</div>
 
 <!-- RELATED:END -->

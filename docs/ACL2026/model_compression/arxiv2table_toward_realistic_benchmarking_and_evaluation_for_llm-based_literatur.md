@@ -128,6 +128,8 @@ Input papers are processed in batches; within each batch, paper filtering and sc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents](yield_a_large-scale_dataset_and_evaluation_framework_for_information_elicitation.md)
@@ -135,5 +137,7 @@ Input papers are processed in batches; within each batch, paper filtering and sc
 - [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](../../ICLR2026/model_compression/beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
 - [\[NeurIPS 2025\] Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users](../../NeurIPS2025/model_compression/offline_policy_evaluation_of_multi-turn_llm_health_coaching_with_real_users.md)
 - [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](supplement_generation_training_for_enhancing_agentic_task_performance.md)
+
+</div>
 
 <!-- RELATED:END -->

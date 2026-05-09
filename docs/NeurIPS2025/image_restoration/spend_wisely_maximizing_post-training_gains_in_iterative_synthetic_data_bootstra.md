@@ -154,6 +154,8 @@ Llama-3-8B-Base is fully fine-tuned and evaluated on three difficulty levels of 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Outlier-Aware Post-Training Quantization for Image Super-Resolution](../../ICCV2025/image_restoration/outlier-aware_post-training_quantization_for_image_super-resolution.md)
@@ -161,5 +163,7 @@ Llama-3-8B-Base is fully fine-tuned and evaluated on three difficulty levels of 
 - [\[ICLR 2026\] DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation](../../ICLR2026/image_restoration/diffusionblocks_block-wise_neural_network_training_via_diffusion_interpretation.md)
 - [\[CVPR 2026\] RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](../../CVPR2026/image_restoration/rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
 - [\[AAAI 2026\] RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation](../../AAAI2026/image_restoration/refidiff_progressive_refinement_diffusion_for_efficient_missing_data_imputation.md)
+
+</div>
 
 <!-- RELATED:END -->

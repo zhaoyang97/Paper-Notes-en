@@ -147,6 +147,8 @@ GPT-4V and human evaluation (10-point scale):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs](panollama_generating_endless_and_coherent_panoramas_with_next-token-prediction_l.md)
@@ -154,5 +156,7 @@ GPT-4V and human evaluation (10-point scale):
 - [\[ICCV 2025\] Long-Context State-Space Video World Models](long-context_state-space_video_world_models.md)
 - [\[ACL 2026\] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation](../../ACL2026/image_generation/from_past_to_path_masked_history_learning_for_next-item_prediction_in_generative.md)
 - [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
+
+</div>
 
 <!-- RELATED:END -->

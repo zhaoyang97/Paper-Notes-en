@@ -127,6 +127,8 @@ This work is closely related to slow feature analysis, frame-ordering self-super
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
@@ -134,5 +136,7 @@ This work is closely related to slow feature analysis, frame-ordering self-super
 - [\[NeurIPS 2025\] Hankel Singular Value Regularization for Highly Compressible State Space Models](hankel_singular_value_regularization_for_highly_compressible_state_space_models.md)
 - [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](../../AAAI2026/model_compression/towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
 - [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
+
+</div>
 
 <!-- RELATED:END -->

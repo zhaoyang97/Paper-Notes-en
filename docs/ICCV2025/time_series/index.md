@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **4** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (35)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/time_series/index.md)
+
+🔥 **Top topics:** Time-Series Forecasting ×2
+
 **[I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting](i2-world_intra-inter_tokenization_for_efficient_dynamic_4d_scene_forecasting.md)**
 
 :   This paper proposes I²-World, which decouples 3D scene tokenization into two complementary processes — intra-scene multi-scale residual quantization and inter-scene temporal quantization — thereby retaining the high compression ratio of 3D tokenizers while incorporating the temporal modeling capability of 4D tokenizers, enabling efficient and high-quality 4D occupancy forecasting.

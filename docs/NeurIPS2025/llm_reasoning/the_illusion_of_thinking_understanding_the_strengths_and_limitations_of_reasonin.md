@@ -122,6 +122,8 @@ LRMs delay the collapse threshold by 2–3 levels, yet ultimately collapse compl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Controlling Thinking Speed in Reasoning Models](controlling_thinking_speed_in_reasoning_models.md)
@@ -129,5 +131,7 @@ LRMs delay the collapse threshold by 2–3 levels, yet ultimately collapse compl
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
 - [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
 - [\[ICLR 2026\] The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models](../../ICLR2026/llm_reasoning/the_first_impression_problem_internal_bias_triggers_overthinking_in_reasoning_mo.md)
+
+</div>
 
 <!-- RELATED:END -->

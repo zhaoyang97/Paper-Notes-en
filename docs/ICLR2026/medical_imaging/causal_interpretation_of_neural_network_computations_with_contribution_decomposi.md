@@ -125,6 +125,8 @@ The Sparse Autoencoder is trained on 50,000 images from the ImageNet validation 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Intrinsic Lorentz Neural Network](intrinsic_lorentz_neural_network.md)
@@ -132,5 +134,7 @@ The Sparse Autoencoder is trained on 50,000 images from the ImageNet validation 
 - [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
 - [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](../../CVPR2026/medical_imaging/cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
 - [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](../../AAAI2026/medical_imaging/mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
+
+</div>
 
 <!-- RELATED:END -->

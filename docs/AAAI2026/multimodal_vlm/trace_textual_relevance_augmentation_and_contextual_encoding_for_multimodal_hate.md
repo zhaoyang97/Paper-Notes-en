@@ -120,6 +120,8 @@ Three losses are jointly optimized: classification loss $\mathcal{L}_{\text{cls}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](panda_test-time_adaptation_with_negative_data_augmentation.md)
@@ -127,5 +129,7 @@ Three losses are jointly optimized: classification loss $\mathcal{L}_{\text{cls}
 - [\[ICLR 2026\] Context Tokens are Anchors: Understanding the Repetition Curse in dMLLMs from an Information Flow Perspective](../../ICLR2026/multimodal_vlm/context_tokens_are_anchors_understanding_the_repetition_curse_in_dmllms_from_an_.md)
 - [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](../../CVPR2026/multimodal_vlm/text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
 - [\[NeurIPS 2025\] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning](../../NeurIPS2025/multimodal_vlm/midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le.md)
+
+</div>
 
 <!-- RELATED:END -->

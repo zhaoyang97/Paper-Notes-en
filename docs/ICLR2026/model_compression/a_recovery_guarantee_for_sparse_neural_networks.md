@@ -117,6 +117,8 @@ MSE loss $f(w) = \frac{1}{2}\|Aw - y\|_2^2$, with IHT update $w^{k+1} = H_{\tild
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
@@ -124,5 +126,7 @@ MSE loss $f(w) = \frac{1}{2}\|Aw - y\|_2^2$, with IHT update $w^{k+1} = H_{\tild
 - [\[ICLR 2026\] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size](topology_and_geometry_of_the_learning_space_of_relu_networks_connectivity_and_si.md)
 - [\[ICLR 2026\] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery](paser_post-training_data_selection_for_efficient_pruned_large_language_model_rec.md)
 - [\[NeurIPS 2025\] Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks](../../NeurIPS2025/model_compression/global_minimizers_of_ellp-regularized_objectives_yield_the_sparsest_relu_neural_.md)
+
+</div>
 
 <!-- RELATED:END -->

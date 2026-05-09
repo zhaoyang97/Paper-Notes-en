@@ -116,6 +116,8 @@ Standard spatial information $SI = \sum_i p_i \frac{r_i}{\bar{r}} \log_2 \frac{r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
@@ -123,5 +125,7 @@ Standard spatial information $SI = \sum_i p_i \frac{r_i}{\bar{r}} \log_2 \frac{r
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](../../AAAI2026/others/how_to_marginalize_in_causal_structure_learning.md)
 - [\[NeurIPS 2025\] RNNs Perform Task Computations by Dynamically Warping Neural Representations](../../NeurIPS2025/others/rnns_perform_task_computations_by_dynamically_warping_neural_representations.md)
 - [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](../../NeurIPS2025/others/sheaf_cohomology_of_linear_predictive_coding_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

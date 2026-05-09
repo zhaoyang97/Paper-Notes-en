@@ -120,6 +120,8 @@ The core mechanism of SCAR is to jointly train the teacher model and a surrogate
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
@@ -127,5 +129,7 @@ The core mechanism of SCAR is to jointly train the teacher model and a surrogate
 - [\[ICCV 2025\] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack](../../ICCV2025/ai_safety/mind_the_cost_of_scaffold_benign_clients_may_even_become_accomplices_of_backdoor.md)
 - [\[NeurIPS 2025\] Deceptron: Learned Local Inverses for Fast and Stable Physics Inversion](deceptron_learned_local_inverses_for_fast_and_stable_physics_inversion.md)
 - [\[NeurIPS 2025\] Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification](stealthy_yet_effective_distribution-preserving_backdoor_attacks_on_graph_classif.md)
+
+</div>
 
 <!-- RELATED:END -->

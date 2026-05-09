@@ -137,6 +137,8 @@ At each step, the forward Markov chain is simulated to obtain $\theta_{t-1}$, an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orient Anything V2: Unifying Orientation and Rotation Understanding](orient_anything_v2_unifying_orientation_and_rotation_understanding.md)
@@ -144,5 +146,7 @@ At each step, the forward Markov chain is simulated to obtain $\theta_{t-1}$, an
 - [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] Diffusion Models Meet Contextual Bandits](diffusion_models_meet_contextual_bandits.md)
 - [\[NeurIPS 2025\] System-Embedded Diffusion Bridge Models](system-embedded_diffusion_bridge_models.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -146,6 +146,8 @@ The IRR score of automated judgment is comparable to that among human annotators
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
@@ -153,5 +155,7 @@ The IRR score of automated judgment is comparable to that among human annotators
 - [\[ICCV 2025\] OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography](oraclefusion_assisting_the_decipherment_of_oracle_bone_script_with_structurally_.md)
 - [\[AAAI 2026\] Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference](../../AAAI2026/multimodal_vlm/tri-bench_stress-testing_vlm_reliability_on_spatial_reasoning_under_camera_tilt_.md)
 - [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
+
+</div>
 
 <!-- RELATED:END -->

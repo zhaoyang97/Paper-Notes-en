@@ -124,6 +124,8 @@ Temporally-aware DCAE decoder:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](drivex_omni_scene_modeling_for_learning_generalizable_world_knowledge_in_autonom.md)
@@ -131,5 +133,7 @@ Temporally-aware DCAE decoder:
 - [\[ICLR 2026\] Astra: General Interactive World Model with Autoregressive Denoising](../../ICLR2026/autonomous_driving/astra_general_interactive_world_model_with_autoregressive_denoising.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
 - [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -126,6 +126,8 @@ Agentic Predictor comprises three stages: (a) a multi-view workflow encoder that
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](../../ACL2026/model_compression/supplement_generation_training_for_enhancing_agentic_task_performance.md)
@@ -133,5 +135,7 @@ Agentic Predictor comprises three stages: (a) a multi-view workflow encoder that
 - [\[ICLR 2026\] Parallel Token Prediction for Language Models](parallel_token_prediction_for_language_models.md)
 - [\[ICLR 2026\] A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA](a_fano-style_accuracy_upper_bound_for_llm_single-pass_reasoning_in_multi-hop_qa.md)
 - [\[ICLR 2026\] Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks](distilling_and_adapting_a_topology-aware_framework_for_zero-shot_interaction_pre.md)
+
+</div>
 
 <!-- RELATED:END -->

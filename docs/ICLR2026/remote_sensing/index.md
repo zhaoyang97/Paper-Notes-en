@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **6** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/remote_sensing/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×2
+
 **[AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)**
 
 :   This paper proposes AutoFly, an end-to-end VLA model for UAV autonomous navigation in the wild. It infers spatial information from RGB inputs via a pseudo-depth encoder, and is trained on a newly constructed autonomous navigation dataset (13K+ trajectories including 1K real flights). AutoFly achieves 3.9% higher success rate and 2.6% lower collision rate than OpenVLA in both simulated and real environments.

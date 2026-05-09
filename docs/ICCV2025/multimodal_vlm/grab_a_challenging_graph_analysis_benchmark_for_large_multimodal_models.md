@@ -170,6 +170,8 @@ All 20 evaluated LMMs perform extremely poorly. The strongest model, Claude 3.5 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging](finmmr_make_financial_numerical_reasoning_more_multimodal_comprehensive_and_chal.md)
@@ -177,5 +179,7 @@ All 20 evaluated LMMs perform extremely poorly. The strongest model, Claude 3.5 
 - [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
 - [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
 - [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

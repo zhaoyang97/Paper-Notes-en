@@ -182,6 +182,8 @@ SECA is built upon CLIP and comprises frozen visual and text encoders, learnable
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](../../CVPR2026/multimodal_vlm/continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
@@ -189,5 +191,7 @@ SECA is built upon CLIP and comprises frozen visual and text encoders, learnable
 - [\[CVPR 2026\] KEC: Hierarchical Textual Knowledge for Enhanced Image Clustering](../../CVPR2026/multimodal_vlm/kec_hierarchical_textual_knowledge_clustering.md)
 - [\[AAAI 2026\] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning](bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_.md)
 - [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](../../NeurIPS2025/multimodal_vlm/hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
+
+</div>
 
 <!-- RELATED:END -->

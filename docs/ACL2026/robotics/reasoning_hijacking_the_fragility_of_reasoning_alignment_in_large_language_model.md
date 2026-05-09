@@ -60,6 +60,8 @@ This paper introduces "Reasoning Hijacking," a new attack paradigm that manipula
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models](grasprune_global_gating_for_budgeted_structured_pruning_of_large_language_models.md)
@@ -67,5 +69,7 @@ This paper introduces "Reasoning Hijacking," a new attack paradigm that manipula
 - [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](../../ICLR2026/robotics/synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
 - [\[ICLR 2026\] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](../../ICLR2026/robotics/sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)
 - [\[ICLR 2026\] JULI: Jailbreak Large Language Models by Self-Introspection](../../ICLR2026/robotics/juli_jailbreak_large_language_models_by_self-introspection.md)
+
+</div>
 
 <!-- RELATED:END -->

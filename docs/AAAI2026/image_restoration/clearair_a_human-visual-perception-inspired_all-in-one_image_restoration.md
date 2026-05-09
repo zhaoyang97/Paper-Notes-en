@@ -154,6 +154,8 @@ ClearAIR achieves 29.34 dB / 0.886 SSIM, surpassing OneRestore (28.72 dB) by 0.6
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](../../ICCV2025/image_restoration/eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
@@ -161,5 +163,7 @@ ClearAIR achieves 29.34 dB / 0.886 SSIM, surpassing OneRestore (28.72 dB) by 0.6
 - [\[AAAI 2026\] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration](clear_nights_ahead_towards_multi-weather_nighttime_image_res.md)
 - [\[ACL 2026\] Diffusion-CAM: Faithful Visual Explanations for dMLLMs](../../ACL2026/image_restoration/diffusion-cam_faithful_visual_explanations_for_dmllms.md)
 - [\[AAAI 2026\] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement](iclr_inter-chrominance_and_luminance_interaction_for_natural_color_restoration_i.md)
+
+</div>
 
 <!-- RELATED:END -->

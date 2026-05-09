@@ -203,6 +203,8 @@ PUMA with only 2,000 users outperforms random sampling with 6,000 users.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Highly Efficient and Effective LLMs with Multi-Boolean Architectures](../../ICLR2026/model_compression/highly_efficient_and_effective_llms_with_multi-boolean_architectures.md)
@@ -210,5 +212,7 @@ PUMA with only 2,000 users outperforms random sampling with 6,000 users.
 - [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
 - [\[AAAI 2026\] LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence](lexchronos_an_agentic_framework_for_structured_event_timeline_extraction_in_indi.md)
+
+</div>
 
 <!-- RELATED:END -->

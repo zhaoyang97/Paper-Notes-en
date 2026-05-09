@@ -176,6 +176,8 @@ Systematic evaluation across 8 models × 4 benchmarks; representative results ar
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](../../ACL2026/model_compression/selar_selective_latent_reasoning_in_large_language_models.md)
@@ -183,5 +185,7 @@ Systematic evaluation across 8 models × 4 benchmarks; representative results ar
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](../../ICLR2026/model_compression/efficient_reasoning_with_balanced_thinking.md)
 - [\[ACL 2026\] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew](../../ACL2026/model_compression/judgemenot_personalizing_large_language_models_to_emulate_judicial_reasoning_in_.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](../../ICLR2026/model_compression/inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
+
+</div>
 
 <!-- RELATED:END -->

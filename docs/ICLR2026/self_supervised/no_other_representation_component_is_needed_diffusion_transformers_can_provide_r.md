@@ -150,6 +150,8 @@ SRA proves effective at higher resolutions and in text-to-image settings; at 512
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](../../CVPR2026/self_supervised/diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
@@ -157,5 +159,7 @@ SRA proves effective at higher resolutions and in text-to-image settings; at 512
 - [\[CVPR 2026\] Representation Learning for Spatiotemporal Physical Systems](../../CVPR2026/self_supervised/representation_learning_for_spatiotemporal_physica.md)
 - [\[ICLR 2026\] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning](fly-cl_a_fly-inspired_framework_for_enhancing_efficient_decorrelation_and_reduce.md)
 - [\[CVPR 2026\] TrackMAE: Video Representation Learning via Track, Mask, and Predict](../../CVPR2026/self_supervised/trackmae_video_representation_learning_via_track_mask_and_predict.md)
+
+</div>
 
 <!-- RELATED:END -->

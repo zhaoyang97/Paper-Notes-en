@@ -167,6 +167,8 @@ A systematic contribution with value in both the benchmark and the method. The r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
@@ -174,5 +176,7 @@ A systematic contribution with value in both the benchmark and the method. The r
 - [\[NeurIPS 2025\] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity](lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity.md)
 - [\[CVPR 2026\] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization](../../CVPR2026/video_understanding/cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med.md)
 - [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

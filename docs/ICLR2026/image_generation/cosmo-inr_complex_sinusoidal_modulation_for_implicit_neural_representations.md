@@ -144,6 +144,8 @@ Training uses a standard MSE loss $L = \mathbb{E}_{x \in X} \|f_\theta(x) - \hat
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
@@ -151,5 +153,7 @@ Training uses a standard MSE loss $L = \mathbb{E}_{x \in X} \|f_\theta(x) - \hat
 - [\[ICLR 2026\] NeuralOS: Towards Simulating Operating Systems via Neural Generative Models](neuralos_towards_simulating_operating_systems_via_neural_generative_models.md)
 - [\[ICLR 2026\] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences](verification_of_the_implicit_world_model_in_a_generative_model_via_adversarial_s.md)
 - [\[ICLR 2026\] Amortising Inference and Meta-Learning Priors in Neural Networks (BNNP)](amortising_inference_and_meta-learning_priors_in_neural_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

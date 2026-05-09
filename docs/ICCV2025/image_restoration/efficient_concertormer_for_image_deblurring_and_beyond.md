@@ -145,6 +145,8 @@ State-of-the-art performance is also achieved on image deraining: average 34.60/
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Blind Noisy Image Deblurring Using Residual Guidance Strategy](blind_noisy_image_deblurring_using_residual_guidance_strateg.md)
@@ -152,5 +154,7 @@ State-of-the-art performance is also achieved on image deraining: average 34.60/
 - [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](../../CVPR2026/image_restoration/beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
 - [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](../../CVPR2026/image_restoration/bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
+
+</div>
 
 <!-- RELATED:END -->

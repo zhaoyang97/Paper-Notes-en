@@ -142,6 +142,8 @@ The **similarity-driven embedding** principle is transferable to other informati
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
@@ -149,5 +151,7 @@ The **similarity-driven embedding** principle is transferable to other informati
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](../../ICCV2025/video_generation/stiv_scalable_text_and_image_conditioned_video_generation.md)
 - [\[ICCV 2025\] BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation](../../ICCV2025/video_generation/badvideo_stealthy_backdoor_attack_against_text-to-video_generation.md)
 - [\[NeurIPS 2025\] Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models](video_killed_the_energy_budget_characterizing_the_latency_and_power_regimes_of_o.md)
+
+</div>
 
 <!-- RELATED:END -->

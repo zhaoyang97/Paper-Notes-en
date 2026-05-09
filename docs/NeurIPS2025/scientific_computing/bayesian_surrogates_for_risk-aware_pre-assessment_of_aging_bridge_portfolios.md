@@ -126,6 +126,8 @@ Results are reported within the safety-critical region $\eta \in [0.5, 1.5]$; ca
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
@@ -133,5 +135,7 @@ Results are reported within the safety-critical region $\eta \in [0.5, 1.5]$; ca
 - [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/scientific_computing/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
 - [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](../../AAAI2026/scientific_computing/knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
 - [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
+
+</div>
 
 <!-- RELATED:END -->

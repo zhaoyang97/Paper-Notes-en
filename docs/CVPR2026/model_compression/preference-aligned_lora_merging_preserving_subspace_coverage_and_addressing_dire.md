@@ -125,6 +125,8 @@ An AdaMerging-style predictive entropy is used as an unsupervised proxy loss, co
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
@@ -132,5 +134,7 @@ An AdaMerging-style predictive entropy is used as an unsupervised proxy loss, co
 - [\[CVPR 2026\] Bilevel Layer-Positioning LoRA for Real Image Dehazing](bilevel_lora_real_image_dehazing.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
 - [\[ICLR 2026\] Evolution and compression in LLMs: On the emergence of human-aligned categorization](../../ICLR2026/model_compression/evolution_and_compression_in_llms_on_the_emergence_of_human-aligned_categorizati.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -151,6 +151,8 @@ Key finding: Unidirectional use of latent maps (concatenation or VGCM alone) is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
@@ -158,5 +160,7 @@ Key finding: Unidirectional use of latent maps (concatenation or VGCM alone) is 
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
 - [\[NeurIPS 2025\] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation](../../NeurIPS2025/image_generation/how_to_build_a_consistency_model_learning_flow_maps_via_self-distillation.md)
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ $$\text{WCDE}(a, a') = \sum_m [E[Y \mid do(A=a, M=m)] - E[Y \mid do(A=a', M=m)]]
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Locally Optimal Private Sampling: Beyond the Global Minimax](locally_optimal_private_sampling_beyond_the_global_minimax.md)
@@ -134,5 +136,7 @@ $$\text{WCDE}(a, a') = \sum_m [E[Y \mid do(A=a, M=m)] - E[Y \mid do(A=a', M=m)]]
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[AAAI 2026\] Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation](../../AAAI2026/ai_safety/matrix-free_two-to-infinity_and_one-to-two_norms_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

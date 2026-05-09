@@ -162,6 +162,8 @@ If $F_{\text{global}} < 0.7$, global regeneration is triggered; if both $F_{\tex
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](tokmem_one-token_procedural_memory_for_large_language_models.md)
@@ -169,5 +171,7 @@ If $F_{\text{global}} < 0.7$, global regeneration is triggered; if both $F_{\tex
 - [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](../../ICCV2025/information_retrieval/representation_shift_unifying_token_compression_with_flashattention.md)
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](query-level_uncertainty_in_large_language_models.md)
 - [\[ICLR 2026\] Digging Deeper: Learning Multi-Level Concept Hierarchies](digging_deeper_learning_multi-level_concept_hierarchies.md)
+
+</div>
 
 <!-- RELATED:END -->

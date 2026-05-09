@@ -155,6 +155,8 @@ ICL-Router achieves an average of 76.30, surpassing the best single model by 3.1
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
@@ -162,5 +164,7 @@ ICL-Router achieves an average of 76.30, surpassing the best single model by 3.1
 - [\[ICLR 2026\] Near-Optimal Online Deployment and Routing for Streaming LLMs](../../ICLR2026/llm_nlp/near-optimal_online_deployment_and_routing_for_streaming_llms.md)
 - [\[CVPR 2026\] GUIDE: Guided Updates for In-context Decision Evolution in LLM-Driven Spacecraft Operations](../../CVPR2026/llm_nlp/guide_guided_updates_for_in-context_decision_evolution_in_llm-driven_spacecraft_.md)
 - [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **48** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (103)](../../CVPR2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [📹 ICCV2025 (78)](../../ICCV2025/segmentation/index.md)
+
+🔥 **Top topics:** Segmentation ×21 · Diffusion Models ×7 · Adversarial Robustness ×5 · Reasoning ×3 · Self-Supervised Learning ×2
+
 **[Alligat0R: Pre-Training through Covisibility Segmentation for Relative Camera Pose Regression](alligat0r_pre-training_through_co-visibility_segmentation_for_relative_camera_po.md)**
 
 :   This paper replaces CroCo's cross-view completion with covisibility segmentation as a stereo vision pre-training task, predicting per-pixel labels of "co-visible / occluded / out-of-view" for each pixel. The approach significantly outperforms CroCo in low-overlap scenarios and achieves a first-place overall success rate of 60.3% on the RUBIK benchmark.

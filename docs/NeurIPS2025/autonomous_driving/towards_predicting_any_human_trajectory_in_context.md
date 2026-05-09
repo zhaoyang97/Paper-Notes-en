@@ -123,6 +123,8 @@ TrajICL introduces a new paradigm for on-device trajectory prediction: training 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] OpenBox: Annotate Any Bounding Boxes in 3D](openbox_annotate_any_bounding_boxes_in_3d.md)
@@ -130,5 +132,7 @@ TrajICL introduces a new paradigm for on-device trajectory prediction: training 
 - [\[NeurIPS 2025\] Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead](aha_predicting_what_matters_next_online_highlight_detection.md)
 - [\[NeurIPS 2025\] Predictive Preference Learning from Human Interventions](predictive_preference_learning_from_human_interventions.md)
 - [\[NeurIPS 2025\] Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective](towards_physics-informed_spatial_intelligence_with_human_priors_an_autonomous_dr.md)
+
+</div>
 
 <!-- RELATED:END -->

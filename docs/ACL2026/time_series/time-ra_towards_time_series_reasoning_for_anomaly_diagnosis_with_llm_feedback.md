@@ -125,6 +125,8 @@ Standard SFT objective: $\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log P
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/time_series/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
@@ -132,5 +134,7 @@ Standard SFT objective: $\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log P
 - [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/time_series/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 - [\[NeurIPS 2025\] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](../../NeurIPS2025/time_series/martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
+
+</div>
 
 <!-- RELATED:END -->

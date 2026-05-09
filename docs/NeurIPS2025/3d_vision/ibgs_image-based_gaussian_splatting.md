@@ -161,6 +161,8 @@ PSNR improvements on the Shiny dataset exceed **5.2 dB**, with fewer Gaussians.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
@@ -168,5 +170,7 @@ PSNR improvements on the Shiny dataset exceed **5.2 dB**, with fewer Gaussians.
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Anti-Aliased 2D Gaussian Splatting](anti-aliased_2d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
+
+</div>
 
 <!-- RELATED:END -->

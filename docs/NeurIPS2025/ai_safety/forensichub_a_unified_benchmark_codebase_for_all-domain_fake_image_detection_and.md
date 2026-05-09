@@ -127,6 +127,8 @@ Full platform: 4 tasks, 23 datasets, 42 models (including 3 reproduced from scra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](../../CVPR2026/ai_safety/feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
@@ -134,5 +136,7 @@ Full platform: 4 tasks, 23 datasets, 42 models (including 3 reproduced from scra
 - [\[NeurIPS 2025\] Not All Deepfakes Are Created Equal: Triaging Audio Forgeries for Robust Deepfake Singer Identification](not_all_deepfakes_are_created_equal_triaging_audio_forgeries_for_robust_deepfake.md)
 - [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
 - [\[ICLR 2026\] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization](../../ICLR2026/ai_safety/unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -178,6 +178,8 @@ HDA layer vs. Conv1D: HDA achieves 16.9 dB SI-SNRi, outperforming Conv1D at 16.5
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
@@ -185,5 +187,7 @@ HDA layer vs. Conv1D: HDA achieves 16.9 dB SI-SNRi, outperforming Conv1D at 16.5
 - [\[ICLR 2026\] MAPSS: Manifold-Based Assessment of Perceptual Source Separation](mapss_manifold-based_assessment_of_perceptual_source_separation.md)
 - [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
 - [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](../../NeurIPS2025/audio_speech/multi-head_temporal_latent_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

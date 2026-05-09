@@ -149,6 +149,8 @@ With linear complexity, UST-SSM outperforms P4Transformer and PST-Transformer (q
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
@@ -156,5 +158,7 @@ With linear complexity, UST-SSM outperforms P4Transformer and PST-Transformer (q
 - [\[CVPR 2026\] STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](../../CVPR2026/3d_vision/sts_mixer_4d_point_cloud.md)
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
 - [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
+
+</div>
 
 <!-- RELATED:END -->

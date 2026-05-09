@@ -107,6 +107,8 @@ $L = L_{\text{source}}(\text{CE}) + \lambda \cdot L_{\text{align}}(\text{NSD})$.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
@@ -114,5 +116,7 @@ $L = L_{\text{source}}(\text{CE}) + \lambda \cdot L_{\text{align}}(\text{NSD})$.
 - [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
 - [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

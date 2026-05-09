@@ -137,6 +137,8 @@ The system is well-designed—the combination of source-agnostic operation, cros
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR](hearing_more_with_less_multi-modal_retrieval-and-selection_augmented_conversatio.md)
@@ -144,5 +146,7 @@ The system is well-designed—the combination of source-agnostic operation, cros
 - [\[ICLR 2026\] Incentive-Aligned Multi-Source LLM Summaries](../../ICLR2026/audio_speech/incentive-aligned_multi-source_llm_summaries.md)
 - [\[AAAI 2026\] DeepDebater: A Superpersuasive Autonomous Policy Debating System](a_superpersuasive_autonomous_policy_debating_system.md)
 - [\[NeurIPS 2025\] Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art](../../NeurIPS2025/audio_speech/sensorium_arc_ai_agent_system_for_oceanic_data_exploration_and_interactive_eco-a.md)
+
+</div>
 
 <!-- RELATED:END -->

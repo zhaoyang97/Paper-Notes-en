@@ -154,6 +154,8 @@ The Chain-of-LoRA paradigm is generalizable to other scenarios requiring multi-f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
@@ -161,5 +163,7 @@ The Chain-of-LoRA paradigm is generalizable to other scenarios requiring multi-f
 - [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning in Web Agents](web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_in_web_agents.md)
 - [\[ICLR 2026\] Towards Scalable Oversight via Partitioned Human Supervision](towards_scalable_oversight_via_partitioned_human_supervision.md)
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](../../CVPR2026/llm_agent/think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -129,6 +129,8 @@ Note: The color consistency loss performs best when activated after 5,000 iterat
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
@@ -136,5 +138,7 @@ Note: The color consistency loss performs best when activated after 5,000 iterat
 - [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
 - [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
 - [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
+
+</div>
 
 <!-- RELATED:END -->

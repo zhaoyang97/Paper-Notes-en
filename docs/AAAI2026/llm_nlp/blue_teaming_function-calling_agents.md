@@ -123,6 +123,8 @@ The experimental design is systematic and comprehensive, but technical depth is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
@@ -130,5 +132,7 @@ The experimental design is systematic and comprehensive, but technical depth is 
 - [\[AAAI 2026\] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents](scaling_equitable_reflection_assessment_in_education_via_large_language_models_a.md)
 - [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](../../ICLR2026/llm_nlp/meta-rl_induces_exploration_in_language_agents.md)
 - [\[ICLR 2026\] Enhancing Persona Following at Decoding Time via Dynamic Importance Estimation for Role-Playing Agents](../../ICLR2026/llm_nlp/enhancing_persona_following_at_decoding_time_via_dynamic_importance_estimation_f.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -157,6 +157,8 @@ LiveWeb-IE differs in objective from web agent benchmarks such as WebArena—the
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](webds_an_end-to-end_benchmark_for_web-based_data_science.md)
@@ -164,5 +166,7 @@ LiveWeb-IE differs in objective from web agent benchmarks such as WebArena—the
 - [\[NeurIPS 2025\] MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agriculture](../../NeurIPS2025/multimodal_vlm/mirage_a_benchmark_for_multimodal_information-seeking_and_reasoning_in_agricultu.md)
 - [\[ICLR 2026\] Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation](small_drafts_big_verdict_information-intensive_visual_reasoning_via_speculation.md)
 - [\[ICLR 2026\] Context Tokens are Anchors: Understanding the Repetition Curse in dMLLMs from an Information Flow Perspective](context_tokens_are_anchors_understanding_the_repetition_curse_in_dmllms_from_an_.md)
+
+</div>
 
 <!-- RELATED:END -->

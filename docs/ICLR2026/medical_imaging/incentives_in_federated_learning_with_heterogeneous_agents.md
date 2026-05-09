@@ -115,6 +115,8 @@ This is a theoretical paper and does not involve model training. The core mathem
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](../../CVPR2026/medical_imaging/omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
@@ -122,5 +124,7 @@ This is a theoretical paper and does not involve model training. The core mathem
 - [\[CVPR 2026\] FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning](../../CVPR2026/medical_imaging/fedvg_gradient-guided_aggregation_for_enhanced_federated_learning.md)
 - [\[ICLR 2026\] From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents](from_conversation_to_query_execution_benchmarking_user_and_tool_interactions_for.md)
 - [\[ICLR 2026\] Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People](shoot_first_ask_questions_later_building_rational_agents_that_explore_and_act_li.md)
+
+</div>
 
 <!-- RELATED:END -->

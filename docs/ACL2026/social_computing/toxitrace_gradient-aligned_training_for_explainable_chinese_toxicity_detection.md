@@ -139,6 +139,8 @@ Training procedure: warm-up for 3 epochs (cross-entropy only) → introduce GCLo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway](toxreason_a_benchmark_for_mechanistic_chemical_toxicity_reasoning_via_adverse_ou.md)
@@ -146,5 +148,7 @@ Training procedure: warm-up for 3 epochs (cross-entropy only) → introduce GCLo
 - [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](../../ICCV2025/social_computing/gradient_extrapolation_for_debiased_representation_learning.md)
 - [\[ACL 2026\] Is this chart lying to me? Automating the detection of misleading visualizations](is_this_chart_lying_to_me_automating_the_detection_of_misleading_visualizations.md)
 - [\[AAAI 2026\] Argumentative Debates for Transparent Bias Detection](../../AAAI2026/social_computing/argumentative_debates_for_transparent_bias_detection_technic.md)
+
+</div>
 
 <!-- RELATED:END -->

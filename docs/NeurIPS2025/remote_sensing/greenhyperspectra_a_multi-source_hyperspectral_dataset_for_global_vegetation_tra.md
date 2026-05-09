@@ -123,6 +123,8 @@ MAE uses MSE combined with weighted cosine similarity as the reconstruction loss
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)
@@ -130,5 +132,7 @@ MAE uses MSE combined with weighted cosine similarity as the reconstruction loss
 - [\[CVPR 2026\] Conflated Inverse Modeling for Urban Vegetation Patterns](../../CVPR2026/remote_sensing/conflated_inverse_urban_vegetation.md)
 - [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Ready Dataset for Ionospheric Forecasting Models](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
+
+</div>
 
 <!-- RELATED:END -->

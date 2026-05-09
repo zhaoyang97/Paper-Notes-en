@@ -225,6 +225,8 @@ Test set: 50 samples from in-the-wild internet images and the CAPE dataset; 120 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
@@ -232,5 +234,7 @@ Test set: 50 samples from in-the-wild internet images and the CAPE dataset; 120 
 - [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
 - [\[NeurIPS 2025\] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior](diff-icmh_harmonizing_machine_and_human_vision_in_image_compression_with_generat.md)
 - [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](../../CVPR2026/image_generation/interedit_navigating_text-guided_multi-human_3d_motion_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

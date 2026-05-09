@@ -135,6 +135,8 @@ Core insight: ViT distillation should align only early-to-middle layers (the com
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Single-Sample: Reliable Multi-Sample Distillation for Video Understanding](../../CVPR2026/video_understanding/beyond_single-sample_reliable_multi-sample_distillation_for_video_understanding.md)
@@ -142,5 +144,7 @@ Core insight: ViT distillation should align only early-to-middle layers (the com
 - [\[AAAI 2026\] Predicting Video Slot Attention Queries from Random Slot-Feature Pairs](predicting_video_slot_attention_queries_from_random_slot-feature_pairs.md)
 - [\[AAAI 2026\] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)
 - [\[ICCV 2025\] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers](../../ICCV2025/video_understanding/vamba_understanding_hour-long_videos_with_hybrid_mamba-transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

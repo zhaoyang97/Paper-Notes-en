@@ -141,6 +141,8 @@ To be supplemented after a thorough reading of the paper.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](../../ICLR2026/medical_imaging/protein_as_a_second_language_for_llms.md)
@@ -148,5 +150,7 @@ To be supplemented after a thorough reading of the paper.
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](../../AAAI2026/medical_imaging/training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
 - [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_imaging/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 - [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/medical_imaging/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
+
+</div>
 
 <!-- RELATED:END -->

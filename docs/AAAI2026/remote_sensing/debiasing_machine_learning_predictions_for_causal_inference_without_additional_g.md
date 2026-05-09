@@ -126,6 +126,8 @@ Treatment effect estimation performance on simulated data:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India](machine_learning_for_sustainable_rice_production_region-scale_monitoring_of_wate.md)
@@ -133,5 +135,7 @@ Treatment effect estimation performance on simulated data:
 - [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
 - [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[CVPR 2026\] Joint and Streamwise Distributed MIMO Satellite Communications with Multi-Antenna Ground Users](../../CVPR2026/remote_sensing/joint_and_streamwise_distributed_mimo_satellite_co.md)
+
+</div>
 
 <!-- RELATED:END -->

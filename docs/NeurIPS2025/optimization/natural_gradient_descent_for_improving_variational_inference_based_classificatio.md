@@ -132,6 +132,8 @@ The **iVON (Improved Variational Online Newton)** algorithm replaces SGD for opt
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Least Squares Variational Inference](least_squares_variational_inference.md)
@@ -139,5 +141,7 @@ The **iVON (Improved Variational Online Newton)** algorithm replaces SGD for opt
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 - [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
+
+</div>
 
 <!-- RELATED:END -->

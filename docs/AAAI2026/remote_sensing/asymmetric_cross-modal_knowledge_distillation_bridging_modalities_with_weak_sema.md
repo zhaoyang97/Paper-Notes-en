@@ -147,6 +147,8 @@ The ACKD concept is extensible to other cross-modal scenarios (e.g., LiDAR→RGB
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
@@ -154,5 +156,7 @@ The ACKD concept is extensible to other cross-modal scenarios (e.g., LiDAR→RGB
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](../../CVPR2026/remote_sensing/cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
 - [\[AAAI 2026\] Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments](consistency-based_abductive_reasoning_over_perceptual_errors_of_multiple_pre-tra.md)
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
+
+</div>
 
 <!-- RELATED:END -->

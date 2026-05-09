@@ -140,6 +140,8 @@ Design composition on Crello-v5 (VLM score):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement](showtable_unlocking_creative_table_visualization_with_collaborative_reflection_a.md)
@@ -147,5 +149,7 @@ Design composition on Crello-v5 (VLM score):
 - [\[CVPR 2026\] GIST: Towards Design Compositing](gist_towards_design_compositing.md)
 - [\[CVPR 2026\] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)
 - [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

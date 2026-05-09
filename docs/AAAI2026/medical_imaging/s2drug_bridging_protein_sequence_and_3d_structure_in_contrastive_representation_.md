@@ -174,6 +174,8 @@ S2Drug also demonstrates competitive binding site prediction performance on thre
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
@@ -181,5 +183,7 @@ S2Drug also demonstrates competitive binding site prediction performance on thre
 - [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
 - [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](../../ICLR2026/medical_imaging/protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
 - [\[AAAI 2026\] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)
+
+</div>
 
 <!-- RELATED:END -->

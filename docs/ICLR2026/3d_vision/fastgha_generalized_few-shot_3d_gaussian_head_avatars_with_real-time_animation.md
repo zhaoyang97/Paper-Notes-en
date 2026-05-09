@@ -109,6 +109,8 @@ FastGHA comprehensively outperforms Avat3r: PSNR +1.8, LPIPS −0.10, CSIM +0.14
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](../../CVPR2026/3d_vision/emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)
@@ -116,5 +118,7 @@ FastGHA comprehensively outperforms Avat3r: PSNR +1.8, LPIPS −0.10, CSIM +0.14
 - [\[AAAI 2026\] Generalized Geometry Encoding Volume for Real-time Stereo Matching](../../AAAI2026/3d_vision/generalized_geometry_encoding_volume_for_real-time_stereo_matching.md)
 - [\[ICCV 2025\] ri3d few-shot gaussian splatting with repair and inpainting diffusion priors](../../ICCV2025/3d_vision/ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)
 - [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](../../CVPR2026/3d_vision/stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
+
+</div>
 
 <!-- RELATED:END -->

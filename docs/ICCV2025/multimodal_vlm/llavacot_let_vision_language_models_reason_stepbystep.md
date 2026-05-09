@@ -104,6 +104,8 @@ Standard autoregressive language modeling loss is used for fine-tuning. Training
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
@@ -111,5 +113,7 @@ Standard autoregressive language modeling loss is used for fine-tuning. Training
 - [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](docthinker_explainable_multimodal_large_language_models_with.md)
 - [\[ICCV 2025\] orderchain towards general instruct-tuning for stimulating the ordinal understan](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
 - [\[ICCV 2025\] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning](chartpoint_guiding_mllms_with_grounding_reflection_for_chart_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

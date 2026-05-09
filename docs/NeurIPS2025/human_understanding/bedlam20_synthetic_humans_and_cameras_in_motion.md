@@ -135,6 +135,8 @@ Sample from the AMASS motion library (4,643 motions) → retarget motions to div
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] TriDi: Trilateral Diffusion of 3D Humans, Objects, and Interactions](../../ICCV2025/human_understanding/tridi_trilateral_diffusion_of_3d_humans_objects_and_interactions.md)
@@ -142,5 +144,7 @@ Sample from the AMASS motion library (4,643 motions) → retarget motions to div
 - [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
 - [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](../../ICCV2025/human_understanding/udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
 - [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](../../ICCV2025/human_understanding/bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -180,6 +180,8 @@ $$\mathcal{L} = \mathcal{L}_{IRL} + \alpha \mathcal{L}_{OGM} + \beta \mathcal{L}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DONUT: A Decoder-Only Model for Trajectory Prediction](donut_a_decoder-only_model_for_trajectory_prediction.md)
@@ -187,5 +189,7 @@ $$\mathcal{L} = \mathcal{L}_{IRL} + \alpha \mathcal{L}_{OGM} + \beta \mathcal{L}
 - [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
 - [\[NeurIPS 2025\] DINO-Foresight: Looking into the Future with DINO](../../NeurIPS2025/autonomous_driving/dino-foresight_looking_into_the_future_with_dino.md)
 - [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](../../NeurIPS2025/autonomous_driving/unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -132,6 +132,8 @@ MAoP decomposes planning into two stages: Pre-Planning and Aspect-Aware Planning
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/recommender/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
@@ -139,5 +141,7 @@ MAoP decomposes planning into two stages: Pre-Planning and Aspect-Aware Planning
 - [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
 - [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
+
+</div>
 
 <!-- RELATED:END -->

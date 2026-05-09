@@ -91,6 +91,8 @@ This is an analytical study and involves no training. All evaluations are conduc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Vision Transformers Need More Than Registers](vit_need_more_than_registers.md)
@@ -98,5 +100,7 @@ This is an analytical study and involves no training. All evaluations are conduc
 - [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
 - [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
 - [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](robustness_of_vision_foundation_models_to_common_perturbations.md)
+
+</div>
 
 <!-- RELATED:END -->

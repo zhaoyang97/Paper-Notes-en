@@ -167,6 +167,8 @@ Iterative alignment with DPO attenuates the signal, possibly due to DPO's KL reg
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
@@ -174,5 +176,7 @@ Iterative alignment with DPO attenuates the signal, possibly due to DPO's KL reg
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](../../NeurIPS2025/llm_evaluation/semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
 - [\[NeurIPS 2025\] ComPO: Preference Alignment via Comparison Oracles](../../NeurIPS2025/llm_evaluation/compo_preference_alignment_via_comparison_oracles.md)
 - [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](../../NeurIPS2025/llm_evaluation/reliably_detecting_model_failures_in_deployment_without_labels.md)
+
+</div>
 
 <!-- RELATED:END -->

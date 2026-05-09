@@ -142,6 +142,8 @@ DRAGON achieves the lowest deviation scores across all unlearning ratios while f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Distillation Robustifies Unlearning](distillation_robustifies_unlearning.md)
@@ -149,5 +151,7 @@ DRAGON achieves the lowest deviation scores across all unlearning ratios while f
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs](tokensqueeze_performance-preserving_compression_for_reasoning_llms.md)
 - [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
+
+</div>
 
 <!-- RELATED:END -->

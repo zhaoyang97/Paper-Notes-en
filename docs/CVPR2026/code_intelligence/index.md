@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **2** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (20)](../../ACL2026/code_intelligence/index.md) · [🔬 ICLR2026 (23)](../../ICLR2026/code_intelligence/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/code_intelligence/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/code_intelligence/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/code_intelligence/index.md)
+
+🔥 **Top topics:** Code Intelligence ×2
+
 **[GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)**
 
 :   GeoTikzBridge constructs the largest 2.5M image–TikZ code dataset and the first auxiliary-line instruction dataset, trains a code generation model capable of accurately reconstructing geometric figures, and serves as a plug-and-play module to enhance the geometric reasoning capabilities of arbitrary MLLMs/LLMs.

@@ -125,6 +125,8 @@ SGD is used as the optimizer (Adam for CelebA), with a learning rate of 0.001 de
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Omni-Mol: Multitask Molecular Model for Any-to-Any Modalities](../../NeurIPS2025/multimodal_vlm/omni-mol_multitask_molecular_model_for_any-to-any_modalities.md)
@@ -132,5 +134,7 @@ SGD is used as the optimizer (Adam for CelebA), with a learning rate of 0.001 de
 - [\[ICCV 2025\] CVPT: Cross Visual Prompt Tuning](cvpt_cross_visual_prompt_tuning.md)
 - [\[ICLR 2026\] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/grasp_any_region_towards_precise_contextual_pixel_understanding_for_multimodal_l.md)
 - [\[ICCV 2025\] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models](instruction-grounded_visual_projectors_for_continual_learning_of_generative_visi.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ Charades-STA: R1@0.5 = **48.1%** (ViT); ActivityNet: R1@0.5 = **30.5%**.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration](../../ICCV2025/model_compression/partial_forward_blocking_a_novel_data_pruning_paradigm_for_lossless_training_acc.md)
@@ -129,5 +131,7 @@ Charades-STA: R1@0.5 = **48.1%** (ViT); ActivityNet: R1@0.5 = **30.5%**.
 - [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](../../ICLR2026/model_compression/grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
 - [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
 - [\[ICLR 2026\] Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis](../../ICLR2026/model_compression/why_attention_patterns_exist_a_unifying_temporal_perspective_analysis.md)
+
+</div>
 
 <!-- RELATED:END -->

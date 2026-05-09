@@ -149,6 +149,8 @@ Given $m$ tokens $\bm{V} \in \mathbb{R}^{m \times d}$ output by the vision encod
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](../../NeurIPS2025/optimization/estimation_of_stochastic_optimal_transport_maps.md)
@@ -156,5 +158,7 @@ Given $m$ tokens $\bm{V} \in \mathbb{R}^{m \times d}$ output by the vision encod
 - [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
 - [\[NeurIPS 2025\] FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling](../../NeurIPS2025/optimization/fedrts_federated_robust_pruning_via_combinatorial_thompson_sampling.md)
 - [\[ICLR 2026\] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving](../../ICLR2026/optimization/cogflow_bridging_perception_and_reasoning_through_knowledge_internalization_for_.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -149,6 +149,8 @@ Ablation on scFM embedding dimensionality (WSL pretraining, evaluated on U2OS):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] De novo generation of functional terpene synthases using TpsGPT](../../NeurIPS2025/medical_imaging/de_novo_generation_of_functional_terpene_synthases_using_tpsgpt.md)
@@ -156,5 +158,7 @@ Ablation on scFM embedding dimensionality (WSL pretraining, evaluated on U2OS):
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](../../NeurIPS2025/medical_imaging/uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
 - [\[ICCV 2025\] COIN: Confidence Score-Guided Distillation for Annotation-Free Cell Segmentation](coin_confidence_score-guided_distillation_for_annotation-free_cell_segmentation.md)
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](../../AAAI2026/medical_imaging/learning_cell-aware_hierarchical_multi-modal_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

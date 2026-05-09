@@ -126,6 +126,8 @@ Two stages: (1) **Generation Phase**: token distributions are extracted from a b
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Collaborative LLM Numerical Reasoning with Local Data Protection](collaborative_llm_numerical_reasoning_with_local_data_protection.md)
@@ -133,5 +135,7 @@ Two stages: (1) **Generation Phase**: token distributions are extracted from a b
 - [\[ICCV 2025\] Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation](../../ICCV2025/llm_nlp/beyond_isolated_words_diffusion_brush_for_handwritten_text-line_generation.md)
 - [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
 - [\[AAAI 2026\] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation](loopllm_transferable_energy-latency_attacks_in_llms_via_repetitive_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

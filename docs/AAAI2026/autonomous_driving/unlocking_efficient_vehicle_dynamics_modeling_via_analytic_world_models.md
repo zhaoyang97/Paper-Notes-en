@@ -215,6 +215,8 @@ $$\min_\phi \| \text{Sim}(\mathbf{s}_t + f_\phi^I(\mathbf{s}_t, \mathbf{a}_t), \
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
@@ -222,5 +224,7 @@ $$\min_\phi \| \text{Sim}(\mathbf{s}_t + f_\phi^I(\mathbf{s}_t, \mathbf{a}_t), \
 - [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](../../CVPR2026/autonomous_driving/efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
 - [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](../../CVPR2026/autonomous_driving/u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
 - [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](../../CVPR2026/autonomous_driving/vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
+
+</div>
 
 <!-- RELATED:END -->

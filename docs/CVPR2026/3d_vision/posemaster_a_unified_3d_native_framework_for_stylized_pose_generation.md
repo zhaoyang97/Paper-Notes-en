@@ -121,6 +121,8 @@ A conditional Flow Matching objective is used: $\mathbb{E}_{t,x_0,x_1,c_i,c_p}\|
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models](../../ICLR2026/3d_vision/quadgpt_native_quadrilateral_mesh_generation_with_autoregressive_models.md)
@@ -128,5 +130,7 @@ A conditional Flow Matching objective is used: $\mathbb{E}_{t,x_0,x_1,c_i,c_p}\|
 - [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
 - [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](rng_unified_transformer_complete_3d_modeling_partial_observations.md)
 - [\[AAAI 2026\] FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting](../../AAAI2026/3d_vision/fantasystyle_controllable_stylized_distillation_for_3d_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

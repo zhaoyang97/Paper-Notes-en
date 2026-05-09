@@ -126,6 +126,8 @@ A hierarchical Bayesian graphical model (plate diagram) is constructed in which 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](../../ICLR2026/medical_imaging/an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
@@ -133,5 +135,7 @@ A hierarchical Bayesian graphical model (plate diagram) is constructed in which 
 - [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](../../NeurIPS2025/medical_imaging/is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
 - [\[NeurIPS 2025\] Multimodal Bayesian Network for Robust Assessment of Casualties in Autonomous Triage](../../NeurIPS2025/medical_imaging/multimodal_bayesian_network_for_robust_assessment_of_casualties_in_autonomous_tr.md)
 - [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](../../NeurIPS2025/medical_imaging/unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
+
+</div>
 
 <!-- RELATED:END -->

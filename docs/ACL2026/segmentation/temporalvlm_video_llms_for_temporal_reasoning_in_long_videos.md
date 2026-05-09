@@ -131,6 +131,8 @@ Standard autoregressive cross-entropy loss (Eq. 8). LLM and image encoder are fr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation](../../CVPR2026/segmentation/virst_video-instructed_reasoning_assistant_for_spatiotemporal_segmentation.md)
@@ -138,5 +140,7 @@ Standard autoregressive cross-entropy loss (Eq. 8). LLM and image encoder are fr
 - [\[NeurIPS 2025\] ConnectomeBench: Can LLMs Proofread the Connectome?](../../NeurIPS2025/segmentation/connectomebench_can_llms_proofread_the_connectome.md)
 - [\[CVPR 2026\] HippoMM: Hippocampal-inspired Multimodal Memory for Long Audiovisual Event Understanding](../../CVPR2026/segmentation/hippomm_hippocampal-inspired_multimodal_memory_for_long_audiovisual_event_unders.md)
 - [\[ACL 2026\] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

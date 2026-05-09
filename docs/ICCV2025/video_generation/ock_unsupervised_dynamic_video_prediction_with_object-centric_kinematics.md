@@ -148,6 +148,8 @@ Ablation of Transformer components (MOVi-A):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DreamRelation: Relation-Centric Video Customization](dreamrelation_relation-centric_video_customization.md)
@@ -155,5 +157,7 @@ Ablation of Transformer components (MOVi-A):
 - [\[NeurIPS 2025\] Training-Free Efficient Video Generation via Dynamic Token Carving](../../NeurIPS2025/video_generation/training-free_efficient_video_generation_via_dynamic_token_carving.md)
 - [\[AAAI 2026\] Mask2IV: Interaction-Centric Video Generation via Mask Trajectories](../../AAAI2026/video_generation/mask2iv_interaction-centric_video_generation_via_mask_trajectories.md)
 - [\[ACL 2026\] OSCBench: Benchmarking Object State Change in Text-to-Video Generation](../../ACL2026/video_generation/oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

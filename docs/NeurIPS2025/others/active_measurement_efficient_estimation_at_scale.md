@@ -115,6 +115,8 @@ The detector uses Faster R-CNN with a ResNet backbone, fine-tuned for 3,000 step
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
@@ -122,5 +124,7 @@ The detector uses Faster R-CNN with a ResNet backbone, fine-tuned for 3,000 step
 - [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
 - [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](learning_dense_hand_contact_estimation_from_imbalanced_data.md)
 - [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -123,6 +123,8 @@ No training is required (inference-time method). The Qwen2.5-Coder series (7B/14
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents](../../ACL2026/interpretability/pv-sql_synergizing_database_probing_and_rule-based_verification_for_text-to-sql_.md)
@@ -130,5 +132,7 @@ No training is required (inference-time method). The Qwen2.5-Coder series (7B/14
 - [\[NeurIPS 2025\] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework](discovering_transformer_circuits_via_a_hybrid_attribution_and_pruning_framework.md)
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
 - [\[NeurIPS 2025\] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](a_unified_reasoning_framework_for_holistic_zeroshot_video_an.md)
+
+</div>
 
 <!-- RELATED:END -->

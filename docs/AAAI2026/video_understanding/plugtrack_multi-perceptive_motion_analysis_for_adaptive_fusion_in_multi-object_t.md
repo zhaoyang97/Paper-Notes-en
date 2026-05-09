@@ -175,6 +175,8 @@ Training uses the Adam optimizer with a learning rate of 0.001, batch size of 20
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](../../CVPR2026/video_understanding/occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
@@ -182,5 +184,7 @@ Training uses the Adam optimizer with a learning rate of 0.001, batch size of 20
 - [\[CVPR 2026\] TCEI: Dual-level Adaptation for Multi-Object Tracking via Test-Time Calibration](../../CVPR2026/video_understanding/tcei_dual_level_adaptation_multi_object_tracking.md)
 - [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](../../CVPR2026/video_understanding/storm_referring_multi_object_tracking.md)
 - [\[CVPR 2026\] FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking](../../CVPR2026/video_understanding/fc-track_overlap-aware_post-association_correction_for_online_multi-object_track.md)
+
+</div>
 
 <!-- RELATED:END -->

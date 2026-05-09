@@ -126,6 +126,8 @@ This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducib
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
@@ -133,5 +135,7 @@ This paper proposes the Estimand-Agnostic (EA) approach and the Frontier-Reducib
 - [\[NeurIPS 2025\] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation](its_hard_to_be_normal_the_impact_of_noise_on_structure-agnostic_estimation.md)
 - [\[NeurIPS 2025\] Performative Validity of Recourse Explanations](performative_validity_of_recourse_explanations.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
+
+</div>
 
 <!-- RELATED:END -->

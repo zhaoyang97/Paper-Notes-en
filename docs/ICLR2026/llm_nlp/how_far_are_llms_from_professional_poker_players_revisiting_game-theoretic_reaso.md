@@ -129,6 +129,8 @@ The key distinction between poker and chess or Go lies in information incomplete
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](../../CVPR2026/llm_nlp/perception_programs_visual_tool_reasoning.md)
@@ -136,5 +138,7 @@ The key distinction between poker and chess or Go lies in information incomplete
 - [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risk in Conversation](how_catastrophic_is_your_llm_certifying_risk_in_conversation.md)
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Models](predicting_llm_reasoning_performance_with_small_proxy_models.md)
 - [\[AAAI 2026\] Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives](../../AAAI2026/llm_nlp/understanding_syllogistic_reasoning_in_llms_from_formal_and_natural_language_per.md)
+
+</div>
 
 <!-- RELATED:END -->

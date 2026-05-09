@@ -113,6 +113,8 @@ Terrain generation employs a water-centric fitness function. Layout optimization
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/others/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
@@ -120,5 +122,7 @@ Terrain generation employs a water-centric fitness function. Layout optimization
 - [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/others/speculative_actions_faster_ai_agents.md)
 - [\[NeurIPS 2025\] Exact Learning of Arithmetic with Differentiable Agents](../../NeurIPS2025/others/exact_learning_of_arithmetic_with_differentiable_agents.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/others/polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
+
+</div>
 
 <!-- RELATED:END -->

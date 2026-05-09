@@ -145,6 +145,8 @@ As a position paper, this work introduces no new loss function. The core optimiz
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Commonsense Knowledge with Negation: A Resource to Enhance Negation Understanding](../../ACL2026/llm_pretraining/commonsense_knowledge_with_negation_a_resource_to_enhance_negation_understanding.md)
@@ -152,5 +154,7 @@ As a position paper, this work introduces no new loss function. The core optimiz
 - [\[NeurIPS 2025\] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](flatness_is_necessary_neural_collapse_is_not_rethinking_generalization_via_grokk.md)
 - [\[NeurIPS 2025\] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection](mouse-guided_gaze_semi-supervised_learning_of_intention-aware_representations_fo.md)
 - [\[NeurIPS 2025\] Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale](lm_behavioral_phases.md)
+
+</div>
 
 <!-- RELATED:END -->

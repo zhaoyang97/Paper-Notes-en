@@ -149,6 +149,8 @@ The paper employs ROI-scale analysis in place of conventional ablation experimen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
@@ -156,5 +158,7 @@ The paper employs ROI-scale analysis in place of conventional ablation experimen
 - [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
 - [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
 - [\[CVPR 2026\] SASNet: Spatially-Adaptive Sinusoidal Networks for INRs](sasnet_spatially_adaptive_sinusoidal_networks_for_inrs.md)
+
+</div>
 
 <!-- RELATED:END -->

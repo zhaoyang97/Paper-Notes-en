@@ -151,6 +151,8 @@ $$u_{i,j} = f_{i,j}(p_i, d_j) + \left\|\frac{\mathbf{g}_{i,j}(\mathbf{x}_t(a_{i,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
@@ -158,5 +160,7 @@ $$u_{i,j} = f_{i,j}(p_i, d_j) + \left\|\frac{\mathbf{g}_{i,j}(\mathbf{x}_t(a_{i,
 - [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](an_llm-based_simulation_framework_for_embodied_conversationa.md)
 - [\[AAAI 2026\] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization](spa_achieving_consensus_in_llm_alignment_via_self-priority_optimization.md)
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -138,6 +138,8 @@ FerretNet's parameter count is approximately 1/136 that of CLIP-based methods, w
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement](pixperfect_seamless_latent_diffusion_local_editing_with_discriminative_pixel-spa.md)
@@ -145,5 +147,7 @@ FerretNet's parameter count is approximately 1/136 that of CLIP-based methods, w
 - [\[AAAI 2026\] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection](../../AAAI2026/image_generation/beyond_semantic_features_pixel-level_mapping_for_generalized_ai-generated_image_.md)
 - [\[ICCV 2025\] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis](../../ICCV2025/image_generation/deepshield_fortifying_deepfake_video_detection_with_local_and_global_forgery_ana.md)
 - [\[CVPR 2026\] Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection](../../CVPR2026/image_generation/layer_consistency_matters_elegant_latent_transition_discrepancy_for_generalizabl.md)
+
+</div>
 
 <!-- RELATED:END -->

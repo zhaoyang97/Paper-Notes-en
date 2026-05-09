@@ -131,6 +131,8 @@ The reward space comprises $K=5$ components: a perplexity reward $r_{\text{ppl}}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
@@ -138,5 +140,7 @@ The reward space comprises $K=5$ components: a perplexity reward $r_{\text{ppl}}
 - [\[ACL 2026\] Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty](reason_only_when_needed_efficient_generative_reward_modeling_via_model-internal_.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
 - [\[AAAI 2026\] Parametric Pareto Set Learning for Expensive Multi-Objective Optimization](../../AAAI2026/model_compression/parametric_pareto_set_learning_for_expensive_multi-objective_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -144,6 +144,8 @@ The paper provides no systematic ablation experiments to quantify the independen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/llm_evaluation/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
@@ -151,5 +153,7 @@ The paper provides no systematic ablation experiments to quantify the independen
 - [\[CVPR 2026\] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning](../../CVPR2026/llm_evaluation/flow3r_factored_flow_prediction_for_scalable_visual_geometry_learning.md)
 - [\[ACL 2026\] Min-k Sampling: Decoupling Truncation from Temperature Scaling via Relative Logit Dynamics](../../ACL2026/llm_evaluation/min-k_sampling_decoupling_truncation_from_temperature_scaling_via_relative_logit.md)
 - [\[ICLR 2026\] Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](../../ICLR2026/llm_evaluation/disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)
+
+</div>
 
 <!-- RELATED:END -->

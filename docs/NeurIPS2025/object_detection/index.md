@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **18** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/object_detection/index.md) · [📷 CVPR2026 (45)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (17)](../../AAAI2026/object_detection/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/object_detection/index.md)
+
+🔥 **Top topics:** Object Detection ×6 · Dynamic Scenes ×2 · Layout & Composition ×2
+
 **[Ascent Fails to Forget](ascent_fails_to_forget.md)**
 
 :   Starting from the statistical dependence between the forget set and the retain set, this paper theoretically and empirically demonstrates that the widely adopted gradient ascent / Descent-Ascent (DA) family of machine unlearning methods fails systematically in the presence of data correlations. In logistic regression, the DA solution is provably farther from the oracle than the original model, and in non-convex settings DA traps the model in inferior local minima.

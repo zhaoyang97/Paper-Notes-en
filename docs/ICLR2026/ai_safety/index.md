@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **27** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (24)](../../CVPR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (22)](../../ICCV2025/ai_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×7 · Federated Learning ×3 · Reinforcement Learning ×2 · Agents ×2 · Watermarking ×2
+
 **[Action-Free Offline-to-Online RL via Discretised State Policies](action-free_offline-to-online_rl_via_discretised_state_policies.md)**
 
 :   This paper formalises the "action-free offline-to-online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretising continuous state differences into ternary tokens $\{-1, 0, 1\}$, a state policy $Q(s, \Delta s)$ is pretrained on action-free $(s, r, s')$ tuples to predict the expected direction of next-state change rather than actions. A policy-switching mechanism combined with an online-trained inverse dynamics model (IDM) then translates the state policy into executable actions, guiding online agents to accelerate learning. The approach consistently improves both convergence speed and asymptotic performance on D4RL and DeepMind Control Suite (including 78-dimensional state spaces).

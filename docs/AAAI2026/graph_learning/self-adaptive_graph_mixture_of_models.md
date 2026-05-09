@@ -129,6 +129,8 @@ The training objective combines task loss, importance loss (encouraging uniform 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
@@ -136,5 +138,7 @@ The training objective combines task loss, importance loss (encouraging uniform 
 - [\[AAAI 2026\] On Stealing Graph Neural Network Models](on_stealing_graph_neural_network_models.md)
 - [\[AAAI 2026\] Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees](adaptive_initial_residual_connections_for_gnns_with_theoretical_guarantees.md)
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](self-correction_distillation_for_structured_data_question_answering.md)
+
+</div>
 
 <!-- RELATED:END -->

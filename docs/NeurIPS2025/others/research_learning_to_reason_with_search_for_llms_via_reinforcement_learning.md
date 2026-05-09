@@ -109,6 +109,8 @@ $$r = \begin{cases} \text{F1}(a_{pred}, a_{gt}) & \text{if F1}>0\\ 0.1 & \text{i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities](webthinker_empowering_large_reasoning_models_with_deep_research_capability.md)
@@ -116,5 +118,7 @@ $$r = \begin{cases} \text{F1}(a_{pred}, a_{gt}) & \text{if F1}>0\\ 0.1 & \text{i
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[NeurIPS 2025\] Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications](military_ai_needs_technically-informed_regulation_to_safeguard_ai_research_and_i.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

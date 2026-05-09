@@ -134,6 +134,8 @@ $$\mathbf{u} = \mathbf{K}^T \{\mathbf{G}(\mathbf{K}\mathbf{M}\mathbf{f} - \mathb
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Neural Exposure Fields for View Synthesis](learning_neural_exposure_fields_for_view_synthesis.md)
@@ -141,5 +143,7 @@ $$\mathbf{u} = \mathbf{K}^T \{\mathbf{G}(\mathbf{K}\mathbf{M}\mathbf{f} - \mathb
 - [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
 - [\[NeurIPS 2025\] Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting](robust_neural_rendering_in_the_wild_with_asymmetric_dual_3d_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

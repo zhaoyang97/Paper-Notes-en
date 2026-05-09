@@ -133,6 +133,8 @@ Methods such as AKS employ pretrained VLMs to perform binary frame selection bef
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference](kindle_knowledge-guided_distillation_for_prior-free_gene_regulatory_network_infe.md)
@@ -140,5 +142,7 @@ Methods such as AKS employ pretrained VLMs to perform binary frame selection bef
 - [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
 - [\[NeurIPS 2025\] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment](dp-llm_runtime_model_adaptation_with_dynamic_layer-wise_precision_assignment.md)
 - [\[NeurIPS 2025\] Dependency Parsing is More Parameter-Efficient with Normalization](dependency_parsing_is_more_parameter-efficient_with_normalization.md)
+
+</div>
 
 <!-- RELATED:END -->

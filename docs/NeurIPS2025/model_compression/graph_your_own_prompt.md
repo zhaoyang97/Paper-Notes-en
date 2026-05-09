@@ -136,6 +136,8 @@ The network is divided into three stages—Early (E), Mid (M), and Late (L)—an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning](graver_generative_graph_vocabularies_for_robust_graph_foundation_models_fine-tun.md)
@@ -143,5 +145,7 @@ The network is divided into three stages—Early (E), Mid (M), and Late (L)—an
 - [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
 - [\[NeurIPS 2025\] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization](find_your_needle_small_object_image_retrieval_via_multi-object_attention_optimiz.md)
 - [\[NeurIPS 2025\] All You Need is One: Capsule Prompt Tuning with a Single Vector](all_you_need_is_one_capsule_prompt_tuning_with_a_single_vector.md)
+
+</div>
 
 <!-- RELATED:END -->

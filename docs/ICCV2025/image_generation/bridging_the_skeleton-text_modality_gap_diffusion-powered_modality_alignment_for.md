@@ -138,6 +138,8 @@ At inference, **single-step inference** is used with fixed noise $\boldsymbol{\e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] GAP: Gaussianize Any Point Clouds with Text Guidance](gap_gaussianize_any_point_clouds_with_text_guidance.md)
@@ -145,5 +147,7 @@ At inference, **single-step inference** is used with fixed noise $\boldsymbol{\e
 - [\[ICCV 2025\] DIIP: Diffusion Image Prior](diffusion_image_prior.md)
 - [\[ICCV 2025\] SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models](smgdiff_soccer_motion_generation_using_diffusion_probabilistic_models.md)
 - [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **18** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/causal_inference/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×3 · Reasoning ×2
+
 **[Action-Guided Attention for Video Action Anticipation](action-guided_attention_for_video_action_anticipation.md)**
 
 :   This paper proposes an Action-Guided Attention (AGA) mechanism that uses the model's own action prediction sequences as the Query and Key in attention (rather than pixel-level features), combined with adaptive gated fusion of historical context and current frame features. AGA achieves strong generalization from validation to test set on EPIC-Kitchens-100 and supports post-hoc interpretability analysis.

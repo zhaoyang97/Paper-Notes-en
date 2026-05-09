@@ -155,6 +155,8 @@ DINO-QPM surpasses the non-interpretable DINOv2 linear probe in accuracy (88.3 v
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](why_does_it_look_there_structured_explanations_for_image_classification.md)
@@ -162,5 +164,7 @@ DINO-QPM surpasses the non-interpretable DINOv2 linear probe in accuracy (88.3 v
 - [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](language_models_can_explain_visual_features_via_steering.md)
 - [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
 - [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](../../ACL2026/interpretability/llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
+
+</div>
 
 <!-- RELATED:END -->

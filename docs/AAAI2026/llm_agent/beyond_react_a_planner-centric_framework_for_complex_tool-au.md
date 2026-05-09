@@ -167,6 +167,8 @@ Average inference steps: the proposed method requires only **2.29 steps**, signi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
@@ -174,5 +176,7 @@ Average inference steps: the proposed method requires only **2.29 steps**, signi
 - [\[AAAI 2026\] Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations](automating_complex_document_workflows_via_stepwise_and_rollback-enabled_operatio.md)
 - [\[ACL 2026\] Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification](../../ACL2026/llm_agent/spec-o3_a_tool-augmented_vision-language_agent_for_rare_celestial_object_candida.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
+
+</div>
 
 <!-- RELATED:END -->

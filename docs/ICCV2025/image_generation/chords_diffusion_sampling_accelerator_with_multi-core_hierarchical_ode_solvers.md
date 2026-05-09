@@ -184,6 +184,8 @@ Effect of varying step count $N$ (HunyuanVideo, 8 cores):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Accelerating Diffusion Sampling via Exploiting Local Transition Coherence](accelerating_diffusion_sampling_via_exploiting_local_transition_coherence.md)
@@ -191,5 +193,7 @@ Effect of varying step count $N$ (HunyuanVideo, 8 cores):
 - [\[ICCV 2025\] Penalizing Boundary Activation for Object Completeness in Diffusion Models](penalizing_boundary_activation_for_object_completeness_in_diffusion_models.md)
 - [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
 - [\[ICCV 2025\] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion](freescale_unleashing_the_resolution_of_diffusion_models_via_tuning-free_scale_fu.md)
+
+</div>
 
 <!-- RELATED:END -->

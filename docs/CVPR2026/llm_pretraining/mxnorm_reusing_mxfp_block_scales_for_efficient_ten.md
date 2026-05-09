@@ -102,6 +102,8 @@ In the typical "RMSNorm → Linear" pattern of Pre-Norm transformers, MXNorm fus
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
@@ -109,5 +111,7 @@ In the typical "RMSNorm → Linear" pattern of Pre-Norm transformers, MXNorm fus
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
 - [\[CVPR 2026\] Linking Modality Isolation in Heterogeneous Collaborative Perception](linking_modality_isolation_in_heterogeneous_collaborative_perception.md)
+
+</div>
 
 <!-- RELATED:END -->

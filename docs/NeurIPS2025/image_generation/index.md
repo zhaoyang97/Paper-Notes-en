@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **246** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/image_generation/index.md) · [📷 CVPR2026 (239)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (154)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [📹 ICCV2025 (219)](../../ICCV2025/image_generation/index.md)
+
+🔥 **Top topics:** Diffusion Models ×93 · Text-to-Image ×13 · Adversarial Robustness ×9 · Multimodal/VLM ×8 · Layout & Composition ×7
+
 **[70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float (DFloat11)](70_size_100_accuracy_lossless_llm_compression_for_efficient.md)**
 
 :   DFloat11 exploits the low-entropy property of exponent bits in BFloat16 weights to losslessly compress LLMs and diffusion models to approximately 70% of their original size (equivalent to ~11 bits) via Huffman coding. It further introduces hierarchical lookup tables and a two-phase GPU kernel for efficient online decompression, enabling lossless inference of Llama 3.1 405B on a single node with 8×80GB GPUs.

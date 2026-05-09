@@ -193,6 +193,8 @@ DIFFA surpasses Qwen2-Audio-Instruct by nearly 3 points on MMSU, with particular
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](../../NeurIPS2025/image_generation/mmada_multimodal_large_diffusion_language_models.md)
@@ -200,5 +202,7 @@ DIFFA surpasses Qwen2-Audio-Instruct by nearly 3 points on MMSU, with particular
 - [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
 - [\[ACL 2026\] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions](../../ACL2026/image_generation/large_language_models_are_bad_dice_players_llms_struggle_to_generate_random_numb.md)
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/image_generation/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
+
+</div>
 
 <!-- RELATED:END -->

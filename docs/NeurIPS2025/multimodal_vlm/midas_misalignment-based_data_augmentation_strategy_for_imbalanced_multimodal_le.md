@@ -146,6 +146,8 @@ MIDAS achieves 74.00% Acc / 73.64 F1 vs. Joint's 71.13% Acc / 70.86 F1, demonstr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
@@ -153,5 +155,7 @@ MIDAS achieves 74.00% Acc / 73.64 F1 vs. Joint's 71.13% Acc / 70.86 F1, demonstr
 - [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
 - [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
 - [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](../../AAAI2026/multimodal_vlm/panda_test-time_adaptation_with_negative_data_augmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

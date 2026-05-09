@@ -118,6 +118,8 @@ Total loss: $L_{\text{total}} = L_{\text{NB}} + \lambda L_R$, where $L_{\text{NB
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](../../NeurIPS2025/medical_imaging/learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
@@ -125,5 +127,7 @@ Total loss: $L_{\text{total}} = L_{\text{NB}} + \lambda L_R$, where $L_{\text{NB
 - [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
 - [\[CVPR 2026\] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control](beyond_pixel_simulation_pathology_image_generation_via_diagnostic_semantic_token.md)
 - [\[ICLR 2026\] Intrinsic Lorentz Neural Network](../../ICLR2026/medical_imaging/intrinsic_lorentz_neural_network.md)
+
+</div>
 
 <!-- RELATED:END -->

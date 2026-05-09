@@ -131,6 +131,8 @@ Ablation over the number of temporal windows: 3 windows DA=0.8268, 5 windows DA=
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
@@ -138,5 +140,7 @@ Ablation over the number of temporal windows: 3 windows DA=0.8268, 5 windows DA=
 - [\[ICCV 2025\] Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)](generic_event_boundary_detection_via_denoising_diffusion.md)
 - [\[NeurIPS 2025\] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation](../../NeurIPS2025/image_restoration/rethinking_nighttime_image_deraining_via_learnable_color_space_transformation.md)
 - [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](low-light_image_enhancement_using_event-based_illumination_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

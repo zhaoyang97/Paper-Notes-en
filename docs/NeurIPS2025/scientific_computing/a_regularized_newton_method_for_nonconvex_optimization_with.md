@@ -146,6 +146,8 @@ The idea of exploiting historical information (via $g_{k-1}$) within the regular
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/scientific_computing/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
@@ -153,5 +155,7 @@ The idea of exploiting historical information (via $g_{k-1}$) within the regular
 - [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](towards_universal_neural_operators_through_multiphysics_pretraining.md)
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
+
+</div>
 
 <!-- RELATED:END -->

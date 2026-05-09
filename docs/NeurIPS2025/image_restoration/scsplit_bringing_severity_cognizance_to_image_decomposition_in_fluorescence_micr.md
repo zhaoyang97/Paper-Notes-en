@@ -119,6 +119,8 @@ Given two structures $c_0 \in C_0$ and $c_1 \in C_1$, the mixed input is defined
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems](learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss.md)
@@ -126,5 +128,7 @@ Given two structures $c_0 \in C_0$ and $c_1 \in C_1$, the mixed input is defined
 - [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](../../CVPR2026/image_restoration/statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
 - [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](latent_harmony_synergistic_unified_uhd_image_restoration_with_pre-trained_diffus.md)
+
+</div>
 
 <!-- RELATED:END -->

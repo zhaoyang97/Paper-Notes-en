@@ -119,6 +119,8 @@ Input weight matrix $W$ → greedy term-by-term decomposition → solve a PUBO (
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
@@ -126,5 +128,7 @@ Input weight matrix $W$ → greedy term-by-term decomposition → solve a PUBO (
 - [\[NeurIPS 2025\] Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization](tighter_cmi-based_generalization_bounds_via_stochastic_projection_and_quantizati.md)
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
 - [\[ICLR 2026\] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs](../../ICLR2026/model_compression/anybcq_hardware_efficient_flexible_binary-coded_quantization_for_multi-precision.md)
+
+</div>
 
 <!-- RELATED:END -->

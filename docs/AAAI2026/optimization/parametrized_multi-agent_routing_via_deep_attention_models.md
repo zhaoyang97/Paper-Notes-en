@@ -138,6 +138,8 @@ The supervised phase minimizes the KL divergence between the model policy and th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Nonparametric Teaching of Attention Learners](../../ICLR2026/optimization/nonparametric_teaching_of_attention_learners.md)
@@ -145,5 +147,7 @@ The supervised phase minimizes the KL divergence between the model policy and th
 - [\[AAAI 2026\] MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework](motif_multi-strategy_optimization_via_turn-based_interactive_framework.md)
 - [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](../../ICLR2026/optimization/neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
+
+</div>
 
 <!-- RELATED:END -->

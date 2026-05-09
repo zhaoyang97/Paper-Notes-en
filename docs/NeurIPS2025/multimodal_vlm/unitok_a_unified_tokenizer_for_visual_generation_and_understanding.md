@@ -159,6 +159,8 @@ where the reconstruction loss $\mathcal{L}_{\text{recon}} = \mathcal{L}_R + \lam
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](../../ICCV2025/multimodal_vlm/harmonizing_visual_representations_for_unified_multimodal_un.md)
@@ -166,5 +168,7 @@ where the reconstruction loss $\mathcal{L}_{\text{recon}} = \mathcal{L}_R + \lam
 - [\[NeurIPS 2025\] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](watch_and_listen_understanding_audio-visual-speech_moments_with_multimodal_llm.md)
 - [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
+
+</div>
 
 <!-- RELATED:END -->

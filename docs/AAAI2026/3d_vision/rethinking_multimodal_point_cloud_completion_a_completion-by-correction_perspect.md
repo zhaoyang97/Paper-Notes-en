@@ -181,6 +181,8 @@ Paradigm comparison (Inpainting vs. Correction): the Inpainting variant achieves
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
@@ -188,5 +190,7 @@ Paradigm comparison (Inpainting vs. Correction): the Inpainting variant achieves
 - [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
 - [\[AAAI 2026\] TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds](tosc_task-oriented_shape_completion_for_open-world_dexterous_grasp_generation_fr.md)
 - [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](../../ICCV2025/3d_vision/revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
+
+</div>
 
 <!-- RELATED:END -->

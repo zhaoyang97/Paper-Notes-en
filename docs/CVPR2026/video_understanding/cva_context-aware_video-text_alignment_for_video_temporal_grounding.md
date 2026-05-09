@@ -141,6 +141,8 @@ Gains: R1@0.5 +4.26 (vs. CDTR), R1@0.7 +4.95 (vs. TD-DETR), HD mAP +4.1 (vs. CG-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
@@ -148,5 +150,7 @@ Gains: R1@0.5 +4.26 (vs. CDTR), R1@0.7 +4.95 (vs. TD-DETR), HD mAP +4.1 (vs. CG-
 - [\[CVPR 2026\] How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms](how_should_video_llms_output_time.md)
 - [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](../../AAAI2026/video_understanding/explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
 - [\[CVPR 2026\] Hear What Matters! Text-conditioned Selective Video-to-Audio Generation](hear_what_matters_text-conditioned_selective_video-to-audio_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

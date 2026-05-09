@@ -134,6 +134,8 @@ The table above reports results on Qwen2.5-7B-Instruct. IROTE achieves a leading
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Do Large Language Models Think Like the Brain? Sentence-Level Evidences from Layer-Wise Embeddings and fMRI](do_large_language_models_think_like_the_brain_sentence-level_evidences_from_laye.md)
@@ -141,5 +143,7 @@ The table above reports results on Qwen2.5-7B-Instruct. IROTE achieves a leading
 - [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](../../ACL2026/llm_nlp/foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration](../../ACL2026/llm_nlp/xtragpt_context-aware_and_controllable_academic_paper_revision_via_human-ai_coll.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_llm_framework.md)
+
+</div>
 
 <!-- RELATED:END -->

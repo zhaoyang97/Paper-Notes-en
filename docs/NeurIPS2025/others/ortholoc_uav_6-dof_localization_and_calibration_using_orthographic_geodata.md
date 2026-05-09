@@ -116,6 +116,8 @@ The OrthoLoC localization pipeline proceeds as follows: (1) *Initial localizatio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization](../../ICCV2025/others/iap_invisible_adversarial_patch_attack_through_perceptibility-aware_localization.md)
@@ -123,5 +125,7 @@ The OrthoLoC localization pipeline proceeds as follows: (1) *Initial localizatio
 - [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
 - [\[NeurIPS 2025\] ConTextTab: A Semantics-Aware Tabular In-Context Learner](contexttab_a_semantics-aware_tabular_in-context_learner.md)
 - [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)
+
+</div>
 
 <!-- RELATED:END -->

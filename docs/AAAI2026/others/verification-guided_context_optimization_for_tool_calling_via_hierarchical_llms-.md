@@ -134,6 +134,8 @@ Results on the BFCL dataset (Claude Sonnet 4 editor + Claude Sonnet 3.7 inferenc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] In-Context Algebra](../../ICLR2026/others/in-context_algebra.md)
@@ -141,5 +143,7 @@ Results on the BFCL dataset (Claude Sonnet 4 editor + Claude Sonnet 3.7 inferenc
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
 - [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
+
+</div>
 
 <!-- RELATED:END -->

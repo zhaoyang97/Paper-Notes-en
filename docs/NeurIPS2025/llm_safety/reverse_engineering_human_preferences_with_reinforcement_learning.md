@@ -148,6 +148,8 @@ Effect of preamble length on attack performance:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reinforcement Learning with Backtracking Feedback](reinforcement_learning_with_backtracking_feedback.md)
@@ -155,5 +157,7 @@ Effect of preamble length on attack performance:
 - [\[NeurIPS 2025\] TRAP: Targeted Redirecting of Agentic Preferences](trap_targeted_redirecting_of_agentic_preferences.md)
 - [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
 - [\[NeurIPS 2025\] Finding Structure in Continual Learning](finding_structure_in_continual_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

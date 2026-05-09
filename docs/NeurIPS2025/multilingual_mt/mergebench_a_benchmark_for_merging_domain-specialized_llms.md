@@ -154,6 +154,8 @@ Normalized multi-task performance (relative to specialized models; 1.0 indicates
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](../../AAAI2026/multilingual_mt/consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)
@@ -161,5 +163,7 @@ Normalized multi-task performance (relative to specialized models; 1.0 indicates
 - [\[ACL 2026\] Vocab Diet: Reshaping the Vocabulary of LLMs via Vector Arithmetic](../../ACL2026/multilingual_mt/vocab_diet_reshaping_the_vocabulary_of_llms_via_vector_arithmetic.md)
 - [\[ACL 2026\] IndoTabVQA: A Benchmark for Cross-Lingual Table Understanding in Bahasa Indonesia Documents](../../ACL2026/multilingual_mt/indotabvqa_a_benchmark_for_cross-lingual_table_understanding_in_bahasa_indonesia.md)
 - [\[ACL 2026\] What Factors Affect LLMs and RLLMs in Financial Question Answering?](../../ACL2026/multilingual_mt/what_factors_affect_llms_and_rllms_in_financial_question_answering.md)
+
+</div>
 
 <!-- RELATED:END -->

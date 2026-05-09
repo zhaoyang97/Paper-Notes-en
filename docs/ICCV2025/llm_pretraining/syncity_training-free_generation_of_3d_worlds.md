@@ -147,6 +147,8 @@ This method is **training-free** and involves no training or loss functions. All
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/llm_pretraining/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
@@ -154,5 +156,7 @@ This method is **training-free** and involves no training or loss functions. All
 - [\[NeurIPS 2025\] Deep Compositional Phase Diffusion for Long Motion Sequence Generation](../../NeurIPS2025/llm_pretraining/deep_compositional_phase_diffusion_for_long_motion_sequence_generation.md)
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](../../CVPR2026/llm_pretraining/lottiegpt_vector_animation_generation.md)
 - [\[ICCV 2025\] Make Your Training Flexible: Towards Deployment-Efficient Video Models](make_your_training_flexible_towards_deployment-efficient_video_models.md)
+
+</div>
 
 <!-- RELATED:END -->

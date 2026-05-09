@@ -126,6 +126,8 @@ The advantage is most pronounced at ultra-high acceleration factors (20×, 69×)
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
@@ -133,5 +135,7 @@ The advantage is most pronounced at ultra-high acceleration factors (20×, 69×)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](../../ICLR2026/medical_imaging/causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
 - [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
 - [\[AAAI 2026\] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks](neural_bandit_based_optimal_llm_selection_for_a_pipeline_of_tasks.md)
+
+</div>
 
 <!-- RELATED:END -->

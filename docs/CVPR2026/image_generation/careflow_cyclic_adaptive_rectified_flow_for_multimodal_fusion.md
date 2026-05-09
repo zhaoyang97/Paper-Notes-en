@@ -142,6 +142,8 @@ On the CH-SIMS-v2 dataset, Acc5 reaches 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](../../NeurIPS2025/image_generation/efficient_rectified_flow_for_image_fusion.md)
@@ -149,5 +151,7 @@ On the CH-SIMS-v2 dataset, Acc5 reaches 57.9 (Prev. SOTA KuDA was 53.1, Gain +4.
 - [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](../../ICLR2026/image_generation/free_lunch_for_stabilizing_rectified_flow_inversion.md)
 - [\[NeurIPS 2025\] Balanced Conic Rectified Flow](../../NeurIPS2025/image_generation/balanced_conic_rectified_flow.md)
 - [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](../../NeurIPS2025/image_generation/rectified-cfg_for_flow_based_models.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ where $\lambda = 0.1$ balances the contribution of the two modalities. Importanc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](multi-agent_coordination_via_flow_matching.md)
@@ -134,5 +136,7 @@ where $\lambda = 0.1$ balances the contribution of the two modalities. Importanc
 - [\[CVPR 2026\] coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation](../../CVPR2026/image_generation/codrawagents_a_multi-agent_dialogue_framework_for_compositional_image_generation.md)
 - [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
 - [\[ICLR 2026\] Discrete Adjoint Matching](discrete_adjoint_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

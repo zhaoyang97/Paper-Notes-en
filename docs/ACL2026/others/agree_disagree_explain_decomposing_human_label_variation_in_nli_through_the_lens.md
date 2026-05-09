@@ -119,6 +119,8 @@ This is an empirical analysis study; no model training is involved. Inter-annota
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
@@ -126,5 +128,7 @@ This is an empirical analysis study; no model training is involved. Inter-annota
 - [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](../../AAAI2026/others/how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)
 - [\[AAAI 2026\] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration](../../AAAI2026/others/align_when_they_want_complement_when_they_need_human-centere.md)
 - [\[ICCV 2025\] LayerD: Decomposing Raster Graphic Designs into Layers](../../ICCV2025/others/layerd_decomposing_raster_graphic_designs_into_layers.md)
+
+</div>
 
 <!-- RELATED:END -->

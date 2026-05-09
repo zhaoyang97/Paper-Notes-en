@@ -121,6 +121,8 @@ The problem formulation is novel and the experimental design is rigorous, uncove
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
@@ -128,5 +130,7 @@ The problem formulation is novel and the experimental design is rigorous, uncove
 - [\[CVPR 2026\] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](../../CVPR2026/video_understanding/learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)
 - [\[CVPR 2026\] TrajTok: Learning Trajectory Tokens Enhances Video Understanding](../../CVPR2026/video_understanding/trajtok_trajectory_token_video_understanding.md)
 - [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](../../ACL2026/video_understanding/arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
+
+</div>
 
 <!-- RELATED:END -->

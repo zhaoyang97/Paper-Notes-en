@@ -169,6 +169,8 @@ OpenMind is complementary to CT-Rate (50k CT): OpenMind focuses on MRI, is large
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
@@ -176,5 +178,7 @@ OpenMind is complementary to CT-Rate (50k CT): OpenMind focuses on MRI, is large
 - [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
 - [\[NeurIPS 2025\] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](../../NeurIPS2025/medical_imaging/self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)
 - [\[ICCV 2025\] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation](ukbob_one_billion_mri_labeled_masks_for_generalizable_3d_medical_image_segmentat.md)
+
+</div>
 
 <!-- RELATED:END -->

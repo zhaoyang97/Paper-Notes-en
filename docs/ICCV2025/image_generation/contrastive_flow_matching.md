@@ -158,6 +158,8 @@ Excessively large $\lambda$ causes the model to over-focus on pushing away negat
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](../../CVPR2026/image_generation/vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
@@ -165,5 +167,7 @@ Excessively large $\lambda$ causes the model to over-focus on pushing away negat
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](../../NeurIPS2025/image_generation/flow_matching_neural_processes.md)
 - [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
 - [\[ICCV 2025\] FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait](float_generative_motion_latent_flow_matching_for_audio-driven_talking_portrait.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -111,6 +111,8 @@ The layerwise linear heads are trained with standard cross-entropy loss (backbon
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FecalFed: Privacy-Preserving Poultry Disease Detection via Federated Learning](fecalfed_privacy-preserving_poultry_disease_detection_via_federated_learning.md)
@@ -118,5 +120,7 @@ The layerwise linear heads are trained with standard cross-entropy loss (backbon
 - [\[NeurIPS 2025\] Causally Reliable Concept Bottleneck Models](../../NeurIPS2025/ai_safety/causally_reliable_concept_bottleneck_models.md)
 - [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
 - [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](../../ICCV2025/ai_safety/towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
+
+</div>
 
 <!-- RELATED:END -->

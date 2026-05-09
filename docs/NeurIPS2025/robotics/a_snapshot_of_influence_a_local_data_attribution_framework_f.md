@@ -114,6 +114,8 @@ Building on the success of targeted intervention, single-iteration filtering is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
@@ -121,5 +123,7 @@ Building on the success of targeted intervention, single-iteration filtering is 
 - [\[ICLR 2026\] Attribution-Guided Decoding](../../ICLR2026/robotics/attribution-guided_decoding.md)
 - [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
 - [\[NeurIPS 2025\] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data](himacon_discovering_hierarchical_manipulation_concepts_from_unlabeled_multi-moda.md)
+
+</div>
 
 <!-- RELATED:END -->

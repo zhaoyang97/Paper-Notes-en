@@ -117,6 +117,8 @@ Average gains over SCR-Enhanced: Grammar +5.39%, Semantic +14.52%.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
@@ -124,5 +126,7 @@ Average gains over SCR-Enhanced: Grammar +5.39%, Semantic +14.52%.
 - [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](../../ACL2026/model_compression/clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
 - [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
 - [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](failures_to_surface_harmful_contents_in_video_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -143,6 +143,8 @@ $$\theta^* \leftarrow \arg\min_\theta \mathcal{L}_{\text{CE}}\left(f_\Phi(\mathb
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
@@ -150,5 +152,7 @@ $$\theta^* \leftarrow \arg\min_\theta \mathcal{L}_{\text{CE}}\left(f_\Phi(\mathb
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](robust_watermarking_on_gradient_boosting_decision_trees.md)
 - [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
 - [\[ICLR 2026\] Skirting Additive Error Barriers for Private Turnstile Streams](../../ICLR2026/ai_safety/skirting_additive_error_barriers_for_private_turnstile_streaming.md)
+
+</div>
 
 <!-- RELATED:END -->

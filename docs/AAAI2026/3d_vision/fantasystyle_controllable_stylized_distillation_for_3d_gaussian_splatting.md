@@ -129,6 +129,8 @@ The improvement from MVFC is more pronounced in long-range consistency, consiste
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
@@ -136,5 +138,7 @@ The improvement from MVFC is more pronounced in long-range consistency, consiste
 - [\[AAAI 2026\] Gaussian Blending: Rethinking Alpha Blending in 3D Gaussian Splatting](gaussian_blending_rethinking_alpha_blending_in_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] Color3D: Controllable and Consistent 3D Colorization with Personalized Colorizer](../../ICLR2026/3d_vision/color3d_controllable_and_consistent_3d_colorization_with_personalized_colorizer.md)
 - [\[CVPR 2026\] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](../../CVPR2026/3d_vision/posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

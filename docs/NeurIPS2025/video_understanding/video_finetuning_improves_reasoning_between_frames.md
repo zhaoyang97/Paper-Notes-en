@@ -135,6 +135,8 @@ All model pairs share the same visual encoder, language backbone, and cross-moda
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/video_understanding/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
@@ -142,5 +144,7 @@ All model pairs share the same visual encoder, language backbone, and cross-moda
 - [\[NeurIPS 2025\] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task](star_tool_video_qa.md)
 - [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 - [\[NeurIPS 2025\] The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation](the_ouroboros_of_benchmarking_reasoning_evaluation_in_an_era_of_saturation.md)
+
+</div>
 
 <!-- RELATED:END -->

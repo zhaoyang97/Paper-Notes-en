@@ -115,6 +115,8 @@ Detection loss (YOLOv8-style). Adam optimizer, lr=0.001. Input: 5 consecutive fr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting](../../NeurIPS2025/remote_sensing/ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore.md)
@@ -122,5 +124,7 @@ Detection loss (YOLOv8-style). Adam optimizer, lr=0.001. Input: 5 consecutive fr
 - [\[AAAI 2026\] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data](debiasing_machine_learning_predictions_for_causal_inference_without_additional_g.md)
 - [\[AAAI 2026\] Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India](machine_learning_for_sustainable_rice_production_region-scale_monitoring_of_wate.md)
 - [\[AAAI 2026\] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction](m3sr_multi-scale_multi-perceptual_mamba_for_efficient_spectral_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

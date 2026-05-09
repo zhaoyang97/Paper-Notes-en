@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **24** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (92)](../../CVPR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (58)](../../ICCV2025/video_understanding/index.md)
+
+🔥 **Top topics:** LLM ×4 · Object Tracking ×4 · Reasoning ×3 · Adversarial Robustness ×2
+
 **[AdAEM: An Adaptively and Automated Extensible Measurement of LLMs' Value Difference](adaem_an_adaptively_and_automated_extensible_measurement_of_llms_value_differenc.md)**
 
 :   This paper proposes AdAEM, an adaptive and self-extensible evaluation framework for LLM values. By leveraging information-theoretic optimization, AdAEM automatically generates test questions that maximally reveal value differences across LLMs, addressing the "insufficient informativeness" limitation of existing static benchmarks that fail to distinguish models' value orientations.

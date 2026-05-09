@@ -133,6 +133,8 @@ The value function is trained using GCIVL (an action-free IQL variant) with expe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency](freqpolicy_efficient_flow-based_visuomotor_policy_via_frequency_consistency.md)
@@ -140,5 +142,7 @@ The value function is trained using GCIVL (an action-free IQL variant) with expe
 - [\[NeurIPS 2025\] RLZero: Direct Policy Inference from Language Without In-Domain Supervision](rlzero_direct_policy_inference_from_language_without_in-domain_supervision.md)
 - [\[ICLR 2026\] Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty](../../ICLR2026/image_generation/unsupervised_conformal_inference_bootstrapping_and_alignment_to_control_llm_unce.md)
 - [\[ICCV 2025\] Dense Policy: Bidirectional Autoregressive Learning of Actions](../../ICCV2025/image_generation/dense_policy_bidirectional_autoregressive_learning_of_actions.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -226,6 +226,8 @@ Focal Modulation and BSQ are the best-performing compression block and quantizer
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement](../../AAAI2026/image_generation/pase_leveraging_the_phonological_prior_of_wavlm_for_low-hallucination_generative.md)
@@ -233,5 +235,7 @@ Focal Modulation and BSQ are the best-performing compression block and quantizer
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
 - [\[NeurIPS 2025\] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold](stella_subspace_learning_in_low-rank_adaptation_using_stiefel_manifold.md)
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](../../ICCV2025/image_generation/bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
+
+</div>
 
 <!-- RELATED:END -->

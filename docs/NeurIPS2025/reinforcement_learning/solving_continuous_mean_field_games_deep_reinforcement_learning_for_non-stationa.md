@@ -148,6 +148,8 @@ $$e_k^{\text{true}} < C_0 e_0^{\text{cnf}} + \frac{1}{k}\sum_{i=1}^{k-1}\left[(i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
@@ -155,5 +157,7 @@ $$e_k^{\text{true}} < C_0 e_0^{\text{cnf}} + \frac{1}{k}\sum_{i=1}^{k-1}\left[(i
 - [\[NeurIPS 2025\] Non-convex Entropic Mean-Field Optimization via Best Response Flow](non-convex_entropic_mean-field_optimization_via_best_response_flow.md)
 - [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
 - [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
+
+</div>
 
 <!-- RELATED:END -->

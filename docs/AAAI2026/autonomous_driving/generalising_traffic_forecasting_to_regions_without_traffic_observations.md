@@ -155,6 +155,8 @@ GenCast variants also outperform all baselines on the solar energy NREL dataset,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
@@ -162,5 +164,7 @@ GenCast variants also outperform all baselines on the solar energy NREL dataset,
 - [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
 - [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
 - [\[CVPR 2026\] C2T: LLM-Aligned Common-Sense Reward Learning for Traffic-Vehicle Coordination](../../CVPR2026/autonomous_driving/c2t_llm_traffic_coordination.md)
+
+</div>
 
 <!-- RELATED:END -->

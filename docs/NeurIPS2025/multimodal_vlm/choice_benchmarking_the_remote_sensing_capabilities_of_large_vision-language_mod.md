@@ -131,6 +131,8 @@ Each question is formatted as $P_i = [Q_i, C_i, I_i, L_i]$, where $Q_i$ denotes 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
@@ -138,5 +140,7 @@ Each question is formatted as $P_i = [Q_i, C_i, I_i, L_i]$, where $Q_i$ denotes 
 - [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
 - [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
 - [\[CVPR 2026\] Asking like Socrates: Socrates helps VLMs understand remote sensing images](../../CVPR2026/multimodal_vlm/asking_like_socrates_socrates_helps_vlms_understand_remote_sensing_images.md)
+
+</div>
 
 <!-- RELATED:END -->

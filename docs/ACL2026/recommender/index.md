@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **13** paper notes
 
+📌 **Same area in other venues:** [🔬 ICLR2026 (10)](../../ICLR2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+
+🔥 **Top topics:** Personalized Generation ×4 · Recommendation ×4 · Dialogue ×3 · Reasoning ×2
+
 **[Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)**
 
 :   This paper proposes TravelBench, the first travel planning benchmark that integrates real user queries, implicit user preferences, multi-turn interaction, unsolvable task recognition, and 10 real-world tools. It enables reproducible evaluation through a sandbox environment and reveals that state-of-the-art models exhibit uneven performance across different capability dimensions.

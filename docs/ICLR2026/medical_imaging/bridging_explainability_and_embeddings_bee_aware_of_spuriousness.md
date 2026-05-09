@@ -146,6 +146,8 @@ In the absence of counterexamples, GroupDRO even underperforms ERM, whereas BEE'
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Bridging Vision and Language for Robust Context-Aware Surgical Point Tracking: The VL-SurgPT Dataset and Benchmark](../../AAAI2026/medical_imaging/bridging_vision_and_language_for_robust_context-aware_surgical_point_tracking_th.md)
@@ -153,5 +155,7 @@ In the absence of counterexamples, GroupDRO even underperforms ERM, whereas BEE'
 - [\[CVPR 2026\] Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD](../../CVPR2026/medical_imaging/bridging_the_skill_gap_in_clinical_cbct_interpreta.md)
 - [\[ICLR 2026\] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology](fusing_pixels_and_genes_spatially-aware_learning_in_computational_pathology.md)
 - [\[ICLR 2026\] DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring](disco_densely-overlapping_cell_instance_segmentation_via_adjacency-aware_collabo.md)
+
+</div>
 
 <!-- RELATED:END -->

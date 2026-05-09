@@ -125,6 +125,8 @@ Training proceeds in two stages: (1) In the SFT stage, the model is jointly trai
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
@@ -132,5 +134,7 @@ Training proceeds in two stages: (1) In the SFT stage, the model is jointly trai
 - [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
 - [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
 - [\[AAAI 2026\] Credal Ensemble Distillation for Uncertainty Quantification](../../AAAI2026/model_compression/credal_ensemble_distillation_for_uncertainty_quantification.md)
+
+</div>
 
 <!-- RELATED:END -->

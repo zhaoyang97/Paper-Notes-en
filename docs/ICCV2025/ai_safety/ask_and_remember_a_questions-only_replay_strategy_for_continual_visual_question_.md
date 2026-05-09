@@ -143,6 +143,8 @@ $$\mathcal{L}_{\text{ACD}} = \mathbb{E}_{x^t,q^m} \mathbb{E}_{k \sim \mathcal{K}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
@@ -150,5 +152,7 @@ $$\mathcal{L}_{\text{ACD}} = \mathbb{E}_{x^t,q^m} \mathbb{E}_{k \sim \mathcal{K}
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 - [\[ICCV 2025\] Staining and Locking Computer Vision Models without Retraining](staining_and_locking_computer_vision_models_without_retraining.md)
+
+</div>
 
 <!-- RELATED:END -->

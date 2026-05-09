@@ -123,6 +123,8 @@ where the temperature parameter $\tau=0.2$, requiring no dense annotation data.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] From One to More: Contextual Part Latents for 3D Generation](from_one_to_more_contextual_part_latents_for_3d_generation.md)
@@ -130,5 +132,7 @@ where the temperature parameter $\tau=0.2$, requiring no dense annotation data.
 - [\[ICCV 2025\] PseudoMapTrainer: Learning Online Mapping without HD Maps](pseudomaptrainer_learning_online_mapping_without_hd_maps.md)
 - [\[ICCV 2025\] SuperDec: 3D Scene Decomposition with Superquadric Primitives](superdec_3d_scene_decomposition_with_superquadrics_primitives.md)
 - [\[ICCV 2025\] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction](dynamic_point_maps_a_versatile_representation_for_dynamic_3d_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

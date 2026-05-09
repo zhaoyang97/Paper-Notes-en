@@ -136,6 +136,8 @@ Evaluated on 5 datasets (TACO, CORE4D, GRAB, OAKINK2, BEHAVE), covering both han
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](layertracer_cognitive-aligned_layered_svg_synthesis_via_diffusion_transformer.md)
@@ -143,5 +145,7 @@ Evaluated on 5 datasets (TACO, CORE4D, GRAB, OAKINK2, BEHAVE), covering both han
 - [\[ICCV 2025\] Jigsaw++: Imagining Complete Shape Priors for Object Reassembly](jigsaw_imagining_complete_shape_priors_for_object_reassembly.md)
 - [\[ICCV 2025\] A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks](a_linear_n-point_solver_for_structure_and_motion_from_asynchronous_tracks.md)
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](multi-view_gaze_target_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -137,6 +137,8 @@ A standard cross-entropy loss is applied independently to node and edge predicti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
@@ -144,5 +146,7 @@ A standard cross-entropy loss is applied independently to node and edge predicti
 - [\[ICCV 2025\] Video Motion Graphs](../../ICCV2025/image_generation/video_motion_graphs.md)
 - [\[CVPR 2026\] TRACE: Structure-Aware Character Encoding for Robust and Generalizable Document Watermarking](../../CVPR2026/image_generation/trace_structure-aware_character_encoding_for_robust_and_generalizable_document_w.md)
 - [\[AAAI 2026\] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs](../../AAAI2026/image_generation/truthfulrag_resolving_factual-level_conflicts_in_retrieval-augmented_generation_.md)
+
+</div>
 
 <!-- RELATED:END -->

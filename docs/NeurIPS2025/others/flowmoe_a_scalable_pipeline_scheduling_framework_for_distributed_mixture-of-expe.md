@@ -135,6 +135,8 @@ FlowMoE is implemented on PyTorch + Tutel. Tutel is a deeply PyTorch-integrated 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](non-clairvoyant_scheduling_with_progress_bars.md)
@@ -142,5 +144,7 @@ FlowMoE is implemented on PyTorch + Tutel. Tutel is a deeply PyTorch-integrated 
 - [\[NeurIPS 2025\] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)
 - [\[NeurIPS 2025\] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales](scalable_inference_of_functional_neural_connectivity_at_submillisecond_timescale.md)
 - [\[NeurIPS 2025\] Learning to Condition: A Neural Heuristic for Scalable MPE Inference](learning_to_condition_a_neural_heuristic_for_scalable_mpe_inference.md)
+
+</div>
 
 <!-- RELATED:END -->

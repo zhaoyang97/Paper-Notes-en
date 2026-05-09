@@ -135,6 +135,8 @@ The framework consists of three components: (1) constructing MRMBench—a probin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rectifying Shortcut Behaviors in Preference-based Reward Learning](../../NeurIPS2025/interpretability/rectifying_shortcut_behaviors_in_preference-based_reward_learning.md)
@@ -142,5 +144,7 @@ The framework consists of three components: (1) constructing MRMBench—a probin
 - [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](toc_tree-of-claims_search_with_multi-agent_language_models.md)
 - [\[AAAI 2026\] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models](som_directions_are_better_than_one_multi-directional_refusal_suppression_in_lang.md)
 - [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_alignment.md)
+
+</div>
 
 <!-- RELATED:END -->

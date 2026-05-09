@@ -119,6 +119,8 @@ No training is required; the framework operates entirely at inference time. Rout
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
@@ -126,5 +128,7 @@ No training is required; the framework operates entirely at inference time. Rout
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/model_compression/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
 - [\[ACL 2026\] ChemAmp: Amplified Chemistry Tools via Composable Agents](chemamp_amplified_chemistry_tools_via_composable_agents.md)
 - [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](enabling_agents_to_communicate_entirely_in_latent_space.md)
+
+</div>
 
 <!-- RELATED:END -->

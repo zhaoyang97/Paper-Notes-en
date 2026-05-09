@@ -150,6 +150,8 @@ $$L = \lambda_1 L_{1/16}^c + \lambda_2 L_{1/8}^c + \lambda_3 L_{1/1}^f + \lambda
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] ArgMatch: Adaptive Refinement Gathering for Efficient Dense Matching](argmatch_adaptive_refinement_gathering_for_efficient_dense_matching.md)
@@ -157,5 +159,7 @@ $$L = \lambda_1 L_{1/16}^c + \lambda_2 L_{1/8}^c + \lambda_3 L_{1/1}^f + \lambda
 - [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 - [\[ICCV 2025\] Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels](do_it_yourself_learning_semantic_correspondence_from_pseudo-labels.md)
 - [\[ICCV 2025\] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction](s3r-gs_streamlining_the_pipeline_for_large-scale_street_scene_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

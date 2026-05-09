@@ -130,6 +130,8 @@ No training is involved. Five state-of-the-art models are evaluated (Claude 3.5 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] When Identities Collapse: A Stress-Test Benchmark for Multi-Subject Personalization](../../CVPR2026/image_generation/when_identities_collapse_a_stress-test_benchmark_for_multi-subject_personalizati.md)
@@ -137,5 +139,7 @@ No training is involved. Five state-of-the-art models are evaluated (Claude 3.5 
 - [\[ACL 2026\] Large Language Models Are Bad Dice Players: LLMs Struggle to Generate Random Numbers from Statistical Distributions](large_language_models_are_bad_dice_players_llms_struggle_to_generate_random_numb.md)
 - [\[ICLR 2026\] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting](../../ICLR2026/image_generation/doflow_flow-based_generative_models_for_interventional_and_counterfactual_foreca.md)
 - [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](../../AAAI2026/image_generation/longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

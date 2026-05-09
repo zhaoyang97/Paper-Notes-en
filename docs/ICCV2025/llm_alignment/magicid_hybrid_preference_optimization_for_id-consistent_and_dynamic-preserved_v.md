@@ -161,6 +161,8 @@ $$\mathcal{L}_{\text{HPO}}(\theta) = \mathbb{E}_{(v_0^w, v_0^l) \sim \mathcal{D}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization](../../NeurIPS2025/llm_alignment/mitigating_hallucination_through_theory-consistent_symmetric_multimodal_preferen.md)
@@ -168,5 +170,7 @@ $$\mathcal{L}_{\text{HPO}}(\theta) = \mathbb{E}_{(v_0^w, v_0^l) \sim \mathcal{D}
 - [\[NeurIPS 2025\] LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](../../NeurIPS2025/llm_alignment/longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid.md)
 - [\[NeurIPS 2025\] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](../../NeurIPS2025/llm_alignment/self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)
 - [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/llm_alignment/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -171,6 +171,8 @@ Only lightweight parameters such as the gating scalar $\alpha$ and normalization
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
@@ -178,5 +180,7 @@ Only lightweight parameters such as the gating scalar $\alpha$ and normalization
 - [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](../../ICCV2025/multimodal_vlm/advancing_textual_prompt_learning_with_anchored_attributes.md)
 - [\[CVPR 2026\] Evolving Prompt Adaptation for Vision-Language Models](../../CVPR2026/multimodal_vlm/evolving_prompt_adaptation_for_visionlanguage_mode.md)
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](../../CVPR2026/multimodal_vlm/towards_calibrating_prompt_tuning_of_vision-language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

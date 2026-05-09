@@ -145,6 +145,8 @@ $\gamma=0$ degrades to single-step world model performance; $\gamma=0.5$ achieve
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Embodied Navigation with Auxiliary Task of Action Description Prediction](embodied_navigation_with_auxiliary_task_of_action_description_prediction.md)
@@ -152,5 +154,7 @@ $\gamma=0$ degrades to single-step world model performance; $\gamma=0.5$ achieve
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](../../NeurIPS2025/reinforcement_learning/provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
 - [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](../../AAAI2026/reinforcement_learning/language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
 - [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](../../AAAI2026/reinforcement_learning/stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
+
+</div>
 
 <!-- RELATED:END -->

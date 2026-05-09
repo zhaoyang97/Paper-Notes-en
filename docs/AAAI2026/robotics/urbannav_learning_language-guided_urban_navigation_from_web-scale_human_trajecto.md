@@ -202,6 +202,8 @@ The FiLM module is critical for performance gains (removing it raises AOE from 9
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Attribution-Guided Decoding](../../ICLR2026/robotics/attribution-guided_decoding.md)
@@ -209,5 +211,7 @@ The FiLM module is critical for performance gains (removing it raises AOE from 9
 - [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](theory_of_mind_for_explainable_human-robot_interaction.md)
 - [\[AAAI 2026\] Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation](recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua.md)
 - [\[AAAI 2026\] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation](affordance-guided_coarse-to-fine_exploration_for_base_placem.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ This is a conceptual paper and does not involve specific loss functions. It syst
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
@@ -129,5 +131,7 @@ This is a conceptual paper and does not involve specific loss functions. It syst
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
 - [\[ICLR 2026\] The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM](../../ICLR2026/model_compression/the_unseen_frontier_pushing_the_limits_of_llm_sparsity_with_surrogate-free_admm.md)
 - [\[ICLR 2026\] LLMs Encode Their Failures: Predicting Success from Pre-Generation Activations](../../ICLR2026/model_compression/llms_encode_their_failures_predicting_success_from_pre-generation_activations.md)
+
+</div>
 
 <!-- RELATED:END -->

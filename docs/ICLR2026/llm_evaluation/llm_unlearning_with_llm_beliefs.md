@@ -184,6 +184,8 @@ Intuitively, GA's residual only "presses down" on the target token, allowing squ
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](../../ACL2026/llm_evaluation/from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
@@ -191,5 +193,7 @@ Intuitively, GA's residual only "presses down" on the target token, allowing squ
 - [\[ICLR 2026\] Which LLM Multi-Agent Protocol to Choose?](which_llm_multi-agent_protocol_to_choose.md)
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+
+</div>
 
 <!-- RELATED:END -->

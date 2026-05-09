@@ -226,6 +226,8 @@ Only 2.01M additional parameters and 3.72G additional FLOPs compared to MonoDGP,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](../../CVPR2026/object_detection/towards_intrinsic-aware_monocular_3d_object_detection.md)
@@ -233,5 +235,7 @@ Only 2.01M additional parameters and 3.72G additional FLOPs compared to MonoDGP,
 - [\[ICCV 2025\] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection](../../ICCV2025/object_detection/3dmood_lifting_2d_to_3d_for_monocular_openset_object_detecti.md)
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](../../CVPR2026/object_detection/span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](../../CVPR2026/object_detection/monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
+
+</div>
 
 <!-- RELATED:END -->

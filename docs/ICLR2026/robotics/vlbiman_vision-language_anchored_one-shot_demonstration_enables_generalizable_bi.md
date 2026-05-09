@@ -158,6 +158,8 @@ Overall assessment: Achieving 85.3% success from a single demonstration represen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
@@ -165,5 +167,7 @@ Overall assessment: Achieving 85.3% success from a single demonstration represen
 - [\[ICLR 2026\] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration](one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo.md)
 - [\[ICLR 2026\] When would Vision-Proprioception Policies Fail in Robotic Manipulation?](when_would_vision-proprioception_policies_fail_in_robotic_manipulation.md)
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation](../../CVPR2026/robotics/language-grounded_decoupled_action_representation_for_robotic_manipulation.md)
+
+</div>
 
 <!-- RELATED:END -->

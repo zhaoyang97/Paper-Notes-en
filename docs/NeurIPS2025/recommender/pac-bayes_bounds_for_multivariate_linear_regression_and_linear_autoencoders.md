@@ -208,6 +208,8 @@ PAC-Bayes bounds are computed on three real-world datasets, alongside reported p
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information](../../AAAI2026/recommender/generalization_bounds_for_semi-supervised_matrix_completion_with_distributional_.md)
@@ -215,5 +217,7 @@ PAC-Bayes bounds are computed on three real-world datasets, alongside reported p
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
 - [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
 - [\[NeurIPS 2025\] Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints](wide-horizon_thinking_and_simulation-based_evaluation_for_real-world_llm_plannin.md)
+
+</div>
 
 <!-- RELATED:END -->

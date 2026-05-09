@@ -161,6 +161,8 @@ Using only 35K synthetic samples (MfS35K), the method outperforms FoundationSter
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
@@ -168,5 +170,7 @@ Using only 35K synthetic samples (MfS35K), the method outperforms FoundationSter
 - [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](../../CVPR2026/3d_vision/what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
 - [\[ICCV 2025\] Stereo Any Video: Temporally Consistent Stereo Matching](stereo_any_video_temporally_consistent_stereo_matching.md)
 - [\[ICCV 2025\] BANet: Bilateral Aggregation Network for Mobile Stereo Matching](banet_bilateral_aggregation_network_for_mobile_stereo_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

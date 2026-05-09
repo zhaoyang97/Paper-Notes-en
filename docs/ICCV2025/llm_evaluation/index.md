@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **29** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_evaluation/index.md) · [📷 CVPR2026 (28)](../../CVPR2026/llm_evaluation/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/llm_evaluation/index.md) · [🤖 AAAI2026 (39)](../../AAAI2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/llm_evaluation/index.md)
+
+🔥 **Top topics:** Few-/Zero-Shot Learning ×4 · Layout & Composition ×3 · Reasoning ×2 · Diffusion Models ×2 · Adversarial Robustness ×2
+
 **[3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark](3dsrbench_a_comprehensive_3d_spatial_reasoning_benchmark.md)**
 
 :   This paper introduces 3DSRBench, the first comprehensive 3D spatial reasoning benchmark comprising 2,772 manually annotated VQA pairs across 12 question types. Through balanced data distribution and a novel FlipEval strategy, the benchmark enables robust evaluation. Results reveal that state-of-the-art LMMs—including GPT-4o and Gemini—fall far short of human performance on 3D spatial reasoning (≈52% vs. 95.7%), with substantial performance degradation under uncommon camera viewpoints.

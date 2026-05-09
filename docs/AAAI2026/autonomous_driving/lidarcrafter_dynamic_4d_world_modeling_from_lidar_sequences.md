@@ -188,6 +188,8 @@ Temporal consistency (TTCE↓ / CTC↓):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](../../CVPR2026/autonomous_driving/u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
@@ -195,5 +197,7 @@ Temporal consistency (TTCE↓ / CTC↓):
 - [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
 - [\[AAAI 2026\] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving](radarmp_motion_perception_for_4d_mmwave_radar_in_autonomous_driving.md)
 - [\[AAAI 2026\] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors](lidar-gsimproving_lidar_gaussian_reconstruction_via_diffusion_priors.md)
+
+</div>
 
 <!-- RELATED:END -->

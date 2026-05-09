@@ -116,6 +116,8 @@ Gains are most pronounced on CIFAR10 (up to +33.37%) and exceed 10% on DomainNet
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts](../../NeurIPS2025/ai_safety/flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di.md)
@@ -123,5 +125,7 @@ Gains are most pronounced on CIFAR10 (up to +33.37%) and exceed 10% on DomainNet
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
+
+</div>
 
 <!-- RELATED:END -->

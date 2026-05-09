@@ -130,6 +130,8 @@ A two-stage extension pipeline based on the OMTAD dataset:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection](../../ICCV2025/autonomous_driving/sparselanestp_leveraging_spatio-temporal_priors_with_sparse_transformers_for_3d_.md)
@@ -137,5 +139,7 @@ A two-stage extension pipeline based on the OMTAD dataset:
 - [\[NeurIPS 2025\] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning](how_different_from_the_past_spatio-temporal_time_series_forecasting_with_self-su.md)
 - [\[NeurIPS 2025\] Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting](unifying_appearance_codes_and_bilateral_grids_for_driving_scene_gaussian_splatti.md)
 - [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](../../AAAI2026/autonomous_driving/rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
+
+</div>
 
 <!-- RELATED:END -->

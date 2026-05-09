@@ -135,6 +135,8 @@ The MoE refinement module is not used at inference time, incurring zero addition
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation](../../AAAI2026/audio_speech/reina_regularized_entropy_information-based_loss_for_efficient_simultaneous_spee.md)
@@ -142,5 +144,7 @@ The MoE refinement module is not used at inference time, incurring zero addition
 - [\[NeurIPS 2025\] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition](mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition.md)
 - [\[NeurIPS 2025\] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction](vita-15_towards_gpt-4o_level_real-time_vision_and_speech_interaction.md)
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
+
+</div>
 
 <!-- RELATED:END -->

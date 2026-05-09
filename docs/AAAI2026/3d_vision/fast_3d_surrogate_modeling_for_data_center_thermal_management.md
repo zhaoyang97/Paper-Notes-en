@@ -128,6 +128,8 @@ Real-time temperature prediction enables prediction-based cooling control and wo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](../../CVPR2026/3d_vision/fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
@@ -135,5 +137,7 @@ Real-time temperature prediction enables prediction-based cooling control and wo
 - [\[AAAI 2026\] NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling](nurbgen_high-fidelity_text-to-cad_generation_through_llm-driven_nurbs_modeling.md)
 - [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](../../CVPR2026/3d_vision/action-guided_generation_of_3d_functionality_segmentation_data.md)
 - [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](../../CVPR2026/3d_vision/lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -124,6 +124,8 @@ This paper elevates cross-tokenizer distillation from heuristic approaches to a 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](../../AAAI2026/model_compression/ctpd_cross_tokenizer_preference_distillation.md)
@@ -131,5 +133,7 @@ This paper elevates cross-tokenizer distillation from heuristic approaches to a 
 - [\[ICCV 2025\] Cross-Architecture Distillation Made Simple with Redundancy Suppression](../../ICCV2025/model_compression/cross-architecture_distillation_made_simple_with_redundancy_suppression.md)
 - [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](hyperbolic_dataset_distillation.md)
 - [\[NeurIPS 2025\] Distillation Robustifies Unlearning](distillation_robustifies_unlearning.md)
+
+</div>
 
 <!-- RELATED:END -->

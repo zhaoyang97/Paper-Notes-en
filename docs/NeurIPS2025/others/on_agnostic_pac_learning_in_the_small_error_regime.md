@@ -151,6 +151,8 @@ This paper demonstrates that even in the most foundational problems of learning 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
@@ -158,5 +160,7 @@ This paper demonstrates that even in the most foundational problems of learning 
 - [\[ICCV 2025\] Toward Material-Agnostic System Identification from Videos](../../ICCV2025/others/toward_material-agnostic_system_identification_from_videos.md)
 - [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](../../ICCV2025/others/from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
 - [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
+
+</div>
 
 <!-- RELATED:END -->

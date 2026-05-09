@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **19** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/human_understanding/index.md) · [📷 CVPR2026 (61)](../../CVPR2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/human_understanding/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/human_understanding/index.md)
+
+🔥 **Top topics:** Human Pose ×3 · Face & Gaze ×3 · Reasoning ×2 · Speech & Audio ×2
+
 **[BEDLAM2.0: Synthetic Humans and Cameras in Motion](bedlam20_synthetic_humans_and_cameras_in_motion.md)**
 
 :   BEDLAM2.0 is a comprehensive upgrade over BEDLAM, introducing diverse camera motions (synthetic translation/tracking/orbit + handheld/head-mounted capture), broader body shape coverage (BMI 18–41), strand-based hair, shoes, size-graded clothing, and more 3D environments. The resulting dataset comprises 27K+ sequences and 8M+ frames; models trained exclusively on this synthetic data surpass the state of the art in world-coordinate human motion estimation.

@@ -173,6 +173,8 @@ This is attributed to PUN entirely avoiding NeRF/3DGS training during the view s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Surface-Based Visibility-Guided Uncertainty for Continuous Active 3D Neural Reconstruction](../../AAAI2026/3d_vision/surface-based_visibility-guided_uncertainty_for_continuous_active_3d_neural_reco.md)
@@ -180,5 +182,7 @@ This is attributed to PUN entirely avoiding NeRF/3DGS training during the view s
 - [\[ICLR 2026\] CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions](clods_visual-only_unsupervised_cloth_dynamics_learning_in_unknown_conditions.md)
 - [\[CVPR 2026\] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction](../../CVPR2026/3d_vision/fluidgaussian_propagating_simulation-based_uncertainty_toward_functionally-intel.md)
 - [\[ICLR 2026\] Joint Shadow Generation and Relighting via Light-Geometry Interaction Maps](joint_shadow_generation_and_relighting_via_light-geometry_interaction_maps.md)
+
+</div>
 
 <!-- RELATED:END -->

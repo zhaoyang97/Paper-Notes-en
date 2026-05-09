@@ -171,6 +171,8 @@ Resource efficiency comparison:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/medical_imaging/incentives_in_federated_learning_with_heterogeneous_agents.md)
@@ -178,5 +180,7 @@ Resource efficiency comparison:
 - [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
 - [\[CVPR 2026\] FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning](../../CVPR2026/medical_imaging/fedvg_gradient-guided_aggregation_for_enhanced_federated_learning.md)
 - [\[AAAI 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)
+
+</div>
 
 <!-- RELATED:END -->

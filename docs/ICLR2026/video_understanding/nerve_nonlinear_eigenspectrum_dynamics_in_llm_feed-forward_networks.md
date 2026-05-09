@@ -163,6 +163,8 @@ Optimizer comparison (GPT-2 350M, FineWeb):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Log Probability Tracking of LLM APIs](log_probability_tracking_of_llm_apis.md)
@@ -170,5 +172,7 @@ Optimizer comparison (GPT-2 350M, FineWeb):
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
 - [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/video_understanding/vill-e_video_llm_embeddings_for_retrieval.md)
 - [\[AAAI 2026\] Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks](../../AAAI2026/video_understanding/learning_topology-driven_multi-subspace_fusion_for_grassmannian_deep_network.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **50** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (105)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (58)](../../AAAI2026/autonomous_driving/index.md) · [📹 ICCV2025 (98)](../../ICCV2025/autonomous_driving/index.md)
+
+🔥 **Top topics:** Autonomous Driving ×9 · Agents ×5 · Multimodal/VLM ×4 · Time-Series Forecasting ×3 · Remote Sensing ×3
+
 **[3EED: Ground Everything Everywhere in 3D](3eed_ground_everything_everywhere_in_3d.md)**
 
 :   This paper introduces 3EED — the first large-scale multi-platform (vehicle, drone, quadruped robot), multimodal (LiDAR + RGB) outdoor 3D visual grounding benchmark, containing over 128K objects and 22K language descriptions, making it 10× larger than existing outdoor datasets. A baseline method incorporating cross-platform alignment, multi-scale sampling, and scale-adaptive fusion is also proposed, revealing substantial performance gaps in cross-platform 3D grounding.

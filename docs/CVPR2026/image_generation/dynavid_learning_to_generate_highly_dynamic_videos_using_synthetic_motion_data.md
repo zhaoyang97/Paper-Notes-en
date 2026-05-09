@@ -132,6 +132,8 @@ DynaVid is a two-stage video generation framework. In the first stage, the **Mot
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)
@@ -139,5 +141,7 @@ DynaVid is a two-stage video generation framework. In the first stage, the **Mot
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
 - [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
 - [\[NeurIPS 2025\] OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data](../../NeurIPS2025/image_generation/osmgen_highly_controllable_satellite_image_synthesis_using_openstreetmap_data.md)
+
+</div>
 
 <!-- RELATED:END -->

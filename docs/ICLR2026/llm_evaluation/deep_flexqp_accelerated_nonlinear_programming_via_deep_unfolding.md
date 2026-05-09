@@ -108,6 +108,8 @@ Primal QP: $\min_x \frac{1}{2}x^\top P x + q^\top x$, s.t. $Gx \leq h, Ax = b$ â
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)
@@ -115,5 +117,7 @@ Primal QP: $\min_x \frac{1}{2}x^\top P x + q^\top x$, s.t. $Gx \leq h, Ax = b$ â
 - [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](../../NeurIPS2025/llm_evaluation/conformal_online_learning_of_deep_koopman_linear_embeddings.md)
 - [\[CVPR 2026\] Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces](../../CVPR2026/llm_evaluation/hiercos_making_deep_features_hierarchyaware_via_co.md)
 - [\[CVPR 2026\] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](../../CVPR2026/llm_evaluation/adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)
+
+</div>
 
 <!-- RELATED:END -->

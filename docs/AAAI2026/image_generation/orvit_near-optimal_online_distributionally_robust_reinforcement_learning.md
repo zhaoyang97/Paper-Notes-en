@@ -161,6 +161,8 @@ $$\text{Regret}(K) = \sum_{k=1}^K [V_1^{\star,\sigma}(s_1^k) - V_1^{\pi^k,\sigma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](../../ICLR2026/image_generation/flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
@@ -168,5 +170,7 @@ $$\text{Regret}(K) = \sum_{k=1}^K [V_1^{\star,\sigma}(s_1^k) - V_1^{\pi^k,\sigma
 - [\[ICLR 2026\] DiffusionNFT: Online Diffusion Reinforcement with Forward Process](../../ICLR2026/image_generation/diffusionnft_online_diffusion_reinforcement_with_forward_process.md)
 - [\[ICLR 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICLR2026/image_generation/offline_reinforcement_learning_with_generative_trajectory_policies.md)
 - [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](../../ICLR2026/image_generation/hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ At each denoising step, forward noising $\tau^{(t)} \sim p(\tau^{(t)} | \tau^{(t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](../../AAAI2026/others/extreme_value_monte_carlo_tree_search_for_classical_planning.md)
@@ -134,5 +136,7 @@ At each denoising step, forward noising $\tau^{(t)} \sim p(\tau^{(t)} | \tau^{(t
 - [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](hilbert-guided_sparse_local_attention.md)
 - [\[ICLR 2026\] Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion](harpoon_generalised_manifold_guidance_for_conditional_tabular_diffusion.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/others/polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
+
+</div>
 
 <!-- RELATED:END -->

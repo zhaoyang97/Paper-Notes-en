@@ -117,6 +117,8 @@ An end-to-end ViT-based architecture: input images are encoded by a ViT into emb
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
@@ -124,5 +126,7 @@ An end-to-end ViT-based architecture: input images are encoded by a ViT into emb
 - [\[AAAI 2026\] PressTrack-HMR: Pressure-Based Top-Down Multi-Person Global Human Mesh Recovery](../../AAAI2026/human_understanding/presstrack-hmr_pressure-based_top-down_multi-person_global_human_mesh_recovery.md)
 - [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
 - [\[ICCV 2025\] EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds](egoagent_a_joint_predictive_agent_model_in_egocentric_worlds.md)
+
+</div>
 
 <!-- RELATED:END -->

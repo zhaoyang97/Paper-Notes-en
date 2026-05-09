@@ -139,6 +139,8 @@ Encoder $f_\theta$ outputs batch representations $Z \in \mathbb{R}^{N \times C}$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
@@ -146,5 +148,7 @@ Encoder $f_\theta$ outputs batch representations $Z \in \mathbb{R}^{N \times C}$
 - [\[NeurIPS 2025\] Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization](../../NeurIPS2025/optimization/kernel_learning_with_adversarial_features_numerical_efficiency_and_adaptive_regu.md)
 - [\[NeurIPS 2025\] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning](../../NeurIPS2025/optimization/asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_.md)
 - [\[NeurIPS 2025\] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning](../../NeurIPS2025/optimization/neural_thermodynamics_entropic_forces_in_deep_and_universal_representation_learn.md)
+
+</div>
 
 <!-- RELATED:END -->

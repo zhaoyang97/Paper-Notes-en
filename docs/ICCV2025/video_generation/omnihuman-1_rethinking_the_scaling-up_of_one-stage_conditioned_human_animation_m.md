@@ -145,6 +145,8 @@ Introducing pose before audio (IPA) significantly degrades final performance; ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
@@ -152,5 +154,7 @@ Introducing pose before audio (IPA) significantly degrades final performance; ma
 - [\[ICCV 2025\] VACE: All-in-One Video Creation and Editing](vace_all-in-one_video_creation_and_editing.md)
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](../../CVPR2026/video_generation/vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
 - [\[NeurIPS 2025\] Scaling RL to Long Videos](../../NeurIPS2025/video_generation/scaling_rl_to_long_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

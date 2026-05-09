@@ -149,6 +149,8 @@ Distillation augmentation brings TMoW to an average SR of 82.59%, surpassing the
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
@@ -156,5 +158,7 @@ Distillation augmentation brings TMoW to an average SR of 82.59%, surpassing the
 - [\[ICLR 2026\] ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning](exopredicator_learning_abstract_models_of_dynamic_worlds_for_robot_planning.md)
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
 - [\[CVPR 2026\] Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency](../../CVPR2026/robotics/test-time_ego-exo-centric_adaptation_for_action_anticipation_via_multi-label_pro.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -200,6 +200,8 @@ The following additional insights are noteworthy:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects](how_would_it_sound_material-controlled_multimodal_acoustic_profile_generation_fo.md)
@@ -207,5 +209,7 @@ The following additional insights are noteworthy:
 - [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
 - [\[ICCV 2025\] Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition](lyra_an_efficient_and_speech-centric_framework_for_omni-cognition.md)
 - [\[ICCV 2025\] Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation](align_your_rhythm_generating_highly_aligned_dance_poses_with_gating-enhanced_rhy.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -223,6 +223,8 @@ CCO contributes the most (removing it causes a throughput drop of 7.7%–17.4%);
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TimeBill: Time-Budgeted Inference for Large Language Models](timebill_time-budgeted_inference_for_large_language_models.md)
@@ -230,5 +232,7 @@ CCO contributes the most (removing it causes a throughput drop of 7.7%–17.4%);
 - [\[ICLR 2026\] ST4VLA: Spatially Guided Training for Vision-Language-Action Models](../../ICLR2026/autonomous_driving/st4vla_spatially_guided_training_for_vision-language-action_models.md)
 - [\[AAAI 2026\] Fine-Grained Representation for Lane Topology Reasoning](fine-grained_representation_for_lane_topology_reasoning.md)
 - [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
+
+</div>
 
 <!-- RELATED:END -->

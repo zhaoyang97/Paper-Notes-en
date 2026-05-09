@@ -153,6 +153,8 @@ LLM configuration ablation (semantic reasoning):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
@@ -160,5 +162,7 @@ LLM configuration ablation (semantic reasoning):
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
 - [\[ICCV 2025\] Online Generic Event Boundary Detection](online_generic_event_boundary_detection.md)
 - [\[CVPR 2026\] VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation](../../CVPR2026/segmentation/virst_video-instructed_reasoning_assistant_for_spatiotemporal_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

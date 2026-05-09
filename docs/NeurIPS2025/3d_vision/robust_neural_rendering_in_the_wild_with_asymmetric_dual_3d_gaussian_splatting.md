@@ -139,6 +139,8 @@ $$\mathcal{L} = \mathcal{L}_{r1}^{\mathbf{M}_h} + \mathcal{L}_{r2}^{\mathbf{M}_s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](lodge_level-of-detail_large-scale_gaussian_splatting_with_efficient_rendering.md)
@@ -146,5 +148,7 @@ $$\mathcal{L} = \mathcal{L}_{r1}^{\mathbf{M}_h} + \mathcal{L}_{r2}^{\mathbf{M}_s
 - [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](../../ICCV2025/3d_vision/longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
 - [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](../../ICCV2025/3d_vision/learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -134,6 +134,8 @@ The framework consists of two stages. Stage 1: a VAE with ArcRank loss construct
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] EvoFlows: Evolutionary Edit-Based Flow-Matching for Protein Engineering](evoflows_evolutionary_edit-based_flow-matching_for_protein_engineering.md)
@@ -141,5 +143,7 @@ The framework consists of two stages. Stage 1: a VAE with ArcRank loss construct
 - [\[AAAI 2026\] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation](../../AAAI2026/medical_imaging/ambiguity-aware_truncated_flow_matching_for_ambiguous_medica.md)
 - [\[ICLR 2026\] Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis](resp-agent_an_agent-based_system_for_multimodal_respiratory_sound_generation_and.md)
 - [\[CVPR 2026\] EI: Early Intervention for Multimodal Imaging based Disease Recognition](../../CVPR2026/medical_imaging/ei_early_intervention_for_multimodal_imaging_based_disease_recognition.md)
+
+</div>
 
 <!-- RELATED:END -->

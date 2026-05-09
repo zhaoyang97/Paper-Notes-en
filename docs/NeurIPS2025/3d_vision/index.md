@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **116** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (252)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (65)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (74)](../../AAAI2026/3d_vision/index.md) · [📹 ICCV2025 (268)](../../ICCV2025/3d_vision/index.md)
+
+🔥 **Top topics:** 3D Gaussian Splatting ×19 · Diffusion Models ×10 · Dynamic Scenes ×9 · Novel View Synthesis ×7 · 3D Reconstruction ×6
+
 **[3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)**
 
 :   This paper proposes Tri-MARF, a tri-modal multi-agent framework comprising a VLM annotation agent (multi-view, multi-candidate description generation), an information aggregation agent (BERT clustering + CLIP weighting + UCB1 Multi-Armed Bandit selection), and a point cloud gating agent (Uni3D text–point cloud alignment for hallucination filtering). The system achieves a CLIPScore of 88.7 (surpassing human annotation at 82.4), a throughput of 12k objects/hour, and has annotated approximately 2 million 3D models.

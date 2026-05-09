@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **32** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (30)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (17)](../../CVPR2026/audio_speech/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/audio_speech/index.md)
+
+🔥 **Top topics:** Speech & Audio ×14 · Reasoning ×4 · LLM ×3 · Sentiment Analysis ×3 · Adversarial Robustness ×3
+
 **[AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)**
 
 :   This paper proposes AC-Foley, a reference-audio-guided video-to-audio synthesis framework that achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation via two-stage training (acoustic feature learning + temporal adaptation) and multimodal conditional flow matching, significantly outperforming existing methods in audio quality and acoustic fidelity.

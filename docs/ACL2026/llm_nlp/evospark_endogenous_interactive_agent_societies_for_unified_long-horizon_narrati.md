@@ -109,6 +109,8 @@ EvoSpark significantly outperforms Open-Theatre, BookWorld, and HoLLMwood across
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration](towards_robust_real-world_spreadsheet_understanding_with_multi-agent_multi-forma.md)
@@ -116,5 +118,7 @@ EvoSpark significantly outperforms Open-Theatre, BookWorld, and HoLLMwood across
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/llm_nlp/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](../../AAAI2026/llm_nlp/coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
 - [\[ICCV 2025\] VIM: Versatile Interactive Motion-Language Model](../../ICCV2025/llm_nlp/vim_versatile_interactive_motion_language_model.md)
+
+</div>
 
 <!-- RELATED:END -->

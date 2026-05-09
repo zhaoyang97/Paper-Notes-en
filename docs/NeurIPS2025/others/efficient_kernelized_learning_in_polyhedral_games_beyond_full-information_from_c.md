@@ -182,6 +182,8 @@ There are no ablation experiments in the conventional sense; instead, the contri
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Evolutionary Prediction Games](evolutionary_prediction_games.md)
@@ -189,5 +191,7 @@ There are no ablation experiments in the conventional sense; instead, the contri
 - [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](../../AAAI2026/others/deviation_dynamics_in_cardinal_hedonic_games.md)
 - [\[NeurIPS 2025\] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry](johnson-lindenstrauss_lemma_beyond_euclidean_geometry.md)
 - [\[NeurIPS 2025\] Active Measurement: Efficient Estimation at Scale](active_measurement_efficient_estimation_at_scale.md)
+
+</div>
 
 <!-- RELATED:END -->

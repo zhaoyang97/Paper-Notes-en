@@ -163,6 +163,8 @@ MimeQA is an open-ended video QA benchmark. A total of 221 mime videos are colle
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](../../ICCV2025/video_understanding/flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
@@ -170,5 +172,7 @@ MimeQA is an open-ended video QA benchmark. A total of 221 mime videos are colle
 - [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](../../AAAI2026/video_understanding/uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
 - [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](seeing_the_arrow_of_time_in_large_multimodal_models.md)
 - [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
+
+</div>
 
 <!-- RELATED:END -->

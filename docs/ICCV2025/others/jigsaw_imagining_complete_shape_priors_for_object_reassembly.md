@@ -136,6 +136,8 @@ The model is then fine-tuned on $(\mathbf{x}_0, \mathbf{x}_1)$ pairs to learn th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
@@ -143,5 +145,7 @@ The model is then fine-tuned on $(\mathbf{x}_0, \mathbf{x}_1)$ pairs to learn th
 - [\[AAAI 2026\] UniShape: A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/others/a_unified_shape-aware_foundation_model_for_time_series_class.md)
 - [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](../../ICLR2026/others/latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
+
+</div>
 
 <!-- RELATED:END -->

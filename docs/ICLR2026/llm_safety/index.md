@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **39** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/llm_safety/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/llm_safety/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_safety/index.md)
+
+🔥 **Top topics:** LLM ×9 · Adversarial Robustness ×8 · Federated Learning ×4 · Reasoning ×2 · Watermarking ×2
+
 **[Attention Smoothing Is All You Need For Unlearning](attention_smoothing_is_all_you_need_for_unlearning.md)**
 
 :   This paper proposes Attention Smoothing Unlearning (ASU), which constructs a forget-teacher by raising the softmax temperature in self-attention, reformulating the unlearning problem as self-distillation. By smoothing the attention distribution to weaken both lexical- and semantic-level associations, ASU erases memorized knowledge while preserving output coherence, surpassing existing unlearning methods on multiple benchmarks including TOFU, MUSE, and WMDP.

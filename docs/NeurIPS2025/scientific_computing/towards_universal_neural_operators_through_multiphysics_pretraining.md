@@ -159,6 +159,8 @@ Transfer from advection/Burgers equations to reaction-diffusion (PDEBench datase
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
@@ -166,5 +168,7 @@ Transfer from advection/Burgers equations to reaction-diffusion (PDEBench datase
 - [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
 - [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
 - [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/scientific_computing/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
+
+</div>
 
 <!-- RELATED:END -->

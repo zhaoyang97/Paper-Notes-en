@@ -134,6 +134,8 @@ ODP-Bench consists of three components: (1) 29 OOD datasets covering diverse dis
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection](discopatch_taming_adversarially-driven_batch_statistics_for_improved_out-of-dist.md)
@@ -141,5 +143,7 @@ ODP-Bench consists of three components: (1) 29 OOD datasets covering diverse dis
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](../../CVPR2026/llm_evaluation/enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
 - [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](../../ACL2026/llm_evaluation/text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
 - [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](../../ICLR2026/llm_evaluation/optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
+
+</div>
 
 <!-- RELATED:END -->

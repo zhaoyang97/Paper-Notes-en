@@ -141,6 +141,8 @@ The core contribution lies in the discovery that channel-wise statistics of diff
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
@@ -148,5 +150,7 @@ The core contribution lies in the discovery that channel-wise statistics of diff
 - [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](../../CVPR2026/image_generation/ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
 - [\[ICCV 2025\] OmniVTON: Training-Free Universal Virtual Try-On](omnivton_training-free_universal_virtual_try-on.md)
 - [\[ICCV 2025\] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing](anchor_token_matching_implicit_structure_locking_for_training-free_ar_image_edit.md)
+
+</div>
 
 <!-- RELATED:END -->

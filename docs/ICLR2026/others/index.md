@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **76** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/others/index.md) · [📷 CVPR2026 (54)](../../CVPR2026/others/index.md) · [🤖 AAAI2026 (126)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (150)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/others/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×5 · Domain Adaptation ×3 · Alignment/RLHF ×3 · Federated Learning ×2 · Agents ×2
+
 **[A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components](a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi.md)**
 
 :   This paper proposes FedGEM, an algorithm in which clients perform local EM steps and construct uncertainty sets, while the server detects cluster overlap via set intersections and infers the global number of clusters. FedGEM is the first method to achieve federated clustering with an unknown global cluster count $K$, and comes with probabilistic convergence guarantees.

@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **4** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (103)](../../CVPR2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (78)](../../ICCV2025/segmentation/index.md)
+
+🔥 **Top topics:** Segmentation ×2 · Reasoning ×2
+
 **[AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation](anchorseg_language_grounded_query_banks_for_reasoning_segmentation.md)**
 
 :   This paper proposes AnchorSeg, which reformulates reasoning segmentation as a structured conditional generation process based on language-grounded query banks. By explicitly decoupling spatial localization and semantic reasoning through anchor queries, paired with a Token-Mask Cyclic Consistency training objective, it achieves SOTA on ReasonSeg (67.7% gIoU, 68.1% cIoU).

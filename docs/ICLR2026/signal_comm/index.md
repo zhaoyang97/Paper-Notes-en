@@ -10,6 +10,8 @@ description: >-
 
 **🔬 ICLR2026** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/signal_comm/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+
 **[Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds](deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds.md)**
 
 :   By analyzing the spectral properties of the Fisher Information Matrix (FIM) in the low-dimensional kernel space of probability distributions, this paper establishes deterministic upper and lower bounds for the metric tensor on the neural network parameter space (neuromanifold), and introduces a family of unbiased stochastic estimators with bounded variance based on the Hutchinson trace estimator, computable efficiently with a single backward pass.

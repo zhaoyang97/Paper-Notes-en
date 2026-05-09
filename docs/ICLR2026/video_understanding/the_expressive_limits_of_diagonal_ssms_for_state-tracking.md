@@ -143,6 +143,8 @@ with each factor $G_{i+1}/G_i$ abelian. This is precisely the standard definitio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Mamba-3: Improved Sequence Modeling using State Space Principles](mamba-3_improved_sequence_modeling_using_state_space_principles.md)
@@ -150,5 +152,7 @@ with each factor $G_{i+1}/G_i$ abelian. This is precisely the standard definitio
 - [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](../../NeurIPS2025/video_understanding/fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 - [\[NeurIPS 2025\] A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers](../../NeurIPS2025/video_understanding/a_little_depth_goes_a_long_way_the_expressive_power_of_logde.md)
 - [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](../../AAAI2026/video_understanding/state-space_hierarchical_compression_with_gated_attention_an.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -139,6 +139,8 @@ IrisFP consists of two main pipelines:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training](../../ICCV2025/others/failure_cases_are_better_learned_but_boundary_says_sorry_facilitating_smooth_per.md)
@@ -146,5 +148,7 @@ IrisFP consists of two main pipelines:
 - [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](../../AAAI2026/others/decor_deep_embedding_clustering_with_orientation_robustness.md)
 - [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](../../ICLR2026/others/the_price_of_robustness_stable_classifiers_need_overparameterization.md)
 - [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](../../AAAI2026/others/boosting_adversarial_transferability_via_ensemble_non-attention.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **38** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (2)](../../ACL2026/self_supervised/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (14)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (36)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/self_supervised/index.md)
+
+🔥 **Top topics:** Self-Supervised Learning ×7 · Continual Learning ×2 · Anomaly Detection ×2
+
 **[A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)**
 
 :   This paper proposes PL-Stitch, a self-supervised framework that leverages the Plackett-Luce probabilistic ranking model to use temporal ordering of video frames as a pretraining signal. The method learns "procedure-aware" video representations and consistently outperforms existing self-supervised approaches on surgical phase recognition and cooking action segmentation.

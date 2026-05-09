@@ -147,6 +147,8 @@ Three regions are delineated in the $(n, p)$ plane:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training](why_diffusion_models_dont_memorize_the_role_of_implicit_dynamical_regularization.md)
@@ -154,5 +156,7 @@ Three regions are delineated in the $(n, p)$ plane:
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
 - [\[NeurIPS 2025\] Moment- and Power-Spectrum-Based Gaussianity Regularization for Text-to-Image Models](moment-_and_power-spectrum-based_gaussianity_regularization_for_text-to-image_mo.md)
 - [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -147,6 +147,8 @@ Speedup: DICE achieves up to 1.26× acceleration at batch size 32; DistriFusion 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
@@ -154,5 +156,7 @@ Speedup: DICE achieves up to 1.26× acceleration at batch size 32; DistriFusion 
 - [\[NeurIPS 2025\] Accelerating Parallel Diffusion Model Serving with Residual Compression](../../NeurIPS2025/image_generation/accelerating_parallel_diffusion_model_serving_with_residual_compression.md)
 - [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](../../NeurIPS2025/image_generation/gspn-2_efficient_parallel_sequence_modeling.md)
 - [\[ICCV 2025\] GenHancer: Imperfect Generative Models are Secretly Strong Vision-Centric Enhancers](genhancer_imperfect_generative_models_are_secretly_strong_vision-centric_enhance.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -137,6 +137,8 @@ The study is large in scale (1,400+ checkpoints), rigorous in experimental desig
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
@@ -144,5 +146,7 @@ The study is large in scale (1,400+ checkpoints), rigorous in experimental desig
 - [\[NeurIPS 2025\] Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods](final-model-only_data_attribution_with_a_unifying_view_of_gradient-based_methods.md)
 - [\[NeurIPS 2025\] Memory Mosaics at Scale](memory_mosaics_at_scale.md)
 - [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

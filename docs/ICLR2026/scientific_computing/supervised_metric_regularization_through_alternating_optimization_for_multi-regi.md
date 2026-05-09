@@ -134,6 +134,8 @@ Standard parameters $\delta=0.3, \alpha=-1, \beta=1, \omega=1$; $F_0 \in [0.3, 0
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] HyperKKL: Enabling Non-Autonomous State Estimation through Dynamic Weight Conditioning](hyperkkl_enabling_non-autonomous_state_estimation_through_dynamic_weight_conditi.md)
@@ -141,5 +143,7 @@ Standard parameters $\delta=0.3, \alpha=-1, \beta=1, \omega=1$; $F_0 \in [0.3, 0
 - [\[NeurIPS 2025\] A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees](../../NeurIPS2025/scientific_computing/a_regularized_newton_method_for_nonconvex_optimization_with.md)
 - [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](../../AAAI2026/scientific_computing/pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
 - [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](../../NeurIPS2025/scientific_computing/towards_universal_neural_operators_through_multiphysics_pretraining.md)
+
+</div>
 
 <!-- RELATED:END -->

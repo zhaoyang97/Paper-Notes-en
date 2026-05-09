@@ -131,6 +131,8 @@ Stable Diffusion (COCO 512×512): Base+2ndM reduces FID from 15.76 to 13.84; Sma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
@@ -138,5 +140,7 @@ Stable Diffusion (COCO 512×512): Base+2ndM reduces FID from 15.76 to 13.84; Sma
 - [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](../../NeurIPS2025/image_generation/high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
 - [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](../../NeurIPS2025/image_generation/fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
 - [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

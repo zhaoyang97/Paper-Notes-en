@@ -142,6 +142,8 @@ CodeGEMM's energy efficiency (19.36 GFLOPS/W) is 1.9× that of AQLM 2×8, and it
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Partition Cover Approach for Tokenization](a_partition_cover_approach_to_tokenization.md)
@@ -149,5 +151,7 @@ CodeGEMM's energy efficiency (19.36 GFLOPS/W) is 1.9× that of AQLM 2×8, and it
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
 - [\[NeurIPS 2025\] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs](matryoshka_pilot_learning_to_drive_black-box_llms_with_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

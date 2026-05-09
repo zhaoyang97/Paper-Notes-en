@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **5** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/dialogue/index.md)
+
+🔥 **Top topics:** Reasoning ×2
+
 **[AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions](aqua_toward_strategic_response_generation_for_ambiguous_visual_questions.md)**
 
 :   This paper proposes AQuA, the first visual question answering dataset with fine-grained ambiguity grading across four levels (7.2K samples, 1.8K per level), defining an optimal response strategy for each level (direct answer / inference / enumeration / clarification request). The study finds that GPT-5 and Gemini over-confidently default to direct answers on ambiguous VQA instances, while a 3B model trained via SFT+GRPO surpasses closed-source large models in strategy adaptation.

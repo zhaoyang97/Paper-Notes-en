@@ -145,6 +145,8 @@ The core advantage of LatentGuard lies in unifying behavioral alignment with rep
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning](towards_reliable_code-as-policies_a_neuro-symbolic_framework_for_embodied_task_p.md)
@@ -152,5 +154,7 @@ The core advantage of LatentGuard lies in unifying behavioral alignment with rep
 - [\[AAAI 2026\] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification](../../AAAI2026/robotics/iseal_encrypted_fingerprinting_for_reliable_llm_ownership_verification.md)
 - [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](../../ICLR2026/robotics/odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
 - [\[NeurIPS 2025\] MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning](mesatask_towards_task-driven_tabletop_scene_generation_via_3d_spatial_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

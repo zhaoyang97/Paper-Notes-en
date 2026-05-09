@@ -126,6 +126,8 @@ Compared to methods requiring fine-tuning such as MindEye2 and MindTuner, Zebra 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/others/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
@@ -133,5 +135,7 @@ Compared to methods requiring fine-tuning such as MindEye2 and MindTuner, Zebra 
 - [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](../../AAAI2026/others/cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
 - [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/others/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

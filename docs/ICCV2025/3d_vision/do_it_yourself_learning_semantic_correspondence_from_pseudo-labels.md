@@ -145,6 +145,8 @@ The largest improvements are observed on symmetric/repeated-part categories: bus
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] MARCO: Navigating the Unseen Space of Semantic Correspondence](../../CVPR2026/3d_vision/marco_semantic_correspondence.md)
@@ -152,5 +154,7 @@ The largest improvements are observed on symmetric/repeated-part categories: bus
 - [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
 - [\[ICCV 2025\] Monocular Semantic Scene Completion via Masked Recurrent Networks](monocular_semantic_scene_completion_via_masked_recurrent_networks.md)
 - [\[ICCV 2025\] 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding](3dgraphllm_combining_semantic_graphs_and_large_language_models_for_3d_scene_unde.md)
+
+</div>
 
 <!-- RELATED:END -->

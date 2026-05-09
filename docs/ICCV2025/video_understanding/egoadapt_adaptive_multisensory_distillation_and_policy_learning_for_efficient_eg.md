@@ -124,6 +124,8 @@ Training stage ablation: CFD with a random policy yields only 67.41 mAP; Stages 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](../../ICLR2026/video_understanding/stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
@@ -131,5 +133,7 @@ Training stage ablation: CFD with a random policy yields only 67.41 mAP; Stages 
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/video_understanding/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 - [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](general_compression_framework_for_efficient_transformer_object_tracking.md)
 - [\[ICCV 2025\] MobileViCLIP: An Efficient Video-Text Model for Mobile Devices](mobileviclip_an_efficient_video-text_model_for_mobile_devices.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -133,6 +133,8 @@ The Domain-Adapted Granger Causality framework receives security telemetry strea
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](revealing_multimodal_causality_with_large_language_models.md)
@@ -140,5 +142,7 @@ The Domain-Adapted Granger Causality framework receives security telemetry strea
 - [\[NeurIPS 2025\] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features](causality-induced_positional_encoding_for_transformer-based_representation_learn.md)
 - [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](../../ACL2026/causal_inference/cross-modal_taxonomic_generalization_in_vision-_language_models.md)
 - [\[NeurIPS 2025\] Transferring Causal Effects using Proxies](transferring_causal_effects_using_proxies.md)
+
+</div>
 
 <!-- RELATED:END -->

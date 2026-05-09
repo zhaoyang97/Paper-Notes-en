@@ -130,6 +130,8 @@ Multi-model composition (each model fine-tuned with a different reward):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](constrained_discrete_diffusion.md)
@@ -137,5 +139,7 @@ Multi-model composition (each model fine-tuned with a different reward):
 - [\[NeurIPS 2025\] Information Theoretic Learning for Diffusion Models with Warm Start](information_theoretic_learning_for_diffusion_models_with_warm_start.md)
 - [\[NeurIPS 2025\] Exploring Semantic-constrained Adversarial Example with Instruction Uncertainty Reduction](exploring_semantic-constrained_adversarial_example_with_instruction_uncertainty_.md)
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
+
+</div>
 
 <!-- RELATED:END -->

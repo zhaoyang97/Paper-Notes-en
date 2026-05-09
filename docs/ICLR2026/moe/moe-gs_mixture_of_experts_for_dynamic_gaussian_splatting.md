@@ -134,8 +134,12 @@ MoE-GS (N=3) outperforms the strongest single expert, E-D3DGS, by 0.9 dB PSNR.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/moe/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
+
+</div>
 
 <!-- RELATED:END -->

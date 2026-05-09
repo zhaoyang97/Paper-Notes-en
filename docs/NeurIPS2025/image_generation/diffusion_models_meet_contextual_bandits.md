@@ -179,6 +179,8 @@ The ratio of cumulative regret between LinTS and dTS increases monotonically as 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Contextual Thompson Sampling via Generation of Missing Data](contextual_thompson_sampling_via_generation_of_missing_data.md)
@@ -186,5 +188,7 @@ The ratio of cumulative regret between LinTS and dTS increases monotonically as 
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](when_are_concepts_erased_from_diffusion_models.md)
 - [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
+
+</div>
 
 <!-- RELATED:END -->

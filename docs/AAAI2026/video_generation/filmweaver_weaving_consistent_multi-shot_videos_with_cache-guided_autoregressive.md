@@ -155,6 +155,8 @@ FilmWeaver achieves state-of-the-art performance on consistency and character-te
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](../../CVPR2026/video_generation/rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
@@ -162,5 +164,7 @@ FilmWeaver achieves state-of-the-art performance on consistency and character-te
 - [\[AAAI 2026\] MoFu: Scale-Aware Modulation and Fourier Fusion for Multi-Subject Video Generation](mofu_scale-aware_modulation_and_fourier_fusion_for_multi-subject_video_generatio.md)
 - [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](../../CVPR2026/video_generation/gloria_consistent_character_video_generation_via_content_anchors.md)
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](../../ICLR2026/video_generation/lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
+
+</div>
 
 <!-- RELATED:END -->

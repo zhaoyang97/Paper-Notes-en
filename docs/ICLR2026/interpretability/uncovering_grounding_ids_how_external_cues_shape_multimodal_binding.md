@@ -179,6 +179,8 @@ The independent contributions of visual cues (image lines + symbols) and textual
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
@@ -186,5 +188,7 @@ The independent contributions of visual cues (image lines + symbols) and textual
 - [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
 - [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
 - [\[ACL 2026\] From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization](../../ACL2026/interpretability/from_signal_degradation_to_computation_collapse_uncovering_the_two_failure_modes.md)
+
+</div>
 
 <!-- RELATED:END -->

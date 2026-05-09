@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **22** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (24)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md)
+
+🔥 **Top topics:** Federated Learning ×7 · Adversarial Robustness ×4 · Alignment/RLHF ×3 · Question Answering ×2
+
 **[A Framework for Double-Blind Federated Adaptation of Foundation Models](a_framework_for_double-blind_federated_adaptation_of_foundation_models.md)**
 
 :   This paper proposes BlindFed, a framework that achieves "double-blind" federated adaptation of foundation models through FHE-friendly architectural transformation, two-stage split learning, and privacy-enhancing strategies — keeping the model hidden from data holders and data hidden from the service provider. BlindFed achieves 94.28% accuracy on CIFAR-10, approaching LoRA's 95.92%.

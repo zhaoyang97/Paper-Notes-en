@@ -188,6 +188,8 @@ Five to six bases capture >99% of variance, consistent with the 5-dimensional sp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
@@ -195,5 +197,7 @@ Five to six bases capture >99% of variance, consistent with the 5-dimensional sp
 - [\[ICLR 2026\] Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces](discount_model_search_for_quality_diversity_optimization_in_high-dimensional_mea.md)
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
 - [\[NeurIPS 2025\] Reliably Detecting Model Failures in Deployment Without Labels](../../NeurIPS2025/llm_evaluation/reliably_detecting_model_failures_in_deployment_without_labels.md)
+
+</div>
 
 <!-- RELATED:END -->

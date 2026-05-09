@@ -127,6 +127,8 @@ $L = L_{\text{scatter}} + \alpha L_{\text{time}} + \beta L_{\text{contrast}}$. T
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
@@ -134,5 +136,7 @@ $L = L_{\text{scatter}} + \alpha L_{\text{time}} + \beta L_{\text{contrast}}$. T
 - [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/time_series/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
 - [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
+
+</div>
 
 <!-- RELATED:END -->

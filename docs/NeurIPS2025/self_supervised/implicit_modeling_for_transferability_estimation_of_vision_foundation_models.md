@@ -150,6 +150,8 @@ MSE loss performs best within the deparametric approximation framework; its smoo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](../../ICCV2025/self_supervised/loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
@@ -157,5 +159,7 @@ MSE loss performs best within the deparametric approximation framework; its smoo
 - [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](../../CVPR2026/self_supervised/robustness_of_vision_foundation_models_to_common_perturbations.md)
 - [\[NeurIPS 2025\] One Filters All: A Generalist Filter for State Estimation](one_filters_all_a_generalist_filter_for_state_estimation.md)
 - [\[NeurIPS 2025\] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition](foundation_models_for_scientific_discovery_from_paradigm_enhancement_to_paradigm.md)
+
+</div>
 
 <!-- RELATED:END -->

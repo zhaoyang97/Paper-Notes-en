@@ -172,6 +172,8 @@ After INT4 quantization, generation accuracy is retained at 94.4% and log-likeli
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
@@ -179,5 +181,7 @@ After INT4 quantization, generation accuracy is retained at 94.4% and log-likeli
 - [\[ICLR 2026\] Draft-based Approximate Inference for LLMs](draft-based_approximate_inference_for_llms.md)
 - [\[CVPR 2026\] ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation](../../CVPR2026/model_compression/arche_autoregressive_residual_compression_with_hyperprior_and_excitation.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](steering_moe_llms_via_expert_deactivation.md)
+
+</div>
 
 <!-- RELATED:END -->

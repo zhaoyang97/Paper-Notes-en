@@ -10,6 +10,8 @@ description: >-
 
 **💬 ACL2026** · **8** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (9)](../../CVPR2026/graph_learning/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/graph_learning/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/graph_learning/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/graph_learning/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/graph_learning/index.md)
+
 **[AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)**
 
 :   AgentGL is the first RL-based agentic graph learning (AGL) framework that enables LLM agents to autonomously navigate text-attributed graphs (TAGs) via graph-native search tools, achieving up to 17.5% and 28.4% absolute accuracy gains on node classification and link prediction respectively.

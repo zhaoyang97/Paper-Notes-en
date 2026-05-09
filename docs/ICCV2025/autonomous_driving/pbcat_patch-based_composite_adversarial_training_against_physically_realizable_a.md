@@ -152,6 +152,8 @@ Patches are randomly placed within the bounding box (sampled from a Gaussian dis
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection](../../AAAI2026/autonomous_driving/moba_a_material-oriented_backdoor_attack_against_lidar-based_3d_object_detection.md)
@@ -159,5 +161,7 @@ Patches are randomly placed within the bounding box (sampled from a Gaussian dis
 - [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multi-view_robust_physical_adversarial_camouflage_g.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 - [\[ICCV 2025\] DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic](duet_dual_incremental_object_detection_via_exemplar-free_task_arithmetic.md)
+
+</div>
 
 <!-- RELATED:END -->

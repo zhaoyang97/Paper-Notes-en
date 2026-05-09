@@ -146,6 +146,8 @@ TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene sy
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra](one_small_step_with_fingerprints_one_giant_leap_for_de_novo_molecule_generation_.md)
@@ -153,5 +155,7 @@ TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene sy
 - [\[ICCV 2025\] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines](../../ICCV2025/medical_imaging/integrating_biological_knowledge_for_robust_microscopy_image_profiling_on_de_nov.md)
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 - [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](amortized_active_generation_of_pareto_sets.md)
+
+</div>
 
 <!-- RELATED:END -->

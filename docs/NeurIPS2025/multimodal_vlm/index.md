@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **151** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (52)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (287)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (93)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (92)](../../AAAI2026/multimodal_vlm/index.md) · [📹 ICCV2025 (142)](../../ICCV2025/multimodal_vlm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×86 · Reasoning ×28 · LLM ×17 · Alignment/RLHF ×8 · Robotics ×8
+
 **[A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1](a_frustratingly_simple_yet_highly_effective_attack_baseline.md)**
 
 :   This paper proposes M-Attack, which performs random cropping on source images and aligns them with target images via local-global or local-local matching in the embedding space, combined with a multi-CLIP model ensemble. This causes adversarial perturbations to naturally concentrate on semantically critical regions, forming clear semantic details. M-Attack achieves >90% targeted attack success rate against commercial black-box LVLMs including GPT-4.5/4o/o1.

@@ -126,6 +126,8 @@ Standard LoRA: $Y = (W + BA)X$. TopLoRA: $Y = (W + B\Sigma_X A)X$, where $\Sigma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
@@ -133,5 +135,7 @@ Standard LoRA: $Y = (W + BA)X$. TopLoRA: $Y = (W + B\Sigma_X A)X$, where $\Sigma
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
+
+</div>
 
 <!-- RELATED:END -->

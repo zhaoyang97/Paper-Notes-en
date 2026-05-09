@@ -126,6 +126,8 @@ mini-SWE-agent uses a linear history — after each bash command is executed, th
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](../../ACL2026/code_intelligence/sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
@@ -133,5 +135,7 @@ mini-SWE-agent uses a linear history — after each bash command is executed, th
 - [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
 - [\[ICLR 2026\] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](supervised_reinforcement_learning_from_expert_trajectories_to_step-wise_reasonin.md)
 - [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
+
+</div>
 
 <!-- RELATED:END -->

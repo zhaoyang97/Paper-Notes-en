@@ -136,6 +136,8 @@ At inference, users simply insert $\mathcal{W}_*$ into the prompt:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
@@ -143,5 +145,7 @@ At inference, users simply insert $\mathcal{W}_*$ into the prompt:
 - [\[NeurIPS 2025\] Robustness in Both Domains: CLIP Needs a Robust Text Encoder](../../NeurIPS2025/image_generation/robustness_in_both_domains_clip_needs_a_robust_text_encoder.md)
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
+
+</div>
 
 <!-- RELATED:END -->

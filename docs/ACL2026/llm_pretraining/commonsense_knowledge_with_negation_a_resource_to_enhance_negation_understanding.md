@@ -123,6 +123,8 @@ QLoRA 4-bit quantization is applied to fine-tune Llama 3.1 8B/70B as the judge m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](../../ICLR2026/llm_pretraining/fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
@@ -130,5 +132,7 @@ QLoRA 4-bit quantization is applied to fine-tune Llama 3.1 8B/70B as the judge m
 - [\[ICLR 2026\] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization](../../ICLR2026/llm_pretraining/understanding_and_improving_shampoo_and_soap_via_kullback-leibler_minimization.md)
 - [\[ICLR 2026\] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors](../../ICLR2026/llm_pretraining/understanding_the_emergence_of_seemingly_useless_features_in_next-token_predicto.md)
 - [\[NeurIPS 2025\] Understanding and Enhancing Mask-Based Pretraining towards Universal Representations](../../NeurIPS2025/llm_pretraining/understanding_and_enhancing_mask-based_pretraining_towards_universal_representat.md)
+
+</div>
 
 <!-- RELATED:END -->

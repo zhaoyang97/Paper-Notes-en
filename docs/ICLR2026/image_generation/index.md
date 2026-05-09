@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **154** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/image_generation/index.md) · [📷 CVPR2026 (239)](../../CVPR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (246)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (219)](../../ICCV2025/image_generation/index.md)
+
+🔥 **Top topics:** Diffusion Models ×48 · Text-to-Image ×11 · Adversarial Robustness ×7 · Alignment/RLHF ×7 · Layout & Composition ×6
+
 **[A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)**
 
 :   This paper presents the first systematic analysis of conditional embeddings in diffusion Transformers, revealing extreme angular similarity (inter-class cosine similarity >99%) and dimensional sparsity (only 1–2% of dimensions carry semantic information). Pruning 2/3 of low-magnitude dimensions leaves generation quality virtually unchanged, exposing a hidden semantic bottleneck in conditional embeddings.

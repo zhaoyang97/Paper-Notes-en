@@ -134,6 +134,8 @@ This is a position paper; no concrete implementation or training procedure is pr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents](scaling_equitable_reflection_assessment_in_education_via_large_language_models_a.md)
@@ -141,5 +143,7 @@ This is a position paper; no concrete implementation or training procedure is pr
 - [\[AAAI 2026\] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model](stem_efficient_relative_capability_evaluation_of_llms_through_structured_transit.md)
 - [\[AAAI 2026\] PERSIST: Persistent Instability in LLM's Personality Measurements](persistent_instability_in_llms_personality_measurements_effects_of_scale_reasoni.md)
 - [\[ACL 2026\] Not All Animals Are Equal: Metaphorical Framing through Source Domains and Semantic Frames](../../ACL2026/llm_nlp/not_all_animals_are_equal_metaphorical_framing_through_source_domains_and_semant.md)
+
+</div>
 
 <!-- RELATED:END -->

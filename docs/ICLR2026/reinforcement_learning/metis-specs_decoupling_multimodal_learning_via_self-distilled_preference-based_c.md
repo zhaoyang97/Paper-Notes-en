@@ -130,6 +130,8 @@ Stage 3 employs GRPO with reward function $R_{\text{total}} = R_{\text{format}} 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
@@ -137,5 +139,7 @@ Stage 3 employs GRPO with reward function $R_{\text{total}} = R_{\text{format}} 
 - [\[ACL 2026\] Quality Over Clicks: Intrinsic Quality-Driven Iterative RL for Cold-Start E-Commerce Query Suggestion](../../ACL2026/reinforcement_learning/quality_over_clicks_intrinsic_quality-driven_iterative_reinforcement_learning_fo.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

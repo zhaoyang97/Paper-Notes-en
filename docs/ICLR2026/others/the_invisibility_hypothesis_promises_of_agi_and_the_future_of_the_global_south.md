@@ -125,6 +125,8 @@ This is a conceptual analysis paper. The argumentative chain proceeds as follows
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
@@ -132,5 +134,7 @@ This is a conceptual analysis paper. The argumentative chain proceeds as follows
 - [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](../../NeurIPS2025/others/autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
 - [\[ICLR 2026\] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields](refine_now_query_fast_a_decoupled_refinement_paradigm_for_implicit_neural_fields.md)
 - [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_long_horizon_planning.md)
+
+</div>
 
 <!-- RELATED:END -->

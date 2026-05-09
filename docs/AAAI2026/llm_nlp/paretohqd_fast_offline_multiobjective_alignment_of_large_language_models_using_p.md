@@ -126,6 +126,8 @@ Both stages use the standard SFT loss $\mathcal{L}_{\text{SFT}} = -\mathbb{E}[\s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
@@ -133,5 +135,7 @@ Both stages use the standard SFT loss $\mathcal{L}_{\text{SFT}} = -\mathbb{E}[\s
 - [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
 - [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
 - [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

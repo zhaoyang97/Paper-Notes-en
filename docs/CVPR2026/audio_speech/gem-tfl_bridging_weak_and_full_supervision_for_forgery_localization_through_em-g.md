@@ -117,6 +117,8 @@ Localization stage: $\mathcal{L} = \mathcal{L}_{bce}(\hat{y},y) + \gamma \cdot \
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] DeformTrace: A Deformable State Space Model with Relay Tokens for Temporal Forgery Localization](../../AAAI2026/audio_speech/deformtrace_a_deformable_state_space_model_with_relay_tokens_for_temporal_forger.md)
@@ -124,5 +126,7 @@ Localization stage: $\mathcal{L} = \mathcal{L}_{bce}(\hat{y},y) + \gamma \cdot \
 - [\[ICLR 2026\] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision](../../ICLR2026/audio_speech/logicreward_incentivizing_llm_reasoning_via_step-wise_logical_supervision.md)
 - [\[NeurIPS 2025\] Segment-Factorized Full-Song Generation on Symbolic Piano Music](../../NeurIPS2025/audio_speech/segment-factorized_full-song_generation_on_symbolic_piano_music.md)
 - [\[NeurIPS 2025\] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](../../NeurIPS2025/audio_speech/seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)
+
+</div>
 
 <!-- RELATED:END -->

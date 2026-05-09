@@ -132,6 +132,8 @@ The Generalist-IDM outperforms the Specialist-IDM on all games, with keyboard ac
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
@@ -139,5 +141,7 @@ The Generalist-IDM outperforms the Specialist-IDM on all games, with keyboard ac
 - [\[ICLR 2026\] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos](urbanverse_scaling_urban_simulation_by_watching_city-tour_videos.md)
 - [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](capability-based_scaling_trends_for_llm-based_red-teaming.md)
 - [\[CVPR 2026\] PULSE: Privileged Knowledge Transfer from Rich to Deployable Sensors for Embodied Multi-Sensory Learning](../../CVPR2026/robotics/pulse_privileged_knowledge_transfer_from_rich_to_deployable_sensors_for_embodied.md)
+
+</div>
 
 <!-- RELATED:END -->

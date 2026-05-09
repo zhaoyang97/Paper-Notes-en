@@ -122,6 +122,8 @@ IMPACT takes as input the weight matrices of a pretrained LLM and a small calibr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
@@ -129,5 +131,7 @@ IMPACT takes as input the weight matrices of a pretrained LLM and a small calibr
 - [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](enabling_agents_to_communicate_entirely_in_latent_space.md)
 - [\[CVPR 2026\] GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design](../../CVPR2026/model_compression/geofusion-cad_structure-aware_diffusion_with_geometric_state_space_for_parametri.md)
 - [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](../../NeurIPS2025/model_compression/duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

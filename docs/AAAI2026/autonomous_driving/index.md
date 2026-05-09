@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **58** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (105)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (98)](../../ICCV2025/autonomous_driving/index.md)
+
+🔥 **Top topics:** Autonomous Driving ×9 · 3D Object Detection ×6 · Adversarial Robustness ×5 · Diffusion Models ×5 · Agents ×5
+
 **[A Data-Driven Model Predictive Control Framework for Multi-Aircraft TMA Routing Under Travel Time Uncertainty](a_data-driven_model_predictive_control_framework_for_multi-aircraft_tma_routing_.md)**
 
 :   A closed-loop MPC framework is proposed for conflict-free multi-aircraft routing and scheduling within the 50 NM Terminal Maneuvering Area (TMA) of Changi Airport. The framework integrates XGBoost-based TMA boundary arrival time prediction, MILP optimization (incorporating route selection, speed adjustment, holding control, and separation constraints), and a receding-horizon simulator. Under peak congestion scenarios of 36 aircraft/hour, it achieves a 7× computational speedup while significantly outperforming the Dijkstra baseline in feasibility under Monte Carlo robustness validation.

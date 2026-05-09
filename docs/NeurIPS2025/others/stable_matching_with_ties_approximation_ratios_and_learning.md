@@ -118,6 +118,8 @@ In the bandit setting, each round yields a 1-sub-Gaussian reward $X_i(t)$ with m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
@@ -125,5 +127,7 @@ In the bandit setting, each round yields a 1-sub-Gaussian reward $X_i(t)$ with m
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/others/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
 - [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
+
+</div>
 
 <!-- RELATED:END -->

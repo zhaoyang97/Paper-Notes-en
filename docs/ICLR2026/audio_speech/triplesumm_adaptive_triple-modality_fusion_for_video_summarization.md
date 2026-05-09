@@ -125,6 +125,8 @@ L2 regression loss: $\mathcal{L} = \|S - \hat{S}\|_2^2$, predicting frame-level 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Solution for 10th Competition on Ambivalence/Hesitancy (AH) Video Recognition Challenge using Divergence-Based Multimodal Fusion](../../CVPR2026/audio_speech/solution_for_10th_competition_on_ambivalencehesitancy_ah_video_recognition_chall.md)
@@ -132,5 +134,7 @@ L2 regression loss: $\mathcal{L} = \|S - \hat{S}\|_2^2$, predicting frame-level 
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
+
+</div>
 
 <!-- RELATED:END -->

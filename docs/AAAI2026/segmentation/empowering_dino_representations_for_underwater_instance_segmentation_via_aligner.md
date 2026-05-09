@@ -164,6 +164,8 @@ The Fourier frequency-domain style transfer approach is generalizable to other d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] A Mixed Diet Makes DINO An Omnivorous Vision Encoder](../../CVPR2026/segmentation/mixed_diet_dino_omnivorous_encoder.md)
@@ -171,5 +173,7 @@ The Fourier frequency-domain style transfer approach is generalizable to other d
 - [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](../../CVPR2026/segmentation/phrase-instance_alignment_for_generalized_referring_segmentation.md)
 - [\[CVPR 2026\] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera](../../CVPR2026/segmentation/unified_spherical_frontend_learning_rotation-equivariant_representations_of_sphe.md)
 - [\[ICCV 2025\] CAVIS: Context-Aware Video Instance Segmentation](../../ICCV2025/segmentation/cavis_context-aware_video_instance_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

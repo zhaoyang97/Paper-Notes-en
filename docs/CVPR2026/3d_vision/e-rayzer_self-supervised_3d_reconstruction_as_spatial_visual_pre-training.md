@@ -163,6 +163,8 @@ Training without curriculum nearly collapses (RPA@5° only 2.1%). Frame-interval
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
@@ -170,5 +172,7 @@ Training without curriculum nearly collapses (RPA@5° only 2.1%). Frame-interval
 - [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 - [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
 - [\[ICCV 2025\] Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views](../../ICCV2025/3d_vision/towards_more_diverse_and_challenging_pre-training_for_point_cloud_learning_self-.md)
+
+</div>
 
 <!-- RELATED:END -->

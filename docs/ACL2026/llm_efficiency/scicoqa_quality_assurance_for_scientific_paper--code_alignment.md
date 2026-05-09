@@ -59,6 +59,8 @@ SciCoQA is the first benchmark for detecting semantic discrepancies between scie
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](multi-drafter_speculative_decoding_with_alignment_feedback.md)
@@ -66,5 +68,7 @@ SciCoQA is the first benchmark for detecting semantic discrepancies between scie
 - [\[NeurIPS 2025\] SPARTA Alignment: Collectively Aligning Multiple Language Models through Combat](../../NeurIPS2025/llm_efficiency/sparta_alignment_collectively_aligning_multiple_language_models_through_combat.md)
 - [\[ACL 2026\] SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration](specbound_adaptive_bounded_self-speculation_with_layer-wise_confidence_calibrati.md)
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
+
+</div>
 
 <!-- RELATED:END -->

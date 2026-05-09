@@ -119,6 +119,8 @@ UniEdit contains a total of 311K samples, each comprising an edit sample, genera
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] KScope: A Framework for Characterizing the Knowledge Status of Language Models](kscope_a_framework_for_characterizing_the_knowledge_status_of_language_models.md)
@@ -126,5 +128,7 @@ UniEdit contains a total of 311K samples, each comprising an edit sample, genera
 - [\[ICLR 2026\] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations](../../ICLR2026/knowledge_editing/when_large_multimodal_models_confront_evolving_knowledge_challenges_and_explorat.md)
 - [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
 - [\[NeurIPS 2025\] MemEIC: A Step Toward Continual and Compositional Knowledge Editing](memeic_a_step_toward_continual_and_compositional_knowledge_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

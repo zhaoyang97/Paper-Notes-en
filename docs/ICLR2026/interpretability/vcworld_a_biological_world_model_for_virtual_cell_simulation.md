@@ -133,6 +133,8 @@ VCWorld achieves state-of-the-art performance on drug perturbation prediction be
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](../../NeurIPS2025/interpretability/scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
@@ -140,5 +142,7 @@ VCWorld achieves state-of-the-art performance on drug perturbation prediction be
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
 - [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
 - [\[CVPR 2026\] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](../../CVPR2026/interpretability/safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world.md)
+
+</div>
 
 <!-- RELATED:END -->

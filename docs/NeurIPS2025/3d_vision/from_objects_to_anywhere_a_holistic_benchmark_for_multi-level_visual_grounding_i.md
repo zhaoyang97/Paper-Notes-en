@@ -136,6 +136,8 @@ Three categories of models are evaluated: (1) **LLMs** (scene graph as text inpu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](../../ICCV2025/3d_vision/articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
@@ -143,5 +145,7 @@ Three categories of models are evaluated: (1) **LLMs** (scene graph as text inpu
 - [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
 - [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](../../ICCV2025/3d_vision/mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
 - [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,8 @@ description: >-
 
 **🔬 ICLR2026** · **9** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/knowledge_editing/index.md) · [📷 CVPR2026 (3)](../../CVPR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+
 **[Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)**
 
 :   By training Transformers from scratch on a synthetic relational knowledge graph, this work demonstrates that appropriate regularization induces the emergence of bilinear relational structure in hidden representations. This structure not only overcomes the reversal curse but also enables logically consistent propagation of edits to related facts.

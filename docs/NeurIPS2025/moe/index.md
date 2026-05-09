@@ -10,6 +10,8 @@ description: >-
 
 **🧠 NeurIPS2025** · **1** paper notes
 
+📌 **Same area in other venues:** [🔬 ICLR2026 (1)](../../ICLR2026/moe/index.md)
+
 **[MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)**
 
 :   This paper proposes MoRE-Brain, a neuroscience-inspired fMRI visual decoding framework that employs a hierarchical Mixture-of-Experts (MoE) architecture to simulate the specialized processing of the brain's visual pathway. Combined with a dynamic temporal-spatial dual-routing mechanism that guides image generation via a diffusion model, MoRE-Brain achieves high-fidelity reconstruction while enabling efficient cross-subject generalization and unprecedented mechanistic interpretability.

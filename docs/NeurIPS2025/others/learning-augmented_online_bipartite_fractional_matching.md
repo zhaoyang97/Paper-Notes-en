@@ -122,6 +122,8 @@ This paper builds on the learning-augmented algorithms framework (Lykouris & Vas
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
@@ -129,5 +131,7 @@ This paper builds on the learning-augmented algorithms framework (Lykouris & Vas
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
 - [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

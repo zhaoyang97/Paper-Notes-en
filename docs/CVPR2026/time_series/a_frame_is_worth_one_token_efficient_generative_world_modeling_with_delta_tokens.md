@@ -124,6 +124,8 @@ Frozen VFM (DINOv3) extracts frame-level features → DeltaTok encoder compresse
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting](../../ICCV2025/time_series/i2-world_intra-inter_tokenization_for_efficient_dynamic_4d_scene_forecasting.md)
@@ -131,5 +133,7 @@ Frozen VFM (DINOv3) extracts frame-level features → DeltaTok encoder compresse
 - [\[CVPR 2026\] PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning](pfgnet_a_fully_convolutional_frequency-guided_peripheral_gating_network_for_effi.md)
 - [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](../../NeurIPS2025/time_series/parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
 - [\[AAAI 2026\] GAICo: A Deployed and Extensible Framework for Evaluating Diverse and Multimodal Generative AI Outputs](../../AAAI2026/time_series/gaico_a_deployed_and_extensible_framework_for_evaluating_diverse_and_multimodal_.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -116,6 +116,8 @@ Standard cross-entropy loss over autoregressive action token prediction is used.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](../../CVPR2026/remote_sensing/avion_aerial_visionlanguage_instruction_from_offli.md)
@@ -123,5 +125,7 @@ Standard cross-entropy loss over autoregressive action token prediction is used.
 - [\[NeurIPS 2025\] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata](../../NeurIPS2025/remote_sensing/ortholoc_uav_6-dof_localization_and_calibration_using_orthographic_geodata.md)
 - [\[ICCV 2025\] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../ICCV2025/remote_sensing/citynav_a_large-scale_dataset_for_real-world_aerial_navigation.md)
 - [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
+
+</div>
 
 <!-- RELATED:END -->

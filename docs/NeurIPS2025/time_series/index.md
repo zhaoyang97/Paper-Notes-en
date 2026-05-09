@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **60** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (35)](../../AAAI2026/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+
+🔥 **Top topics:** Time-Series Forecasting ×32 · Diffusion Models ×3 · Reasoning ×3 · GNNs ×2 · Adversarial Robustness ×2
+
 **[A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)**
 
 :   This paper proposes a GCN-GRU hybrid framework for community-scale (2.5 km) high-resolution temperature forecasting (1–48 hours), validated across three regions in southwestern Ontario, Canada. The largest region achieves an average MAE of 1.93°C and a 48-hour MAE of 2.93°C. The work explores ClimateBERT language model embeddings as a standardized input scheme, and provides a transferable lightweight forecasting framework targeting data-scarce regions in the Global South.

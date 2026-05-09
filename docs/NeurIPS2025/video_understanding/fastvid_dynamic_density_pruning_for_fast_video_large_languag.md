@@ -126,6 +126,8 @@ Regarding broader connections: FastVID complements streaming temporal modeling m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](enhancing_temporal_understanding_in_videollms_through_stacke.md)
@@ -133,5 +135,7 @@ Regarding broader connections: FastVID complements streaming temporal modeling m
 - [\[NeurIPS 2025\] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)
 - [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](../../ICCV2025/video_understanding/aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
 - [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](../../ICCV2025/video_understanding/distime_distribution-based_time_representation_for_video_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

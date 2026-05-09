@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **1** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/physics/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/physics/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (20)](../../NeurIPS2025/physics/index.md)
+
 **[ResQ: A Novel Framework to Implement Residual Neural Networks on Analog Rydberg Atom Quantum Computers](resq_a_novel_framework_to_implement_residual_neural_networks_on_analog_rydberg_a.md)**
 
 :   This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by exploiting continuous-time Hamiltonian evolution, encoding input features and trainable parameters via piecewise parameterized laser pulses, achieving an average 50% improvement over classical models of equivalent scale on MNIST, FashionMNIST, and medical dataset classification tasks.

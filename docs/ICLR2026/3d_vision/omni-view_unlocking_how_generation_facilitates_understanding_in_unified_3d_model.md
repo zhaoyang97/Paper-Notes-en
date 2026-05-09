@@ -130,6 +130,8 @@ Novel view synthesis (Re10k): PSNR = 23.22 (surpassing Voyager-13B at 23.12), LP
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](../../CVPR2026/3d_vision/masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
@@ -137,5 +139,7 @@ Novel view synthesis (Re10k): PSNR = 23.22 (surpassing Voyager-13B at 23.12), LP
 - [\[ICCV 2025\] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](../../ICCV2025/3d_vision/univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)
 - [\[ICCV 2025\] UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation](../../ICCV2025/3d_vision/uniegomotion_a_unified_model_for_egocentric_motion_reconstruction_forecasting_an.md)
 - [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ Input image tokens are reordered according to the Hilbert curve traversal path; 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_long_horizon_planning.md)
@@ -129,5 +131,7 @@ Input image tokens are reordered according to the Hilbert curve traversal path; 
 - [\[ICLR 2026\] Beyond Linearity in Attention Projections: The Case for Nonlinear Queries](beyond_linearity_in_attention_projections_the_case_for_nonlinear_queries.md)
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](../../AAAI2026/others/approximation_algorithm_for_constrained_k-center_clustering_.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
+
+</div>
 
 <!-- RELATED:END -->

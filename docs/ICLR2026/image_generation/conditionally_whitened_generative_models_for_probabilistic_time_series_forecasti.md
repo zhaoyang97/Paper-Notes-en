@@ -127,6 +127,8 @@ JMCE is pre-trained first; the whitened data is then used to train the diffusion
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting](doflow_flow-based_generative_models_for_interventional_and_counterfactual_foreca.md)
@@ -134,5 +136,7 @@ JMCE is pre-trained first; the whitened data is then used to train the diffusion
 - [\[NeurIPS 2025\] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](../../NeurIPS2025/image_generation/elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)
 - [\[ICLR 2026\] FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching](flowcast_trajectory_forecasting_for_scalable_zero-cost_speculative_flow_matching.md)
 - [\[ICLR 2026\] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening](motion_prior_distillation_in_time_reversal_sampling_for_generative_inbetweening.md)
+
+</div>
 
 <!-- RELATED:END -->

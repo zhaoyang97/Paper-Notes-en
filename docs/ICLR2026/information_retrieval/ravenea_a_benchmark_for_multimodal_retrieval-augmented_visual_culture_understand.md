@@ -131,6 +131,8 @@ Downstream tasks (17 VLMs, w/ vs. w/o RAG):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/information_retrieval/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
@@ -138,5 +140,7 @@ Downstream tasks (17 VLMs, w/ vs. w/o RAG):
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](../../ACL2026/information_retrieval/slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
 - [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/information_retrieval/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 - [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/information_retrieval/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
+
+</div>
 
 <!-- RELATED:END -->

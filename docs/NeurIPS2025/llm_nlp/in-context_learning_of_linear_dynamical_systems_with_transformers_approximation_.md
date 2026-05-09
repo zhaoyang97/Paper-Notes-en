@@ -115,6 +115,8 @@ Consider a noisy linear dynamical system $x_t = Wx_{t-1} + \xi_t$, where the Tra
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
@@ -122,5 +124,7 @@ Consider a noisy linear dynamical system $x_t = Wx_{t-1} + \xi_t$, where the Tra
 - [\[NeurIPS 2025\] Composing Linear Layers from Irreducibles](composing_linear_layers_from_irreducibles.md)
 - [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
+
+</div>
 
 <!-- RELATED:END -->

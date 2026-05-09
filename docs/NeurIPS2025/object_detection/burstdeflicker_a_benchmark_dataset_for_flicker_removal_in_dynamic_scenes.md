@@ -152,6 +152,8 @@ The gain from 1 to 2 frames is 2.954 dB, while the gain from 2 to 3 frames is on
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
@@ -159,5 +161,7 @@ The gain from 1 to 2 frames is 2.954 dB, while the gain from 2 to 3 frames is on
 - [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
 - [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
 - [\[NeurIPS 2025\] Ascent Fails to Forget](ascent_fails_to_forget.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -124,6 +124,8 @@ Distribution shift analysis: AttWarp achieves KID = 31.5 vs. Non-Rectilinear War
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](../../CVPR2026/multimodal_vlm/token_warping_helps_mllms_look_from_nearby_viewpoints.md)
@@ -131,5 +133,7 @@ Distribution shift analysis: AttWarp achieves KID = 31.5 vs. Non-Rectilinear War
 - [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/multimodal_vlm/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
 - [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
 - [\[ICLR 2026\] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs](multimodal_prompt_optimization_why_not_leverage_multiple_modalities_for_mllms.md)
+
+</div>
 
 <!-- RELATED:END -->

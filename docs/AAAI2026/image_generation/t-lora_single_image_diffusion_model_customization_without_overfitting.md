@@ -233,6 +233,8 @@ FLUX-1.dev experiments:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](../../ICLR2026/image_generation/latent_diffusion_model_without_variational_autoencoder.md)
@@ -240,5 +242,7 @@ FLUX-1.dev experiments:
 - [\[ICCV 2025\] PersonalVideo: High ID-Fidelity Video Customization without Dynamic and Semantic Degradation](../../ICCV2025/image_generation/personalvideo_high_id-fidelity_video_customization_without_dynamic_and_semantic_.md)
 - [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
 - [\[AAAI 2026\] Steering One-Step Diffusion Model with Fidelity-Rich Decoder for Fast Image Compression](steering_one-step_diffusion_model_with_fidelity-rich_decoder_for_fast_image_comp.md)
+
+</div>
 
 <!-- RELATED:END -->

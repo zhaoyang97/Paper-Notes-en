@@ -141,6 +141,8 @@ Rand-P1 consistently underperforms P1, validating the importance of plausible ob
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
@@ -148,5 +150,7 @@ Rand-P1 consistently underperforms P1, validating the importance of plausible ob
 - [\[ICCV 2025\] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation](know_your_attention_maps_class-specific_token_masking_for_weakly_supervised_sema.md)
 - [\[ICCV 2025\] DDB: Diffusion Driven Balancing to Address Spurious Correlations](ddb_diffusion_driven_balancing_to_address_spurious_correlations.md)
 - [\[CVPR 2026\] DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence](../../CVPR2026/segmentation/clip_shortsighted_beyond_first_sentence.md)
+
+</div>
 
 <!-- RELATED:END -->

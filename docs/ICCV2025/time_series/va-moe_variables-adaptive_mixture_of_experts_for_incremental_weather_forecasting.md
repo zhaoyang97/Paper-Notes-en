@@ -133,6 +133,8 @@ VA-MoE with 665M parameters significantly outperforms ViT+MoE with 1113M paramet
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting](../../CVPR2026/time_series/stcast_adaptive_boundary_alignment_for_global_and_regional_weather_forecasting.md)
@@ -140,5 +142,7 @@ VA-MoE with 665M parameters significantly outperforms ViT+MoE with 1113M paramet
 - [\[NeurIPS 2025\] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series](../../NeurIPS2025/time_series/maestro_adaptive_sparse_attention_and_robust_learning_for_multimodal_dynamic_tim.md)
 - [\[ICCV 2025\] I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting](i2-world_intra-inter_tokenization_for_efficient_dynamic_4d_scene_forecasting.md)
 - [\[ICCV 2025\] V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction](v2xpnp_vehicle-to-everything_spatio-temporal_fusion_for_multi-agent_perception_a.md)
+
+</div>
 
 <!-- RELATED:END -->

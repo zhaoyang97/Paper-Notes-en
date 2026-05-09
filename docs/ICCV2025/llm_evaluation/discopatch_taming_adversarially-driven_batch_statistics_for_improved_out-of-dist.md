@@ -134,6 +134,8 @@ Average near-OOD AUROC of 95.0% (SOTA); covariate-shift AUROC of 95.5% (substant
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](../../NeurIPS2025/llm_evaluation/spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
@@ -141,5 +143,7 @@ Average near-OOD AUROC of 95.0% (SOTA); covariate-shift AUROC of 95.5% (substant
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](../../CVPR2026/llm_evaluation/enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
 - [\[AAAI 2026\] Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries](../../AAAI2026/llm_evaluation/graph_out-of-distribution_detection_via_test-time_calibration_with_dual_dynamic_.md)
 - [\[ICCV 2025\] Few-Shot Pattern Detection via Template Matching and Regression](few-shot_pattern_detection_via_template_matching_and_regression.md)
+
+</div>
 
 <!-- RELATED:END -->

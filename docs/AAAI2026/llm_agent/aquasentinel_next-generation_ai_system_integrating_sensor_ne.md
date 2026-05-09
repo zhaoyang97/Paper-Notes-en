@@ -116,6 +116,8 @@ The "virtual sensor" concept (inferring unobserved states from limited observati
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments](agentsense_virtual_sensor_data_generation_using_llm_agents_i.md)
@@ -123,5 +125,7 @@ The "virtual sensor" concept (inferring unobserved states from limited observati
 - [\[NeurIPS 2025\] PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer](../../NeurIPS2025/llm_agent/panda_towards_generalist_video_anomaly_detection_via_agentic_ai_engineer.md)
 - [\[AAAI 2026\] COVR: Collaborative Optimization of VLMs and RL Agent for Visual-Based Control](covrcollaborative_optimization_of_vlms_and_rl_agent_for_visu.md)
 - [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
+
+</div>
 
 <!-- RELATED:END -->

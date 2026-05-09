@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/time_series/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (35)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+
+🔥 **Top topics:** Time-Series Forecasting ×5
+
 **[A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)**
 
 :   This paper proposes DeltaTok, which compresses inter-frame VFM feature differences into a single delta token. Combined with Best-of-Many training, DeltaWorld efficiently generates diverse future predictions in a single forward pass. The model uses only 1/35 the parameters of Cosmos and 1/2000 the FLOPs, yet achieves superior performance on dense prediction tasks.

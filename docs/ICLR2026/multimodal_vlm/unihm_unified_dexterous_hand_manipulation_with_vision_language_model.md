@@ -131,6 +131,8 @@ Data annotation: GPT-4o generates five open-vocabulary instructions per keyframe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](unified_vision-language_modeling_via_concept_space_alignment.md)
@@ -138,5 +140,7 @@ Data annotation: GPT-4o generates five open-vocabulary instructions per keyframe
 - [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 - [\[CVPR 2026\] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary](../../CVPR2026/multimodal_vlm/unigame_turning_a_unified_multimodal_model_into_its_own_adversary.md)
+
+</div>
 
 <!-- RELATED:END -->

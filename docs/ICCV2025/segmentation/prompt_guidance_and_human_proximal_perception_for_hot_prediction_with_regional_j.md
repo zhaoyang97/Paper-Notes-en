@@ -169,6 +169,8 @@ Gains on HOT-Annotated: SC-Acc. +0.7, mIoU +2.0, wIoU +1.6, **AD-Acc. +11.0**.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](../../NeurIPS2025/segmentation/haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
@@ -176,5 +178,7 @@ Gains on HOT-Annotated: SC-Acc. +0.7, mIoU +2.0, wIoU +1.6, **AD-Acc. +11.0**.
 - [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
 - [\[ICCV 2025\] ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction](conformalsam_unlocking_the_potential_of_foundational_segmentation_models_in_semi.md)
 - [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

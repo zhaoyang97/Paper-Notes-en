@@ -126,6 +126,8 @@ Train a large model $f_{large}$ (e.g., ViT-L) and a small model $f_{small}$ (e.g
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
@@ -133,5 +135,7 @@ Train a large model $f_{large}$ (e.g., ViT-L) and a small model $f_{small}$ (e.g
 - [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](../../ACL2026/llm_evaluation/made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
 - [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](bayesian_evaluation_of_large_language_model_behavior.md)
 - [\[NeurIPS 2025\] Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator](your_pre-trained_llm_is_secretly_an_unsupervised_confidence_calibrator.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -166,6 +166,8 @@ Since the output is standard Python code, GPT-4o can directly understand and per
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] "Principal Components" Enable A New Language of Images](principal_components_enable_a_new_language_of_images.md)
@@ -173,5 +175,7 @@ Since the output is standard Python code, GPT-4o can directly understand and per
 - [\[ICCV 2025\] CE-FAM: Concept-Based Explanation via Fusion of Activation Maps](ce-fam_concept-based_explanation_via_fusion_of_activation_maps.md)
 - [\[ICCV 2025\] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning](svip_semantically_contextualized_visual_patches_for_zero-shot_learning.md)
 - [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
+
+</div>
 
 <!-- RELATED:END -->

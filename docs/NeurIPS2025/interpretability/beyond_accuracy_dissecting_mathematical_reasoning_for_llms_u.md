@@ -124,6 +124,8 @@ Stage 2-pss achieves an average gain of 2.02% over Stage 1, reaching 50.42% on A
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Learnable Fractional Reaction-Diffusion Dynamics for Under-Display ToF Imaging and Beyond](../../ICCV2025/interpretability/learnable_fractional_reaction-diffusion_dynamics_for_under-display_tof_imaging_a.md)
@@ -131,5 +133,7 @@ Stage 2-pss achieves an average gain of 2.02% over Stage 1, reaching 50.42% on A
 - [\[NeurIPS 2025\] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm](dynamic_algorithm_for_explainable_k-medians_clustering_under_lp_norm.md)
 - [\[ACL 2026\] Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards](../../ACL2026/interpretability/curing_miracle_steps_in_llm_mathematical_reasoning_with_rubric_rewards.md)
 - [\[NeurIPS 2025\] Evaluating LLMs in Open-Source Games](evaluating_llms_in_open-source_games.md)
+
+</div>
 
 <!-- RELATED:END -->

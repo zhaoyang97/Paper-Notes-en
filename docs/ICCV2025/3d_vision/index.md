@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **268** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (252)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (65)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (74)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md)
+
+🔥 **Top topics:** 3D Gaussian Splatting ×50 · Diffusion Models ×28 · Point Cloud ×18 · Dynamic Scenes ×15 · Adversarial Robustness ×12
+
 **[TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update](2d_gaussian_splattingbased_sparseview_transparent_object_dep.md)**
 
 :   This paper proposes TRAN-D, a 2D Gaussian Splatting-based method for sparse-view transparent object depth reconstruction. It employs segmentation-guided object-aware losses to optimize Gaussian distributions in occluded regions, and leverages physics simulation (MPM) to enable dynamic scene updates after object removal, requiring only a single image for scene refresh.

@@ -133,6 +133,8 @@ Success rate (%) comparison of different architectures across tasks of varying d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](../../NeurIPS2025/reinforcement_learning/multi-agent_collaboration_via_evolving_orchestration.md)
@@ -140,5 +142,7 @@ Success rate (%) comparison of different architectures across tasks of varying d
 - [\[NeurIPS 2025\] VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/viki-r_coordinating_embodied_multi-agent_cooperation_via_reinforcement_learning.md)
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/reinforcement_learning/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
 - [\[NeurIPS 2025\] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models](../../NeurIPS2025/reinforcement_learning/communicating_plans_not_percepts_scalable_multi-agent_coordination_with_embodied.md)
+
+</div>
 
 <!-- RELATED:END -->

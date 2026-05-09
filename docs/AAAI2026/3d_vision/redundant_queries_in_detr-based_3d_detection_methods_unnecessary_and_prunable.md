@@ -148,6 +148,8 @@ Overall: ⭐⭐⭐⭐ — The method is minimalist yet addresses a practical pai
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Distilling Future Temporal Knowledge with Masked Feature Reconstruction for 3D Object Detection](distilling_future_temporal_knowledge_with_masked_feature_reconstruction_for_3d_o.md)
@@ -155,5 +157,7 @@ Overall: ⭐⭐⭐⭐ — The method is minimalist yet addresses a practical pai
 - [\[AAAI 2026\] Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark](griffin_aerial-ground_cooperative_detection_and_tracking_dataset_and_benchmark.md)
 - [\[CVPR 2026\] r4det 4d radar camera fusion 3d detection](../../CVPR2026/3d_vision/r4det_4d_radar_camera_fusion_3d_detection.md)
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](../../CVPR2026/3d_vision/span_spatial_projection_alignment_mono3d.md)
+
+</div>
 
 <!-- RELATED:END -->

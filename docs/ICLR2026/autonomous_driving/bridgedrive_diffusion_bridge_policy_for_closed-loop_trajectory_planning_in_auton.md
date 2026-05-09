@@ -125,6 +125,8 @@ Bench2Drive closed-loop evaluation (CARLA Leaderboard 2.0, 220 routes):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
@@ -132,5 +134,7 @@ Bench2Drive closed-loop evaluation (CARLA Leaderboard 2.0, 220 routes):
 - [\[AAAI 2026\] ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving](../../AAAI2026/autonomous_driving/reflexdiffusion_reflection-enhanced_trajectory_planning_for_.md)
 - [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](../../CVPR2026/autonomous_driving/colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
 - [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
+
+</div>
 
 <!-- RELATED:END -->

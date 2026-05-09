@@ -211,6 +211,8 @@ GenIR's innovation lies in being the **first to integrate text-to-image generati
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
@@ -218,5 +220,7 @@ GenIR's innovation lies in being the **first to integrate text-to-image generati
 - [\[NeurIPS 2025\] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback](unilumos_fast_and_unified_image_and_video_relighting_with_physics-plausible_feed.md)
 - [\[CVPR 2026\] Diffusion Mental Averages](../../CVPR2026/image_generation/diffusion_mental_averages.md)
 - [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
+
+</div>
 
 <!-- RELATED:END -->

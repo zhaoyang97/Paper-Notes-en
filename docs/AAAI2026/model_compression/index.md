@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **54** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (57)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (92)](../../ICLR2026/model_compression/index.md) · [🧠 NeurIPS2025 (134)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/model_compression/index.md)
+
+🔥 **Top topics:** Model Compression ×9 · Compression ×7 · LLM ×6 · Agents ×4 · Reasoning ×3
+
 **[AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization](adafuse_accelerating_dynamic_adapter_inference_via_token-lev.md)**
 
 :   To address the severe inference latency overhead (250%–950%) of dynamic MoE-LoRA adapters, this paper proposes a token-level pre-gating architecture that performs a single global routing decision at the first layer. Combined with a custom SGMM fused CUDA kernel that merges all activated LoRA adapters into the backbone in one shot, the approach reduces decoding latency by 2.4× while preserving model accuracy.

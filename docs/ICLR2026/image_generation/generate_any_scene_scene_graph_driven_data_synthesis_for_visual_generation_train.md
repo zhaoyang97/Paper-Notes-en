@@ -140,6 +140,8 @@ Compositional generalization test (400 unseen compositional captions):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](consistent_text-to-image_generation_via_scene_de-contextualization.md)
@@ -147,5 +149,7 @@ Compositional generalization test (400 unseen compositional captions):
 - [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](../../ICCV2025/image_generation/lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 - [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
 - [\[ICLR 2026\] Next Visual Granularity Generation](next_visual_granularity_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

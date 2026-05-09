@@ -171,6 +171,8 @@ Averaged across three baselines: collision rate reduced by ~20%, inference laten
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](../../CVPR2026/autonomous_driving/scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
@@ -178,5 +180,7 @@ Averaged across three baselines: collision rate reduced by ~20%, inference laten
 - [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
 - [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
 - [\[AAAI 2026\] LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems](lucid_learning-enabled_uncertainty-aware_certification_of_stochastic_dynamical_s.md)
+
+</div>
 
 <!-- RELATED:END -->

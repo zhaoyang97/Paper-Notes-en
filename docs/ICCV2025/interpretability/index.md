@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (34)](../../ACL2026/interpretability/index.md) · [📷 CVPR2026 (31)](../../CVPR2026/interpretability/index.md) · [🔬 ICLR2026 (59)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (82)](../../NeurIPS2025/interpretability/index.md)
+
+🔥 **Top topics:** Point Cloud ×2
+
 **[AIM: Amending Inherent Interpretability via Self-Supervised Masking](aim_amending_inherent_interpretability_via_self-supervised_masking.md)**
 
 :   This paper proposes AIM, a top-down learnable binary masking mechanism for self-supervised spatial feature selection, built upon a feature pyramid architecture. Without requiring additional annotations, AIM guides CNNs to focus on genuinely discriminative features and suppress spurious correlations, simultaneously achieving inherent interpretability and improved OOD generalization.

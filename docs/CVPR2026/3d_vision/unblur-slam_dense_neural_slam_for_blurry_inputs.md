@@ -159,6 +159,8 @@ The authors further evaluate trajectory error on TUM RGB-D and IndoorMCD, and re
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM](sgad-slam_splatting_gaussians_at_adjusted_depth_for_better_radiance_fields_in_rg.md)
@@ -166,5 +168,7 @@ The authors further evaluate trajectory error on TUM RGB-D and IndoorMCD, and re
 - [\[CVPR 2026\] DROID-W: DROID-SLAM in the Wild](droid-slam_in_the_wild.md)
 - [\[AAAI 2026\] FoundationSLAM: Unleashing the Potential of Deep Foundation Models in End-to-End Dense Visual SLAM](../../AAAI2026/3d_vision/foundationslam_unleashing_the_power_of_depth_foundation_models_for.md)
 - [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+
+</div>
 
 <!-- RELATED:END -->

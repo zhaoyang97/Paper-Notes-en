@@ -128,6 +128,8 @@ Virtual data scale: 18 personas × 22 home layouts = 250 days of data, 3,266 act
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](../../ICLR2026/llm_agent/simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
@@ -135,5 +137,7 @@ Virtual data scale: 18 personas × 22 home layouts = 250 days of data, 3,266 act
 - [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
 - [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](../../ICLR2026/llm_agent/gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
 - [\[CVPR 2026\] Gen-n-Val: Agentic Image Data Generation and Validation](../../CVPR2026/llm_agent/gen_n_val_agentic_image_data_generation_and_validation.md)
+
+</div>
 
 <!-- RELATED:END -->

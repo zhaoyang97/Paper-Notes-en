@@ -143,6 +143,8 @@ At inference, a **Hybrid Interpolation Strategy** is employed: for a given test 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
@@ -150,5 +152,7 @@ At inference, a **Hybrid Interpolation Strategy** is employed: for a given test 
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/object_detection/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
 - [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+
+</div>
 
 <!-- RELATED:END -->

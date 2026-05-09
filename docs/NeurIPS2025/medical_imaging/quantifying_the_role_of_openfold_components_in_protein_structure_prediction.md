@@ -145,6 +145,8 @@ OpenFold model_1_ptm weights and original AlphaFold2 JAX weights are used. Zero 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
@@ -152,5 +154,7 @@ OpenFold model_1_ptm weights and original AlphaFold2 JAX weights are used. Zero 
 - [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](../../ICLR2026/medical_imaging/protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
 - [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
 - [\[NeurIPS 2025\] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features](augmenting_biological_fitness_prediction_benchmarks_with_landscapes_features_fro.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -220,6 +220,8 @@ This demonstrates that self-correction is **an actively learned behavior**, rath
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
@@ -227,5 +229,7 @@ This demonstrates that self-correction is **an actively learned behavior**, rath
 - [\[AAAI 2026\] Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data](difficulty_controlled_diffusion_model_for_synthesizing_effec.md)
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
 - [\[ICLR 2026\] Neon: Negative Extrapolation From Self-Training Improves Image Generation](../../ICLR2026/image_generation/neon_negative_extrapolation_image_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

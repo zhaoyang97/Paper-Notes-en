@@ -218,6 +218,8 @@ Compared to multi-agent frameworks such as ChatDev/MetaGPT, Agint draws on compi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
@@ -225,5 +227,7 @@ Compared to multi-agent frameworks such as ChatDev/MetaGPT, Agint draws on compi
 - [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](../../CVPR2026/graph_learning/graph2eval_multimodal_task_generation_agents.md)
 - [\[ICLR 2026\] Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization](../../ICLR2026/graph_learning/embodied_agents_meet_personalization_investigating_challenges_and_solutions_thro.md)
 - [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

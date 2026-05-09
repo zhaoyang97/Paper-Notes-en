@@ -170,6 +170,8 @@ At inference: query-page relevance scores are computed → Top-K pages are selec
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Multimodal OCR: Parse Anything from Documents](../../CVPR2026/multimodal_vlm/multimodal_ocr_parse_anything_from_documents.md)
@@ -177,5 +179,7 @@ At inference: query-page relevance scores are computed → Top-K pages are selec
 - [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
 - [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
 - [\[ICCV 2025\] Analyzing Finetuning Representation Shift for Multimodal LLMs Steering](../../ICCV2025/multimodal_vlm/analyzing_finetuning_representation_shift_for_multimodal_llms_steering.md)
+
+</div>
 
 <!-- RELATED:END -->

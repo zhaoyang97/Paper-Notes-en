@@ -136,6 +136,8 @@ Three input settings: (1) Turn-level; (2) Context-level; (3) Conversation-level.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](../../ICLR2026/audio_speech/scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
@@ -143,5 +145,7 @@ Three input settings: (1) Turn-level; (2) Context-level; (3) Conversation-level.
 - [\[ICLR 2026\] Statistical Guarantees for Offline Domain Randomization](../../ICLR2026/audio_speech/statistical_guarantees_for_offline_domain_randomization.md)
 - [\[NeurIPS 2025\] Merlin L48 Spectrogram Dataset](../../NeurIPS2025/audio_speech/merlin_l48_spectrogram_dataset.md)
 - [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+
+</div>
 
 <!-- RELATED:END -->

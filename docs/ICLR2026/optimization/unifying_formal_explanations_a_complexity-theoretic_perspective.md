@@ -155,6 +155,8 @@ This paper is a purely theoretical contribution; its core results concern comple
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
@@ -162,5 +164,7 @@ This paper is a purely theoretical contribution; its core results concern comple
 - [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
 - [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
 - [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
+
+</div>
 
 <!-- RELATED:END -->

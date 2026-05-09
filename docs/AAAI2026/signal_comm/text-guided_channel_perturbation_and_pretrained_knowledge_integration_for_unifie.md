@@ -119,6 +119,8 @@ $L_T = L_{grad} + L_{l_1}$. Training is conducted solely on LLVIP for 100 epochs
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](../../NeurIPS2025/signal_comm/multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
@@ -126,5 +128,7 @@ $L_T = L_{grad} + L_{l_1}$. Training is conducted solely on LLVIP for 100 epochs
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](../../NeurIPS2025/signal_comm/perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
 - [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](../../NeurIPS2025/signal_comm/memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](../../ICLR2026/signal_comm/multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
+
+</div>
 
 <!-- RELATED:END -->

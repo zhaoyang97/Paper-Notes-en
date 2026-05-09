@@ -124,6 +124,8 @@ ScaleDiff requires only 113 seconds on SDXL at 4096², making it the fastest amo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis](../../ICCV2025/image_generation/infgen_a_resolution-agnostic_paradigm_for_scalable_image_synthesis.md)
@@ -131,5 +133,7 @@ ScaleDiff requires only 113 seconds on SDXL at 4096², making it the fastest amo
 - [\[ICCV 2025\] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution](../../ICCV2025/image_generation/patchscaler_an_efficient_patch-independent_diffusion_model_for_image_super-resol.md)
 - [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
 - [\[NeurIPS 2025\] BlurDM: A Blur Diffusion Model for Image Deblurring](blurdm_a_blur_diffusion_model_for_image_deblurring.md)
+
+</div>
 
 <!-- RELATED:END -->

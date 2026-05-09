@@ -188,6 +188,8 @@ The Large model further improves upon incorporating video-reconstructed point cl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
@@ -195,5 +197,7 @@ The Large model further improves upon incorporating video-reconstructed point cl
 - [\[ICCV 2025\] SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians](../../ICCV2025/3d_vision/sheap_self-supervised_head_geometry_predictor_learned_via_2d_gaussians.md)
 - [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](../../CVPR2026/3d_vision/unisplat_3d_representations_unposed.md)
 - [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](../../CVPR2026/3d_vision/e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
+
+</div>
 
 <!-- RELATED:END -->

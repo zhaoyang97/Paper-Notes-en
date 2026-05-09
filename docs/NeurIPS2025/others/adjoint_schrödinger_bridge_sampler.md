@@ -124,6 +124,8 @@ ASBS learns an SDE $dX_t = [f_t(X_t) + \sigma_t u_t^\theta(X_t)] dt + \sigma_t d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge](modeling_cell_dynamics_and_interactions_with_unbalanced_mean_field_schrödinger_b.md)
@@ -131,5 +133,7 @@ ASBS learns an SDE $dX_t = [f_t(X_t) + \sigma_t u_t^\theta(X_t)] dt + \sigma_t d
 - [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](../../AAAI2026/others/rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
 - [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -151,6 +151,8 @@ The problem is clearly defined (DP simulation domain gap), the method is grounde
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](radiant_foam_real-time_differentiable_ray_tracing.md)
@@ -158,5 +160,7 @@ The problem is clearly defined (DP simulation domain gap), the method is grounde
 - [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
 - [\[NeurIPS 2025\] DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints](../../NeurIPS2025/3d_vision/dualfocus_depth_from_focus_with_spatio-focal_dual_variational_constraints.md)
 - [\[NeurIPS 2025\] 3D Visual Illusion Depth Estimation](../../NeurIPS2025/3d_vision/3d_visual_illusion_depth_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

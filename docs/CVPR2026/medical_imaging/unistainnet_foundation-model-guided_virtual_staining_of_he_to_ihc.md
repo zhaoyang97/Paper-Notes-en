@@ -126,6 +126,8 @@ Scaling to native 1024 resolution increases parameters by only 0.2%, while stain
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model](../../AAAI2026/medical_imaging/virtual_multiplex_staining_for_histological_images_using_a_marker-wise_condition.md)
@@ -133,5 +135,7 @@ Scaling to native 1024 resolution increases parameters by only 0.2%, while stain
 - [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](lemon_large_endoscopic_monocular_dataset_foundation_model_surgical.md)
 - [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
 - [\[CVPR 2026\] A protocol for evaluating robustness to H&E staining variation in computational pathology models](a_protocol_for_evaluating_robustness_to_he_stainin.md)
+
+</div>
 
 <!-- RELATED:END -->

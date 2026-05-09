@@ -115,6 +115,8 @@ Three interaction rounds suffice to surpass the non-interactive SOTA; six rounds
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
@@ -122,5 +124,7 @@ Three interaction rounds suffice to surpass the non-interactive SOTA; six rounds
 - [\[ICCV 2025\] BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation](badvideo_stealthy_backdoor_attack_against_text-to-video_generation.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

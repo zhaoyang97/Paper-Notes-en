@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **38** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (9)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/llm_nlp/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_nlp/index.md)
+
+🔥 **Top topics:** LLM ×16 · Agents ×4 · Few-/Zero-Shot Learning ×2 · Reasoning ×2 · Face & Gaze ×2
+
 **[A Study of LLMs' Preferences for Libraries and Programming Languages](a_study_of_llms39_preferences_for_libraries_and_programming_languages.md)**
 
 :   This paper presents the first systematic study of library and programming language preferences in code generation across 8 LLMs, revealing that LLMs exhibit strong biases toward popular libraries such as NumPy (with 45% of usages deemed unnecessary) and toward Python (chosen in 58% of high-performance tasks), and that natural language recommendations are inconsistent with actual code generation behavior.

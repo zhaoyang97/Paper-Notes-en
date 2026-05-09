@@ -199,6 +199,8 @@ CER yields the largest gain on fine-grained classification (+4.89%), validating 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations](from_passive_perception_to_active_memory_a_weakly_supervised_image_manipulation_.md)
@@ -206,5 +208,7 @@ CER yields the largest gain on fine-grained classification (+4.89%), validating 
 - [\[AAAI 2026\] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)
 - [\[AAAI 2026\] Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity](robust_out-of-order_retrieval_for_grid-based_storage_at_maximum_capacity.md)
 - [\[ICLR 2026\] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](../../ICLR2026/robotics/rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)
+
+</div>
 
 <!-- RELATED:END -->

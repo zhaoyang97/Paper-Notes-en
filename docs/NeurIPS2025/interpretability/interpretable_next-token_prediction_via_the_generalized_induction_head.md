@@ -167,6 +167,8 @@ $$P_{\text{induction(fuzzy)}}(w_i | x) = \frac{c_{\text{fuzzy}}(w_{i-k-1:i-1} w_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](bigram_subnetworks_mapping_to_next_tokens_in_transformer_language_models.md)
@@ -174,5 +176,7 @@ $$P_{\text{induction(fuzzy)}}(w_i | x) = \frac{c_{\text{fuzzy}}(w_{i-k-1:i-1} w_
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
 - [\[AAAI 2026\] GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework](../../AAAI2026/interpretability/genepheno_interpretable_gene_knockout-induced_phenotype_abnormality_prediction_f.md)
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
+
+</div>
 
 <!-- RELATED:END -->

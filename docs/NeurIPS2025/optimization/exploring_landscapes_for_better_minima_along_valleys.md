@@ -149,6 +149,8 @@ The E-adaptor is a plug-in module compatible with any gradient-based optimizer. 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)
@@ -156,5 +158,7 @@ The E-adaptor is a plug-in module compatible with any gradient-based optimizer. 
 - [\[NeurIPS 2025\] Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks](better_ntk_conditioning_a_free_lunch_from_relu_nonlinear_activation_in_wide_neur.md)
 - [\[ICLR 2026\] When to Restart? Exploring Escalating Restarts on Convergence](../../ICLR2026/optimization/when_to_restart_exploring_escalating_restarts_on_convergence.md)
 - [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](../../ICLR2026/optimization/exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
+
+</div>
 
 <!-- RELATED:END -->

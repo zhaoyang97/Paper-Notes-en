@@ -173,6 +173,8 @@ Conditioning on only the single adjacent scale yields the best results, improvin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](../../CVPR2026/llm_efficiency/sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
@@ -180,5 +182,7 @@ Conditioning on only the single adjacent scale yields the best results, improvin
 - [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/llm_efficiency/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
 - [\[NeurIPS 2025\] Scale-invariant Attention](../../NeurIPS2025/llm_efficiency/scale-invariant_attention.md)
 - [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
+
+</div>
 
 <!-- RELATED:END -->

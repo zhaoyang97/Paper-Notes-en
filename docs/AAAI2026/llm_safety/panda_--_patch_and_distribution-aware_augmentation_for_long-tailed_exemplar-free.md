@@ -174,6 +174,8 @@ PANDA substantially outperforms all conventional augmentation methods. CutMix an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Attention Retention for Continual Learning with Vision Transformers](attention_retention_for_continual_learning_with_vision_transformers.md)
@@ -181,5 +183,7 @@ PANDA substantially outperforms all conventional augmentation methods. CutMix an
 - [\[NeurIPS 2025\] Finding Structure in Continual Learning](../../NeurIPS2025/llm_safety/finding_structure_in_continual_learning.md)
 - [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/llm_safety/elastic_weight_consolidation_done_right_for_continual_learning.md)
 - [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
+
+</div>
 
 <!-- RELATED:END -->

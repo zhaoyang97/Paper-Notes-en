@@ -142,6 +142,8 @@ Sensor modality performance comparison (Table 2, qualitative evaluation):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](../../CVPR2026/video_understanding/openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
@@ -149,5 +151,7 @@ Sensor modality performance comparison (Table 2, qualitative evaluation):
 - [\[AAAI 2026\] EmoVid: A Multimodal Emotion Video Dataset for Emotion-Centric Video Understanding and Generation](../../AAAI2026/video_understanding/emovid_a_multimodal_emotion_video_dataset_for_emotion-centric_video_understandin.md)
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[ICCV 2025\] XTrack: Multimodal Training Boosts RGB-X Video Object Trackers](../../ICCV2025/video_understanding/xtrack_multimodal_training_boosts_rgb-x_video_object_trackers.md)
+
+</div>
 
 <!-- RELATED:END -->

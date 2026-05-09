@@ -124,6 +124,8 @@ Iris achieves the best overall performance on most real-image benchmarks, with p
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
@@ -131,5 +133,7 @@ Iris achieves the best overall performance on most real-image benchmarks, with p
 - [\[AAAI 2026\] Enhancing Generalization of Depth Estimation Foundation Model via Weakly-Supervised Adaptation with Regularization](../../AAAI2026/3d_vision/enhancing_generalization_of_depth_estimation_foundation_model_via_weakly-supervi.md)
 - [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
 - [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](../../ICCV2025/3d_vision/depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
+
+</div>
 
 <!-- RELATED:END -->

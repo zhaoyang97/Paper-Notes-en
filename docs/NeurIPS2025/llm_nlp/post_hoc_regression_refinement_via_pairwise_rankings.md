@@ -172,6 +172,8 @@ RankRefine outperforms the projection baseline across the practically feasible a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
@@ -179,5 +181,7 @@ RankRefine outperforms the projection baseline across the practically feasible a
 - [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](../../ICLR2026/llm_nlp/pt2-llm_post-training_ternarization_for_large_language_models.md)
 - [\[ACL 2026\] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot NER](../../ACL2026/llm_nlp/diziner_disagreement-guided_instruction_refinement_via_pilot_annotation_simulati.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

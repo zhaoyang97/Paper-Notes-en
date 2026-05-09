@@ -150,6 +150,8 @@ No model training is involved during dataset construction. Supervised methods (G
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/medical_imaging/tracing_pharmacological_knowledge_in_large_language_models.md)
@@ -157,5 +159,7 @@ No model training is involved during dataset construction. Supervised methods (G
 - [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](../../NeurIPS2025/medical_imaging/fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 - [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](../../ICLR2026/medical_imaging/knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
+
+</div>
 
 <!-- RELATED:END -->

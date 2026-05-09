@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **22** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (142)](../../ICLR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (71)](../../AAAI2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (169)](../../NeurIPS2025/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×7 · Reinforcement Learning ×5 · Agents ×4 · Robotics ×4 · Reasoning ×4
+
 **[AceTone: Bridging Words and Colors for Conditional Image Grading](acetone_bridging_words_and_colors_for_conditional_image_grading.md)**
 
 :   AceTone is proposed as the first unified framework for multimodal-conditioned color grading supporting both text and reference image inputs. By compressing 3D-LUTs into 64 discrete tokens via VQ-VAE, a VLM is trained to predict LUT token sequences, followed by GRPO reinforcement learning to align color similarity and aesthetic preference, achieving a 50% improvement in LPIPS on both style transfer and instruction-based grading tasks.

@@ -157,6 +157,8 @@ All three components are mutually reinforcing; MO yields the largest gain for TA
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](../../ICLR2026/llm_nlp/bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)
@@ -164,5 +166,7 @@ All three components are mutually reinforcing; MO yields the largest gain for TA
 - [\[AAAI 2026\] Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts](../../AAAI2026/llm_nlp/rectification_reimagined_a_unified_mamba_model_for_image_cor.md)
 - [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](../../ICLR2026/llm_nlp/function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
 - [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -97,6 +97,8 @@ The pipeline consists of three stages: (1) extracting per-frame camera tokens fr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)
@@ -104,5 +106,7 @@ The pipeline consists of three stages: (1) extracting per-frame camera tokens fr
 - [\[CVPR 2026\] Reallocating Attention Across Layers to Reduce Multimodal Hallucination](reallocating_attention_reduce_hallucination.md)
 - [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
 - [\[CVPR 2026\] Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing](edit-as-act_goal-regressive_planning_for_open-vocabulary_3d_indoor_scene_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

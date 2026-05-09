@@ -134,6 +134,8 @@ MEDISEG comprises two subsets: 3-Pills (3 pill classes) and 32-Pills (8,262 imag
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] MEDISEG: A Dataset of Medication Images with Instance Segmentation Masks for Preventing Adverse Drug Events](a_dataset_of_medication_images_with_instance_segmentation_masks_for_preventing_a.md)
@@ -141,5 +143,7 @@ MEDISEG comprises two subsets: 3-Pills (3 pill classes) and 32-Pills (8,262 imag
 - [\[CVPR 2026\] RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video](robotseg_a_model_and_dataset_for_segmenting_robots_in_image_and_video.md)
 - [\[CVPR 2026\] UnrealPose: Leveraging Game Engine Kinematics for Large-Scale Synthetic Human Pose Data](unrealpose_leveraging_game_engine_kinematics_for_large-scale_synthetic_human_pos.md)
 - [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
+
+</div>
 
 <!-- RELATED:END -->

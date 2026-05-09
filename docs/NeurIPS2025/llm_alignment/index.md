@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **53** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (12)](../../CVPR2026/llm_alignment/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_alignment/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+
+🔥 **Top topics:** Alignment/RLHF ×24 · LLM ×16 · Adversarial Robustness ×6 · Diffusion Models ×3 · Multimodal/VLM ×3
+
 **[A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs](a_systematic_evaluation_of_preference_aggregation_in_federated_rlhf_for_pluralis.md)**
 
 :   This paper proposes an Adaptive Alpha aggregation strategy that dynamically adjusts reward weights based on each user group's historical alignment performance within a federated RLHF framework, simultaneously achieving high fairness and strong alignment performance for pluralistic preference alignment.

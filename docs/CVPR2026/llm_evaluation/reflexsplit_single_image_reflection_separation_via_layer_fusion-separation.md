@@ -128,6 +128,8 @@ Note: ReflexSplit uses 174M parameters vs. RDNet's 266.4M, demonstrating higher 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] ASIDE: Architectural Separation of Instructions and Data in Language Models](../../ICLR2026/llm_evaluation/aside_architectural_separation_of_instructions_and_data_in_language_models.md)
@@ -135,5 +137,7 @@ Note: ReflexSplit uses 174M parameters vs. RDNet's 266.4M, demonstrating higher 
 - [\[CVPR 2026\] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)
 - [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](../../AAAI2026/llm_evaluation/microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
 - [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_evaluation/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
+
+</div>
 
 <!-- RELATED:END -->

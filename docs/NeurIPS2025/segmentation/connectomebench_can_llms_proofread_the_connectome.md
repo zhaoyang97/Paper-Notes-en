@@ -161,6 +161,8 @@ The CAVEClient is used to access segmentation edit histories, obtaining pre- and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] ReferEverything: Towards Segmenting Everything We Can Speak of in Videos](../../ICCV2025/segmentation/refereverything_towards_segmenting_everything_we_can_speak_of_in_videos.md)
@@ -168,5 +170,7 @@ The CAVEClient is used to access segmentation edit histories, obtaining pre- and
 - [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
 - [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
 - [\[NeurIPS 2025\] MultiHuman-Testbench: Benchmarking Image Generation for Multiple Humans](multihuman-testbench_benchmarking_image_generation_for_multiple_humans.md)
+
+</div>
 
 <!-- RELATED:END -->

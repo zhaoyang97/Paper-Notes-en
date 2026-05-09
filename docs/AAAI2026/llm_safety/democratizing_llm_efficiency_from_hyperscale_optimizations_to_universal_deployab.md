@@ -158,6 +158,8 @@ As a position paper, this work involves no specific training procedures. The aut
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] LAMP: Learning Universal Adversarial Perturbations for Multi-Image Tasks via Pre-trained Models](lamp_learning_universal_adversarial_perturbations_for_multi-image_tasks_via_pre-.md)
@@ -165,5 +167,7 @@ As a position paper, this work involves no specific training procedures. The aut
 - [\[ICLR 2026\] Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data](../../ICLR2026/llm_safety/redirection_for_erasing_memory_rem_towards_a_universal_unlearning_method_for_cor.md)
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](../../NeurIPS2025/llm_safety/adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
 - [\[AAAI 2026\] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users](llm_targeted_underperformance_disproportionately_impacts_vulnerable_users.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/social_computing/index.md) · [📷 CVPR2026 (5)](../../CVPR2026/social_computing/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/social_computing/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/social_computing/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/social_computing/index.md)
+
+🔥 **Top topics:** LLM ×3 · Adversarial Robustness ×2 · Agents ×2
+
 **[Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation](adaptive_debiasing_tsallis_entropy_for_test-time_adaptation.md)**
 
 :   This paper introduces Tsallis entropy (a generalization of Shannon entropy) into Test-Time Adaptation for vision-language models, and further develops Adaptive Debiasing Tsallis Entropy (ADTE), which customizes a per-class debiasing parameter $q^l$ to select more reliable high-confidence views than Shannon entropy without distribution-specific hyperparameter tuning. ADTE surpasses the state of the art on ImageNet and its 5 variants as well as 10 cross-domain benchmarks.

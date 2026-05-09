@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **19** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/llm_agent/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/llm_agent/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/llm_agent/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+
+🔥 **Top topics:** Agents ×9 · Reasoning ×3 · Speech & Audio ×2 · NeRF ×2 · 3D Gaussian Splatting ×2
+
 **[ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search](argos_agentic_multi_camera_person_search.md)**
 
 :   This paper proposes ARGOS, the first benchmark and framework that redefines multi-camera person search as an interactive reasoning problem. An agent conducts multi-turn dialogue with witnesses, invokes spatiotemporal tools, and eliminates candidates under information asymmetry. The benchmark comprises 2,691 tasks across 3 progressive tracks.

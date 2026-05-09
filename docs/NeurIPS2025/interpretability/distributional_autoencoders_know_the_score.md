@@ -133,6 +133,8 @@ The joint optimization objective is $\sum_{k=0}^{p} \omega_k [L_k[e,d]]$, where 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
@@ -140,5 +142,7 @@ The joint optimization objective is $\sum_{k=0}^{p} \omega_k [L_k[e,d]]$, where 
 - [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
 - [\[AAAI 2026\] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](../../AAAI2026/interpretability/beyond_hallucinations_a_composite_score_for_measuring_reliability_in_open-source.md)
 - [\[CVPR 2026\] Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP](../../CVPR2026/interpretability/beyond_semantics_disentangling_information_scope_in_sparse_autoencoders_for_clip.md)
+
+</div>
 
 <!-- RELATED:END -->

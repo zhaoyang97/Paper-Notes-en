@@ -112,6 +112,8 @@ Wall-clock speedup relative to nested backpropagation and standard Taylor mode i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
@@ -119,5 +121,7 @@ Wall-clock speedup relative to nested backpropagation and standard Taylor mode i
 - [\[NeurIPS 2025\] The Primacy of Magnitude in Low-Rank Adaptation](the_primacy_of_magnitude_in_low-rank_adaptation.md)
 - [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
 - [\[NeurIPS 2025\] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE–Normalizing Flows](one-shot_transfer_learning_for_nonlinear_pdes_with_perturbative_pinns.md)
+
+</div>
 
 <!-- RELATED:END -->

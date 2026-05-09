@@ -147,6 +147,8 @@ This paper is a survey/position paper and proposes no concrete model; therefore 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Generalising Traffic Forecasting to Regions without Traffic Observations](generalising_traffic_forecasting_to_regions_without_traffic_observations.md)
@@ -154,5 +156,7 @@ This paper is a survey/position paper and proposes no concrete model; therefore 
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
 - [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
 - [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
+
+</div>
 
 <!-- RELATED:END -->

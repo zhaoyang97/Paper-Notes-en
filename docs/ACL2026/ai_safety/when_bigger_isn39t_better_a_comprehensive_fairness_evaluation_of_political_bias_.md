@@ -128,6 +128,8 @@ This is an evaluation study with no model training involved. All experiments use
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift](../../NeurIPS2025/ai_safety/ai_should_sense_better_not_just_scale_bigger_adaptive_sensin.md)
@@ -135,5 +137,7 @@ This is an evaluation study with no model training involved. All experiments use
 - [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](../../AAAI2026/ai_safety/an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
 - [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](../../CVPR2026/ai_safety/when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
 - [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
+
+</div>
 
 <!-- RELATED:END -->

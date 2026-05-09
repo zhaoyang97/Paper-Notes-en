@@ -129,6 +129,8 @@ Three core modules: CSD (CoT-Prompted Semantic Decomposition) → TIF (Text-Infu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](sava-x_ego-to-exo_imitation_error_detection_via_scene-adaptive_view_alignment_an.md)
@@ -136,5 +138,7 @@ Three core modules: CSD (CoT-Prompted Semantic Decomposition) → TIF (Text-Infu
 - [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](../../ICCV2025/video_understanding/learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
 - [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+
+</div>
 
 <!-- RELATED:END -->

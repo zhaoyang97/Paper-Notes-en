@@ -122,6 +122,8 @@ The noise generator optimization objective is: $\mathcal{L}_{NG}(\theta_2) = \ma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Value Flows](value_flows.md)
@@ -129,5 +131,7 @@ The noise generator optimization objective is: $\mathcal{L}_{NG}(\theta_2) = \ma
 - [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
 - [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
+
+</div>
 
 <!-- RELATED:END -->

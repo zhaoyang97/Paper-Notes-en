@@ -141,6 +141,8 @@ Key finding: The combination of dynamic attributes and Adapt performs best; gene
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CLIPSym: Delving into Symmetry Detection with CLIP](clipsym_delving_into_symmetry_detection_with_clip.md)
@@ -148,5 +150,7 @@ Key finding: The combination of dynamic attributes and Adapt performs best; gene
 - [\[NeurIPS 2025\] Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling](../../NeurIPS2025/multimodal_vlm/generate_but_verify_reducing_hallucination_in_visionlanguage.md)
 - [\[ICCV 2025\] DASH: Detection and Assessment of Systematic Hallucinations of VLMs](dash_detection_and_assessment_of_systematic_hallucinations_of_vlms.md)
 - [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](../../NeurIPS2025/multimodal_vlm/enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -131,6 +131,8 @@ The human–AI agreement of $P_{comp+AIM}$ on commercial advertisements (0.85) e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation](adiee_automatic_dataset_creation_and_scorer_for_instruction_guided_image_editing_evaluation.md)
@@ -138,5 +140,7 @@ The human–AI agreement of $P_{comp+AIM}$ on commercial advertisements (0.85) e
 - [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](../../NeurIPS2025/image_generation/overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
 - [\[NeurIPS 2025\] Hallucination as an Upper Bound: A New Perspective on Text-to-Image Evaluation](../../NeurIPS2025/image_generation/hallucination_as_an_upper_bound_a_new_perspective_on_text-to-image_evaluation.md)
 - [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
+
+</div>
 
 <!-- RELATED:END -->

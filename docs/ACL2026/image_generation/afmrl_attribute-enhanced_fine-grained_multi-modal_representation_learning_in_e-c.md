@@ -121,6 +121,8 @@ The AGCL loss in Stage 1 is a weighted InfoNCE objective: $\mathcal{L}_{\text{AG
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](../../AAAI2026/image_generation/multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
@@ -128,5 +130,7 @@ The AGCL loss in Stage 1 is a weighted InfoNCE objective: $\mathcal{L}_{\text{AG
 - [\[ICLR 2026\] Unified Multi-Modal Interactive & Reactive 3D Motion Generation via Rectified Flow](../../ICLR2026/image_generation/unified_multi-modal_interactive_reactive_3d_motion_generation_via_rectified_flow.md)
 - [\[AAAI 2026\] Talk, Snap, Complain: Validation-Aware Multimodal Expert Framework for Fine-Grained Customer Grievances](../../AAAI2026/image_generation/talk_snap_complain_validation-aware_multimodal_expert_framework_for_fine-grained.md)
 - [\[CVPR 2026\] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](../../CVPR2026/image_generation/beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)
+
+</div>
 
 <!-- RELATED:END -->

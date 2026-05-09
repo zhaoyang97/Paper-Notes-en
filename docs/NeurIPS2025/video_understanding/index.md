@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **60** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (92)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (24)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/video_understanding/index.md) · [📹 ICCV2025 (58)](../../ICCV2025/video_understanding/index.md)
+
+🔥 **Top topics:** Object Tracking ×11 · Reasoning ×6 · Question Answering ×4 · Adversarial Robustness ×3 · LLM ×3
+
 **[A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers](a_little_depth_goes_a_long_way_the_expressive_power_of_logde.md)**
 
 :   This paper proves that increasing Transformer depth from a constant to $\Theta(\log n)$ unlocks the ability to recognize regular languages and solve graph connectivity — two problems provably beyond the reach of fixed-depth Transformers — and that depth scaling is strictly more efficient than width scaling (which requires super-polynomial growth) or Chain-of-Thought (CoT) steps (which requires super-logarithmic growth).

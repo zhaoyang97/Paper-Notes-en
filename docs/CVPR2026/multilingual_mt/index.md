@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **2** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/multilingual_mt/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
+
 **[MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)**
 
 :   This paper constructs MMTIT-Bench, a multilingual multi-scenario text-image translation benchmark covering 14 non-English non-Chinese languages, and proposes the CPR-Trans data paradigm (Cognition → Perception → Translation Reasoning). The approach significantly improves end-to-end translation quality on 3B and 7B models, with the 7B model achieving performance competitive with a 235B model.

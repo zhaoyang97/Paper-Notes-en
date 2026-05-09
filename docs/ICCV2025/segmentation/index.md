@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **78** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (103)](../../CVPR2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/segmentation/index.md)
+
+🔥 **Top topics:** Segmentation ×43 · Diffusion Models ×4 · Remote Sensing ×4 · Speech & Audio ×4 · Reasoning ×4
+
 **[2HandedAfforder: Learning Precise Actionable Bimanual Affordances from Human Videos](2handedafforder_learning_precise_actionable_bimanual_affordances_from_human_vide.md)**
 
 :   This paper proposes an automated pipeline to extract precise bimanual affordance annotations from human activity videos, yielding the 2HANDS dataset, and trains a VLM-based 2HandedAfforder model that predicts precise object region segmentation masks for left and right hand grasps conditioned on text prompts. The approach significantly outperforms existing methods on the newly introduced ActAffordance benchmark.

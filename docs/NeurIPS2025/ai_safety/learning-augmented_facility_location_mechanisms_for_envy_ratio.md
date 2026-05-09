@@ -175,6 +175,8 @@ As a theoretical contribution, the core results are presented as theorems:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Minimizing Inequity in Facility Location Games](../../AAAI2026/ai_safety/minimizing_inequity_in_facility_location_games.md)
@@ -182,5 +184,7 @@ As a theoretical contribution, the core results are presented as theorems:
 - [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
 - [\[NeurIPS 2025\] Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity](fair_minimum_labeling_efficient_temporal_network_activations_for_reachability_an.md)
 - [\[NeurIPS 2025\] Causally Reliable Concept Bottleneck Models](causally_reliable_concept_bottleneck_models.md)
+
+</div>
 
 <!-- RELATED:END -->

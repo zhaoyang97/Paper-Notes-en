@@ -131,6 +131,8 @@ The multi-concept composite score CP·PF reaches 0.62, surpassing the second-bes
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Preventing Shortcuts in Adapter Training via Providing the Shortcuts](../../NeurIPS2025/image_generation/preventing_shortcuts_in_adapter_training_via_providing_the_shortcuts.md)
@@ -138,5 +140,7 @@ The multi-concept composite score CP·PF reaches 0.62, surpassing the second-bes
 - [\[ICLR 2026\] COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations](cosmo-inr_complex_sinusoidal_modulation_for_implicit_neural_representations.md)
 - [\[ICLR 2026\] TAVAE: A VAE with Adaptable Priors Explains Contextual Modulation in the Visual Cortex](tavae_a_vae_with_adaptable_priors_explains_contextual_modulation_in_the_visual_c.md)
 - [\[ICLR 2026\] SongEcho: Towards Cover Song Generation via Instance-Adaptive Element-wise Linear Modulation](songecho_towards_cover_song_generation_via_instance-adaptive_element-wise_linear.md)
+
+</div>
 
 <!-- RELATED:END -->

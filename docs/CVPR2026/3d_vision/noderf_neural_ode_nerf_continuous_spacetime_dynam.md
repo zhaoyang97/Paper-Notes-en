@@ -157,6 +157,8 @@ Total loss: $\mathcal{L} = \lambda_1 \mathcal{L}_\text{NeRF} + \lambda_2 \mathca
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
@@ -164,5 +166,7 @@ Total loss: $\mathcal{L} = \lambda_1 \mathcal{L}_\text{NeRF} + \lambda_2 \mathca
 - [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](retimegs_continuous_time_4d_gaussian.md)
 - [\[CVPR 2026\] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation](catalyst4d_highfidelity_3dto4d_scene_editing_via_d.md)
 - [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
+
+</div>
 
 <!-- RELATED:END -->

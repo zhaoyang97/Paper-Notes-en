@@ -139,6 +139,8 @@ MultimodalReportBench: 100 diverse topics (technology, healthcare, education, cl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](../../ACL2026/information_retrieval/slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
@@ -146,5 +148,7 @@ MultimodalReportBench: 100 diverse topics (technology, healthcare, education, cl
 - [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](../../ACL2026/information_retrieval/is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
 - [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](../../NeurIPS2025/information_retrieval/the_narrow_gate_localized_imagetext_communication_in_native.md)
 - [\[AAAI 2026\] ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval](convmix_a_mixed-criteria_data_augmentation_framework_for_conversational_dense_re.md)
+
+</div>
 
 <!-- RELATED:END -->

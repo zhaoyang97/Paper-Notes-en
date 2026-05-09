@@ -173,6 +173,8 @@ This paper is the first to achieve near-optimal sample complexity with round com
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
@@ -180,5 +182,7 @@ This paper is the first to achieve near-optimal sample complexity with round com
 - [\[NeurIPS 2025\] Structure-Aware Spectral Sparsification via Uniform Edge Sampling](structure-aware_spectral_sparsification_via_uniform_edge_sampling.md)
 - [\[ICLR 2026\] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability-Plasticity Tradeoff](../../ICLR2026/others/fire_frobenius_isometry_reinitialization.md)
 - [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](../../AAAI2026/others/toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
+
+</div>
 
 <!-- RELATED:END -->

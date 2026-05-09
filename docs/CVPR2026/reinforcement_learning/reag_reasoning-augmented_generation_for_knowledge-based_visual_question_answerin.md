@@ -152,6 +152,8 @@ Using Oracle Wikipedia pages (upper-bound experiment): ReAG (7B) achieves 81.5% 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering](../../NeurIPS2025/reinforcement_learning/knowledge-based_visual_question_answer_with_multimodal_processing_retrieval_and_.md)
@@ -159,5 +161,7 @@ Using Oracle Wikipedia pages (upper-bound experiment): ReAG (7B) achieves 81.5% 
 - [\[ACL 2026\] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey](../../ACL2026/reinforcement_learning/table_question_answering_in_the_era_of_large_language_models_a_comprehensive_sur.md)
 - [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/reinforcement_learning/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -128,6 +128,8 @@ MA-CLIP achieves an average SRCC improvement of 9.6% and PLCC improvement of 4.0
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Soft Quality-Diversity Optimization](../../ICLR2026/llm_evaluation/soft_quality-diversity_optimization.md)
@@ -135,5 +137,7 @@ MA-CLIP achieves an average SRCC improvement of 9.6% and PLCC improvement of 4.0
 - [\[CVPR 2026\] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](../../CVPR2026/llm_evaluation/sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)
 - [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
 - [\[ICCV 2025\] BATCLIP: Bimodal Online Test-Time Adaptation for CLIP](../../ICCV2025/llm_evaluation/batclip_bimodal_online_test-time_adaptation_for_clip.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **39** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_evaluation/index.md) · [📷 CVPR2026 (28)](../../CVPR2026/llm_evaluation/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (29)](../../ICCV2025/llm_evaluation/index.md)
+
+🔥 **Top topics:** LLM ×5 · Reasoning ×4 · Alignment/RLHF ×3 · Agents ×2 · Compression ×2
+
 **[Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)**
 
 :   This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training, inference, and evaluation stages, achieving state-of-the-art document rectification performance and introducing a new evaluation metric, AAD.

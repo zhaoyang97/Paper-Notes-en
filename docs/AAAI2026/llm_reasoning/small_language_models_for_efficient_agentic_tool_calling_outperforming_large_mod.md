@@ -167,6 +167,8 @@ No formal ablation tables are provided; however, the paper discusses the sources
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
@@ -174,5 +176,7 @@ No formal ablation tables are provided; however, the paper discusses the sources
 - [\[AAAI 2026\] SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger](sapo_self-adaptive_process_optimization_makes_small_reasoners_stronger.md)
 - [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
 - [\[ACL 2026\] TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models](../../ACL2026/llm_reasoning/trigreason_trigger-based_collaboration_between_small_and_large_reasoning_models.md)
+
+</div>
 
 <!-- RELATED:END -->

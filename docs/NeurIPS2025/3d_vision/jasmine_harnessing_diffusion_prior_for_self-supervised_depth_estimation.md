@@ -145,6 +145,8 @@ Jasmine comprehensively outperforms both supervised SD methods and conventional 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Regularizing INR with Diffusion Prior for Self-Supervised 3D Reconstruction of Neutron Computed Tomography Data](../../CVPR2026/3d_vision/regularizing_inr_with_diffusion_prior_selfsupervis.md)
@@ -152,5 +154,7 @@ Jasmine comprehensively outperforms both supervised SD methods and conventional 
 - [\[NeurIPS 2025\] 3D Visual Illusion Depth Estimation](3d_visual_illusion_depth_estimation.md)
 - [\[ICCV 2025\] S3E: Self-Supervised State Estimation for Radar-Inertial System](../../ICCV2025/3d_vision/s3e_self-supervised_state_estimation_for_radar-inertial_system.md)
 - [\[NeurIPS 2025\] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations](concerto_joint_2d-3d_self-supervised_learning_emerges_spatial_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

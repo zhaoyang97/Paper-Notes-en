@@ -181,6 +181,8 @@ The paper excels in systematic rigor and conceptual depth; the analysis of the f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records](clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp.md)
@@ -188,5 +190,7 @@ The paper excels in systematic rigor and conceptual depth; the analysis of the f
 - [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](../../ACL2026/medical_imaging/mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 - [\[AAAI 2026\] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale](investigating_data_pruning_for_pretraining_biological_foundation_models_at_scale.md)
 - [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/medical_imaging/tracing_pharmacological_knowledge_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -132,6 +132,8 @@ SparkTTS (autoregressive): the LLM backbone (Qwen2-0.5B) is fine-tuned using a s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Speech-Text Transformer](../../ICLR2026/audio_speech/latent_speech_text_transformer.md)
@@ -139,5 +141,7 @@ SparkTTS (autoregressive): the LLM backbone (Qwen2-0.5B) is fine-tuned using a s
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
 - [\[ICCV 2025\] Understanding Co-speech Gestures in-the-wild](../../ICCV2025/audio_speech/understanding_co-speech_gestures_in-the-wild.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
+
+</div>
 
 <!-- RELATED:END -->

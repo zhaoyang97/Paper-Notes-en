@@ -172,6 +172,8 @@ Exceeds dynamic methods by more than 2 dB, approaching the static 3DGS upper bou
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection](ca-i2p_channel-adaptive_registration_network_with_global_optimal_selection.md)
@@ -179,5 +181,7 @@ Exceeds dynamic methods by more than 2 dB, approaching the static 3DGS upper bou
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
 - [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

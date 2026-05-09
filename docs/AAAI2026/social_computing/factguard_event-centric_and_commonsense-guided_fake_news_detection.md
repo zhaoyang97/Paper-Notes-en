@@ -109,6 +109,8 @@ Evaluated on Weibo21 (Chinese) and GossipCop (English).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] IF-GUIDE: Influence Function-Guided Detoxification of LLMs](../../NeurIPS2025/social_computing/if-guide_influence_function-guided_detoxification_of_llms.md)
@@ -116,5 +118,7 @@ Evaluated on Weibo21 (Chinese) and GossipCop (English).
 - [\[AAAI 2026\] Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference](reasoning_about_the_unsaid_misinformation_detection_with_omission-aware_graph_in.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
 - [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
+
+</div>
 
 <!-- RELATED:END -->

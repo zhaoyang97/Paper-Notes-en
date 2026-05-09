@@ -161,6 +161,8 @@ Incremental addition of the three modules yields a cumulative AUC gain of 7.0% a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
@@ -168,5 +170,7 @@ Incremental addition of the three modules yields a cumulative AUC gain of 7.0% a
 - [\[ACL 2026\] Anonpsy: A Graph-Based Framework for Structure-Preserving De-identification of Psychiatric Narratives](../../ACL2026/medical_imaging/anonpsy_a_graph-based_framework_for_structure-preserving_de-identification_of_ps.md)
 - [\[NeurIPS 2025\] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray](../../NeurIPS2025/medical_imaging/radzero_similarity-based_cross-attention_for_explainable_vision-language_alignme.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
+
+</div>
 
 <!-- RELATED:END -->

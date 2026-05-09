@@ -152,6 +152,8 @@ In a corridor of $n+1$ rooms, each containing a switch and a light, the agent's 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback](meta-learning_three-factor_plasticity_rules_for_structured_credit_assignment_wit.md)
@@ -159,5 +161,7 @@ In a corridor of $n+1$ rooms, each containing a switch and a light, the agent's 
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
 - [\[NeurIPS 2025\] Rethinking PCA Through Duality](rethinking_pca_through_duality.md)
+
+</div>
 
 <!-- RELATED:END -->

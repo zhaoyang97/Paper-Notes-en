@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **20** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/llm_alignment/index.md) · [📷 CVPR2026 (12)](../../CVPR2026/llm_alignment/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_alignment/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+
+🔥 **Top topics:** Alignment/RLHF ×13 · LLM ×8 · Adversarial Robustness ×2 · Reasoning ×2 · Diffusion Models ×2
+
 **[Align to Structure: Aligning Large Language Models with Structural Information](align_to_structure_aligning_large_language_models_with_struc.md)**
 
 :   This paper proposes Structural Alignment, a method that integrates linguistic discourse structure frameworks—surface-level text structure scoring and an RST-based discourse motif classifier—into PPO reinforcement learning training, and introduces a discourse motif-based dense reward mechanism. This enables LLMs to generate more coherent, human-like long-form text, outperforming standard RLHF models on academic essay writing and long document summarization tasks.

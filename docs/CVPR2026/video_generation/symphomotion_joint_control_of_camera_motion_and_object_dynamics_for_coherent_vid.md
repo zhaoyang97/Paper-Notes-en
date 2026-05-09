@@ -131,6 +131,8 @@ The flow matching training objective is: $\min_\theta \mathbb{E}[\|v_\theta(z_t,
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
@@ -138,5 +140,7 @@ The flow matching training objective is: $\min_\theta \mathbb{E}[\|v_\theta(z_t,
 - [\[ICLR 2026\] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](../../ICLR2026/video_generation/mosa_motion-coherent_human_video_generation_via_structure-appearance_decoupling.md)
 - [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 - [\[ICCV 2025\] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation](../../ICCV2025/video_generation/free-form_motion_control_controlling_the_6d_poses_of_camera_and_objects_in_video.md)
+
+</div>
 
 <!-- RELATED:END -->

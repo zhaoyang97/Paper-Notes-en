@@ -131,6 +131,8 @@ The average Discriminative score improves by 50% across 6 datasets.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting](simdiff_simpler_yet_better_diffusion_model_for_time_series_point_forecasting.md)
@@ -138,5 +140,7 @@ The average Discriminative score improves by 50% across 6 datasets.
 - [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](../../NeurIPS2025/image_generation/a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
 - [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
 - [\[AAAI 2026\] UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective](unseen_enhancing_dataset_pruning_from_a_generalization_perspective.md)
+
+</div>
 
 <!-- RELATED:END -->

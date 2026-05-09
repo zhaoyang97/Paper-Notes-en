@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **31** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (30)](../../ACL2026/audio_speech/index.md) · [📷 CVPR2026 (17)](../../CVPR2026/audio_speech/index.md) · [🔬 ICLR2026 (32)](../../ICLR2026/audio_speech/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/audio_speech/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/audio_speech/index.md)
+
+🔥 **Top topics:** Speech & Audio ×9 · Sentiment Analysis ×7 · Multimodal/VLM ×5 · Dialogue ×2 · LLM ×2
+
 **[A Mind Cannot Be Smeared Across Time](a_mind_cannot_be_smeared_across_time.md)**
 
 :   This paper formally proves that whether a machine possesses consciousness depends not only on *what* is computed, but also on *when* it is computed. Systems executing strictly sequentially fail to satisfy the temporal co-instantiation condition required for the unity of consciousness; consequently, pure software consciousness on strictly sequential hardware is impossible.

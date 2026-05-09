@@ -183,6 +183,8 @@ MMR-Life is the first multimodal multi-image reasoning benchmark targeting real-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life](../../ACL2026/multimodal_vlm/when_helpers_become_hazards_a_benchmark_for_analyzing_multimodal_llm-powered_saf.md)
@@ -190,5 +192,7 @@ MMR-Life is the first multimodal multi-image reasoning benchmark targeting real-
 - [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
+
+</div>
 
 <!-- RELATED:END -->

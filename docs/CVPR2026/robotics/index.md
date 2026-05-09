@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **49** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (57)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+
+🔥 **Top topics:** Robotics ×23 · Multimodal/VLM ×12 · Reasoning ×9 · Navigation ×5 · Agents ×3
+
 **[Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)**
 
 :   This work leverages the pretrained 3D geometric foundation model π3 as a perception backbone, fuses 3D geometric, 2D semantic, and proprioceptive features, and jointly predicts future action chunks and future 3D Pointmaps via a diffusion model. Using only RGB inputs, the proposed method comprehensively surpasses point-cloud-based approaches on the RoboTwin bimanual benchmark.

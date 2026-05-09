@@ -136,6 +136,8 @@ KAN outperforms MLP in low-dimensional signal processing, providing inspiration 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching](argmatch_adaptive_refinement_gathering_for_efficient_dense_matching.md)
@@ -143,5 +145,7 @@ KAN outperforms MLP in low-dimensional signal processing, providing inspiration 
 - [\[ICCV 2025\] Variance-Based Pruning for Accelerating and Compressing Trained Networks](variance-based_pruning_for_accelerating_and_compressing_trained_networks.md)
 - [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](../../NeurIPS2025/model_compression/universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

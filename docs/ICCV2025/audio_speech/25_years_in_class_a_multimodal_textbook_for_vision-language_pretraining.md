@@ -124,6 +124,8 @@ After continual pretraining on Idefics2, MathVista improves from 27.6 to 29.7, a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects](how_would_it_sound_material-controlled_multimodal_acoustic_profile_generation_fo.md)
@@ -131,5 +133,7 @@ After continual pretraining on Idefics2, MathVista improves from 27.6 to 29.7, a
 - [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
 - [\[ICCV 2025\] Everything is a Video: Unifying Modalities through Next-Frame Prediction](everything_is_a_video_unifying_modalities_through_next-frame_prediction.md)
 - [\[ICCV 2025\] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing](mug_pseudo_labeling_augmented_audio-visual_mamba_network_for_audio-visual_video_.md)
+
+</div>
 
 <!-- RELATED:END -->

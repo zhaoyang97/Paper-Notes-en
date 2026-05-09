@@ -117,6 +117,8 @@ Cumulative regret on the StyleEval dataset across different embedding models and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
@@ -124,5 +126,7 @@ Cumulative regret on the StyleEval dataset across different embedding models and
 - [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](perturbing_best_responses_in_zero-sum_games.md)
 - [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](bamas_structuring_budget-aware_multi-agent_systems.md)
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
+
+</div>
 
 <!-- RELATED:END -->

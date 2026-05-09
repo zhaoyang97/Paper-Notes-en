@@ -124,6 +124,8 @@ The proposed system achieves SingMOS (perceptual quality) on par with the best d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
@@ -131,5 +133,7 @@ The proposed system achieves SingMOS (perceptual quality) on par with the best d
 - [\[NeurIPS 2025\] FocalCodec: Low-Bitrate Speech Coding via Focal Modulation Networks](focalcodec_low-bitrate_speech_coding_via_focal_modulation_networks.md)
 - [\[NeurIPS 2025\] Riemannian Consistency Model](riemannian_consistency_model.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

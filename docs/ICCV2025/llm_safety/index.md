@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/llm_safety/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/llm_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×3 · Federated Learning ×2
+
 **[Adversarial Robust Memory-Based Continual Learner](adversarial_robust_memory-based_continual_learner.md)**
 
 :   This paper identifies two compounding challenges when combining continual learning with adversarial training—accelerated forgetting and gradient confusion—and proposes two plug-and-play modules, Anti-Forgettable Logit Calibration (AFLC) and Robustness-Aware Experience Replay (RAER), achieving up to 8.13% improvement in adversarial robustness on Split-CIFAR10/100 and Split-Tiny-ImageNet.

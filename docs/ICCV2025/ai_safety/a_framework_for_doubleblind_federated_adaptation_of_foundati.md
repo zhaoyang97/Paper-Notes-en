@@ -170,6 +170,8 @@ The following directions are suggested for future investigation:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
@@ -177,5 +179,7 @@ The following directions are suggested for future investigation:
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
 - [\[ICCV 2025\] Ask and Remember: A Questions-Only Replay Strategy for Continual Visual Question Answering](ask_and_remember_a_questions-only_replay_strategy_for_continual_visual_question_.md)
 - [\[ICCV 2025\] FRET: Feature Redundancy Elimination for Test Time Adaptation](fret_feature_redundancy_elimination_for_test_time_adaptation.md)
+
+</div>
 
 <!-- RELATED:END -->

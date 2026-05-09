@@ -155,6 +155,8 @@ UMAP visualization reveals that the shape codebook automatically forms semantica
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
@@ -162,5 +164,7 @@ UMAP visualization reveals that the shape codebook automatically forms semantica
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
 - [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
 - [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](../../NeurIPS2025/model_compression/representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
+
+</div>
 
 <!-- RELATED:END -->

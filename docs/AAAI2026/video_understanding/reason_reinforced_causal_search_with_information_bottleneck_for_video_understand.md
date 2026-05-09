@@ -172,6 +172,8 @@ Training is conducted on the NExT-QA training set; 8-frame experiments use a sin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
@@ -179,5 +181,7 @@ Training is conducted on the NExT-QA training set; 8-frame experiments use a sin
 - [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
 - [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](../../NeurIPS2025/video_understanding/token_bottleneck_one_token_to_remember_dynamics.md)
 - [\[ICLR 2026\] Map the Flow: Revealing Hidden Pathways of Information in VideoLLMs](../../ICLR2026/video_understanding/map_the_flow_revealing_hidden_pathways_of_information_in_videollms.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -142,6 +142,8 @@ For hyperparameters: the perturbation radius $\rho$ is searched over $\{0.01, 0.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](../../CVPR2026/model_compression/faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
@@ -149,5 +151,7 @@ For hyperparameters: the perturbation radius $\rho$ is searched over $\{0.01, 0.
 - [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
 - [\[ICCV 2025\] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning](soft_separation_and_distillation_toward_global_uniformity_in_federated_unsupervi.md)
 - [\[CVPR 2026\] Towards Source-Aware Object Swapping with Initial Noise Perturbation](../../CVPR2026/model_compression/towards_source-aware_object_swapping_with_initial_noise_perturbation.md)
+
+</div>
 
 <!-- RELATED:END -->

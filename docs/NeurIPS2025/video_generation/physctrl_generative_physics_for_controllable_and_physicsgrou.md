@@ -125,6 +125,8 @@ $\mathcal{L} = \mathcal{L}_{diff} + \lambda_{vel}\mathcal{L}_{vel} + \lambda_{ph
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals](force_prompting_video_generation_models_can_learn_and_generalize_physics-based_c.md)
@@ -132,5 +134,7 @@ $\mathcal{L} = \mathcal{L}_{diff} + \lambda_{vel}\mathcal{L}_{vel} + \lambda_{ph
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](../../CVPR2026/video_generation/phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
 - [\[ICCV 2025\] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video](../../ICCV2025/video_generation/recammaster_camera-controlled_generative_rendering_from_a_single_video.md)
 - [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](../../CVPR2026/video_generation/lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

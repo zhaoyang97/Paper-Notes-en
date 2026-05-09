@@ -132,6 +132,8 @@ Zero-AVSR consists of two core components: (1) **AV-Romanizer**, which predicts 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition](../../NeurIPS2025/audio_speech/mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition.md)
@@ -139,5 +141,7 @@ Zero-AVSR consists of two core components: (1) **AV-Romanizer**, which predicts 
 - [\[ICCV 2025\] VGGSounder: Audio-Visual Evaluations for Foundation Models](vggsounder_audio-visual_evaluations_for_foundation_models.md)
 - [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](../../NeurIPS2025/audio_speech/textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
 - [\[ICCV 2025\] Understanding Co-speech Gestures in-the-wild](understanding_co-speech_gestures_in-the-wild.md)
+
+</div>
 
 <!-- RELATED:END -->

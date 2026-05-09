@@ -131,6 +131,8 @@ CryoBoltz **requires no training whatsoever** and operates entirely as an infere
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
@@ -138,5 +140,7 @@ CryoBoltz **requires no training whatsoever** and operates entirely as an infere
 - [\[ICCV 2025\] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy](../../ICCV2025/medical_imaging/cryofastar_fast_cryo-em_ab_initio_reconstruction_made_easy.md)
 - [\[CVPR 2026\] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold](../../CVPR2026/medical_imaging/cryosense_compressive_sensing_enables_high-throughput_microscopy_with_sparse_and.md)
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
+
+</div>
 
 <!-- RELATED:END -->

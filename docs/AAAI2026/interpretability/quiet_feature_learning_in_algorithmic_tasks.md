@@ -133,6 +133,8 @@ Discussions of emergent abilities lack mechanistic evidence from internal model 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](unsupervised_feature_selection_through_group_discovery.md)
@@ -140,5 +142,7 @@ Discussions of emergent abilities lack mechanistic evidence from internal model 
 - [\[NeurIPS 2025\] Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms](../../NeurIPS2025/interpretability/tropical_attention_neural_algorithmic_reasoning_for_combinatorial_algorithms.md)
 - [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
 - [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](data_whitening_improves_sparse_autoencoder_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

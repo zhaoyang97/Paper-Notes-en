@@ -130,6 +130,8 @@ Potemkin is an evaluation framework and involves no training. All evaluated agen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](../../ICLR2026/llm_agent/sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
@@ -137,5 +139,7 @@ Potemkin is an evaluation framework and involves no training. All evaluated agen
 - [\[ICLR 2026\] Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments](../../ICLR2026/llm_agent/gaia2_benchmarking_llm_agents_on_dynamic_and_asynchronous_environments.md)
 - [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking](../../ICLR2026/llm_agent/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agentic_ai_defense_aga.md)
 - [\[NeurIPS 2025\] PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer](../../NeurIPS2025/llm_agent/panda_towards_generalist_video_anomaly_detection_via_agentic_ai_engineer.md)
+
+</div>
 
 <!-- RELATED:END -->

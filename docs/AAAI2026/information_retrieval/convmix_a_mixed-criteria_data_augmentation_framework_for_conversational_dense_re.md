@@ -128,6 +128,8 @@ ConvMix-Combine achieves an MRR improvement of 5.5 on the out-of-domain CAsT-21 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
@@ -135,5 +137,7 @@ ConvMix-Combine achieves an MRR improvement of 5.5 on the out-of-domain CAsT-21 
 - [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
 - [\[ACL 2026\] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search](../../ACL2026/information_retrieval/multi-faceted_self-consistent_preference_alignment_for_query_rewriting_in_conver.md)
 - [\[ICLR 2026\] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference](../../ICLR2026/information_retrieval/raee_a_robust_retrieval-augmented_early_exit_framework_for_efficient_inference.md)
+
+</div>
 
 <!-- RELATED:END -->

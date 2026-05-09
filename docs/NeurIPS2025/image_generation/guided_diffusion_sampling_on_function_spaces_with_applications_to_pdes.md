@@ -234,6 +234,8 @@ ReNoise with 80% of steps at low resolution matches the accuracy of full-resolut
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Split Gibbs Discrete Diffusion Posterior Sampling](split_gibbs_discrete_diffusion_posterior_sampling.md)
@@ -241,5 +243,7 @@ ReNoise with 80% of steps at low resolution matches the accuracy of full-resolut
 - [\[NeurIPS 2025\] Learning Interpretable Features in Audio Latent Spaces via Sparse Autoencoders](learning_interpretable_features_in_audio_latent_spaces_via_sparse_autoencoders.md)
 - [\[NeurIPS 2025\] Tree-Guided Diffusion Planner](tree-guided_diffusion_planner.md)
 - [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
+
+</div>
 
 <!-- RELATED:END -->

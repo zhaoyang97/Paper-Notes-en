@@ -163,6 +163,8 @@ Ablation experiments validate the necessity of each component:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](../../ACL2026/reinforcement_learning/healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
@@ -170,5 +172,7 @@ Ablation experiments validate the necessity of each component:
 - [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](../../NeurIPS2025/reinforcement_learning/zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
 - [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

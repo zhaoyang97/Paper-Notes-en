@@ -159,6 +159,8 @@ RDD trails the expert decomposer by only 0.2% in success rate, significantly out
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation](robocerebra_a_large-scale_benchmark_for_long-horizon_robotic_manipulation_evalua.md)
@@ -166,5 +168,7 @@ RDD trails the expert decomposer by only 0.2% in success rate, significantly out
 - [\[NeurIPS 2025\] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval](efficientnav_towards_on-device_object-goal_navigation_with_navigation_map_cachin.md)
 - [\[NeurIPS 2025\] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions](vitrix-clipin_enhancing_fine-grained_visual_understanding_in_clip_via_instructio.md)
 - [\[ICCV 2025\] Embodied Representation Alignment with Mirror Neurons](../../ICCV2025/robotics/embodied_representation_alignment_with_mirror_neurons.md)
+
+</div>
 
 <!-- RELATED:END -->

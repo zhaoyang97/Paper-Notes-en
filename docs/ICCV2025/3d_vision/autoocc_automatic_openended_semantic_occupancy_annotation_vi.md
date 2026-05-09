@@ -137,6 +137,8 @@ Under zero-shot cross-dataset evaluation, AutoOcc-M effectively annotates novel 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
@@ -144,5 +146,7 @@ Under zero-shot cross-dataset evaluation, AutoOcc-M effectively annotates novel 
 - [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Online Language Splatting](online_language_splatting.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
+
+</div>
 
 <!-- RELATED:END -->

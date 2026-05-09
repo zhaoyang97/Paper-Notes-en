@@ -171,6 +171,8 @@ PA-FAS maintains superior performance under missing modality conditions, demonst
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
@@ -178,5 +180,7 @@ PA-FAS maintains superior performance under missing modality conditions, demonst
 - [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](../../ACL2026/reinforcement_learning/language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
 - [\[AAAI 2026\] TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction](tadarag_task_adaptive_retrieval-augmented_generation_via_on-the-fly_knowledge_gr.md)
 - [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](../../ICLR2026/reinforcement_learning/spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

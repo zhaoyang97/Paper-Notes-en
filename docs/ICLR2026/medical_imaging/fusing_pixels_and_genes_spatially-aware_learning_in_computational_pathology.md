@@ -135,6 +135,8 @@ Stamp surpasses dedicated models requiring full-parameter training using only a 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](../../CVPR2026/medical_imaging/momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
@@ -142,5 +144,7 @@ Stamp surpasses dedicated models requiring full-parameter training using only a 
 - [\[NeurIPS 2025\] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology](../../NeurIPS2025/medical_imaging/revisiting_end-to-end_learning_with_slide-level_supervision_in_computational_pat.md)
 - [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](../../AAAI2026/medical_imaging/dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
 - [\[CVPR 2026\] Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance](../../CVPR2026/medical_imaging/better_than_average_spatially-aware_aggregation_of_segmentation_uncertainty_impr.md)
+
+</div>
 
 <!-- RELATED:END -->

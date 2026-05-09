@@ -148,6 +148,8 @@ With only 5% of training data, SGClip approaches the performance of fully superv
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation](interaction-centric_knowledge_infusion_and_transfer_for_open-vocabulary_scene_gr.md)
@@ -155,5 +157,7 @@ With only 5% of training data, SGClip approaches the performance of fully superv
 - [\[ICLR 2026\] Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization](../../ICLR2026/graph_learning/embodied_agents_meet_personalization_investigating_challenges_and_solutions_thro.md)
 - [\[NeurIPS 2025\] Agint: Agentic Graph Compilation for Software Engineering Agents](agint_agentic_graph_compilation_for_software_engineering_age.md)
 - [\[CVPR 2026\] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs](../../CVPR2026/graph_learning/graph2eval_multimodal_task_generation_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

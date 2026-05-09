@@ -152,6 +152,8 @@ Metadata encoding yields the most substantial gains (EuroSAT-S1: 57.5→77.9, +2
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
@@ -159,5 +161,7 @@ Metadata encoding yields the most substantial gains (EuroSAT-S1: 57.5→77.9, +2
 - [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
 - [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](../../ICLR2026/remote_sensing/autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
 - [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](../../ICLR2026/remote_sensing/earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
+
+</div>
 
 <!-- RELATED:END -->

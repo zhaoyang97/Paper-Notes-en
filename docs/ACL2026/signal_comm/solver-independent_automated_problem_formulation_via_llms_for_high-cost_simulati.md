@@ -142,6 +142,8 @@ Standard SFT on the filtered high-quality dataset $\mathcal{D}_{\text{HQ}}$ (7,8
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](../../ICLR2026/signal_comm/multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
@@ -149,5 +151,7 @@ Standard SFT on the filtered high-quality dataset $\mathcal{D}_{\text{HQ}}$ (7,8
 - [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
 - [\[ACL 2026\] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/signal_comm/fasa_frequency-aware_sparse_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

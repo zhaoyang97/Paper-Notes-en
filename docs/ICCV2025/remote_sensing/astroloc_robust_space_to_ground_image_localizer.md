@@ -146,6 +146,8 @@ On the extended test sets (more challenging, containing all queries), Recall@100
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] WildSAT: Learning Satellite Image Representations from Wildlife Observations](wildsat_learning_satellite_image_representations_from_wildlife_observations.md)
@@ -153,5 +155,7 @@ On the extended test sets (more challenging, containing all queries), Recall@100
 - [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
 - [\[CVPR 2026\] Joint and Streamwise Distributed MIMO Satellite Communications with Multi-Antenna Ground Users](../../CVPR2026/remote_sensing/joint_and_streamwise_distributed_mimo_satellite_communications_with_multi-antenn.md)
 - [\[CVPR 2026\] Are Pretrained Image Matchers Good Enough for SAR-Optical Satellite Registration?](../../CVPR2026/remote_sensing/pretrained_image_matchers_for_sar_optical_satellite_registration.md)
+
+</div>
 
 <!-- RELATED:END -->

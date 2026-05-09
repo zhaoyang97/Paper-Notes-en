@@ -115,6 +115,8 @@ Standard next-token prediction loss is used for autoregressive training. Faces a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition](fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio.md)
@@ -122,5 +124,7 @@ Standard next-token prediction loss is used for autoregressive training. Faces a
 - [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile-vton_high-fidelity_on-device_virtual_try-on.md)
 - [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](../../ICCV2025/human_understanding/phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
 - [\[CVPR 2026\] Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](referencefree_image_quality_assessment_for_virtual.md)
+
+</div>
 
 <!-- RELATED:END -->

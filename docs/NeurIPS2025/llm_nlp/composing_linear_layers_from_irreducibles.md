@@ -130,6 +130,8 @@ The rotor-gadget uses two orders of magnitude fewer parameters than LoRA.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
@@ -137,5 +139,7 @@ The rotor-gadget uses two orders of magnitude fewer parameters than LoRA.
 - [\[CVPR 2026\] Composing Concepts from Images and Videos via Concept-prompt Binding](../../CVPR2026/llm_nlp/composing_concepts_from_images_and_videos_via_concept-prompt_binding.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
 - [\[NeurIPS 2025\] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
+
+</div>
 
 <!-- RELATED:END -->

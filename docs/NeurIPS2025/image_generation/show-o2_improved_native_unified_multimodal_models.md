@@ -151,6 +151,8 @@ Given interleaved text/image/video inputs, text is converted to embeddings via a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
@@ -158,5 +160,7 @@ Given interleaved text/image/video inputs, text is converted to embeddings via a
 - [\[NeurIPS 2025\] Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models](mitigating_intra-_and_inter-modal_forgetting_in_continual_learning_of_unified_mu.md)
 - [\[CVPR 2026\] Flash-Unified: Training-Free and Task-Aware Acceleration for Native Unified Models](../../CVPR2026/image_generation/flash-unified_a_training-free_and_task-aware_acceleration_framework_for_native_u.md)
 - [\[NeurIPS 2025\] Multimodal Generative Flows for LHC Jets](multimodal_generative_flows_for_lhc_jets.md)
+
+</div>
 
 <!-- RELATED:END -->

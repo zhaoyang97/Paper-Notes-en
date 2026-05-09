@@ -187,6 +187,8 @@ MSA nearly fully recovers the pre-misinformation accuracy (46.08 vs. 46.18).
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](../../ACL2026/llm_evaluation/from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
@@ -194,5 +196,7 @@ MSA nearly fully recovers the pre-misinformation accuracy (46.08 vs. 46.18).
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 - [\[NeurIPS 2025\] MVSMamba: Multi-View Stereo with State Space Model](../../NeurIPS2025/llm_evaluation/mvsmamba_multi-view_stereo_with_state_space_model.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/llm_evaluation/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

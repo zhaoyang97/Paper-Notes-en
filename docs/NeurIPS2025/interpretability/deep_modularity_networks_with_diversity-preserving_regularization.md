@@ -145,6 +145,8 @@ Comparisons against DiffPool, MinCutPool, and DMoN are conducted on 5 benchmark 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
@@ -152,5 +154,7 @@ Comparisons against DiffPool, MinCutPool, and DMoN are conducted on 5 benchmark 
 - [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
 - [\[ICLR 2026\] Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study](../../ICLR2026/interpretability/initialization_schemes_for_kolmogorov-arnold_networks_an_empirical_study.md)
 - [\[AAAI 2026\] FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction](../../AAAI2026/interpretability/fourierpet_deep_fourier-based_unrolled_network_for_low-count_pet_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

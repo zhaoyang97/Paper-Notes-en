@@ -134,6 +134,8 @@ PPL achieves the highest success rate (76%) with the least human data (2.9K), co
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Predicting Any Human Trajectory in Context](towards_predicting_any_human_trajectory_in_context.md)
@@ -141,5 +143,7 @@ PPL achieves the highest success rate (76%) with the least human data (2.9K), co
 - [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](../../CVPR2026/autonomous_driving/towards_balanced_multimodal_learning_in_3d_human_p.md)
 - [\[NeurIPS 2025\] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning](holollm_multisensory_foundation_model_for_language-grounded_human_sensing_and_re.md)
 - [\[ICCV 2025\] DCHM: Depth-Consistent Human Modeling for Multiview Detection](../../ICCV2025/autonomous_driving/dchm_depth-consistent_human_modeling_for_multiview_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

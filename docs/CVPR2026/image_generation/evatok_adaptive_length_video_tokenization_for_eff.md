@@ -126,6 +126,8 @@ The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{vqgan}} + \la
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Depth Adaptive Efficient Visual Autoregressive Modeling](depthvar_depth_adaptive_var.md)
@@ -133,5 +135,7 @@ The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{vqgan}} + \la
 - [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)
 - [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] Image Generation as a Visual Planner for Robotic Manipulation](image_generation_as_a_visual_planner_for_robotic_manipulation.md)
+
+</div>
 
 <!-- RELATED:END -->

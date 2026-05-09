@@ -128,6 +128,8 @@ The idea of augmenting value functions as Lyapunov candidates is broadly applica
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions](../../ICLR2026/reinforcement_learning/single_index_bandits_generalized_linear_contextual_bandits_with_unknown_reward_f.md)
@@ -135,5 +137,7 @@ The idea of augmenting value functions as Lyapunov candidates is broadly applica
 - [\[NeurIPS 2025\] Actor-Free Continuous Control via Structurally Maximizable Q-Functions](actorfree_continuous_control_via_structurally_maximizable_qf.md)
 - [\[NeurIPS 2025\] Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization](learning_intractable_multimodal_policies_with_reparameterization_and_diversity_r.md)
 - [\[NeurIPS 2025\] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)
+
+</div>
 
 <!-- RELATED:END -->

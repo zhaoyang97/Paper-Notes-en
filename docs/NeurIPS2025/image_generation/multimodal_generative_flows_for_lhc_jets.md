@@ -131,6 +131,8 @@ Dataset: AspenOpenJets (AOJ) from CMS Open Data; 1.25M jets for training, 270K g
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
@@ -138,5 +140,7 @@ Dataset: AspenOpenJets (AOJ) from CMS Open Data; 1.25M jets for training, 270K g
 - [\[NeurIPS 2025\] Amortized Sampling with Transferable Normalizing Flows](amortized_sampling_with_transferable_normalizing_flows.md)
 - [\[NeurIPS 2025\] Show-o2: Improved Native Unified Multimodal Models](show-o2_improved_native_unified_multimodal_models.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

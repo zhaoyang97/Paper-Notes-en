@@ -160,6 +160,8 @@ The mixed strategy significantly outperforms fused on zero-shot generalization (
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
@@ -167,5 +169,7 @@ The mixed strategy significantly outperforms fused on zero-shot generalization (
 - [\[ICCV 2025\] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion](dual_recursive_feedback_on_generation_and_appearance_latents_for_pose-robust_tex.md)
 - [\[CVPR 2026\] Pose-dIVE: Pose-Diversified Augmentation with Diffusion Model for Person Re-Identification](../../CVPR2026/image_generation/pose-dive_pose-diversified_augmentation_with_diffusion_model_for_person_re-ident.md)
 - [\[ICCV 2025\] DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses](dreamdance_animating_human_images_by_enriching_3d_geometry_cues_from_2d_poses.md)
+
+</div>
 
 <!-- RELATED:END -->

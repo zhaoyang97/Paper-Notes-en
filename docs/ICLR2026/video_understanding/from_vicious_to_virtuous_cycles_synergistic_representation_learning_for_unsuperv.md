@@ -120,6 +120,8 @@ Three-stage schedule: Stage 1 (0–10%) applies slot regularization; Stage 2 (10
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning](../../CVPR2026/video_understanding/reconstruction-guided_slot_curriculum_addressing_object_over-fragmentation_in_vi.md)
@@ -127,5 +129,7 @@ Three-stage schedule: Stage 1 (0–10%) applies slot regularization; Stage 2 (10
 - [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
 - [\[CVPR 2026\] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning](../../CVPR2026/video_understanding/clcr_cross-level_semantic_collaborative_representation_for_multimodal_learning.md)
 - [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

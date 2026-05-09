@@ -142,6 +142,8 @@ In practice, ARM is implemented at each step $t$ by uniformly mixing data from t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds](../../AAAI2026/llm_evaluation/towards_a_rigorous_understanding_of_the_population_dynamics_of_the_nsga-iii_tigh.md)
@@ -149,5 +151,7 @@ In practice, ARM is implemented at each step $t$ by uniformly mixing data from t
 - [\[ICCV 2025\] ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction](../../ICCV2025/llm_evaluation/odp-bench_benchmarking_out-of-distribution_performance_prediction.md)
 - [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](../../AAAI2026/llm_evaluation/improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
 - [\[ICLR 2026\] Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](../../ICLR2026/llm_evaluation/non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)
+
+</div>
 
 <!-- RELATED:END -->

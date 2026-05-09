@@ -127,6 +127,8 @@ No training is required; SAGA is applied directly to pretrained SD 1.4 and SD 3.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Real-Time 3D Object Detection with Inference-Aligned Learning](real-time_3d_object_detection_with_inference-aligned_learning.md)
@@ -134,5 +136,7 @@ No training is required; SAGA is applied directly to pretrained SD 1.4 and SD 3.
 - [\[NeurIPS 2025\] OverLayBench: A Benchmark for Layout-to-Image Generation with Dense Overlaps](../../NeurIPS2025/object_detection/overlaybench_a_benchmark_for_layout-to-image_generation_with_dense_overlaps.md)
 - [\[CVPR 2026\] Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection](../../CVPR2026/object_detection/mitigating_memorization_in_texttoimage_diffusion_v.md)
 - [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
+
+</div>
 
 <!-- RELATED:END -->

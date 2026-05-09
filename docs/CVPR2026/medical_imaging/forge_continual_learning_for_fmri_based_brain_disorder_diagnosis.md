@@ -97,6 +97,8 @@ Evaluation is conducted on large-scale neuroimaging datasets ABIDE (autism), RES
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Residual SODAP: Residual Self-Organizing Domain-Adaptive Prompting with Structural Knowledge Preservation for Continual Learning](residual_sodap_residual_self-organizing_domain-adaptive_prompting_with_structura.md)
@@ -104,5 +106,7 @@ Evaluation is conducted on large-scale neuroimaging datasets ABIDE (autism), RES
 - [\[ACL 2026\] Language Reconstruction with Brain Predictive Coding from fMRI Data](../../ACL2026/medical_imaging/language_reconstruction_with_brain_predictive_coding_from_fmri_data.md)
 - [\[AAAI 2026\] ConSurv: Multimodal Continual Learning for Survival Analysis](../../AAAI2026/medical_imaging/consurv_multimodal_continual_learning_for_survival_analysis.md)
 - [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](../../AAAI2026/medical_imaging/learning_with_preserving_for_continual_multitask_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

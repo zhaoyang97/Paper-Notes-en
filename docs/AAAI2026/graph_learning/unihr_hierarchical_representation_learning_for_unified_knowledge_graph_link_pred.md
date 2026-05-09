@@ -153,6 +153,8 @@ The unified representation paradigm is transferable to other heterogeneous data 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](../../NeurIPS2025/graph_learning/tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
@@ -160,5 +162,7 @@ The unified representation paradigm is transferable to other heterogeneous data 
 - [\[NeurIPS 2025\] OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction](../../NeurIPS2025/graph_learning/ocn_effectively_utilizing_higher-order_common_neighbors_for_better_link_predicti.md)
 - [\[AAAI 2026\] Hyperbolic Continuous Structural Entropy for Hierarchical Clustering](hyperbolic_continuous_structural_entropy_for_hierarchical_clustering.md)
 - [\[AAAI 2026\] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving](human_cognition_inspired_rag_with_knowledge_graph_for_complex_problem_solving.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **33** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/video_understanding/index.md) · [📷 CVPR2026 (92)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (24)](../../ICLR2026/video_understanding/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (58)](../../ICCV2025/video_understanding/index.md)
+
+🔥 **Top topics:** Dialogue ×4 · Multimodal/VLM ×3 · Human Pose ×3 · Object Tracking ×3 · LLM ×3
+
 **[APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)**
 
 :   This paper proposes APVR, a training-free dual-granularity visual information retrieval framework. At the frame level, it iteratively retrieves keyframes (up to 1024) via query expansion and spatiotemporal semantic confidence scoring; at the token level, it compresses visual tokens through query-aware attention-driven selection. APVR overcomes memory limitations to process hour-long videos, achieving improvements of up to 9.5%, 4.6%, and 9.7% on LongVideoBench, VideoMME, and MLVU, respectively.

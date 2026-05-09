@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **65** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (252)](../../CVPR2026/3d_vision/index.md) · [🤖 AAAI2026 (74)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (268)](../../ICCV2025/3d_vision/index.md)
+
+🔥 **Top topics:** 3D Gaussian Splatting ×10 · Robotics ×4 · Dynamic Scenes ×4 · 3D Reconstruction ×4 · Novel View Synthesis ×3
+
 **[3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras](3dgeer_3d_gaussian_rendering_made_exact_and_efficient_for_generic_cameras.md)**
 
 :   This paper proposes 3DGEER, a framework that derives a closed-form solution for integrating Gaussian density along rays, designs a Particle Bounding Frustum (PBF) for accurate and efficient ray–particle association, and introduces Bipolar Equal-Angle Projection (BEAP) to unify wide-FoV camera representations. 3DGEER achieves geometrically exact and real-time efficient 3D Gaussian rendering under arbitrary camera models, outperforming existing methods comprehensively on both fisheye and pinhole datasets.

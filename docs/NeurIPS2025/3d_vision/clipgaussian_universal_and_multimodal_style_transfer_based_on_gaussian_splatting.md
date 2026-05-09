@@ -201,6 +201,8 @@ Default hyperparameters: $\lambda_b=1000$, $\lambda_p=90$, $\lambda_d=5$, $\lamb
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Tune-Your-Style: Intensity-Tunable 3D Style Transfer with Gaussian Splatting](../../ICCV2025/3d_vision/tune-your-style_intensity-tunable_3d_style_transfer_with_gaussian_splatting.md)
@@ -208,5 +210,7 @@ Default hyperparameters: $\lambda_b=1000$, $\lambda_p=90$, $\lambda_d=5$, $\lamb
 - [\[NeurIPS 2025\] LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS](langsplatv2_high-dimensional_3d_language_gaussian_splatting_with_450_fps.md)
 - [\[NeurIPS 2025\] MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference](materialrefgs_reflective_gaussian_splatting_with_multi-view_consistent_material_.md)
 - [\[NeurIPS 2025\] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks](instant_video_models_universal_adapters_for_stabilizing_image-based_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

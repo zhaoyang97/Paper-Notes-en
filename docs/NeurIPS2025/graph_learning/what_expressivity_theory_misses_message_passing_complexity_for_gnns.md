@@ -129,6 +129,8 @@ lossyWL is a probabilistic variant of standard WL in which each message $m_{u \t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs](../../AAAI2026/graph_learning/are_graph_transformers_necessary_efficient_long-range_messag.md)
@@ -136,5 +138,7 @@ lossyWL is a probabilistic variant of standard WL in which each message $m_{u \t
 - [\[NeurIPS 2025\] Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective](making_classic_gnns_strong_baselines_across_varying_homophily_a_smoothness-gener.md)
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Graph Persistence goes Spectral](graph_persistence_goes_spectral.md)
+
+</div>
 
 <!-- RELATED:END -->

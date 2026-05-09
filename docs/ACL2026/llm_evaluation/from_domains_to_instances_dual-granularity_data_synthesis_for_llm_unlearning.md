@@ -138,6 +138,8 @@ BiForget is a data synthesis framework and does not involve model training. The 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
@@ -145,5 +147,7 @@ BiForget is a data synthesis framework and does not involve model training. The 
 - [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](../../ICLR2026/llm_evaluation/revisiting_the_past_data_unlearning_with_model_state_history.md)
 - [\[ACL 2026\] CAST: Achieving Stable LLM-based Text Analysis for Data Analytics](cast_achieving_stable_llm-based_text_analysis_for_data_analytics.md)
 - [\[ICLR 2026\] Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures](../../ICLR2026/llm_evaluation/rethinking_benign_relearning_syntax_as_the_hidden_driver_of_unlearning_failures.md)
+
+</div>
 
 <!-- RELATED:END -->

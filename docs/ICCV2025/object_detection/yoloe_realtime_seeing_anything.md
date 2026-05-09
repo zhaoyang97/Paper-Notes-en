@@ -100,6 +100,8 @@ The re-parameterization paradigm is transferable to other settings requiring zer
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
@@ -107,5 +109,7 @@ The re-parameterization paradigm is transferable to other settings requiring zer
 - [\[AAAI 2026\] Real-Time 3D Object Detection with Inference-Aligned Learning](../../AAAI2026/object_detection/real-time_3d_object_detection_with_inference-aligned_learning.md)
 - [\[AAAI 2026\] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice](../../AAAI2026/object_detection/an_overall_real-time_mechanism_for_classification_and_quality_evaluation_of_rice.md)
 - [\[ICCV 2025\] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion](diffusion_curriculum_synthetic-to-real_data_curriculum_via_image-guided_diffusio.md)
+
+</div>
 
 <!-- RELATED:END -->

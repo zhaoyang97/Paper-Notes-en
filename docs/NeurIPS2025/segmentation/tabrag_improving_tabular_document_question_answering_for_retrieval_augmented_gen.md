@@ -163,6 +163,8 @@ The advantage of TabRAG remains consistent across different LLM backbones.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](../../ICCV2025/segmentation/beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
@@ -170,5 +172,7 @@ The advantage of TabRAG remains consistent across different LLM backbones.
 - [\[AAAI 2026\] Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries](../../AAAI2026/segmentation/vista_scene-aware_optimization_for_streaming_video_question_answering_under_post.md)
 - [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](../../ACL2026/segmentation/boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
 - [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
+
+</div>
 
 <!-- RELATED:END -->

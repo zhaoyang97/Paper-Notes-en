@@ -133,6 +133,8 @@ SPLINCE is a linear-algebraic method that computes a projection matrix $\mathbf{
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Causally Reliable Concept Bottleneck Models](causally_reliable_concept_bottleneck_models.md)
@@ -140,5 +142,7 @@ SPLINCE is a linear-algebraic method that computes a projection matrix $\mathbf{
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
 - [\[NeurIPS 2025\] Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification](stealthy_yet_effective_distribution-preserving_backdoor_attacks_on_graph_classif.md)
+
+</div>
 
 <!-- RELATED:END -->

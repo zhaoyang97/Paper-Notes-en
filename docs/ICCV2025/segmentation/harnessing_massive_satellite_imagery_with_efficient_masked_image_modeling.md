@@ -145,6 +145,8 @@ As a parameter-free method, HOG substantially outperforms learning-based alterna
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts](../../AAAI2026/segmentation/generalizable_slum_detection_from_satellite_imagery_with_mixture-of-experts.md)
@@ -152,5 +154,7 @@ As a parameter-free method, HOG substantially outperforms learning-based alterna
 - [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
 - [\[NeurIPS 2025\] Seg-VAR: Image Segmentation with Visual Autoregressive Modeling](../../NeurIPS2025/segmentation/seg-var_image_segmentation_with_visual_autoregressive_modeling.md)
 - [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
+
+</div>
 
 <!-- RELATED:END -->

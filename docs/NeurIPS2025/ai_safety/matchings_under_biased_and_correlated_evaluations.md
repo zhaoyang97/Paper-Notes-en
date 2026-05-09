@@ -131,6 +131,8 @@ This paper is a purely theoretical study with no training procedure. The core eq
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
@@ -138,5 +140,7 @@ This paper is a purely theoretical study with no training procedure. The core eq
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
 - [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](reconstruction_and_secrecy_under_approximate_distance_queries.md)
 - [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](cost_efficient_fairness_audit_under_partial_feedback.md)
+
+</div>
 
 <!-- RELATED:END -->

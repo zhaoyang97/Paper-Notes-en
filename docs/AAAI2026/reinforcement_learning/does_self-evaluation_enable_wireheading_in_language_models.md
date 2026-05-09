@@ -128,6 +128,8 @@ Training uses the REINFORCE algorithm with an exponential moving average baselin
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
@@ -135,5 +137,7 @@ Training uses the REINFORCE algorithm with an exponential moving average baselin
 - [\[ICLR 2026\] Towards Strategic Persuasion with Language Models](../../ICLR2026/reinforcement_learning/towards_strategic_persuasion_with_language_models.md)
 - [\[AAAI 2026\] A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs](a_course_correction_in_steerability_evaluation_revealing_mis.md)
 - [\[NeurIPS 2025\] Self-Improving Embodied Foundation Models](../../NeurIPS2025/reinforcement_learning/self-improving_embodied_foundation_models.md)
+
+</div>
 
 <!-- RELATED:END -->

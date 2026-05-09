@@ -137,6 +137,8 @@ This paper introduces the concept of Cocoercive Conservative (CoCo) denoisers an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MAP Estimation with Denoisers: Convergence Rates and Guarantees](map_estimation_with_denoisers_convergence_rates_and_guarantees.md)
@@ -144,5 +146,7 @@ This paper introduces the concept of Cocoercive Conservative (CoCo) denoisers an
 - [\[CVPR 2026\] GSNR: Graph Smooth Null-Space Representation for Inverse Problems](../../CVPR2026/image_restoration/gsnr_graph_smooth_null_space_representation_for_inverse_problems.md)
 - [\[NeurIPS 2025\] Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation](improving_diffusion-based_inverse_algorithms_under_few-step_constraint_via_learn.md)
 - [\[NeurIPS 2025\] scSplit: Bringing Severity Cognizance to Image Decomposition in Fluorescence Microscopy](scsplit_bringing_severity_cognizance_to_image_decomposition_in_fluorescence_micr.md)
+
+</div>
 
 <!-- RELATED:END -->

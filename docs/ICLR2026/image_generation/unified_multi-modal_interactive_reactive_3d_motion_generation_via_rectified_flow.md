@@ -122,6 +122,8 @@ $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CRF}} + \lambda_{\text{geo}} \m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](free_lunch_for_stabilizing_rectified_flow_inversion.md)
@@ -129,5 +131,7 @@ $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{CRF}} + \lambda_{\text{geo}} \m
 - [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](../../CVPR2026/image_generation/interedit_navigating_textguided_multihuman_3d_moti.md)
 - [\[ICCV 2025\] MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion](../../ICCV2025/image_generation/motiondiff_training-free_zero-shot_interactive_motion_editing_via_flow-assisted_.md)
 - [\[ICLR 2026\] Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning](image_can_bring_your_memory_back_a_novel_multi-modal_guided_attack_against_image.md)
+
+</div>
 
 <!-- RELATED:END -->

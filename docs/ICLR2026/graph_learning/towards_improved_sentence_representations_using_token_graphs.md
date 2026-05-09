@@ -120,6 +120,8 @@ Task-specific losses are used (cross-entropy for classification, cosine loss for
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](../../NeurIPS2025/graph_learning/learning_repetition-invariant_representations_for_polymer_informatics.md)
@@ -127,5 +129,7 @@ Task-specific losses are used (cross-entropy for classification, cosine loss for
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](graph_tokenization_for_bridging_graphs_and_transformers.md)
 - [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](revisiting_node_affinity_prediction_in_temporal_graphs.md)
 - [\[ICLR 2026\] Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs](explore-on-graph_incentivizing_autonomous_exploration_of_large_language_models_o.md)
+
+</div>
 
 <!-- RELATED:END -->

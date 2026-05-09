@@ -119,6 +119,8 @@ Average improvement of 2.2%, with a 5.5% gain over the runner-up on Qwen.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets](../../AAAI2026/robotics/when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
@@ -126,5 +128,7 @@ Average improvement of 2.2%, with a 5.5% gain over the runner-up on Qwen.
 - [\[NeurIPS 2025\] Predicting the Performance of Black-Box LLMs through Follow-Up Queries](predicting_the_performance_of_black-box_llms_through_follow-up_queries.md)
 - [\[NeurIPS 2025\] MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark](mmtu_a_massive_multi-task_table_understanding_and_reasoning_benchmark.md)
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

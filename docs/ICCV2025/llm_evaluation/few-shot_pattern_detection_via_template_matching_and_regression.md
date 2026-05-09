@@ -123,6 +123,8 @@ TMR adopts a minimalist structure: a frozen SAM-ViT/H backbone extracts feature 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](../../NeurIPS2025/llm_evaluation/benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
@@ -130,5 +132,7 @@ TMR adopts a minimalist structure: a frozen SAM-ViT/H backbone extracts feature 
 - [\[ICCV 2025\] Combinative Matching for Geometric Shape Assembly](combinative_matching_for_geometric_shape_assembly.md)
 - [\[NeurIPS 2025\] Unlocking Transfer Learning for Open-World Few-Shot Recognition](../../NeurIPS2025/llm_evaluation/unlocking_transfer_learning_for_open-world_few-shot_recognition.md)
 - [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](a_conditional_probability_framework_for_compositional_zerosh.md)
+
+</div>
 
 <!-- RELATED:END -->

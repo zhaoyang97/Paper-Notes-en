@@ -146,6 +146,8 @@ This work primarily constitutes an evaluation and ICL framework and does not inv
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation](cymbadiff_structured_spatial_diffusion_for_sketch-based_3d_semantic_urban_scene_.md)
@@ -153,5 +155,7 @@ This work primarily constitutes an evaluation and ICL framework and does not inv
 - [\[NeurIPS 2025\] Predictive Preference Learning from Human Interventions](predictive_preference_learning_from_human_interventions.md)
 - [\[NeurIPS 2025\] FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving](futuresightdrive_thinking_visually_with_spatiotemporal_cot_f.md)
 - [\[NeurIPS 2025\] SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving](sqs_enhancing_sparse_perception_models_via_query-based_splatting_in_autonomous_d.md)
+
+</div>
 
 <!-- RELATED:END -->

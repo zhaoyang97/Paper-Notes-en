@@ -139,6 +139,8 @@ This dataset provides a valuable validation platform for robust object detection
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation](../../CVPR2026/autonomous_driving/hg-lane_high-fidelity_generation_of_lane_scenes_under_adverse_weather_and_lighti.md)
@@ -146,5 +148,7 @@ This dataset provides a valuable validation platform for robust object detection
 - [\[ICCV 2025\] TrafficLoc: Localizing Traffic Surveillance Cameras in 3D Scenes](../../ICCV2025/autonomous_driving/trafficloc_localizing_traffic_surveillance_cameras_in_3d_scenes.md)
 - [\[AAAI 2026\] When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework](when_person_re-identification_meets_event_camera_a_benchmark_dataset_and_an_attr.md)
 - [\[CVPR 2026\] Traffic Scene Generation from Natural Language Description for Autonomous Vehicles with Large Language Model](../../CVPR2026/autonomous_driving/ttsg_text_to_traffic_scene_generation_from_natural_language.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -121,6 +121,8 @@ The hypernetwork is trained on synthetic data generated via a schema perturbatio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
@@ -128,5 +130,7 @@ The hypernetwork is trained on synthetic data generated via a schema perturbatio
 - [\[AAAI 2026\] PocketLLM: Ultimate Compression of Large Language Models via Meta Networks](../../AAAI2026/model_compression/pocketllm_ultimate_compression_of_large_language_models_via_meta_networks.md)
 - [\[AAAI 2026\] EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers](../../AAAI2026/model_compression/efficientfsl_enhancing_few-shot_classification_via_query-only_tuning_in_vision_t.md)
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

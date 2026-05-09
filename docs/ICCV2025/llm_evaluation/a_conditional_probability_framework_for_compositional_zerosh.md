@@ -199,6 +199,8 @@ $$\hat{c} = \arg\max_{c_{i,j} \in \mathcal{C}_{test}} p(c_{i,j}|x) + p(a_i|x, v_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Few-Shot Pattern Detection via Template Matching and Regression](few-shot_pattern_detection_via_template_matching_and_regression.md)
@@ -206,5 +208,7 @@ $$\hat{c} = \arg\max_{c_{i,j} \in \mathcal{C}_{test}} p(c_{i,j}|x) + p(a_i|x, v_
 - [\[ICCV 2025\] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild](intersyn_interleaved_learning_for_dynamic_motion_synthesis_in_the_wild.md)
 - [\[ICCV 2025\] Imbalance in Balance: Online Concept Balancing in Generation Models](imbalance_in_balance_online_concept_balancing_in_generation_models.md)
 - [\[ICCV 2025\] Combinative Matching for Geometric Shape Assembly](combinative_matching_for_geometric_shape_assembly.md)
+
+</div>
 
 <!-- RELATED:END -->

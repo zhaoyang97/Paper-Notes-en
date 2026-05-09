@@ -123,6 +123,8 @@ The SFT stage uses the standard autoregressive language modeling loss. In the GR
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
@@ -130,5 +132,7 @@ The SFT stage uses the standard autoregressive language modeling loss. In the GR
 - [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](../../AAAI2026/medical_imaging/mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
 - [\[NeurIPS 2025\] MuSLR: Multimodal Symbolic Logical Reasoning](../../NeurIPS2025/medical_imaging/muslr_multimodal_symbolic_logical_reasoning.md)
 - [\[NeurIPS 2025\] Multimodal Disease Progression Modeling via Spatiotemporal Disentanglement and Multiscale Alignment](../../NeurIPS2025/medical_imaging/multimodal_disease_progression_modeling_via_spatiotemporal_disentanglement_and_m.md)
+
+</div>
 
 <!-- RELATED:END -->

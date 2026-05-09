@@ -128,6 +128,8 @@ $$\mathcal{L} = \|w(t) \cdot (f_\theta(I_{\text{NSFW}}(t), t, \phi(x_{\text{NSFW
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images](causalclip_causally-informed_feature_disentanglement_and_filtering_for_generaliz.md)
@@ -135,5 +137,7 @@ $$\mathcal{L} = \|w(t) \cdot (f_\theta(I_{\text{NSFW}}(t), t, \phi(x_{\text{NSFW
 - [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](../../CVPR2026/image_generation/simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
 - [\[CVPR 2026\] RewardFlow: Generate Images by Optimizing What You Reward](../../CVPR2026/image_generation/rewardflow_generate_images_by_optimizing_what_you_reward.md)
 - [\[CVPR 2026\] TokenLight: Precise Lighting Control in Images using Attribute Tokens](../../CVPR2026/image_generation/tokenlight_precise_lighting_control_in_images_using_attribute_tokens.md)
+
+</div>
 
 <!-- RELATED:END -->

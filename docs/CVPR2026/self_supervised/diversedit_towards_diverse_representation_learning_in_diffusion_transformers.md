@@ -192,6 +192,8 @@ Training configuration: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Only a sma
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] No Other Representation Component Is Needed: Diffusion Transformers Can Provide Representation Guidance by Themselves](../../ICLR2026/self_supervised/no_other_representation_component_is_needed_diffusion_transformers_can_provide_r.md)
@@ -199,5 +201,7 @@ Training configuration: AdamW, lr=1e-4, batch size=256, 8×H800 GPUs. Only a sma
 - [\[CVPR 2026\] Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physical_systems.md)
 - [\[CVPR 2026\] TrackMAE: Video Representation Learning via Track, Mask, and Predict](trackmae_video_representation_learning_via_track_mask_and_predict.md)
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
+
+</div>
 
 <!-- RELATED:END -->

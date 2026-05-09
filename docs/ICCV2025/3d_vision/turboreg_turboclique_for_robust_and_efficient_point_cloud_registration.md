@@ -136,6 +136,8 @@ Key hyperparameters: the number of pivots $K_1$ is set to 1K/2K (indoor) or 0.25
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes](buffer-x_towards_zero-shot_point_cloud_registration_in_diverse_scenes.md)
@@ -143,5 +145,7 @@ Key hyperparameters: the number of pivots $K_1$ is set to 1K/2K (indoor) or 0.25
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 - [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
 - [\[CVPR 2026\] APC: Transferable and Efficient Adversarial Point Counterattack for Robust 3D Point Cloud Recognition](../../CVPR2026/3d_vision/apc_adversarial_point_counterattack.md)
+
+</div>
 
 <!-- RELATED:END -->

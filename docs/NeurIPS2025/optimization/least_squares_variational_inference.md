@@ -160,6 +160,8 @@ This constitutes the first demonstration of variational inference on a Bernoulli
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Brain-like Variational Inference](brain-like_variational_inference.md)
@@ -167,5 +169,7 @@ This constitutes the first demonstration of variational inference on a Bernoulli
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference](neuro-symbolic_entity_alignment_via_variational_inference.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

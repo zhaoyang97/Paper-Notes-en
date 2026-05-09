@@ -137,6 +137,8 @@ Both codebook quantization and AdaLN-Zero conditioning injection are critical to
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
@@ -144,5 +146,7 @@ Both codebook quantization and AdaLN-Zero conditioning injection are critical to
 - [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](../../NeurIPS2025/image_generation/diffusion_generative_modeling_on_lie_group_representations.md)
 - [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](../../NeurIPS2025/image_generation/physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
 - [\[ICCV 2025\] REGEN: Learning Compact Video Embedding with (Re-)Generative Decoder](regen_learning_compact_video_embedding_with_re-generative_decoder.md)
+
+</div>
 
 <!-- RELATED:END -->

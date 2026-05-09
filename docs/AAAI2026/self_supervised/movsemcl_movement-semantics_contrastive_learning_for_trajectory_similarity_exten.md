@@ -145,6 +145,8 @@ On Porto 100K: removing Movement-Semantics Encoding (MSE) degrades mean rank fro
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](../../CVPR2026/self_supervised/unigeoclip_geospatial_contrastive.md)
@@ -152,5 +154,7 @@ On Porto 100K: removing Movement-Semantics Encoding (MSE) degrades mean rank fro
 - [\[ICLR 2026\] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](../../ICLR2026/self_supervised/difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)
 - [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](../../ICCV2025/self_supervised/mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
 - [\[NeurIPS 2025\] The Complexity of Finding Local Optima in Contrastive Learning](../../NeurIPS2025/self_supervised/the_complexity_of_finding_local_optima_in_contrastive_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

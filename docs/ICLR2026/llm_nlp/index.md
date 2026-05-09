@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **46** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_nlp/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_nlp/index.md)
+
+🔥 **Top topics:** LLM ×13 · Reasoning ×5 · Diffusion Models ×5 · Agents ×2
+
 **[AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)**
 
 :   This paper proposes AP-OOD, which replaces the mean pooling in Mahalanobis distance-based OOD detection with learnable attention pooling, addressing the information loss caused by mean aggregation of token-level anomaly signals. On text OOD detection, AP-OOD reduces FPR95 on XSUM summarization from 27.84% to 4.67%, while supporting a smooth transition from unsupervised to semi-supervised settings.

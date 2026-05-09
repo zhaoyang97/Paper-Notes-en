@@ -229,6 +229,8 @@ ParaMETA-LSTM requires only 1.9% of CLAP's parameters, 22% of its GPU memory, an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](learning_fair_representations_with_kolmogorov-arnold_networks.md)
@@ -236,5 +238,7 @@ ParaMETA-LSTM requires only 1.9% of CLAP's parameters, 22% of its GPU memory, an
 - [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](../../ICLR2026/others/addressing_divergent_representations_causal.md)
 - [\[AAAI 2026\] Bandit Learning in Housing Markets](bandit_learning_in_housing_markets.md)
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

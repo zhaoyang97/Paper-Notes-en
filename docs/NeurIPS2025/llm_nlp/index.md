@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **52** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/llm_nlp/index.md) · [🤖 AAAI2026 (38)](../../AAAI2026/llm_nlp/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_nlp/index.md)
+
+🔥 **Top topics:** LLM ×17 · Agents ×4 · Few-/Zero-Shot Learning ×2
+
 **[AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)**
 
 :   This paper proposes AceSearcher—a collaborative self-play framework in which a single LLM simultaneously plays two roles: a **decomposer** (breaking complex queries into sub-questions to guide retrieval) and a **solver** (integrating retrieved context to generate answers). Through a two-stage training pipeline of SFT followed by iterative DPO, using only final-answer rewards, AceSearcher achieves an average EM improvement of 7.6% across 10 datasets, and the 32B model matches DeepSeek-V3 with fewer than 5% of its parameters.

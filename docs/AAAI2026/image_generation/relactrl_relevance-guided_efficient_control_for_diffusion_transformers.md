@@ -207,6 +207,8 @@ Effect of RGLC and Prior 2:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers](laytrol_preserving_pretrained_knowledge_in_layout_control_fo.md)
@@ -214,5 +216,7 @@ Effect of RGLC and Prior 2:
 - [\[CVPR 2026\] EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation](../../CVPR2026/image_generation/edgedit_hardware-aware_diffusion_transformers_for_efficient_on-device_image_gene.md)
 - [\[ICLR 2026\] Contact-Guided 3D Genome Structure Generation of E. coli via Diffusion Transformers](../../ICLR2026/image_generation/contact-guided_3d_genome_structure_generation_of_e_coli_via_diffusion_transforme.md)
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](../../ICCV2025/image_generation/edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
+
+</div>
 
 <!-- RELATED:END -->

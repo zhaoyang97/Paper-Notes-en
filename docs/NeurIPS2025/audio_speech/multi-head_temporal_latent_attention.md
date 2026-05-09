@@ -132,6 +132,8 @@ Input sequence $\mathbf{X} \in \mathbb{R}^{T \times d}$ → standard projection 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Latent Space Factorization in LoRA](latent_space_factorization_in_lora.md)
@@ -139,5 +141,7 @@ Input sequence $\mathbf{X} \in \mathbb{R}^{T \times d}$ → standard projection 
 - [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
 - [\[AAAI 2026\] Multi-granularity Interactive Attention Framework for Residual Hierarchical Pronunciation Assessment](../../AAAI2026/audio_speech/multi-granularity_interactive_attention_framework_for_residual_hierarchical_pron.md)
 - [\[ICLR 2026\] Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention](../../ICLR2026/audio_speech/efficient_audio-visual_speech_separation_with_discrete_lip_semantics_and_multi-s.md)
+
+</div>
 
 <!-- RELATED:END -->

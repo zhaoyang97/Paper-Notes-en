@@ -138,6 +138,8 @@ When summarization fails, the method gracefully degrades to standard k-means.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](hierarchical_concept-based_interpretable_models.md)
@@ -145,5 +147,7 @@ When summarization fails, the method gracefully degrades to standard k-means.
 - [\[AAAI 2026\] Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score](../../AAAI2026/information_retrieval/beyond_perplexity_let_the_reader_select_retrieval_summaries_via_spectrum_project.md)
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
 - [\[ICLR 2026\] LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference](lightretriever_a_llm-based_text_retrieval_architecture_with_extremely_faster_que.md)
+
+</div>
 
 <!-- RELATED:END -->

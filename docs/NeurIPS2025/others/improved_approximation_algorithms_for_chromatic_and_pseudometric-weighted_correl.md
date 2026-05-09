@@ -110,6 +110,8 @@ LP-Pivot Algorithm (Algorithm 1): (1) randomly select a pivot node $v$; (2) for 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
@@ -117,5 +119,7 @@ LP-Pivot Algorithm (Algorithm 1): (1) randomly select a pivot node $v$; (2) for 
 - [\[NeurIPS 2025\] Stable Matching with Ties: Approximation Ratios and Learning](stable_matching_with_ties_approximation_ratios_and_learning.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
 - [\[ICLR 2026\] Distributed Algorithms for Euclidean Clustering](../../ICLR2026/others/distributed_algorithms_for_euclidean_clustering.md)
+
+</div>
 
 <!-- RELATED:END -->

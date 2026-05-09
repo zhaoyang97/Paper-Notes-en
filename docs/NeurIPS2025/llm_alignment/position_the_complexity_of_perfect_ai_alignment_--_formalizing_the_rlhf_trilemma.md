@@ -147,6 +147,8 @@ No conventional ablation study. The paper explores the trade-off space by analyz
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs](a_systematic_evaluation_of_preference_aggregation_in_federated_rlhf_for_pluralis.md)
@@ -154,5 +156,7 @@ No conventional ablation study. The paper explores the trade-off space by analyz
 - [\[NeurIPS 2025\] Greedy Sampling Is Provably Efficient for RLHF](greedy_sampling_is_provably_efficient_for_rlhf.md)
 - [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
 - [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](inference-time_alignment_in_continuous_space.md)
+
+</div>
 
 <!-- RELATED:END -->

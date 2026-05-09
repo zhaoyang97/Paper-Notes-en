@@ -131,6 +131,8 @@ After LoRA fine-tuning of Qwen2.5-VL-3B, accuracy on seen entities improves from
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
@@ -138,5 +140,7 @@ After LoRA fine-tuning of Qwen2.5-VL-3B, accuracy on seen entities improves from
 - [\[ICCV 2025\] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning](../../ICCV2025/multimodal_vlm/from_easy_to_hard_the_mir_benchmark_for_progressive_interleaved_multi-image_reas.md)
 - [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
 - [\[NeurIPS 2025\] To See or To Read: User Behavior Reasoning in Multimodal LLMs](to_see_or_to_read_user_behavior_reasoning_in_multimodal_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

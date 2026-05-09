@@ -123,6 +123,8 @@ Instruct variants consistently outperform their corresponding base models, with 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities](../../ACL2026/llm_nlp/think_in_sentences_explicit_sentence_boundaries_enhance_language_model39s_capabi.md)
@@ -130,5 +132,7 @@ Instruct variants consistently outperform their corresponding base models, with 
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
 - [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

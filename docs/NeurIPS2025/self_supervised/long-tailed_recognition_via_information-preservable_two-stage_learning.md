@@ -150,6 +150,8 @@ $$\mathcal{L}_{BNS} = -\frac{1}{m+1}\left[\sum_{q_* \in \{q_i\} \cup \boldsymbol
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](../../AAAI2026/self_supervised/bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
@@ -157,5 +159,7 @@ $$\mathcal{L}_{BNS} = -\frac{1}{m+1}\left[\sum_{q_* \in \{q_i\} \cup \boldsymbol
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
 - [\[NeurIPS 2025\] Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning](connecting_jensenshannon_and_kullbackleibler_divergences_a_n.md)
 - [\[ICLR 2026\] Maximizing Incremental Information Entropy for Contrastive Learning](../../ICLR2026/self_supervised/maximizing_incremental_information_entropy_for_contrastive_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -201,6 +201,8 @@ PATN outperforms PrivDiffuser by an order of magnitude on all semantic fidelity 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](../../NeurIPS2025/ai_safety/factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
@@ -208,5 +210,7 @@ PATN outperforms PrivDiffuser by an order of magnitude on all semantic fidelity 
 - [\[AAAI 2026\] FairGSE: Fairness-Aware Graph Neural Network without High False Positive Rates](fairgse_fairness-aware_graph_neural_network_without_high_false_positive_rates.md)
 - [\[AAAI 2026\] Hashed Watermark as a Filter: A Unified Defense Against Forging and Overwriting Attacks in Neural Network Watermarking](hashed_watermark_as_a_filter_defeating_forging_and_overwriting_attacks_in_weight.md)
 - [\[AAAI 2026\] Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints](truth_justice_and_secrecy_cake_cutting_under_privacy_constraints.md)
+
+</div>
 
 <!-- RELATED:END -->

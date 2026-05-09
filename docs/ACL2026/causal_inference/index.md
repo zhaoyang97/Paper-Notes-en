@@ -10,6 +10,8 @@ description: >-
 
 **💬 ACL2026** · **8** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/causal_inference/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+
 **[Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size](better_and_worse_with_scale_how_contextual_entrainment_diverges_with_model_size.md)**
 
 :   This paper establishes the first scaling laws for "contextual entrainment," discovering that larger models better resist misinformation in semantic contexts (negative exponent) but more readily copy irrelevant tokens in non-semantic contexts (positive exponent), revealing opposing scaling behaviors of semantic filtering and mechanical copying functions.

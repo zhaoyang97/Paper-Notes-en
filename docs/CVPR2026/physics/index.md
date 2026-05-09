@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **1** paper notes
 
+📌 **Same area in other venues:** [🔬 ICLR2026 (2)](../../ICLR2026/physics/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/physics/index.md) · [🧠 NeurIPS2025 (20)](../../NeurIPS2025/physics/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/physics/index.md)
+
 **[QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](qkd_quantum_gated_incremental_learning.md)**
 
 :   QKD introduces quantum gating into class-incremental learning (CIL), modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits to guide cross-task knowledge distillation during training and adaptive adapter fusion during inference, achieving state-of-the-art performance on 5 benchmarks.

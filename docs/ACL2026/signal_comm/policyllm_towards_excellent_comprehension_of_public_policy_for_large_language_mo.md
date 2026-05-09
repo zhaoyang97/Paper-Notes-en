@@ -117,6 +117,8 @@ Expert training for 3 epochs, router training for 4 epochs. Standard cross-entro
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)](../../NeurIPS2025/signal_comm/artificial_hivemind_the_open-ended_homogeneity_of_language_models_and_beyond.md)
@@ -124,5 +126,7 @@ Expert training for 3 epochs, router training for 4 epochs. Standard cross-entro
 - [\[NeurIPS 2025\] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance](../../NeurIPS2025/signal_comm/the_last_vote_a_multi-stakeholder_framework_for_language_model_governance.md)
 - [\[ACL 2026\] Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design](solver-independent_automated_problem_formulation_via_llms_for_high-cost_simulati.md)
 - [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

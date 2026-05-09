@@ -158,6 +158,8 @@ Reconstructing the unlearnable event stream from the unlearnable event stack pro
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction](../../NeurIPS2025/llm_safety/masksql_safeguarding_privacy_for_llm-based_text-to-sql_via_abstraction.md)
@@ -165,5 +167,7 @@ Reconstructing the unlearnable event stream from the unlearnable event stack pro
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](../../ICLR2026/llm_safety/enhancing_hallucination_detection_through_noise_injection.md)
 - [\[NeurIPS 2025\] Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples](../../NeurIPS2025/llm_safety/enhancing_sample_selection_against_label_noise_by_cutting_mislabeled_easy_exampl.md)
 - [\[NeurIPS 2025\] Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset](../../NeurIPS2025/llm_safety/poly-guard_massive_multi-domain_safety_policy-grounded_guardrail_dataset.md)
+
+</div>
 
 <!-- RELATED:END -->

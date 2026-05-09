@@ -135,6 +135,8 @@ The MAGIC pipeline consists of four stages: (1) pre-fine-tuning Stable Diffusion
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Feedback Efficient Active Target Discovery in Partially Observable Environments](online_feedback_efficient_active_target_discovery_in_partially_observable_enviro.md)
@@ -142,5 +144,7 @@ The MAGIC pipeline consists of four stages: (1) pre-fine-tuning Stable Diffusion
 - [\[NeurIPS 2025\] PatientSim: A Persona-Driven Simulator for Realistic Doctor-Patient Interactions](patientsim_a_persona-driven_simulator_for_realistic_doctor-patient_interactions.md)
 - [\[CVPR 2026\] Robust Fair Disease Diagnosis in CT Images](../../CVPR2026/medical_imaging/robust_fair_disease_diagnosis_in_ct_images.md)
 - [\[NeurIPS 2025\] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)
+
+</div>
 
 <!-- RELATED:END -->

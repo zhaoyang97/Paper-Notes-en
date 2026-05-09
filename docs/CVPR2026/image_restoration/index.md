@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **47** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (6)](../../ACL2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+
+🔥 **Top topics:** Image Restoration ×13 · Super-Resolution ×13 · Diffusion Models ×5 · Adversarial Robustness ×4 · RAG ×3
+
 **[Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)**
 
 :   This paper proposes IQPIR, a framework that introduces image quality priors (IQP) derived from pretrained NR-IQA models as conditioning signals. Through three mechanisms—quality-conditioned Transformer, dual Codebook architecture, and quality optimization in discrete representation space—IQPIR guides the restoration process toward maximal perceptual quality, achieving state-of-the-art performance on blind face restoration and related tasks.

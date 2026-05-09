@@ -188,6 +188,8 @@ A0 differs from Helix (hierarchical reinforcement learning) in that it employs a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching](ec-flow_enabling_versatile_robotic_manipulation_from_action-unlabeled_videos_via.md)
@@ -195,5 +197,7 @@ A0 differs from Helix (hierarchical reinforcement learning) in that it employs a
 - [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
 - [\[ICCV 2025\] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior](dposer-x_diffusion_model_as_robust_3d_whole-body_human_pose_prior.md)
 - [\[ICCV 2025\] DIIP: Diffusion Image Prior](diffusion_image_prior.md)
+
+</div>
 
 <!-- RELATED:END -->

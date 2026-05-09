@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **35** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+
+🔥 **Top topics:** LLM ×5
+
 **[3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)**
 
 :   PyramidSD introduces a three-tier pyramid decoding architecture by inserting an intermediate "qualifier" model between the draft model ($M_D$) and target model ($M_T$) in standard speculative decoding. The method exploits the natural entropy gradient across model scales within a model family to hierarchically filter tokens, and employs a fuzzy acceptance criterion to relax the matching threshold, achieving up to 1.91× speedup (reaching 124 tok/s on an RTX 4090).

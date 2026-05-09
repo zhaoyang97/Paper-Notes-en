@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **19** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+
+🔥 **Top topics:** Remote Sensing ×9 · Multimodal/VLM ×3 · Face & Gaze ×2
+
 **[ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery](acpv-net_all-class_polygonal_vectorization_for_seamless_vector_map_generation_fr.md)**
 
 :   ACPV-Net is the first framework that generates topologically consistent all-class polygonal vector maps from aerial imagery in a single pass, employing a semantically supervised conditional diffusion model for vertex heatmap generation and proposition-driven PSLG reconstruction to ensure zero gaps and zero overlaps.

@@ -162,6 +162,8 @@ The Global Semantics Agent (GS) contributes most to faithfulness (+18.3%); the D
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](../../ICCV2025/multimodal_vlm/instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
@@ -169,5 +171,7 @@ The Global Semantics Agent (GS) contributes most to faithfulness (+18.3%); the D
 - [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](../../ICLR2026/multimodal_vlm/enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
 - [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/multimodal_vlm/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
 - [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](../../ICCV2025/multimodal_vlm/scaling_inference-time_search_with_vision_value_model_for_improved_visual_compre.md)
+
+</div>
 
 <!-- RELATED:END -->

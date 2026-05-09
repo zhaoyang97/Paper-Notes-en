@@ -123,6 +123,8 @@ Strong verifiers ($\Omega_v = \Omega$, fully characterizing the valid space) and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Pseudo-Nonlinear Data Augmentation: A Constrained Energy Minimization Viewpoint](pseudo-nonlinear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
@@ -130,5 +132,7 @@ Strong verifiers ($\Omega_v = \Omega$, fully characterizing the valid space) and
 - [\[ICLR 2026\] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model](vfscale_intrinsic_reasoning_through_verifier-free_test-time_scalable_diffusion_m.md)
 - [\[ICLR 2026\] Infinity and Beyond: Compositional Alignment in VAR and Diffusion T2I Models](infinity_and_beyond_compositional_alignment_in_var_and_diffusion_t2i_models.md)
 - [\[CVPR 2026\] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training](../../CVPR2026/image_generation/beyond_the_golden_data_resolving_the_motion-vision_quality_dilemma_via_timestep_.md)
+
+</div>
 
 <!-- RELATED:END -->

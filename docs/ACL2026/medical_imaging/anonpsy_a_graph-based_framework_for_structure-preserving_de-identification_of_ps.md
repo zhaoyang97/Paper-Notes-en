@@ -119,6 +119,8 @@ No training is required. All three operators—conversion, perturbation, and gen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] NeuroCircuitry-Inspired Hierarchical Graph Causal Attention Networks for Explainable Depression Identification](../../ICLR2026/medical_imaging/neurocircuitry-inspired_hierarchical_graph_causal_attention_networks_for_explain.md)
@@ -126,5 +128,7 @@ No training is required. All three operators—conversion, perturbation, and gen
 - [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](../../AAAI2026/medical_imaging/learning_with_preserving_for_continual_multitask_learning.md)
 - [\[AAAI 2026\] Constrained Best Arm Identification with Tests for Feasibility](../../AAAI2026/medical_imaging/constrained_best_arm_identification_with_tests_for_feasibility.md)
 - [\[ACL 2026\] LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval](logoskg_hardware-optimized_scalable_and_interpretable_knowledge_graph_retrieval.md)
+
+</div>
 
 <!-- RELATED:END -->

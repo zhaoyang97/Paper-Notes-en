@@ -210,6 +210,8 @@ with buffer multiplier $\tau = 4$ and maximum time to closest point of approach 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding](start_small_think_big_curriculum-based_relative_policy_optimization_for_visual_g.md)
@@ -217,5 +219,7 @@ with buffer multiplier $\tau = 4$ and maximum time to closest point of approach 
 - [\[AAAI 2026\] Speculative Sampling with Reinforcement Learning](speculative_sampling_with_reinforcement_learning.md)
 - [\[ICCV 2025\] Embodied Navigation with Auxiliary Task of Action Description Prediction](../../ICCV2025/reinforcement_learning/embodied_navigation_with_auxiliary_task_of_action_description_prediction.md)
 - [\[CVPR 2026\] RADAR: Closed-Loop Robotic Data Generation via Semantic Planning and Autonomous Causal Environment Reset](../../CVPR2026/reinforcement_learning/radar_closedloop_robotic_data_generation_via_seman.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -128,6 +128,8 @@ Dynamic routing outperforms non-adaptive fusion on TABMWP (+3.07) and HiTab (+1.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing](../../AAAI2026/multimodal_vlm/tabflash_efficient_table_understanding_with_progressive_question_conditioning_an.md)
@@ -135,5 +137,7 @@ Dynamic routing outperforms non-adaptive fusion on TABMWP (+3.07) and HiTab (+1.
 - [\[CVPR 2026\] AVR: Adaptive VLM Routing for Computer Use Agents](../../CVPR2026/multimodal_vlm/adaptive_vision-language_model_routing_for_computer_use_agents.md)
 - [\[CVPR 2026\] Adaptive Vision-Language Model Routing for Computer Use Agents](../../CVPR2026/multimodal_vlm/adaptive_visionlanguage_model_routing_for_computer.md)
 - [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
+
+</div>
 
 <!-- RELATED:END -->

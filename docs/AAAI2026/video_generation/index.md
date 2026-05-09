@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **11** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (60)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (51)](../../ICCV2025/video_generation/index.md)
+
+🔥 **Top topics:** Video Generation ×6 · Diffusion Models ×3
+
 **[3D4D: An Interactive Editable 4D World Model via 3D Video Generation](3d4d_an_interactive_editable_4d_world_model_via_3d_video_generation.md)**
 
 :   This paper proposes 3D4D, an interactive 4D visualization framework integrating WebGL and Supersplat rendering. A four-module backend pipeline converts static images and text prompts into editable 4D scenes, while a VLM-guided foveated rendering strategy enables 60fps real-time interaction, achieving state-of-the-art performance on both CLIP Consistency and CLIP Score.

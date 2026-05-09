@@ -194,6 +194,8 @@ $$\Pr(\mathbf{vCache}(x) = r(x) \mid \mathcal{D}) \ge 1 - \delta$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)
@@ -201,5 +203,7 @@ $$\Pr(\mathbf{vCache}(x) = r(x) \mid \mathcal{D}) \ge 1 - \delta$$
 - [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](../../ACL2026/llm_evaluation/piarena_a_platform_for_prompt_injection_evaluation.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Model Task Adaptation](prompt_and_parameter_co-optimization_for_large_language_model_task_adaptation.md)
 - [\[ICCV 2025\] Supercharging Floorplan Localization with Semantic Rays](../../ICCV2025/llm_evaluation/supercharging_floorplan_localization_with_semantic_rays.md)
+
+</div>
 
 <!-- RELATED:END -->

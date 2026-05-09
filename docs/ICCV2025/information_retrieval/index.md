@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (30)](../../NeurIPS2025/information_retrieval/index.md)
+
 **[aligning information capacity between vision and language via dense-to-sparse fe](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)**
 
 :   This paper proposes D2S-VSE, a two-stage training framework (dense-text pretraining + dense-to-sparse feature distillation fine-tuning) that enhances information capacity in visual-semantic embeddings, addressing the core asymmetry in information density between image and text modalities for image-text matching.

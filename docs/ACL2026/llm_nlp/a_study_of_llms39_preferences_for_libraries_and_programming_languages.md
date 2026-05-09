@@ -119,6 +119,8 @@ This paper is an empirical study and involves no model training. All LLMs are qu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](../../ICLR2026/llm_nlp/function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
@@ -126,5 +128,7 @@ This paper is an empirical study and involves no model training. All LLMs are qu
 - [\[NeurIPS 2025\] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths](../../NeurIPS2025/llm_nlp/encompass_enhancing_agent_programming_with_search_over_program_execution_paths.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
 - [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](../../CVPR2026/llm_nlp/sign_language_recognition_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

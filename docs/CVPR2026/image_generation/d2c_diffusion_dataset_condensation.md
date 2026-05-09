@@ -149,6 +149,8 @@ $$\mathcal{L}_{total} = \mathcal{L}_{diff} + \lambda \mathcal{L}_{proj}$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Accelerating Diffusion Model Training under Minimal Budgets: A Condensation-Based Perspective](accelerating_diffusion_model_training_under_minimal_budgets_a_condensation-based.md)
@@ -156,5 +158,7 @@ $$\mathcal{L}_{total} = \mathcal{L}_{diff} + \lambda \mathcal{L}_{proj}$$
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
 - [\[CVPR 2026\] DMin: Scalable Training Data Influence Estimation for Diffusion Models](dmin_scalable_training_data_influence_estimation_for_diffusion_models.md)
 - [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](cod_a_diffusion_foundation_model_for_image_compression.md)
+
+</div>
 
 <!-- RELATED:END -->

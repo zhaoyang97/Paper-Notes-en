@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **71** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/reinforcement_learning/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (142)](../../ICLR2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (169)](../../NeurIPS2025/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+
+🔥 **Top topics:** Reinforcement Learning ×22 · Agents ×11 · Reasoning ×11 · LLM ×6 · Adversarial Robustness ×5
+
 **[A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs](a_course_correction_in_steerability_evaluation_revealing_mis.md)**
 
 :   This paper proposes a multi-dimensional objective-space framework for evaluating LLM steerability, decomposing steering error into miscalibration and side effects (orthogonality). Experiments on text rewriting reveal that even the strongest LLMs produce severe side effects; prompt engineering proves ineffective, best-of-N sampling is prohibitively costly, and RL fine-tuning yields improvements but does not fully resolve the problem.

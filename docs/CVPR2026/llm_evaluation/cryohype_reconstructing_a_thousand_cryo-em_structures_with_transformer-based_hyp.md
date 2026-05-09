@@ -132,6 +132,8 @@ CryoHype consists of five components: (1) a ViT encoder (tokenizer + Transformer
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization](../../NeurIPS2025/llm_evaluation/hybridnorm_towards_stable_and_efficient_transformer_training_via_hybrid_normaliz.md)
@@ -139,5 +141,7 @@ CryoHype consists of five components: (1) a ViT encoder (tokenizer + Transformer
 - [\[NeurIPS 2025\] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era](../../NeurIPS2025/llm_evaluation/towards_implicit_aggregation_robust_image_representation_for_place_recognition_i.md)
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](unified_primitive_proxies_for_structured_shape_completion.md)
 - [\[CVPR 2026\] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark](cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark.md)
+
+</div>
 
 <!-- RELATED:END -->

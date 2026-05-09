@@ -129,6 +129,8 @@ CLewR is compatible with three preference optimization algorithms: DPOP (enhance
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] SCRAPL: Scattering Transform with Random Paths for Machine Learning](../../ICLR2026/optimization/scrapl_scattering_transform_with_random_paths_for_machine_learning.md)
@@ -136,5 +138,7 @@ CLewR is compatible with three preference optimization algorithms: DPOP (enhance
 - [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](../../ICLR2026/optimization/frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)
 - [\[ICLR 2026\] When to Restart? Exploring Escalating Restarts on Convergence](../../ICLR2026/optimization/when_to_restart_exploring_escalating_restarts_on_convergence.md)
 - [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](../../AAAI2026/optimization/data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

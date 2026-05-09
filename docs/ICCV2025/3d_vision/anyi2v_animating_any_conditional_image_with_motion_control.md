@@ -137,6 +137,8 @@ Note: DragAnything and similar methods require training (achieving a better FID 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)
@@ -144,5 +146,7 @@ Note: DragAnything and similar methods require training (achieving a better FID 
 - [\[ICCV 2025\] CMT: A Cascade MAR with Topology Predictor for Multimodal Conditional CAD Generation](cmt_a_cascade_mar_with_topology_predictor_for_multimodal_conditional_cad_generat.md)
 - [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
 - [\[ICCV 2025\] Estimating 2D Camera Motion with Hybrid Motion Basis](estimating_2d_camera_motion_with_hybrid_motion_basis.md)
+
+</div>
 
 <!-- RELATED:END -->

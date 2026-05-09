@@ -123,6 +123,8 @@ The core pipeline requires no training. Optional fine-tuning: InstructPix2Pix is
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](../../ACL2026/llm_safety/adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
@@ -130,5 +132,7 @@ The core pipeline requires no training. Optional fine-tuning: InstructPix2Pix is
 - [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
 - [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](../../ACL2026/llm_safety/de-anonymization_at_scale_via_tournament-style_attribution.md)
 - [\[ACL 2026\] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization](../../ACL2026/llm_safety/look_twice_before_you_leap_a_rational_framework_for_localized_adversarial_anonym.md)
+
+</div>
 
 <!-- RELATED:END -->

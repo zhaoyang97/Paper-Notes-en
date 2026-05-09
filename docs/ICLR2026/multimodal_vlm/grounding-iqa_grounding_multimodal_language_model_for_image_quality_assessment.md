@@ -121,6 +121,8 @@ A four-stage automatic annotation pipeline constructs the GIQA-160K dataset, upo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
@@ -128,5 +130,7 @@ A four-stage automatic annotation pipeline constructs the GIQA-160K dataset, upo
 - [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
 - [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](../../CVPR2026/multimodal_vlm/groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
 - [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](../../CVPR2026/multimodal_vlm/timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
+
+</div>
 
 <!-- RELATED:END -->

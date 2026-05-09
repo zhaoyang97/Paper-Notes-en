@@ -154,6 +154,8 @@ Test-phase performance — model assignment for new unlabeled clients:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing](../../ICCV2025/ai_safety/client2vec_improving_federated_learning_by_distribution_shifts_aware_client_inde.md)
@@ -161,5 +163,7 @@ Test-phase performance — model assignment for new unlabeled clients:
 - [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](cost_efficient_fairness_audit_under_partial_feedback.md)
 - [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -127,6 +127,8 @@ SYMPHONY introduces four key components into the standard MCTS framework: (1) a 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](large_language_models_miss_the_multi-agent_mark.md)
@@ -134,5 +136,7 @@ SYMPHONY introduces four key components into the standard MCTS framework: (1) a 
 - [\[NeurIPS 2025\] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL](planning_without_search_refining_frontier_llms_with_offline_goal-conditioned_rl.md)
 - [\[NeurIPS 2025\] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths](encompass_enhancing_agent_programming_with_search_over_program_execution_paths.md)
 - [\[ACL 2026\] Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration](../../ACL2026/llm_nlp/towards_robust_real-world_spreadsheet_understanding_with_multi-agent_multi-forma.md)
+
+</div>
 
 <!-- RELATED:END -->

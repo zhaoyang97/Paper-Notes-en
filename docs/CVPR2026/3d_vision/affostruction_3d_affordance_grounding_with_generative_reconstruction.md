@@ -122,6 +122,8 @@ Multi-view RGBD → DINOv2 feature extraction + depth projection to 3D → Spars
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Scene Grounding In the Wild](scene_grounding_in_the_wild.md)
@@ -129,5 +131,7 @@ Multi-view RGBD → DINOv2 feature extraction + depth projection to 3D → Spars
 - [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
 - [\[CVPR 2026\] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction](fluidgaussian_propagating_simulation-based_uncertainty_toward_functionally-intel.md)
 - [\[CVPR 2026\] From Orbit to Ground: Generative City Photogrammetry from Extreme Off-Nadir Satellite Images](from_orbit_to_ground_generative_city_photogrammetry_from_extreme_off-nadir_satel.md)
+
+</div>
 
 <!-- RELATED:END -->

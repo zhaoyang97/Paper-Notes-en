@@ -123,6 +123,8 @@ No training is required; the method is entirely solved in closed form. Threshold
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
@@ -130,5 +132,7 @@ No training is required; the method is entirely solved in closed form. Threshold
 - [\[ICLR 2026\] Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation](learning_part-aware_dense_3d_feature_field_for_generalizable_articulated_object_.md)
 - [\[ICCV 2025\] CF³: Compact and Fast 3D Feature Fields](../../ICCV2025/3d_vision/cf3_compact_and_fast_3d_feature_fields.md)
 - [\[NeurIPS 2025\] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting](../../NeurIPS2025/3d_vision/segment_then_splat_unified_3d_open-vocabulary_segmentation_via_gaussian_splattin.md)
+
+</div>
 
 <!-- RELATED:END -->

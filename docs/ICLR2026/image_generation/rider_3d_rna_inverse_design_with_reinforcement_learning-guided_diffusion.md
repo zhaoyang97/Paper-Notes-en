@@ -143,6 +143,8 @@ Replacing RhoFold with AlphaFold3 as the folding oracle to assess generalizabili
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
@@ -150,5 +152,7 @@ Replacing RhoFold with AlphaFold3 as the folding oracle to assess generalizabili
 - [\[ICLR 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Diffusion-Based Electromagnetic Inverse Design of Scattering Structured Media](../../NeurIPS2025/image_generation/diffusion-based_electromagnetic_inverse_design_of_scattering_structured_media.md)
+
+</div>
 
 <!-- RELATED:END -->

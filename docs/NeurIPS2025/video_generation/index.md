@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **23** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (60)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [📹 ICCV2025 (51)](../../ICCV2025/video_generation/index.md)
+
+🔥 **Top topics:** Video Generation ×12 · Diffusion Models ×6
+
 **[Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](autoregressive_adversarial_posttraining_for_realtime_interac.md)**
 
 :   This paper proposes AAPT (Autoregressive Adversarial Post-Training), which converts a pretrained video diffusion model into an autoregressive real-time video generator via adversarial training. The model requires only one forward pass per frame (1NFE), employs student-forcing training to reduce error accumulation, and achieves real-time streaming generation at 736×416 resolution and 24fps on a single H100 GPU, supporting videos up to one minute in length (1440 frames).

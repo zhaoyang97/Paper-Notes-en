@@ -143,6 +143,8 @@ Plug-and-play validation (different base retrievers):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration](explore_with_long-term_memory_a_benchmark_and_multimodal_llm-based_reinforcement.md)
@@ -150,5 +152,7 @@ Plug-and-play validation (different base retrievers):
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](../../ICLR2026/multimodal_vlm/reasoning-driven_multimodal_llm_for_domain_generalization.md)
 - [\[ICLR 2026\] Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation](../../ICLR2026/multimodal_vlm/small_drafts_big_verdict_information-intensive_visual_reasoning_via_speculation.md)
 - [\[CVPR 2026\] TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval](tiger_a_unified_framework_for_time_images_and_geo-location_retrieval.md)
+
+</div>
 
 <!-- RELATED:END -->

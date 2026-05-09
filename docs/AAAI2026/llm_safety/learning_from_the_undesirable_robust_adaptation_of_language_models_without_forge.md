@@ -144,6 +144,8 @@ $$\ell_{\text{LfU}}(\theta, \theta_{\text{aux}}) = \ell_{\text{SFT}}(\theta) + \
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
@@ -151,5 +153,7 @@ $$\ell_{\text{LfU}}(\theta, \theta_{\text{aux}}) = \ell_{\text{SFT}}(\theta) + \
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
 - [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
 - [\[AAAI 2026\] Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models](hallucination_stations_on_some_basic_limitations_of_transformer-based_language_m.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -142,6 +142,8 @@ Comparison of exploration strategies (cumulative regret, T=5000, K=8):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning](stair_addressing_stage_misalignment_through_temporal-aligned_preference_reinforc.md)
@@ -149,5 +151,7 @@ Comparison of exploration strategies (cumulative regret, T=5000, K=8):
 - [\[AAAI 2026\] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning](../../AAAI2026/reinforcement_learning/beyond_monotonicity_revisiting_factorization_principles_in_multi-agent_q-learnin.md)
 - [\[NeurIPS 2025\] Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning](learning_to_focus_prioritizing_informative_histories_with_structured_attention_m.md)
 - [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
+
+</div>
 
 <!-- RELATED:END -->

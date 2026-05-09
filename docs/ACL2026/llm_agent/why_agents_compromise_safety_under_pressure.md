@@ -126,6 +126,8 @@ Comparison of low-pressure vs. high-pressure conditions for different models und
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents](../../AAAI2026/llm_agent/when_refusals_fail_unstable_safety_mechanisms_in_long-context_llm_agents.md)
@@ -133,5 +135,7 @@ Comparison of low-pressure vs. high-pressure conditions for different models und
 - [\[ICLR 2026\] Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals](../../ICLR2026/llm_agent/inherited_goal_drift_contextual_pressure_can_undermine_agentic_goals.md)
 - [\[NeurIPS 2025\] AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents](../../NeurIPS2025/llm_agent/agentauditor_humanlevel_safety_and_security_evaluation_for_l.md)
 - [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](../../AAAI2026/llm_agent/bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
+
+</div>
 
 <!-- RELATED:END -->

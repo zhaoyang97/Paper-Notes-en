@@ -123,6 +123,8 @@ This is a purely theoretical paper with no experimental section. The core theore
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](the_parameterized_complexity_of_computing_the_vc-dimension.md)
@@ -130,5 +132,7 @@ This is a purely theoretical paper with no experimental section. The core theore
 - [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
 - [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](../../AAAI2026/others/structural_approach_to_guiding_a_present-biased_agent.md)
 - [\[ICCV 2025\] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations](../../ICCV2025/others/on_the_complexity-faithfulness_trade-off_of_gradient-based_explanations.md)
+
+</div>
 
 <!-- RELATED:END -->

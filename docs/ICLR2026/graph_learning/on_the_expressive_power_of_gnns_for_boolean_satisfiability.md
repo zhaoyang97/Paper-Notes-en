@@ -159,6 +159,8 @@ Of 448 competition instances, only 234 are solvable by WL; among 69 families, 38
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](../../NeurIPS2025/graph_learning/graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
@@ -166,5 +168,7 @@ Of 448 competition instances, only 234 are solvable by WL; among 69 families, 38
 - [\[ICLR 2026\] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs](structurally_human_semantically_biased_detecting_llm-generated_references_with_e.md)
 - [\[NeurIPS 2025\] The Underappreciated Power of Vision Models for Graph Structural Understanding](../../NeurIPS2025/graph_learning/the_underappreciated_power_of_vision_models_for_graph_structural_understanding.md)
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](../../AAAI2026/graph_learning/enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
+
+</div>
 
 <!-- RELATED:END -->

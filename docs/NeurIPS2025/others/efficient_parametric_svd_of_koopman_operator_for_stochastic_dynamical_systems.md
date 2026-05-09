@@ -145,6 +145,8 @@ The LoRA idea generalizes low-rank matrix approximation to operator low-rank app
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems](an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_.md)
@@ -152,5 +154,7 @@ The LoRA idea generalizes low-rank matrix approximation to operator low-rank app
 - [\[AAAI 2026\] SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels](../../AAAI2026/others/svd-no_learning_pde_solution_operators_with_svd_integral_kernels.md)
 - [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
+
+</div>
 
 <!-- RELATED:END -->

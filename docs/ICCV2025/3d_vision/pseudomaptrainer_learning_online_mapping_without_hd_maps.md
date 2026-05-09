@@ -164,6 +164,8 @@ The core challenge of pseudo labels lies in **partial observability**: due to oc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
@@ -171,5 +173,7 @@ The core challenge of pseudo labels lies in **partial observability**: due to oc
 - [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
 - [\[ICCV 2025\] Online Language Splatting](online_language_splatting.md)
 - [\[ICCV 2025\] IM360: Large-scale Indoor Mapping with 360 Cameras](im360_large-scale_indoor_mapping_with_360_cameras.md)
+
+</div>
 
 <!-- RELATED:END -->

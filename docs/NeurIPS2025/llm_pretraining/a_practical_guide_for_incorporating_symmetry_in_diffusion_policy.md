@@ -127,6 +127,8 @@ The input consists of a single RGB image from an eye-in-hand camera and the robo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Deep Compositional Phase Diffusion for Long Motion Sequence Generation](deep_compositional_phase_diffusion_for_long_motion_sequence_generation.md)
@@ -134,5 +136,7 @@ The input consists of a single RGB image from an eye-in-hand camera and the robo
 - [\[ICLR 2026\] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization](../../ICLR2026/llm_pretraining/recon_robust_symmetry_discovery_via_explicit_canonical_orientation_normalization.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[NeurIPS 2025\] Conformal Risk Training: End-to-End Optimization of Conformal Risk Control](conformal_risk_training_end-to-end_optimization_of_conformal_risk_control.md)
+
+</div>
 
 <!-- RELATED:END -->

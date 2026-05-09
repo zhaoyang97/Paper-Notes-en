@@ -165,6 +165,8 @@ MMPFN achieves an average rank of 1.50 on image-tabular benchmarks and 1.75 on t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes](extending_zach-vit_to_robust_medical_imaging_corruption_and_adversarial_stress_t.md)
@@ -172,5 +174,7 @@ MMPFN achieves an average rank of 1.50 on image-tabular benchmarks and 1.75 on t
 - [\[CVPR 2026\] Multimodal Classification of Radiation-Induced Contrast Enhancements and Tumor Recurrence Using Deep Learning](multimodal_classification_of_radiationinduced_cont.md)
 - [\[AAAI 2026\] ConSurv: Multimodal Continual Learning for Survival Analysis](../../AAAI2026/medical_imaging/consurv_multimodal_continual_learning_for_survival_analysis.md)
 - [\[CVPR 2026\] GLEAM: A Multimodal Imaging Dataset and HAMM for Glaucoma Classification](gleam_a_multimodal_imaging_dataset_and_hamm_for_gl.md)
+
+</div>
 
 <!-- RELATED:END -->

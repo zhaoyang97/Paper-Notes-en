@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **38** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/llm_nlp/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_nlp/index.md)
+
+🔥 **Top topics:** LLM ×17 · Reasoning ×7 · Adversarial Robustness ×2 · Alignment/RLHF ×2 · Few-/Zero-Shot Learning ×2
+
 **[A Content-Preserving Secure Linguistic Steganography](a_content-preserving_secure_linguistic_steganography.md)**
 
 :   This paper proposes CLstega, the first content-preserving linguistic steganography paradigm, which embeds secret information into an unmodified cover text by fine-tuning a masked language model (MLM) to controllably transform its prediction distribution. The approach achieves a 100% extraction success rate and near-perfect security, with steganalysis detection accuracy approaching the random-guess baseline of 0.5.

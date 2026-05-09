@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **45** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (57)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (92)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (54)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (134)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/model_compression/index.md)
+
+🔥 **Top topics:** LLM ×11 · Model Compression ×3 · Agents ×3 · Compression ×3 · Reasoning ×3
+
 **[A Computational Method for Measuring "Open Codes" in Qualitative Analysis](a_computational_method_for_measuring_34open_codes34_in_qualitative_analysis.md)**
 
 :   This paper proposes a theoretically grounded computational framework that employs an LLM-augmented code merging algorithm alongside four ground-truth-free metrics (Coverage, Overlap, Novelty, and Divergence) to systematically evaluate the performance of both human and AI coders in inductive qualitative coding.

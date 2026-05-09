@@ -160,6 +160,8 @@ Experimental setup: $\sigma=0.1$, population size 20, 200 generations, 64 sample
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](approximation_algorithm_for_constrained_k-center_clustering_.md)
@@ -167,5 +169,7 @@ Experimental setup: $\sigma=0.1$, population size 20, 200 generations, 64 sample
 - [\[CVPR 2026\] Bounds on Agreement between Subjective and Objective Measurements](../../CVPR2026/others/bounds_on_agreement_between_subjective_and_objective_measurements.md)
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 - [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](online_linear_regression_with_paid_stochastic_features.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -161,6 +161,8 @@ The advantage is especially pronounced under large rotation angles (random sampl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Kuramoto Orientation Diffusion Models](kuramoto_orientation_diffusion_models.md)
@@ -168,5 +170,7 @@ The advantage is especially pronounced under large rotation angles (random sampl
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
 - [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
 - [\[ICLR 2026\] SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation](../../ICLR2026/image_generation/serum_simple_efficient_robust_and_unifying_marking_for_diffusion-based_image_gen.md)
+
+</div>
 
 <!-- RELATED:END -->

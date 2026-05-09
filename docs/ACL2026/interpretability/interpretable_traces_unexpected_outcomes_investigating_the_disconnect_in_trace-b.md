@@ -120,6 +120,8 @@ Results on the CoTemp QA dataset:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/interpretability/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
@@ -127,5 +129,7 @@ Results on the CoTemp QA dataset:
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 - [\[ICLR 2026\] Narrow Finetuning Leaves Clearly Readable Traces in Activation Differences](../../ICLR2026/interpretability/narrow_finetuning_leaves_clearly_readable_traces_in_activation_differences.md)
+
+</div>
 
 <!-- RELATED:END -->

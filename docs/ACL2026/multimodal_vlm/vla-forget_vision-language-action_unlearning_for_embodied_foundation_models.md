@@ -120,6 +120,8 @@ LoRA adapters are updated in staged order (visual → projector → reasoning/ac
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/multimodal_vlm/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
@@ -127,5 +129,7 @@ LoRA adapters are updated in staged order (visual → projector → reasoning/ac
 - [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](../../CVPR2026/multimodal_vlm/hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
 - [\[AAAI 2026\] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](../../AAAI2026/multimodal_vlm/ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)
 - [\[CVPR 2026\] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings](../../CVPR2026/multimodal_vlm/from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md)
+
+</div>
 
 <!-- RELATED:END -->

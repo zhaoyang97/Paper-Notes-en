@@ -132,6 +132,8 @@ Mixtral-8×7B-Instruct + EAGLE speculation head:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
@@ -139,5 +141,7 @@ Mixtral-8×7B-Instruct + EAGLE speculation head:
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
 - [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
 - [\[NeurIPS 2025\] Approximately Aligned Decoding](approximately_aligned_decoding.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -136,6 +136,8 @@ SceneDesigner introduces a ControlNet branch into pretrained Stable Diffusion 3.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data](osmgen_highly_controllable_satellite_image_synthesis_using_openstreetmap_data.md)
@@ -143,5 +145,7 @@ SceneDesigner introduces a ControlNet branch into pretrained Stable Diffusion 3.
 - [\[AAAI 2026\] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation](../../AAAI2026/image_generation/dos_directional_object_separation_in_text_embeddings_for_mul.md)
 - [\[NeurIPS 2025\] Text to Sketch Generation with Multi-Styles](text_to_sketch_generation_with_multi-styles.md)
 - [\[NeurIPS 2025\] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising](two-steps_diffusion_policy_for_robotic_manipulation_via_genetic_denoising.md)
+
+</div>
 
 <!-- RELATED:END -->

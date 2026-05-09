@@ -133,6 +133,8 @@ Overall assessment: The paper presents an elegant pure visual feedback agentic f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting](realm_an_mllm-agent_framework_for_open_world_3d_reasoning_segmentation_and_editi.md)
@@ -140,5 +142,7 @@ Overall assessment: The paper presents an elegant pure visual feedback agentic f
 - [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](../../ACL2026/llm_agent/diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
 - [\[CVPR 2026\] Gen-n-Val: Agentic Image Data Generation and Validation](gen_n_val_agentic_image_data_generation_and_validation.md)
 - [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](../../ICLR2026/llm_agent/physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
+
+</div>
 
 <!-- RELATED:END -->

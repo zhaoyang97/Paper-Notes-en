@@ -147,6 +147,8 @@ Performance gaps across all ablated components are more pronounced under the VAS
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](../../NeurIPS2025/interpretability/a_unified_reasoning_framework_for_holistic_zeroshot_video_an.md)
@@ -154,5 +156,7 @@ Performance gaps across all ablated components are more pronounced under the VAS
 - [\[ICCV 2025\] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning](../../ICCV2025/interpretability/svip_semantically_contextualized_visual_patches_for_zero-shot_learning.md)
 - [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](../../NeurIPS2025/interpretability/auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
 - [\[NeurIPS 2025\] Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning](../../NeurIPS2025/interpretability/cognitive_mirrors_exploring_the_diverse_functional_roles_of_attention_heads_in_l.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -126,6 +126,8 @@ Antibody's HS is more than 8 percentage points lower than the second-best method
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
@@ -133,5 +135,7 @@ Antibody's HS is more than 8 percentage points lower than the second-best method
 - [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](../../ACL2026/llm_alignment/safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
 - [\[NeurIPS 2025\] From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring](../../NeurIPS2025/llm_alignment/from_judgment_to_interference_early_stopping_llm_harmful_outputs_via_streaming_c.md)
+
+</div>
 
 <!-- RELATED:END -->

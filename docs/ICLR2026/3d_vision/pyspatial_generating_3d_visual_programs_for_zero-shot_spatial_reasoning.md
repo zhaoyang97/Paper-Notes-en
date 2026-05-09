@@ -153,6 +153,8 @@ Even in the single-view setting, pySpatial surpasses GPT-4o and all visual progr
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation](../../CVPR2026/3d_vision/context-nav_context-driven_exploration_and_viewpoint-aware_3d_spatial_reasoning_.md)
@@ -160,5 +162,7 @@ Even in the single-view setting, pySpatial surpasses GPT-4o and all visual progr
 - [\[ICCV 2025\] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields](../../ICCV2025/3d_vision/geoprog3d_compositional_visual_reasoning_for_city-scale_3d_language_fields.md)
 - [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](../../CVPR2026/3d_vision/learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
 - [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](../../ICCV2025/3d_vision/monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

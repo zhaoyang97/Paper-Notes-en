@@ -149,6 +149,8 @@ The attacker VLM $\mathcal{M}_\mathcal{A}$ (MiniGPT-4) receives a jailbreak goal
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
@@ -156,5 +158,7 @@ The attacker VLM $\mathcal{M}_\mathcal{A}$ (MiniGPT-4) receives a jailbreak goal
 - [\[ICCV 2025\] GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks](geobench-vlm_benchmarking_vision-language_models_for_geospatial_tasks.md)
 - [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
 - [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -226,6 +226,8 @@ AVATAR vs. GRPO on Qwen2.5-Omni: OmniBench +3.7, Video-Holmes +1.9, while requir
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
@@ -233,5 +235,7 @@ AVATAR vs. GRPO on Qwen2.5-Omni: OmniBench +3.7, Video-Holmes +1.9, while requir
 - [\[CVPR 2026\] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training](rppg_vqa_video_quality_assessment.md)
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
 - [\[CVPR 2026\] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision](flexavatar_learning_complete_3d_head_avatars_with_partial_supervision.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -132,6 +132,8 @@ $$\text{WMV}: \arg\max_{p_k}\sum_{y_i∈p_k}w_i, \quad w_i = V(x,y_i)$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
@@ -139,5 +141,7 @@ $$\text{WMV}: \arg\max_{p_k}\sum_{y_i∈p_k}w_i, \quad w_i = V(x,y_i)$$
 - [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
 - [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
 - [\[NeurIPS 2025\] Faithful Group Shapley Value](faithful_group_shapley_value.md)
+
+</div>
 
 <!-- RELATED:END -->

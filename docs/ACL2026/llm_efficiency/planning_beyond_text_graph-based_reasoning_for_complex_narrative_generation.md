@@ -57,6 +57,8 @@ Three evaluation agents exhibit strong synergy — +29% storyline, +34% script w
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](../../AAAI2026/llm_efficiency/the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
@@ -64,5 +66,7 @@ Three evaluation agents exhibit strong synergy — +29% storyline, +34% script w
 - [\[AAAI 2026\] InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE](../../AAAI2026/llm_efficiency/intermoe_individual-specific_3d_human_interaction_generation_via_dynamic_tempora.md)
 - [\[NeurIPS 2025\] Unmasking COVID-19 Vulnerability in Nigeria: Mapping Risks Beyond Urban Hotspots](../../NeurIPS2025/llm_efficiency/unmasking_covid-19_vulnerability_in_nigeria_mapping_risks_beyond_urban_hotspots.md)
 - [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](../../NeurIPS2025/llm_efficiency/l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
+
+</div>
 
 <!-- RELATED:END -->

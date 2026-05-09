@@ -144,6 +144,8 @@ Intra-ROI shuffle test (validating inter-voxel diversity):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/3d_vision/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
@@ -151,5 +153,7 @@ Intra-ROI shuffle test (validating inter-voxel diversity):
 - [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
 - [\[CVPR 2026\] ArtLLM: Generating Articulated Assets via 3D LLM](../../CVPR2026/3d_vision/artllm_generating_articulated_assets_via_3d_llm.md)
 - [\[AAAI 2026\] NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling](../../AAAI2026/3d_vision/nurbgen_high-fidelity_text-to-cad_generation_through_llm-driven_nurbs_modeling.md)
+
+</div>
 
 <!-- RELATED:END -->

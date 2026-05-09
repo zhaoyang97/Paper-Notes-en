@@ -129,6 +129,8 @@ ScaleEdit operates entirely via test-time optimization with no training required
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultra-fast_training-free_high-resolution_image_generation_via_one-step.md)
@@ -136,5 +138,7 @@ ScaleEdit operates entirely via test-time optimization with no training required
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
 - [\[ICLR 2026\] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration](../../ICLR2026/image_generation/eliminating_vae_for_fast_and_high-resolution_generative_detail_restoration.md)
 - [\[CVPR 2026\] ExpressEdit: Fast Editing of Stylized Facial Expressions with Diffusion Models in Photoshop](expressedit_fast_editing_of_stylized_facial_expressions_with_diffusion_models_in.md)
+
+</div>
 
 <!-- RELATED:END -->

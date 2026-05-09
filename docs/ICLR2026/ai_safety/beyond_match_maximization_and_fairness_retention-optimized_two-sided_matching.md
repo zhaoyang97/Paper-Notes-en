@@ -138,6 +138,8 @@ Real-world data experiments (large Japanese dating platform, 1000 males × 1000 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation](../../AAAI2026/ai_safety/matrix-free_two-to-infinity_and_one-to-two_norms_estimation.md)
@@ -145,5 +147,7 @@ Real-world data experiments (large Japanese dating platform, 1000 males × 1000 
 - [\[ICLR 2026\] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?](bridging_fairness_and_explainability_can_input-based_explanations_promote_fairne.md)
 - [\[AAAI 2026\] EFX and PO Allocation Exists for Two Types of Goods](../../AAAI2026/ai_safety/efx_and_po_allocation_exists_for_two_types_of_goods.md)
 - [\[NeurIPS 2025\] Locally Optimal Private Sampling: Beyond the Global Minimax](../../NeurIPS2025/ai_safety/locally_optimal_private_sampling_beyond_the_global_minimax.md)
+
+</div>
 
 <!-- RELATED:END -->

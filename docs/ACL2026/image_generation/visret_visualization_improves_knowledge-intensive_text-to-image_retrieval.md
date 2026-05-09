@@ -148,6 +148,8 @@ VisRet is a training-free, plug-and-play method that requires no modification to
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs](../../AAAI2026/image_generation/truthfulrag_resolving_factual-level_conflicts_in_retrieval-augmented_generation_.md)
@@ -155,5 +157,7 @@ VisRet is a training-free, plug-and-play method that requires no modification to
 - [\[ICLR 2026\] Neon: Negative Extrapolation From Self-Training Improves Image Generation](../../ICLR2026/image_generation/neon_negative_extrapolation_image_generation.md)
 - [\[AAAI 2026\] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval](../../AAAI2026/image_generation/hyperbolic_hierarchical_alignment_reasoning_network_for_text-3d_retrieval.md)
 - [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](../../CVPR2026/image_generation/vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
+
+</div>
 
 <!-- RELATED:END -->

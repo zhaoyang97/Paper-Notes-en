@@ -143,6 +143,8 @@ On SynthScars, LEGION surpasses the strongest traditional expert (PAL4VST) by **
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
@@ -150,5 +152,7 @@ On SynthScars, LEGION surpasses the strongest traditional expert (PAL4VST) by **
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[ICCV 2025\] Online Generic Event Boundary Detection](online_generic_event_boundary_detection.md)
 - [\[NeurIPS 2025\] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas](../../NeurIPS2025/segmentation/self-supervised_synthetic_pretraining_for_inference_of_stellar_mass_embedded_in_.md)
+
+</div>
 
 <!-- RELATED:END -->

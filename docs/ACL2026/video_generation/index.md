@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **3** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (60)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (51)](../../ICCV2025/video_generation/index.md)
+
+🔥 **Top topics:** Video Generation ×3
+
 **[Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity](accelerating_training_of_autoregressive_video_generation_models_via_local_optimi.md)**
 
 :   This paper proposes a Local Optimization + Representation Continuity (ReCo) training strategy that optimizes within local windows while constraining smooth transitions of hidden states, achieving 2× training speedup for autoregressive video generation models without sacrificing generation quality.

@@ -160,6 +160,8 @@ where $\mathcal{L}_{\text{task}}$ is the student's classification cross-entropy 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
@@ -167,5 +169,7 @@ where $\mathcal{L}_{\text{task}}$ is the student's classification cross-entropy 
 - [\[AAAI 2026\] DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation](dos_distilling_observable_softmaps_of_zipfian_prototypes_for_self-supervised_poi.md)
 - [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
 - [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
+
+</div>
 
 <!-- RELATED:END -->

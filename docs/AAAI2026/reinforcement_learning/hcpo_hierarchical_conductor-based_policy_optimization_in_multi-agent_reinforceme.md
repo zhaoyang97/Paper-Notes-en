@@ -105,6 +105,8 @@ Evaluated on 5 maps (5 seeds), HCPO achieves a 90% win rate first on all maps wi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning](behaviour_policy_optimization_provably_lower_variance_return_estimates_for_off-p.md)
@@ -112,5 +114,7 @@ Evaluated on 5 maps (5 seeds), HCPO achieves a 90% win rate first on all maps wi
 - [\[AAAI 2026\] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction](thinker_training_llms_in_hierarchical_thinking_for_deep_search_via_multi-turn_in.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 - [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
+
+</div>
 
 <!-- RELATED:END -->

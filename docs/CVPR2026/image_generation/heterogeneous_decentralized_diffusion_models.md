@@ -168,6 +168,8 @@ A threshold of 0.2 achieves optimal FID (38.28), while a threshold of 0.5 yields
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
@@ -175,5 +177,7 @@ A threshold of 0.2 achieves optimal FID (38.28), while a threshold of 0.5 yields
 - [\[ICCV 2025\] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning](../../ICCV2025/image_generation/feddifrc_unlocking_the_potential_of_text-to-image_diffusion_models_in_heterogene.md)
 - [\[NeurIPS 2025\] Pragmatic Heterogeneous Collaborative Perception via Generative Communication Mechanism](../../NeurIPS2025/image_generation/pragmatic_heterogeneous_collaborative_perception_via_generative_communication_me.md)
 - [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
+
+</div>
 
 <!-- RELATED:END -->

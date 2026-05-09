@@ -130,6 +130,8 @@ Stage 1: $\mathcal{L}_{sft} = \mathbb{E}[(1 + \lambda_1 \mathbf{M}) \cdot \|\eps
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)
@@ -137,5 +139,7 @@ Stage 1: $\mathcal{L}_{sft} = \mathbb{E}[(1 + \lambda_1 \mathbf{M}) \cdot \|\eps
 - [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](consistcompose_multimodal_layout_control.md)
 - [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
 - [\[CVPR 2026\] PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards](psr_scaling_multi-subject_personalized_image_generation_with_pairwise_subject-co.md)
+
+</div>
 
 <!-- RELATED:END -->

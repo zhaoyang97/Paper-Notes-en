@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **35** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/time_series/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+
+🔥 **Top topics:** Time-Series Forecasting ×25 · LLM ×2
+
 **[A Theoretical Analysis of Detecting Large Model-Generated Time Series](a_theoretical_analysis_of_detecting_large_model-generated_time_series.md)**
 
 :   This work presents the first theoretical framework for detecting time series large model (TSLM)-generated content. By establishing the Contraction Hypothesis, it reveals that TSLM-generated sequences exhibit exponentially decaying uncertainty under recursive forecasting. Based on this insight, the proposed UCE detector achieves an in-distribution AUROC of 0.855 across 32 datasets, substantially outperforming 10 text-detection baselines.

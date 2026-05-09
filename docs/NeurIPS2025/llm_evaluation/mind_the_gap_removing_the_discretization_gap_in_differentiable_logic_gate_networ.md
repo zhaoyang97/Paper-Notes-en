@@ -156,6 +156,8 @@ Experiments are conducted on CIFAR-10 and CIFAR-100 with a default configuration
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Idiom Understanding as a Tool to Measure the Dialect Gap](../../ACL2026/llm_evaluation/idiom_understanding_as_a_tool_to_measure_the_dialect_gap.md)
@@ -163,5 +165,7 @@ Experiments are conducted on CIFAR-10 and CIFAR-100 with a default configuration
 - [\[ICLR 2026\] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](../../ICLR2026/llm_evaluation/simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)
 - [\[ICCV 2025\] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting](../../ICCV2025/llm_evaluation/sketchsplat_3d_edge_reconstruction_via_differentiable_multi-view_sketch_splattin.md)
 - [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](../../ICLR2026/llm_evaluation/improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

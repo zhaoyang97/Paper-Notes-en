@@ -129,6 +129,8 @@ Total loss: $\mathcal{L}_{\text{photo}} = \lambda_1 \mathcal{L}_1 + \lambda_{\te
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
@@ -136,5 +138,7 @@ Total loss: $\mathcal{L}_{\text{photo}} = \lambda_1 \mathcal{L}_1 + \lambda_{\te
 - [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
 - [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](../../ICLR2026/3d_vision/augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
 - [\[CVPR 2026\] SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM](sgad-slam_splatting_gaussians_at_adjusted_depth_for_better_radiance_fields_in_rg.md)
+
+</div>
 
 <!-- RELATED:END -->

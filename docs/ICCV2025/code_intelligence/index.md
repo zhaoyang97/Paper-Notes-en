@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **1** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (20)](../../ACL2026/code_intelligence/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/code_intelligence/index.md) · [🔬 ICLR2026 (23)](../../ICLR2026/code_intelligence/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/code_intelligence/index.md) · [🧠 NeurIPS2025 (22)](../../NeurIPS2025/code_intelligence/index.md)
+
 **[TikZero: Zero-Shot Text-Guided Graphics Program Synthesis](tikzero_zero-shot_text-guided_graphics_program_synthesis.md)**
 
 :   This paper proposes TikZero, which decouples graphics program generation from text understanding by using image representations as an intermediate bridge, enabling zero-shot text-guided TikZ graphics program synthesis without text-aligned training data. TikZero substantially outperforms baseline methods, and its end-to-end fine-tuned variant TikZero+ matches or surpasses large commercial models such as GPT-4o.

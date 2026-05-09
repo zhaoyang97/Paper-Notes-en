@@ -10,6 +10,8 @@ description: >-
 
 **🔬 ICLR2026** · **10** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/scientific_computing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/scientific_computing/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/scientific_computing/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/scientific_computing/index.md)
+
 **[Astral: Training Physics-Informed Neural Networks with Error Majorants](astral_training_physics-informed_neural_networks_with_error_majorants.md)**
 
 :   This paper proposes the Astral loss function — based on a functional a posteriori error majorant — as a replacement for the conventional residual loss in training physics-informed neural networks (PiNNs). The approach enables reliable error estimation throughout training and achieves superior or comparable accuracy across multiple PDE types, including diffusion and Maxwell equations.

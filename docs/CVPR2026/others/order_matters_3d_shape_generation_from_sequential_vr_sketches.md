@@ -149,6 +149,8 @@ Retaining only the first 50% of sketch points achieves performance close to that
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](../../ICLR2026/others/condition_matters_in_full-head_3d_gans.md)
@@ -156,5 +158,7 @@ Retaining only the first 50% of sketch points achieves performance close to that
 - [\[CVPR 2026\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
 - [\[AAAI 2026\] Higher-Order Responsibility](../../AAAI2026/others/higher-order_responsibility.md)
+
+</div>
 
 <!-- RELATED:END -->

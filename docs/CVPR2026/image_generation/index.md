@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **239** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/image_generation/index.md) · [🔬 ICLR2026 (154)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (246)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (219)](../../ICCV2025/image_generation/index.md)
+
+🔥 **Top topics:** Diffusion Models ×84 · Text-to-Image ×19 · Multimodal/VLM ×12 · Face & Gaze ×11 · Layout & Composition ×11
+
 **[2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching](2ndmatch_finetuning_pruned_diffusion_models_via_second-order_jacobian_matching.md)**
 
 :   This paper proposes 2ndMatch, a fine-tuning framework for pruned diffusion models that aligns the second-order Jacobian matrix $J^\top J$ between the pruned and original models—inspired by finite-time Lyapunov exponents (FTLE)—to match their sensitivity to input perturbations over time, thereby significantly closing the generation quality gap.

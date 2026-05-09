@@ -141,6 +141,8 @@ $$\mathcal{L} = \|\rho(\mathbf{z}, (T_k, \alpha_k)) - \mathcal{E}(\tau(\mathbf{x
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](../../NeurIPS2025/medical_imaging/towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
@@ -148,5 +150,7 @@ $$\mathcal{L} = \|\rho(\mathbf{z}, (T_k, \alpha_k)) - \mathcal{E}(\tau(\mathbf{x
 - [\[NeurIPS 2025\] Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing](../../NeurIPS2025/medical_imaging/generating_multi-table_time_series_ehr_from_latent_space_with_minimal_preprocess.md)
 - [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
 - [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](../../AAAI2026/medical_imaging/mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

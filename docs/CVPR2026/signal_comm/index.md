@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **5** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/signal_comm/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/signal_comm/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/signal_comm/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/signal_comm/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/signal_comm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×2
+
 **[AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](actta_rethinking_test-time_adaptation_via_dynamic_activation.md)**
 
 :   This paper proposes AcTTA, a test-time adaptation framework based on dynamic activation function modulation. By reparameterizing conventional fixed activation functions into a learnable form—incorporating an activation center shift and asymmetric gradient slopes—AcTTA adaptively adjusts activation behavior during inference to address distribution shift, consistently outperforming normalization-layer-based TTA methods on CIFAR10-C, CIFAR100-C, and ImageNet-C.

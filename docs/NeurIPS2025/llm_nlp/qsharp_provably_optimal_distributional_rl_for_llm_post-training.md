@@ -138,6 +138,8 @@ Q♯ is an iterative value function learning algorithm. At each round: (1) roll 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reparameterized LLM Training via Orthogonal Equivalence Transformation](reparameterized_llm_training_via_orthogonal_equivalence_transformation.md)
@@ -145,5 +147,7 @@ Q♯ is an iterative value function learning algorithm. At each round: (1) roll 
 - [\[NeurIPS 2025\] Post Hoc Regression Refinement via Pairwise Rankings](post_hoc_regression_refinement_via_pairwise_rankings.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
 - [\[NeurIPS 2025\] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL](planning_without_search_refining_frontier_llms_with_offline_goal-conditioned_rl.md)
+
+</div>
 
 <!-- RELATED:END -->

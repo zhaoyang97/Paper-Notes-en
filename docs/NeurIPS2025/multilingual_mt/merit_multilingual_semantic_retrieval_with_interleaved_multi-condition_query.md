@@ -121,6 +121,8 @@ This paper introduces MERIT, the first multilingual interleaved multi-condition 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity](../../ICLR2026/multilingual_mt/assess_autoformalization_eval.md)
@@ -128,5 +130,7 @@ This paper introduces MERIT, the first multilingual interleaved multi-condition 
 - [\[ACL 2026\] Unlocking the Edge: Multi-LoRA On-Device Deployment and Acceleration](../../ACL2026/multilingual_mt/unlocking_the_edge_deployment_and_ondevice_acceleration_of_multi-lora_enabled_on.md)
 - [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/multilingual_mt/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
 - [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -126,6 +126,8 @@ Standard cross-entropy loss is computed over non-structural tag tokens in the FM
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] ExpPortrait: Expressive Portrait Generation via Personalized Representation](expportrait_expressive_portrait_generation_via_personalized_representation.md)
@@ -133,5 +135,7 @@ Standard cross-entropy loss is computed over non-structural tag tokens in the FM
 - [\[CVPR 2026\] BiGain: Unified Token Compression for Joint Generation and Classification](bigain_token_compression.md)
 - [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](emf_meanflow_text_to_image.md)
 - [\[CVPR 2026\] CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation](cologen_progressive_learning_of_concept-localization_duality_for_unified_image_g.md)
+
+</div>
 
 <!-- RELATED:END -->

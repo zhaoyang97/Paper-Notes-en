@@ -158,6 +158,8 @@ APDM achieves a DINO score of only 0.1167 (vs. the best baseline of 0.4411), eve
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Anti-Tamper Protection for Unauthorized Individual Image Generation](../../ICCV2025/image_generation/anti-tamper_protection_for_unauthorized_individual_image_generation.md)
@@ -165,5 +167,7 @@ APDM achieves a DINO score of only 0.1167 (vs. the best baseline of 0.4411), eve
 - [\[NeurIPS 2025\] StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models](stableguard_towards_unified_copyright_protection_and_tamper_localization_in_late.md)
 - [\[NeurIPS 2025\] Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models](blameless_users_in_a_clean_room_defining_copyright_protection_for_generative_mod.md)
 - [\[NeurIPS 2025\] ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation](obclip_oblivious_cloud-device_hybrid_image_generation_with_privacy_preservation.md)
+
+</div>
 
 <!-- RELATED:END -->

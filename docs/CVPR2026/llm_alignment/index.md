@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **12** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/llm_alignment/index.md) · [🔬 ICLR2026 (42)](../../ICLR2026/llm_alignment/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/llm_alignment/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_alignment/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/llm_alignment/index.md)
+
+🔥 **Top topics:** Alignment/RLHF ×8 · Multimodal/VLM ×2
+
 **[Bases of Steerable Kernels for Equivariant CNNs: From 2D Rotations to the Lorentz Group](bases_of_steerable_kernels_for_equivariant_cnns_fr.md)**
 
 :   This paper proposes a method that bypasses Clebsch-Gordan (CG) coefficient computation and directly constructs explicit steerable kernel bases from group representation matrix elements. Through a three-step strategy of "stabilizer constraint + Schur's lemma + steering," it uniformly covers SO(2), O(2), SO(3), O(3), and the non-compact Lorentz group, substantially simplifying the kernel design pipeline for equivariant CNNs.

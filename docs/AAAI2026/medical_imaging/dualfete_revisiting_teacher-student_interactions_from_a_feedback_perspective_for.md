@@ -182,6 +182,8 @@ Table 3 further verifies that the feedback loss is not equivalent to consistency
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Weakly Supervised Teacher-Student Framework with Progressive Pseudo-mask Refinement for Gland Segmentation](../../CVPR2026/medical_imaging/weakly_supervised_teacher-student_framework_with_progressive_pseudo-mask_refinem.md)
@@ -189,5 +191,7 @@ Table 3 further verifies that the feedback loss is not equivalent to consistency
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
 - [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing.md)
 - [\[CVPR 2026\] SCDL: Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
+
+</div>
 
 <!-- RELATED:END -->

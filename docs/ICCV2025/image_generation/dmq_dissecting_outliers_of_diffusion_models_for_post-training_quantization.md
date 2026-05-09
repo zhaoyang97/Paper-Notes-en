@@ -161,6 +161,8 @@ Voting Algorithm vs. MSE-based selection (FFHQ W4A8):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/image_generation/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
@@ -168,5 +170,7 @@ Voting Algorithm vs. MSE-based selection (FFHQ W4A8):
 - [\[CVPR 2026\] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models](../../CVPR2026/image_generation/segquant_a_semantics-aware_and_generalizable_quantization_framework_for_diffusio.md)
 - [\[ICCV 2025\] Improved Noise Schedule for Diffusion Training](improved_noise_schedule_for_diffusion_training.md)
 - [\[ICCV 2025\] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features](introstyle_training-free_introspective_style_attribution_using_diffusion_feature.md)
+
+</div>
 
 <!-- RELATED:END -->

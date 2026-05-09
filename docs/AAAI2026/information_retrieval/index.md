@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **29** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/information_retrieval/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (30)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/information_retrieval/index.md)
+
+🔥 **Top topics:** RAG ×7 · Multimodal/VLM ×5 · LLM ×4 · Reasoning ×4 · Question Answering ×3
+
 **["As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations](as_eastern_powers_i_will_veto_an_investigation_of_nation-level_bias_of_large_lan.md)**
 
 :   This paper systematically investigates nation-level bias of LLMs in international relations, designing three bias evaluation paradigms (DirectQA, Association Test, Vote Simulation) grounded in real UN Security Council data. It reveals the multi-dimensional nature of such bias—varying across models and evaluation contexts—and proposes a RAG+Reflexion debiasing framework.

@@ -129,6 +129,8 @@ The L48 dataset is sourced from the Merlin Sound ID system covering recordings f
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Alexandria: A Multi-Domain Dialectal Arabic Machine Translation Dataset for Culturally Inclusive and Linguistically Diverse LLMs](../../ACL2026/audio_speech/alexandria_a_multi-domain_dialectal_arabic_machine_translation_dataset_for_cultu.md)
@@ -136,5 +138,7 @@ The L48 dataset is sourced from the Merlin Sound ID system covering recordings f
 - [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](multi-head_temporal_latent_attention.md)
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
 - [\[NeurIPS 2025\] Accelerate Creation of Product Claims Using Generative AI](accelerate_creation_of_product_claims_using_generative_ai.md)
+
+</div>
 
 <!-- RELATED:END -->

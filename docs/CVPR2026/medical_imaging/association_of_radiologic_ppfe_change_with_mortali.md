@@ -206,6 +206,8 @@ A retrospective longitudinal study: a deep learning model based on nnU-Net segme
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Novel Architecture of RPA in Oral Cancer Lesion Detection](novel_architecture_of_rpa_in_oral_cancer_lesion_de.md)
@@ -213,5 +215,7 @@ A retrospective longitudinal study: a deep learning model based on nnU-Net segme
 - [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
 - [\[CVPR 2026\] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation](sd_fsmis_adapting_stable_diffusion_for_few_shot_medical_image_segmentation.md)
 - [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
+
+</div>
 
 <!-- RELATED:END -->

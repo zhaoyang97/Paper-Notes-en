@@ -181,6 +181,8 @@ MuMo demonstrates substantially stronger robustness to conformational noise (onl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
@@ -188,5 +190,7 @@ MuMo demonstrates substantially stronger robustness to conformational noise (onl
 - [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
 - [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -120,6 +120,8 @@ Given an off-the-shelf PRM and a target LLM, a calibration dataset is constructe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
@@ -127,5 +129,7 @@ Given an off-the-shelf PRM and a target LLM, a calibration dataset is constructe
 - [\[NeurIPS 2025\] Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](stop_summation_minform_credit_assignment_is_all_process_rewa.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
 - [\[ACL 2026\] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](../../ACL2026/llm_reasoning/know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)
+
+</div>
 
 <!-- RELATED:END -->

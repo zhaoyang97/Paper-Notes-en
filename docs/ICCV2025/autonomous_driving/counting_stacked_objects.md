@@ -145,6 +145,8 @@ On real-world data, 3DC achieves 40% lower NAE than human voting (0.36 vs. 0.60)
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Referring Expression Comprehension for Small Objects](referring_expression_comprehension_for_small_objects.md)
@@ -152,5 +154,7 @@ On real-world data, 3DC achieves 40% lower NAE than human voting (0.36 vs. 0.60)
 - [\[CVPR 2026\] SABER: Spatially Consistent 3D Universal Adversarial Objects for BEV Detectors](../../CVPR2026/autonomous_driving/saber_spatially_consistent_3d_universal_adversarial_objects_for_bev_detectors.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
 - [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
+
+</div>
 
 <!-- RELATED:END -->

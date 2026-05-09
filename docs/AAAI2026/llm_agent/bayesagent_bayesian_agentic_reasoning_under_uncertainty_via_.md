@@ -129,6 +129,8 @@ Latent variable analysis (A-OKVQA Clean vs. Noisy):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](../../ACL2026/llm_agent/bayesian_social_deduction_with_graph-informed_language_models.md)
@@ -136,5 +138,7 @@ Latent variable analysis (A-OKVQA Clean vs. Noisy):
 - [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](../../ACL2026/llm_agent/why_agents_compromise_safety_under_pressure.md)
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](history-aware_reasoning_for_gui_agents.md)
 - [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](../../ACL2026/llm_agent/uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
+
+</div>
 
 <!-- RELATED:END -->

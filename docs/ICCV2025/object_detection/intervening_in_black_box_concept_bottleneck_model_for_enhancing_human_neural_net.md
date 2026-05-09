@@ -128,6 +128,8 @@ $$S_i = \frac{1}{n} \sum_{k=1}^{n} E_{img}(C_k^{|}(i)) \times E_{text}(C^t)^T$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
@@ -135,5 +137,7 @@ $$S_i = \frac{1}{n} \sum_{k=1}^{n} E_{img}(C_k^{|}(i)) \times E_{text}(C^t)^T$$
 - [\[ICCV 2025\] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions](voccl3d_a_video_benchmark_dataset_for_3d_human_pose_and_shape_estimation_under_r.md)
 - [\[NeurIPS 2025\] DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding](../../NeurIPS2025/object_detection/detectiumfire_a_comprehensive_multi-modal_dataset_bridging_vision_and_language_f.md)
 - [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](../../NeurIPS2025/object_detection/mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ Adam optimizer, 70/15/15 split, balanced dataset. Robustness validated with dual
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
@@ -129,5 +131,7 @@ Adam optimizer, 70/15/15 split, balanced dataset. Robustness validated with dual
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](../../ACL2026/graph_learning/graph-based_alternatives_to_llms_for_human_simulation.md)
 - [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
 - [\[AAAI 2026\] Sentient: Detecting APTs Via Capturing Indirect Dependencies and Behavioral Logic](../../AAAI2026/graph_learning/sentient_detecting_apts_via_capturing_indirect_dependencies_and_behavioral_logic.md)
+
+</div>
 
 <!-- RELATED:END -->

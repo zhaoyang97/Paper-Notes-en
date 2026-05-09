@@ -193,6 +193,8 @@ On Pascal VOC + SBD semantic segmentation, integrating CuMPerLay into the segmen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ReCoN-Ipsundrum: An Inspectable Recurrent Persistence Loop Agent with Affect-Coupled Cognition](../../AAAI2026/medical_imaging/recon-ipsundrum_an_inspectable_recurrent_persistence_loop_agent_with_affect-coup.md)
@@ -200,5 +202,7 @@ On Pascal VOC + SBD semantic segmentation, integrating CuMPerLay into the segmen
 - [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](pvchat_personalized_video_chat_with_one-shot_learning.md)
 - [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
 - [\[ICCV 2025\] SimMLM: A Simple Framework for Multi-modal Learning with Missing Modality](simmlm_a_simple_framework_for_multi-modal_learning_with_missing_modality.md)
+
+</div>
 
 <!-- RELATED:END -->

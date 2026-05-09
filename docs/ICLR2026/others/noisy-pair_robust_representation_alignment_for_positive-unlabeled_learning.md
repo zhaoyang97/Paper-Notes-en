@@ -153,6 +153,8 @@ NcPU even surpasses supervised learning on CIFAR-10 (97.36 vs. 96.96), narrows t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] ANO: Faster is Better in Noisy Landscapes](ano_faster_is_better_in_noisy_landscape.md)
@@ -160,5 +162,7 @@ NcPU even surpasses supervised learning on CIFAR-10 (97.36 vs. 96.96), narrows t
 - [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
 - [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
+
+</div>
 
 <!-- RELATED:END -->

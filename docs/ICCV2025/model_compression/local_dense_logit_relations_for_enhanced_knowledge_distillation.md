@@ -145,6 +145,8 @@ CIFAR-100 heterogeneous architecture distillation (ResNet32×4→ShuffleNetV1):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
@@ -152,5 +154,7 @@ CIFAR-100 heterogeneous architecture distillation (ResNet32×4→ShuffleNetV1):
 - [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
 - [\[ICCV 2025\] Fuse Before Transfer: Knowledge Fusion for Heterogeneous Distillation](fuse_before_transfer_knowledge_fusion_for_heterogeneous_distillation.md)
 - [\[ICCV 2025\] ARGMatch: Adaptive Refinement Gathering for Efficient Dense Matching](argmatch_adaptive_refinement_gathering_for_efficient_dense_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

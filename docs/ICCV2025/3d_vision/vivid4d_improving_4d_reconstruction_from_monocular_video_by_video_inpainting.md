@@ -149,6 +149,8 @@ $$\mathcal{L} = \sum_{j=1}^N \sum_{t=1}^T (\lambda_r \mathcal{L}_\text{IV}^{t,j}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
@@ -156,5 +158,7 @@ $$\mathcal{L} = \sum_{j=1}^N \sum_{t=1}^T (\lambda_r \mathcal{L}_\text{IV}^{t,j}
 - [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](../../CVPR2026/3d_vision/4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
 - [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](from_image_to_video_an_empirical_study_of_diffusion_representations.md)
 - [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
+
+</div>
 
 <!-- RELATED:END -->

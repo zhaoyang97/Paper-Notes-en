@@ -173,6 +173,8 @@ The approach of "reformulating problem X as conditional generation" is broadly a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
@@ -180,5 +182,7 @@ The approach of "reformulating problem X as conditional generation" is broadly a
 - [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](../../ICCV2025/3d_vision/zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
 - [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](../../NeurIPS2025/3d_vision/va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

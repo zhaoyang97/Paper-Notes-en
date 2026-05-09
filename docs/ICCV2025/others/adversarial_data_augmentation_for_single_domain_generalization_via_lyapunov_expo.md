@@ -261,6 +261,8 @@ where $\tau(x;\omega)$ denotes a semantic transformation, $\lambda$ balances the
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](../../NeurIPS2025/others/how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
@@ -268,5 +270,7 @@ where $\tau(x;\omega)$ denotes a semantic transformation, $\lambda$ balances the
 - [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
 - [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
 - [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](../../NeurIPS2025/others/impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

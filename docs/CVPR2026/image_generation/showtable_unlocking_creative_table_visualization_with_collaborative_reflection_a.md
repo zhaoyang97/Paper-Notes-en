@@ -134,6 +134,8 @@ Three automated data pipelines are employed: (1) *Rewriting data*: 30K table →
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow](psdesigner_automated_graphic_design_with_a_human-like_creative_workflow.md)
@@ -141,5 +143,7 @@ Three automated data pipelines are employed: (1) *Rewriting data*: 30K table →
 - [\[CVPR 2026\] RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment](raise_requirement-adaptive_evolutionary_refinement_for_training-free_text-to-ima.md)
 - [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](../../ACL2026/image_generation/visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
 - [\[ICLR 2026\] From Prediction to Perfection: Introducing Refinement to Autoregressive Image Generation](../../ICLR2026/image_generation/from_prediction_to_perfection_introducing_refinement_to_autoregressive_image_gen.md)
+
+</div>
 
 <!-- RELATED:END -->

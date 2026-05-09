@@ -123,6 +123,8 @@ A key finding is that an adjacent swap in permutation space corresponds to swapp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](../../NeurIPS2025/others/double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
@@ -130,5 +132,7 @@ A key finding is that an adjacent swap in permutation space corresponds to swapp
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](improved_differentially_private_algorithms_for_rank_aggregation.md)
 - [\[AAAI 2026\] Parameterized Approximation Algorithms for TSP on Non-Metric Graphs](parameterized_approximation_algorithms_for_tsp_on_non-metric_graphs.md)
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
+
+</div>
 
 <!-- RELATED:END -->

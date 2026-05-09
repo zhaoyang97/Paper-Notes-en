@@ -160,6 +160,8 @@ Total loss: $\mathcal{L} = \mathcal{L}_{\text{InfoNCE}}(f_i, f_j) + \mathcal{L}_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation](perspective-aware_teaching_adapting_knowledge_for_heterogeneous_distillation.md)
@@ -167,5 +169,7 @@ Total loss: $\mathcal{L} = \mathcal{L}_{\text{InfoNCE}}(f_i, f_j) + \mathcal{L}_
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](a_good_teacher_adapts_their_knowledge_for_distillation.md)
 - [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
 - [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](../../ICLR2026/model_compression/knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
+
+</div>
 
 <!-- RELATED:END -->

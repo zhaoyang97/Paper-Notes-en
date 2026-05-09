@@ -144,6 +144,8 @@ Effect of nuisance estimation quality on final performance:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees](mess_dynamically_learned_inference-time_llm_routing_in_model_zoos_with_service_l.md)
@@ -151,5 +153,7 @@ Effect of nuisance estimation quality on final performance:
 - [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](doubly_robust_alignment_for_large_language_models.md)
 - [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
 - [\[NeurIPS 2025\] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees](verbalized_algorithms.md)
+
+</div>
 
 <!-- RELATED:END -->

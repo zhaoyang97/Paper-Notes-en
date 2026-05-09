@@ -127,6 +127,8 @@ Historical multi-frame images → image backbone feature extraction → deformab
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
@@ -134,5 +136,7 @@ Historical multi-frame images → image backbone feature extraction → deformab
 - [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[ICLR 2026\] Astra: General Interactive World Model with Autoregressive Denoising](../../ICLR2026/autonomous_driving/astra_general_interactive_world_model_with_autoregressive_denoising.md)
 - [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
+
+</div>
 
 <!-- RELATED:END -->

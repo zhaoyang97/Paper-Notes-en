@@ -167,6 +167,8 @@ G2L achieves the highest robustness index across all values of $k$, surpassing b
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
@@ -174,5 +176,7 @@ G2L achieves the highest robustness index across all values of $k$, surpassing b
 - [\[AAAI 2026\] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale](investigating_data_pruning_for_pretraining_biological_foundation_models_at_scale.md)
 - [\[AAAI 2026\] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)
 - [\[AAAI 2026\] Personalization of Large Foundation Models for Health Interventions](personalization_of_large_foundation_models_for_health_interventions.md)
+
+</div>
 
 <!-- RELATED:END -->

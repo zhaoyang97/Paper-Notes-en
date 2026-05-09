@@ -214,6 +214,8 @@ Training setup: 4× GeForce RTX 3090, AdamW optimizer, initial learning rate 3e-
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
@@ -221,5 +223,7 @@ Training setup: 4× GeForce RTX 3090, AdamW optimizer, initial learning rate 3e-
 - [\[CVPR 2026\] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective](../../CVPR2026/autonomous_driving/occufly_a_3d_vision_benchmark_for_semantic_scene_completion_from_the_aerial_pers.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](../../CVPR2026/autonomous_driving/sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
 - [\[NeurIPS 2025\] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance](../../NeurIPS2025/autonomous_driving/learning_temporal_3d_semantic_scene_completion_via_optical_flow_guidance.md)
+
+</div>
 
 <!-- RELATED:END -->

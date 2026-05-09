@@ -120,6 +120,8 @@ The training strategies of existing methods are not modified; only the solver is
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Splat Feature Solver](../../ICLR2026/3d_vision/splat_feature_solver.md)
@@ -127,5 +129,7 @@ The training strategies of existing methods are not modified; only the solver is
 - [\[CVPR 2026\] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)
 - [\[CVPR 2026\] MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction](mv-roma_from_pairwise_matching_into_multi-view_track_reconstruction.md)
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -211,6 +211,8 @@ SIC **outperforms** ProtoPNet and B-cos on **8 out of 9** interpretability metri
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification](../../NeurIPS2025/medical_imaging/firegnn_neuro-symbolic_graph_neural_networks_with_trainable_fuzzy_rules_for_inte.md)
@@ -218,5 +220,7 @@ SIC **outperforms** ProtoPNet and B-cos on **8 out of 9** interpretability metri
 - [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](../../NeurIPS2025/medical_imaging/random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
 - [\[ICCV 2025\] GECKO: Gigapixel Vision-Concept Contrastive Pretraining in Histopathology](gecko_gigapixel_vision-concept_contrastive_pretraining_in_histopathology.md)
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
+
+</div>
 
 <!-- RELATED:END -->

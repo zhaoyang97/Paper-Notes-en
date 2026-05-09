@@ -124,6 +124,8 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{ce} + \mathcal{L}_{\text{geometry}} 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] NTK-Guided Implicit Neural Teaching](ntk-guided_implicit_neural_teaching.md)
@@ -131,5 +133,7 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{ce} + \mathcal{L}_{\text{geometry}} 
 - [\[CVPR 2026\] No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency](no_calibration_no_depth_no_problem_cross-sensor_view_synthesis_with_3d_consisten.md)
 - [\[CVPR 2026\] TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast](tr2m_transferring_monocular_relative_depth_to_metric_depth_with_language_descrip.md)
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

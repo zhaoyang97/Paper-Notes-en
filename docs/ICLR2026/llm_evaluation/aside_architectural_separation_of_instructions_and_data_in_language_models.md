@@ -126,6 +126,8 @@ ASIDE's utility (AlpacaEval, SEP Utility) remains on par with the Vanilla baseli
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](../../AAAI2026/llm_evaluation/coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)
@@ -133,5 +135,7 @@ ASIDE's utility (AlpacaEval, SEP Utility) remains on par with the Vanilla baseli
 - [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](../../CVPR2026/llm_evaluation/reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
 - [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](tabstruct_measuring_structural_fidelity_of_tabular_data.md)
 - [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
+
+</div>
 
 <!-- RELATED:END -->

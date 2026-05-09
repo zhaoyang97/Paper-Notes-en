@@ -150,6 +150,8 @@ $$D_{\text{rank}}(c) = \Pr(X \in A_c^* \setminus A_c) + \Pr(X \in A_c \setminus 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
@@ -157,5 +159,7 @@ $$D_{\text{rank}}(c) = \Pr(X \in A_c^* \setminus A_c) + \Pr(X \in A_c \setminus 
 - [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](../../ICLR2026/llm_evaluation/lca_local_classifier_alignment_for_continual_learning.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
 - [\[NeurIPS 2025\] Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator](your_pre-trained_llm_is_secretly_an_unsupervised_confidence_calibrator.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -192,6 +192,8 @@ where $R_{task} = \omega_3 S_{acc} + \omega_4 S_{int} + \omega_5 S_{lang} + \ome
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
@@ -199,5 +201,7 @@ where $R_{task} = \omega_3 S_{acc} + \omega_4 S_{int} + \omega_5 S_{lang} + \ome
 - [\[ICLR 2026\] LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts](../../ICLR2026/reinforcement_learning/loongrl_rl_for_reasoning_long_contexts.md)
 - [\[AAAI 2026\] Object-Centric Latent Action Learning](object-centric_latent_action_learning.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
+
+</div>
 
 <!-- RELATED:END -->

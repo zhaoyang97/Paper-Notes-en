@@ -141,6 +141,8 @@ Training time to reach FID=4.22 is reduced by **2.1×** — the global token pre
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Spectral Image Tokenizer](spectral_image_tokenizer.md)
@@ -148,5 +150,7 @@ Training time to reach FID=4.22 is reduced by **2.1×** — the global token pre
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
 - [\[ICCV 2025\] Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling](music-aligned_holistic_3d_dance_generation_via_hierarchical_motion_modeling.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
+
+</div>
 
 <!-- RELATED:END -->

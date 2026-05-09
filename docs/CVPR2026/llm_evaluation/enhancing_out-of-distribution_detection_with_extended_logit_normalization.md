@@ -114,6 +114,8 @@ The sole training objective is $\mathcal{L}_{ELogitNorm}$, with **no additional 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries](../../AAAI2026/llm_evaluation/graph_out-of-distribution_detection_via_test-time_calibration_with_dual_dynamic_.md)
@@ -121,5 +123,7 @@ The sole training objective is $\mathcal{L}_{ELogitNorm}$, with **no additional 
 - [\[ICCV 2025\] DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection](../../ICCV2025/llm_evaluation/discopatch_taming_adversarially-driven_batch_statistics_for_improved_out-of-dist.md)
 - [\[CVPR 2026\] Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models](out_of_sight_out_of_mind_evaluating_state_evolutio.md)
 - [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](../../ICLR2026/llm_evaluation/optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
+
+</div>
 
 <!-- RELATED:END -->

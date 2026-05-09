@@ -98,6 +98,8 @@ Baselines are constructed using Qwen2.5-7B and Qwen2.5-7B-VL, fine-tuned on a 50
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
@@ -105,5 +107,7 @@ Baselines are constructed using Qwen2.5-7B and Qwen2.5-7B-VL, fine-tuned on a 50
 - [\[CVPR 2026\] BenDFM: A Taxonomy and Synthetic CAD Dataset for Manufacturability Assessment in Sheet Metal Bending](bendfm_a_taxonomy_and_synthetic_cad_dataset_for_ma.md)
 - [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
 - [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](omnifood8k_nutrition_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

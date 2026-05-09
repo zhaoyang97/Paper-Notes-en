@@ -127,6 +127,8 @@ The theoretical contribution is solid—formalizing practical constraints in LLM
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling](../../NeurIPS2025/llm_agent/shapecraft_llm_agents_for_structured_textured_and_interactive_3d_modeling.md)
@@ -134,5 +136,7 @@ The theoretical contribution is solid—formalizing practical constraints in LLM
 - [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
 - [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](../../ACL2026/llm_agent/coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
 - [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](../../ACL2026/llm_agent/codestruct_code_agents_over_structured_action_spaces.md)
+
+</div>
 
 <!-- RELATED:END -->

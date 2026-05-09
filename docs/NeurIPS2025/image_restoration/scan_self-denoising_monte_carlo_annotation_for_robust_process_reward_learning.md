@@ -133,6 +133,8 @@ where the label $\hat{y}_t$ adopts soft labels near error positions and is rewei
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes](moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc.md)
@@ -140,5 +142,7 @@ where the label $\hat{y}_t$ adopts soft labels near error positions and is rewei
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 - [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](../../ICCV2025/image_restoration/blind2sound_self-supervised_image_denoising_without_residual_noise.md)
 - [\[NeurIPS 2025\] The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model](the_effect_of_optimal_self-distillation_in_noisy_gaussian_mixture_model.md)
+
+</div>
 
 <!-- RELATED:END -->

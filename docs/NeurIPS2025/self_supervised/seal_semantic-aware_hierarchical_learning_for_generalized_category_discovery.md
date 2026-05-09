@@ -143,6 +143,8 @@ Total loss: $\mathcal{L}_{all} = \sum_h^H (\mathcal{L}_{\text{soft}_{rep}}^h + \
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](../../CVPR2026/self_supervised/omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
@@ -150,5 +152,7 @@ Total loss: $\mathcal{L}_{all} = \sum_h^H (\mathcal{L}_{\text{soft}_{rep}}^h + \
 - [\[NeurIPS 2025\] Disentangling Hyperedges through the Lens of Category Theory](disentangling_hyperedges_through_the_lens_of_category_theory.md)
 - [\[NeurIPS 2025\] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition](foundation_models_for_scientific_discovery_from_paradigm_enhancement_to_paradigm.md)
 - [\[NeurIPS 2025\] Know Thyself by Knowing Others: Learning Neuron Identity from Population Context](know_thyself_by_knowing_others_learning_neuron_identity_from_population_context.md)
+
+</div>
 
 <!-- RELATED:END -->

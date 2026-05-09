@@ -111,6 +111,8 @@ StageRoute is a two-tier hierarchical algorithm mirroring the problem's layered 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning](bots_a_unified_framework_for_bayesian_online_task_selection_in_llm_reinforcement.md)
@@ -118,5 +120,7 @@ StageRoute is a two-tier hierarchical algorithm mirroring the problem's layered 
 - [\[ACL 2026\] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models](../../ACL2026/llm_nlp/from_static_inference_to_dynamic_interaction_a_survey_of_streaming_large_languag.md)
 - [\[ACL 2026\] Losses that Cook: Topological Optimal Transport for Structured Recipe Generation](../../ACL2026/llm_nlp/losses_that_cook_topological_optimal_transport_for_structured_recipe_generation.md)
 - [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](../../NeurIPS2025/llm_nlp/qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
+
+</div>
 
 <!-- RELATED:END -->

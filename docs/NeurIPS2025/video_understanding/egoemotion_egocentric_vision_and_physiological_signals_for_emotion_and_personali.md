@@ -129,6 +129,8 @@ This paper introduces egoEMOTION — the first dataset combining egocentric visi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] egoPPG: Heart Rate Estimation from Eye-Tracking Cameras in Egocentric Systems to Benefit Downstream Vision Tasks](../../ICCV2025/video_understanding/egoppg_heart_rate_estimation_from_eye-tracking_cameras_in_egocentric_systems_to_.md)
@@ -136,5 +138,7 @@ This paper introduces egoEMOTION — the first dataset combining egocentric visi
 - [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
 - [\[NeurIPS 2025\] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition](grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog.md)
 - [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](egogazevqa_egocentric_gaze_guided_video_question_answering.md)
+
+</div>
 
 <!-- RELATED:END -->

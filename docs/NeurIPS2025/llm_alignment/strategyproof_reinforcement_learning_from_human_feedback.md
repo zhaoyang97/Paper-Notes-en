@@ -156,6 +156,8 @@ $$\text{SubOpt}(\hat{\pi}) \leq const \cdot \left(\sqrt{\frac{d\log(k/\delta)}{k
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
@@ -163,5 +165,7 @@ $$\text{SubOpt}(\hat{\pi}) \leq const \cdot \left(\sqrt{\frac{d\log(k/\delta)}{k
 - [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
 - [\[NeurIPS 2025\] Can DPO Learn Diverse Human Values? A Theoretical Scaling Law](can_dpo_learn_diverse_human_values_a_theoretical_scaling_law.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

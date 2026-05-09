@@ -120,6 +120,8 @@ $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{uns} + \mathcal{L}_{ind} + \math
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
@@ -127,5 +129,7 @@ $\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{uns} + \mathcal{L}_{ind} + \math
 - [\[NeurIPS 2025\] Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI](../../NeurIPS2025/medical_imaging/domain-adaptive_transformer_for_data-efficient_glioma_segmentation_in_sub-sahara.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](../../CVPR2026/medical_imaging/visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 - [\[AAAI 2026\] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification](federated_clip_for_resource-efficient_heterogeneous_medical_image_classification.md)
+
+</div>
 
 <!-- RELATED:END -->

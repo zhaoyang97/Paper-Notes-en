@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **24** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/ai_safety/index.md) · [📹 ICCV2025 (22)](../../ICCV2025/ai_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×12 · Federated Learning ×10 · Watermarking ×5 · Robotics ×3 · Multimodal/VLM ×3
+
 **[A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)**
 
 :   This work is the first to reveal the adversarial membership manipulation vulnerability in membership inference attacks (MIA) against vision models — imperceptible perturbations can forge non-members as members to deceive auditing. It identifies a gradient norm collapse signature in forged members, and proposes a gradient-geometry-based detection strategy (MFD) and an adversarially robust inference framework (AR-MIA).

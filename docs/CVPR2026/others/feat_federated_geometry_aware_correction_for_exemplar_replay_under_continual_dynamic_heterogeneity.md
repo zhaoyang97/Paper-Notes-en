@@ -96,6 +96,8 @@ $\mathcal{L} = \mathcal{L}_\text{CLS} + \lambda \cdot \mathcal{L}_\text{GSA}$. $
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning](../../AAAI2026/others/expandable_and_differentiable_dual_memories_with_orthogonal_regularization_for_e.md)
@@ -103,5 +105,7 @@ $\mathcal{L} = \mathcal{L}_\text{CLS} + \lambda \cdot \mathcal{L}_\text{GSA}$. $
 - [\[ICLR 2026\] Federated ADMM from Bayesian Duality](../../ICLR2026/others/federated_admm_from_bayesian_duality.md)
 - [\[CVPR 2026\] POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction](polishing_the_sky_widefield_and_highdynamic_range.md)
 - [\[CVPR 2026\] ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training](zo-sam_zero-order_sharpness-aware_minimization_for_efficient_sparse_training.md)
+
+</div>
 
 <!-- RELATED:END -->

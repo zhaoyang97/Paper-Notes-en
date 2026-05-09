@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **9** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/object_detection/index.md) · [📷 CVPR2026 (45)](../../CVPR2026/object_detection/index.md) · [🤖 AAAI2026 (17)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/object_detection/index.md)
+
+🔥 **Top topics:** Object Detection ×3
+
 **[AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)**
 
 :   AdaRank is proposed to adaptively select singular components of task vectors via learnable binary masks (replacing heuristic top-k selection), combined with test-time entropy minimization, substantially alleviating inter-task interference in multi-task model merging and achieving 89.4% accuracy on ViT-B/32.

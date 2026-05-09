@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **31** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/segmentation/index.md) · [📷 CVPR2026 (103)](../../CVPR2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (78)](../../ICCV2025/segmentation/index.md)
+
+🔥 **Top topics:** Segmentation ×14 · Remote Sensing ×5 · Few-/Zero-Shot Learning ×3 · Domain Adaptation ×2 · Diffusion Models ×2
+
 **[A²LC: Active and Automated Label Correction for Semantic Segmentation](a2lc_active_and_automated_label_correction_for_semantic_segm.md)**
 
 :   This paper proposes the A²LC framework, which augments conventional active label correction (ALC) — where annotators manually fix errors one by one — with an automated correction stage via a Label Correction Module (LCM). The LCM leverages annotator feedback to automatically rectify similar erroneous masks, while an Adaptively Balanced acquisition function (ABC) is designed to mitigate class imbalance. On Cityscapes, A²LC surpasses the previous SOTA using only 20% of the budget, achieving a 27.23% mIoU improvement under equal budget conditions.

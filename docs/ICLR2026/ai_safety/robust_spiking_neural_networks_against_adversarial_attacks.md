@@ -125,6 +125,8 @@ The total loss adopts a Lagrangian form $\mathcal{L}(\mathbf{x},\lambda) = \math
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
@@ -132,5 +134,7 @@ The total loss adopts a Lagrangian form $\mathcal{L}(\mathbf{x},\lambda) = \math
 - [\[AAAI 2026\] Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking](../../AAAI2026/ai_safety/yours_or_mine_overwriting_attacks_against_neural_audio_watermarking.md)
 - [\[ICLR 2026\] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)
 - [\[ICCV 2025\] Backdoor Attacks on Neural Networks via One-Bit Flip](../../ICCV2025/ai_safety/backdoor_attacks_on_neural_networks_via_one_bit_flip.md)
+
+</div>
 
 <!-- RELATED:END -->

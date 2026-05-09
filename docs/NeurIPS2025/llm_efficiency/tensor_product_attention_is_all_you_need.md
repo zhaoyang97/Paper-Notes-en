@@ -124,6 +124,8 @@ Tensor Product Attention (TPA) decomposes the Q/K/V matrices in standard attenti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
@@ -131,5 +133,7 @@ Tensor Product Attention (TPA) decomposes the Q/K/V matrices in standard attenti
 - [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](linear_attention_for_efficient_bidirectional_sequence_modeling.md)
 - [\[ICLR 2026\] Universe Routing: Why Self-Evolving Agents Need Epistemic Control](../../ICLR2026/llm_efficiency/universe_routing_why_self-evolving_agents_need_epistemic_control.md)
 - [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

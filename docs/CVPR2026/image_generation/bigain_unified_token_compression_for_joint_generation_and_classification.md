@@ -145,6 +145,8 @@ At a 70% token merging ratio, BiGain-TM improves classification accuracy by 7.15
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](denoising_as_path_planning_training-free_acceleration_of_diffusion_models_with_d.md)
@@ -152,5 +154,7 @@ At a 70% token merging ratio, BiGain-TM improves classification accuracy by 7.15
 - [\[CVPR 2026\] TAUE: Training-free Noise Transplant and Cultivation Diffusion Model](taue_training-free_noise_transplant_and_cultivation_diffusion_model.md)
 - [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](consistcompose_unified_multimodal_layout_control_for_image_composition.md)
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
+
+</div>
 
 <!-- RELATED:END -->

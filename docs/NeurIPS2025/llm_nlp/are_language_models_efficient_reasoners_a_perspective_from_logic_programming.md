@@ -110,6 +110,8 @@ This paper proposes a framework for evaluating LLM reasoning *efficiency* (rathe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Language Models and Logic Programs for Trustworthy Tax Reasoning](../../AAAI2026/llm_nlp/language_models_and_logic_programs_for_trustworthy_tax_reasoning.md)
@@ -117,5 +119,7 @@ This paper proposes a framework for evaluating LLM reasoning *efficiency* (rathe
 - [\[NeurIPS 2025\] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers](dont_be_lazy_completep_enables_compute-efficient_deep_transformers.md)
 - [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **7** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/reinforcement_learning/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (142)](../../ICLR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (71)](../../AAAI2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (169)](../../NeurIPS2025/reinforcement_learning/index.md)
+
+🔥 **Top topics:** Navigation ×2
+
 **[Embodied Navigation with Auxiliary Task of Action Description Prediction](embodied_navigation_with_auxiliary_task_of_action_description_prediction.md)**
 
 :   DescRL introduces action description generation as an auxiliary task for reinforcement learning-based navigation. By distilling knowledge from pretrained vision-language models to train an ADPredictor, the navigation agent simultaneously produces interpretable action descriptions and achieves improved navigation performance, attaining state-of-the-art results on Semantic Audio-Visual Navigation (SAVNav) and several other tasks.

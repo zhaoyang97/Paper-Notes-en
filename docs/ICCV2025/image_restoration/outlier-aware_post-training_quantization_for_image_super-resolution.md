@@ -157,6 +157,8 @@ PLQ alone contributes the most (Set5 +3.67 dB); SAFT outperforms vanilla finetun
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
@@ -164,5 +166,7 @@ PLQ alone contributes the most (Set5 +3.67 dB); SAFT outperforms vanilla finetun
 - [\[NeurIPS 2025\] Spend Wisely: Maximizing Post-Training Gains in Iterative Synthetic Data Bootstrapping](../../NeurIPS2025/image_restoration/spend_wisely_maximizing_post-training_gains_in_iterative_synthetic_data_bootstra.md)
 - [\[ICCV 2025\] IM-LUT: Interpolation Mixing Look-Up Tables for Image Super-Resolution](im-lut_interpolation_mixing_look-up_tables_for_image_super-resolution.md)
 - [\[ICCV 2025\] FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration](foundir_unleashing_million-scale_training_data_to_advance_foundation_models_for_.md)
+
+</div>
 
 <!-- RELATED:END -->

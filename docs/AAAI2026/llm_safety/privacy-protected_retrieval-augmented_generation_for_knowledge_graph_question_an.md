@@ -184,6 +184,8 @@ ARoG's advantage is especially pronounced under the **#Filtered setting** (quest
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
@@ -191,5 +193,7 @@ ARoG's advantage is especially pronounced under the **#Filtered setting** (quest
 - [\[AAAI 2026\] Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion](beyond_superficial_forgetting_thorough_unlearning_through_knowledge_density_esti.md)
 - [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](../../NeurIPS2025/llm_safety/invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
 - [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_safety/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
+
+</div>
 
 <!-- RELATED:END -->

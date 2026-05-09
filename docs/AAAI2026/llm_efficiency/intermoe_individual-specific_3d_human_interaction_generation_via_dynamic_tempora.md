@@ -125,6 +125,8 @@ FID reduction: InterHuman −9% (5.149 → 4.677), InterX −22% (0.469 → 0.29
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling](../../ICLR2026/llm_efficiency/iterresearch_rethinking_long-horizon_agents_with_interaction_scaling.md)
@@ -132,5 +134,7 @@ FID reduction: InterHuman −9% (5.149 → 4.677), InterX −22% (0.469 → 0.29
 - [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](../../ACL2026/llm_efficiency/humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](../../CVPR2026/llm_efficiency/benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
 - [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -172,6 +172,8 @@ Overall: ResQ achieves an **average 50% improvement** over classical models of e
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](../../NeurIPS2025/physics/exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
@@ -179,5 +181,7 @@ Overall: ResQ achieves an **average 50% improvement** over classical models of e
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](../../NeurIPS2025/physics/neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 - [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](../../NeurIPS2025/physics/knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

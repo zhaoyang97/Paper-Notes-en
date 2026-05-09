@@ -130,6 +130,8 @@ This is a pure prompt engineering method requiring no training whatsoever, and i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](../../ICLR2026/audio_speech/when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
@@ -137,5 +139,7 @@ This is a pure prompt engineering method requiring no training whatsoever, and i
 - [\[ACL 2026\] Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions](still_between_us_evaluating_and_improving_voice_assistant_robustness_to_third-pa.md)
 - [\[ICLR 2026\] Improving Black-Box Generative Attacks via Generator Semantic Consistency](../../ICLR2026/audio_speech/improving_black-box_generative_attacks_via_generator_semantic_consistency.md)
 - [\[AAAI 2026\] Let the Model Learn to Feel: Mode-Guided Tonality Injection for Symbolic Music Emotion Recognition](../../AAAI2026/audio_speech/let_the_model_learn_to_feel_mode-guided_tonality_injection_f.md)
+
+</div>
 
 <!-- RELATED:END -->

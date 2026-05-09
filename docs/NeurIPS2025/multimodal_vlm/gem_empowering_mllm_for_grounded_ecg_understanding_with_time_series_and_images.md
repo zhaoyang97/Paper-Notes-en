@@ -138,6 +138,8 @@ Single-step training (unlike most MLLMs that pre-train the projector before fine
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding](../../AAAI2026/multimodal_vlm/anyecg-chat_a_generalist_ecg-mllm_for_flexible_ecg_input_and.md)
@@ -145,5 +147,7 @@ Single-step training (unlike most MLLMs that pre-train the projector before fine
 - [\[NeurIPS 2025\] in the eye of mllm benchmarking egocentric video intent understanding with gaze-](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
 - [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/multimodal_vlm/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 - [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
+
+</div>
 
 <!-- RELATED:END -->

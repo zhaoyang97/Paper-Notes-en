@@ -194,6 +194,8 @@ Key observation: Performance gaps are modest on short sequences (25 frames), but
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](../../ICLR2026/llm_evaluation/spectral_attention_steering_for_prompt_highlighting.md)
@@ -201,5 +203,7 @@ Key observation: Performance gaps are modest on short sequences (25 frames), but
 - [\[NeurIPS 2025\] PaTH Attention: Position Encoding via Accumulating Householder Transformations](../../NeurIPS2025/llm_evaluation/path_attention_position_encoding_via_accumulating_householder_transformations.md)
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](../../NeurIPS2025/llm_evaluation/generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
 - [\[CVPR 2026\] SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras](sparsecam4d_spatio-temporally_consistent_4d_reconstruction_from_sparse_cameras.md)
+
+</div>
 
 <!-- RELATED:END -->

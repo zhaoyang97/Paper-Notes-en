@@ -131,6 +131,8 @@ WDT-MD is a supervised, DiT-based anomaly detection framework operating in the w
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
@@ -138,5 +140,7 @@ WDT-MD is a supervised, DiT-based anomaly detection framework operating in the w
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/medical_imaging/invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
 - [\[CVPR 2026\] Robust Multi-Source Covid-19 Detection in CT Images](../../CVPR2026/medical_imaging/robust_multi-source_covid-19_detection_in_ct_images.md)
 - [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -141,6 +141,8 @@ Training is conducted on a single NVIDIA A6000 GPU. The first 70% of frames per 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection](fq-petr_fully_quantized_position_embedding_transformation_fo.md)
@@ -148,5 +150,7 @@ Training is conducted on a single NVIDIA A6000 GPU. The first 70% of frames per 
 - [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
 - [\[CVPR 2026\] CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection](../../CVPR2026/autonomous_driving/coin3d_revisiting_configuration-invariant_multi-camera_3d_object_detection.md)
 - [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](../../CVPR2026/autonomous_driving/r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
+
+</div>
 
 <!-- RELATED:END -->

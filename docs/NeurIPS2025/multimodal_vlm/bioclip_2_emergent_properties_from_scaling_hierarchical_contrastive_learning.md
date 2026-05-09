@@ -118,6 +118,8 @@ BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) us
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
@@ -125,5 +127,7 @@ BioCLIP 2 trains a ViT-L on TreeOfLife-200M (214M images across 952K species) us
 - [\[NeurIPS 2025\] SITCOM: Scaling Inference-Time COMpute for VLAs](sitcom_scaling_inference-time_compute_for_vlas.md)
 - [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
 - [\[NeurIPS 2025\] Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems](hierarchical_self-attention_generalizing_neural_attention_mechanics_to_multi-sca.md)
+
+</div>
 
 <!-- RELATED:END -->

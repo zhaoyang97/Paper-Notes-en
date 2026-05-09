@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **1** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/multilingual_mt/index.md) · [📷 CVPR2026 (2)](../../CVPR2026/multilingual_mt/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (13)](../../NeurIPS2025/multilingual_mt/index.md)
+
 **[SignRep: Enhancing Self-Supervised Sign Representations](signrep_enhancing_self-supervised_sign_representations.md)**
 
 :   This paper proposes SignRep, a scalable self-supervised sign language representation learning framework that incorporates sign-specific skeleton priors, feature regularization, and an adversarial style-invariant loss into Masked Autoencoder pretraining. Using only a single RGB modality, SignRep surpasses complex multi-modal and multi-branch methods, achieving state-of-the-art performance on three tasks: sign language recognition, dictionary retrieval, and sign language translation.

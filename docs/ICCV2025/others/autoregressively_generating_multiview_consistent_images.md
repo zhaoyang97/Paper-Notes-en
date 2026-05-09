@@ -149,6 +149,8 @@ $$\mathcal{L}_{ar} = -\frac{1}{T}\sum_{t=1}^{T}\log p(q_t|q_{<t})$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
@@ -156,5 +158,7 @@ $$\mathcal{L}_{ar} = -\frac{1}{T}\sum_{t=1}^{T}\log p(q_t|q_{<t})$$
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](multi-view_gaze_target_estimation.md)
 - [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
 - [\[ICCV 2025\] Thermal Polarimetric Multi-view Stereo](thermal_polarimetric_multi-view_stereo.md)
+
+</div>
 
 <!-- RELATED:END -->

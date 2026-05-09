@@ -10,6 +10,8 @@ description: >-
 
 **📹 ICCV2025** · **2** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/causal_inference/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/causal_inference/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/causal_inference/index.md)
+
 **[A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)**
 
 :   This paper proposes a block-based diffusion method leveraging LLMs and diffusion models to automatically generate high-quality counterfactual image-text pair datasets, accompanied by a set-aware loss function. Without manual annotation, the approach significantly improves CLIP's compositional reasoning ability, surpassing state-of-the-art methods on ARO/VL-Checklist and other benchmarks with substantially less data.

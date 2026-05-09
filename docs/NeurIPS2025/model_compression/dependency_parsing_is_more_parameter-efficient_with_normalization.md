@@ -123,6 +123,8 @@ Normalization with 3 layers consistently outperforms the baseline across all 6 d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](../../ACL2026/model_compression/representation-guided_parameter-efficient_llm_unlearning.md)
@@ -130,5 +132,7 @@ Normalization with 3 layers consistently outperforms the baseline across all 6 d
 - [\[ICCV 2025\] TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning](../../ICCV2025/model_compression/tr-pts_task-relevant_parameter_and_token_selection_for_efficient_tuning.md)
 - [\[ICCV 2025\] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations](../../ICCV2025/model_compression/generalized_tensor-based_parameter-efficient_fine-tuning_via_lie_group_transform.md)
 - [\[ICLR 2026\] SeeDNorm: Self-Rescaled Dynamic Normalization](../../ICLR2026/model_compression/seednorm_self-rescaled_dynamic_normalization.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -133,6 +133,8 @@ User study win rate: SDeC **42.67%** vs. 1P1S 15% vs. ConsiStory 20.83%.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](../../AAAI2026/image_generation/infinite-story_a_training-free_consistent_text-to-image_gene.md)
@@ -140,5 +142,7 @@ User study win rate: SDeC **42.67%** vs. 1P1S 15% vs. ConsiStory 20.83%.
 - [\[NeurIPS 2025\] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency](../../NeurIPS2025/image_generation/scenedecorator_towards_scene-oriented_story_generation_with_scene_planning_and_s.md)
 - [\[CVPR 2026\] Match-and-Fuse: Consistent Generation from Unstructured Image Sets](../../CVPR2026/image_generation/match-and-fuse_consistent_generation_from_unstructured_image_sets.md)
 - [\[ICLR 2026\] Directional Textual Inversion for Personalized Text-to-Image Generation](directional_textual_inversion_for_personalized_text-to-image_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -157,6 +157,8 @@ Comparison of adaptive weight functions:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
@@ -164,5 +166,7 @@ Comparison of adaptive weight functions:
 - [\[ICCV 2025\] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent](describe_dont_dictate_semantic_image_editing_with_natural_language_intent.md)
 - [\[ICCV 2025\] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis](deepshield_fortifying_deepfake_video_detection_with_local_and_global_forgery_ana.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
+
+</div>
 
 <!-- RELATED:END -->

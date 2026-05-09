@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **5** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/time_series/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (35)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+
+🔥 **Top topics:** LLM ×2 · Time-Series Forecasting ×2
+
 **[A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting](a_unified_framework_for_modeling_heterogeneous_financial_data_via_dual-granulari.md)**
 
 :   This paper proposes FinLangNet, a dual-module framework comprising DeepFM for static feature processing and a Transformer with a dual-granularity prompting mechanism for sequential behavior modeling, enabling multi-scale credit risk prediction. Upon deployment on the Didi Finance platform, the system achieves a 6.3 pp improvement in KS and a 9.9% reduction in bad debt rate.

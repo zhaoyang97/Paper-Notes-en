@@ -120,6 +120,8 @@ Stage I employs cross-entropy loss to fine-tune DINOv2 on AffectNet + RAF-DB for
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](../../ICCV2025/human_understanding/synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
@@ -127,5 +129,7 @@ Stage I employs cross-entropy loss to fine-tune DINOv2 on AffectNet + RAF-DB for
 - [\[CVPR 2026\] A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_hete.md)
 - [\[AAAI 2026\] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis](../../AAAI2026/human_understanding/facial-r1_aligning_reasoning_and_recognition_for_facial_emotion_analysis.md)
 - [\[CVPR 2026\] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering](wildcap_facial_albedo_capture_in_the_wild_via_hybrid_inverse_rendering.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **24** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (16)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_safety/index.md)
+
+🔥 **Top topics:** LLM ×9 · Watermarking ×3 · Speech & Audio ×2 · Adversarial Robustness ×2
+
 **[Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)**
 
 :   This paper proposes an adaptive text anonymization framework that employs evolutionary prompt optimization to automatically discover task-specific anonymization instructions for LLMs, outperforming manually designed strategies across multiple privacy-utility trade-off scenarios while operating entirely on open-source models.

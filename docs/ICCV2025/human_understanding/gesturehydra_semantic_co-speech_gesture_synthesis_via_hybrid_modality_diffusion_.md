@@ -173,6 +173,8 @@ $$\mathcal{L} = \lambda_t \mathcal{L}_t + \lambda_{vec} \mathcal{L}_{vec} + \lam
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
@@ -180,5 +182,7 @@ $$\mathcal{L} = \lambda_t \mathcal{L}_t + \lambda_{vec} \mathcal{L}_{vec} + \lam
 - [\[ICCV 2025\] Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator](signs_as_tokens_a_retrieval-enhanced_multilingual_sign_language_generator.md)
 - [\[AAAI 2026\] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion](../../AAAI2026/human_understanding/streaming_generation_of_co-speech_gestures_via_accelerated_rolling_diffusion.md)
 - [\[ICCV 2025\] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di.md)
+
+</div>
 
 <!-- RELATED:END -->

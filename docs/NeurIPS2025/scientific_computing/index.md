@@ -10,6 +10,8 @@ description: >-
 
 **🧠 NeurIPS2025** · **24** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/scientific_computing/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/scientific_computing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/scientific_computing/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/scientific_computing/index.md)
+
 **[A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees](a_regularized_newton_method_for_nonconvex_optimization_with.md)**
 
 :   This paper proposes a novel class of regularizers constructed from current and historical gradients, combined with a conjugate gradient method equipped with negative-curvature detection to solve the regularized Newton equation. Within an adaptive framework that requires no prior knowledge of the Hessian Lipschitz constant, the method simultaneously achieves, for the first time, the optimal global iteration complexity of $O(\epsilon^{-3/2})$ and a quadratic local convergence rate.

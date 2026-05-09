@@ -120,6 +120,8 @@ This paper presents a purely evaluative framework with no model training. Numeri
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning](hskbenchmark_modeling_and_benchmarking_chinese_second_language_acquisition_in_la.md)
@@ -127,5 +129,7 @@ This paper presents a purely evaluative framework with no model training. Numeri
 - [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
 - [\[AAAI 2026\] GenePheno: Interpretable Gene Knockout-Induced Phenotype Abnormality Prediction Framework](genepheno_interpretable_gene_knockout-induced_phenotype_abnormality_prediction_f.md)
 - [\[AAAI 2026\] ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games](elementarynet_a_non-strategic_neural_network_for_predicting_human_behavior_in_no.md)
+
+</div>
 
 <!-- RELATED:END -->

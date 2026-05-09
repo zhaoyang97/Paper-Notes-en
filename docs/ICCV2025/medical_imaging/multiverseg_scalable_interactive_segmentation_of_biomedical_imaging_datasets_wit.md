@@ -197,6 +197,8 @@ Evaluated on 12 unseen datasets (covering 8 modalities, 187 segmentation tasks),
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
@@ -204,5 +206,7 @@ Evaluated on 12 unseen datasets (covering 8 modalities, 187 segmentation tasks),
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_imaging/medagentgym_agentic_training_biomedical.md)
 - [\[NeurIPS 2025\] Orochi: Versatile Biomedical Image Processor](../../NeurIPS2025/medical_imaging/orochi_versatile_biomedical_image_processor.md)
 - [\[NeurIPS 2025\] Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling](../../NeurIPS2025/medical_imaging/convolutional_monge_mapping_between_eeg_datasets_to_support_independent_componen.md)
+
+</div>
 
 <!-- RELATED:END -->

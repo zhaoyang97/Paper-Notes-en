@@ -143,6 +143,8 @@ $$\mathcal{L}_{total} = \lambda_1 \mathcal{L}_{ssc} + \lambda_2 \mathcal{L}_{aug
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] CutS3D: Cutting Semantics in 3D for 2D Unsupervised Instance Segmentation](cuts3d_cutting_semantics_in_3d_for_2d_unsupervised_instance_segmentation.md)
@@ -150,5 +152,7 @@ $$\mathcal{L}_{total} = \lambda_1 \mathcal{L}_{ssc} + \lambda_2 \mathcal{L}_{aug
 - [\[ICCV 2025\] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction](s3r-gs_streamlining_the_pipeline_for_large-scale_street_scene_reconstruction.md)
 - [\[ICCV 2025\] SplatTalk: 3D VQA with Gaussian Splatting](splattalk_3d_vqa_with_gaussian_splatting.md)
 - [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
+
+</div>
 
 <!-- RELATED:END -->

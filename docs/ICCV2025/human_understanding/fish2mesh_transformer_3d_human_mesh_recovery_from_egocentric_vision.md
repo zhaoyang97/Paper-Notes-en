@@ -117,6 +117,8 @@ $\mathcal{L} = a(\mathcal{L}_{SMPL} + \mathcal{L}_{orient}) + b \cdot \mathcal{L
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery](ajahr_amputated_joint_aware_3d_human_mesh_recovery.md)
@@ -124,5 +126,7 @@ $\mathcal{L} = a(\mathcal{L}_{SMPL} + \mathcal{L}_{orient}) + b \cdot \mathcal{L
 - [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](../../CVPR2026/human_understanding/onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
 - [\[ICCV 2025\] EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds](egoagent_a_joint_predictive_agent_model_in_egocentric_worlds.md)
 - [\[AAAI 2026\] PressTrack-HMR: Pressure-Based Top-Down Multi-Person Global Human Mesh Recovery](../../AAAI2026/human_understanding/presstrack-hmr_pressure-based_top-down_multi-person_global_human_mesh_recovery.md)
+
+</div>
 
 <!-- RELATED:END -->

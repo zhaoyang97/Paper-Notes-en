@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **78** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/image_generation/index.md) · [📷 CVPR2026 (239)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (154)](../../ICLR2026/image_generation/index.md) · [🧠 NeurIPS2025 (246)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (219)](../../ICCV2025/image_generation/index.md)
+
+🔥 **Top topics:** Diffusion Models ×32 · Text-to-Image ×7 · Alignment/RLHF ×6 · Layout & Composition ×5 · Super-Resolution ×5
+
 **[AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](aedr_training-free_ai-generated_image_attribution_via_autoen.md)**
 
 :   This paper proposes a training-free image attribution method based on the ratio of autoencoder double-reconstruction losses. By incorporating image uniformity calibration to eliminate texture complexity bias, the method achieves an average accuracy of 95.1% across 8 mainstream diffusion models, surpassing the strongest baseline by 24.7%, while being approximately 100× faster.

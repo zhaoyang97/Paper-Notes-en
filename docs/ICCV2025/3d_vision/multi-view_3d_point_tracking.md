@@ -177,6 +177,8 @@ Across different 4-camera layouts (opposing/adjacent placements), MVTracker cons
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
@@ -184,5 +186,7 @@ Across different 4-camera layouts (opposing/adjacent placements), MVTracker cons
 - [\[NeurIPS 2025\] TAPIP3D: Tracking Any Point in Persistent 3D Geometry](../../NeurIPS2025/3d_vision/tapip3d_tracking_any_point_in_persistent_3d_geometry.md)
 - [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](panst3r_multi-view_consistent_panoptic_segmentation.md)
 - [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

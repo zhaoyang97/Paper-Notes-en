@@ -120,6 +120,8 @@ SFT employs standard cross-entropy loss. RL uses the PPO algorithm, with a rewar
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](rm-r1_reward_modeling_as_reasoning.md)
@@ -127,5 +129,7 @@ SFT employs standard cross-entropy loss. RL uses the PPO algorithm, with a rewar
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
 - [\[NeurIPS 2025\] The Burden of Interactive Alignment with Inconsistent Preferences](../../NeurIPS2025/reinforcement_learning/the_burden_of_interactive_alignment_with_inconsistent_preferences.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -151,6 +151,8 @@ SonicNet (nnU-Net with spatial convolutions replaced by SONIC blocks) is compare
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Intrinsic Lorentz Neural Network](intrinsic_lorentz_neural_network.md)
@@ -158,5 +160,7 @@ SonicNet (nnU-Net with spatial convolutions replaced by SONIC blocks) is compare
 - [\[CVPR 2026\] EquivAnIA: A Spectral Method for Rotation-Equivariant Anisotropic Image Analysis](../../CVPR2026/medical_imaging/equivania_a_spectral_method_for_rotationequivarian.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
 - [\[NeurIPS 2025\] Variational Autoencoder with Normalizing Flow for X-ray Spectral Fitting](../../NeurIPS2025/medical_imaging/variational_autoencoder_with_normalizing_flow_for_x-ray_spectral_fitting.md)
+
+</div>
 
 <!-- RELATED:END -->

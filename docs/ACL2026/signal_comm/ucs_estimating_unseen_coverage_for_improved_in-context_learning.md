@@ -128,6 +128,8 @@ UCS is entirely training-free. Offline preprocessing (embedding + clustering) ta
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](../../ICLR2026/signal_comm/spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
@@ -135,5 +137,7 @@ UCS is entirely training-free. Offline preprocessing (embedding + clustering) ta
 - [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](../../ICLR2026/signal_comm/learning_molecular_chirality_via_chiral_determinant_kernels.md)
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
 - [\[CVPR 2026\] Dual-Imbalance Continual Learning for Real-World Food Recognition](../../CVPR2026/signal_comm/dual-imbalance_continual_learning_for_real-world_food_recognition.md)
+
+</div>
 
 <!-- RELATED:END -->

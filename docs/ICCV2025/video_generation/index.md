@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **51** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (3)](../../ACL2026/video_generation/index.md) · [📷 CVPR2026 (60)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md)
+
+🔥 **Top topics:** Video Generation ×22 · Diffusion Models ×12 · Adversarial Robustness ×5 · Personalized Generation ×3 · Dynamic Scenes ×3
+
 **[Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_i.md)**
 
 :   This paper proposes the Adversarial Distribution Matching (ADM) framework, which aligns the latent predictions of real and fake score estimators adversarially via a diffusion-based discriminator, replacing the predefined KL divergence in DMD. Combined with Adversarial Distillation Pretraining (ADP), the proposed DMDX pipeline achieves one-step generation on SDXL surpassing DMD2, and sets new multi-step distillation benchmarks on SD3 and CogVideoX.

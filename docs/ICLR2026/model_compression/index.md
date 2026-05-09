@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **92** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (57)](../../CVPR2026/model_compression/index.md) · [🤖 AAAI2026 (54)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (134)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/model_compression/index.md)
+
+🔥 **Top topics:** LLM ×19 · Model Compression ×16 · Reasoning ×11 · Compression ×8 · Continual Learning ×5
+
 **[A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA](a_fano-style_accuracy_upper_bound_for_llm_single-pass_reasoning_in_multi-hop_qa.md)**
 
 :   This paper derives a Fano-style accuracy upper bound for LLM single-pass reasoning on multi-hop QA using information theory, revealing a "cliff-like" accuracy collapse when task information demand exceeds model output capacity. Based on this analysis, the authors design a multi-turn reasoning framework, InfoQA, which overcomes the single-pass bottleneck via capacity-aware decomposition, dependency-explicit workflows, and iterative query compression.

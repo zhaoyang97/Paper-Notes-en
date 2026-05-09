@@ -118,6 +118,8 @@ $\mathcal{L} = \mathcal{L}_{MSE} + 0.1 \cdot \mathcal{L}_{LPIPS}$. Only 50 train
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems](learning_cocoercive_conservative_denoisers_via_helmholtz_decomposition_for_poiss.md)
@@ -125,5 +127,7 @@ $\mathcal{L} = \mathcal{L}_{MSE} + 0.1 \cdot \mathcal{L}_{LPIPS}$. Only 50 train
 - [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](../../CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
 - [\[CVPR 2026\] GSNR: Graph Smooth Null-Space Representation for Inverse Problems](../../CVPR2026/image_restoration/gsnr_graph_smooth_null_space_representation_for_inverse_problems.md)
 - [\[NeurIPS 2025\] DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](dynaguide_steering_diffusion_polices_with_active_dynamic_guidance.md)
+
+</div>
 
 <!-- RELATED:END -->

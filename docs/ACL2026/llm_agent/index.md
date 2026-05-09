@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **44** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (19)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/llm_agent/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/llm_agent/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+
+🔥 **Top topics:** Agents ×20 · LLM ×18 · Adversarial Robustness ×3 · Alignment/RLHF ×3 · Reasoning ×3
+
 **[AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts](agencybench_benchmarking_the_frontiers_of_autonomous_agents_in_1m-token_real-wor.md)**
 
 :   This paper proposes AgencyBench — a comprehensive benchmark comprising 138 real-world tasks that evaluates six core agent capabilities. Each scenario requires an average of 90 tool calls and 1M tokens. Fully automated evaluation is achieved via a user simulation agent and Docker sandbox.

@@ -140,6 +140,8 @@ Experiments span three benchmarks: (1) function fitting—5 two-dimensional targ
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer](../../AAAI2026/interpretability/flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-.md)
@@ -147,5 +149,7 @@ Experiments span three benchmarks: (1) function fitting—5 two-dimensional targ
 - [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](../../ACL2026/interpretability/rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ACL 2026\] Understanding or Memorizing? A Case Study of German Definite Articles in Language Models](../../ACL2026/interpretability/understanding_or_memorizing_a_case_study_of_german_definite_articles_in_language.md)
+
+</div>
 
 <!-- RELATED:END -->

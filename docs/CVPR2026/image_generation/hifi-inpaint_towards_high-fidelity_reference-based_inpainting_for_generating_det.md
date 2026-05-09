@@ -135,6 +135,8 @@ HiFi-Inpaint achieves the best performance on visual consistency (CLIP-I, DINO, 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
@@ -142,5 +144,7 @@ HiFi-Inpaint achieves the best performance on visual consistency (CLIP-I, DINO, 
 - [\[ICCV 2025\] CompleteMe: Reference-based Human Image Completion](../../ICCV2025/image_generation/completeme_reference-based_human_image_completion.md)
 - [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
+
+</div>
 
 <!-- RELATED:END -->

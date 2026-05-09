@@ -169,6 +169,8 @@ Ablation analysis at noise rate 0.6:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting](refeed_retrieval_feedback-guided_dataset_construction_for_style-aware_query_rewr.md)
@@ -176,5 +178,7 @@ Ablation analysis at noise rate 0.6:
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](../../ACL2026/information_retrieval/from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
 - [\[ACL 2026\] Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking](../../ACL2026/information_retrieval/region-r1_reinforcing_query-side_region_cropping_for_multi-modal_re-ranking.md)
 - [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](../../ICLR2026/information_retrieval/embedding-based_context-aware_reranker.md)
+
+</div>
 
 <!-- RELATED:END -->

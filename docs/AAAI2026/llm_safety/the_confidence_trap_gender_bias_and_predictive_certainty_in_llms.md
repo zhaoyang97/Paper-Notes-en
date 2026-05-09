@@ -176,6 +176,8 @@ Scaling up the model improves calibration for male pronouns, but female pronoun 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
@@ -183,5 +185,7 @@ Scaling up the model improves calibration for male pronouns, but female pronoun 
 - [\[AAAI 2026\] Can Editing LLMs Inject Harm?](can_editing_llms_inject_harm.md)
 - [\[AAAI 2026\] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](uncovering_bias_paths_with_llm-guided_causal_discovery_an_active_learning_and_dy.md)
 - [\[AAAI 2026\] From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions](from_single_to_societal_analyzing_persona-induced_bias_in_multi-agent_interactio.md)
+
+</div>
 
 <!-- RELATED:END -->

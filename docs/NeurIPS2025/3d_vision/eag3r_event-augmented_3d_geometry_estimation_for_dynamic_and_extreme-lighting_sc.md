@@ -162,6 +162,8 @@ $$X_{\text{global}}^* = \arg\min \left(\mathcal{L}_{\text{align}} + w_{\text{smo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](../../ICCV2025/3d_vision/event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
@@ -169,5 +171,7 @@ $$X_{\text{global}}^* = \arg\min \left(\mathcal{L}_{\text{align}} + w_{\text{smo
 - [\[NeurIPS 2025\] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes](rgb-only_supervised_camera_parameter_optimization_in_dynamic_scenes.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](../../ICCV2025/3d_vision/depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
+
+</div>
 
 <!-- RELATED:END -->

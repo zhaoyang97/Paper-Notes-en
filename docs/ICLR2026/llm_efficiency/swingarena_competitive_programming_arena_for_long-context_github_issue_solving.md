@@ -139,6 +139,8 @@ RPR = proportion of Reviewer tests passing on the golden patch; SPR = proportion
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
@@ -146,5 +148,7 @@ RPR = proportion of Reviewer tests passing on the golden patch; SPR = proportion
 - [\[NeurIPS 2025\] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context](../../NeurIPS2025/llm_efficiency/technical_debt_in_in-context_learning_diminishing_efficiency_in_long_context.md)
 - [\[AAAI 2026\] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](../../AAAI2026/llm_efficiency/harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)
 - [\[NeurIPS 2025\] The PokeAgent Challenge: Competitive and Long-Context Learning at Scale](../../NeurIPS2025/llm_efficiency/the_pokeagent_challenge_competitive_and_long-context_learning_at_scale.md)
+
+</div>
 
 <!-- RELATED:END -->

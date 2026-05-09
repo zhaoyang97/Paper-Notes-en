@@ -126,6 +126,8 @@ Yggdrasil is built on PyTorch 2.0 and TorchInductor. The core abstraction is a `
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] DISC: Dynamic Decomposition Improves LLM Inference Scaling](disc_dynamic_decomposition_improves_llm_inference_scaling.md)
@@ -133,5 +135,7 @@ Yggdrasil is built on PyTorch 2.0 and TorchInductor. The core abstraction is a `
 - [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
 - [\[NeurIPS 2025\] Approximately Aligned Decoding](approximately_aligned_decoding.md)
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
+
+</div>
 
 <!-- RELATED:END -->

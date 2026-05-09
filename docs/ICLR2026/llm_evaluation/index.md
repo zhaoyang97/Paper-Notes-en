@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **60** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_evaluation/index.md) · [📷 CVPR2026 (28)](../../CVPR2026/llm_evaluation/index.md) · [🤖 AAAI2026 (39)](../../AAAI2026/llm_evaluation/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/llm_evaluation/index.md) · [📹 ICCV2025 (29)](../../ICCV2025/llm_evaluation/index.md)
+
+🔥 **Top topics:** LLM ×10 · Agents ×3 · Reasoning ×2 · Alignment/RLHF ×2 · Adversarial Robustness ×2
+
 **[Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)**
 
 :   This paper proposes the first unified benchmark for PU learning and systematically addresses two critical issues: (1) enabling model selection without negative samples via proxy accuracy and proxy AUC; (2) identifying and resolving intra-dataset label shift in the one-sample setting through a simple calibration strategy that merges positive samples into the unlabeled set, enabling fair comparison of two-sample algorithms under one-sample evaluation.

@@ -136,6 +136,8 @@ Using Qwen2.5-7B-Base + DAPO trained from scratch, PRM F1 on ProcessBench is eva
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning](symrtlo_enhancing_rtl_code_optimization_with_llms_and_neuron-inspired_symbolic_r.md)
@@ -143,5 +145,7 @@ Using Qwen2.5-7B-Base + DAPO trained from scratch, PRM F1 on ProcessBench is eva
 - [\[ACL 2026\] An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs](../../ACL2026/information_retrieval/an_iterative_utility_judgment_framework_inspired_by_philosophical_relevance_via_.md)
 - [\[ACL 2026\] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs](../../ACL2026/information_retrieval/chairo_contextual_hierarchical_analogical_induction_and_reasoning_optimization_f.md)
 - [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](../../ACL2026/information_retrieval/understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
+
+</div>
 
 <!-- RELATED:END -->

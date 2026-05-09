@@ -200,6 +200,8 @@ The approach is remarkably elegant — reducing complex policy violation detecti
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
@@ -207,5 +209,7 @@ The approach is remarkably elegant — reducing complex policy violation detecti
 - [\[ACL 2026\] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training](../../ACL2026/medical_imaging/dart_mitigating_harm_drift_in_difference-aware_llms_via_distill-audit-repair_tra.md)
 - [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/medical_imaging/invad_inversionbased_reconstructionfree_anomaly_de.md)
+
+</div>
 
 <!-- RELATED:END -->

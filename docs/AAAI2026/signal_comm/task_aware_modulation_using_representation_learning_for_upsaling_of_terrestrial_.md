@@ -110,6 +110,8 @@ Inputs: MODIS satellite data (500 m) + ERA5-Land meteorological data (0.1°), da
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
@@ -117,5 +119,7 @@ Inputs: MODIS satellite data (500 m) + ERA5-Land meteorological data (0.1°), da
 - [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](../../CVPR2026/signal_comm/clay_conditional_visual_similarity.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/signal_comm/fasa_frequency-aware_sparse_attention.md)
 - [\[AAAI 2026\] Toward Gaze Target Detection in Young Autistic Children](toward_gaze_target_detection_of_young_autistic_children.md)
+
+</div>
 
 <!-- RELATED:END -->

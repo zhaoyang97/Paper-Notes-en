@@ -118,6 +118,8 @@ Pre-compute MQ/VQ scores for each video (VideoAlign) → Normalization → Sampl
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
@@ -125,5 +127,7 @@ Pre-compute MQ/VQ scores for each video (VideoAlign) → Normalization → Sampl
 - [\[CVPR 2026\] DMin: Scalable Training Data Influence Estimation for Diffusion Models](dmin_scalable_training_data_influence_estimation_for_diffusion_models.md)
 - [\[ICLR 2026\] Verifier-Constrained Flow Expansion for Discovery Beyond the Data](../../ICLR2026/image_generation/verifier-constrained_flow_expansion_for_discovery_beyond_the_data.md)
 - [\[CVPR 2026\] SPDMark: Selective Parameter Displacement for Robust Video Watermarking](spdmark_selective_parameter_displacement_for_robust_video_watermarking.md)
+
+</div>
 
 <!-- RELATED:END -->

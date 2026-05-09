@@ -124,6 +124,8 @@ Total loss: $\mathcal{L}_{total} = \mathcal{L}_{cauchy} + R_{depth}$. $\mathcal{
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
@@ -131,5 +133,7 @@ Total loss: $\mathcal{L}_{total} = \mathcal{L}_{cauchy} + R_{depth}$. $\mathcal{
 - [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
 - [\[NeurIPS 2025\] Galactification: Painting Galaxies onto Dark Matter Only Simulations Using a Transformer-Based Model](galactification_painting_galaxies_onto_dark_matter_only_simulations_using_a_tran.md)
 - [\[CVPR 2026\] PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding](../../CVPR2026/3d_vision/pointtpa_dynamic_network_parameter_adaptation_for_3d_scene_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -110,6 +110,8 @@ The paper is structured in three parts: (1) theoretical analysis — scaling of 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Decoupled Entropy Minimization](decoupled_entropy_minimization.md)
@@ -117,5 +119,7 @@ The paper is structured in three parts: (1) theoretical analysis — scaling of 
 - [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
+
+</div>
 
 <!-- RELATED:END -->

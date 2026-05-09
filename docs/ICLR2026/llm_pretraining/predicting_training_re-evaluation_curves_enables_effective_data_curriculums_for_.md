@@ -169,6 +169,8 @@ For each learning rate schedule, ten models are trained with a 5B code-mixture (
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training](common_corpus_ethical_data_for_llm_pretraining.md)
@@ -176,5 +178,7 @@ For each learning rate schedule, ten models are trained with a 5B code-mixture (
 - [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
 - [\[NeurIPS 2025\] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](../../NeurIPS2025/llm_pretraining/prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)
 - [\[AAAI 2026\] ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences](../../AAAI2026/llm_pretraining/elspr_evaluator_llm_training_data_self-purification_on_non-transitive_preference.md)
+
+</div>
 
 <!-- RELATED:END -->

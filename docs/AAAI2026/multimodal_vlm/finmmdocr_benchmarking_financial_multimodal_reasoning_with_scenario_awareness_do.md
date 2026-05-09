@@ -156,6 +156,8 @@ FinMMDocR consists of 1,200 bilingual (600 Chinese + 600 English) numerical reas
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
@@ -163,5 +165,7 @@ FinMMDocR consists of 1,200 bilingual (600 Chinese + 600 English) numerical reas
 - [\[ICCV 2025\] FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging](../../ICCV2025/multimodal_vlm/finmmr_make_financial_numerical_reasoning_more_multimodal_comprehensive_and_chal.md)
 - [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](../../ICLR2026/multimodal_vlm/index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
 - [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
+
+</div>
 
 <!-- RELATED:END -->

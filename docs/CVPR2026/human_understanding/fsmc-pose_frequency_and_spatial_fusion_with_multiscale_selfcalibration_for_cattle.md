@@ -123,6 +123,8 @@ FSMC-Pose achieves the highest accuracy with the lowest computational cost and p
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
@@ -130,5 +132,7 @@ FSMC-Pose achieves the highest accuracy with the lowest computational cost and p
 - [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
 - [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
 - [\[CVPR 2026\] Stake the Points: Structure-Faithful Instance Unlearning](stake_the_points_structure-faithful_instance_unlearning.md)
+
+</div>
 
 <!-- RELATED:END -->

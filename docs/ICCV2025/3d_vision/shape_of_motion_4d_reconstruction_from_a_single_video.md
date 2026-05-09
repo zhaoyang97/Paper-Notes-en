@@ -170,6 +170,8 @@ Ablation of key components (iPhone dataset, 3D tracking):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
@@ -177,5 +179,7 @@ Ablation of key components (iPhone dataset, 3D tracking):
 - [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)
 - [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](../../NeurIPS2025/3d_vision/orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

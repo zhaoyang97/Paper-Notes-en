@@ -129,6 +129,8 @@ Comparison of distillation methods on VBench-I2V (base model: Wan2.1-I2V-14B):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation](../../ICCV2025/video_generation/fvgen_accelerating_novel-view_synthesis_with_adversarial_video_diffusion_distill.md)
@@ -136,5 +138,7 @@ Comparison of distillation methods on VBench-I2V (base model: Wan2.1-I2V-14B):
 - [\[ICLR 2026\] Target-Aware Video Diffusion Models](../../ICLR2026/video_generation/target-aware_video_diffusion_models.md)
 - [\[ICCV 2025\] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](../../ICCV2025/video_generation/omnihuman-1_rethinking_the_scaling-up_of_one-stage_conditioned_human_animation_m.md)
 - [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](../../CVPR2026/video_generation/flashmotion_few-step_controllable_video_generation_with_trajectory_guidance.md)
+
+</div>
 
 <!-- RELATED:END -->

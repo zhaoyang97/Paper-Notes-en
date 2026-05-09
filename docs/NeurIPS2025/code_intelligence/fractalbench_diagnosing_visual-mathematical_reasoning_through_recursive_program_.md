@@ -145,6 +145,8 @@ IoU (Jaccard Index) is used as the evaluation metric: $\text{IoU} = |\mathcal{B}
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Once Upon an Input: Reasoning via Per-Instance Program Synthesis](once_upon_an_input_reasoning_via_per-instance_program_synthesis.md)
@@ -152,5 +154,7 @@ IoU (Jaccard Index) is used as the evaluation metric: $\text{IoU} = |\mathcal{B}
 - [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](../../ICLR2026/code_intelligence/mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
 - [\[NeurIPS 2025\] Searching Latent Program Spaces](searching_latent_program_spaces.md)
 - [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
+
+</div>
 
 <!-- RELATED:END -->

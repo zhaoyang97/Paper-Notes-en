@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **38** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (22)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (142)](../../ICLR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (71)](../../AAAI2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (169)](../../NeurIPS2025/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+
+🔥 **Top topics:** Reinforcement Learning ×11 · LLM ×10 · Reasoning ×8 · Agents ×3 · Dialogue ×3
+
 **[A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions](a_survey_of_reinforcement_learning_for_large_language_models_under_data_scarcity.md)**
 
 :   The first systematic survey of reinforcement learning for LLMs under data scarcity, proposing a three-level taxonomy organized around data-centric, training-centric, and framework-centric perspectives, covering data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolution/co-evolution/multi-agent evolution paradigms.

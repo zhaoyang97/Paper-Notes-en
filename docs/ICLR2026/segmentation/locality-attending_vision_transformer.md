@@ -143,6 +143,8 @@ Only two small weight matrices per layer are introduced—$\mathbf{W}^\sigma \in
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
@@ -150,5 +152,7 @@ Only two small weight matrices per layer are introduced—$\mathbf{W}^\sigma \in
 - [\[AAAI 2026\] Adaptive Morph-Patch Transformer for Aortic Vessel Segmentation](../../AAAI2026/segmentation/adaptive_morph-patch_transformer_for_aortic_vessel_segmentat.md)
 - [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](../../CVPR2026/segmentation/mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
 - [\[NeurIPS 2025\] STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking](../../NeurIPS2025/segmentation/step_a_unified_spiking_transformer_evaluation_platform_for_fair_and_reproducible.md)
+
+</div>
 
 <!-- RELATED:END -->

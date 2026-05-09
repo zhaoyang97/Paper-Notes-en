@@ -137,6 +137,8 @@ HippoMM achieves the highest accuracy while being more than 5× faster than Vide
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Ego-Exo Correspondence with Long-Term Memory](../../NeurIPS2025/segmentation/robust_ego-exo_correspondence_with_long-term_memory.md)
@@ -144,5 +146,7 @@ HippoMM achieves the highest accuracy while being more than 5× faster than Vide
 - [\[NeurIPS 2025\] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding](../../NeurIPS2025/segmentation/partonomy_large_multimodal_models_with_part-level_visual_understanding.md)
 - [\[CVPR 2026\] PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation](pixdlm_uav_reasoning_segmentation.md)
 - [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/segmentation/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -141,6 +141,8 @@ A dual-stream data strategy is adopted:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Video Color Grading via Look-Up Table Generation](video_color_grading_via_look-up_table_generation.md)
@@ -148,5 +150,7 @@ A dual-stream data strategy is adopted:
 - [\[ICCV 2025\] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency](free4d_tuning-free_4d_scene_generation_with_spatial-temporal_consistency.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
 - [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
+
+</div>
 
 <!-- RELATED:END -->

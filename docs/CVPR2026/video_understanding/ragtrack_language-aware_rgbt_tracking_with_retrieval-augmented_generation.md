@@ -131,6 +131,8 @@ Attribute-level analysis on LasHeR shows: Total Occlusion (TO) +10.7% PR and Out
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
@@ -138,5 +140,7 @@ Attribute-level analysis on LasHeR shows: Total Occlusion (TO) +10.7% PR and Out
 - [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
 - [\[ACL 2026\] RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora](../../ACL2026/video_understanding/rare_redundancy-aware_retrieval_evaluation_framework_for_high-similarity_corpora.md)
 - [\[CVPR 2026\] FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking](fc-track_overlap-aware_post-association_correction_for_online_multi-object_track.md)
+
+</div>
 
 <!-- RELATED:END -->

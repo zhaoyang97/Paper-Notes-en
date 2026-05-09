@@ -138,6 +138,8 @@ With a complexity-9 expression $M_{\text{disk}} = 0.1188 - 0.1430 \times \sin(\s
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Deep Learning for Subspace Regression](../../ICLR2026/scientific_computing/deep_learning_for_subspace_regression.md)
@@ -145,5 +147,7 @@ With a complexity-9 expression $M_{\text{disk}} = 0.1188 - 0.1430 \times \sin(\s
 - [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
 - [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/scientific_computing/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
 - [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/scientific_computing/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
+
+</div>
 
 <!-- RELATED:END -->

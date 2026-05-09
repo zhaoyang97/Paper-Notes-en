@@ -119,6 +119,8 @@ The Tropical Transformer pipeline proceeds as follows: (1) map inputs from Eucli
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning](cognitive_mirrors_exploring_the_diverse_functional_roles_of_attention_heads_in_l.md)
@@ -126,5 +128,7 @@ The Tropical Transformer pipeline proceeds as follows: (1) map inputs from Eucli
 - [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
 - [\[AAAI 2026\] Quiet Feature Learning in Algorithmic Tasks](../../AAAI2026/interpretability/quiet_feature_learning_in_algorithmic_tasks.md)
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **71** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (14)](../../CVPR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (67)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+
+🔥 **Top topics:** Reasoning ×47 · LLM ×10 · Multimodal/VLM ×3 · Agents ×2 · Adversarial Robustness ×2
+
 **[Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)**
 
 :   This paper proposes the Adaptive Social Learning (ASL) framework, which defines four hierarchical reasoning modes (ranging from intuitive response to deep prospective reasoning) and introduces the AMPO algorithm (combining mode-level and sample-level advantage estimation) to enable LLM agents to adaptively switch reasoning depth according to social scenario complexity. ASL outperforms GPT-4o by 15.6% on social intelligence tasks, surpasses GRPO by 7.0%, and reduces token consumption by 32.8%.

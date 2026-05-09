@@ -133,6 +133,8 @@ These results align perfectly with the doubly robust theory.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Constrained Network Slice Assignment via Large Language Models](constrained_network_slice_assignment_via_llms.md)
@@ -140,5 +142,7 @@ These results align perfectly with the doubly robust theory.
 - [\[NeurIPS 2025\] Training-Free Bayesianization for Low-Rank Adapters of Large Language Models](training-free_bayesianization_for_low-rank_adapters_of_large_language_models.md)
 - [\[NeurIPS 2025\] Large Language Bayes](large_language_bayes.md)
 - [\[NeurIPS 2025\] DynaAct: Large Language Model Reasoning with Dynamic Action Spaces](dynaact_large_language_model_reasoning_with_dynamic_action_spaces.md)
+
+</div>
 
 <!-- RELATED:END -->

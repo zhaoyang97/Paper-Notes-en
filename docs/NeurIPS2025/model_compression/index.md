@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **134** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/model_compression/index.md) · [📷 CVPR2026 (57)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (92)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (54)](../../AAAI2026/model_compression/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/model_compression/index.md)
+
+🔥 **Top topics:** LLM ×24 · Compression ×19 · Model Compression ×15 · Adversarial Robustness ×5 · Reasoning ×4
+
 **[4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)**
 
 :   This paper proposes 4DGCPro, a hierarchical 4D Gaussian compression framework that achieves multi-bitrate progressive volumetric video streaming within a single model, via perception-weighted hierarchical Gaussian representation, motion-aware adaptive grouping, and end-to-end entropy-optimized training. The framework supports real-time decoding and rendering on mobile devices and surpasses existing SOTA in rate-distortion performance.

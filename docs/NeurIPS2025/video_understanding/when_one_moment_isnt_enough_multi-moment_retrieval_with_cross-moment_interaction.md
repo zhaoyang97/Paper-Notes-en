@@ -170,6 +170,8 @@ The representation learning loss $\mathcal{L}_{\text{repr}} = \sum_i \text{CE}(\
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](../../ICCV2025/video_understanding/moment_quantization_for_video_temporal_grounding.md)
@@ -177,5 +179,7 @@ The representation learning loss $\mathcal{L}_{\text{repr}} = \sum_i \text{CE}(\
 - [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
 - [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](token_bottleneck_one_token_to_remember_dynamics.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
+
+</div>
 
 <!-- RELATED:END -->

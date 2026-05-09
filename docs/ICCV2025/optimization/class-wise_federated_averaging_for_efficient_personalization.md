@@ -152,6 +152,8 @@ Gains are particularly pronounced on CIFAR-100 and Tiny ImageNet (+8.64 and +10.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](../../NeurIPS2025/optimization/layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
@@ -159,5 +161,7 @@ Gains are particularly pronounced on CIFAR-100 and Tiny ImageNet (+8.64 and +10.
 - [\[ICCV 2025\] Memory-Efficient 4-bit Preconditioned Stochastic Optimization](memory-efficient_4-bit_preconditioned_stochastic_optimization.md)
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
 - [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](../../NeurIPS2025/optimization/mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
+
+</div>
 
 <!-- RELATED:END -->

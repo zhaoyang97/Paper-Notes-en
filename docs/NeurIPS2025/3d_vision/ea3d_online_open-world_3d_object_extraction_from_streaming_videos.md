@@ -144,6 +144,8 @@ The triple constraint of "online + pose-free + open-world" is both highly challe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards 3D Objectness Learning in an Open World](towards_3d_objectness_learning_in_an_open_world.md)
@@ -151,5 +153,7 @@ The triple constraint of "online + pose-free + open-world" is both highly challe
 - [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
 - [\[NeurIPS 2025\] Online Segment Any 3D Thing as Instance Tracking](online_segment_any_3d_thing_as_instance_tracking.md)
 - [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
+
+</div>
 
 <!-- RELATED:END -->

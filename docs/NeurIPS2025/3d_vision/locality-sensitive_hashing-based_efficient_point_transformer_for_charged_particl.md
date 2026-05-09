@@ -116,6 +116,8 @@ Curriculum learning: the model is first trained on clean, trackable hits, with h
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](../../ICCV2025/3d_vision/efficient_spiking_point_mamba_for_point_cloud_analysis.md)
@@ -123,5 +125,7 @@ Curriculum learning: the model is first trained on clean, trackable hits, with h
 - [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](../../CVPR2026/3d_vision/ggpt_geometry_grounded_point_transformer.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 - [\[ICCV 2025\] Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation](../../ICCV2025/3d_vision/nautilus_locality-aware_autoencoder_for_scalable_mesh_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

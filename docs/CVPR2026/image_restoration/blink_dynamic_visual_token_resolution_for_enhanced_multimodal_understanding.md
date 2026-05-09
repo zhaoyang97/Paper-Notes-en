@@ -130,6 +130,8 @@ Standard MLLM forward pass → At selected layers: compute saliency map → dete
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
@@ -137,5 +139,7 @@ Standard MLLM forward pass → At selected layers: compute saliency map → dete
 - [\[CVPR 2026\] POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction](polishing_the_sky_wide-field_and_high-dynamic_range_interferometric_image_recons.md)
 - [\[ACL 2026\] Diffusion-CAM: Faithful Visual Explanations for dMLLMs](../../ACL2026/image_restoration/diffusion-cam_faithful_visual_explanations_for_dmllms.md)
 - [\[AAAI 2026\] TMDC: A Two-Stage Modality Denoising and Complementation Framework for Multimodal Sentiment Analysis](../../AAAI2026/image_restoration/tmdc_a_two-stage_modality_denoising_and_complementation_framework_for_multimodal.md)
+
+</div>
 
 <!-- RELATED:END -->

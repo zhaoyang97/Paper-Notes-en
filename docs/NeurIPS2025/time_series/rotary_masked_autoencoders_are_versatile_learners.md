@@ -120,6 +120,8 @@ This paper cleverly combines RoPE (RoFormer) and MAE (He et al.), two independen
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models](../../ICLR2026/time_series/dissecting_chronos_sparse_autoencoders_reveal_causal_feature_hierarchies_in_time.md)
@@ -127,5 +129,7 @@ This paper cleverly combines RoPE (RoFormer) and MAE (He et al.), two independen
 - [\[NeurIPS 2025\] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning](universal_spectral_tokenization_via_self-supervised_panchromatic_representation_.md)
 - [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
 - [\[NeurIPS 2025\] Learning Time-Scale Invariant Population-Level Neural Representations](learning_time-scale_invariant_population-level_neural_representations.md)
+
+</div>
 
 <!-- RELATED:END -->

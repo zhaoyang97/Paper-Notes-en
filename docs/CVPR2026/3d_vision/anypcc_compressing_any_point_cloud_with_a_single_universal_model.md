@@ -154,6 +154,8 @@ Weight transmission adds only 0.319 bpp while geometry coding saves 1.883 bpp, y
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
@@ -161,5 +163,7 @@ Weight transmission adds only 0.319 bpp while geometry coding saves 1.883 bpp, y
 - [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
 - [\[CVPR 2026\] PCSTracker: Long-Term Scene Flow Estimation for Point Cloud Sequences](pcstracker_long-term_scene_flow_estimation_for_point_cloud_sequences.md)
 - [\[ICLR 2026\] Universal Beta Splatting](../../ICLR2026/3d_vision/universal_beta_splatting.md)
+
+</div>
 
 <!-- RELATED:END -->

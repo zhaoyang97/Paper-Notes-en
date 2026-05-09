@@ -158,6 +158,8 @@ IDF adopts an iterative denoising scheme: a noisy input image $\mathbf{I}_{Noisy
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SIC: Similarity-Based Interpretable Image Classification with Neural Networks](sic_similarity-based_interpretable_image_classification_with_neural_networks.md)
@@ -165,5 +167,7 @@ IDF adopts an iterative denoising scheme: a noisy input image $\mathbf{I}_{Noisy
 - [\[CVPR 2026\] RelativeFlow: Taming Medical Image Denoising Learning with Noisy Reference](../../CVPR2026/medical_imaging/relativeflow_taming_medical_image_denoising_learning_with_noisy_reference.md)
 - [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
 - [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](../../NeurIPS2025/medical_imaging/iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+
+</div>
 
 <!-- RELATED:END -->

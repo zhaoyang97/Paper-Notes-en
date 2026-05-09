@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/optimization/index.md) · [📷 CVPR2026 (10)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (45)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (24)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (113)](../../NeurIPS2025/optimization/index.md)
+
+🔥 **Top topics:** Federated Learning ×4
+
 **[Addressing Representation Collapse in Vector Quantized Models with One Linear Layer](addressing_representation_collapse_in_vector_quantized_models_with_one_linear_la.md)**
 
 :   This paper proposes SimVQ, a method that reparameterizes codebook vectors via a single learnable linear transformation layer ($\bm{C}\bm{W}$), converting the disjoint optimization of the codebook into a joint spatial optimization, thereby fundamentally resolving representation collapse in VQ models and achieving near-100% codebook utilization.

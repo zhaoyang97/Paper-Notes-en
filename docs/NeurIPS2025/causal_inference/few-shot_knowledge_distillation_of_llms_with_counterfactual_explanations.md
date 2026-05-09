@@ -164,6 +164,8 @@ Experiments on CoLA and Yelp confirm that CoD is equally effective for generativ
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](../../AAAI2026/causal_inference/ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
@@ -171,5 +173,7 @@ Experiments on CoLA and Yelp confirm that CoD is equally effective for generativ
 - [\[NeurIPS 2025\] Performative Validity of Recourse Explanations](performative_validity_of_recourse_explanations.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
 - [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
+
+</div>
 
 <!-- RELATED:END -->

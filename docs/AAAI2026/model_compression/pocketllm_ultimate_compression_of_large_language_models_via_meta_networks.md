@@ -139,6 +139,8 @@ Traditional methods perform adequately at 4 bits (~8×) but suffer sharp accurac
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](../../ACL2026/model_compression/meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
@@ -146,5 +148,7 @@ Traditional methods perform adequately at 4 bits (~8×) but suffer sharp accurac
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
 - [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](failures_to_surface_harmful_contents_in_video_large_language_models.md)
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
+
+</div>
 
 <!-- RELATED:END -->

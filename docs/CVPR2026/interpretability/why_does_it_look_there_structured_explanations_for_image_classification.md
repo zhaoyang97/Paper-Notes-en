@@ -136,6 +136,8 @@ I2X is an analysis framework and introduces no new training loss. However, the "
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification](dino-qpm_adapting_visual_foundation_models_for_globally_interpretable_image_clas.md)
@@ -143,5 +145,7 @@ I2X is an analysis framework and introduces no new training loss. However, the "
 - [\[ACL 2026\] LePREC: Reasoning as Classification over Structured Factors for Assessing Relevance of Legal Issues](../../ACL2026/interpretability/leprec_reasoning_as_classification_over_structured_factors_for_assessing_relevan.md)
 - [\[NeurIPS 2025\] CHiQPM: Calibrated Hierarchical Interpretable Image Classification](../../NeurIPS2025/interpretability/chiqpm_calibrated_hierarchical_interpretable_image_classification.md)
 - [\[CVPR 2026\] Measuring the (Un)Faithfulness of Concept-Based Explanations](measuring_the_unfaithfulness_of_concept-based_explanations.md)
+
+</div>
 
 <!-- RELATED:END -->

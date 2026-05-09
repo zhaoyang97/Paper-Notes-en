@@ -179,6 +179,8 @@ Removing each component leads to visible degradation, validating the necessity o
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] RTGaze: Real-Time 3D-Aware Gaze Redirection from a Single Image](rtgaze_real-time_3d-aware_gaze_redirection_from_a_single_image.md)
@@ -186,5 +188,7 @@ Removing each component leads to visible degradation, validating the necessity o
 - [\[ICCV 2025\] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device](../../ICCV2025/3d_vision/embodiedsplat_personalized_real-to-sim-to-real_navigation_with_gaussian_splats_f.md)
 - [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](../../CVPR2026/3d_vision/anthrotap_learning_point_tracking_with_real-world_motion.md)
 - [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](../../CVPR2026/3d_vision/changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
+
+</div>
 
 <!-- RELATED:END -->

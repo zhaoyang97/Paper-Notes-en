@@ -164,6 +164,8 @@ Total loss: $\mathcal{L} = \lambda_f \mathcal{L}_{flow} + \lambda_S \mathcal{L}_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing](contact-aware_refinement_of_human_pose_pseudo-ground_truth_via_bioimpedance_sens.md)
@@ -171,5 +173,7 @@ Total loss: $\mathcal{L} = \lambda_f \mathcal{L}_{flow} + \lambda_S \mathcal{L}_
 - [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](../../NeurIPS2025/human_understanding/hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
 - [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/human_understanding/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
 - [\[NeurIPS 2025\] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection](../../NeurIPS2025/human_understanding/part-aware_bottom-up_group_reasoning_for_fine-grained_social_interaction_detecti.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -122,6 +122,8 @@ The style transfer approach to data augmentation can generalize to other data-sc
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](../../CVPR2026/image_generation/ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)
@@ -129,5 +131,7 @@ The style transfer approach to data augmentation can generalize to other data-sc
 - [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](../../ACL2026/image_generation/mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
 - [\[CVPR 2026\] TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering](../../CVPR2026/image_generation/textpecker_rewarding_structural_anomaly_quantification_for_enhancing_visual_text.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](../../CVPR2026/image_generation/neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
+
+</div>
 
 <!-- RELATED:END -->

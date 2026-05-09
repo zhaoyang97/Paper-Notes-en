@@ -132,6 +132,8 @@ The most significant improvement is observed on Seq 3 (complex scissors), where 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SuperDec: 3D Scene Decomposition with Superquadric Primitives](superdec_3d_scene_decomposition_with_superquadrics_primitives.md)
@@ -139,5 +141,7 @@ The most significant improvement is observed on Seq 3 (complex scissors), where 
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
 - [\[ICCV 2025\] Scene Coordinate Reconstruction Priors](scene_coordinate_reconstruction_priors.md)
 - [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

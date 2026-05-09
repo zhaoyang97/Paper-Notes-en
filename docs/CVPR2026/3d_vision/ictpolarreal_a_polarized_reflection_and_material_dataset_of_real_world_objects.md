@@ -138,6 +138,8 @@ Both inverse rendering and forward rendering networks are fine-tuned from RGB2X 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
@@ -145,5 +147,7 @@ Both inverse rendering and forward rendering networks are fine-tuned from RGB2X 
 - [\[ICCV 2025\] Demeter: A Parametric Model of Crop Plant Morphology from the Real World](../../ICCV2025/3d_vision/demeter_a_parametric_model_of_crop_plant_morphology_from_the_real_world.md)
 - [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](../../ICCV2025/3d_vision/revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
 - [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
+
+</div>
 
 <!-- RELATED:END -->

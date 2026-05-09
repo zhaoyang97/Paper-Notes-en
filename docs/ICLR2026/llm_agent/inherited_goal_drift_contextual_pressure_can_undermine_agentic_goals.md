@@ -142,6 +142,8 @@ The two environments involve mutually exclusive objectives (profit vs. ecology; 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](../../ACL2026/llm_agent/why_agents_compromise_safety_under_pressure.md)
@@ -149,5 +151,7 @@ The two environments involve mutually exclusive objectives (profit vs. ecology; 
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
 - [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](../../NeurIPS2025/llm_agent/agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
 - [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](../../AAAI2026/llm_agent/coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
+
+</div>
 
 <!-- RELATED:END -->

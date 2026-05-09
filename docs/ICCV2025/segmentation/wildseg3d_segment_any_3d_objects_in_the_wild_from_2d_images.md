@@ -143,6 +143,8 @@ WildSeg3D requires no scene-specific training yet surpasses all training-based m
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SAP: Segment Any 4K Panorama](../../CVPR2026/segmentation/sap_segment_any_4k_panorama.md)
@@ -150,5 +152,7 @@ WildSeg3D requires no scene-specific training yet surpasses all training-based m
 - [\[ICCV 2025\] Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes](rethinking_detecting_salient_and_camouflaged_objects_in_unconstrained_scenes.md)
 - [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
 - [\[ICCV 2025\] Refer to Any Segmentation Mask Group With Vision-Language Prompts](refer_to_any_segmentation_mask_group_with_vision-language_prompts.md)
+
+</div>
 
 <!-- RELATED:END -->

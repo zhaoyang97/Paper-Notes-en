@@ -133,6 +133,8 @@ Downstream task (FMB semantic segmentation, SegFormer-b5): Ours mIoU = 62.939 vs
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)
@@ -140,5 +142,7 @@ Downstream task (FMB semantic segmentation, SegFormer-b5): Ours mIoU = 62.939 vs
 - [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
 - [\[CVPR 2026\] Geometry-Guided Camera Motion Understanding in VideoLLMs](geometry-guided_camera_motion_understanding_in_videollms.md)
 - [\[CVPR 2026\] Why Does It Look There? Structured Explanations for Image Classification](why_does_it_look_there_structured_explanations_for_image_classification.md)
+
+</div>
 
 <!-- RELATED:END -->

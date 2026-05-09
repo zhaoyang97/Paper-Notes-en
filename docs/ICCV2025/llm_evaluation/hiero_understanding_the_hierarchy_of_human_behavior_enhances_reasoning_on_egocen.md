@@ -199,6 +199,8 @@ Total loss: $\mathcal{L} = \mathcal{L}_{vna} + \mathcal{L}_{ft}$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities](../../NeurIPS2025/llm_evaluation/ineq-comp_benchmarking_human-intuitive_compositional_reasoning_in_automated_theo.md)
@@ -206,5 +208,7 @@ Total loss: $\mathcal{L} = \mathcal{L}_{vna} + \mathcal{L}_{ft}$
 - [\[ICCV 2025\] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark](3dsrbench_a_comprehensive_3d_spatial_reasoning_benchmark.md)
 - [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Videos](../../ICLR2026/llm_evaluation/mosiv_multi-object_system_identification_from_videos.md)
 - [\[ACL 2026\] Idiom Understanding as a Tool to Measure the Dialect Gap](../../ACL2026/llm_evaluation/idiom_understanding_as_a_tool_to_measure_the_dialect_gap.md)
+
+</div>
 
 <!-- RELATED:END -->

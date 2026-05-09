@@ -150,6 +150,8 @@ TR-PTS consists of two synergistic modules: Task-Relevant Parameter Selection an
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations](generalized_tensor-based_parameter-efficient_fine-tuning_via_lie_group_transform.md)
@@ -157,5 +159,7 @@ TR-PTS consists of two synergistic modules: Task-Relevant Parameter Selection an
 - [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](../../NeurIPS2025/model_compression/recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
+
+</div>
 
 <!-- RELATED:END -->

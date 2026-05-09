@@ -146,6 +146,8 @@ ShiftSyncNet meets the AAMI standard (MAE < 5 mmHg), reducing SBP/DBP MAE by up 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] UniShape: A Unified Shape-Aware Foundation Model for Time Series Classification](a_unified_shape-aware_foundation_model_for_time_series_class.md)
@@ -153,5 +155,7 @@ ShiftSyncNet meets the AAMI standard (MAE < 5 mmHg), reducing SBP/DBP MAE by up 
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
 - [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](../../NeurIPS2025/others/deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
 - [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](../../CVPR2026/others/vit3_unlocking_test_time_training_in_vision.md)
+
+</div>
 
 <!-- RELATED:END -->

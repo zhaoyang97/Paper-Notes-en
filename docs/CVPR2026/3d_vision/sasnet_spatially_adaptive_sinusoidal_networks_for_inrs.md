@@ -126,6 +126,8 @@ Based on the paper's abstract and method description, SASNet is evaluated on the
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
@@ -133,5 +135,7 @@ Based on the paper's abstract and method description, SASNet is evaluated on the
 - [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
 - [\[NeurIPS 2025\] High Resolution UDF Meshing via Iterative Networks](../../NeurIPS2025/3d_vision/high_resolution_udf_meshing_via_iterative_networks.md)
 - [\[NeurIPS 2025\] Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting](../../NeurIPS2025/3d_vision/mesh_interpolation_graph_network_for_dynamic_and_spatially_irregular_global_weat.md)
+
+</div>
 
 <!-- RELATED:END -->

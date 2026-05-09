@@ -172,6 +172,8 @@ CSOC alone contributes an average of 6.97 pp, CAA alone contributes 2.35 pp, and
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
@@ -179,5 +181,7 @@ CSOC alone contributes an average of 6.97 pp, CAA alone contributes 2.35 pp, and
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](../../AAAI2026/llm_evaluation/sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
 - [\[NeurIPS 2025\] What Does It Take to Build a Performant Selective Classifier?](what_does_it_take_to_build_a_performant_selective_classifier.md)
 - [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/llm_evaluation/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
+
+</div>
 
 <!-- RELATED:END -->

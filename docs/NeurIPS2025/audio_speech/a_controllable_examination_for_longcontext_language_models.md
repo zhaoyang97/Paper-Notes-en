@@ -102,6 +102,8 @@ The **gap between retrieval and reasoning** revealed by this paper is a signific
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers](physics_of_language_models_part_41_architecture_design_and_the_magic_of_canon_la.md)
@@ -109,5 +111,7 @@ The **gap between retrieval and reasoning** revealed by this paper is a signific
 - [\[NeurIPS 2025\] Associative Syntax and Maximal Repetitions Reveal Context-Dependent Complexity in Fruit Bat Communication](associative_syntax_and_maximal_repetitions_reveal_context-dependent_complexity_i.md)
 - [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
+
+</div>
 
 <!-- RELATED:END -->

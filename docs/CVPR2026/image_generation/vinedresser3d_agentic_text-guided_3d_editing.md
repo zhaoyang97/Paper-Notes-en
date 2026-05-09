@@ -165,6 +165,8 @@ Employing an MLLM agent for 3D editing is a compelling direction. The method is 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_text-guided_multi-human_3d_motion_editing.md)
@@ -172,5 +174,7 @@ Employing an MLLM agent for 3D editing is a compelling direction. The method is 
 - [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
 - [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
 - [\[CVPR 2026\] MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing](morphany3d_unleashing_the_power_of_structured_latent_in_3d_morphing.md)
+
+</div>
 
 <!-- RELATED:END -->

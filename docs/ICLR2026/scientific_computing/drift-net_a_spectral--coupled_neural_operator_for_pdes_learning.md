@@ -106,6 +106,8 @@ Approximately 15% fewer parameters than scOT with higher throughput; NS errors r
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/scientific_computing/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
@@ -113,5 +115,7 @@ Approximately 15% fewer parameters than scOT with higher throughput; NS errors r
 - [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 - [\[ICLR 2026\] Deep Learning for Subspace Regression](deep_learning_for_subspace_regression.md)
 - [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](../../CVPR2026/scientific_computing/nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
+
+</div>
 
 <!-- RELATED:END -->

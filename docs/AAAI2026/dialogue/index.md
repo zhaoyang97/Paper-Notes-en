@@ -10,6 +10,8 @@ description: >-
 
 **🤖 AAAI2026** · **5** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/dialogue/index.md)
+
 **[Auto-PRE: An Automatic and Cost-Efficient Peer-Review Framework for Language Generation Evaluation](auto-pre_an_automatic_and_cost-efficient_peer-review_framework_for_language_gene.md)**
 
 :   This paper proposes the Auto-PRE framework, which selects qualified LLM evaluators through an automatic qualification exam across three dimensions—consistency, pertinence, and self-confidence—achieving state-of-the-art evaluation performance without human annotation while significantly reducing costs.

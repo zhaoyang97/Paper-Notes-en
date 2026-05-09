@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **39** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/time_series/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/time_series/index.md) · [🤖 AAAI2026 (35)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (60)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
+
+🔥 **Top topics:** Time-Series Forecasting ×30 · LLM ×4 · Few-/Zero-Shot Learning ×4 · Reasoning ×3 · Anomaly Detection ×2
+
 **[Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)**
 
 :   This paper proposes TATO, a framework that automatically optimizes data preprocessing pipelines (including context trimming, scale normalization, and outlier correction) to adapt frozen large time-series models (LTMs) to diverse downstream domains without fine-tuning, achieving an average MSE reduction of 13.6% and up to 65.4%.

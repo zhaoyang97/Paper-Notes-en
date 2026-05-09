@@ -114,6 +114,8 @@ This is a purely theoretical paper with no experimental data. The core conclusio
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](an_epistemic_perspective_on_agent_awareness.md)
@@ -121,5 +123,7 @@ This is a purely theoretical paper with no experimental data. The core conclusio
 - [\[AAAI 2026\] Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms](theoretical_and_empirical_analysis_of_lehmer_codes_to_search_permutation_spaces_.md)
 - [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
 - [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

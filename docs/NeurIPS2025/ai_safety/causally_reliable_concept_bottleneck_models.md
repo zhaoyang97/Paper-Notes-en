@@ -133,6 +133,8 @@ LLM background knowledge effectively reduces erroneous edges in the causal graph
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
@@ -140,5 +142,7 @@ LLM background knowledge effectively reduces erroneous edges in the causal graph
 - [\[CVPR 2026\] LogitDynamics: Reliable ViT Error Detection from Layerwise Logit Trajectories](../../CVPR2026/ai_safety/logitdynamics_vit_error_detection.md)
 - [\[NeurIPS 2025\] Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)](artificial_hivemind_the_open-ended_homogeneity_of_language_models_and_beyond.md)
 - [\[ICCV 2025\] A Framework for Double-Blind Federated Adaptation of Foundation Models](../../ICCV2025/ai_safety/a_framework_for_double-blind_federated_adaptation_of_foundation_models.md)
+
+</div>
 
 <!-- RELATED:END -->

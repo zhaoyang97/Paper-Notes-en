@@ -140,6 +140,8 @@ OHSGPR is **300–450× faster** than OSGPR, as it does not require optimizing i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
@@ -147,5 +149,7 @@ OHSGPR is **300–450× faster** than OSGPR, as it does not require optimizing i
 - [\[CVPR 2026\] Gaussian Shannon: High-Precision Diffusion Model Watermarking Based on Communication](../../CVPR2026/image_generation/gaussian_shannon_high-precision_diffusion_model_watermarking_based_on_communicat.md)
 - [\[AAAI 2026\] ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning](../../AAAI2026/image_generation/orvit_near-optimal_online_distributionally_robust_reinforcement_learning.md)
 - [\[ICLR 2026\] DiffusionNFT: Online Diffusion Reinforcement with Forward Process](../../ICLR2026/image_generation/diffusionnft_online_diffusion_reinforcement_with_forward_process.md)
+
+</div>
 
 <!-- RELATED:END -->

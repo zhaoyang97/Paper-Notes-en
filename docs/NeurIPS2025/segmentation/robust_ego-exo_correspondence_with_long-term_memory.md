@@ -103,6 +103,8 @@ The MoE-based feature fusion paradigm is transferable to other multi-view and mu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree](../../ICCV2025/segmentation/sam2long_enhancing_sam_2_for_long_video_segmentation_with_a.md)
@@ -110,5 +112,7 @@ The MoE-based feature fusion paradigm is transferable to other multi-view and mu
 - [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
 - [\[NeurIPS 2025\] STEAD: Robust Provably Secure Linguistic Steganography with Diffusion Language Model](stead_robust_provably_secure_linguistic_steganography_with_diffusion_language_mo.md)
+
+</div>
 
 <!-- RELATED:END -->

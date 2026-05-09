@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (9)](../../ACL2026/aigc_detection/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/aigc_detection/index.md)
+
+🔥 **Top topics:** LLM ×4 · Agents ×2
+
 **[ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text](asciibench_evaluating_language-model-based_understanding_of_visually-oriented_te.md)**
 
 :   This paper introduces ASCIIBench, the first publicly available benchmark for ASCII art understanding and generation (5,315 images, 752 categories). Systematic evaluation reveals that the visual modality substantially outperforms the text modality, multimodal fusion yields no benefit, and CLIP exhibits a fundamental bottleneck in representing ASCII structure—only categories with high intra-class consistency can be effectively distinguished.

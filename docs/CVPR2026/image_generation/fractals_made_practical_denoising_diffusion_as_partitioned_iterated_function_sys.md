@@ -182,6 +182,8 @@ On the google/ddpm-celebahq-256 model, with $\lambda_k \in [38.7, 231.7]$, the G
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework](smoothing_score_function_generalization_diffusion_models.md)
@@ -189,5 +191,7 @@ On the google/ddpm-celebahq-256 model, with $\lambda_k \in [38.7, 231.7]$, the G
 - [\[CVPR 2026\] Diffusion Mental Averages](diffusion_mental_averages.md)
 - [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](learnability-guided_diffusion_for_dataset_distillation.md)
 - [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
+
+</div>
 
 <!-- RELATED:END -->

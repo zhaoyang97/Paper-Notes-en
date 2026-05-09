@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **48** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/others/index.md) · [📷 CVPR2026 (54)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (76)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (126)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (150)](../../NeurIPS2025/others/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×6 · Dynamic Scenes ×2 · Few-/Zero-Shot Learning ×2 · Face & Gaze ×2 · Diffusion Models ×2
+
 **[A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](a_hidden_stumbling_block_in_generalized_category_discovery_d.md)**
 
 :   This paper identifies a previously overlooked issue in GCD—ViT attention on unlabeled data (especially novel categories) tends to disperse onto background regions (distracted attention)—and proposes an Attention Focusing (AF) module that corrects attention via multi-scale token importance measurement combined with adaptive pruning. As a plug-and-play module on top of SimGCD, AF achieves up to 15.4% performance improvement.

@@ -117,6 +117,8 @@ The idea of customizing optimal vocabulary size per language generalizes natural
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Token Taxes: Mitigating AGI's Economic Risks](../../ICLR2026/robotics/token_taxes_mitigating_agis_economic_risks.md)
@@ -124,5 +126,7 @@ The idea of customizing optimal vocabulary size per language generalizes natural
 - [\[NeurIPS 2025\] LLMscape](llmscape.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
 - [\[NeurIPS 2025\] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation](redefining_experts_interpretable_decomposition_of_language_models_for_toxicity_m.md)
+
+</div>
 
 <!-- RELATED:END -->

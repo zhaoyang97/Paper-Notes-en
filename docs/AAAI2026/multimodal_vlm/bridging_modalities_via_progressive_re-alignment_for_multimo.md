@@ -179,6 +179,8 @@ Under the VGGSound-C bimodal corruption setting, BriMPR achieves a substantial l
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](panda_test-time_adaptation_with_negative_data_augmentation.md)
@@ -186,5 +188,7 @@ Under the VGGSound-C bimodal corruption setting, BriMPR achieves a substantial l
 - [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 - [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
+
+</div>
 
 <!-- RELATED:END -->

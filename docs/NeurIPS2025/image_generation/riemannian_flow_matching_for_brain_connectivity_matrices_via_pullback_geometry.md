@@ -156,6 +156,8 @@ After projection onto the manifold, TriangCFM's $\beta$-recall drops by up to 0.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
@@ -163,5 +165,7 @@ After projection onto the manifold, TriangCFM's $\beta$-recall drops by up to 0.
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
 - [\[NeurIPS 2025\] LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching](leapfactual_reliable_visual_counterfactual_explanation_using_conditional_flow_ma.md)
 - [\[NeurIPS 2025\] Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching](improving_posterior_inference_of_galaxy_properties_with_image-based_conditional_.md)
+
+</div>
 
 <!-- RELATED:END -->

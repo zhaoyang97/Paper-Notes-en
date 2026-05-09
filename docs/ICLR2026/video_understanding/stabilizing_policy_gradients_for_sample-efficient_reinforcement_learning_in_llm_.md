@@ -123,6 +123,8 @@ The same clipped surrogate objective and KL regularization as GRPO are used. CAP
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](../../CVPR2026/video_understanding/videochatm1_collaborative_policy_planning_for_vide.md)
@@ -130,5 +132,7 @@ The same clipped surrogate objective and KL regularization as GRPO are used. CAP
 - [\[ICLR 2026\] Log Probability Tracking of LLM APIs](log_probability_tracking_of_llm_apis.md)
 - [\[ICLR 2026\] Video-KTR: Enhancing Video Reasoning via Key Token Attribution](video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
 - [\[ICCV 2025\] EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception](../../ICCV2025/video_understanding/egoadapt_adaptive_multisensory_distillation_and_policy_learning_for_efficient_eg.md)
+
+</div>
 
 <!-- RELATED:END -->

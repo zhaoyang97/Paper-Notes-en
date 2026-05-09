@@ -118,6 +118,8 @@ The MLMs are pretrained models; no training is involved. Nine MLMs (ESM-2 35M/15
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Reverse Distillation: Consistently Scaling Protein Language Model Representations](reverse_distillation_consistently_scaling_protein_language_model_representations.md)
@@ -125,5 +127,7 @@ The MLMs are pretrained models; no training is involved. Nine MLMs (ESM-2 35M/15
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](protein_as_a_second_language_for_llms.md)
 - [\[ICLR 2026\] Controlling Repetition in Protein Language Models](controlling_repetition_in_protein_language_models.md)
 - [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
+
+</div>
 
 <!-- RELATED:END -->

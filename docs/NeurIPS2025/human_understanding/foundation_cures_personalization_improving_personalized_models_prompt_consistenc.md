@@ -123,6 +123,8 @@ In FLUX's full-attention DiT, the FASA mask is applied only to the interaction b
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models](mechanistic_interpretability_of_rnns_emulating_hidden_markov_models.md)
@@ -130,5 +132,7 @@ In FLUX's full-attention DiT, the FASA mask is applied only to the interaction b
 - [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](../../CVPR2026/human_understanding/unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
 - [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
 - [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](../../ICCV2025/human_understanding/phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
+
+</div>
 
 <!-- RELATED:END -->

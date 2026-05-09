@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **92** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (52)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (287)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (93)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (151)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (142)](../../ICCV2025/multimodal_vlm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×49 · Reasoning ×10 · LLM ×8 · Adversarial Robustness ×8 · Alignment/RLHF ×5
+
 **[AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)**
 
 :   Inspired by the dual-mode human cognitive process of verbal abduction and pictorial imagination, this paper proposes AbductiveMLLM, which enhances visual abductive reasoning in MLLMs via two collaborative components — a Reasoner (causal contrastive learning for hypothesis selection) and an Imaginer (diffusion-model-based pictorial reasoning) — achieving state-of-the-art performance on the VAR and YouCookII benchmarks.

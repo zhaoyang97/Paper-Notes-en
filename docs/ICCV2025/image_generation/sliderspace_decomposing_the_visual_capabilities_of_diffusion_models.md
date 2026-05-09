@@ -146,6 +146,8 @@ SliderSpace with only 10 directions matches the FID of 64 manually crafted Conce
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] DiffSim: Taming Diffusion Models for Evaluating Visual Similarity](diffsim_taming_diffusion_models_for_evaluating_visual_similarity.md)
@@ -153,5 +155,7 @@ SliderSpace with only 10 directions matches the FID of 64 manually crafted Conce
 - [\[AAAI 2026\] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs](../../AAAI2026/image_generation/longllada_unlocking_long_context_capabilities_in_diffusion_llms.md)
 - [\[ICCV 2025\] Pretrained Reversible Generation as Unsupervised Visual Representation Learning](pretrained_reversible_generation_as_unsupervised_visual_representation_learning.md)
 - [\[ICCV 2025\] VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning](visualcloze_a_universal_image_generation_framework_via_visual_in-context_learnin.md)
+
+</div>
 
 <!-- RELATED:END -->

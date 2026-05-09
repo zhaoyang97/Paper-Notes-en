@@ -136,6 +136,8 @@ Effect of subspace dimensionality $n$ (BookSum, Llama-3):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)](../../NeurIPS2025/interpretability/out_of_control_--_why_alignment_needs_formal_control_theory_and_an_alignment_con.md)
@@ -143,5 +145,7 @@ Effect of subspace dimensionality $n$ (BookSum, Llama-3):
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](../../ICLR2026/interpretability/the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 - [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
 - [\[CVPR 2026\] Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP](../../CVPR2026/interpretability/beyond_semantics_disentangling_information_scope_in_sparse_autoencoders_for_clip.md)
+
+</div>
 
 <!-- RELATED:END -->

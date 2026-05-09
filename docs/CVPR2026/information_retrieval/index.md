@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **8** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/information_retrieval/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/information_retrieval/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/information_retrieval/index.md) · [🧠 NeurIPS2025 (30)](../../NeurIPS2025/information_retrieval/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/information_retrieval/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×5 · RAG ×2
+
 **[Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval](beyond_global_similarity_towards_fine-grained_multi-condition_multimodal_retriev.md)**
 
 :   This paper introduces MCMR (Multi-Conditional Multimodal Retrieval), a large-scale benchmark that employs a dual-evidence design — where certain attributes are inferable only from images and others only from text — to ensure retrieval tasks cannot be solved unimodally. The benchmark systematically evaluates 5 retrievers and 7 MLLM rerankers, revealing modality asymmetry and fine-grained reasoning gaps.

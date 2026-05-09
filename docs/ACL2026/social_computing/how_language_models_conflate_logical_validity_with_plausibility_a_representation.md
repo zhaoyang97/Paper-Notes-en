@@ -120,6 +120,8 @@ Behavioral content effects:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](../../ICLR2026/social_computing/propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
@@ -127,5 +129,7 @@ Behavioral content effects:
 - [\[ACL 2026\] Among Us: Language of Conspiracy Theorists on Mainstream Reddit](among_us_language_of_conspiracy_theorists_on_mainstream_reddit.md)
 - [\[CVPR 2026\] As Language Models Scale, Low-order Linear Depth Dynamics Emerge](../../CVPR2026/social_computing/as_language_models_scale_loworder_linear_depth_dyn.md)
 - [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](../../NeurIPS2025/social_computing/active_slice_discovery_in_large_language_models.md)
+
+</div>
 
 <!-- RELATED:END -->

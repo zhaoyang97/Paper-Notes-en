@@ -182,6 +182,8 @@ Fine-tuning ResNet-50 with CNS-Bench data improves ImageNet-R accuracy from 27.3
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](../../CVPR2026/image_generation/micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
@@ -189,5 +191,7 @@ Fine-tuning ResNet-50 with CNS-Bench data improves ImageNet-R accuracy from 27.3
 - [\[NeurIPS 2025\] T2SMark: Balancing Robustness and Diversity in Noise-as-Watermark for Diffusion Models](../../NeurIPS2025/image_generation/t2smark_balancing_robustness_and_diversity_in_noise-as-watermark_for_diffusion_m.md)
 - [\[ICCV 2025\] Semantic Watermarking Reinvented: Enhancing Robustness and Generation Quality with Fourier Integrity](semantic_watermarking_reinvented_enhancing_robustness_and_generation_quality_wit.md)
 - [\[ICCV 2025\] TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance](teefusion_blending_text_embeddings_to_distill_classifier-free_guidance.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **30** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (5)](../../ACL2026/object_detection/index.md) · [📷 CVPR2026 (45)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (17)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (18)](../../NeurIPS2025/object_detection/index.md)
+
+🔥 **Top topics:** Object Detection ×10 · 3D Object Detection ×4 · Few-/Zero-Shot Learning ×2 · Adversarial Robustness ×2 · Diffusion Models ×2
+
 **[3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection](3dmood_lifting_2d_to_3d_for_monocular_openset_object_detecti.md)**
 
 :   This paper proposes 3D-MOOD, the first end-to-end monocular open-set 3D object detector, which lifts open-set 2D detections into 3D space via geometry-aware 3D query generation and a canonical image space design, achieving state-of-the-art performance on both the Omni3D closed-set benchmark and the Argoverse 2 / ScanNet open-set benchmarks.

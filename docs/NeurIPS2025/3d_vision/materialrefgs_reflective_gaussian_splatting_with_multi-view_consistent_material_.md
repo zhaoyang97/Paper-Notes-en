@@ -145,6 +145,8 @@ All three components—normal prior, material consistency, and environment model
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](../../ICCV2025/3d_vision/panst3r_multi-view_consistent_panoptic_segmentation.md)
@@ -152,5 +154,7 @@ All three components—normal prior, material consistency, and environment model
 - [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](../../ICCV2025/3d_vision/materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
 - [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](../../ICCV2025/3d_vision/supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images](../../ICCV2025/3d_vision/auto-regressively_generating_multi-view_consistent_images.md)
+
+</div>
 
 <!-- RELATED:END -->

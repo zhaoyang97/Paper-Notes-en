@@ -117,6 +117,8 @@ Observed route $\mathbf{x}_i$ (+ problem instance $\mathbf{p}_i$, e.g., start/en
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm](trust_region_reward_optimization_and_proximal_inverse_reward_optimization_algori.md)
@@ -124,5 +126,7 @@ Observed route $\mathbf{x}_i$ (+ problem instance $\mathbf{p}_i$, e.g., start/en
 - [\[NeurIPS 2025\] Strategic Costs of Perceived Bias in Fair Selection](strategic_costs_of_perceived_bias_in_fair_selection.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
+
+</div>
 
 <!-- RELATED:END -->

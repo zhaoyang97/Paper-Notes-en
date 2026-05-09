@@ -122,6 +122,8 @@ SubZero improves over MeZO by 7.1% on LLaMA-7B full fine-tuning, even surpassing
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](../../NeurIPS2025/optimization/improving_the_straight-through_estimator_with_zeroth-order_information.md)
@@ -129,5 +131,7 @@ SubZero improves over MeZO by 7.1% on LLaMA-7B full fine-tuning, even surpassing
 - [\[ICLR 2026\] Converge Faster, Talk Less: Hessian-Informed Federated Zeroth-Order Optimization](../../ICLR2026/optimization/converge_faster_talk_less_hessian-informed_federated_zeroth-order_optimization.md)
 - [\[ICCV 2025\] Federated Continual Instruction Tuning](federated_continual_instruction_tuning.md)
 - [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
+
+</div>
 
 <!-- RELATED:END -->

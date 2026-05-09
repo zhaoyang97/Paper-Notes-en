@@ -10,6 +10,10 @@ description: >-
 
 **🔬 ICLR2026** · **15** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (6)](../../ACL2026/image_restoration/index.md) · [📷 CVPR2026 (47)](../../CVPR2026/image_restoration/index.md) · [🤖 AAAI2026 (13)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (30)](../../ICCV2025/image_restoration/index.md)
+
+🔥 **Top topics:** Diffusion Models ×7 · Speech & Audio ×2
+
 **[Activation Steering for Masked Diffusion Language Models](activation_steering_for_masked_diffusion_language_models.md)**
 
 :   This work is the first to apply activation steering to Masked Diffusion Language Models (MDLMs), demonstrating that refusal behavior in MDLMs is likewise governed by a single low-dimensional direction. Globally projecting out this direction at every denoising step completely bypasses safety alignment. Unlike autoregressive models, effective directions can be extracted from pre-instruction tokens—reflecting the non-causal, parallel processing nature of diffusion models.

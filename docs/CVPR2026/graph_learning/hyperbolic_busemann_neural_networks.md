@@ -193,6 +193,8 @@ where $\alpha_k > 0$, $v_k \in \mathbb{S}^{n-1}$, and $b_k \in \mathbb{R}$. On t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Adaptive Learned Image Compression with Graph Neural Networks](adaptive_learned_image_compression_with_graph_neural_networks.md)
@@ -200,5 +202,7 @@ where $\alpha_k > 0$, $v_k \in \mathbb{S}^{n-1}$, and $b_k \in \mathbb{R}$. On t
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](../../ICLR2026/graph_learning/cooperative_sheaf_neural_networks.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
 - [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](../../ICLR2026/graph_learning/are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
+
+</div>
 
 <!-- RELATED:END -->

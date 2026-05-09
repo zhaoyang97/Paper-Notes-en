@@ -10,6 +10,10 @@ description: >-
 
 **🧠 NeurIPS2025** · **60** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (24)](../../ACL2026/llm_safety/index.md) · [📷 CVPR2026 (16)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (39)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_safety/index.md) · [📹 ICCV2025 (8)](../../ICCV2025/llm_safety/index.md)
+
+🔥 **Top topics:** Adversarial Robustness ×13 · LLM ×11 · Federated Learning ×4 · Reasoning ×3 · Reinforcement Learning ×3
+
 **[A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing](a_cramrvon_mises_approach_to_incentivizing_truthful_data_sha.md)**
 
 :   This paper proposes an incentive mechanism based on the Cramér–von Mises (CvM) two-sample test statistic. Under both Bayesian and prior-free settings, the mechanism provably makes truthful data submission a (approximate) Nash equilibrium, while encouraging participants to contribute more genuine data—without relying on strong distributional assumptions (e.g., Gaussian or Bernoulli).

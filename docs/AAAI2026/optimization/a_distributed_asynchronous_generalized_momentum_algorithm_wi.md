@@ -129,6 +129,8 @@ The paper's core technical paradigm — "a single step is not a contraction, but
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
@@ -136,5 +138,7 @@ The paper's core technical paradigm — "a single step is not a contraction, but
 - [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](../../ICLR2026/optimization/mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
 - [\[NeurIPS 2025\] perturbation bounds for low-rank inverse approximations under noise](../../NeurIPS2025/optimization/perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
 - [\[NeurIPS 2025\] FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning](../../NeurIPS2025/optimization/fedqs_optimizing_gradient_and_model_aggregation_for_semi-asynchronous_federated_.md)
+
+</div>
 
 <!-- RELATED:END -->

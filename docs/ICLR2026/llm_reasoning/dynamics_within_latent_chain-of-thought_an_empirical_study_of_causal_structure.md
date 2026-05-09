@@ -152,6 +152,8 @@ The superposition score is defined as $\mathrm{SS}(t) = \min(p_Y(t), p_N(t))$; a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](../../ACL2026/llm_reasoning/how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
@@ -159,5 +161,7 @@ The superposition score is defined as $\mathrm{SS}(t) = \min(p_Y(t), p_N(t))$; a
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](../../NeurIPS2025/llm_reasoning/latent_chain-of-thought_for_visual_reasoning.md)
 - [\[CVPR 2026\] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving](../../CVPR2026/llm_reasoning/latent_chain-of-thought_world_modeling_for_end-to-end_autonomous_driving.md)
 - [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](../../AAAI2026/llm_reasoning/l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
+
+</div>
 
 <!-- RELATED:END -->

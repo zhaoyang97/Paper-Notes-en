@@ -172,6 +172,8 @@ GUIDE operates in two stages: (1) extract features from a frozen diffusion model
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
@@ -179,5 +181,7 @@ GUIDE operates in two stages: (1) extract features from a frozen diffusion model
 - [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](../../NeurIPS2025/image_generation/vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
 - [\[NeurIPS 2025\] PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement](../../NeurIPS2025/image_generation/pixperfect_seamless_latent_diffusion_local_editing_with_discriminative_pixel-spa.md)
 - [\[ICCV 2025\] Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation](multimodal_latent_diffusion_model_for_complex_sewing_pattern_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

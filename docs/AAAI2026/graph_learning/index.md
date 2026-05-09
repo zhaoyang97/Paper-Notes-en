@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **38** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/graph_learning/index.md) · [📷 CVPR2026 (9)](../../CVPR2026/graph_learning/index.md) · [🔬 ICLR2026 (21)](../../ICLR2026/graph_learning/index.md) · [🧠 NeurIPS2025 (52)](../../NeurIPS2025/graph_learning/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/graph_learning/index.md)
+
+🔥 **Top topics:** GNNs ×7 · Multimodal/VLM ×3 · Reasoning ×3 · Agents ×2 · Few-/Zero-Shot Learning ×2
+
 **[Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees](adaptive_initial_residual_connections_for_gnns_with_theoretical_guarantees.md)**
 
 :   This paper proposes Adaptive Initial Residual Connections (Adaptive IRC), which allows each node to have a personalized residual strength learned from its initial features. It provides the first theoretical proof of a positive lower bound on the Dirichlet energy of initial residual connections with activation functions (guaranteeing the absence of over-smoothing), and introduces a PageRank-based heuristic variant that achieves comparable or superior performance without learning additional parameters.

@@ -125,6 +125,8 @@ where $\mathcal{L}_a$ is the L1 appearance loss, $\mathcal{L}_b$ is the boundary
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
@@ -132,5 +134,7 @@ where $\mathcal{L}_a$ is the L1 appearance loss, $\mathcal{L}_b$ is the boundary
 - [\[ICCV 2025\] Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion](../../ICCV2025/llm_nlp/balancing_task-invariant_interaction_and_task-specific_adaptation_for_unified_im.md)
 - [\[AAAI 2026\] Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging](do_not_merge_my_model_safeguarding_open-source_llms_against_unauthorized_model_m.md)
 - [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](an_invariant_latent_space_perspective_on_language_model_inve.md)
+
+</div>
 
 <!-- RELATED:END -->

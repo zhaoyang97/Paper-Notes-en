@@ -121,6 +121,8 @@ This is a theoretical and algorithmic work with no training process. The time co
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
@@ -128,5 +130,7 @@ This is a theoretical and algorithmic work with no training process. The time co
 - [\[AAAI 2026\] Higher-Order Responsibility](higher-order_responsibility.md)
 - [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
 - [\[AAAI 2026\] Measuring Model Performance in the Presence of an Intervention](measuring_model_performance_in_the_presence_of_an_intervention.md)
+
+</div>
 
 <!-- RELATED:END -->

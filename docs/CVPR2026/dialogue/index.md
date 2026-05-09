@@ -10,6 +10,8 @@ description: >-
 
 **📷 CVPR2026** · **1** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (10)](../../ACL2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (5)](../../NeurIPS2025/dialogue/index.md)
+
 **[Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)**
 
 :   This paper proposes HIER, which combines hierarchical semantic representation (a three-level hierarchy of tokens → concepts → relations) with a self-evolutionary reasoning mechanism driven by MLLM feedback, consistently outperforming SOTA methods and leading MLLMs by 1–3% on three multimodal intent recognition benchmarks.

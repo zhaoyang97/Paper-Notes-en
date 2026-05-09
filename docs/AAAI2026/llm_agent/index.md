@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **44** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (44)](../../ACL2026/llm_agent/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/llm_agent/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+
+🔥 **Top topics:** Agents ×19 · LLM ×18 · Reasoning ×5 · Alignment/RLHF ×3 · Multimodal/VLM ×3
+
 **[A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)**
 
 :   This paper proposes A2Flow, a framework that automatically extracts reusable abstract execution operators from expert data via a three-stage pipeline (case generation → functional clustering → deep extraction), replacing manually predefined operators. Combined with an operator memory mechanism that accumulates intermediate outputs to assist node decision-making, A2Flow outperforms AFLOW and other state-of-the-art methods across 8 benchmarks while reducing resource consumption by 37%.

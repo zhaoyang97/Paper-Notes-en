@@ -127,6 +127,8 @@ Average performance across 5 video understanding benchmarks on LLaVA-OneVision (
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](../../CVPR2026/video_understanding/token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
@@ -134,5 +136,7 @@ Average performance across 5 video understanding benchmarks on LLaVA-OneVision (
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/video_understanding/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
 - [\[ICLR 2026\] Video-KTR: Enhancing Video Reasoning via Key Token Attribution](video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
+
+</div>
 
 <!-- RELATED:END -->

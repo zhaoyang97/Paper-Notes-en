@@ -122,6 +122,8 @@ This paper proposes Sparse Imagination, which achieves substantial inference spe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
@@ -129,5 +131,7 @@ This paper proposes Sparse Imagination, which achieves substantial inference spe
 - [\[ICLR 2026\] Visual Planning: Let's Think Only with Images](visual_planning_lets_think_only_with_images.md)
 - [\[AAAI 2026\] Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation](../../AAAI2026/robotics/recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua.md)
 - [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](../../CVPR2026/robotics/fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
+
+</div>
 
 <!-- RELATED:END -->

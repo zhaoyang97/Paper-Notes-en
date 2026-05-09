@@ -156,6 +156,8 @@ MutualVPR outperforms the second-best method (CricaVPR / SALAD+CM at 40.8%) by *
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](a_unified_framework_for_variable_selection_in_modelbased_clu.md)
@@ -163,5 +165,7 @@ MutualVPR outperforms the second-best method (CricaVPR / SALAD+CM at 40.8%) by *
 - [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](../../ICCV2025/others/from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
 - [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](adaptive_data_analysis_for_growing_data.md)
+
+</div>
 
 <!-- RELATED:END -->

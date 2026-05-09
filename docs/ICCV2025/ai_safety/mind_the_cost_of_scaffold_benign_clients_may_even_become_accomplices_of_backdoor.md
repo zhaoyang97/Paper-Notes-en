@@ -155,6 +155,8 @@ BadSFL consists of four steps:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](../../NeurIPS2025/ai_safety/taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
@@ -162,5 +164,7 @@ BadSFL consists of four steps:
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 - [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](backdoor_mitigation_by_distance-driven_detoxification.md)
 - [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](../../NeurIPS2025/ai_safety/cost_efficient_fairness_audit_under_partial_feedback.md)
+
+</div>
 
 <!-- RELATED:END -->

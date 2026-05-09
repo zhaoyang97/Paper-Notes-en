@@ -123,6 +123,8 @@ StepFlow is a purely test-time intervention that **requires no training or backp
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Hallucination Begins Where Saliency Drops](../../ICLR2026/interpretability/hallucination_begins_where_saliency_drops.md)
@@ -130,5 +132,7 @@ StepFlow is a purely test-time intervention that **requires no training or backp
 - [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
 - [\[ACL 2026\] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning](forest_before_trees_latent_superposition_for_efficient_visual_reasoning.md)
 - [\[ACL 2026\] Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards](curing_miracle_steps_in_llm_mathematical_reasoning_with_rubric_rewards.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -134,6 +134,8 @@ DTI substantially improves text alignment across all models (0.292→0.522 on SD
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation](../../AAAI2026/image_generation/dos_directional_object_separation_in_text_embeddings_for_mul.md)
@@ -141,5 +143,7 @@ DTI substantially improves text alignment across all models (0.292→0.522 on SD
 - [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](free_lunch_for_stabilizing_rectified_flow_inversion.md)
 - [\[ACL 2026\] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models](../../ACL2026/image_generation/follow_the_flow_on_information_flow_across_textual_tokens_in_text-to-image_model.md)
 - [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
+
+</div>
 
 <!-- RELATED:END -->

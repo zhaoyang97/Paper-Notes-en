@@ -112,6 +112,8 @@ Standard autoregressive cross-entropy loss (next-token prediction) computed over
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
@@ -119,5 +121,7 @@ Standard autoregressive cross-entropy loss (next-token prediction) computed over
 - [\[ICCV 2025\] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning](svip_semantically_contextualized_visual_patches_for_zero-shot_learning.md)
 - [\[ICCV 2025\] ArgoTweak: Towards Self-Updating HD Maps through Structured Priors](argotweak_towards_self-updating_hd_maps_through_structured_priors.md)
 - [\[ICCV 2025\] Learnable Fractional Reaction-Diffusion Dynamics for Under-Display ToF Imaging and Beyond](learnable_fractional_reaction-diffusion_dynamics_for_under-display_tof_imaging_a.md)
+
+</div>
 
 <!-- RELATED:END -->

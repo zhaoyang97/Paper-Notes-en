@@ -124,6 +124,8 @@ Binary cross-entropy loss. Probes are trained on synthetic data and evaluated on
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity](polar_sparsity_high_throughput_batched_llm_inferencing_with_scalable_contextual_.md)
@@ -131,5 +133,7 @@ Binary cross-entropy loss. Probes are trained on synthetic data and evaluated on
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
 - [\[ACL 2026\] It's High Time: A Survey of Temporal Question Answering](../../ACL2026/llm_nlp/it39s_high_time_a_survey_of_temporal_question_answering.md)
 - [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](../../ACL2026/llm_nlp/chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
+
+</div>
 
 <!-- RELATED:END -->

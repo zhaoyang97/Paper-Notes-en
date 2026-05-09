@@ -155,6 +155,8 @@ AutoFigure adopts a "Reasoned Rendering" paradigm consisting of two stages:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Generating Physically Sound Designs from Text and a Set of Physical Constraints](../../NeurIPS2025/audio_speech/generating_physically_sound_designs_from_text_and_a_set_of_physical_constraints.md)
@@ -162,5 +164,7 @@ AutoFigure adopts a "Reasoned Rendering" paradigm consisting of two stages:
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
 - [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
 - [\[ICLR 2026\] SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation](synctrack_rhythmic_stability_and_synchronization_in_multi-track_music_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

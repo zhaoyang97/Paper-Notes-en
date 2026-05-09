@@ -147,6 +147,8 @@ This paper makes theoretical contributions. The main theorems are:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](../../AAAI2026/reinforcement_learning/partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
@@ -154,5 +156,7 @@ This paper makes theoretical contributions. The main theorems are:
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
 - [\[NeurIPS 2025\] Learning to Clean: Reinforcement Learning for Noisy Label Correction](learning_to_clean_reinforcement_learning_for_noisy_label_correction.md)
+
+</div>
 
 <!-- RELATED:END -->

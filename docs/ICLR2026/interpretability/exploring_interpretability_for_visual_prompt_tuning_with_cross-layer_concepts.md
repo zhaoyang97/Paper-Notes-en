@@ -132,6 +132,8 @@ IVPT achieves state-of-the-art results across all three dimensions (interpretabi
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
@@ -139,5 +141,7 @@ IVPT achieves state-of-the-art results across all three dimensions (interpretabi
 - [\[ICLR 2026\] Layer by layer, module by module: Choose both for optimal OOD probing of ViT](layer_by_layer_module_by_module_choose_both_for_optimal_ood_probing_of_vit.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
+
+</div>
 
 <!-- RELATED:END -->

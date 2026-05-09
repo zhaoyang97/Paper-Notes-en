@@ -159,6 +159,8 @@ where both $\mathcal{L_I}$ and $\mathcal{L_D}$ are MSE losses and $\lambda=1$.
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](boosting_multimodal_learning_via_disentangled_gradient_learning.md)
@@ -166,5 +168,7 @@ where both $\mathcal{L_I}$ and $\mathcal{L_D}$ are MSE losses and $\lambda=1$.
 - [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](../../NeurIPS2025/signal_comm/multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
 - [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](../../NeurIPS2025/signal_comm/memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
+
+</div>
 
 <!-- RELATED:END -->

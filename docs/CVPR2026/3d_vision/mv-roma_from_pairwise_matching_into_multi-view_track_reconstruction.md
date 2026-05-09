@@ -137,6 +137,8 @@ This paper proposes MV-RoMa, the first multi-view dense matching model that simu
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_human-scene_reconstruction_from_multi-person_multi-view_video_in_a_sing.md)
@@ -144,5 +146,7 @@ This paper proposes MV-RoMa, the first multi-view dense matching model that simu
 - [\[CVPR 2026\] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations](reliev3r_relieving_feed-forward_3d_reconstruction_from_multi-view_geometric_annot.md)
 - [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
 - [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](../../ICCV2025/3d_vision/mv-adapter_multi-view_consistent_image_generation_made_easy.md)
+
+</div>
 
 <!-- RELATED:END -->

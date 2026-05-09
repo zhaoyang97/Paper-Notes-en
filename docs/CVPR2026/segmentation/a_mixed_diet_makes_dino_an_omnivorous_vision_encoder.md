@@ -142,6 +142,8 @@ ImageNet linear classification improves from 80.4% to 83.8%, indicating that cro
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] CrossEarth-SAR: A SAR-Centric and Billion-Scale Geospatial Foundation Model for Domain Generalizable Semantic Segmentation](crossearth-sar_a_sar-centric_and_billion-scale_geospatial_foundation_model_for_d.md)
@@ -149,5 +151,7 @@ ImageNet linear classification improves from 80.4% to 83.8%, indicating that cro
 - [\[CVPR 2026\] CLIP Is Shortsighted: Paying Attention Beyond the First Sentence](clip_is_shortsighted_paying_attention_beyond_the_first_sentence.md)
 - [\[CVPR 2026\] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model](videomt_your_vit_is_secretly_also_a_video_segmentation_model.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
+
+</div>
 
 <!-- RELATED:END -->

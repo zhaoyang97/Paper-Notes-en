@@ -139,6 +139,8 @@ No custom loss functions are introduced—each downstream task uses its standard
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
@@ -146,5 +148,7 @@ No custom loss functions are introduced—each downstream task uses its standard
 - [\[CVPR 2026\] SAP: Segment Any 4K Panorama](sap_segment_any_4k_panorama.md)
 - [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](../../ICCV2025/segmentation/wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
 - [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
+
+</div>
 
 <!-- RELATED:END -->

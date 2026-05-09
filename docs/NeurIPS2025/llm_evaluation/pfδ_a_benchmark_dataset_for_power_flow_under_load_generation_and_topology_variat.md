@@ -154,6 +154,8 @@ Data efficiency experiments (Task 2.1–2.3, 18k/36k/54k samples):
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
@@ -161,5 +163,7 @@ Data efficiency experiments (Task 2.1–2.3, 18k/36k/54k samples):
 - [\[CVPR 2026\] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation](../../CVPR2026/llm_evaluation/tacsim_a_dataset_and_benchmark_for_football_tactical_style_imitation.md)
 - [\[CVPR 2026\] Pioneering Perceptual Video Fluency Assessment: A Novel Task with Benchmark Dataset and Baseline](../../CVPR2026/llm_evaluation/pioneering_perceptual_video_fluency_assessment_a_novel_task_with_benchmark_datas.md)
 - [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
+
+</div>
 
 <!-- RELATED:END -->

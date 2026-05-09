@@ -10,6 +10,10 @@ description: >-
 
 **📷 CVPR2026** · **3** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (4)](../../ACL2026/knowledge_editing/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+
+🔥 **Top topics:** Personalized Generation ×2
+
 **[Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors](attribution-guided_model_rectification_of_unreliable_neural_network_behaviors.md)**
 
 :   This paper proposes an attribution-guided dynamic model rectification framework that repurposes rank-one model editing from domain adaptation to behavior rectification. By quantifying per-layer editability via Integrated Gradients, the framework automatically localizes suspect layers and repairs three categories of unreliable behaviors—backdoor attacks, spurious correlations, and feature leakage—using as few as a single clean sample.

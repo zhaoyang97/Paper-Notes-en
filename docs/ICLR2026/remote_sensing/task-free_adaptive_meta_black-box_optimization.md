@@ -134,6 +134,8 @@ Comparison against 10 baselines on 16 test functions (30 independent runs, Wilco
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
@@ -141,5 +143,7 @@ Comparison against 10 baselines on 16 test functions (30 independent runs, Wilco
 - [\[ICLR 2026\] Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind](spectral_gaps_and_spatial_priors_studying_hyperspectral_downstream_adaptation_us.md)
 - [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](measuring_the_intrinsic_dimension_of_earth_representations.md)
 - [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
+
+</div>
 
 <!-- RELATED:END -->

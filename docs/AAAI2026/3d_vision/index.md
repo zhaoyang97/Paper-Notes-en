@@ -10,6 +10,10 @@ description: >-
 
 **🤖 AAAI2026** · **74** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (252)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (65)](../../ICLR2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (268)](../../ICCV2025/3d_vision/index.md)
+
+🔥 **Top topics:** 3D Gaussian Splatting ×19 · Point Cloud ×14 · Segmentation ×7 · Shape Completion ×5 · Dynamic Scenes ×4
+
 **[3D-ANC: Adaptive Neural Collapse for Robust 3D Point Cloud Recognition](3d-anc_adaptive_neural_collapse_for_robust_3d_point_cloud_re.md)**
 
 :   This paper introduces the Neural Collapse (NC) mechanism into adversarial robustness for 3D point cloud recognition. By replacing the classifier head with a fixed ETF structure and adopting an adaptive training framework (RBL + FDL) to construct a disentangled feature space, 3D-ANC improves the adversarial accuracy of DGCNN on ModelNet40 from 27.2% to 80.9%, surpassing the best baseline by 34 percentage points.

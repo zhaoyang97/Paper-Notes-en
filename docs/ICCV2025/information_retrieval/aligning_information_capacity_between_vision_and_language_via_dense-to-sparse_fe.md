@@ -178,6 +178,8 @@ The surround strategy performs best, as the position of sparse text within the d
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching](aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md)
@@ -185,5 +187,7 @@ The surround strategy performs best, as the position of sparse text within the d
 - [\[ICCV 2025\] MonSTeR: a Unified Model for Motion, Scene, Text Retrieval](monster_a_unified_model_for_motion_scene_text_retrieval.md)
 - [\[ICCV 2025\] External Knowledge Injection for CLIP-Based Class-Incremental Learning](external_knowledge_injection_for_clip-based_class-incremental_learning.md)
 - [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](representation_shift_unifying_token_compression_with_flashattention.md)
+
+</div>
 
 <!-- RELATED:END -->

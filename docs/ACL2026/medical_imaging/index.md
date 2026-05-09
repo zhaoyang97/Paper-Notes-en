@@ -10,6 +10,10 @@ description: >-
 
 **💬 ACL2026** · **42** paper notes
 
+📌 **Same area in other venues:** [📷 CVPR2026 (154)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (72)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (105)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (138)](../../NeurIPS2025/medical_imaging/index.md) · [📹 ICCV2025 (40)](../../ICCV2025/medical_imaging/index.md)
+
+🔥 **Top topics:** Medical Imaging ×19 · LLM ×10 · Reasoning ×7 · Multimodal/VLM ×4 · Question Answering ×3
+
 **["Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery](34excuse_me_may_i_say_something34_colabscience_a_proactive_ai_assistant_for_biom.md)**
 
 :   CoLabScience introduces the PULI (Positive-Unlabeled Learning Intervention) framework to train an LLM assistant capable of **proactively determining when and how to intervene** in biomedical team discussions. By leveraging GRPO and a reinforcement learning coordinator, the system automatically identifies optimal intervention moments and generates scientific suggestions from streaming conversations.

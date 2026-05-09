@@ -121,6 +121,8 @@ MergeGuard's average accuracy drop exceeds PaRaMS by **21.35 percentage points**
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
@@ -128,5 +130,7 @@ MergeGuard's average accuracy drop exceeds PaRaMS by **21.35 percentage points**
 - [\[CVPR 2026\] MXNorm: Reusing MXFP Block Scales for Efficient Tensor Normalisation](mxnorm_reusing_mxfp_block_scales_for_efficient_ten.md)
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 - [\[CVPR 2026\] Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation](evidential_transformation_network_post_hoc_uncertainty_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

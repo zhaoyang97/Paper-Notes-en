@@ -138,6 +138,8 @@ $$\mathcal{L} = \mathcal{L}_{\text{seg}} + \mathcal{L}_{\text{BC}}$$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] SARMAE: Masked Autoencoder for SAR Representation Learning](sarmae_masked_autoencoder_for_sar_representation_learning.md)
@@ -145,5 +147,7 @@ $$\mathcal{L} = \mathcal{L}_{\text{seg}} + \mathcal{L}_{\text{BC}}$$
 - [\[CVPR 2026\] A Mixed Diet Makes DINO An Omnivorous Vision Encoder](a_mixed_diet_makes_dino_an_omnivorous_vision_encoder.md)
 - [\[CVPR 2026\] Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains](prompt-driven_lightweight_foundation_model_for_instance_segmentation-based_fault.md)
 - [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -147,6 +147,8 @@ EmoVid's construction and application consists of three components:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](state-space_hierarchical_compression_with_gated_attention_an.md)
@@ -154,5 +156,7 @@ EmoVid's construction and application consists of three components:
 - [\[NeurIPS 2025\] SmartWilds: Multimodal Wildlife Monitoring Dataset](../../NeurIPS2025/video_understanding/smartwilds_multimodal_wildlife_monitoring_dataset.md)
 - [\[NeurIPS 2025\] egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](../../NeurIPS2025/video_understanding/egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)
 - [\[AAAI 2026\] Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective](rethinking_progression_of_memory_state_in_robotic_manipulation_an_object-centric.md)
+
+</div>
 
 <!-- RELATED:END -->

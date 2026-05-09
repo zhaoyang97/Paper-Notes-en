@@ -135,6 +135,8 @@ At each diffusion timestep: (1) the VIN encodes global semantics from the noisy 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
@@ -142,5 +144,7 @@ At each diffusion timestep: (1) the VIN encodes global semantics from the noisy 
 - [\[CVPR 2026\] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters](../../CVPR2026/video_generation/fastlightgen_fast_and_light_video_generation_with_fewer_steps_and_parameters.md)
 - [\[ICLR 2026\] SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion](../../ICLR2026/video_generation/sigmark_scalable_in-generation_watermark_with_blind_extraction_for_video_diffusi.md)
 - [\[ICCV 2025\] MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers](magicmirror_id-preserved_video_generation_in_video_diffusion_transformers.md)
+
+</div>
 
 <!-- RELATED:END -->

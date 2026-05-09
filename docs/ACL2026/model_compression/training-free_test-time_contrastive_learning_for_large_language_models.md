@@ -128,6 +128,8 @@ TF-TTCL consistently outperforms the zero-shot baseline and existing TTA methods
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](../../ICLR2026/model_compression/specialization_after_generalization_towards_understanding_test-time_training_in_.md)
@@ -135,5 +137,7 @@ TF-TTCL consistently outperforms the zero-shot baseline and existing TTA methods
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[ACL 2026\] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew](judgemenot_personalizing_large_language_models_to_emulate_judicial_reasoning_in_.md)
+
+</div>
 
 <!-- RELATED:END -->

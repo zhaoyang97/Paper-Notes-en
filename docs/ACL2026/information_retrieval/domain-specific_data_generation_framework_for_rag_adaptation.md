@@ -137,6 +137,8 @@ Embedding fine-tuning: InfoNCE contrastive loss, learning rate 1e-5, 3 epochs, t
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
@@ -144,5 +146,7 @@ Embedding fine-tuning: InfoNCE contrastive loss, learning rate 1e-5, 3 epochs, t
 - [\[NeurIPS 2025\] RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering](../../NeurIPS2025/information_retrieval/rag-igbench_innovative_evaluation_for_rag-based_interleaved_generation_in_open-d.md)
 - [\[NeurIPS 2025\] HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG](../../NeurIPS2025/information_retrieval/hifi-rag_hierarchical_content_filtering_and_two-pass_generation_for_open-domain_.md)
 - [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
+
+</div>
 
 <!-- RELATED:END -->

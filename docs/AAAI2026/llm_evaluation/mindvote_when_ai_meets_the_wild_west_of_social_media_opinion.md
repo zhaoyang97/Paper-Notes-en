@@ -138,6 +138,8 @@ MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage](../../ACL2026/llm_evaluation/autoreproduce_automatic_ai_experiment_reproduction_with_paper_lineage.md)
@@ -145,5 +147,7 @@ MindVote is a bilingual benchmark (3,918 naturally occurring Reddit/Weibo polls 
 - [\[ICLR 2026\] AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite](../../ICLR2026/llm_evaluation/astabench_benchmarking_ai_agents.md)
 - [\[ICLR 2026\] When Priors Backfire: On the Vulnerability of Unlearnable Examples to Pretraining](../../ICLR2026/llm_evaluation/when_priors_backfire_on_the_vulnerability_of_unlearnable_examples_to_pretraining.md)
 - [\[ICCV 2025\] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild](../../ICCV2025/llm_evaluation/intersyn_interleaved_learning_for_dynamic_motion_synthesis_in_the_wild.md)
+
+</div>
 
 <!-- RELATED:END -->

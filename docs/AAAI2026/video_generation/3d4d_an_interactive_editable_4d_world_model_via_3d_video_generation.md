@@ -145,6 +145,8 @@ Evaluation metrics: CLIP Consistency (CC, cross-view consistency) and CLIP Score
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](../../CVPR2026/video_generation/neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
@@ -152,5 +154,7 @@ Evaluation metrics: CLIP Consistency (CC, cross-view consistency) and CLIP Score
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](../../ICCV2025/video_generation/realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 - [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](../../ICCV2025/video_generation/steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
 - [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](../../CVPR2026/video_generation/orbital_video_3d_foundation_priors.md)
+
+</div>
 
 <!-- RELATED:END -->

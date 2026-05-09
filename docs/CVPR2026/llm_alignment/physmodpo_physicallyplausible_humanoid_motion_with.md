@@ -151,6 +151,8 @@ Total loss: $\mathcal{L} = \mathcal{L}_{DPO}(X_{win}, X_{lose}) + \lambda_{SFT} 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models](mind_the_generative_details_direct_localized_detail_preference_optimization_for_.md)
@@ -158,5 +160,7 @@ Total loss: $\mathcal{L} = \mathcal{L}_{DPO}(X_{win}, X_{lose}) + \lambda_{SFT} 
 - [\[CVPR 2026\] MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models](mapreduce_lora_advancing_the_pareto_front_in_multi-preference_optimization_for_g.md)
 - [\[CVPR 2026\] Bases of Steerable Kernels for Equivariant CNNs: From 2D Rotations to the Lorentz Group](bases_of_steerable_kernels_for_equivariant_cnns_from_2d_rotations_to_the_lorentz.md)
 - [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
+
+</div>
 
 <!-- RELATED:END -->

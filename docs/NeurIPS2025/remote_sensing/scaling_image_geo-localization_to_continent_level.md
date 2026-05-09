@@ -121,6 +121,8 @@ Geo-localization is formulated as a hybrid retrieval problem. During training, a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](../../ICCV2025/remote_sensing/geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
@@ -128,5 +130,7 @@ Geo-localization is formulated as a hybrid retrieval problem. During training, a
 - [\[NeurIPS 2025\] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata](ortholoc_uav_6-dof_localization_and_calibration_using_orthographic_geodata.md)
 - [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 - [\[ICCV 2025\] AstroLoc: Robust Space to Ground Image Localizer](../../ICCV2025/remote_sensing/astroloc_robust_space_to_ground_image_localizer.md)
+
+</div>
 
 <!-- RELATED:END -->

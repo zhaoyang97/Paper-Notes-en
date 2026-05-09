@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **142** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (52)](../../ACL2026/multimodal_vlm/index.md) · [📷 CVPR2026 (287)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (93)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (92)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (151)](../../NeurIPS2025/multimodal_vlm/index.md)
+
+🔥 **Top topics:** Multimodal/VLM ×75 · LLM ×14 · Reasoning ×12 · Few-/Zero-Shot Learning ×5 · Alignment/RLHF ×4
+
 **[A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](a_quality-guided_mixture_of_score-fusion_experts_framework_for_human_recognition.md)**
 
 :   This paper proposes QME (Quality-guided Mixture of score-fusion Experts), a framework that dynamically integrates similarity scores from multiple biometric modalities—including face recognition, gait recognition, and person re-identification—via learnable score fusion strategies and a quality-based MoE routing mechanism, achieving state-of-the-art performance on multiple whole-body recognition benchmarks.

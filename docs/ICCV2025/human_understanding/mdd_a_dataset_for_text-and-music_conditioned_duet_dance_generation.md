@@ -149,6 +149,8 @@ All baseline models are trained with the AdamW optimizer, batch size 64, for 3,0
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
@@ -156,5 +158,7 @@ All baseline models are trained with the AdamW optimizer, batch size 64, for 3,0
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](../../CVPR2026/human_understanding/handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
 - [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
+
+</div>
 
 <!-- RELATED:END -->

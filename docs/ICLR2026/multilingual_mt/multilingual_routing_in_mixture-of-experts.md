@@ -160,6 +160,8 @@ Interventions have almost no effect on English performance (variation <1%), with
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ACL 2026\] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs](../../ACL2026/multilingual_mt/no_one_fits_all_from_fixed_prompting_to_learned_routing_in_multilingual_llms.md)
@@ -167,5 +169,7 @@ Interventions have almost no effect on English performance (variation <1%), with
 - [\[AAAI 2026\] Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](../../AAAI2026/multilingual_mt/focusing_on_language_revealing_and_exploiting_language_attention_heads_in_multil.md)
 - [\[AAAI 2026\] MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis](../../AAAI2026/multilingual_mt/midb_multilingual_instruction_data_booster_for_enhancing_cultural_equality_in_mu.md)
 - [\[ICLR 2026\] ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity](assess_autoformalization_eval.md)
+
+</div>
 
 <!-- RELATED:END -->

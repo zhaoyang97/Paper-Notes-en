@@ -132,6 +132,8 @@ A three-stage pipeline:
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages](helpsteer3-preference_open_human-annotated_preference_data_across_diverse_tasks_.md)
@@ -139,5 +141,7 @@ A three-stage pipeline:
 - [\[ACL 2026\] Lost in Translation: Do LVLM Judges Generalize Across Languages?](../../ACL2026/multilingual_mt/lost_in_translation_do_lvlm_judges_generalize_across_languages.md)
 - [\[AAAI 2026\] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data](../../AAAI2026/multilingual_mt/stellar_scene_text_editor_for_low-resource_languages_and_real-world_data.md)
 - [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
+
+</div>
 
 <!-- RELATED:END -->

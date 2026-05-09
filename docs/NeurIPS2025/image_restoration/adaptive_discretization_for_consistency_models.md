@@ -143,6 +143,8 @@ ADCM (2×, 12.8M) already surpasses ECM (2×, 12.8M) and approaches iCT-deep (2�
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
@@ -150,5 +152,7 @@ ADCM (2×, 12.8M) already surpasses ECM (2×, 12.8M) and approaches iCT-deep (2�
 - [\[ICCV 2025\] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance](../../ICCV2025/image_restoration/enhancing_image_restoration_transformer_via_adaptive_translation_equivariance.md)
 - [\[ICCV 2025\] Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions](../../ICCV2025/image_restoration/metric_convolutions_a_unifying_theory_to_adaptive_image_convolutions.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -202,6 +202,8 @@ PhysSkin is 6.5–230× faster than FEM and 11.5–18.3× faster than MPM, with 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
@@ -209,5 +211,7 @@ PhysSkin is 6.5–230× faster than FEM and 11.5–18.3× faster than MPM, with 
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/scientific_computing/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 - [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](../../AAAI2026/scientific_computing/pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
 - [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](../../AAAI2026/scientific_computing/phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
+
+</div>
 
 <!-- RELATED:END -->

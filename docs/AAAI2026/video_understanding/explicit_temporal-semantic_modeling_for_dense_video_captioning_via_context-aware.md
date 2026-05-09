@@ -163,6 +163,8 @@ CACMI follows a RAG paradigm: a CLIP image encoder extracts frame-level features
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](../../CVPR2026/video_understanding/cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
@@ -170,5 +172,7 @@ CACMI follows a RAG paradigm: a CLIP image encoder extracts frame-level features
 - [\[CVPR 2026\] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](../../CVPR2026/video_understanding/stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](../../CVPR2026/video_understanding/understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 - [\[CVPR 2026\] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning](../../CVPR2026/video_understanding/clcr_cross-level_semantic_collaborative_representation_for_multimodal_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

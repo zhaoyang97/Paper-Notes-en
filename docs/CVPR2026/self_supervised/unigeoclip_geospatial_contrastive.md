@@ -109,6 +109,8 @@ A weighted sum of InfoNCE contrastive losses over all 10 modality pairs. Image a
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
@@ -116,5 +118,7 @@ A weighted sum of InfoNCE contrastive losses over all 10 modality pairs. Image a
 - [\[ICLR 2026\] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](../../ICLR2026/self_supervised/difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)
 - [\[AAAI 2026\] MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)](../../AAAI2026/self_supervised/movsemcl_movement-semantics_contrastive_learning_for_trajectory_similarity_exten.md)
 - [\[NeurIPS 2025\] The Complexity of Finding Local Optima in Contrastive Learning](../../NeurIPS2025/self_supervised/the_complexity_of_finding_local_optima_in_contrastive_learning.md)
+
+</div>
 
 <!-- RELATED:END -->

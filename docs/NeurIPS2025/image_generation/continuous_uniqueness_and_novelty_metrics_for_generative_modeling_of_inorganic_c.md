@@ -127,6 +127,8 @@ The uniqueness score of $d_{\text{smat}}$ is not permutation-invariant because i
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
@@ -134,5 +136,7 @@ The uniqueness score of $d_{\text{smat}}$ is not permutation-invariant because i
 - [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
 - [\[NeurIPS 2025\] Evolve to Inspire: Novelty Search for Diverse Image Generation](evolve_to_inspire_novelty_search_for_diverse_image_generation.md)
 - [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
+
+</div>
 
 <!-- RELATED:END -->

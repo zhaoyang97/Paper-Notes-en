@@ -127,6 +127,8 @@ NVP reconstructs MDCK live cells from 19 fluorescence images, achieving a PSNR 4
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images (MV-AR)](autoregressively_generating_multiview_consistent_images.md)
@@ -134,5 +136,7 @@ NVP reconstructs MDCK live cells from 19 fluorescence images, achieving a PSNR 4
 - [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
 - [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](../../NeurIPS2025/others/are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
 - [\[ICCV 2025\] Multi-view Gaze Target Estimation](multi-view_gaze_target_estimation.md)
+
+</div>
 
 <!-- RELATED:END -->

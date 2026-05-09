@@ -155,6 +155,8 @@ The image-to-fMRI encoder from Beliy et al. (2024) is used to predict fMRI respo
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](../../CVPR2026/3d_vision/modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
@@ -162,5 +164,7 @@ The image-to-fMRI encoder from Beliy et al. (2024) is used to predict fMRI respo
 - [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](../../CVPR2026/3d_vision/human_interaction-aware_3d_reconstruction_from_a_single_image.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/3d_vision/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 - [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+
+</div>
 
 <!-- RELATED:END -->

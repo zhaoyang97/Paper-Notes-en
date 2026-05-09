@@ -130,6 +130,8 @@ The input consists of a text prompt $\mathcal{T}$ and $K$ reference images $\{I_
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](../../CVPR2026/video_generation/uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
@@ -137,5 +139,7 @@ The input consists of a text prompt $\mathcal{T}$ and $K$ reference images $\{I_
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[ICLR 2026\] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](mosa_motion-coherent_human_video_generation_via_structure-appearance_decoupling.md)
 - [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](../../CVPR2026/video_generation/gloria_consistent_character_video_generation_via_content_anchors.md)
+
+</div>
 
 <!-- RELATED:END -->

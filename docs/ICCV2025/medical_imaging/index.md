@@ -10,6 +10,10 @@ description: >-
 
 **📹 ICCV2025** · **40** paper notes
 
+📌 **Same area in other venues:** [💬 ACL2026 (42)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (154)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (72)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (105)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (138)](../../NeurIPS2025/medical_imaging/index.md)
+
+🔥 **Top topics:** Medical Imaging ×15 · Segmentation ×12 · Self-Supervised Learning ×3 · Few-/Zero-Shot Learning ×2
+
 **[AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)**
 
 :   This work proposes AcZeroTS, a framework that integrates active learning with a VLM-based prototype-guided zero-shot segmentation model (ProZS). By simultaneously accounting for uncertainty, diversity, and the ability of selected samples to improve prototype coverage over unseen classes, the framework selects the most informative samples for annotation, achieving high-quality segmentation of both seen and unseen tissue types under minimal annotation budgets.

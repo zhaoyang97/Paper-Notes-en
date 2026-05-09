@@ -130,6 +130,8 @@ $$\mathcal{L}(\theta_E;\mathbf{x}) = \sum_{1 \leq j < i \leq M}(1 - \bar{\mathca
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
@@ -137,5 +139,7 @@ $$\mathcal{L}(\theta_E;\mathbf{x}) = \sum_{1 \leq j < i \leq M}(1 - \bar{\mathca
 - [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
 - [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -264,6 +264,8 @@ VSRM outperforms IART by 0.21 dB on REDS4 (16-frame setting) and 0.18 dB on Vid4
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Compressed-Domain-Aware Online Video Super-Resolution](../../CVPR2026/video_generation/compressed-domain-aware_online_video_super-resolution.md)
@@ -271,5 +273,7 @@ VSRM outperforms IART by 0.21 dB on REDS4 (16-frame setting) and 0.18 dB on Vid4
 - [\[ICCV 2025\] FuXi-RTM: A Physics-Guided Prediction Framework with Radiative Transfer Modeling](fuxi-rtm_a_physics-guided_prediction_framework_with_radiative_transfer_modeling.md)
 - [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
 - [\[ICCV 2025\] VACE: All-in-One Video Creation and Editing](vace_all-in-one_video_creation_and_editing.md)
+
+</div>
 
 <!-- RELATED:END -->

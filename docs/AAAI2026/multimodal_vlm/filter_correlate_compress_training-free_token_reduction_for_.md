@@ -100,6 +100,8 @@ The "attention-in as redundancy" perspective generalizes to ViT pruning and vide
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](../../CVPR2026/multimodal_vlm/duet_vlm_dual_stage_token_reduction.md)
@@ -107,5 +109,7 @@ The "attention-in as redundancy" perspective generalizes to ViT pruning and vide
 - [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
 - [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](../../CVPR2026/multimodal_vlm/generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
 - [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+
+</div>
 
 <!-- RELATED:END -->

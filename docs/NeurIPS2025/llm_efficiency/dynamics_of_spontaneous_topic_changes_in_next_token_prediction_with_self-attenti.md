@@ -119,6 +119,8 @@ RAG experiments on GPT-4o, Llama-3.3, Claude-3.7, and DeepSeek-V3 are conducted 
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
@@ -126,5 +128,7 @@ RAG experiments on GPT-4o, Llama-3.3, Claude-3.7, and DeepSeek-V3 are conducted 
 - [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
 - [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](linear_attention_for_efficient_bidirectional_sequence_modeling.md)
 - [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](tensor_product_attention_is_all_you_need.md)
+
+</div>
 
 <!-- RELATED:END -->

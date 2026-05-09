@@ -137,6 +137,8 @@ s1.1-32B suffers a 47.38% drop on IFEval while incurring a 250% increase in reas
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
@@ -144,5 +146,7 @@ s1.1-32B suffers a 47.38% drop on IFEval while incurring a 250% increase in reas
 - [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](../../ACL2026/llm_reasoning/how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
 - [\[AAAI 2026\] Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models](answering_the_unanswerable_is_to_err_knowingly_analyzing_and.md)
 - [\[NeurIPS 2025\] Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost](../../NeurIPS2025/llm_reasoning/are_large_reasoning_models_good_translation_evaluators_analysis_and_performance_.md)
+
+</div>
 
 <!-- RELATED:END -->

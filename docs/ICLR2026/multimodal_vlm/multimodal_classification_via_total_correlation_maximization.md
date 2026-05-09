@@ -137,6 +137,8 @@ Comparison against 10+ methods on 5 audio-visual/image-text datasets using ResNe
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICLR 2026\] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs](mmtok_multimodal_coverage_maximization_for_efficient_inference_of_vlms.md)
@@ -144,5 +146,7 @@ Comparison against 10+ methods on 5 audio-visual/image-text datasets using ResNe
 - [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
 - [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](../../ICCV2025/multimodal_vlm/enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
 - [\[ICLR 2026\] ICYM2I: The Illusion of Multimodal Informativeness under Missingness](icym2i_the_illusion_of_multimodal_informativeness_under_missingness.md)
+
+</div>
 
 <!-- RELATED:END -->

@@ -159,6 +159,8 @@ Connector ablation (average accuracy): FC_GELU_FC: 54.0, 2×FC_GELU_FC: 53.7, Ga
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[CVPR 2026\] Harnessing Chain-of-Thought Reasoning in Multimodal Large Language Models for Face Anti-Spoofing](../../CVPR2026/llm_reasoning/harnessing_chain-of-thought_reasoning_in_multimodal_large_language_models_for_fa.md)
@@ -166,5 +168,7 @@ Connector ablation (average accuracy): FC_GELU_FC: 54.0, 2×FC_GELU_FC: 53.7, Ga
 - [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](../../CVPR2026/llm_reasoning/understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
 - [\[ICCV 2025\] Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization](unsupervised_visual_chain-of-thought_reasoning_via_preference_optimization.md)
 - [\[NeurIPS 2025\] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](../../NeurIPS2025/llm_reasoning/large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)
+
+</div>
 
 <!-- RELATED:END -->

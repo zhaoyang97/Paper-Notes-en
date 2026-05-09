@@ -141,6 +141,8 @@ Under a perfect NLI model ($\epsilon_1 = \epsilon_2 = 0$), as long as $k' < k/2$
 
 <!-- RELATED:START -->
 
+<div class="related-papers" markdown="1">
+
 ## Related Papers
 
 - [\[ICCV 2025\] Adversarial Robust Memory-Based Continual Learner](../../ICCV2025/llm_safety/adversarial_robust_memory-based_continual_learner.md)
@@ -148,5 +150,7 @@ Under a perfect NLI model ($\epsilon_1 = \epsilon_2 = 0$), as long as $k' < k/2$
 - [\[CVPR 2026\] Perturb and Recover: Fine-tuning for Effective Backdoor Removal from CLIP](../../CVPR2026/llm_safety/perturb_and_recover_fine-tuning_for_effective_backdoor_removal_from_clip.md)
 - [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 - [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](../../ICLR2026/llm_safety/erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
+
+</div>
 
 <!-- RELATED:END -->

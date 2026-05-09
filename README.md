@@ -21,14 +21,14 @@
 
 ## 📊 Conference Coverage
 
-| Conference | Notes |
-|------------|------:|
-| ACL 2026 | 681 |
-| CVPR 2026 | 1,935 |
-| ICLR 2026 | 1,583 |
-| AAAI 2026 | 1,387 |
-| NeurIPS 2025 | 2,534 |
-| ICCV 2025 | 1,359 |
+| Conference | Notes | Full Paper List |
+|------------|------:|:----------------|
+| [ACL 2026](https://en.papernotes.org/ACL2026/) | 681 | [ACL2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ACL2026-Papers.md) |
+| [CVPR 2026](https://en.papernotes.org/CVPR2026/) | 1,935 | [CVPR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/CVPR2026-Papers.md) |
+| [ICLR 2026](https://en.papernotes.org/ICLR2026/) | 1,583 | [ICLR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICLR2026-Papers.md) |
+| [AAAI 2026](https://en.papernotes.org/AAAI2026/) | 1,387 | [AAAI2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/AAAI2026-Papers.md) |
+| [NeurIPS 2025](https://en.papernotes.org/NeurIPS2025/) | 2,534 | [NeurIPS2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/NeurIPS2025-Papers.md) |
+| [ICCV 2025](https://en.papernotes.org/ICCV2025/) | 1,359 | [ICCV2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICCV2025-Papers.md) |
 
 ## 🗓️ Roadmap
 

@@ -1,0 +1,112 @@
+name: Search Engine Indexing Submit
+
+on:
+  # Auto-trigger after each deploy
+  workflow_run:
+    workflows: ["Deploy MkDocs to GitHub Pages"]
+    types: [completed]
+  # Daily schedule (digest Google's pending queue)
+  schedule:
+    - cron: '30 16 * * *'  # UTC 16:30 = Beijing 0:30 (offset 30 min from zh job)
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Google submission limit'
+        required: false
+        default: '200'
+      changed_only:
+        description: 'Only submit changed pages'
+        required: false
+        type: boolean
+        default: false
+      engine:
+        description: 'Submission engine'
+        required: false
+        type: choice
+        options:
+          - both
+          - bing-only
+          - google-only
+        default: 'both'
+      index_pages:
+        description: 'Also submit index pages (home/conference/domain)'
+        required: false
+        type: boolean
+        default: true
+
+env:
+  INDEXNOW_KEY: 'afab7697-0632-4c75-a61c-17ca32070d60'
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    # Only run after a successful deploy (when triggered by workflow_run)
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    env:
+      HAS_GOOGLE_KEY: ${{ secrets.GOOGLE_INDEXING_SA_KEY != '' }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2  # need HEAD~1 for git diff
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Install Google API dependencies
+        if: ${{ github.event.inputs.engine != 'bing-only' && env.HAS_GOOGLE_KEY == 'true' }}
+        run: pip install google-auth google-auth-httplib2 google-api-python-client
+
+      - name: Write service account credentials
+        if: ${{ github.event.inputs.engine != 'bing-only' && env.HAS_GOOGLE_KEY == 'true' }}
+        run: echo '${{ secrets.GOOGLE_INDEXING_SA_KEY }}' > /tmp/sa_key.json
+
+      - name: Submit index pages (homepage/conference/domain indexes)
+        if: ${{ github.event_name == 'workflow_run' || github.event_name == 'schedule' || github.event.inputs.index_pages == 'true' }}
+        run: |
+          python scripts/indexing_submit.py --bing-key $INDEXNOW_KEY --bing-only --index-pages
+
+      - name: Submit paper pages to search engines
+        run: |
+          ARGS="--bing-key $INDEXNOW_KEY"
+
+          # Google credentials (optional)
+          ENGINE="${{ github.event.inputs.engine }}"
+          if [ "$ENGINE" = "bing-only" ]; then
+            ARGS="$ARGS --bing-only"
+          elif [ -f /tmp/sa_key.json ]; then
+            ARGS="$ARGS --credentials /tmp/sa_key.json"
+            if [ "$ENGINE" = "google-only" ]; then
+              ARGS="$ARGS --google-only"
+            fi
+          else
+            ARGS="$ARGS --bing-only"
+          fi
+
+          # Changed-only mode
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            ARGS="$ARGS --changed-only"
+          elif [ "${{ github.event.inputs.changed_only }}" = "true" ]; then
+            ARGS="$ARGS --changed-only"
+          fi
+
+          # Limit (Google only)
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+
+          python scripts/indexing_submit.py $ARGS
+
+      - name: Save progress
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: indexing-progress
+          path: logs/indexing_progress.json
+          if-no-files-found: ignore
+          retention-days: 90
+
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f /tmp/sa_key.json

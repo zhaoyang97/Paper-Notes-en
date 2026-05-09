@@ -218,6 +218,25 @@
   fill: rgba(255,255,255,.7);
 }
 
+/* ── Sidebar: keep area labels on a single line on desktop ──
+   English area labels (e.g. "Information Retrieval & RAG (8)",
+   "Robotics & Embodied AI (49)", "Self-Supervised Learning (38)")
+   are longer than the Chinese counterparts and wrap to 2 lines with
+   the default 12.1rem sidebar width. Widen the primary sidebar and
+   force nowrap with ellipsis fallback so each domain stays on one line. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 16rem;
+  }
+  .md-sidebar--primary .md-nav__link,
+  .md-sidebar--primary .md-nav__item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Native browser tooltip (title="…") falls back when text is clipped. */
+}
+
 /* ── Paper metadata: make arXiv/code links stand out ── */
 .md-content a[href*="arxiv.org"],
 .md-content a[href*="github.com"],

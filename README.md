@@ -2,7 +2,7 @@
 
 **Read a top-tier AI paper in 5 minutes — one repo to keep up with the latest AI progress.**
 
-- 📖 **9,000+** AI · LLM · NLP · CV top-venue paper notes
+- 📖 **9,400+** AI · LLM · NLP · CV top-venue paper notes
 - 🏛️ Covers ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV and more
 - 🔬 Spans LLM Reasoning · VLM · Agent · RLHF · RAG · AIGC · Robotics and 40+ research areas
 - 🔄 Continuously updated
@@ -23,7 +23,7 @@
 
 | Conference | Notes |
 |------------|------:|
-| ACL 2026 | 388 |
+| ACL 2026 | 681 |
 | CVPR 2026 | 1,935 |
 | ICLR 2026 | 1,583 |
 | AAAI 2026 | 1,387 |
@@ -63,23 +63,23 @@
 | `interpretability/` | 🔬 Interpretability | 254 |
 | `knowledge_editing/` | ✏️ Knowledge Editing | 27 |
 | `llm_agent/` | 🦾 LLM Agent | 210 |
-| `llm_alignment/` | ⚖️ Alignment / RLHF | 138 |
+| `llm_alignment/` | ⚖️ Alignment / RLHF | 142 |
 | `llm_efficiency/` | ⚡ LLM Efficiency | 76 |
 | `llm_evaluation/` | 📊 LLM Evaluation | 277 |
 | `llm_nlp/` | 💬 LLM / NLP (other) | 191 |
 | `llm_pretraining/` | 📚 Pretraining | 108 |
-| `llm_reasoning/` | 💡 LLM Reasoning | 200 |
-| `llm_safety/` | 🔒 LLM Safety | 152 |
-| `medical_imaging/` | 🏥 Medical Imaging | 509 |
-| `model_compression/` | 📦 Model Compression | 385 |
+| `llm_reasoning/` | 💡 LLM Reasoning | 232 |
+| `llm_safety/` | 🔒 LLM Safety | 176 |
+| `medical_imaging/` | 🏥 Medical Imaging | 551 |
+| `model_compression/` | 📦 Model Compression | 430 |
 | `moe/` | 🧠 Mixture of Experts | 2 |
-| `multilingual_mt/` | 🌐 Multilingual / Translation | 34 |
-| `multimodal_vlm/` | 🧩 Multimodal VLM | 765 |
-| `object_detection/` | 🎯 Object Detection | 119 |
+| `multilingual_mt/` | 🌐 Multilingual / Translation | 58 |
+| `multimodal_vlm/` | 🧩 Multimodal VLM | 817 |
+| `object_detection/` | 🎯 Object Detection | 124 |
 | `optimization/` | 📐 Optimization & Theory | 201 |
 | `physics/` | ⚛️ Physics | 26 |
-| `recommender/` | 🎁 Recommender Systems | 60 |
-| `reinforcement_learning/` | 🎮 Reinforcement Learning | 411 |
+| `recommender/` | 🎁 Recommender Systems | 73 |
+| `reinforcement_learning/` | 🎮 Reinforcement Learning | 449 |
 | `remote_sensing/` | 🛰️ Remote Sensing | 56 |
 | `robotics/` | 🤖 Robotics & Embodied AI | 225 |
 | `scientific_computing/` | 🧮 Scientific Computing | 47 |
@@ -87,10 +87,10 @@
 | `self_supervised/` | 🔄 Self-Supervised Learning | 116 |
 | `signal_comm/` | 📡 Signal & Communications | 35 |
 | `social_computing/` | 👥 Social Computing | 58 |
-| `time_series/` | 📈 Time Series | 146 |
+| `time_series/` | 📈 Time Series | 151 |
 | `video_generation/` | 🎬 Video Generation | 167 |
-| `video_understanding/` | 📹 Video Understanding | 274 |
-| `others/` | 📂 Others | 454 |
+| `video_understanding/` | 📹 Video Understanding | 278 |
+| `others/` | 📂 Others | 459 |
 
 ## 📂 Directory Structure
 

@@ -1,0 +1,145 @@
+---
+title: >-
+  [Paper Note] SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models
+description: >-
+  [ICLR 2026][LLM Reasoning][benchmark] This paper introduces SealQA, a challenging benchmark with three variants (Seal-0/Seal-Hard/LongSeal), where each question is carefully crafted by NLP researchers to trigger ambiguous, conflicting, or noisy search results. Even GPT-5 achieves at most 43.2% accuracy, revealing that test-time scaling does not yield reliable gains under noisy retrieval conditions.
+tags:
+  - ICLR 2026
+  - LLM Reasoning
+  - benchmark
+  - search-augmented LLM
+  - RAG
+  - noisy retrieval
+  - test-time scaling
+  - knowledge conflict
+date: 2026-05-08
+content_hash: ba9bd69cc812b905
+---
+
+# SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models
+
+**Conference**: ICLR 2026
+**arXiv**: [2506.01062](https://arxiv.org/abs/2506.01062)
+**Code**: [HuggingFace](https://huggingface.co/datasets/vtllms/sealqa)
+**Area**: LLM Reasoning
+**Keywords**: benchmark, search-augmented LLM, RAG, noisy retrieval, test-time scaling, knowledge conflict
+
+## TL;DR
+
+This paper introduces SealQA, a challenging benchmark with three variants (Seal-0/Seal-Hard/LongSeal), where each question is carefully crafted by NLP researchers to trigger ambiguous, conflicting, or noisy search results. Even GPT-5 achieves at most 43.2% accuracy, revealing that test-time scaling does not yield reliable gains under noisy retrieval conditions.
+
+## Background & Motivation
+
+**State of the Field**: LLMs have entered a new paradigm of test-time scaling, where reasoning models can decompose problems, decide when to search, and integrate retrieved content into reasoning chains. State-of-the-art models already exceed 90% accuracy on traditional benchmarks such as MMLU, rendering existing evaluations largely saturated.
+
+**Limitations of Prior Work**: Most evaluations of search-augmented LLMs focus on short, factoid queries where top-ranked results directly answer the question, requiring only shallow comprehension. This fails to reflect the messy nature of real-world search, where returned documents may be outdated, misleading, or superficially relevant but practically useless.
+
+**Root Cause**: Real-world information retrieval demands deep reasoning to filter inconsistent information, reconcile contradictions, and identify credible signals — challenges that existing benchmarks cannot simulate, partly because such datasets are difficult to curate and validate at scale.
+
+**Paper Goals**: The paper proposes SealQA, a small yet extremely challenging benchmark where each question is carefully designed by NLP researchers and subjected to multiple rounds of rigorous review, specifically targeting ambiguous, conflicting, and noisy search results. Three variants are included to cover different dimensions of search-augmented reasoning.
+
+## Method
+
+### Overall Architecture
+
+SealQA comprises three variants:
+1. **Seal-0** (111 questions): The core set, where every question achieves 0% accuracy across 10–15 attempts on multiple frontier models including GPT-4o and GPT-4.1.
+2. **Seal-Hard** (254 questions): Includes Seal-0 and additional questions that did not meet the strict zero-accuracy threshold but remain highly challenging.
+3. **LongSeal** (254 questions): A needle-in-a-haystack variant where each question is paired with one gold document and up to 50 hard negatives, testing long-context multi-document reasoning.
+
+Questions span five categories: advanced reasoning $\mathcal{Q}_1$ (72.4%), entity/event disambiguation $\mathcal{Q}_2$ (58.3%), temporal tracking $\mathcal{Q}_3$ (13.7%), cross-lingual reasoning $\mathcal{Q}_4$ (5.5%), and false premise detection $\mathcal{Q}_5$ (4.3%).
+
+### Key Design 1: Adversarial Data Collection Pipeline
+
+**Function**: Ensures every question poses a genuine challenge to frontier LLMs.
+
+**Mechanism**: Each question is written by an NLP researcher and undergoes a rigorous multi-round review — first examined by 2+ graduate-level reviewers, then approved by an expert. For Seal-0, each question is iteratively refined until multiple models including GPT-4o and GPT-4.1 fail across all 10–15 attempts. Average development time per question exceeds one hour (approximately 45 minutes drafting plus additional review and revision), with 6 NLP researchers working over 8 months.
+
+**Design Motivation**: Adversarial collection mitigates data contamination and ensures benchmark difficulty remains valid over time. The small scale reduces API evaluation costs and allows more frequent updates.
+
+### Key Design 2: LongSeal Multi-Document Reasoning Construction
+
+**Function**: Tests the model's ability to identify and utilize relevant evidence among a large number of distracting documents.
+
+**Mechanism**: Each Seal-Hard question is paired with a set of retrieved documents — one gold document (from annotator-provided webpages) and up to 50 hard negatives. Hard negatives are sourced from top-10 Google search results, up to 10 additional pages restricted to pre-2023 content, and 3 semantically related queries generated by GPT-4o-mini. GPT-4o-mini is used to filter out negatives from which the correct answer could potentially be inferred.
+
+**Design Motivation**: Tests long-context reasoning under noisy retrieval conditions, probing positional bias and relevance modeling capability.
+
+### Evaluation Protocol
+
+An automatic GPT-4o-mini scorer (adapted from SimpleQA) takes the question, predicted answer, and reference answer as input, labeling responses as "correct," "incorrect," or "not attempted." Human evaluation on 100 answers yields 98% agreement with the automatic scorer.
+
+## Key Experimental Results
+
+### Main Results
+
+| Model | Seal-0 (w/o search) | Seal-0 (w/ search) | Seal-Hard (w/o search) | Seal-Hard (w/ search) |
+|------|---------------------|--------------------|-----------------------|----------------------|
+| GPT-4o | 0.0% | 0.0%† | 11.8% | 15.0%† |
+| GPT-4.1 | 0.0% | 0.0%† | 15.0% | 20.5%† |
+| o3-mini-high | 3.6% | 1.8% | 12.6% | 14.2% |
+| o3-high | — | 14.4%† | — | 32.7%† |
+| GPT-5-high | 15.3% | **43.2%**† | 37.8% | **63.8%**† |
+| DeepSeek-R1-671B | 5.4% | 1.8% | **22.4%** | 11.0% |
+| Qwen3-235B | 0.0% | 5.4% | 4.3% | 11.4% |
+| Llama-4-Scout | 0.0% | 0.0% | 5.9% | 5.9% |
+
+†Uses ChatGPT's built-in search; others use FreshPrompt.
+
+### Ablation Study: Test-Time Scaling Effects
+
+| Model | Low Effort | Medium Effort | High Effort |
+|------|-----------|---------------|-------------|
+| o3-mini (Seal-0) | 1.8% | 2.7% | 1.8% |
+| o4-mini (Seal-0) | **6.3%** | 5.4% | 4.5% |
+| o3 (Seal-0) | 11.7% | **17.1%** | 14.4% |
+
+Increasing test-time computation does not yield reliable gains; performance frequently plateaus or degrades.
+
+### Key Findings
+
+- **Advanced reasoning models are highly sensitive to noise**: DeepSeek-R1's Seal-Hard accuracy drops from 22.4% to 11.0% when using FreshPrompt, with a 17.7% decline on never-changing questions.
+- **Search can be harmful**: GPT-4.1-mini's accuracy decreases from 13.8% to 11.8% after enabling built-in search.
+- **Humans significantly outperform models**: On a 50-question Seal-Hard subset, humans average 38.8% with open search and 50.4% in oracle mode; the best human achieves 64.0%/72.0%.
+- **More distractors in LongSeal degrade performance**: GPT-4.1-mini drops from 32.7% at $k=12$ to 29.5% at $k=30$; even with only the gold document (no distractors), GPT-4.1 achieves only 48.0% accuracy.
+- **No classic positional bias observed**: Newer models have mitigated the "lost-in-the-middle" effect, yet identifying relevant documents remains the core difficulty.
+
+## Highlights & Insights
+
+- The adversarial benchmark construction methodology is highly innovative, ensuring each question poses a genuine challenge to the current strongest models.
+- The paper reveals a fundamental limitation of test-time scaling — under noisy retrieval, additional reasoning may amplify misinformation.
+- Built-in search training (e.g., ChatGPT) is demonstrated to be more effective than retrieval-based prompting methods (e.g., FreshPrompt).
+- A dynamically versioned benchmark design commits to periodic answer updates to reflect the most current knowledge.
+
+## Limitations & Future Work
+
+- The dataset is small (Seal-0 contains only 111 questions), which may limit statistical significance.
+- Answers that change over time require ongoing maintenance, raising questions about long-term sustainability.
+- Evaluation covers English questions only, with limited cross-lingual reasoning coverage (5.5%).
+- The benchmark focuses exclusively on factoid QA and does not cover more complex reasoning types such as mathematical proofs or code generation.
+
+## Related Work & Insights
+
+- **SimpleQA** (Wei et al., 2024): SealQA extends its adversarial collection philosophy, raising the difficulty bar from "GPT-4 fails" to "all frontier models fail across multiple attempts."
+- **FreshLLMs** (Vu et al., 2024): The temporal sensitivity categorization and FreshPrompt methodology in SealQA are directly drawn from this work.
+- **BrowseComp** (Wei et al., 2025): A complementary evaluation of browsing capability; SealQA focuses more on reasoning than on information acquisition.
+- **Implications for RAG system design**: Naive retrieval integration may amplify noise, motivating the need for more robust evidence filtering and conflict resolution mechanisms.
+
+## Rating
+
+- Novelty: ⭐⭐⭐⭐⭐ The first adversarial search-augmented benchmark specifically designed for noisy/conflicting retrieval results, filling an important gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 20+ models with human evaluation and multi-dimensional ablations (question type, temporality, search method, test-time scaling).
+- Writing Quality: ⭐⭐⭐⭐ Well-structured with rich figures and tables, though some tables are information-dense.
+- Value: ⭐⭐⭐⭐⭐ Reveals fundamental limitations of the strongest current LLMs in real-world search scenarios, with important implications for RAG system design.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
+- [\[ICLR 2026\] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling](cyclicreflex_improving_reasoning_models_via_cyclical_reflection_token_scheduling.md)
+- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_on_multi-modal_la.md)
+
+<!-- RELATED:END -->

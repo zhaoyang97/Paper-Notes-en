@@ -1,0 +1,187 @@
+---
+title: >-
+  [Paper Note] How Patterns Dictate Learnability in Sequential Data
+description: >-
+  [NeurIPS 2025][Time Series][Predictive Information] This paper proposes an information-theoretic framework based on predictive information $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$ to quantify the strength of temporal patterns in sequential data. It derives theoretical bounds linking predictive information to the minimum achievable risk, thereby enabling a distinction between "insufficient model capacity" and "intrinsically unpredictable data."
+tags:
+  - NeurIPS 2025
+  - Time Series
+  - Predictive Information
+  - Mutual Information
+  - Learnability
+  - Sequential Data
+  - Information Theory
+date: 2026-05-08
+content_hash: 892b5d642b3475a8
+---
+
+# How Patterns Dictate Learnability in Sequential Data
+
+**Conference**: NeurIPS 2025
+**arXiv**: [2510.10744](https://arxiv.org/abs/2510.10744)
+**Code**: [https://github.com/EkMeasurable/Learnability_Ipred](https://github.com/EkMeasurable/Learnability_Ipred)
+**Area**: Time Series
+**Keywords**: Predictive Information, Mutual Information, Learnability, Sequential Data, Information Theory
+
+## TL;DR
+
+This paper proposes an information-theoretic framework based on predictive information $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$ to quantify the strength of temporal patterns in sequential data. It derives theoretical bounds linking predictive information to the minimum achievable risk, thereby enabling a distinction between "insufficient model capacity" and "intrinsically unpredictable data."
+
+## Background & Motivation
+
+**State of the Field**: Autoregressive models are widely used in time series analysis and NLP, with performance depending on the ability to capture temporal patterns in data. However, identifying such patterns still relies heavily on human expert knowledge.
+
+**Limitations of Prior Work**:
+   - When a model underperforms on a dataset, it is unclear whether the bottleneck is insufficient model capacity or inherently high entropy (unpredictability) in the data.
+   - Metrics such as EvoRate focus solely on numerical variation trends, and their absolute values are difficult to interpret.
+   - Existing generalization error bounds (e.g., Rademacher complexity) primarily address the gap between empirical and true risk, rather than the minimum achievable risk itself.
+
+**Root Cause**: Good prediction requires two conditions: (1) the data contains exploitable patterns, and (2) the model can identify and leverage those patterns. Existing frameworks lack tools to distinguish between the two.
+
+**Paper Goals**: (i) What is the minimum achievable risk for sequential data? (ii) Can one determine whether poor performance stems from a weak model or inherently unpredictable data?
+
+**Starting Point**: The paper begins with **predictive information** $\mathbf{I}(X_{\text{past}}; X_{\text{future}})$—the mutual information between the past and the future—and constructs an information-theoretic learning curve.
+
+**Core Idea**: The discrete derivative of predictive information (the universal learning curve $\Lambda(k)$) serves as a measure of "how much uncertainty is reduced by adding one more step of history," and is linked to the minimum achievable risk of autoregressive models.
+
+## Method
+
+### Overall Architecture
+
+The predictive information is defined as:
+
+$$\mathbf{I}_{\text{pred}}(k, k') = \mathbf{I}(\mathbf{X}_{t-k+1}^{t}; \mathbf{X}_{t+1}^{t+k'})$$
+
+The universal learning curve is defined as:
+
+$$\Lambda(k) = \ell(k) - \ell_0 = H(X_t | \mathbf{X}_{t-k+1}^{t-1}) - \lim_{k \to \infty} H(X_t | \mathbf{X}_{t-k+1}^{t-1})$$
+
+$\Lambda(k)$ measures the excess uncertainty from observing only $k$ steps of history compared to observing infinite history.
+
+### Key Designs
+
+#### 1. Predictive Information as a Generalization of EvoRate
+
+**Function**: Generalizes EvoRate (which considers mutual information between the past $k$ steps and the next step only) to mutual information between the past $k$ steps and the future $k'$ steps.
+
+**Core Connection** (Proposition 4.1): $\mathbf{I}_{\text{pred}}(k+1, k') - \mathbf{I}_{\text{pred}}(k, k') \to \Lambda(k)$ as $k' \to \infty$, i.e., the discrete difference of predictive information converges to the universal learning curve.
+
+**Design Motivation**: The absolute values of EvoRate are difficult to interpret; the learning curve provides a more principled alternative, serving as the "discrete derivative" of predictive information.
+
+#### 2. Closed-Form Expression for Markov Processes (Proposition 4.2)
+
+For an order-$m$ Markov process: $\Lambda(k) = 0$ for $k \geq m$, i.e., the learning curve vanishes at the true order.
+
+**Significance**: This enables identification of the Markov order in a more information-theoretically principled manner than AIC/BIC.
+
+#### 3. Asymptotic Behavior for Parametric Models (Theorem 4.3)
+
+For stationary weakly dependent processes generated by a $p$-dimensional parametric family:
+
+$$\mathbf{I}_{\text{pred}}(k, k') \underset{k \to \infty}{=} \frac{p}{2} \ln(k) + \frac{1}{2} \ln \det(F) + \mathcal{O}(1)$$
+
+Corollary (Corollary 4.4): $\Lambda(k) \sim \frac{p}{2k}$, hence $\dim \Theta \approx 2k \Lambda(k)$.
+
+**Application**: The dimension of the parameter space can be estimated from the decay rate of the learning curve.
+
+#### 4. Connection Between Learning Curve and Minimum Achievable Risk (Proposition 4.5, Core Result)
+
+For any order-$k$ model $Q \in \mathcal{H}_k$:
+
+$$\mathcal{R}^\infty(Q^*) \leq \mathcal{R}^k(Q) - \Lambda(k)$$
+
+where $\mathcal{R}^\infty(Q^*)$ is the minimum achievable risk of the optimal predictor.
+
+**Implications**:
+- Unless $\Lambda(k)$ is negligible, finite-memory models cannot attain the optimal risk.
+- $\Lambda(k)$ quantifies the irreducible uncertainty induced by finite context.
+- The optimal risk can be estimated by subtracting the estimated $\Lambda(k)$ from the empirical risk.
+
+#### 5. Oracle Estimator (Corollary 4.7)
+
+Given trained models $Q_k$ of different orders $k$:
+
+$$\hat{\mathcal{R}}^\infty(Q^*) = \min_{1 \leq k \leq M} \{\hat{\mathcal{R}}^k(Q_k) - \Lambda(k)\}$$
+
+The optimal regression order $k^*$ can be inferred simultaneously.
+
+### Loss & Training
+
+The MLE loss $\mathcal{L}_{\text{mle}}^k = -\mathbb{E} \ln Q(X_{t+1} | \mathbf{X}_{t-k+1}^t)$ is used as the risk measure. $\mathbf{I}_{\text{pred}}$ is estimated using neural mutual information estimators such as InfoNCE, MINE, and SMILE.
+
+## Key Experimental Results
+
+### $\mathbf{I}_{\text{pred}}$ Estimation on Gaussian Processes
+
+| Dimension | Kernel Type | InfoNCE Bias | MINE Bias | SMILE Bias |
+|-----------|-------------|-------------|----------|-----------|
+| $d \leq 20$ | Various | Small | Small | Small |
+| $d > 20$ | Periodic | Increases | Increases | Significant underestimation |
+| $d > 20$ | RQ | Increases | Increases | Significant underestimation |
+
+All methods produce accurate estimates in low-dimensional settings; performance degrades for high-dimensional, complex kernels.
+
+### Learning Curves for AR Processes
+
+| True Order $p$ | Setting | $\hat{\Lambda}(k)$ Vanishing Point | Agreement with Theory |
+|----------------|---------|-----------------------------------|----------------------|
+| $p = 5$ | 3D VAR | $k \approx 5$ | Good |
+| $p = 10$ | 3D VAR | $k \approx 10$ | Good |
+
+The learning curve successfully identifies the correct Markov order.
+
+### Minimum Risk Estimation on Ising Spin Sequences
+
+| Block Size $M$ | EvoRate(10) | $\hat{\mathcal{R}}^\infty_{\text{lstm}}$ | $\min \hat{\mathcal{R}}_{\text{lstm}}$ | Ratio |
+|---------------|------------|----------------------------------------|--------------------------------------|-------|
+| 10,000 | 0.276 | 0.372 | 0.485 | ~1.3 |
+| 100,000 | 0.286 | 0.368 | 0.468 | ~1.3 |
+| 1,000,000 | 0.327 | 0.357 | 0.380 | ~1.06 |
+| 10,000,000 | 0.476 | 0.070 | 0.073 | ~1.04 |
+
+### Key Findings
+
+1. At $M = 10^7$, the process degenerates into a first-order Markov chain; EvoRate is highest (strongest structure) and model risk approaches the oracle estimate.
+2. At smaller $M$, $\hat{\mathcal{R}}/\hat{\mathcal{R}}^\infty \approx 1.3$, indicating that the model has not reached optimality—unexploited predictive structure remains.
+3. Oracle estimates are consistent between LSTM and MLP, with only marginal differences.
+4. The estimated parameter dimension $\hat{p} = 2k\Lambda(k) \approx 0.96$ (true value: 1) is accurately recovered.
+
+## Highlights & Insights
+
+- **Addresses a Fundamental Problem**: Distinguishing "insufficient model capacity" from "intrinsically unpredictable data" has substantial practical value for modeling decisions.
+- **Bridge Between Information Theory and Machine Learning**: Translates the concept of predictive information from theoretical physics (Bialek & Tishby) into a practical diagnostic tool for machine learning.
+- **Parameter Dimension Estimation**: The result $\dim \Theta \approx 2k\Lambda(k)$ is particularly elegant, allowing the parameter space dimensionality to be read directly from the learning curve.
+- **Connection to EvoRate**: Clearly demonstrates how predictive information generalizes EvoRate and provides it with a stronger theoretical foundation.
+
+## Limitations & Future Work
+
+1. Experiments are conducted solely on synthetic data; validation on real-world time series benchmarks (e.g., Exchange, ETTh) is absent.
+2. Mutual information estimation is unstable in high dimensions (MINE, SMILE, etc.), limiting the practical applicability of the framework.
+3. The oracle estimator is model-dependent; different model families may yield different estimates of the optimal risk.
+4. Negative estimates of $\Lambda(k)$ (e.g., at $M = 10^7$) arise from estimation instability and require more robust estimators.
+5. The framework assumes stationarity $(\mathbf{H}_0)$; extension to non-stationary sequences is needed.
+
+## Related Work & Insights
+
+- EvoRate (Zeng et al., 2025) is the direct predecessor of this work; the present paper provides a more principled generalization.
+- ForeCA (Goerg, 2013) measures predictability from a frequency-domain perspective, complementing the proposed approach.
+- The prospective learning framework (Silva et al., 2025) defines learnability from a different angle.
+- The proposed approach can be extended to multi-step forecasting, non-stationary processes, and causal inference.
+
+## Rating
+
+⭐⭐⭐⭐
+
+The information-theoretic perspective is novel and theoretically deep. The core proposition linking minimum risk to the learning curve provides strong practical guidance. However, experiments are limited to synthetic data, and the instability of high-dimensional mutual information estimation restricts practical applicability.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[NeurIPS 2025\] AttentionPredictor: Temporal Patterns Matter for KV Cache Compression](attentionpredictor_temporal_patterns_matter_for_kv_cache_com.md)
+- [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](how_foundational_are_foundation_models_for_time_series_forecasting.md)
+- [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
+- [\[NeurIPS 2025\] Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models](causal_masking_on_spatial_data_an_information-theoretic_case_for_learning_spatia.md)
+- [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
+
+<!-- RELATED:END -->

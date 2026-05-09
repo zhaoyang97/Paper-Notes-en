@@ -1,0 +1,157 @@
+---
+title: >-
+  [Paper Note] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning
+description: >-
+  [NeurIPS 2025][Medical Imaging][LLM robustness] This paper proposes CodeCrash, a stress-testing framework that systematically evaluates the code reasoning robustness of 17 LLMs through functionally equivalent structural perturbations and misleading natural language injections (comments, print statements, and hints). The framework reveals an average performance drop of 23.2% across models, with CoT recovering only to 13.8%, and is the first to identify the "Reasoning Collapse" phenomenon in large reasoning models (LRMs).
+tags:
+  - NeurIPS 2025
+  - Medical Imaging
+  - LLM robustness
+  - code reasoning
+  - natural language perturbation
+  - reasoning collapse
+  - benchmark
+date: 2026-05-08
+content_hash: 2d2b0cfe444b08d1
+---
+
+# CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning
+
+**Conference**: NeurIPS 2025
+**arXiv**: [2504.14119](https://arxiv.org/abs/2504.14119)
+**Code**: [Website](https://cuhk-arise.github.io/CodeCrash/)
+**Area**: Medical Imaging
+**Keywords**: LLM robustness, code reasoning, natural language perturbation, reasoning collapse, benchmark
+
+## TL;DR
+This paper proposes CodeCrash, a stress-testing framework that systematically evaluates the code reasoning robustness of 17 LLMs through functionally equivalent structural perturbations and misleading natural language injections (comments, print statements, and hints). The framework reveals an average performance drop of 23.2% across models, with CoT recovering only to 13.8%, and is the first to identify the "Reasoning Collapse" phenomenon in large reasoning models (LRMs).
+
+## Background & Motivation
+
+**State of the Field**: LLMs excel at code generation, completion, and repair tasks, and have been integrated into IDE tools such as GitHub Copilot. However, real-world codebases are rife with noise including ambiguous identifiers, dead code, and inconsistent comments.
+
+**Limitations of Prior Work**: Traditional robustness research focuses primarily on structural code transformations (variable renaming, control flow modification, unreachable code insertion), which only test pattern-matching capabilities. NL-side perturbation studies concentrate on NL-to-Code tasks (evaluating prompt sensitivity), leaving unanswered whether LLMs can prioritize executable semantics over natural language cues during code reasoning.
+
+**Root Cause**: LLMs treat comments and natural language cues as high-priority evidence in code understanding, yet these are semantically irrelevant to program execution—models cannot distinguish functional code from non-functional context.
+
+**Paper Goals**: Design a code reasoning robustness benchmark covering both the structural and NL layers, and dissect failure modes of LLMs when confronted with misleading information.
+
+**Starting Point**: Perturbations are categorized into context-level (obviously incorrect NL cues) and reasoning-level (plausible but incorrect hints). AST parsing is creatively employed to guarantee functional equivalence of perturbed code.
+
+**Core Idea**: LLMs over-rely on NL cues to take reasoning shortcuts → CoT mitigates but does not eliminate this tendency → the internal reasoning of LRMs is more robust, yet plausible hints trigger pathological self-reflection and reasoning collapse.
+
+## Method
+
+### Overall Architecture
+Input code is normalized via AST parsing into a "vanilla" baseline (VAN), after which designated perturbations are applied and the code is regenerated through AST to ensure syntactic correctness and functional equivalence. The perturbed code is fed to LLMs, whose predicted outputs are recorded and compared against actual execution results to compute Pass@1 accuracy. Data sources: CruxEval (code reasoning problems from 1,279 items) and LiveCodeBench (real algorithmic problems).
+
+### Key Designs
+
+1. **Aggregated Structural Perturbation (PSC-ALL)**:
+
+    - Function: Simultaneously applies identifier renaming (REN), conditional expression reformatting (RTF), and garbage code injection (GBC, including dead loops, dead blocks, and global variables).
+    - Mechanism: Aggregates multiple PSC transformations from CCTest and dead-loop poisoning methods to construct more complex yet functionally equivalent programs.
+    - Design Motivation: Individual structural perturbations consistently yield weak effects; the aggregated form represents the "strongest combination of traditional methods" and serves as a comparative baseline.
+
+2. **Context-Level Misleading Perturbations (MCC & MPS)**:
+
+    - Function: Injects obviously incorrect NL cues without altering code logic.
+    - MCC (Misleading Code Comments): Injects erroneous comments at 8 types of critical AST nodes (e.g., "this branch never executes").
+    - MPS (Misleading Print Statements): Embeds identical misleading information in executable print statements.
+    - Design Motivation: The two injection formats (comments vs. print statements) are used to verify that LLM fragility is not limited to a specific format.
+    - Misleading messages are generated by GPT-4o and manually filtered to ensure they are generic, obviously incorrect, and contradictory to the code logic.
+
+3. **Reasoning-Level Misleading Perturbation (MHC)**:
+
+    - Function: Injects high-level erroneous hints about program output (Misleading Hint Comments).
+    - Mechanism: GPT-4o generates "plausible answers" that preserve type and structure but carry incorrect values, which are injected as comments at function definitions or return statements.
+    - Design Motivation: Unlike the shallow contradictions of context-level perturbations, MHC targets the reasoning process—testing whether models can critically evaluate conflicting information rather than rationalizing hints to take shortcuts.
+    - Experimental Finding: MHC causes an average performance drop of 33.0% on LCB (more complex algorithmic problems), far exceeding 12.4% on Crux—the more complex the task, the more willing models are to adopt hints.
+
+4. **Evaluation Setup**:
+
+    - 17 LLMs (GPT-4o/mini, Claude 3.5, Gemini, DeepSeek-V3, LLaMA-3.x, Qwen-2.5 series)
+    - 3 LRMs (o3-mini, DeepSeek-R1, QwQ-32B)
+    - Two inference modes: direct inference + CoT
+    - Temperature 0.2, top-p 0.95
+
+### Failure Mode Analysis
+
+**Distractibility**: Models are drawn to comments/print statements mid-CoT reasoning, abandoning previously correct reasoning paths. For example, Qwen2.5-72B correctly evaluates a condition but immediately reverses its conclusion upon encountering the comment "this branch never executes."
+
+**Rationalization**: After accepting an MHC hint, models construct reverse explanations to justify the incorrect answer. For instance, a model correctly reasons about the fourth character ('w') but abruptly changes its conclusion in the next step to align with the incorrect output suggested by the hint.
+
+**Reasoning Collapse**: A phenomenon unique to QwQ-32B—MHC perturbations trigger uncontrollable recursive self-verification, producing reasoning chains exceeding 32K tokens, with the final 12K tokens consisting entirely of "Hmm." This manifests as cognitive dissonance: the model attempts to simultaneously rationalize the hint and remain faithful to its reasoning trajectory, and the conflict causes a collapse.
+
+## Key Experimental Results
+
+### Main Results (Direct Inference — Relative Drop in Output Prediction)
+
+| Model | VAN (Crux/LCB) | PSC-ALL | MCC | MPS | MHC | Average |
+|------|----------------|---------|-----|-----|-----|------|
+| GPT-4o | 71.3/64.5 | -15.0%/-28.4% | -14.0%/-29.1% | -17.2%/-24.3% | -6.4%/-26.6% | -18.4% |
+| Claude 3.5 Sonnet | 71.5/73.8 | -14.8%/-34.1% | -8.1%/-9.6% | -8.6%/-10.7% | -14.4%/-43.4% | -16.3% |
+| DeepSeek-V3 | 67.9/67.8 | -12.9%/-35.6% | -16.6%/-41.4% | -10.1%/-34.2% | -10.7%/-29.7% | -21.1% |
+| Qwen2.5-7B | 43.3/41.4 | -37.9%/-30.9% | -58.0%/-38.3% | -45.2%/-19.8% | -26.9%/-55.6% | -39.8% |
+| **All 17 Models Avg.** | - | **-24.6%** | **-24.3%** | **-23.8%** | **-20.1%** | **-23.2%** |
+
+### CoT Inference Comparison
+
+| Model | Direct Avg. Drop | CoT Avg. Drop | Recovery |
+|------|----------------|-------------|---------|
+| GPT-4o | -18.4% | -4.2% | +14.2 pp |
+| Claude 3.5 Sonnet | -16.3% | -6.7% | +9.6 pp |
+| DeepSeek-V3 | -21.1% | -12.4% | +8.7 pp |
+| LLaMA-3.1-8B | -23.0% | -19.8% | +3.2 pp |
+| **Overall Avg.** | **-23.2%** | **-13.8%** | **+9.4 pp** |
+
+### LRM Robustness and Token Consumption
+
+| Model | VAN Pass@1 | PSC-ALL | MCC | MPS | MHC | Max Tokens (MHC) |
+|------|-----------|---------|-----|-----|-----|---------------|
+| o3-mini-high | 98.1/100 | +0.1%/-0.2% | -3.6%/-5.6% | +0.9%/-0.6% | -13.4%/-28.4% | 20,000 |
+| DeepSeek-R1 | 95.4/99.8 | -1.3%/-1.3% | -3.5%/-2.7% | -0.4%/-0.4% | -2.4%/-0.6% | 16,079 |
+| QwQ-32B | 93.2/99.0 | -0.9%/-0.2% | -3.4%/-4.6% | -1.2%/-1.9% | -0.8%/-1.1% | **32,764** |
+
+LRMs are nearly unaffected by PSC-ALL and MCC/MPS, but token consumption under MHC increases 2–3×, and QwQ-32B exhibits 4 instances of Reasoning Collapse.
+
+### Key Findings
+- NL-embedded perturbations (MCC/MPS) are as effective as structural perturbations (PSC-ALL) (~24% drop), indicating that LLMs are equally susceptible to comment-based and structural interference.
+- MHC impact on complex tasks (LCB) (-33.0%) far exceeds that on simpler tasks (Crux, -12.4%)—the harder the task, the more models tend to take shortcuts.
+- Model scale and version upgrades systematically improve robustness (LLaMA 8B → 70B → 405B), with the Gemini series as a notable exception.
+- 14 of 17 models exhibit a consistent preference for one perturbation format (MPS vs. MCC), suggesting format preference is an inherent characteristic.
+
+## Highlights & Insights
+- **Revealing LLM "rationalization" behavior from a code perspective**: Prior findings on LLM rationalization mainly come from Anthropic's research on multiple-choice settings; CodeCrash extends this to code reasoning—models not only accept hints but construct spurious execution paths to "prove" their correctness.
+- **Reasoning Collapse as a novel failure mode**: Unlike simple hallucination or repetitive generation, it represents catastrophic cognitive dissonance arising when a reasoning model attempts to simultaneously satisfy two contradictory objectives (faithful reasoning vs. rationalizing hints), manifesting as quadratic growth in reasoning tokens followed by collapse.
+- **Asymmetry between input and output prediction**: MCC/MPS may actually improve performance on input prediction tasks (misleading cues provide exploitable answer information), exposing the limitations of input prediction as a measure of code comprehension.
+
+## Limitations & Future Work
+- Misleading messages are generated by GPT-4o, which may introduce specific semantic biases.
+- Evaluation covers only input/output prediction tasks, excluding downstream tasks such as code generation and repair.
+- LRM evaluation involves only 3 models (o3-mini, R1, QwQ-32B) with $N=1$ sampling due to resource constraints.
+- Defensive strategies (e.g., incorporating NL interference as data augmentation during training) remain unexplored.
+- Reasoning Collapse has been observed in only 4 instances on QwQ-32B, limiting statistical power.
+
+## Related Work & Insights
+- **vs. CCTest**: CCTest introduces PSC transformations but is limited to the structural layer; CodeCrash systematically incorporates NL-layer perturbations and finds that, while the surface-level effects of NL and structural perturbations are comparable, their failure modes differ fundamentally.
+- **vs. Anthropic Sycophancy Research**: Anthropic finds that LLMs tend to rationalize biased hints in multiple-choice settings; CodeCrash demonstrates that the same rationalization behavior is more dangerous in code reasoning, where code possesses deterministic execution semantics.
+- **vs. Prompt Injection Research**: MHC in CodeCrash can be viewed as a form of prompt injection in the code domain—manipulating model behavior through plausible meta-information.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of NL-embedded perturbations on code reasoning, with the discovery of the novel Reasoning Collapse phenomenon.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 17 LLMs + 3 LRMs, 4 perturbation types × 2 inference modes × 2 datasets, representing a large-scale evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed failure case analysis, though the paper is lengthy.
+- Value: ⭐⭐⭐⭐⭐ Provides important guidance for evaluating and improving the reliability of LLMs in code-assisted scenarios.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
+- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
+- [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
+- [\[NeurIPS 2025\] MuSLR: Multimodal Symbolic Logical Reasoning](muslr_multimodal_symbolic_logical_reasoning.md)
+- [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_imaging/medagentgym_agentic_training_biomedical.md)
+
+<!-- RELATED:END -->

@@ -1,0 +1,152 @@
+---
+title: >-
+  [Paper Note] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
+description: >-
+  [CVPR 2026][3D Vision][Point cloud quality assessment] This paper proposes QD-PCQA, a quality-aware domain adaptation framework that transfers image-domain quality assessment priors to the point cloud domain via two core strategies: Rank-weighted Conditional Alignment (RCA) and Quality-guided Feature Augmentation (QFA).
+tags:
+  - CVPR 2026
+  - 3D Vision
+  - Point cloud quality assessment
+  - unsupervised domain adaptation
+  - quality-aware feature alignment
+  - cross-domain transfer
+date: 2026-05-08
+content_hash: ca928b4b2883adaa
+---
+
+# QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
+
+**Conference**: CVPR 2026
+**arXiv**: [2603.03726](https://arxiv.org/abs/2603.03726)
+**Authors**: Guohua Zhang, Jian Jin, Meiqin Liu, Chao Yao, Weisi Lin (Beijing Jiaotong University, NTU, USTB)
+**Code**: To be confirmed
+**Area**: 3D Vision
+**Keywords**: Point cloud quality assessment, unsupervised domain adaptation, quality-aware feature alignment, cross-domain transfer
+
+## TL;DR
+
+This paper proposes QD-PCQA, a quality-aware domain adaptation framework that transfers image-domain quality assessment priors to the point cloud domain via two core strategies: Rank-weighted Conditional Alignment (RCA) and Quality-guided Feature Augmentation (QFA).
+
+## Background & Motivation
+
+No-reference point cloud quality assessment (NR-PCQA) suffers from poor generalization due to scarce annotated data. Since the human visual system (HVS) perceives quality independently of media type, unsupervised domain adaptation (UDA) can be leveraged to transfer annotated quality priors from the image domain to the point cloud domain. However, existing UDA-based PCQA methods (e.g., IT-PCQA) directly inherit feature alignment strategies from image classification tasks, overlooking the unique characteristics of quality assessment:
+
+- **Quality-agnostic feature alignment**: Semantically similar but quality-different samples may be incorrectly aligned.
+- **Quality-agnostic feature augmentation**: Style Mixup randomly blends samples without considering quality information.
+- **Layer-agnostic feature augmentation**: Augmentation is applied only at the final layer, ignoring layer-wise complementarity.
+- **Augmentation imbalance**: Only source-domain features are augmented, which may widen the domain gap.
+
+## Core Problem
+
+How to preserve quality awareness throughout domain adaptation — ensuring that feature alignment is conditioned on consistent quality levels while making the model sensitive to quality ranking.
+
+## Method
+
+### 3.1 Data Preprocessing
+
+3D point clouds are projected onto the six faces of a cube to generate multi-view images, which are concatenated and uniformly resized to $224 \times 224$ along with natural images, sharing a ResNet-50 feature extractor.
+
+### 3.2 Quality-guided Feature Augmentation (QFA)
+
+QFA consists of three modules:
+
+**Quality-guided Style Mixup (QSM)**: Unlike random Style Mixup, candidate sample pairs are matched by quality scores using a Gaussian kernel:
+
+$$P((x_s^{i^*}, y_s^{i^*}) | (x_s^i, y_s^i)) \propto \exp\left(-\frac{(y_s^i - y_s^{i^*})^2}{2\tau^2}\right)$$
+
+After pairing, the style statistics (mean/variance) and labels of features are blended:
+
+$$f_s^{\text{mix}} = \sigma(f)^{\text{mix}} \frac{f_s^i - u(f_s^i)}{\sigma(f_s^i)} + u(f)^{\text{mix}}$$
+
+This ensures that augmented features maintain quality consistency.
+
+**Multi-Layer Extension**: QSM is applied layer-by-layer according to quality scores:
+- Stage 1 → High-quality samples (shallow layers are more sensitive to low-level distortions)
+- Stages 2–3 → Medium-quality samples
+- Stage 4 → Low-quality samples (deep layers capture high-level semantics)
+
+**Dual-Domain Augmentation**: QSM multi-layer augmentation is applied to the source domain, while standard Style Mixup is applied to the target domain after Stage 4. This mitigates augmentation imbalance, increases discriminator difficulty, and compels the feature extractor to learn more robust domain-invariant features.
+
+### 3.3 Rank-weighted Conditional Alignment (RCA)
+
+Built upon Conditional Operator Discrepancy (COD), RCA introduces a rank weight matrix:
+
+$$\tilde{\mathbf{K}}_X^{st}(i,j) = k(f_s^i, f_t^j) \cdot (1 + \mathbf{W}^{st}(i,j))$$
+
+$$\mathbf{W}^{st}(i,j) = \max\big(0, -(\hat{y}_s^i - \hat{y}_t^j) \cdot \text{sign}(y_s^i - y_t^j)\big)$$
+
+- **Quality-conditioned alignment**: Ground-truth labels from the source domain and pseudo-labels from the target domain are used as conditions to align features at the same quality level.
+- **Rank weighting**: Higher weights are assigned to sample pairs whose predicted rankings are inconsistent with their true rankings, focusing on correcting ranking bias.
+
+### 3.4 Two-Stage Training
+
+1. **Stage 1** (first 5,000 iterations): Only DANN is used for initial feature alignment; pseudo-labels are not used.
+2. **Stage 2**: RCA is introduced, using pseudo-labels generated by the stabilized model for fine-grained alignment.
+
+### Total Loss
+
+$$\mathcal{L}_{\text{all}}^{\text{mix}} = \lambda_1 \mathcal{L}_P(\hat{y}_s^{\text{mix}}, y_s^{\text{mix}}) + \lambda_2 \mathcal{L}_D(f_s^{\text{mix}}, f_t^{\text{mix}}) + \lambda_3 \mathcal{L}_R(y_s, y_t, f_s, f_t)$$
+
+The mixed version is applied with probability $p > 0.5$; otherwise, the original version is used.
+
+## Key Experimental Results
+
+| Method | Mode | TID2013→SJTU-PCQA PLCC | SROCC | TID2013→WPC PLCC | SROCC |
+|--------|------|------------------------|-------|------------------|-------|
+| No Adapt | I-to-PC | 0.548 | 0.444 | 0.320 | 0.296 |
+| DANN | I-to-PC | 0.596 | 0.512 | 0.325 | 0.296 |
+| IT-PCQA | I-to-PC | 0.693 | 0.636 | 0.429 | 0.403 |
+| COD | I-to-PC | 0.712 | 0.611 | 0.426 | 0.396 |
+| **QD-PCQA** | **I-to-PC** | **0.842** | **0.753** | **0.563** | **0.572** |
+
+| Method | KADID→SJTU-PCQA PLCC | SROCC | KADID→WPC PLCC | SROCC |
+|--------|----------------------|-------|----------------|-------|
+| IT-PCQA | 0.703 | 0.641 | 0.432 | 0.402 |
+| **QD-PCQA** | **0.843** | **0.724** | **0.553** | **0.534** |
+
+*QD-PCQA outperforms IT-PCQA on SJTU-PCQA by approximately 21% in PLCC.*
+
+## Highlights & Insights
+
+- **Quality awareness throughout the pipeline**: Both feature augmentation and feature alignment are guided by quality scores.
+- **Principled layer-wise augmentation**: Exploits the complementary sensitivity of different network layers to different quality levels.
+- **Rank-weighting mechanism**: Focuses on hard sample pairs with inconsistent rankings, precisely correcting ranking bias during domain transfer.
+- **Two-stage training**: Prevents unreliable early pseudo-labels from negatively affecting RCA.
+
+## Limitations & Future Work
+
+- Projecting point clouds onto six orthogonal views may lose 3D structural information.
+- Pseudo-label quality depends on the Stage 1 model; better pseudo-label generation strategies are worth exploring.
+- Evaluation is limited to two point cloud datasets (SJTU-PCQA and WPC), which is a relatively small scale.
+- Quality stratification uses fixed quantiles (33%/67%); adaptive stratification strategies could be investigated.
+
+## Related Work & Insights
+
+- vs. **IT-PCQA**: IT-PCQA performs only global alignment with DANN, ignoring quality conditioning; QD-PCQA adds quality-conditioned alignment and rank weighting.
+- vs. **StyleAM**: StyleAM introduces Style Mixup but blends randomly without quality awareness; QD-PCQA uses QSM to maintain quality consistency.
+- vs. **COD**: COD performs conditional alignment but treats all sample pairs with equal weight; QD-PCQA emphasizes sample pairs with ranking discrepancies.
+
+## Highlights & Insights
+
+- The quality-aware domain adaptation paradigm is generalizable to other regression-based cross-domain tasks (e.g., cross-domain age estimation, cross-domain score prediction).
+- The layer-wise feature augmentation design offers broadly applicable insights for exploiting multi-scale features.
+- The ranking-sensitive weighting strategy can be further developed in conjunction with learning-to-rank approaches.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐ — Quality-aware domain adaptation represents a meaningful innovation in the PCQA field.
+- **Experimental Thoroughness**: ⭐⭐⭐ — The number of datasets is limited; large-scale point cloud dataset validation is lacking.
+- **Writing Quality**: ⭐⭐⭐⭐ — Problem formulation is clear and module motivations are well justified.
+- **Value**: ⭐⭐⭐⭐ — Offers a new perspective on improving generalization in PCQA.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
+- [\[CVPR 2026\] CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation](clipoint3d_language-grounded_few-shot_unsupervised_3d_point_cloud_domain_adaptat.md)
+- [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](../../AAAI2026/3d_vision/multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
+- [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
+- [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](../../AAAI2026/3d_vision/dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
+
+<!-- RELATED:END -->

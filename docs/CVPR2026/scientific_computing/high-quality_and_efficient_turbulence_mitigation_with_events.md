@@ -1,0 +1,142 @@
+---
+title: >-
+  [Paper Note] EHETM: High-Quality and Efficient Turbulence Mitigation with Events
+description: >-
+  [CVPR 2026][Scientific Computing][Atmospheric Turbulence Mitigation] This paper proposes EHETM, the first method to leverage the microsecond temporal resolution of event cameras to overcome the accuracy–efficiency bottleneck of conventional multi-frame turbulence mitigation (TM). Two key physical phenomena are identified—polarity alternation of turbulence-induced events correlated with image gradients, and spatiotemporally coherent "event tubes" formed by dynamic objects—motivating two complementary modules: a polarity-weighted gradient module and an event tube constraint module. EHETM reduces data overhead by 77.3% and system latency by 89.5%, with particularly substantial gains over the state of the art in dynamic-object scenes.
+tags:
+  - CVPR 2026
+  - Scientific Computing
+  - Atmospheric Turbulence Mitigation
+  - Event Camera
+  - Polarity-Weighted Gradient
+  - Event Tube Constraint
+  - Motion Decoupling
+date: 2026-05-08
+content_hash: d7c6118c79b7b6d2
+---
+
+# EHETM: High-Quality and Efficient Turbulence Mitigation with Events
+
+**Conference**: CVPR 2026
+**arXiv**: [2603.20708](https://arxiv.org/abs/2603.20708)
+**Code**: [https://github.com/Xavier667/EHETM](https://github.com/Xavier667/EHETM)
+**Area**: Scientific Computing / Event Cameras
+**Keywords**: Atmospheric Turbulence Mitigation, Event Camera, Polarity-Weighted Gradient, Event Tube Constraint, Motion Decoupling
+
+## TL;DR
+This paper proposes EHETM, the first method to leverage the microsecond temporal resolution of event cameras to overcome the accuracy–efficiency bottleneck of conventional multi-frame turbulence mitigation (TM). Two key physical phenomena are identified—polarity alternation of turbulence-induced events correlated with image gradients, and spatiotemporally coherent "event tubes" formed by dynamic objects—motivating two complementary modules: a polarity-weighted gradient module and an event tube constraint module. EHETM reduces data overhead by 77.3% and system latency by 89.5%, with particularly substantial gains over the state of the art in dynamic-object scenes.
+
+## Background & Motivation
+
+**State of the Field**: Atmospheric and thermal turbulence are the primary degradation sources in long-range imaging, introducing random refractive-index fluctuations that cause geometric tilt and spatially varying blur. Existing methods (e.g., DATUM) rely on multi-frame sequences captured by conventional cameras to recover stable scene content.
+
+**Limitations of Prior Work**: Multi-frame methods face a **fundamental accuracy–efficiency trade-off**—more frames yield better restoration but incur higher system latency and data overhead. Furthermore, when **dynamic objects** are present, multi-frame methods struggle to distinguish turbulence-induced jitter from genuine object motion.
+
+**Root Cause**: Turbulence mitigation requires substantial temporal redundancy to average out random jitter, yet the frame rate of conventional cameras limits the amount of information obtainable within an acceptable latency budget.
+
+**Starting Point**: Event cameras asynchronously record brightness changes at microsecond temporal resolution—the motion information contained in a single event window far exceeds that of a conventional frame—enabling high-quality restoration from very few frames.
+
+**Core Idea**: Two physical phenomena are identified as restoration priors: (1) polarity alternation of turbulence-induced events is correlated with image gradients, providing scene structure cues; (2) dynamic objects form coherent tubular structures in the event stream, providing motion priors.
+
+## Method
+
+### Overall Architecture
+Conventional frames (few) + event stream → Polarity-Weighted Gradient Module (scene structure recovery) + Event Tube Constraint Module (dynamic object decoupling) → High-quality restoration output.
+
+### Key Designs
+
+1. **Phenomenon 1: Polarity Alternation of Turbulence Events and Image Gradients**:
+
+    - Finding: Brightness changes caused by turbulence generate events with alternating positive/negative polarity at image gradient locations in the clean scene—these events effectively "trace" scene edges and texture structures.
+    - **Polarity-Weighted Gradient Module**: Event polarity information is used to weight the estimation of image gradients; positive-polarity events indicate positive gradient directions and negative-polarity events indicate negative gradient directions.
+    - Design Motivation: Conventional methods require multi-frame averaging to recover sharp edges, whereas event polarity directly supplies structural cues—a single event window can yield structure information comparable to many frames.
+
+2. **Phenomenon 2: "Event Tubes" of Dynamic Objects**:
+
+    - Finding: Dynamic objects (e.g., vehicles, pedestrians) form **continuous tubular structures** in the spatiotemporal event stream (events generated by continuous object motion are arranged as tubes in space–time), whereas turbulence-induced events exhibit random, irregular distributions.
+    - **Event Tube Constraint Module**: The spatiotemporal coherence of event tubes is exploited to separate object motion from turbulence jitter. Tubular structures are detected → object motion trajectories are extracted → object motion is subtracted from the total displacement → the pure turbulence component is obtained.
+    - Design Motivation: Conventional multi-frame TM methods assume a static scene—when dynamic objects are present, their motion is misattributed to turbulence. Event tubes provide a natural prior for distinguishing the two.
+
+3. **Real-World Dataset Construction**:
+
+    - Two event–frame turbulence datasets are constructed: (1) an **atmospheric turbulence dataset** covering long-range outdoor scenes; (2) a **thermal turbulence dataset** covering imaging near heat sources.
+    - Both datasets include static and dynamic scenes.
+    - Design Motivation: Existing turbulence datasets contain only conventional frames with no event data. Real-world data are critical for reliable evaluation.
+
+### Loss & Training
+Training combines pixel-level reconstruction loss, perceptual loss, and a polarity-consistency constraint.
+
+## Key Experimental Results
+
+### Main Results (Comparison with Multi-Frame TM Methods)
+
+| Method | Frames | PSNR↑ | SSIM↑ | Latency | Data Volume |
+|--------|--------|-------|-------|---------|-------------|
+| DATUM (50 frames) | 50 | Baseline | Baseline | 100% | 100% |
+| DATUM (10 frames) | 10 | Degraded | Degraded | ~20% | ~20% |
+| **EHETM (2 frames + events)** | **2** | **SOTA** | **SOTA** | **10.5%** | **22.7%** |
+
+### Dynamic Scene Comparison
+
+| Method | Static Scenes | Dynamic Scenes (with Moving Objects) | Notes |
+|--------|--------------|--------------------------------------|-------|
+| DATUM | Good | Severe artifacts | Cannot distinguish object motion from turbulence |
+| **EHETM** | **SOTA** | **Substantially superior (largest margin)** | Event tube constraint effectively decouples motion |
+
+### Ablation Study
+
+| Configuration | PSNR | Notes |
+|---------------|------|-------|
+| Conventional frames only (baseline) | Baseline | Poor quality with few frames |
+| + Polarity-weighted gradient | +Large gain | Structural cues from events |
+| + Event tube constraint | +Further gain | Dynamic object decoupling |
+| **Full EHETM** | **Best** | Two modules are complementary |
+
+### Efficiency Comparison
+
+| Metric | EHETM vs. DATUM |
+|--------|:---:|
+| Data overhead reduction | **77.3%** |
+| System latency reduction | **89.5%** |
+
+### Key Findings
+- EHETM with only 2 frames + events surpasses DATUM using 50 frames—demonstrating that the temporal resolution advantage of event cameras is fully exploited.
+- Dynamic scenes constitute the scenario where EHETM achieves the largest margin—conventional methods nearly fail entirely in such scenes, while EHETM handles them effectively via the event tube constraint.
+- The polarity alternation phenomenon holds for both atmospheric and thermal turbulence, indicating physical generality.
+- The substantial reductions in data overhead and system latency make real-time long-range imaging practically feasible.
+
+## Highlights & Insights
+- **First systematic application of event cameras to turbulence mitigation**: This work opens a new direction for event-based vision in scientific imaging. The microsecond temporal resolution of event cameras is naturally suited to the high-frequency stochastic nature of turbulence.
+- **Discovery of two physical phenomena**: (1) the polarity-alternation–gradient correlation and (2) the spatiotemporal coherence of event tubes. These findings not only guide the method design but also provide important physical priors for subsequent research.
+- **Breakthrough in dynamic scenes**: The "static scene assumption" underlying conventional TM methods is fundamentally challenged. The event tube constraint offers an elegant solution to the problem of moving objects under turbulence.
+- **Qualitative efficiency improvement**: A 77% reduction in data overhead combined with an 89% reduction in latency represents an order-of-magnitude change rather than incremental progress—transforming real-time turbulence mitigation from infeasible to achievable.
+
+## Limitations & Future Work
+- The high hardware cost of event cameras limits practical deployment.
+- The current event tube detection assumes rigid body motion; handling non-rigid motion (e.g., fluids, deformable objects) remains to be explored.
+- Robustness under extreme turbulence conditions (e.g., strong convective weather) has not been thoroughly evaluated.
+- The performance characteristics of event cameras under low-light or extreme high-dynamic-range conditions may affect results.
+- Combining event-camera-based TM with adaptive optics is a promising future direction.
+
+## Related Work & Insights
+- **vs. DATUM/TurbNet and other multi-frame methods**: Dependence on large numbers of conventional frames leads to high latency and failure in dynamic scenes. EHETM fundamentally changes the information acquisition paradigm through event cameras.
+- **vs. adaptive optics**: Hardware-based solutions entail far higher cost and complexity than software-based approaches. EHETM offers a more lightweight computational alternative.
+- **vs. other event camera applications (optical flow / deblurring)**: Turbulence mitigation represents a new application domain for event-based vision—the stochastic nature of turbulence is naturally complementary to the high temporal resolution of event cameras.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐⭐ A fundamentally new event-driven turbulence mitigation paradigm, together with the discovery of two physical phenomena.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Real-world dataset construction, comprehensive quantitative and qualitative comparisons, and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear description of physical phenomena; method design is well-grounded in physical intuition.
+- Value: ⭐⭐⭐⭐⭐ Significant contributions to both long-range imaging and event-based vision.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
+- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/scientific_computing/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
+- [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](../../NeurIPS2025/scientific_computing/f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
+- [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](../../NeurIPS2025/scientific_computing/gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
+- [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](../../NeurIPS2025/scientific_computing/eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
+
+<!-- RELATED:END -->

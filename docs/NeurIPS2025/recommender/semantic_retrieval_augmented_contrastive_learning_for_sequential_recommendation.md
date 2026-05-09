@@ -1,0 +1,130 @@
+---
+title: >-
+  [Paper Note] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation
+description: >-
+  [NeurIPS 2025][Recommender Systems][Sequential Recommendation] This paper proposes SRA-CL, a framework that leverages the semantic understanding capabilities of LLMs to construct high-quality contrastive sample pairs. By combining semantic retrieval with a learnable sample synthesizer, SRA-CL enhances contrastive learning for sequential recommendation and achieves state-of-the-art performance across four datasets in a plug-and-play manner.
+tags:
+  - NeurIPS 2025
+  - Recommender Systems
+  - Sequential Recommendation
+  - Contrastive Learning
+  - Large Language Models
+  - Semantic Retrieval
+  - Data Augmentation
+date: 2026-05-08
+content_hash: b793652278f28894
+---
+
+# Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation
+
+**Conference**: NeurIPS 2025
+**arXiv**: [2503.04162](https://arxiv.org/abs/2503.04162)
+**Code**: [GitHub](https://github.com/ziqiangcui/SRA-CL)
+**Area**: Recommender Systems
+**Keywords**: Sequential Recommendation, Contrastive Learning, Large Language Models, Semantic Retrieval, Data Augmentation
+
+## TL;DR
+
+This paper proposes SRA-CL, a framework that leverages the semantic understanding capabilities of LLMs to construct high-quality contrastive sample pairs. By combining semantic retrieval with a learnable sample synthesizer, SRA-CL enhances contrastive learning for sequential recommendation and achieves state-of-the-art performance across four datasets in a plug-and-play manner.
+
+## Background & Motivation
+
+Contrastive learning has been widely adopted in sequential recommendation to alleviate data sparsity. However, existing methods exhibit two critical limitations when constructing positive sample pairs:
+
+**Semantic Bias**: Random augmentation strategies (e.g., masking, dropout) may fundamentally distort the user preference semantics encoded in a sequence; clustering-based methods leveraging collaborative signals (e.g., K-means) are constrained by sparse ID signals, resulting in imprecise cluster assignments.
+
+**Non-learnability**: Existing methods rely on predefined hard rules (same-cluster pairing, shared next-item pairing) and cannot allow the model to autonomously learn optimal contrastive sample construction strategies.
+
+The key insight of this work is that textual semantic information (categories, brands, descriptions) is inherently stable and unaffected by data volume or training dynamics, making it a more reliable source for contrastive samples. Furthermore, LLMs possess strong semantic understanding and reasoning capabilities, making them well-suited for generating semantic embeddings that capture user preferences and item characteristics.
+
+## Method
+
+### Overall Architecture
+
+SRA-CL is a model-agnostic plugin framework comprising three modules: (1) cross-user contrastive learning via user-level semantic retrieval; (2) intra-user contrastive learning via item-level semantic retrieval; and (3) the main recommendation task. The three components are jointly trained via a weighted loss: $\mathcal{L} = \mathcal{L}_{\text{Rec}} + \alpha \mathcal{L}_{\text{CS}} + \beta \mathcal{L}_{\text{IS}}$. At inference time, only the recommendation backbone is used, incurring no additional LLM overhead.
+
+### Key Designs
+
+1. **LLM-based User Preference Semantic Embedding**: The user interaction sequence (item attributes and descriptions sorted chronologically) is formatted into a prompt $\mathcal{P}_u$ and fed into an LLM (DeepSeek-V3) to infer the user preference summary $\mathcal{A}_u = \text{LLM}(\mathcal{P}_u)$. A pre-trained text embedding model (SimCSE-RoBERTa) then encodes this summary into a fixed semantic vector $\tilde{\mathbf{h}}_u$. Top-$k$ semantically similar users are retrieved via cosine similarity to form a candidate pool $\mathcal{N}_u$. All semantic embeddings are frozen throughout training.
+
+2. **Learnable Contrastive Sample Synthesizer**: Rather than directly selecting a user from the candidate pool as a positive sample (which yields suboptimal results under hard rules), an attention mechanism computes the suitability score of each candidate: $p_{u,u'} = \text{softmax}(\text{LeakyReLU}(\mathbf{a}^\top[\mathbf{W}\tilde{\mathbf{h}}_u \| \mathbf{W}\tilde{\mathbf{h}}_{u'}]))$. The positive representation is then obtained by weighted aggregation of candidate representations from the recommendation model: $\mathbf{h}_u^+ = \sum_{u' \in \mathcal{N}_u} p_{u,u'} \mathbf{h}_{u'}$. The synthesizer parameters are jointly trained with the recommendation model.
+
+3. **Intra-user Contrastive Learning via Item Semantic Retrieval**: LLMs are similarly used to understand items (given item attributes and contextual sequence information), producing semantic embeddings $\tilde{\mathbf{e}}_v$. Top-$k$ similar items are retrieved to form a candidate pool $\mathcal{N}_v$. Two semantically consistent augmented views $\mathcal{S}_u', \mathcal{S}_u''$ are generated by randomly replacing 20% of items with semantically similar candidates, serving as positive pairs. A learnable synthesizer is not applied here, as experiments show no additional benefit—item semantics are more directly quantifiable than user preferences.
+
+### Loss & Training
+
+- Recommendation loss: standard cross-entropy $\mathcal{L}_{\text{Rec}} = -\hat{y}_{v^+} + \log(\sum_v \exp(\hat{y}_v))$
+- Cross-user contrastive loss (InfoNCE): $\mathcal{L}_{\text{CS}} = -\log \frac{\exp(\mathbf{h}_u \cdot \mathbf{h}_u^+)}{\exp(\mathbf{h}_u \cdot \mathbf{h}_u^+) + \sum_{\mathbf{h}_u^-} \exp(\mathbf{h}_u \cdot \mathbf{h}_u^-)}$
+- Intra-user contrastive loss: $\mathcal{L}_{\text{IS}}$ follows the same formulation, treating the representations of two augmented views as positive pairs and other in-batch samples as negatives.
+- All semantic embeddings are pre-computed and frozen prior to training, introducing no inference latency.
+
+## Key Experimental Results
+
+### Main Results
+
+| Dataset | Metric | SRA-CL | MCLRec (2nd-best CL) | ICSRec | DuoRec | Gain |
+|---------|--------|--------|----------------------|--------|--------|------|
+| Yelp | HR@20 | **0.1282** | 0.1150 | 0.1165 | 0.1173 | +9.29% |
+| Yelp | NDCG@20 | **0.0533** | 0.0486 | 0.0495 | 0.0493 | +7.68% |
+| Sports | HR@20 | **0.0823** | 0.0736 | 0.0728 | 0.0706 | +11.82% |
+| Sports | NDCG@20 | **0.0347** | 0.0318 | 0.0304 | 0.0302 | +9.12% |
+| Beauty | HR@20 | **0.1314** | 0.1239 | 0.1205 | 0.1224 | +6.05% |
+| Office | HR@20 | **0.1702** | 0.1629 | 0.1643 | 0.1549 | +3.59% |
+
+### Ablation Study
+
+| Configuration | Description |
+|---------------|-------------|
+| w/o CL | Removing all contrastive learning results in significant performance degradation. |
+| w/o $\mathcal{L}_{\text{CS}}$ | Removing cross-user contrastive loss leads to a notable performance drop. |
+| w/o $\mathcal{L}_{\text{IS}}$ | Removing intra-user contrastive loss causes a moderate decline. |
+| w/o learnable synthesizer | Replacing the synthesizer with hard rules degrades performance. |
+| w/o semantic (random augmentation) | Substituting semantic retrieval with random augmentation yields the largest performance regression. |
+| w/o LLM (raw text) | Using raw text embeddings without LLM processing reduces performance. |
+
+### Key Findings
+
+- The Sports dataset yields the largest gain (+11.82% HR@20), likely due to its high sparsity, where semantic information provides the greatest benefit.
+- Model-agnostic validation: SRA-CL consistently improves GRU4Rec (+27.3% HR), SASRec (+15.2%), and DuoRec (+8.3%).
+- The learnable synthesizer outperforms hard-rule selection by approximately 2–4%, demonstrating the importance of learning optimal fusion weights.
+- No additional inference overhead is incurred, as semantic embeddings are pre-computed and used exclusively during training.
+
+## Highlights & Insights
+
+- LLMs are elegantly repurposed as offline semantic encoders rather than online inference components, completely avoiding inference latency.
+- The two-level retrieval design (user-level and item-level) covers both inter-user and intra-user contrastive learning paradigms.
+- The learnable synthesizer reformulates "positive sample selection" as "weighted aggregation of candidates," offering greater flexibility than hard rules.
+- Providing contextual sequence information when encoding items via LLM is a notable contribution—it enables the model to understand the role of items within the recommendation context.
+
+## Limitations & Future Work
+
+- The LLM inference cost (DeepSeek-V3 API) is non-trivial; pre-computing semantic embeddings at scale introduces considerable overhead.
+- Item context sequences are capped at 10 interactions, potentially missing important usage patterns.
+- Sensitivity analysis on the Top-$k$ hyperparameter is insufficient.
+- Semantic embeddings are fully frozen and cannot be updated dynamically during training; lightweight fine-tuning strategies warrant exploration.
+- Experiments are conducted on medium-scale datasets; effectiveness in industrial-scale settings remains to be validated.
+
+## Related Work & Insights
+
+- Compared to LLM-augmented recommendation methods such as LRD and RLMRec, SRA-CL focuses specifically on improving contrastive learning rather than directly enhancing the recommendation model.
+- The semantic retrieval augmentation paradigm is generalizable to other self-supervised learning tasks (e.g., graph representation learning).
+- The attention mechanism in the learnable sample synthesizer can be interpreted as a soft sample selection strategy.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐ The combination of LLM semantics with contrastive learning is novel, and the learnable synthesizer design is elegant.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Four datasets, 13 baselines, model-agnostic validation, and detailed ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐ Problem motivation is clearly articulated; figures and tables are intuitive.
+- **Value**: ⭐⭐⭐⭐ Establishes a new semantic augmentation paradigm for contrastive learning in sequential recommendation.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[NeurIPS 2025\] TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation](tv-rec_time-variant_convolutional_filter_for_sequential_recommendation.md)
+- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
+- [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
+- [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](../../AAAI2026/recommender/from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
+- [\[AAAI 2026\] Inductive Generative Recommendation via Retrieval-based Speculation](../../AAAI2026/recommender/inductive_generative_recommendation_via_retrieval-based_speculation.md)
+
+<!-- RELATED:END -->

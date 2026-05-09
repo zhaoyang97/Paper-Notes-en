@@ -1,0 +1,179 @@
+---
+title: >-
+  [Paper Note] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection
+description: >-
+  [AAAI 2026][Medical Imaging][Depression Detection] This paper proposes P3HF, a framework that achieves approximately 10% gains in accuracy and F1 on multi-event multimodal depression detection through three innovations: personality-guided feature gating, a temporally-aware Hypergraph-Former architecture, and event-level public-private domain disentanglement.
+tags:
+  - AAAI 2026
+  - Medical Imaging
+  - Depression Detection
+  - Multimodal Fusion
+  - Hypergraph Neural Network
+  - Personality-guided
+  - Domain Disentanglement
+date: 2026-05-08
+content_hash: 994084e69f0dc4ea
+---
+
+# Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection
+
+**Conference**: AAAI 2026
+**arXiv**: [2511.12460](https://arxiv.org/abs/2511.12460)
+**Code**: [https://github.com/hacilab/P3HF](https://github.com/hacilab/P3HF)
+**Area**: Medical Imaging
+**Keywords**: Depression Detection, Multimodal Fusion, Hypergraph Neural Network, Personality-guided, Domain Disentanglement
+
+## TL;DR
+
+This paper proposes P3HF, a framework that achieves approximately 10% gains in accuracy and F1 on multi-event multimodal depression detection through three innovations: personality-guided feature gating, a temporally-aware Hypergraph-Former architecture, and event-level public-private domain disentanglement.
+
+## Background & Motivation
+
+Depression affects approximately 3.8% of the global population and is the fourth leading cause of death among individuals aged 15–29. The severe shortage of mental health resources has motivated researchers to develop automated depression detection technologies. Existing multimodal methods face three critical challenges:
+
+**Insufficient modeling of individual differences (Problem 1)**: Depression manifests differently across individuals, yet traditional deep learning approaches adopt a unified modeling strategy that ignores heterogeneity in expressive patterns and communication styles. Discrete demographic labels (e.g., gender, age) fail to capture fine-grained individual differences.
+
+**Absence of temporal dependency modeling (Problem 2)**: Hypergraph neural networks model high-order cross-modal relationships by connecting multiple nodes via hyperedges; however, hyperedges are inherently unordered sets and cannot explicitly capture temporal relationships among nodes. Depression symptom expression, however, often exhibits important temporal dependencies.
+
+**Difficulty in cross-event generalization (Problem 3)**: According to Bandura's theory of reciprocal determinism, individual depressive manifestations are shaped by the interaction of personal factors, environment, and behavior. Single-event scenarios fail to capture the full complexity of depression. Two types of information coexist: public-domain information shared across events (core depressive features) and private-domain information specific to individual events (individualized responses).
+
+## Method
+
+### Overall Architecture
+
+P3HF comprises three core modules: (1) personality-guided feature gating, which leverages LLM-generated personality descriptions to guide audio-visual feature extraction; (2) the Hypergraph-Former architecture, which introduces positional encoding and attention mechanisms into hypergraph networks; and (3) a public-private domain disentanglement mechanism that uses contrastive learning to separate cross-event shared information from event-specific information.
+
+**Input**: A sample $S$ consists of $K$ events $\{E_1, E_2, \ldots, E_K\}$, each containing visual modality $V_k$ and audio modality $A_k$. Each sample is annotated with a depression label, Big Five personality scores, and demographic information.
+
+### Key Designs
+
+#### 1. **Personality-guided Feature Gating**
+
+**Mechanism**: An LLM converts discrete individual attributes (gender, age, hometown, Big Five personality scores) into continuous contextual descriptions, generating adaptive feature modulation weights for each individual.
+
+- **Personality description generation**: Demographic and personality trait information is provided as a prompt to GPT-4 (temperature=0) to generate descriptive text, which is then encoded by BERT into 768-dimensional features.
+- **Feature alignment**: Visual $V_k$, audio $A_k$, and personality $P$ features are each processed through Bi-LSTM to unify dimensionality to $D_1$.
+- **Gating mechanism**: Gating weights are generated via learnable linear transformations: $W_{\text{gate}} = \sigma(\mathbf{W}_p \tilde{P} + \mathbf{b}_p)$. Audio-visual features are modulated with residual connections: $A_k|P = \tilde{A}_k + \tilde{A}_k \odot W_{\text{gate}}$.
+- **Design Motivation**: Conventional methods represent individual attributes using discrete labels (e.g., one-hot encoded gender), which are too coarse-grained. Natural language descriptions generated by an LLM can capture subtler combinations of personality traits, while the gating mechanism enables the model to dynamically adapt feature representations to different individuals.
+
+#### 2. **Hypergraph-Former Architecture**
+
+**Mechanism**: Positional encoding and self-attention are incorporated into hypergraph networks to simultaneously model high-order cross-modal relationships and temporal dependencies.
+
+- **Positional encoding injection**: Sinusoidal positional encoding is added to personality-guided features: $\hat{A}_k = A_k|P + \text{PE}(A_k|P)$, injecting temporal order information.
+- **Hypergraph construction**: A hypergraph $\mathcal{H} = (\mathcal{V}, \mathcal{E})$ is constructed for each event, where the node set $\mathcal{V}$ contains all audio and visual features within the same event (totaling $2T_k$ nodes). Hyperedges are constructed via a sliding window of size $w$:
+    - Intra-modal hyperedges (solid lines): All nodes of the same modality within the window are connected, enhancing local intra-modal features.
+    - Cross-modal hyperedges (dashed lines): Each node of one modality within the window is connected to all nodes of the other modality, modeling local cross-modal interactions.
+    - A total of $(T_k - w + 1) \times (2 + 2w)$ hyperedges are generated.
+- **Hypergraph convolution**: $X^{(l+1)} = \sigma(\mathbf{D}_v^{-1/2} \mathbf{H} \mathbf{W}_e \mathbf{D}_e^{-1} \mathbf{H}^T \mathbf{D}_v^{-1/2} X^{(l)} \mathbf{\Theta}^{(l)})$
+- **Self-attention enhancement**: Multi-head self-attention is applied after hypergraph processing to capture global dependencies beyond local connectivity.
+- **Final concatenation**: Attention-enhanced audio and visual features are concatenated: $H_k = \oplus(A_k^{(\text{att})}, V_k^{(\text{att})})$
+- **Design Motivation**: Conventional hypergraphs cannot encode temporal relationships, yet the temporal evolution of depressive symptoms is critical. The sliding window strategy captures local temporal consistency, with an optimal window size of approximately 11 time steps.
+
+#### 3. **Public-Private Domain Disentanglement**
+
+**Mechanism**: Adversarial training is employed to learn cross-event invariant public-domain features, while HSIC independence constraints are used to learn event-specific private-domain features.
+
+- **Public encoder**: A shared encoder extracts cross-event public features: $Pub_k = \text{Pub-Enc}(H_k)$
+- **Private encoder**: An independent encoder for each event extracts private features: $Pri_k = \text{Pri}_k\text{-Enc}(H_k)$
+- **Adversarial training (public domain)**: A discriminator is trained to predict event labels from public features, while the public encoder is trained to fool the discriminator (an optimal discriminator accuracy of approximately 1/3 indicates successful learning of event-invariant representations).
+- **HSIC constraint (private domain)**: The Hilbert-Schmidt Independence Criterion between private features of different events is minimized: $\mathcal{L}_{HSIC} = \sum_{i \neq j} \text{HSIC}(Pri_i, Pri_j)$, ensuring that private encoders capture independent event-specific features.
+- **Feature integration**: The averaged public features and all private features are concatenated: $I = \bigoplus\{\frac{1}{K}\sum_{k=1}^K Pub_k, Pri_1, \ldots, Pri_K\}$
+
+### Loss & Training
+
+The overall training objective is: $\mathcal{L}_{\text{main}} = \alpha \mathcal{L}_{\text{dep}} + \beta \mathcal{L}_{\text{adv}} + \gamma \mathcal{L}_{\text{HSIC}}$, subject to $\alpha + \beta + \gamma = 1$.
+
+- $\mathcal{L}_{\text{dep}}$: NLL depression classification loss
+- $\mathcal{L}_{\text{adv}}$: Adversarial loss (MinMax optimization)
+- $\mathcal{L}_{\text{HSIC}}$: Private domain independence loss
+
+An alternating training strategy is adopted: the discriminator minimizes $\mathcal{L}_{\text{disc}}$, while the main model minimizes $\mathcal{L}_{\text{main}}$. The optimal loss weights are $\beta = \gamma = 0.1$.
+
+## Key Experimental Results
+
+### Main Results
+
+Evaluation is conducted on the MPDD-Young dataset (annotated with multi-event, multimodal, and multi-dimensional individual information), covering three task events (self-introduction and two text reading tasks).
+
+| Method | Binary ACC | Binary w-F1 | Three-class ACC | Three-class w-F1 |
+|--------|-----------|------------|----------------|-----------------|
+| NUSD (2023) | 63.01 | 60.64 | 57.19 | 55.44 |
+| STA-DRN (2024) | 64.14 | 62.23 | 58.93 | 57.34 |
+| TBN (2019) | 66.21 | 64.77 | 61.76 | 60.23 |
+| IA fusion (2022) | 68.41 | 67.23 | 62.87 | 61.39 |
+| MGLRA (2024) | 70.37 | 68.93 | 61.35 | 59.78 |
+| DepMamba (2025) | 72.56 | 71.44 | 67.85 | 66.23 |
+| **P3HF (Ours)** | **82.17** | **81.39** | **76.29** | **74.61** |
+
+Binary classification gains: +9.61%/+9.95%; three-class classification gains: +8.44%/+8.38%.
+
+### Ablation Study
+
+| Configuration | Binary ACC | Binary w-F1 | Three-class ACC | Three-class w-F1 |
+|---------------|-----------|------------|----------------|-----------------|
+| w/o Visual | 77.52 | 76.63 | 72.94 | 70.52 |
+| w/o Audio | 76.89 | 75.77 | 70.85 | 69.39 |
+| w/o Domain Disentanglement | 71.84 | 70.17 | 66.53 | 65.72 |
+| w/o Public Domain | 75.34 | 74.38 | 70.30 | 68.19 |
+| w/o Private Domain | 78.15 | 77.02 | 74.01 | 71.32 |
+| w/o Personality Info | 76.68 | 75.41 | 71.55 | 69.24 |
+| w/ Numerical Embedding | 80.61 | 78.77 | 75.32 | 73.34 |
+| **Full Model** | **82.17** | **81.39** | **76.29** | **74.61** |
+
+Architecture comparison (fusion module):
+
+| Architecture | Binary ACC | Three-class ACC |
+|--------------|-----------|----------------|
+| Cross-Attention | 75.82 | 69.15 |
+| Directed GCN | 77.55 | 72.41 |
+| Undirected GAT | 80.07 | 74.23 |
+| Hypergraph | 79.68 | 73.86 |
+| **Hypergraph-Former** | **82.17** | **76.29** |
+
+### Key Findings
+
+1. Audio features are more important than visual features (removing audio causes a larger performance drop), consistent with psychological theory that prosodic cues are more critical in mental health assessment.
+2. The public-domain encoder is more critical than the private-domain encoder (removal causes a 6.83% vs. 4.02% drop), validating the hypothesis that personality traits dominate cross-event patterns.
+3. LLM-generated personality descriptions (82.17%) outperform conventional numerical embeddings (80.61%), demonstrating that linguistic descriptions capture richer individual differences.
+4. t-SNE visualizations clearly demonstrate the disentanglement effect: under the optimal configuration $\beta = \gamma = 0.1$, public features converge while private features separate.
+
+## Highlights & Insights
+
+1. **LLM as a bridge for individual modeling**: The paper cleverly leverages GPT-4 to convert discrete personality labels into continuous semantic descriptions, representing an innovative application of LLMs in computational psychiatry.
+2. **Organic fusion of Hypergraph and Transformer**: Positional encoding and attention mechanisms compensate for the temporal modeling limitations of hypergraphs, yielding a more elegant solution than naive stacking.
+3. **Computational instantiation of reciprocal determinism**: The person–environment–behavior triadic interaction from social cognitive theory is operationalized as a public-private domain disentanglement technical framework.
+4. **10%+ performance improvement**: Such a substantial gain on a competitive depression detection benchmark is remarkable.
+
+## Limitations & Future Work
+
+1. Validation is limited to the MPDD-Young dataset; experiments on other mainstream datasets such as DAIC-WOZ are absent.
+2. Reliance on GPT-4 for personality description generation increases deployment cost and introduces privacy risks.
+3. Only audio and visual modalities are used; textual modalities (e.g., spoken content) are not considered.
+4. The sliding window size requires manual tuning; an adaptive window mechanism may yield better results.
+5. The MPDD dataset is relatively small in scale, necessitating validation on larger datasets.
+
+## Related Work & Insights
+
+- **DialogueGCN** and **MS2-GNN** established the foundation for graph networks in multimodal mental health analysis.
+- **MISA**'s idea of modality-invariant/specific separation is conceptually similar to the proposed public-private domain disentanglement, but this paper extends it to the event level.
+- **DepMamba**, as the strongest baseline, demonstrates that Mamba architectures have potential for temporal modeling but lack high-order relationship modeling.
+
+## Rating
+
+- Novelty: ⭐⭐⭐⭐⭐ (Three complementary innovations, novel combination with theoretical grounding)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive ablations but limited to a single dataset)
+- Writing Quality: ⭐⭐⭐⭐ (Well-organized, mathematically rigorous)
+- Value: ⭐⭐⭐⭐ (Significant methodological contribution to the depression detection field)
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[CVPR 2026\] SVC 2026: The Second Multimodal Deception Detection Challenge and the First Domain Generalized Remote Physiological Measurement Challenge](../../CVPR2026/medical_imaging/svc_2026_the_second_multimodal_deception_detection_challenge_and_the_first_domai.md)
+- [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
+- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
+- [\[CVPR 2026\] Adaptive Confidence Regularization for Multimodal Failure Detection](../../CVPR2026/medical_imaging/adaptive_confidence_regularization_for_multimodal_failure_detection.md)
+- [\[NeurIPS 2025\] Multimodal Bayesian Network for Robust Assessment of Casualties in Autonomous Triage](../../NeurIPS2025/medical_imaging/multimodal_bayesian_network_for_robust_assessment_of_casualties_in_autonomous_tr.md)
+
+<!-- RELATED:END -->

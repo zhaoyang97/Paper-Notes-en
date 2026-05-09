@@ -1,0 +1,11 @@
+.DS_Store
+.search_index.json
+site/
+site_fast/
+docs_fast/
+mkdocs-fast.yml
+__pycache__/
+**/TODO.md
+*.pyc
+.idea/
+.vscode/

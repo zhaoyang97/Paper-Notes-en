@@ -1,0 +1,124 @@
+---
+title: >-
+  [Paper Note] Experience-based Knowledge Correction for Robust Planning in Minecraft
+description: >-
+  [ICLR 2026][Robotics][LLM planning] This paper demonstrates that LLMs cannot self-correct erroneous planning priors (item dependency relations) through prompting alone, and proposes XENON — an algorithmic knowledge management framework consisting of an Adaptive Dependency Graph (ADG) and Failure-Aware Action Memory (FAM) that learns from binary feedback. XENON enables a 7B LLM to surpass the SOTA that uses GPT-4V with oracle knowledge on long-horizon planning tasks in Minecraft.
+tags:
+  - ICLR 2026
+  - Robotics
+  - LLM planning
+  - knowledge correction
+  - Minecraft
+  - embodied agent
+  - self-correction failure
+date: 2026-05-08
+content_hash: 74474935c82910d5
+---
+
+# Experience-based Knowledge Correction for Robust Planning in Minecraft
+
+**Conference**: ICLR 2026
+**arXiv**: [2505.24157](https://arxiv.org/abs/2505.24157)
+**Code**: None
+**Area**: Robotics
+**Keywords**: LLM planning, knowledge correction, Minecraft, embodied agent, self-correction failure
+
+## TL;DR
+This paper demonstrates that LLMs cannot self-correct erroneous planning priors (item dependency relations) through prompting alone, and proposes XENON — an algorithmic knowledge management framework consisting of an Adaptive Dependency Graph (ADG) and Failure-Aware Action Memory (FAM) that learns from binary feedback. XENON enables a 7B LLM to surpass the SOTA that uses GPT-4V with oracle knowledge on long-horizon planning tasks in Minecraft.
+
+## Background & Motivation
+**State of the Field**: LLM-driven agents tackling long-horizon planning tasks in environments such as Minecraft require accurate item dependency knowledge (e.g., a diamond pickaxe requires diamonds and sticks), yet the parametric knowledge encoded in LLMs is frequently erroneous.
+
+**Limitations of Prior Work**: Self-correction — prompting an LLM to reflect on and revise its knowledge — is ineffective for parametric knowledge errors. LLMs repeatedly make the same mistakes because the errors are encoded in model weights and cannot be altered through prompting.
+
+**Root Cause**: LLMs possess strong language understanding but unreliable factual knowledge; external mechanisms, rather than prompting, are required to correct knowledge errors.
+
+**Paper Goals**: How can an agent algorithmically correct an LLM's planning knowledge given only binary feedback (success/failure)?
+
+**Starting Point**: Shifting knowledge correction from "letting the LLM correct itself" to "algorithmically updating an external knowledge base."
+
+**Core Idea**: Algorithmic knowledge management — correcting dependency graphs from successful experiences and filtering ineffective actions from failure experiences — outperforms LLM self-correction.
+
+## Method
+
+### Overall Architecture
+XENON = Adaptive Dependency Graph (ADG) + Failure-Aware Action Memory (FAM) + Context-aware Reprompting (CRe). ADG learns item dependency relations, FAM learns which actions are effective or ineffective, and CRe helps low-level controllers recover from stuck states.
+
+### Key Designs
+
+1. **Adaptive Dependency Graph (ADG)**:
+
+    - **Function**: Corrects erroneous item dependency relations in the LLM's knowledge from successful experiences.
+    - **Core Algorithm — RevisionByAnalogy**: When the agent successfully acquires item $X$, it observes the inventory item set, compares it against known dependencies, and revises or confirms dependency edges via analogical reasoning.
+    - **Handling hallucinated items**: RevisionByAnalogy can identify non-existent items through actual experience and remove them from the graph.
+    - **Performance**: Achieves ~0.90 accuracy on Mineflayer after 400 rounds.
+
+2. **Failure-Aware Action Memory (FAM)**:
+
+    - **Function**: Learns which actions are effective or ineffective from binary feedback.
+    - **Mechanism**: Each action maintains success and failure counts; once a threshold is exceeded, the action is classified as "experientially effective" or "experientially ineffective."
+    - Ineffective actions are filtered out in subsequent planning to prevent repeated failures.
+
+3. **Context-aware Reprompting (CRe)**:
+
+    - **Function**: Re-prompts the controller (e.g., STEVE-1) when it becomes stuck during execution.
+    - Detects environmental state stagnation and actively interrupts execution to trigger replanning.
+
+## Key Experimental Results
+
+### Long-horizon Planning Success Rate (Learned vs. Oracle Knowledge)
+
+| Goal Type | Oracle Knowledge SR | Learned Knowledge SR |
+|---|---|---|
+| Gold items | 0.83 | 0.74 |
+| Diamond items | 0.82 | 0.64 |
+| Redstone items | 0.75 | 0.28 |
+| Overall | 0.80 | 0.54 |
+
+### Dependency Learning Accuracy (EGA)
+
+| Platform | After 400 Rounds |
+|---|---|
+| MineRL | ~0.60 |
+| Mineflayer | ~0.90 |
+
+### Model Comparison
+- 7B Qwen2.5-VL + XENON outperforms Optimus-1 (GPT-4V + oracle knowledge) across multiple goal categories.
+
+### Key Findings
+- Accurate dependency knowledge is critical for successful planning — Redstone goals that achieve 0.75 SR with oracle knowledge drop to 0.00 with learned knowledge due to controller capability limitations.
+- XENON is robust to hallucinated items generated by LLMs, identifying and removing them via RevisionByAnalogy.
+- LLM self-correction through prompting fails across all baselines and cannot correct parametric knowledge errors.
+
+## Highlights & Insights
+- **Empirical evidence that LLMs cannot self-correct parametric knowledge**: This finding carries significant implications for LLM agent design — prompt-based self-correction should not be relied upon to fix factual knowledge errors.
+- **Algorithm > Prompting paradigm**: When the root cause is knowledge error rather than reasoning error, algorithmic correction (external memory + statistical updates) substantially outperforms natural language reflection.
+- **Small model + effective knowledge management > Large model + poor knowledge**: A 7B model with XENON outperforms GPT-4V with oracle knowledge, indicating that knowledge management strategy matters more than model scale.
+
+## Limitations & Future Work
+- Performance is bounded by the capability of the underlying controller — STEVE-1's inability to execute certain complex actions causes complete failure on Redstone-category goals.
+- RevisionByAnalogy involves multiple hyperparameters that require tuning.
+- Evaluation is conducted solely in Minecraft (with preliminary household task experiments in the appendix).
+- The framework assumes item dependencies form a DAG (acyclic graph).
+
+## Related Work & Insights
+- **vs. Optimus-1**: Optimus-1 relies on GPT-4V with oracle dependencies, whereas XENON achieves superior performance across multiple goal categories using a 7B model with learned dependencies.
+- **vs. Voyager/DEPS**: These Minecraft agents rely on LLM prompting but do not correct knowledge errors.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐ The concept of replacing self-correction with algorithmic knowledge management is original and compelling
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-platform × multi-goal-type × detailed ablation studies
+- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear and well-structured
+- Value: ⭐⭐⭐⭐ Provides important paradigmatic insights for knowledge management in LLM agents
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
+- [\[ICCV 2025\] Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning](../../ICCV2025/robotics/interaction-merged_motion_planning_effectively_leveraging_diverse_motion_dataset.md)
+- [\[ICLR 2026\] RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks](robopara_dual-arm_robot_planning_with_parallel_allocation_and_recomposition_acro.md)
+- [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
+- [\[ICLR 2026\] Visual Planning: Let's Think Only with Images](visual_planning_lets_think_only_with_images.md)
+
+<!-- RELATED:END -->

@@ -1,0 +1,177 @@
+---
+title: >-
+  [Paper Note] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation
+description: >-
+  [ICCV 2025][3D Vision][Monocular depth estimation] This paper proposes FiffDepth, which transforms a pretrained diffusion model into a deterministic feed-forward architecture for monocular depth estimation. By preserving the diffusion trajectory to maintain detail generation capability and introducing a learnable filter to distill DINOv2's robust generalization ability into the diffusion backbone, FiffDepth simultaneously surpasses existing methods in efficiency, accuracy, and detail richness.
+tags:
+  - ICCV 2025
+  - 3D Vision
+  - Monocular depth estimation
+  - diffusion models
+  - feed-forward architecture
+  - DINOv2 distillation
+  - detail preservation
+date: 2026-05-08
+content_hash: 6bc6b757a0139c5f
+---
+
+# FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation
+
+**Conference**: ICCV 2025
+**arXiv**: [2412.00671](https://arxiv.org/abs/2412.00671)
+**Code**: [Project Page](https://yunpeng1998.github.io/FiffDepth/)
+**Area**: 3D Vision / Monocular Depth Estimation
+**Keywords**: Monocular depth estimation, diffusion models, feed-forward architecture, DINOv2 distillation, detail preservation
+
+## TL;DR
+
+This paper proposes FiffDepth, which transforms a pretrained diffusion model into a deterministic feed-forward architecture for monocular depth estimation. By preserving the diffusion trajectory to maintain detail generation capability and introducing a learnable filter to distill DINOv2's robust generalization ability into the diffusion backbone, FiffDepth simultaneously surpasses existing methods in efficiency, accuracy, and detail richness.
+
+## Background & Motivation
+
+- **Monocular depth estimation (MDE) is a fundamental 3D vision problem**: widely applied in 3D scene reconstruction, autonomous navigation, and AI content creation.
+- **Core challenges of existing methods**:
+  - Real-world depth datasets are noisy, and synthetic data suffers from domain gaps.
+  - Generative methods (e.g., Marigold) directly fine-tune diffusion models as depth map generators, but the diffusion process introduces noise and uncertainty, which is suboptimal for dense prediction tasks.
+  - Feed-forward models (FFN) such as DINOv2 offer strong generalization but lack fine detail.
+  - Existing diffusion-based methods are inefficient, requiring multi-step denoising and test-time ensembling.
+- **Key observations**:
+  - The denoising module of a diffusion model performs better and more stably when used directly in a feed-forward manner.
+  - DINOv2 accurately predicts low-frequency depth components but lacks high-frequency detail.
+  - The diffusion model itself can learn a filter to separate high- and low-frequency components.
+- **Mechanism**: Leverage an extension of the diffusion model trajectory for efficient depth estimation, while incorporating DINOv2 knowledge to enhance generalization.
+
+## Method
+
+### Overall Architecture
+
+FiffDepth is built upon the pretrained Stable Diffusion (SD) model. The core innovation lies in transforming the diffusion model from a stochastic generative framework into a deterministic feed-forward depth estimator. The method comprises three key components:
+
+1. **Feed-forward transformation** (depth prediction at $t=0$)
+2. **Diffusion trajectory preservation** (maintaining the original denoising capability during training)
+3. **Learnable filter distillation** (DINOv2 knowledge transfer at $t=-1$)
+
+### Key Design 1: Feed-forward Depth Estimation
+
+Unlike methods such as Marigold that decompose depth estimation into a multi-step denoising process, FiffDepth performs a single-step feed-forward prediction directly at $t=0$:
+
+$$\mathbf{d}_0 = \hat{\boldsymbol{\epsilon}}_\theta(\mathbf{x}_0, t=0)$$
+
+where $\mathbf{x}_0$ is the latent representation of the RGB image and $\mathbf{d}_0$ is the latent representation of the depth map. Inference requires only a single forward pass without iterative denoising.
+
+### Key Design 2: Diffusion Trajectory Preservation
+
+To prevent degradation of the diffusion trajectory during fine-tuning, both the feed-forward step and preceding denoising steps are maintained during training. The core design modifies the target latent as a mixture of image and depth representations:
+
+$$\mathbf{b}_0 = \gamma \mathbf{x}_0 + (1 - \gamma) \mathbf{d}_0$$
+
+The training objective is defined using v-prediction parameterization:
+
+$$\mathbf{v}_t = \sqrt{\bar{\alpha}_t} \boldsymbol{\epsilon} - \sqrt{1 - \bar{\alpha}_t} \mathbf{b}_0$$
+
+$$L_k = \|\mathbf{v}_t - \hat{\boldsymbol{\epsilon}}_\theta(\mathbf{b}_t, t)\|_2^2, \quad t \in \{1, \ldots, T\}$$
+
+This mixed objective compels the model to retain shared features between the image generation and depth estimation tasks, allowing the model to naturally adapt to depth estimation during fine-tuning while preserving features that enhance prediction accuracy and detail. $\gamma$ is set to 0.5.
+
+### Key Design 3: Learnable Filter Distillation
+
+**Problem**: Training solely on synthetic data limits generalization; DINOv2 generalizes well but lacks detail. Directly supervising $\mathbf{d}_0$ with pseudo-labels generated by DINOv2 would destroy fine details.
+
+**Solution**: The diffusion model is used to learn a filter $F$ that produces an output with high-frequency details removed at step $t=-1$:
+
+$$\mathbf{d}_{-1} = \hat{\boldsymbol{\epsilon}}_\theta(\mathbf{d}_0, t=-1)$$
+
+DINOv2 predictions are used as pseudo-labels to supervise $\mathbf{d}_{-1}$ at this step, such that:
+- DINOv2's robust low-frequency prediction capability is transferred to the model.
+- The high-frequency details in $\mathbf{d}_0$ remain unaffected.
+- Large quantities of unlabeled real-world images can be used for training.
+
+### Loss & Training
+
+The total loss is a weighted sum of MAE loss, gradient matching loss, and trajectory preservation loss:
+
+$$L_{\text{final}} = \sum_{t \in \{-1, 0\}} (\lambda_{\text{MAE}} L_{\text{MAE}}(\mathbf{d}_t, \mathbf{d}_t^*) + \lambda_{\text{GM}} L_{\text{GM}}(\mathbf{d}_t, \mathbf{d}_t^*)) + \lambda_k L_k$$
+
+with $\lambda_{\text{MAE}}=1$, $\lambda_{\text{GM}}=0.5$, $\lambda_k=0.2$.
+
+## Key Experimental Results
+
+### Training Setup
+
+- Synthetic data: Hypersim + Virtual KITTI, totaling 74K images.
+- Real data: 200K samples from a LAION-Art subset used for $t=-1$ step training.
+- Teacher model: Depth Anything V2-Large as the DINOv2 model.
+- Each batch contains equal proportions of synthetic and real data.
+
+### Main Results: Zero-shot Affine-invariant Depth Estimation
+
+| Method | Training Data | NYUv2 AbsRel↓ | NYUv2 δ1↑ | KITTI AbsRel↓ | ETH3D AbsRel↓ | ScanNet AbsRel↓ | DIODE AbsRel↓ | DA-2K Acc |
+|--------|---------------|---------------|-----------|---------------|---------------|-----------------|---------------|-----------|
+| Marigold | 74K* | 5.5 | 96.4 | 9.9 | 6.4 | 6.4 | 30.8 | 86.8 |
+| GeoWizard | 280K* | 5.2 | 96.6 | 9.7 | 6.4 | 6.1 | 29.7 | 88.1 |
+| Lotus-D | 59K* | 5.3 | 96.7 | 8.1 | 6.5 | 5.8 | 29.9 | 86.8 |
+| DA v1-L | 62.6M* | 4.3 | 98.1 | 7.6 | 12.7 | 4.2 | 27.7 | 88.5 |
+| DA v2-L | 62.6M* | 4.5 | 97.9 | 7.4 | 13.1 | 4.2 | 26.2 | 97.1 |
+| **FiffDepth** | **274K*** | **4.4** | **97.8** | **7.3** | **7.1** | **4.2** | **23.9** | **97.1** |
+
+Key finding: Using only 274K training samples, FiffDepth achieves state-of-the-art or comparable results on most benchmarks, with particularly notable improvements on DIODE-Full over all competing methods.
+
+### Boundary Accuracy Comparison
+
+| Method | Sintel F1↑ | Spring F1↑ | iBims F1↑ | AM R↑ | P3M R↑ | DIS R↑ |
+|--------|-----------|-----------|----------|-------|-------|-------|
+| DA v2 | 0.228 | 0.056 | 0.111 | 0.107 | 0.131 | 0.056 |
+| Depth Pro | 0.409 | 0.079 | 0.176 | 0.173 | 0.168 | 0.077 |
+| **FiffDepth** | **0.423** | **0.086** | **0.189** | **0.176** | **0.179** | **0.091** |
+
+### Inference Efficiency Comparison
+
+| Method | Marigold | Marigold(LCM) | GeoWizard | DepthFM | DA v2-L | Depth Pro | FiffDepth |
+|--------|----------|---------------|-----------|---------|---------|-----------|-----------|
+| Time (s) | 103 | 1.7 | 19 | 0.39 | 0.026 | 0.23 | 0.092 |
+
+FiffDepth is 1120× faster than Marigold and 206× faster than GeoWizard, while approaching the efficiency of DA v2.
+
+### Ablation Study
+
+Qualitative analysis of the contribution of each component:
+- Removing trajectory preservation while predicting only image latents → degraded relative depth relationships between objects.
+- Removing trajectory preservation → partial loss of fine details.
+- Removing DINOv2 supervision → significant drop in generalization ability.
+- Applying DINOv2 supervision to $\mathbf{d}_0$ instead of $\mathbf{d}_{-1}$ → reduced detail accuracy.
+
+## Highlights & Insights
+
+1. **Elegant feed-forward transformation**: Directly extending the diffusion model trajectory into the depth domain avoids the uncertainty and inefficiency of multi-step denoising.
+2. **Ingenious frequency-decoupled distillation**: The diffusion model itself serves as a filter learner, enabling low-frequency knowledge distillation at $t=-1$ without compromising the high-frequency details of $\mathbf{d}_0$.
+3. **Efficient data utilization**: Using only 274K samples (synthetic + real), FiffDepth achieves performance comparable to DA v2, which requires 62.6M samples.
+4. **Deterministic inference**: Inference is fully deterministic, requiring no multi-pass sampling or ensembling — a single forward pass produces the output.
+
+## Limitations & Future Work
+
+- Ablation experiments are primarily qualitative, lacking quantitative validation.
+- Sensitivity analysis of the $\gamma$ parameter is insufficient.
+- Despite strong overall performance, FiffDepth marginally underperforms DA v2-L on certain benchmarks (e.g., ETH3D and KITTI δ1).
+- The method still relies on the quality of synthetic data and may face generalization risks for scene types not covered in the synthetic training set.
+
+## Related Work & Insights
+
+- **Comparison with Marigold/GeoWizard**: These methods retain the full diffusion framework, resulting in low efficiency and high uncertainty; FiffDepth's feed-forward approach is a superior alternative.
+- **Comparison with the DA series**: DA relies on large-scale real-world data for generalization; FiffDepth achieves equivalent generalization with far fewer samples via distillation.
+- **Insight**: The key to transforming generative models into dense predictors lies not in preserving the generative process, but in exploiting the learned representations; knowledge distillation can be applied in a frequency-decoupled manner.
+
+## Rating ⭐⭐⭐⭐
+
+The paper presents strong novelty with a concise and effective methodology, and experiments cover multiple benchmarks comprehensively. The design philosophy of feed-forward transformation combined with frequency-decoupled distillation is worth learning from.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
+- [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
+- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
+- [\[NeurIPS 2025\] Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation](../../NeurIPS2025/3d_vision/jasmine_harnessing_diffusion_prior_for_self-supervised_depth_estimation.md)
+- [\[ICCV 2025\] FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution](flashdepth_real-time_streaming_video_depth_estimation_at_2k_resolution.md)
+
+<!-- RELATED:END -->

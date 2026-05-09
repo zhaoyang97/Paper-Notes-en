@@ -1,0 +1,164 @@
+---
+title: >-
+  [Paper Note] Factorized Learning for Temporally Grounded Video-Language Models
+description: >-
+  [ICCV 2025][Video Understanding][video-language model] This paper proposes D2VLM, a framework that decomposes video understanding into a "first localize evidence, then generate answers based on evidence" paradigm. It introduces evidence tokens to capture event-level visual semantics and designs Factorized Preference Optimization (FPO) to simultaneously improve temporal grounding and text response quality.
+tags:
+  - ICCV 2025
+  - Video Understanding
+  - video-language model
+  - temporal grounding
+  - preference optimization
+  - evidence token
+  - factorized learning
+date: 2026-05-08
+content_hash: fc078e6a4f5b557c
+---
+
+# Factorized Learning for Temporally Grounded Video-Language Models
+
+**Conference**: ICCV 2025
+**arXiv**: [2512.24097](https://arxiv.org/abs/2512.24097)
+**Code**: [https://github.com/nusnlp/d2vlm](https://github.com/nusnlp/d2vlm)
+**Area**: Video Understanding
+**Keywords**: video-language model, temporal grounding, preference optimization, evidence token, factorized learning
+
+## TL;DR
+
+This paper proposes D2VLM, a framework that decomposes video understanding into a "first localize evidence, then generate answers based on evidence" paradigm. It introduces evidence tokens to capture event-level visual semantics and designs Factorized Preference Optimization (FPO) to simultaneously improve temporal grounding and text response quality.
+
+## Background & Motivation
+
+Video-language models have demonstrated great potential in video understanding, yet precise temporal grounding remains a persistent challenge. The authors observe a logical hierarchy between two core tasks in video understanding:
+
+**Temporal grounding** is the foundation of **text response generation** — accurately localizing temporal evidence is a prerequisite for producing reliable textual responses.
+
+However, existing methods (e.g., E.T.Chat, LITA, VTG-LLM) suffer from two main limitations:
+
+**Coupled objectives**: Various special tokens are mixed with text tokens during generation, lacking a clear logical structure, which leads to entangled learning objectives.
+
+**Neglect of visual semantics**: Existing special tokens (e.g., timestamp tokens) focus primarily on precise timestamp representation, without explicitly capturing the visual semantics of the localized events — semantics that should serve as critical context for subsequent text response generation.
+
+**Mechanism**: From the perspective of factorized learning, video understanding is explicitly decomposed into two tasks — "temporal evidence localization" and "evidence-grounded text response" — with evidence tokens designed to bridge the two.
+
+## Method
+
+### Overall Architecture
+
+D2VLM decomposes the model response into two stages: (1) a pure temporal grounding stage that localizes and captures visual evidence for answering; and (2) an interleaved text-evidence response stage that generates answers containing temporal information and textual descriptions via evidence references. The framework is built upon an EVA-CLIP ViT-G/14 visual encoder, a Q-Former feature compressor, and Phi-3-Mini-3.8B as the base LLM.
+
+### Key Designs
+
+1. **Evidence Token (\<evi\>)**: A special token dedicated to temporal grounding that not only determines the temporal position of the localized event but also explicitly captures event-level visual semantics. When the LLM generates an \<evi\> token, its similarity to each frame's LLM-processed video token $\tilde{F}_V$ is computed, and the visual semantics of high-similarity frames are aggregated into the \<evi\> token via average pooling and addition. Formulas: grounding loss $L_{gnd}^{<evi>} = \frac{1}{T}\sum_{t=1}^{T}BCE(y^t, sim^t)$; consistency constraint $L_{cons} = \frac{1}{K}\sum_{k=1}^{K}|F_{<evi>_k}^{S_1} - F_{<evi>_k}^{S_2}|$. **Design Motivation**: To endow \<evi\> tokens with genuine event-level visual meaning, providing substantive context for subsequent text generation within the autoregressive paradigm.
+
+2. **Factorized Preference Optimization (FPO)**: Extends DPO to a decomposed optimization framework that simultaneously handles temporal grounding and text response. The key innovation is the explicit modeling of grounding probability: for each \<evi\>_k token, its grounding probability over time interval $[s_k, e_k]$ is defined as $$p_g([s_k,e_k]) = \prod_{t=1}^{T}\begin{cases}sim_k^t & \text{if } s_k \leq t \leq e_k \\ 1-sim_k^t & \text{otherwise}\end{cases}$$ The log-probability $\log\pi(R)$ in FPO augments the standard token prediction term with an explicit temporal grounding modeling term. **Design Motivation**: Standard preference optimization cannot directly handle similarity-based grounding tasks; FPO enables grounding capability to participate in preference learning through probabilistic modeling.
+
+3. **Factorized Preference Data Synthesis**: Negative samples are generated by applying factorized perturbations to original responses. Perturbations fall into two categories: temporal grounding perturbations (temporal shifts, random insertion/deletion of events, event merging) and text response perturbations (key information tampering, repetitive responses). Perturbations are applied at the sub-video event level to ensure controllable noise sources. Synthesis is based on the E.T. Instruct 164K dataset. **Design Motivation**: Existing video preference data lacks temporal grounding annotations, and negative samples generated via input degradation are of uncontrollable quality.
+
+### Loss & Training
+
+SFT stage loss: $L = L_{sft} + L_{gnd} + L_{cons}$
+
+- $L_{sft}$: Standard token classification loss
+- $L_{gnd}$: BCE grounding loss between \<evi\> tokens and video frames (averaged over both stages)
+- $L_{cons}$: L1 consistency loss for \<evi\> tokens across two stages
+
+FPO stage: Factorized preference optimization is applied on top of the SFT model using synthesized preference data. Training completes within one day on 4×H100 GPUs using LoRA fine-tuning. Frames are sampled at 1 FPS with a resolution of 224×224.
+
+## Key Experimental Results
+
+### Main Results
+
+**E.T. Bench Grounding (average over 5 sub-tasks)**:
+
+| Method | Params | TVG F1 | EPM F1 | TAL F1 | EVS F1 | VHD F1 | Avg F1 |
+|--------|--------|--------|--------|--------|--------|--------|--------|
+| TimeChat-7B | 7B | 26.2 | 3.9 | 10.1 | 29.1 | 40.5 | 22.0 |
+| E.T.Chat-3.8B | 3.8B | 38.6 | 10.2 | 30.8 | 25.4 | 62.5 | 33.5 |
+| Qwen2.5-VL-7B | 7B | 46.6 | 9.3 | 32.2 | 19.9 | 68.6 | 35.3 |
+| **D2VLM-3.8B** | **3.8B** | **60.2** | **14.4** | **33.4** | **35.2** | **68.2** | **42.3** |
+
+**Charades-STA Temporal Grounding**:
+
+| Method | R@1(IoU=0.5) | R@1(IoU=0.7) |
+|--------|-------------|-------------|
+| TRACE-7B | 40.3 | 19.4 |
+| VideoChat-T-7B | 48.7 | 24.0 |
+| E.T.Chat-3.8B | 45.9 | 20.0 |
+| **D2VLM-3.8B** | **50.3** | **26.0** |
+
+**YouCook2 Dense Video Captioning**:
+
+| Method | F1 | CIDEr | SODA_c |
+|--------|----|-------|--------|
+| TRACE-7B | 22.4 | 8.1 | 2.2 |
+| **D2VLM-3.8B** | **26.4** | **10.6** | **3.2** |
+
+### Ablation Study
+
+**Generation objective design**:
+
+| Configuration | Grounding Avg F1 | Dense Cap Avg F1 | Dense Cap Avg Sim |
+|---------------|-----------------|-----------------|-------------------|
+| Baseline (coupled) | 21.2 | 14.3 | 11.3 |
+| + Factorized objective | 28.9 | 23.1 | 16.0 |
+| + Interleaved text-evi generation | 35.6 | 34.3 | 19.8 |
+| + Consistency constraint | 39.5 | 35.0 | 21.2 |
+| + FPO | **42.3** | **37.5** | **21.8** |
+
+**Evidence token design**:
+
+| Design | Grounding Avg F1 | Dense Cap F1 | Dense Cap Sim |
+|--------|-----------------|-------------|---------------|
+| No event-level modeling | 26.1 | 33.4 | 16.2 |
+| No visual semantic capture | 37.1 | 27.5 | 17.7 |
+| **Full design** | **39.5** | **35.0** | **21.2** |
+
+### Key Findings
+
+- **Factorized vs. coupled objectives**: Factorization improves grounding by 7.7% F1 and dense captioning by 4.7% Sim, demonstrating the importance of decoupling.
+- **Interleaved text-evi generation is critical**: Adopting an evidence-referencing generation paradigm yields +6.7% on grounding and +3.8% on text, reinforcing the grounding-response dependency.
+- **Event-level > frame-level**: Event-level modeling outperforms frame-level timestamp modeling by +11.0% F1 on grounding.
+- **Explicit visual semantic capture is essential for captioning**: Without visual semantic capture, dense captioning F1 drops by 7.5% and Sim by 3.5%.
+- The 3.8B model surpasses most 7–13B models, demonstrating that design quality outweighs scale.
+
+## Highlights & Insights
+
+1. **Correct identification of logical hierarchy**: Rather than naively concatenating grounding and captioning, the paper establishes a causal chain of "localize → answer," which aligns naturally with the teacher-forcing training paradigm.
+2. **Dual role of evidence tokens**: Evidence tokens function both as generative tokens in autoregressive decoding and as query tokens for similarity-based grounding and semantic aggregation, with an MLP projection decoupling the two roles.
+3. **Probabilistic grounding modeling**: Similarity-based continuous grounding is converted into a probability measure that can participate in preference optimization, representing the key technical contribution of FPO.
+4. **Controllability of factorized data synthesis**: Noise sources are precisely known, eliminating the need for manual filtering and ensuring preference data quality.
+
+## Limitations & Future Work
+
+1. Absolute performance on certain tasks remains limited (e.g., EPM F1 of only 14.4%, YouCook2 F1 of only 26.4%).
+2. Factorized data synthesis focuses solely on negative sample generation, lacking diversified positive sample augmentation.
+3. The study is limited to the 3.8B scale; model behavior at larger scales remains unexplored.
+4. 1 FPS sampling may discard fine-grained events, constraining precise temporal grounding.
+5. Extending FPO to multi-turn conversational video question answering scenarios warrants further exploration.
+
+## Related Work & Insights
+
+- **E.T.Chat / E.T. Bench**: Proposes a comprehensive temporal grounding evaluation benchmark and instruction dataset, serving as the primary baseline and data source for this work.
+- **LITA**: Designs time tokens for precise timestamp representation but lacks event-level semantic capture.
+- **DPO**: The standard preference optimization algorithm; this paper extends it to FPO to support temporal grounding.
+- **TRACE**: Combines special tokens with an additional grounding decoder but still employs a coupled generation objective.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐⭐ — The factorized learning perspective is novel; FPO generalizes preference optimization to temporal grounding; probabilistic modeling is elegant.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers diverse tasks and datasets; component-wise ablations are clear and complete.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Logical structure is well-organized; the problem→solution→validation narrative is exceptionally clear.
+- **Value**: ⭐⭐⭐⭐⭐ — Surpasses SOTA with a smaller model; FPO and evidence tokens offer broad reference value to the video LLM community.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
+- [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
+- [\[NeurIPS 2025\] SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models](../../NeurIPS2025/video_understanding/sama_towards_multi-turn_referential_grounded_video_chat_with_large_language_mode.md)
+- [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
+- [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](residualvit_for_efficient_temporally_dense_video_encoding.md)
+
+<!-- RELATED:END -->

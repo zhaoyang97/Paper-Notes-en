@@ -1,0 +1,151 @@
+---
+title: >-
+  [Paper Note] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts
+description: >-
+  [CVPR 2026][Segmentation][audio-visual localization] This paper proposes SouPLe (Sound-aware Prompt Learning), which replaces fixed text prompts in CLIP with learnable context tokens generated conditioned on image features, enhancing semantic correspondence between audio embedding tokens and visual features. SouPLe achieves +3.75 cIoU on VGG-SS and +6.32 cIoU in the open-set setting, surpassing all prior methods.
+tags:
+  - CVPR 2026
+  - Segmentation
+  - audio-visual localization
+  - prompt learning
+  - CLIP adaptation
+  - sound source segmentation
+  - contrastive learning
+date: 2026-05-08
+content_hash: ca4b06a1c01c0886
+---
+
+# SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts
+
+**Conference**: CVPR 2026
+**arXiv**: [2603.22732](https://arxiv.org/abs/2603.22732)
+**Code**: None
+**Area**: Segmentation / Audio-Visual Localization
+**Keywords**: audio-visual localization, prompt learning, CLIP adaptation, sound source segmentation, contrastive learning
+
+## TL;DR
+
+This paper proposes SouPLe (Sound-aware Prompt Learning), which replaces fixed text prompts in CLIP with learnable context tokens generated conditioned on image features, enhancing semantic correspondence between audio embedding tokens and visual features. SouPLe achieves +3.75 cIoU on VGG-SS and +6.32 cIoU in the open-set setting, surpassing all prior methods.
+
+## Background & Motivation
+
+**State of the Field**: Audio-visual sound source localization aims to identify sounding objects within visual scenes. Mainstream approaches leverage audio-visual correspondence for self-supervised learning within contrastive learning frameworks. Recently, ACL-SSL achieved notable progress by utilizing pretrained CLIP to convert audio signals into tokens compatible with the CLIP text encoder.
+
+**Limitations of Prior Work**: ACL-SSL suffers from two key issues in its use of the fixed prompt "a photo of a $[V_A]$": (1) when the classification token $[CLS]$ is replaced by the audio embedding token $[V_A]$, $[V_A]$ lacks semantic information for integration with visual content; (2) the fixed tokens "a photo of a" have no meaningful semantic connection to $[V_A]$, causing localization failures in certain scenarios.
+
+**Root Cause**: CLIP's text encoder is designed to process natural language descriptions, whereas audio embedding tokens are not natural language. Wrapping them with semantically empty fixed prompts creates an inherent modality mismatch that limits the quality of audio-visual cross-modal alignment.
+
+**Paper Goals**: To provide better context for audio embedding tokens within the CLIP framework, enabling more effective alignment with visual features for accurate sound source localization and segmentation.
+
+**Starting Point**: Inspired by CoCoOp, the paper reframes prompt engineering as a prompt learning problem—allowing prompt tokens to be adaptively generated from input image features rather than relying on fixed, manually designed prompts.
+
+**Core Idea**: Replace fixed text prompts with learnable context tokens conditioned on image features, enabling audio embedding tokens to achieve better semantic alignment within a rich, visually conditioned context.
+
+## Method
+
+### Overall Architecture
+
+The input is an audio-visual pair. The CLIP image encoder extracts image features, and a Meta-net transforms them into $M$ learnable context tokens $[V_1][V_2]...[V_M]$. An audio encoder (BEATs) extracts audio features, which are projected into an audio embedding token $[V_A]$ via an Audio Projection module. The context tokens and audio token are concatenated and fed into the CLIP text encoder to obtain audio-text features. These are then passed together with image features into a mask decoder (CLIPSeg) to generate the sound source segmentation mask.
+
+### Key Designs
+
+1. **Learnable Context Generation (Meta-net)**:
+
+    - **Function**: Generates instance-conditioned context tokens from image features.
+    - **Mechanism**: Meta-net employs a two-layer nonlinear bottleneck (Linear-ReLU-Linear), with the hidden layer reducing the input dimensionality by a factor of 16. It receives image features $F_I$ from the CLIP image encoder and outputs $M$ context tokens. These tokens replace the original fixed phrase "a photo of a" and are concatenated with $[V_A]$ before being fed into the text encoder: $[V_1][V_2]...[V_M][V_A]$.
+    - **Design Motivation**: The semantic context of sound sources varies greatly across images; instance-conditioned prompts adaptively provide appropriate semantic guidance for each input, which fixed prompts cannot achieve. Experiments show that placing $[V_A]$ last is optimal, as CLIP's causal attention allows preceding context tokens to first establish a semantic space.
+
+2. **Visual-Audio-Text Alignment (VAT Module)**:
+
+    - **Function**: Trains audio-visual correspondence through a dual-level contrastive learning scheme operating at both image and feature levels.
+    - **Mechanism**: Sound source masks generated by SouPLe are used to create two variants: an image-level mask $M_I$ (foreground highlighted, background suppressed) and a feature-level mask $M_F$ (emphasizing sound source regions in spatial visual features). Cosine similarities $S^I$ and $S^F$ between audio-text features and the masked visual embeddings are computed and optimized with symmetric InfoNCE losses. An area regularization loss $\mathcal{L}_{REG}$ further constrains the mask to cover only sounding regions.
+    - **Design Motivation**: Dual-level contrastive learning reinforces audio-visual correspondence at different granularities—image-level captures global correspondence, while feature-level emphasizes highly relevant local regions.
+
+3. **Text-Free / Label-Free Design**:
+
+    - **Function**: An end-to-end self-supervised framework requiring no ground-truth annotations.
+    - **Mechanism**: The entire framework is supervised solely by audio-visual correspondence. The CLIP image encoder, text encoder, and audio encoder are all frozen; only the Meta-net, mask decoder, and related lightweight components are optimized (~2.38M parameters, < 1% of the total). The training objective is $\mathcal{L} = \lambda_1 \mathcal{L}_{ACL_I} + \lambda_2 \mathcal{L}_{ACL_F} + \lambda_3 \mathcal{L}_{REG}$.
+    - **Design Motivation**: Sound source localization is inherently an unannotated task; self-supervised training avoids costly annotation and provides better generalization.
+
+### Loss & Training
+
+The total training loss consists of three terms: image-level audio-text contrastive loss, feature-level audio-text contrastive loss, and area regularization loss. The model is trained on VGGSound-144K using the Adam optimizer with a learning rate of $10^{-3}$, weight decay of $10^{-5}$, for 20 epochs with a batch size of 16. Audio inputs are 10-second clips sampled at 16 kHz; video frames are resized to $352 \times 352$.
+
+## Key Experimental Results
+
+### Main Results
+
+Sound source localization on standard benchmarks:
+
+| Method | VGG-SS cIoU↑ | VGG-SS AUC↑ | SoundNet cIoU↑ | SoundNet AUC↑ |
+|--------|-------------|-------------|----------------|---------------|
+| ACL-SSL | 49.46 | 46.32 | 80.80 | 64.62 |
+| **SouPLe** | **53.21** | **48.15** | **84.80** | **67.64** |
+| Gain | +3.75 | +1.83 | +4.00 | +3.02 |
+
+Open-set localization (110 Heard + 110 Unheard categories):
+
+| Test Set | ACL-SSL cIoU | SouPLe cIoU | Gain |
+|----------|-------------|-------------|------|
+| Heard 110 | 48.44 | 54.76 | +6.32 |
+| Unheard 110 | 41.98 | 48.40 | +6.42 |
+
+AVSBench S4 (zero-shot): mIoU 62.89 (+3.13), F-Score 71.47 (+2.44)
+
+### Ablation Study
+
+| Ablation | VGG-SS cIoU | AUC |
+|----------|-------------|-----|
+| ctx=4 (default) | 53.21 | 48.15 |
+| ctx=8 | 52.01 | 47.32 |
+| ctx=16 | 51.08 | 46.93 |
+| $V_A$ at first position | 49.91 | 46.21 |
+| $V_A$ at last position (default) | 53.21 | 48.15 |
+
+### Key Findings
+
+- Only 4 context tokens suffice to achieve optimal performance; increasing the number of tokens degrades performance—quality matters more than quantity.
+- Placing $[V_A]$ at the last position yields the best results, as CLIP's causal attention allows preceding context tokens to first establish a semantic space.
+- SouPLe also achieves substantial gains under challenging settings including Extended VGG-SS/SoundNet, which contain silent or off-screen sound sources.
+- Performance degrades in the AVSBench MS3 multi-source scenario, as the label-free supervision causes the model to tend toward segmenting all potential objects.
+
+## Highlights & Insights
+
+- **Large gains from minimal changes**: Introducing only ~2.38M parameters (< 1%) yields consistent improvements across multiple benchmarks.
+- **Successful transfer of CoCoOp to audio-visual domains**: Prompt learning from image classification is effectively adapted to cross-modal localization.
+- **Text-free, annotation-free end-to-end framework**: Relies purely on audio-visual correspondence, making the pipeline simple and easy to deploy.
+- Ablation experiments on $[V_A]$ position reveal the importance of token ordering under causal attention.
+
+## Limitations & Future Work
+
+- Performance degrades in multi-source scenarios (AVSBench MS3) due to over-segmentation caused by the absence of label supervision.
+- Temporal information across consecutive video frames is not considered, potentially missing dynamic cues.
+- The Meta-net architecture is relatively simple; more sophisticated conditioning mechanisms (e.g., cross-attention) may yield further improvements.
+- In-depth comparison with multi-modal prompt learning methods such as MaPLe is absent.
+- Extension to downstream tasks such as audio-visual separation and event localization remains unexplored.
+
+## Related Work & Insights
+
+- **CoOp/CoCoOp**: The primary source of inspiration; CoCoOp's instance-conditioned prompting strategy is successfully transferred to this setting.
+- **ACL-SSL**: The direct baseline; SouPLe replaces its fixed prompts with learnable ones.
+- **CLIPSeg**: Used as the mask decoder; alternative CLIP-based decoders are worth exploring.
+- The effectiveness of prompt learning for cross-modal alignment warrants broader investigation across more cross-modal tasks.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐ The core idea is a direct transfer of CoCoOp to audio-visual localization; technical innovation is limited but the transfer is effective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Five datasets, open-set, zero-shot, extended benchmarks, and thorough ablations provide comprehensive coverage.
+- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clear and experiments are complete, though the method section could be more concise.
+- **Value**: ⭐⭐⭐⭐ Validates the effectiveness of prompt learning in the audio-visual domain and offers a generalizable improvement strategy for CLIP-based methods.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[CVPR 2026\] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning](love_me_love_my_label_rethinking_the_role_of_labels_in_prompt_retrieval_for_visu.md)
+- [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](../../ICCV2025/segmentation/implicit_counterfactual_learning_for_audio-visual_segmentation.md)
+- [\[CVPR 2026\] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings](geosurge_geo-localization_using_semantic_fusion_with_hierarchy_of_geographic_emb.md)
+- [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](../../ICCV2025/segmentation/towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
+- [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](../../ICCV2025/segmentation/tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
+
+<!-- RELATED:END -->

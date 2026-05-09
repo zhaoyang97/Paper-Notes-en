@@ -1,0 +1,130 @@
+---
+title: >-
+  [Paper Note] Dual-Expert Consistency Model for Efficient and High-Quality Video Generation
+description: >-
+  [ICCV 2025][Video Generation][Consistency Distillation] This paper analyzes the optimization conflict between high- and low-noise levels in consistency model distillation, and proposes a parameter-efficient Dual-Expert Consistency Model (DCM). A semantic expert handles layout and motion while a detail expert handles fine-grained details, complemented by a temporal coherence loss and GAN with feature matching loss. On HunyuanVideo (13B), DCM achieves 4-step sampling quality approaching the 50-step baseline.
+tags:
+  - ICCV 2025
+  - Video Generation
+  - Consistency Distillation
+  - Video Generation Acceleration
+  - Dual-Expert Model
+  - Temporal Coherence Loss
+  - GAN Distillation
+date: 2026-05-08
+content_hash: eb4bb75618cc72c6
+---
+
+# Dual-Expert Consistency Model for Efficient and High-Quality Video Generation
+
+**Conference**: ICCV 2025
+**arXiv**: [2506.03123](https://arxiv.org/abs/2506.03123)
+**Code**: [GitHub](https://github.com/Vchitect/DCM)
+**Area**: Video Generation
+**Keywords**: Consistency Distillation, Video Generation Acceleration, Dual-Expert Model, Temporal Coherence Loss, GAN Distillation
+
+## TL;DR
+This paper analyzes the optimization conflict between high- and low-noise levels in consistency model distillation, and proposes a parameter-efficient Dual-Expert Consistency Model (DCM). A semantic expert handles layout and motion while a detail expert handles fine-grained details, complemented by a temporal coherence loss and GAN with feature matching loss. On HunyuanVideo (13B), DCM achieves 4-step sampling quality approaching the 50-step baseline.
+
+## Background & Motivation
+
+1. **State of the Field**: Consistency Distillation (CD) is a mainstream diffusion model acceleration approach that trains a student model to map any point on the ODE trajectory to the same endpoint. Methods such as LCM and PCM have seen broad adoption.
+2. **Limitations of Prior Work**: Directly applying consistency distillation to video diffusion models leads to severe temporal coherence degradation and loss of appearance detail. High-noise samples primarily learn semantic layout and motion, while low-noise samples refine fine details; however, the gradient magnitudes and loss contributions of these two regimes differ substantially, causing joint optimization to converge to suboptimal solutions.
+3. **Root Cause**: A single student model has limited capacity, and simultaneously learning semantic layout synthesis and fine-grained detail generation introduces optimization interference. Visualizations reveal significant differences in loss values and gradient norms between high- and low-noise samples during distillation.
+4. **Paper Goals**: How to decouple the optimization of the semantic learning stage from the detail learning stage while maintaining parameter efficiency?
+5. **Starting Point**: Train two expert denoisers to handle two sub-trajectories of the ODE trajectory separately; after validating that the combination outperforms a single model, design a parameter-sharing scheme guided by parameter difference analysis.
+6. **Core Idea**: Partition the ODE trajectory into semantic and detail segments, and implement decoupled distillation via a parameter-efficient scheme comprising a semantic expert and a LoRA-based detail expert.
+
+## Method
+
+### Overall Architecture
+The teacher model's 50-step ODE trajectory is divided at $t_\kappa$ ($\kappa=37$) into two segments: a semantic synthesis phase $\{x_{t_i}\}_{i=\kappa}^N$ and a detail refinement phase $\{x_{t_j}\}_{j=0}^\kappa$. Training proceeds in two stages: the semantic expert SemE is first trained on the high-noise sub-trajectory; SemE is then frozen and a LoRA-augmented detail expert DetE is trained on the low-noise sub-trajectory. During inference, experts are switched dynamically based on the current sampling stage.
+
+### Key Designs
+
+1. **Parameter-Efficient Dual-Expert Distillation**:
+    - **Function**: Decouple semantic and detail learning with minimal additional parameters.
+    - **Mechanism**: Parameter differences between two independently trained experts are analyzed, revealing that the primary differences lie in (1) the timestep-dependent embedding layers $\Psi$ and (2) the linear layers $\Lambda$ within attention blocks. Stage 1 therefore trains SemE with full parameters on $[t_\kappa, t_N]$; Stage 2 initializes from SemE, freezes the backbone, and adds only new timestep-dependent embedding layers $\Psi$ and attention-block LoRA $\Lambda^\dagger$, training on $[t_0, t_\kappa]$.
+    - **Design Motivation**: Training two complete models doubles parameter count and memory; parameter difference analysis shows that the majority of weights can be shared. LoRA ($\Lambda^\dagger$) applied solely to attention linear layers is sufficient to capture the variation required for the detail stage.
+
+2. **Temporal Coherence Loss**:
+    - **Function**: Enhance motion consistency in videos generated by the semantic expert SemE.
+    - **Mechanism**: SemE is encouraged to attend to inter-frame variations and motion at corresponding spatial positions. Inter-frame difference consistency is defined as: $\mathcal{L}_{TC} = \|(x_{l:L}^{t_\kappa} - x_{0:L-l}^{t_\kappa}) - (\hat{x}_{l:L}^{t_\kappa} - \hat{x}_{0:L-l}^{t_\kappa})\|_2^2$, where $x_{l:L}^{t_\kappa}$ denotes the video latent from frame $l$ to frame $L$.
+    - **Design Motivation**: The semantic stage primarily establishes motion and spatial layout; the temporal coherence loss explicitly encourages SemE to maintain consistent inter-frame motion and spatial relationships.
+
+3. **GAN + Feature Matching Loss**:
+    - **Function**: Enhance fine-grained synthesis quality of the detail expert DetE.
+    - **Mechanism**: The frozen teacher model serves as a feature extraction backbone $\Omega$. The outputs of the student and EMA student are forward-diffused to obtain fake and real samples, respectively; intermediate features are extracted to compute GAN and feature matching losses: $\mathcal{L}_{FM} = \|\Omega(x_{fake}) - \Omega(x_{real})\|_2^2$. The discriminator head $f_D$ and DetE are optimized alternately.
+    - **Design Motivation**: GAN losses have been validated for high-quality detail synthesis in distribution-matching distillation. Feature matching loss stabilizes GAN training and provides additional intermediate feature supervision.
+
+### Loss & Training
+- SemE: consistency loss $\mathcal{L}_{SemE}$ + temporal coherence loss $\mathcal{L}_{TC}$
+- DetE: consistency loss $\mathcal{L}_{DetE}$ + GAN loss $\mathcal{L}_G$ + feature matching loss $\mathcal{L}_{FM}$ + discriminator loss $\mathcal{L}_D$
+- Training is conducted on 24 A100 GPUs; each expert on HunyuanVideo is trained for 1,000 iterations with learning rates of 1e-6 / 5e-6.
+
+## Key Experimental Results
+
+### Main Results
+
+| Method | Steps | Latency (s) | VBench Total | Quality | Semantic |
+|--------|------|------|----------|------|------|
+| HunyuanVideo (Teacher) | 50 | 1504.5 | 83.87 | 85.00 | 79.34 |
+| LCM | 4 | 120.68 | 80.33 | 80.83 | 78.32 |
+| PCM | 4 | 120.89 | 80.93 | 81.94 | 76.90 |
+| **DCM (Ours)** | 4 | 121.52 | **83.83** | **85.12** | **78.67** |
+| **DCM (Ours)** | 8 | 244.72 | **83.86** | 85.00 | **79.32** |
+
+User preference study: DCM vs. LCM: 82.67% prefer DCM; DCM vs. PCM: 77.33% prefer DCM.
+
+### Ablation Study
+
+| Configuration | VBench Total | Quality | Semantic |
+|------|---------|------|------|
+| VCM (baseline consistency model) | 80.30 | 80.74 | 78.36 |
+| + OD (trajectory decoupling) | 83.08 | 84.20 | 78.59 |
+| + OD + PE (parameter-efficient) | 83.03 | 84.16 | 78.53 |
+| + OD + PE + TC (temporal coherence) | 83.42 | 84.63 | — |
+| Full DCM | **83.83** | **85.12** | **78.67** |
+
+### Key Findings
+- Trajectory decoupling (OD) accounts for the largest performance gain, confirming the central hypothesis of optimization conflict between high- and low-noise regimes.
+- The parameter-efficient scheme (PE) sacrifices only 0.05 VBench points while substantially reducing parameter count.
+- The SemE+DetE combination markedly outperforms VCM on both semantic and detail metrics.
+- 4-step DCM nearly recovers the 50-step teacher quality (83.83 vs. 83.87) at a 12.4× speedup.
+- Consistent effectiveness is also demonstrated on CogVideoX: 4-step DCM (79.99) vs. CogVideoX 50-step (80.59).
+
+## Highlights & Insights
+- In-depth analysis of distillation training dynamics: visualization of loss and gradient norm differences between high- and low-noise samples provides strong motivation for the dual-expert design.
+- Precise conclusions from parameter difference analysis—differences concentrated in embedding layers and attention linear layers—motivate the LoRA-based scheme.
+- First successful application of consistency distillation to a model at the HunyuanVideo scale (13B parameters).
+- Expert-specific optimization objectives (TC Loss for SemE, GAN for DetE) reflect a deep understanding of the distinct learning requirements of each stage.
+
+## Limitations & Future Work
+- The choice of boundary point $t_\kappa$ ($\kappa=37$) is heuristic; adaptive boundary selection warrants exploration.
+- Dual-expert inference requires two sets of embedding layers and LoRA, adding inference complexity despite the small parameter overhead.
+- Evaluation is limited to 4/8 steps; more aggressive 1–2 step distillation remains unexplored.
+- The scalability of GAN loss stability to larger models requires further validation.
+
+## Related Work & Insights
+- **vs. LCM**: A single-model consistency distillation approach cannot resolve the optimization conflict between high- and low-noise regimes.
+- **vs. PCM**: PCM segments the trajectory but still employs a single model to learn all segments.
+- **vs. Hyper-SD**: Integrates segmented trajectory consistency distillation with DMD but does not decouple the stages for video-specific scenarios.
+- **vs. Seaweed-APT**: Applies one-step adversarial post-training on real data, but is limited to 2-second videos.
+
+## Rating
+- **Novelty**: ⭐⭐⭐⭐ The dual-expert scheme is motivated by training dynamics analysis, and the parameter-efficient design demonstrates insightful reasoning.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Two backbone models (HunyuanVideo + CogVideoX), VBench evaluation, user studies, and comprehensive ablations.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear logical flow progressing from observation to hypothesis to validation to design.
+- **Value**: ⭐⭐⭐⭐⭐ First demonstration of high-quality 4-step distillation on a 13B-parameter video model; extremely high practical value.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ICCV 2025\] DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation](dh-facevid-1k_a_large-scale_high-quality_dataset_for_face_video_generation.md)
+- [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](../../NeurIPS2025/video_generation/foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
+- [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
+- [\[ICCV 2025\] DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization](dollar_few-step_video_generation_via_distillation_and_latent_reward_optimization.md)
+- [\[ICLR 2026\] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation](../../ICLR2026/video_generation/precisecache_precise_feature_caching_for_efficient_and_high-fidelity_video_gener.md)
+
+<!-- RELATED:END -->

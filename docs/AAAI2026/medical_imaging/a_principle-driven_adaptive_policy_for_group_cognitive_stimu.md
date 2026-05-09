@@ -1,0 +1,186 @@
+---
+title: >-
+  [Paper Note] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment
+description: >-
+  [AAAI 2026][Medical Imaging][Cognitive Stimulation Therapy] This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates four modules — multi-speaker context control, dynamic participant state modeling (soft prompt), a cognitive stimulation attention loss, and a multi-dimensional reward policy optimization — built on a fine-tuned Qwen-2.5-3B backbone. Training is conducted on 500+ hours of real Cantonese CST dialogues and 10,000+ simulated conversations. The system achieves a BLEU-4 of 27.93, surpassing GPT-4o and other large models, with an A/B test win rate of 50% versus GPT-4o's 39%.
+tags:
+  - AAAI 2026
+  - Medical Imaging
+  - Cognitive Stimulation Therapy
+  - Multi-party Dialogue
+  - Dynamic User Modeling
+  - Principle-Driven Policy
+  - Reinforcement Learning
+date: 2026-05-08
+content_hash: 44af582bf3acb977
+---
+
+# A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment
+
+**Conference**: AAAI 2026
+**arXiv**: [2603.10034](https://arxiv.org/abs/2603.10034)
+**Code**: None
+**Area**: Dialogue Systems / Medical AI / LLM Applications
+**Keywords**: Cognitive Stimulation Therapy, Multi-party Dialogue, Dynamic User Modeling, Principle-Driven Policy, Reinforcement Learning
+
+## TL;DR
+This paper proposes the GCSD system for group Cognitive Stimulation Therapy (CST) targeting elderly individuals with cognitive impairment. The system integrates four modules — multi-speaker context control, dynamic participant state modeling (soft prompt), a cognitive stimulation attention loss, and a multi-dimensional reward policy optimization — built on a fine-tuned Qwen-2.5-3B backbone. Training is conducted on 500+ hours of real Cantonese CST dialogues and 10,000+ simulated conversations. The system achieves a BLEU-4 of 27.93, surpassing GPT-4o and other large models, with an A/B test win rate of 50% versus GPT-4o's 39%.
+
+## Background & Motivation
+Over 55 million people worldwide live with cognitive impairment. Cognitive Stimulation Therapy (CST) is an evidence-based non-pharmacological intervention that maintains or improves cognitive function through **group interaction** and collective reminiscence. However, traditional CST is highly dependent on professional therapists, fixed schedules, and physical venues, making it costly and difficult to scale.
+
+Existing digital cognitive training systems suffer from three levels of limitations:
+1. **Early systems** (robotic dialogue, metamemory training, etc.): constrained to rigid question-answer formats, unable to produce natural open-ended conversation.
+2. **Small-model approaches**: insufficient capacity to learn the 18 therapeutic principles underlying CST (e.g., "encourage new ideas," "value opinions," "use reminiscence").
+3. **Direct application of general-purpose LLMs**: architectures primarily designed for dyadic dialogue, leading to speaker confusion, lack of therapeutic reasoning, and inability to dynamically model users' cognitive states.
+
+## Core Problem
+How can an AI system be built to simulate a professional therapist conducting **multi-party group cognitive stimulation dialogues**? The core challenges are:
+
+1. **Dialogue paradigm mismatch**: Mainstream LLMs are designed for one-on-one interaction; multi-party settings lead to speaker confusion and context loss.
+2. **Absence of cognitive stimulation reasoning**: General-purpose LLMs can generate fluent and empathetic text but lack the deep therapeutic strategy reasoning required by CST.
+3. **Static user modeling**: Existing approaches cannot dynamically track the evolving cognitive state of each elderly participant nor deliver personalized, adaptive stimulation.
+
+An additional challenge is data scarcity — real CST dialogue data is in Cantonese, domain-specific, multi-party in nature, and extremely rare.
+
+## Method
+
+### Overall Architecture
+GCSD adopts a "data construction + four-module model" framework:
+- **Input**: Multi-party dialogue history containing utterances from the therapist [Assistant] and multiple elderly participants [Human_i].
+- **Output**: The therapist's next-turn response.
+- **Training**: Two-stage — pre-training on simulated data to learn the CST framework, followed by fine-tuning on real data to capture authentic linguistic style.
+- **Optimization**: SFT first (with joint losses), then MRPO (Multi-dimensional Reward Policy Optimization).
+
+### Key Designs
+
+1. **Data Construction — Principle-Guided Scenario Simulation (PGSS)**
+
+    - Real data: 500+ hours of Cantonese CST recordings, transcribed and annotated by a third party, cleaned with rule-based filtering, and structured into multi-party dialogue format.
+    - Simulated data: 10,000+ dialogues generated by GPT-4o. Prompt design includes: task definition (30+ turn multi-party dialogues), role specification (1 therapist + 5–6 patients), CST activity categories (art creation, thematic discussion, etc.), phase-specific dialogue cues (opening/middle/closing), and **explicit enumeration of the 18 CST principles** that the model is required to strictly follow.
+    - Rationale for the dual-data strategy: simulated data supplements rare topics and interaction patterns in real data, enabling the model to pre-learn the basic CST framework.
+
+2. **Multi-Speaker Context Controller**
+
+    - Special tokens are used to mark roles: [Assistant] for the therapist and [Human_i] for the $i$-th elderly participant.
+    - Two-stage training: structured, principle-aligned dialogue flow is learned on simulated data first, then fine-tuned on real data to capture authentic linguistic nuances.
+    - The design is simple yet effective, resolving the speaker tracking problem in multi-party dialogue.
+
+3. **Dynamic Participant State Modeling (DPSM)**
+
+    - Core idea: generate a dynamic soft prompt for each participant and inject it into the main model to enable personalization.
+    - Soft Prompt Generation Network: an attention-equipped MLP that takes a concatenated vector of user state features as input.
+        - Input layer: linear transformation + GELU activation → 512-dimensional hidden representation.
+        - Hidden layer: self-attention (Q/K/V projections) + GELU → 256-dimensional representation.
+        - Output layer: linear + tanh → $D_{\text{prompt}}$-dimensional soft prompt (= 512 dimensions, matching the main model's embedding dimensionality).
+    - Integration: the soft prompt is prepended to input token embeddings as "virtual tokens," influencing generation via self-attention.
+    - Temporal smoothness regularization: $\mathcal{L}_{\text{Smoothness}} = \|P_{\text{soft},t} - P_{\text{soft},t-1}\|_2^2$, preventing abrupt prompt fluctuations (critical for a vulnerable population).
+
+4. **Cognitive Stimulation Focused Attention Loss (CSFAL)**
+
+    - Purpose: guide the model's attention mechanism to focus on keywords relevant to cognitive stimulation.
+    - Approach: keywords are extracted from reference responses using a keyword extraction tool; a weighted MSE is computed between the model's attention weights and the target distribution.
+    - $\mathcal{L}_{\text{CSFAL}} = \frac{1}{M}\sum_{j=1}^{M}\lambda_j(a_j - \eta_j)^2$, where $\lambda_j = \exp(\kappa \cdot \eta_j)$ is a saliency weight that amplifies the penalty on key terms.
+
+### Loss & Training
+
+**Phase 1: Joint SFT Loss**
+$$\mathcal{L}_{\text{SFT}} = \gamma_1 \cdot \mathcal{L}_{\text{Gen}} + \gamma_2 \cdot \mathcal{L}_{\text{CSFAL}} + \gamma_3 \cdot \mathcal{L}_{\text{Smoothness}}$$
+- $\mathcal{L}_{\text{Gen}}$: standard autoregressive cross-entropy loss.
+- $\mathcal{L}_{\text{CSFAL}}$: cognitive stimulation focused attention loss.
+- $\mathcal{L}_{\text{Smoothness}}$: temporal smoothness regularization on the soft prompt.
+
+**Phase 2: Multi-dimensional Reward Policy Optimization (MRPO)**
+- Adapted from the GRPO algorithm (DeepSeek-R1); $G$ candidate outputs are sampled per prompt.
+- Multi-dimensional reward signal: BLEU-4 (n-gram coverage) + BERTScore (semantic similarity) + Distinct-2 (diversity) + structural correctness (binary reward for correct use of the [Assistant] token).
+- KL penalty prevents excessive deviation from the SFT model.
+
+**Implementation details**: base model Qwen-2.5-3B, single A100-80G GPU, AdamW (weight decay 0.01), cosine annealing learning rate schedule (peak 5e-5), gradient accumulation to effective batch size 16, FP16 mixed precision.
+
+## Key Experimental Results
+
+### Results on Real Data
+
+| Model | ROUGE-L | BLEU-4 | BERTScore | Distinct-2 | Relevance↑ | Empathy↑ | Fluency↑ |
+|-------|---------|--------|-----------|------------|------------|----------|----------|
+| **GCSD-3b** | **27.63** | **27.93** | **80.12** | 74.82 | **4.15** | **3.50** | **3.53** |
+| DeepSeek-671B (5-shot) | 23.58 | 24.36 | 78.27 | 73.27 | 4.10 | 3.48 | 3.42 |
+| GPT-4o | 25.76 | 20.14 | 73.79 | 69.15 | 4.00 | 3.45 | 3.35 |
+| DeepSeek-671B | 22.54 | 22.42 | 79.98 | **76.86** | 4.08 | 3.45 | 3.46 |
+| Doubao-Pro | 24.87 | 22.36 | 75.16 | 71.46 | 3.95 | 3.33 | 3.20 |
+| ERNIE | 18.32 | 9.16 | 66.93 | 56.28 | 3.33 | 2.95 | 3.00 |
+
+> Key finding: the 3B small model, after domain-specific fine-tuning, achieves a BLEU-4 14.7% higher than the 671B large model, demonstrating the value of domain data combined with targeted design.
+
+### A/B Human Evaluation
+
+| Comparison | GCSD Wins | GCSD Loses | Tie |
+|------------|-----------|------------|-----|
+| vs. ERNIE | 75% | 10% | 15% |
+| vs. GPT-4o | 50% | 39% | 11% |
+| vs. DeepSeek-671B | 43% | 40% | 17% |
+
+### Ablation Study
+
+| Variant | BLEU-4 | Drop |
+|---------|--------|------|
+| GCSD-3b (full) | 27.93 | — |
+| w/o CT (remove simulated data pre-training) | 26.51 | -1.42 |
+| w/o DPSM (remove dynamic state modeling) | 23.15 | **-4.78** |
+| w/o CSFAL (remove attention loss) | 24.98 | -2.95 |
+
+- **DPSM contributes the most** (removing it causes a drop of nearly 5 points), confirming that dynamic personalized modeling is the core component.
+- CSFAL is also critical; attention guidance substantially improves therapeutic reasoning capability.
+- The "warm-start effect" of simulated data pre-training is modest in absolute terms but non-negligible.
+
+## Highlights & Insights
+- **Soft prompt for user personalization**: without modifying model parameters, a lightweight MLP generates dynamic soft prompts injected into the input, achieving personalization while keeping the model backbone unchanged — an elegant and transferable design.
+- **Attention supervision (CSFAL)**: using external keyword extraction signals to directly supervise the model's attention distribution is a cheap yet effective form of weak supervision, generalizable to other dialogue scenarios requiring specific focal points.
+- **3B outperforms 671B**: further evidence that in vertical domains, small model + domain data + targeted design >> direct application of general-purpose large models.
+- **Dual-data strategy**: using GPT-4o to generate simulated data that explicitly follows 18 therapeutic principles for pre-training, then fine-tuning on real data — an effective domain adaptation pipeline.
+- **MRPO with multi-dimensional rule-based rewards**: no reward model is required; multiple automatic metrics are combined as reward signals to drive GRPO — practical and feasible.
+
+## Limitations & Future Work
+- **Lack of clinical validation**: all evaluations rely on computational metrics and short-term human assessment; no long-term clinical trials have been conducted to verify actual therapeutic efficacy, which represents the most significant gap.
+- **Text-only modality**: real CST involves visual materials (photographs), vocal tone, and other cues; a text-only system loses substantial information, especially given that non-verbal signals are critical for elderly individuals with cognitive impairment.
+- **Single-language scope**: data and evaluation are limited to Cantonese; generalizability has not been verified.
+- **Safety insufficiently addressed**: in medical settings, the risks of hallucination and inappropriate responses are high; the paper only briefly mentions this in future work.
+- **Small-scale human evaluation**: only 6 elderly participants and family members were involved in the evaluation, limiting statistical power.
+- **Underspecified user state features in DPSM**: the paper does not detail how "cognitive state and interaction history" are concretely quantified and extracted.
+
+## Related Work & Insights
+
+| | Ours (GCSD) | Early Cognitive Training Systems | General-Purpose LLMs (GPT-4o, etc.) |
+|--|------------|----------------------------------|--------------------------------------|
+| Dialogue format | Multi-party group | Primarily one-on-one | One-on-one |
+| CST principles | Explicitly embedded (18 principles) | Absent or implicit | Absent |
+| User modeling | Dynamic soft prompt | None | Static |
+| Scalability | Digital system, always available | Limited | Possible but non-specialized |
+| Language capability | Specialized Cantonese CST | Limited | General but insufficiently specialized |
+
+Compared to the prior work of Jiang et al. (2023) from the same team, the core advances of this paper are: (1) extension from dyadic to multi-party dialogue, (2) introduction of dynamic user modeling, and (3) addition of attention supervision and reward policy optimization.
+
+**Transferable insights:**
+- The **soft prompt personalization** approach is transferable to other dialogue scenarios requiring dynamic user adaptation (e.g., educational tutoring, psychological counseling).
+- The **attention supervision** method is applicable to any task requiring the model to attend to specific content aspects (e.g., attending to risk-related tokens in safety alignment).
+- **Principle-driven data generation (PGSS)** represents a general data augmentation paradigm: explicitly encoding domain principles/norms into generation prompts and using a strong model to generate training data for a weaker model.
+- The work offers reference value for the AI for Healthcare community on how to balance fluency and adherence to therapeutic principles in medical dialogue.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐ Multi-party cognitive stimulation dialogue is a novel problem; the four-module design is innovative, though individual technical components are relatively standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage of automatic metrics, human evaluation, A/B testing, and ablation studies; however, clinical validation is absent and the human evaluation sample is small.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-motivated problem formulation; some technical details (e.g., user state features) are underspecified.
+- Value: ⭐⭐⭐⭐ Addresses a genuine societal need, though substantial work remains between the proposed system and clinical deployment.
+- Technical Depth: ⭐⭐⭐ Individual module designs are relatively straightforward; the contribution is primarily combinatorial innovation integrating soft prompts, attention supervision, and an adapted GRPO framework.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](../../CVPR2026/medical_imaging/medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
+- [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](../../ICLR2026/medical_imaging/atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
+- [\[AAAI 2026\] EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services](egoems_a_high-fidelity_multimodal_egocentric_dataset_for_cognitive_assistance_in.md)
+- [\[AAAI 2026\] From Policy to Logic for Efficient and Interpretable Coverage Assessment](from_policy_to_logic_for_efficient_and_interpretable_coverage_assessment.md)
+- [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
+
+<!-- RELATED:END -->

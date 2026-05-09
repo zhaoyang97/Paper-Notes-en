@@ -1,0 +1,149 @@
+---
+title: >-
+  [Paper Note] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching
+description: >-
+  [ICLR 2026][AI Safety][Two-sided matching] This paper proposes Matching for Retention (MRet), an algorithm that, for the first time, shifts the optimization objective of two-sided matching platforms from "maximizing the number of matches" or "satisfying fairness constraints" to "directly maximizing user retention rate." By learning personalized retention curves and exploiting the concavity of the retention function, the otherwise NP-hard joint retention-gain optimization for both sides is reduced to an $O(N \log N)$ sorting problem. MRet achieves significant retention improvements on both synthetic data and real-world data from a large Japanese dating platform.
+tags:
+  - ICLR 2026
+  - AI Safety
+  - Two-sided matching
+  - user retention
+  - dynamic learning-to-rank
+  - online dating platforms
+  - retention optimization
+date: 2026-05-08
+content_hash: 0b72c20b955a5223
+---
+
+# Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching
+
+**Conference**: ICLR 2026
+**arXiv**: [2602.15752](https://arxiv.org/abs/2602.15752)
+**Code**: [GitHub](https://github.com/kishi6/ICLR2026_MRet)
+**Area**: Recommender Systems / AI Safety
+**Keywords**: Two-sided matching, user retention, dynamic learning-to-rank, online dating platforms, retention optimization
+
+## TL;DR
+
+This paper proposes Matching for Retention (MRet), an algorithm that, for the first time, shifts the optimization objective of two-sided matching platforms from "maximizing the number of matches" or "satisfying fairness constraints" to "directly maximizing user retention rate." By learning personalized retention curves and exploiting the concavity of the retention function, the otherwise NP-hard joint retention-gain optimization for both sides is reduced to an $O(N \log N)$ sorting problem. MRet achieves significant retention improvements on both synthetic data and real-world data from a large Japanese dating platform.
+
+## Background & Motivation
+
+**State of the Field**: The core objective of recommender algorithms on two-sided matching platforms (online dating, job recruitment, etc.) is to maximize the total number of matches. The system generates a ranked recommendation list for each arriving user from the pool of users on the opposite side; users browse the list and like or skip candidates, and mutual likes form a match. A large body of literature on Reciprocal Recommender Systems focuses on improving matching efficiency.
+
+**Limitations of Prior Work**: Maximizing the number of matches leads to a severe Matthew effect—popular users are repeatedly recommended and accumulate a large number of matches, while less popular users rarely appear in recommendation lists and receive almost no matches. Real-world data from a large Japanese dating platform clearly shows that users with fewer matches are significantly more likely to leave the platform the following month, and that the marginal retention gain from the first few matches far exceeds that of subsequent matches. For platforms relying on subscription models, user churn directly translates to revenue loss.
+
+**Root Cause**: Fairness-based methods (e.g., exposure fairness in FairCo) are viewed as a remedy for unequal match distribution, yet fairness is not the ultimate goal of a platform. Fairness is effective only under a specific condition—popular users require high exposure to be retained, while less popular users are satisfied with minimal exposure. However, actual retention behavior varies across individuals, and this condition does not necessarily hold in practice. Users do not decide to stay simply because "exposure has been fairly allocated"; relying on fairness to drive retention amounts to leaving outcomes to chance.
+
+**Paper Goals**: To formally define a new problem—directly maximizing the retention rate of all users on a two-sided matching platform, rather than optimizing for match count or fairness.
+
+**Starting Point**: Model the retention rate as a personalized concave function of match count $f(x, m)$, reformulate recommendation ranking as an optimization problem that maximizes the sum of retention gains for both sides, and leverage the concavity property to derive an efficiently solvable lower bound.
+
+**Core Idea**: Rather than optimizing proxy objectives such as match count or fairness, directly optimize what truly matters—user retention.
+
+## Method
+
+### Overall Architecture
+
+MRet is a dynamic Learning-to-Rank (LTR) framework that operates as follows: (1) In the offline phase, personalized retention curves $f(x, m)$ are learned from user profiles and interaction history, representing the retention probability of user $x$ after accumulating $m$ matches. (2) In the online phase, whenever user $x$ arrives, a joint score $\text{Score}(y)$ is computed for each candidate user $y$ on the opposite side, simultaneously accounting for the retention gain of $x$ from recommending $y$ and the retention gain of $y$ itself. (3) The recommendation list is generated by ranking candidates in descending order of score. The overall computational complexity is $O(N \log N)$, where $N$ is the number of candidate users. After each time step, the cumulative match counts $m_{1:\tau}$ for both sides are updated, enabling the recommendations to adapt dynamically.
+
+### Key Designs
+
+1. **Personalized Retention Curve Modeling**
+    - Function: Learn a mapping function $f(x, m)$ from "match count → retention probability" for each user.
+    - Mechanism: An XGBoost regression model is trained on the dataset $\{x, m, u\}_{i=1}^{n}$ (where $x$ = user features, $m$ = match count, $u$ = retention label). The retention function is assumed to be concave (Assumption 1), i.e., the marginal retention gain from additional matches is diminishing. In synthetic experiments, a piecewise function is used: a parabolic increase for $m \leq b_x$ and an exponential plateau for $m > b_x$, where $b_x$ denotes the "satisfactory match count" of user $x$. In real-world experiments, k-means clustering (5 clusters) is applied to 60K records, and within-cluster averages are computed by match count for curve fitting.
+    - Design Motivation: Real-world data clearly demonstrates that retention curves resemble concave functions—the first few matches sharply increase retention, which then saturates. Personalization is necessary because different users have different satisfactory match counts $b_x$. Unlike fairness-based methods that assume a uniform exposure-retention relationship, MRet directly models each user's retention needs.
+
+2. **Joint Optimization of Retention Gains for Both Sides**
+    - Function: When constructing the recommendation list, simultaneously consider changes in retention probability for both the recipient and the recommended candidates, avoiding unilateral optimization.
+    - Mechanism: The optimal ranking $\sigma_\tau^*$ is defined as maximizing the sum of retention gains for both sides—the gain for recipient $x$ is $f(x, m_{1:\tau}(x) + m_\tau(x)) - f(x, m_{1:\tau}(x))$, and the gain for each candidate $y$ on the recommended side is $f(y, m_{1:\tau}(y) + \alpha_k r(y,x)) - f(y, m_{1:\tau}(y))$. Direct optimization is NP-hard (requiring enumeration over all K-permutations). By applying Jensen's inequality for concave functions (Lemma 1 for the recipient side, Lemma 2 for the recommended side), the problem decomposes into independent per-candidate scoring: $\text{Score}(y) = \frac{1}{A} f(x, m_{1:\tau}(x) + A \cdot r(x,y)) + \frac{1}{\alpha_{\max}}[f(y, m_{1:\tau}(y) + \alpha_{\max} r(x,y)) - f(y, m_{1:\tau}(y))]$
+    - Design Motivation: A toy example (Figure 2) illustrates the issue—Candidate A is optimal for the recommended side, Candidate B is optimal for the recipient side, but Candidate C achieves the highest total gain (60%), which coincides with neither individual optimum. Considering only the recipient side overlooks the churn risk on the recommended side. By the rearrangement inequality, assigning high-score candidates to high-visibility positions maximizes the lower bound.
+
+3. **Efficient NP-hard → O(N log N) Reduction via Concavity**
+    - Function: Reduce the original NP-hard combinatorial optimization to a simple argsort operation.
+    - Mechanism: Leveraging Assumption 1 (concavity), Lemma 1 provides a Jensen-type lower bound for the recipient side—decomposing $f(x, m + \sum_k \alpha_k r(x, \sigma_k))$ into a sum of independent per-candidate terms. Lemma 2 provides a linear lower bound for the recommended side—the contribution of candidate $y$ at position $k$ is bounded below by the gain at the $\alpha_{\max}$ position. Combining the two lemmas transforms the original coupled optimization into $\max_\sigma \sum_k \alpha_k \text{Score}(\sigma_k)$, which requires only computing Score values for all candidates and sorting in descending order.
+    - Design Motivation: Searching over all K-permutations is computationally infeasible for real-world platforms (user pools can reach millions). The appendix additionally provides a comparison between MRet and the NP-hard optimal solution, validating the quality of the lower-bound approximation.
+
+### Loss & Training
+
+The retention function $f$ is learned via XGBoost regression. Training data are drawn from platform historical records (synthetic experiments: $n = 5000$ samples with match counts sampled from an exponential distribution with mean 2.0; real-world experiments: 60K records containing user features, cumulative match counts, and retention labels). No gradient optimization is required during online recommendation—at each time step, scores are computed via direct forward evaluation and candidates are sorted. The ranking position weights are set to $\alpha_k = 1/k$ (default setting).
+
+## Key Experimental Results
+
+### Main Results
+
+Synthetic data experiments ($|X| = |Y| = 1000$ users, $K = 5$ recommendations, $T = 2000$ time steps, $\kappa = 0.5$ popularity bias, mean over 10 runs):
+
+| Method | Cumulative Matches/User | User Retention Rate | Key Observation |
+|--------|------------------------|---------------------|-----------------|
+| Uniform | Lowest (1.0× baseline) | ~0.78 | Random recommendation baseline |
+| Max Match | Highest (~1.4× baseline) | ~0.78 | Most matches but retention ≈ Uniform |
+| FairCo (λ=100) | Medium | ~0.80 | Fairness yields limited improvement |
+| **MRet** | **~0.7× MaxMatch** | **~0.85** | **Highest retention with 70% of matches** |
+| MRet (oracle) | Medium | ~0.88 | Upper bound using ground-truth $f$ |
+
+Real-world data experiments (large Japanese dating platform, 1000 males × 1000 females, ALS-imputed match matrix, retention = login in the following month):
+
+| Method | Retention Performance | Key Observation |
+|--------|-----------------------|-----------------|
+| Uniform | Lowest | Near-ineffective under extremely sparse matches |
+| FairCo | Low | Fair allocation under sparse matches yields almost no effective matches |
+| Max Match | Moderately high | Concentrated recommendations relatively effective under sparse data |
+| **MRet** | **Highest** | **Best performance even when Assumption 1 (concavity) does not hold for real retention functions** |
+
+### Ablation Study
+
+| Ablation Dimension | Variable Range | Key Finding |
+|-------------------|----------------|-------------|
+| Popularity bias κ | 0 → 1 | MRet achieves highest retention across all κ; advantage grows with larger κ |
+| FairCo hyperparameter λ | 1 ~ 1000 | FairCo is consistently inferior to MRet at any λ setting |
+| Match probability noise | Varying noise levels | MRet is robust to estimation errors in $r(x,y)$ |
+| Temporal popularity drift | Dynamic popularity | MRet naturally adapts via real-time updates to $m$ |
+| Equal-exposure fairness criterion | Alternative fairness definition replacing FairCo | Changing the fairness definition does not alter the conclusions |
+| User scale | Varying $|X|$, $|Y|$ | MRet outperforms baselines across all scales |
+
+### Key Findings
+
+- MaxMatch achieves the most matches but its retention is nearly identical to random recommendation—"more matches ≠ better user retention" is the central empirical finding of this paper.
+- Figure 5b provides the most critical evidence in the paper: the $(m_{1:T} - b)$ distribution under FairCo follows a near-normal distribution (a large proportion of users deviate from their satisfactory match count), while under MRet the distribution is almost entirely $\geq 0$ (the vast majority of users reach or exceed their satisfactory match count). This directly explains why fairness cannot substitute for retention optimization.
+- MRet achieves significantly higher retention using only approximately 70% of the match count of MaxMatch—scarce matches are precisely allocated to users where the marginal retention gain is greatest.
+- The retention functions in real-world data do not satisfy the concavity assumption (Assumption 1), yet MRet still performs best, demonstrating robustness beyond the theoretical assumptions.
+
+## Highlights & Insights
+
+- The problem formulation itself is the primary contribution—the paradigm shift from proxy objectives (match count / fairness) to the ultimate objective (retention rate) is a generalizable insight applicable to recommender systems at large.
+- The theoretical reduction from NP-hard to $O(N \log N)$ is elegant: two lemmas exploit concavity to derive a decomposable lower bound with rigorous mathematical foundations rather than heuristics.
+- The visualization in Figure 5b is highly persuasive—histogram-based comparison intuitively illustrates why "fair allocation ≠ satisfying personalized retention needs."
+- The experimental design includes an oracle upper bound MRet(best), providing a clear performance ceiling for the proposed method.
+
+## Limitations & Future Work
+
+- Learning the retention function $f$ is limited by the availability of historical data; cold-start users lack interaction history to estimate personalized curves.
+- The match probability $r(x,y)$ is assumed to be known or estimated by an upstream model; estimation errors in $r$ propagate into the retention optimization.
+- The retention definition—"whether the user logs in the following month"—is coarse-grained; finer-grained metrics such as LTV or subscription renewal rate may carry greater commercial value.
+- The optimization is performed greedily at each time step independently, without multi-step lookahead; long-term planning from a reinforcement learning perspective may yield further improvements.
+
+## Related Work & Insights
+
+- The paradigm of shifting from "proxy objective → ultimate objective" is broadly applicable to e-commerce recommendation (CTR → purchase → repurchase → LTV) and content platforms (clicks → watch time → DAU → retention).
+- FairCo is the primary baseline; MRet can be viewed as an "upgraded objective function" counterpart—the framework structure is similar (dynamic LTR with incremental adjustment), but the optimization target is replaced from fairness to retention.
+- Compared to RL-based long-term engagement optimization, MRet employs greedy step-by-step optimization with theoretical lower-bound guarantees, making it simpler and more practical while avoiding the training instability and sample inefficiency inherent to RL.
+
+## Rating
+
+- Novelty: ⭐⭐⭐⭐ The problem formulation is novel; the shift from proxy to ultimate objectives is inspiring; the NP-hard → $O(N \log N)$ theoretical contribution is rigorous.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Synthetic and real-world data, six ablation dimensions, oracle upper bound as reference; however, the real-world experiment is limited to a 1000×1000 scale.
+- Writing Quality: ⭐⭐⭐⭐ Motivation is thoroughly argued; the toy example (Figure 2) and distribution comparison (Figure 5b) are intuitive and compelling; theoretical derivations are clearly presented.
+- Value: ⭐⭐⭐⭐ Directly applicable to subscription-based two-sided platforms; the principle of "optimizing the ultimate objective" is broadly transferable.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[AAAI 2026\] Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation](../../AAAI2026/ai_safety/matrix-free_two-to-infinity_and_one-to-two_norms_estimation.md)
+- [\[AAAI 2026\] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity](../../AAAI2026/ai_safety/breaking_the_dyadic_barrier_rethinking_fairness_in_link_prediction_beyond_demogr.md)
+- [\[ICLR 2026\] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?](bridging_fairness_and_explainability_can_input-based_explanations_promote_fairne.md)
+- [\[AAAI 2026\] EFX and PO Allocation Exists for Two Types of Goods](../../AAAI2026/ai_safety/efx_and_po_allocation_exists_for_two_types_of_goods.md)
+- [\[NeurIPS 2025\] Locally Optimal Private Sampling: Beyond the Global Minimax](../../NeurIPS2025/ai_safety/locally_optimal_private_sampling_beyond_the_global_minimax.md)
+
+<!-- RELATED:END -->

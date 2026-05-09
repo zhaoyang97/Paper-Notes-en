@@ -1,0 +1,173 @@
+---
+title: >-
+  [Paper Note] Generating Multi-Image Synthetic Data for Text-to-Image Customization
+description: >-
+  [ICCV 2025][Image Generation][Text-to-image customization] This paper proposes SynCD (Synthetic Customization Dataset) and its generation pipeline, which synthesizes multi-image consistent object datasets using shared attention and 3D asset priors. The trained encoder model surpasses existing encoder-based methods without requiring test-time optimization.
+tags:
+  - ICCV 2025
+  - Image Generation
+  - Text-to-image customization
+  - synthetic dataset
+  - shared attention
+  - encoder-based method
+  - 3D consistency
+date: 2026-05-08
+content_hash: 731c177d0238fc5b
+---
+
+# Generating Multi-Image Synthetic Data for Text-to-Image Customization
+
+**Conference**: ICCV 2025  
+**arXiv**: [2502.01720](https://arxiv.org/abs/2502.01720)  
+**Code**: [Project Page](https://nupurkmr9.github.io/SynCD/)  
+**Area**: Diffusion Models / Image Customization  
+**Keywords**: Text-to-image customization, synthetic dataset, shared attention, encoder-based method, 3D consistency
+
+## TL;DR
+
+This paper proposes SynCD (Synthetic Customization Dataset) and its generation pipeline, which synthesizes multi-image consistent object datasets using shared attention and 3D asset priors. The trained encoder model surpasses existing encoder-based methods without requiring test-time optimization.
+
+## Background & Motivation
+
+Text-to-image customization aims to learn user-provided reference objects and generate images of those objects in novel scenes via text prompts. However, this task faces a critical data bottleneck:
+
+**Scarcity of real multi-image datasets**: Training encoder-based methods requires multiple images of the same object under varying poses, backgrounds, and lighting conditions, yet collecting such large-scale datasets from the internet is nearly infeasible—real images typically lack object identity annotations.
+
+**Limitations of single-image training**: Most existing encoder-based methods (e.g., IP-Adapter, BLIP-Diffusion) are trained on single-image or multi-view (fixed-background) datasets. To prevent overfitting to the reference image's pose or background, these methods are forced to use compact feature spaces, which sacrifices identity preservation.
+
+**High cost of optimization-based methods**: While optimization-based methods such as DreamBooth and Textual Inversion achieve strong results, they require several minutes of fine-tuning per new subject, making them computationally expensive and slow.
+
+**Insufficient quality of existing synthetic data**: Prior work such as JeDi has also attempted to create synthetic datasets but relies solely on text prompts to generate consistent objects, lacking explicit consistency constraints, resulting in limited data quality.
+
+The core insight of this paper is that synthesizing consistent object identity via shared internal features of T2I models and external 3D asset constraints is far more scalable than collecting real multi-image data, and considerably easier than the customization task itself.
+
+## Method
+
+### Overall Architecture
+
+The method consists of three components:
+1. **SynCD dataset generation pipeline**: LLM-assisted prompt generation → multi-image generation with shared attention + 3D priors → quality filtering
+2. **Encoder model training**: Reference image features are injected into the denoising process via shared attention
+3. **Improved inference guidance normalization**: Text and image guidance vectors are normalized to avoid overexposure
+
+### Key Designs
+
+1. **Masked Shared Attention (MSA) for consistent object generation**: When generating $N$ images in parallel, the attention blocks of the DiT model are modified so that each image's features attend not only to itself but also to the foreground object regions of other images. The attention operation is:
+
+    $\text{MSA}(\{{\mathbf{q}}_i, {\mathbf{k}}_i, {\mathbf{v}}_i\}_{i=1}^N) = \left\{ \text{Softmax}\left(\frac{{\mathbf{q}}_i [{\mathbf{k}}_1 \cdots {\mathbf{k}}_N]^T}{\sqrt{d'}} + \mathbf{M}_i\right) [{\mathbf{v}}_1 \cdots {\mathbf{v}}_N] \right\}_{i=1}^N$
+
+   The mask $\mathbf{M}_i$ ensures that each image attends only to the foreground object regions of other images while ignoring backgrounds, and text tokens do not interact across images. For rigid objects, depth maps from Objaverse 3D assets are further used to guide cross-view feature warping:
+
+    $\hat{f}_2(u,v) = \alpha f_1(u+\Delta u, v+\Delta v) + (1-\alpha) f_2(u,v)$
+
+   where $\alpha$ is a binary visibility scalar. Warping is applied only during early diffusion steps to avoid artifacts.
+
+2. **LLM-assisted prompting and data filtering**: Llama3 is used to generate detailed descriptions and multiple background scene descriptions for each object. For rigid Objaverse objects, Cap3D captions are used; for deformable objects (16 animal superclasses), descriptive captions are generated by the LLM. After generation, images with an aesthetic score below 6 are discarded, and groups with mean pairwise DINOv2 similarity below 0.7 are removed. The final dataset contains approximately 95,000 objects, each with 2–3 images.
+
+3. **Improved inference guidance normalization**: Directly combining text and image classifier-free guidance tends to cause overexposure at high image guidance scales. A normalization scheme is proposed:
+
+    $\epsilon_\theta({\mathbf{x}}^t, \{{\mathbf{x}}_i\}, \varnothing) + \lambda_I \frac{\|g\|}{\|g_I\|} \cdot g_I + \lambda_{\mathbf{c}} \frac{\|g\|}{\|g_c\|} \cdot g_{\mathbf{c}}$
+
+   where $\|g\| = \min(\|g_I\|, \|g_{\mathbf{c}}\|)$. Both guidance vectors are rescaled to the minimum norm, with relative strengths controlled solely by $\lambda_I$ and $\lambda_{\mathbf{c}}$, effectively preventing overexposure while maintaining high image alignment.
+
+### Loss & Training
+
+- Velocity/flow prediction objective: $\mathbb{E}_{{\mathbf{x}}^t,t,\mathbf{c},\epsilon} \| \mathbf{v} - \mathbf{v}_\theta({\mathbf{x}}^t, t, \mathbf{c}, \{{\mathbf{x}}_i\}) \|$
+- For FLUX (12B): LoRA fine-tuning of attention layers only
+- For U-Net models (1B/3B): initialized from IP-Adapter, fine-tuning LoRA layers in self-attention and KV projections in image cross-attention
+- Reference images are injected via the same shared attention mechanism used during dataset generation
+
+## Key Experimental Results
+
+### Main Results
+
+**Quantitative comparison on DreamBooth benchmark (single reference image input)**:
+
+| Method | MDINOv2-I↑ | CLIPScore↑ | TIFA↑ | GeometricScore↑ |
+|------|-----------|-----------|-------|----------------|
+| BLIP-Diffusion | 0.658 | 0.294 | 0.782 | 0.714 |
+| IP-Adapter Plus | 0.744 | 0.270 | 0.615 | 0.675 |
+| Emu-2 | 0.750 | 0.283 | 0.741 | 0.740 |
+| JeDi | 0.771 | 0.292 | 0.789 | 0.780 |
+| **Ours (1B)** | 0.806 | 0.303 | 0.830 | **0.801** |
+| **Ours (3B)** | **0.822** | **0.313** | **0.863** | **0.838** |
+| OminiControl (12B) | 0.650 | 0.302 | 0.808 | 0.685 |
+| **Ours (12B)** | 0.778 | 0.306 | 0.786 | 0.780 |
+
+**Human preference evaluation (3 reference images as input)**:
+
+| Comparison | Text Alignment↑ | Image Alignment↑ | Realism↑ | Overall↑ |
+|------|---------|---------|--------|---------|
+| Ours(1B) vs JeDi | 69.5% | 63.1% | 80.9% | 68.2% |
+| Ours(3B) vs Emu-2 | 70.5% | 66.9% | 64.7% | 66.7% |
+| Ours(12B) vs OminiControl | 56.3% | 58.3% | 54.5% | 58.0% |
+
+### Ablation Study
+
+**Component ablation (based on IP-Adapter Plus 3B)**:
+
+| Method | MDINOv2-I↑ (bg/prop) | TIFA↑ | GeometricScore↑ |
+|------|---------------------|-------|----------------|
+| IPAdapter Plus baseline | 0.744/0.737 | 0.615 | 0.675 |
+| + Improved inference | 0.719/0.668 | 0.816 | 0.756 |
+| + SynCD dataset | 0.766/0.695 | 0.901 | 0.819 |
+| + MSA shared attention (1-input) | 0.777/0.708 | 0.902 | 0.825 |
+| + MSA (3-input) | **0.822/0.789** | **0.863** | **0.838** |
+
+**Dataset scale ablation**:
+
+| Data Size | Ours (3B) MDINOv2-I↑ | Ours (12B) MDINOv2-I↑ |
+|-------|---------------------|----------------------|
+| 100 | 0.790 | 0.736 |
+| 1K | 0.805 | 0.762 |
+| 10K | 0.810 | 0.763 |
+| 95K | 0.813 | 0.774 |
+
+### Key Findings
+
+- The contribution of the SynCD dataset outweighs model architecture improvements: fine-tuning IP-Adapter Plus with SynCD alone yields a substantial gain in GeometricScore from 0.675 to 0.819.
+- The improved inference normalization raises TIFA dramatically from 0.615 to 0.816 with negligible loss in image alignment.
+- MSA + warping improves DINOv2-I consistency on rigid objects by 0.026; warping is particularly critical for color consistency.
+- Dataset scale matters more for larger models (12B), while marginal returns diminish for smaller models (3B).
+- More reference images (3 vs. 1) significantly improves image alignment.
+
+## Highlights & Insights
+
+- **Data-driven > model design**: The paper's most compelling finding is that a high-quality multi-image dataset matters more than sophisticated model architecture. Training a simple shared-attention encoder on SynCD data alone outperforms complex specialized methods.
+- **Scalable strategy for synthetic data generation**: The combination of MSA + 3D depth guidance + warping offers a reproducible paradigm for synthesizing consistent training data.
+- **Generality of inference guidance normalization**: This technique can directly improve the text alignment of existing methods such as IP-Adapter, beyond its application in the proposed approach.
+- **Unified design across dataset generation and model training**: Both the dataset generation pipeline and the model training employ the same shared attention mechanism, yielding a highly coherent design.
+
+## Limitations & Future Work
+
+- The current work focuses solely on single-object images and has not been extended to multi-object scenes.
+- The diversity of Objaverse assets is limited, potentially affecting quality for certain categories.
+- Deformable objects do not benefit from 3D priors (due to the lack of corresponding 3D datasets) and rely only on MSA and detailed captions.
+- A domain gap remains between generated synthetic data and real data.
+- Future work may explore incorporating video generative models and text-to-3D models into the dataset construction pipeline.
+
+## Related Work & Insights
+
+- Textual Inversion and DreamBooth pioneered the model customization direction.
+- The MMDiT architecture of FLUX provides an efficient foundation for implementing shared attention.
+- The MSA mechanism is inspired by prior work on consistent character generation and multi-view synthesis.
+- The guidance normalization idea is generalizable to other multi-condition generation tasks.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐ The dataset generation pipeline is elegantly designed; the MSA + 3D prior combination is effective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers automatic metrics, human evaluation, and detailed ablations (components, data scale, inference).
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear logic, polished figures, and rigorous experimental design.
+- **Value**: ⭐⭐⭐⭐⭐ Both the dataset and method offer high practical value; the inference guidance normalization technique is broadly applicable.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
+- [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](../../NeurIPS2025/image_generation/fast_data_attribution_for_text-to-image_models.md)
+- [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
+- [\[CVPR 2026\] PureCC: Pure Learning for Text-to-Image Concept Customization](../../CVPR2026/image_generation/purecc_pure_learning_for_text-to-image_concept_customization.md)
+- [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
+
+<!-- RELATED:END -->

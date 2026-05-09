@@ -1,0 +1,139 @@
+---
+title: >-
+  [Paper Note] ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval
+description: >-
+  [AAAI 2026][Conversational Retrieval] This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from both query and document directions, combined with clustering-based diversity selection and Fisher information-based in-distribution supervision, to systematically improve conversational dense retrieval performance.
+tags:
+  - AAAI 2026
+  - Conversational Retrieval
+  - Data Augmentation
+  - LLM Generation
+  - In-Distribution Supervision
+  - Fisher Information
+date: 2026-05-08
+content_hash: 50c486fe596a947e
+---
+
+# ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval
+
+**Conference**: AAAI 2026
+**arXiv**: [2508.04001](https://arxiv.org/abs/2508.04001)
+**Code**: None
+**Area**: Conversational Information Retrieval
+**Keywords**: Conversational Retrieval, Data Augmentation, LLM Generation, In-Distribution Supervision, Fisher Information
+
+## TL;DR
+This paper proposes ConvMix, a mixed-criteria data augmentation framework that leverages LLMs to perform scalable relevance annotation augmentation from both query and document directions, combined with clustering-based diversity selection and Fisher information-based in-distribution supervision, to systematically improve conversational dense retrieval performance.
+
+## Background & Motivation
+**State of the Field**: Conversational search fulfills complex user information needs through multi-turn interactions, with the core challenge being accurate intent understanding from context-dependent queries. Conversational dense retrieval (CDR) addresses this via end-to-end learning of latent representations for queries and documents, but is highly dependent on the quantity and quality of annotated data.
+
+**Limitations of Prior Work**: Conversational search engines have not yet been widely deployed, and available query logs are far fewer than in traditional ad-hoc retrieval settings, resulting in a **severe data scarcity problem**. Manual data construction is extremely costly.
+
+**Root Cause**: Existing data augmentation methods suffer from single-dimensional augmentation (enhancing only from the query or document side), lack of quality control (generated data being homogeneous or noisy), and **distribution shift when mixing data from heterogeneous annotation sources**.
+
+**Paper Goals**: Design a conversational retrieval data augmentation framework that satisfies four criteria: multi-dimensional augmentation, scalable generation, quality control, and in-distribution supervision.
+
+**Starting Point**: Leverage LLMs to perform bidirectional relevance annotation augmentation from both query and document directions, combined with clustering-based deduplication and Fisher information-based selection, unifying multiple criteria into a single framework.
+
+**Core Idea**: Augment relevance annotations using LLMs from both query rewriting and document rewriting directions, then apply semantic clustering and Fisher information filtering to select high-diversity, in-distribution quality samples for training the conversational retriever.
+
+## Method
+
+### Overall Architecture
+The ConvMix framework consists of three core components: (1) **Bidirectional relevance annotation augmentation**—augmenting from the query side (ConvMix-Q) and the document side (ConvMix-D) respectively; (2) **Clustering-based semantic diversity selection**—applying k-means clustering to generated outputs and randomly sampling one instance per cluster to ensure diversity; (3) **Fisher information utility estimation**—selecting samples most informative for model parameter updates to achieve in-distribution supervision. The original data and augmented data are then mixed to fine-tune the ANCE retriever.
+
+### Key Designs
+1. **Bidirectional Relevance Annotation Augmentation (ConvMix-Q and ConvMix-D)**:
+
+    - **Query side (Q)**: Given an existing conversational context and current query, an LLM rewrites the query into semantically equivalent but differently expressed variants, reusing the original relevance annotations. Up to $m$ variants can be generated for scalability.
+    - **Document side (D)**: For each relevant document corresponding to a query, an LLM rewrites it conditioned on the conversational context and query, generating pseudo generative relevance feedback. The rewritten documents do not exist in the original corpus but share semantic information with the source documents.
+    - **Design Motivation**: Since LLMs struggle to simultaneously generate conversational sessions and matching documents, the two directions are decoupled, each reusing existing annotations. This reduces the difficulty for the LLM while increasing diversity. Augmenting from two dimensions outperforms augmenting from a single dimension.
+
+2. **Clustering-based Semantic Diversity Selection**:
+
+    - Multiple variants generated by an LLM may be highly homogeneous; using them directly risks overfitting.
+    - The $m$ generated variants for each query/document are clustered into $k$ groups via k-means, with one sample randomly drawn from each cluster, retaining $k$ semantically diverse samples.
+    - **Design Motivation**: Adjusting the LLM's temperature only introduces surface-level randomness and does not directly guarantee semantic diversity. Clustering followed by sampling ensures diversity at the semantic space level.
+
+3. **Fisher Information Utility Estimation (In-Distribution Supervision)**:
+
+    - Mixing data from different sources may cause distribution shift. It is therefore necessary to select samples that are most "useful" to the model.
+    - The Fisher information matrix (FIM) is used to measure each augmented sample's sensitivity to model parameter estimation: the FIM score is computed as the squared gradient norm of the sample loss with respect to parameters, $F_i = \|\nabla_\theta \ell_i\|^2$.
+    - The top-$k$ samples with the highest FIM scores are selected, as they are considered to carry the most information and to be closest to the ideal data distribution.
+    - **Design Motivation**: The FIM is a classical statistical tool for measuring the "usefulness" of data samples to model parameter estimation; a high FIM score indicates that a sample is most conducive to parameter updates given the current model weights.
+
+### Loss & Training
+- Augmented data and original data are mixed for fine-tuning the ANCE retriever in a **semi-supervised learning** manner.
+- Encoding: all preceding queries in the same session are concatenated with the current query as the session representation, and dot-product similarity is computed against the document.
+- Loss function: standard contrastive learning loss with in-batch negatives. Advanced techniques such as hard negative mining are deliberately excluded to directly reflect the effect of the augmented data itself.
+- During training, only the query encoder is updated; the document encoder is frozen.
+
+## Key Experimental Results
+
+### Main Results
+
+| Method | TopiOCQA MRR | TopiOCQA R@10 | QReCC MRR | QReCC R@10 |
+|--------|-------------|---------------|-----------|------------|
+| HAConvDR | 30.1 | 50.8 | 48.5 | 72.4 |
+| ConvAUG | 35.0 | 57.9 | 52.7 | 75.6 |
+| ConvMix-Q | 36.9 | 57.9 | 51.3 | 74.7 |
+| ConvMix-D | 34.4 | 55.2 | 50.8 | 74.0 |
+| **ConvMix-Combine** | **37.7** | **58.7** | **52.9** | **75.6** |
+
+ConvMix-Combine achieves an MRR of 37.7 on TopiOCQA (2.7 points above the strongest baseline ConvAUG) and an MRR of 52.9 on QReCC.
+
+### Out-of-Domain Generalization (CAsT Dataset)
+
+| Method | CAsT-21 MRR | CAsT-21 R@100 |
+|--------|-------------|---------------|
+| ConvAUG | 54.8 | 45.9 |
+| ConvMix-D | 58.3 | 46.3 |
+| **ConvMix-Combine** | **60.3** | **47.2** |
+
+ConvMix-Combine achieves an MRR improvement of 5.5 on the out-of-domain CAsT-21 benchmark, demonstrating that the augmented data not only improves in-domain performance but also yields stronger generalization.
+
+### Ablation Study
+- Preliminary experiments show that topic-order shuffling alone (analogous to rotation augmentation in image processing) already improves MRR (TopiOCQA: 22.9 → 29.8), validating the value of diversity augmentation.
+- ConvMix-Q generally outperforms ConvMix-D on in-domain benchmarks, but combining both achieves the best results, indicating complementarity between the two augmentation directions.
+- Clustering-based diversity selection and Fisher information filtering each contribute independent and consistent gains.
+
+### Key Findings
+- Query-side augmentation contributes more to in-domain performance, while document-side augmentation contributes more to out-of-domain generalization.
+- Simple in-batch negatives training is sufficient to reflect the effect of data augmentation without requiring complex hard negative mining.
+- In-distribution supervision via Fisher information selection effectively mitigates distribution shift when mixing multi-source data.
+
+## Highlights & Insights
+- **Systematic framework design**: The four key criteria of data augmentation (multi-directional, scalable, quality-controlled, in-distribution supervision) are unified into a single framework with clear logical structure.
+- The use of **Fisher information for data selection** has theoretical grounding and is empirically effective.
+- The **bidirectional augmentation** design is well-motivated—since LLMs struggle to jointly generate queries and documents, a divide-and-conquer approach is more practical.
+- The preliminary experiment (topic shuffling) concisely and effectively establishes the motivation for diversity augmentation.
+
+## Limitations & Future Work
+- Performance is contingent on LLM generation quality, which may degrade in domains where the LLM has limited capability.
+- Fisher information computation requires forward and backward passes for each sample, incurring substantial computational overhead.
+- Experiments are conducted only on the ANCE retriever; generalizability to other backbones (e.g., ColBERT, DPR) has not been verified.
+- Document-side rewriting may introduce hallucinated content; while the paper claims this remains beneficial for representation learning, a more in-depth analysis is absent.
+
+## Related Work & Insights
+- ConvAUG (Chen et al. 2024) is the most direct competitor, also employing LLMs with quality control, but lacking in-distribution supervision and bidirectional augmentation.
+- ConvSDG (Mo et al. 2024) uses LLMs for session-level augmentation but does not incorporate diversity control.
+- Fisher information is commonly used in active learning; applying it to augmented data selection in this work represents a meaningful transfer of the methodology.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐ The combination of bidirectional augmentation and Fisher-based selection is novel, though individual components are not entirely original
+- Experimental Thoroughness: ⭐⭐⭐⭐ Five datasets (including out-of-domain), complete ablations, but only one retriever backbone is evaluated
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-articulated motivation, though some formulations are overly verbose
+- Value: ⭐⭐⭐⭐ Provides a practical and systematic solution to the data scarcity problem in conversational dense retrieval
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
+- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
+- [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
+- [\[ACL 2026\] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search](../../ACL2026/information_retrieval/multi-faceted_self-consistent_preference_alignment_for_query_rewriting_in_conver.md)
+- [\[ICLR 2026\] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference](../../ICLR2026/information_retrieval/raee_a_robust_retrieval-augmented_early_exit_framework_for_efficient_inference.md)
+
+<!-- RELATED:END -->

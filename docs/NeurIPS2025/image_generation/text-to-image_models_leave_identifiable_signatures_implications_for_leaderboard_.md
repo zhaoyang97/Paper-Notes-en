@@ -1,0 +1,143 @@
+---
+title: >-
+  [Paper Note] Text-to-Image Models Leave Identifiable Signatures: Implications for Leaderboard Security
+description: >-
+  [NeurIPS 2025 (Workshop: Lock-LLM)][Image Generation][text-to-image models] This paper demonstrates that text-to-image (T2I) models leave identifiable "signatures" in their generated images due to differences in training data, architecture, and scale. Even without controlling the input prompt, an adversary can de-anonymize models on leaderboards via simple centroid classification in CLIP embedding space, achieving 87% Top-1 accuracy, thereby enabling ranking manipulation attacks.
+tags:
+  - "NeurIPS 2025 (Workshop: Lock-LLM)"
+  - Image Generation
+  - text-to-image models
+  - leaderboard security
+  - model de-anonymization
+  - CLIP embeddings
+  - adversarial manipulation
+date: 2026-05-08
+content_hash: 05a5bdd6afa8c9c7
+---
+
+# Text-to-Image Models Leave Identifiable Signatures: Implications for Leaderboard Security
+
+**Conference**: NeurIPS 2025 (Workshop: Lock-LLM)
+**arXiv**: [2510.06525](https://arxiv.org/abs/2510.06525)
+**Code**: None
+**Area**: AI Security / Image Generation
+**Keywords**: text-to-image models, leaderboard security, model de-anonymization, CLIP embeddings, adversarial manipulation
+
+## TL;DR
+
+This paper demonstrates that text-to-image (T2I) models leave identifiable "signatures" in their generated images due to differences in training data, architecture, and scale. Even without controlling the input prompt, an adversary can de-anonymize models on leaderboards via simple centroid classification in CLIP embedding space, achieving 87% Top-1 accuracy, thereby enabling ranking manipulation attacks.
+
+## Background & Motivation
+
+**State of the Field**: Generative AI leaderboards (e.g., Chatbot Arena and its image counterpart ArtificialAnalysis) have become central platforms for evaluating and comparing model capabilities, directly influencing research directions and deployment decisions. Vote-based leaderboards establish rankings by anonymously presenting outputs from two models and soliciting user votes; their security relies on the anonymity guarantee that users cannot identify which output originates from which model.
+
+**Limitations of Prior Work**: Recent studies have revealed ranking manipulation risks in LLM leaderboards, where adversaries identify anonymous models and cast targeted votes to boost or suppress specific models. However, such LLM de-anonymization attacks typically require control over input prompts or training a classifier, significantly reducing their effectiveness when leaderboards restrict free prompt submission. The key observation of this paper is that de-anonymizing T2I leaderboards may be substantially **easier** than for LLMs — images carry richer model-specific fingerprints than text.
+
+**Root Cause**: The distinctive visual style that makes a model competitive (e.g., Midjourney's characteristic aesthetics, DALL-E 3's specific rendering tendencies) is precisely the "signature" that makes it identifiable. The more recognizable and competitive a model is, the more easily it can be de-anonymized. This represents a fundamental security-quality tension: eliminating signatures may degrade generation quality, while retaining them exposes the model to attack.
+
+**Core Idea**: By exploiting the low intra-model diversity and high inter-model divergence of T2I model outputs, centroid classification in CLIP embedding space — requiring no training — can efficiently de-anonymize models on leaderboards, revealing a serious security threat to T2I evaluation infrastructure.
+
+## Method
+
+### Overall Architecture
+
+The paper proposes a centroid-based de-anonymization method in CLIP embedding space (Algorithm 1) that requires no classifier training. Given a prompt $p$ from the leaderboard, the method queries each candidate model $M_i$ to generate $k$ images; all generated images and the anonymous leaderboard image $I^*$ are mapped into CLIP embedding space. The centroid $c_i$ of each model's $k$ embeddings is computed, and the model whose centroid is closest to the leaderboard image embedding is predicted as the source. A prompt-level distinguishability metric is also proposed to quantify model separability across different prompts.
+
+### Key Designs
+
+1. **Centroid De-anonymization Algorithm**:
+
+    - **Function**: Identifies the generating model of a leaderboard image by nearest-centroid matching in CLIP embedding space.
+    - **Mechanism**: For each candidate model $M_i \in \mathcal{C}$, prompt $p$ is used to generate $k$ images $\{I_{i,1}, \ldots, I_{i,k}\}$, encoded as embeddings $E_i = \{\phi(I_{i,1}), \ldots, \phi(I_{i,k})\}$, with centroid $c_i = \frac{1}{k}\sum_{j=1}^{k} E_{i,j}$. The leaderboard image $I^*$ is encoded as $e^* = \phi(I^*)$, and the predicted model is $\hat{M} = \arg\min_{M_i \in \mathcal{C}} \|e^* - c_i\|_2$. The entire process requires only CLIP encoder forward passes and distance computation, with no training.
+    - **Design Motivation**: T2I models exhibit low intra-model diversity (images generated by the same model under different seeds cluster tightly in embedding space) and high inter-model divergence (clusters from different models are clearly separated), making simple centroid matching highly effective. Avoiding classifier training also means adversaries require no historical data.
+
+2. **Prompt-Level Distinguishability Metric**:
+
+    - **Function**: Quantifies the separability of different models' outputs in embedding space for each prompt, identifying prompts most likely to expose model identity.
+    - **Mechanism**: For each prompt $p_i$ and model $M_j$, the method checks whether the nearest neighbor of each of the $k$ embeddings belongs to the same model, computing the correct clustering fraction $\text{frac}(i,j) = \frac{1}{k}\sum_{\ell=1}^{k} \mathbb{I}[\text{NN}(e_{i,j}^{(\ell)}) \in M_j]$. If $\text{frac}(i,j) > \tau$, the model is deemed "separable" under that prompt. The prompt-level distinguishability $D(i) = \frac{1}{|\mathcal{C}|}\sum_{M_j \in \mathcal{C}} \mathbb{I}[\text{frac}(i,j) > \tau]$ is the fraction of all models that are separable.
+    - **Design Motivation**: Prompts vary greatly in their support for de-anonymization — some yield perfect separability for all models ($D=1.0$), while others lead to high confusion ($D=0.21$). This metric allows adversaries to select the most effective prompts (when submission is permitted) and helps defenders identify and avoid high-risk prompts.
+
+3. **One-vs-Rest Classification and Targeted Attack**:
+
+    - **Function**: Evaluates an adversary's ability to de-anonymize a specific target model rather than identifying all models.
+    - **Mechanism**: For each target model $M_{target}$, the method determines whether a leaderboard image originates from it — a positive prediction is made if the image embedding is closer to $M_{target}$'s centroid than to all others. Adversaries may abstain when uncertain, controlling false positive rate to maximize true positive rate.
+    - **Design Motivation**: In realistic attack scenarios, adversaries typically focus on specific target models (e.g., boosting their own model's ranking). One-vs-rest classification achieves higher accuracy in such settings and allows risk control via abstention.
+
+### Loss & Training
+
+No model training is performed. CLIP embeddings are extracted using a pretrained CLIP model (standard ViT architecture); images are uniformly resized to 224×224 pixels before encoding. All T2I models generate 1024×1024 images using their default or recommended inference steps (some models, such as SD v1.5, generate at 512×512).
+
+## Key Experimental Results
+
+### Main Results
+
+| Metric | Value |
+|--------|-------|
+| Top-1 de-anonymization accuracy | ~87% |
+| Top-3 accuracy | ~95% |
+| Top-5 accuracy | ~98% |
+| Random guess baseline | ~5.26% (1/19 models) |
+| Top-1 accuracy at $k=1$ | ~57% |
+| Prompt-controlled attack Top-1 accuracy | ~99% |
+| One-vs-rest classification accuracy | ~99% |
+| HiDream one-vs-rest accuracy | 100% |
+| SDXL Turbo one-vs-rest accuracy | 100% |
+
+### Ablation Study
+
+| Dimension | Key Result | Notes |
+|-----------|-----------|-------|
+| Effect of $k$ | $k=1$: 57%, $k=5$: ~78%, $k=10+$: ~87% | Diminishing returns beyond $k=10$–15 |
+| Architecture variant distinction | SD 3.5 large vs. medium misclassification rate ~3% | Different sizes of same architecture remain highly distinguishable |
+| Same-family distinction | Flux dev vs. schnell misclassification rate ~3.8% | Different variants from same organization are also distinguishable |
+| Distinguishability distribution | Some prompts $D=1.0$, minimum $D=0.21$ | Large variance across prompts |
+| High-distinguishability prompt attack | Selecting $D=1.0$ prompts, ~99% Top-1 over 100 random trials | Adversaries can select optimal prompts |
+| No access to other models | Some models still distinguishable via anomaly detection | Attack remains feasible without a full candidate set |
+
+### Key Findings
+
+- T2I models exhibit extremely low intra-model diversity and high inter-model divergence for identical prompts — five generated images from the same model cluster tightly in embedding space, while clusters from different models are clearly separated (Figure 1).
+- Even with no control over prompts (unlike LLM de-anonymization), centroid classification alone achieves 87% Top-1 accuracy, exceeding the random baseline by a factor of 17.
+- The distinguishability score is highly correlated with de-anonymization accuracy; perfectly separable prompts ($D=1.0$) exist, and if adversaries can submit custom prompts, accuracy approaches 100%.
+- Even models from the same organization with different architectures (e.g., Stability AI's SD 2.1 vs. SD 3.0) or different scales within the same architecture (SD 3.5 large vs. medium) show only 3–4% misclassification rates.
+- The attack barrier is extremely low: only a pretrained CLIP encoder and API access to candidate models are required, with no classifier training or historical data needed.
+
+## Highlights & Insights
+
+- **Fundamental Security-Quality Tension**: A model's distinctive visual style is simultaneously a source of competitive advantage and a security vulnerability. This tension is nearly irresolvable within the current technical framework. Eliminating identifiable signatures is equivalent to making all model outputs converge, which contradicts the very purpose of differentiated competition.
+- **Extreme Methodological Simplicity**: The entire attack relies solely on an off-the-shelf CLIP encoder and nearest-centroid matching, requiring no model training, no input control, and no historical data. The simplicity of the method underscores the severity of the problem — if the most naive approach achieves 87% accuracy, more sophisticated attacks would be even more effective.
+- **Greater Threat than LLMs**: The paper argues that T2I models are more vulnerable to de-anonymization than LLMs, as visual outputs carry more prominent and harder-to-conceal signatures than text. This implies that image leaderboard security is in fact more urgent than text leaderboard security.
+
+## Limitations & Future Work
+
+- The paper primarily exposes the problem without deeply exploring effective defenses, only briefly mentioning directions such as "prompt rotation" and "voting pattern anomaly detection."
+- Experiments use a fixed CLIP model for embedding extraction; whether alternative embedding models (e.g., DINOv2, SigLIP) are equally effective remains unexplored.
+- Among the 19 models evaluated, several are variants of the same series, limiting the number of truly independent models.
+- The stability of model signatures across time (after version updates) is not analyzed — if models are frequently updated, adversaries' centroids would need continuous refreshing.
+- From a defense perspective, the paper notes that prompt rotation offers limited protection (models remain highly distinguishable on unseen prompts), but active defense strategies such as adding noise in embedding space or injecting randomness at generation time are not evaluated.
+
+## Related Work & Insights
+
+- **vs. Huang et al. (2025) LLM leaderboard attacks**: LLM de-anonymization typically requires prompt control or historical data for classifier training, whereas T2I de-anonymization achieves higher accuracy without these prerequisites, posing a greater threat.
+- **vs. Min et al. (2025) Elo manipulation**: Demonstrates that only a few hundred strategic votes can significantly alter rankings; the de-anonymization proposed in this paper is a necessary precondition for executing such attacks.
+- **vs. Yu et al. (2019) GAN fingerprints**: Early work on model attribution for GANs focuses on forensic scenarios; this paper situates model attribution within the adversarial framework of leaderboard security, making it substantially more practically threatening.
+- **vs. Suri et al. (2026)**: Investigates the risk of leaderboards being exploited to distribute malicious models; this complements the de-anonymization findings — de-anonymization combined with ranking manipulation could constitute a more complex compound attack.
+
+## Rating
+
+- Novelty: ⭐⭐⭐⭐ First systematic exposure of de-anonymization vulnerabilities in T2I leaderboards; the identification of the security-quality tension is insightful.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Large-scale experiments across 19 models, 280 prompts, and 150,000+ images, validated from multiple perspectives.
+- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear; the formal treatment of the distinguishability metric is concise and rigorous.
+- Value: ⭐⭐⭐⭐ Raises important warnings about the security of AI evaluation infrastructure, with direct implications for leaderboard design and defense strategies.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
+- [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
+- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
+- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
+- [\[NeurIPS 2025\] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models](fairimagen_post-processing_for_bias_mitigation_in_text-to-image_models.md)
+
+<!-- RELATED:END -->

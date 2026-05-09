@@ -1,0 +1,180 @@
+---
+title: >-
+  [Paper Note] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
+description: >-
+  [CVPR 2026][Multimodal VLM][LMM-as-Judge] This paper introduces Multi-Crit, the first benchmark for evaluating the pluralistic criteria-following capability of multimodal judge models. It features criterion-level human annotations and preference-conflicting samples, along with three new metrics—PAcc, TOS, and CMR—to comprehensively evaluate 25 LMMs, revealing that even the strongest closed-source model achieves only 32.78% multi-criteria consistency on open-ended generation tasks.
+tags:
+  - CVPR 2026
+  - Multimodal VLM
+  - LMM-as-Judge
+  - multi-criteria evaluation
+  - benchmark
+  - preference conflict
+  - evaluation reliability
+date: 2026-05-08
+content_hash: 2aaa5cce7a0caa4d
+---
+
+# Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
+
+**Conference**: CVPR 2026
+**arXiv**: [2511.21662](https://arxiv.org/abs/2511.21662)
+**Code**: [https://multi-crit.github.io](https://multi-crit.github.io)
+**Area**: Multimodal VLM
+**Keywords**: LMM-as-Judge, multi-criteria evaluation, benchmark, preference conflict, evaluation reliability
+
+## TL;DR
+
+This paper introduces Multi-Crit, the first benchmark for evaluating the pluralistic criteria-following capability of multimodal judge models. It features criterion-level human annotations and preference-conflicting samples, along with three new metrics—PAcc, TOS, and CMR—to comprehensively evaluate 25 LMMs, revealing that even the strongest closed-source model achieves only 32.78% multi-criteria consistency on open-ended generation tasks.
+
+## Background & Motivation
+
+**State of the Field**: The LMM-as-a-Judge paradigm is widely adopted for automatic evaluation and RLHF feedback. Given a multimodal prompt, model responses, and predefined evaluation criteria, a judge model outputs preference judgments with textual rationales. This paradigm has been adopted by numerous multimodal benchmarks for its scalability and flexibility, and several works fine-tune open-source models as dedicated judge/critic models to provide AI feedback.
+
+**Limitations of Prior Work**: Existing multimodal judge benchmarks (e.g., VL-Rewardbench, MM-RLHF Bench) provide only a single overall preference label. Such coarse-grained annotation fails to capture the multidimensional nature of evaluation—two responses often involve trade-offs across criteria, e.g., one being concise but factually incorrect while the other is comprehensive but verbose. A single label erases these nuances.
+
+**Root Cause**: The reliability of a judge model depends on two factors: (1) alignment with human judgment, and (2) flexible adherence to diverse, task-specific evaluation criteria. Prior work focuses on the former while largely neglecting the latter. Whether judge models genuinely follow given criteria, and whether they can correctly adjudicate when preferences conflict across criteria, remain systematically unstudied.
+
+**Paper Goals**: (1) How to construct evaluation data with criterion-level human annotations and inter-criterion preference conflicts? (2) How to systematically measure the pluralistic criteria-following capability of judge models?
+
+**Starting Point**: Multi-criteria evaluation combined with conflict detection—having human annotators independently label preferences under each criterion naturally exposes inter-criterion preference conflicts.
+
+**Core Idea**: Construct Multi-Crit, a challenging benchmark with criterion-level human annotations, and design three new metrics (PAcc/TOS/CMR) to systematically evaluate the performance and bottlenecks of 25 models on pluralistic criteria-following.
+
+## Method
+
+### Overall Architecture
+
+Multi-Crit extends conventional pairwise preference evaluation to a multi-criteria setting. Traditional benchmarks use the data format $(q, l_a, l_b, y)$, i.e., a single overall preference label $y$ per prompt. Multi-Crit extends this to $(q, l_a, l_b, \{(c_i, y_i)\}_{i=1}^{K_q})$, where each $c_i$ is an evaluation criterion and $y_i$ is the corresponding preference label. This allows the same response pair to carry different preference directions under different criteria, thereby capturing inter-criterion conflicts.
+
+The benchmark construction pipeline proceeds as follows: multi-source prompt collection → multi-model response generation and pairing → three-stage filtering to retain challenging samples → criterion-level human annotation (9 CS PhD annotators, 289 hours) → preference aggregation and quality verification → final dataset.
+
+### Key Designs
+
+1. **Data Curation Pipeline**:
+
+    - *Function*: Construct high-quality, challenging multi-criteria evaluation data from diverse sources.
+    - *Mechanism*: Prompts are sourced from 8 datasets covering two scenarios—open-ended generation (ImageInWords, DOCCI, WildVision-Bench/-Battle) and verifiable reasoning (MathVerse, MM-K12, EMMA-mini, VisualPuzzles). Candidate responses are generated by 11 high-performing LMMs, including closed-source models (GPT-4o, Gemini-2.5-Flash) and open-source models (Qwen2.5-VL, InternVL3). Two pairing strategies are used: cross-model pairs (two different models) and same-model pairs (the same model sampled five times with temperature, selecting the pair with the largest cosine distance), yielding 3,538 response pairs in total.
+    - *Design Motivation*: Cross-model pairs capture systematic inter-model differences, while same-model pairs capture intra-model quality variation; the two strategies are complementary and ensure evaluation comprehensiveness.
+
+2. **Three-Stage Filtering**:
+
+    - *Function*: Filter 3,538 pairs down to 707 challenging samples that exhibit genuine fine-grained criterion-level differences.
+    - *Mechanism*: (1) **Length normalization**—pairs with a length ratio outside $[0.7, 1.4]$ are discarded to mitigate length bias; (2) **Reasoning correctness filtering**—for reasoning tasks, GPT-4o-mini verifies answers, retaining only pairs where both responses are correct or both are incorrect (answer correctness itself is a trivial signal); (3) **Ensemble difficulty filtering**—three strong judges (GPT-4o, Gemini-2.5-Flash, Claude-3.7-Sonnet) perform an initial holistic evaluation, and pairs with unanimous agreement are discarded, retaining only samples where disagreement exists.
+    - *Design Motivation*: Each stage is targeted at removing "easy" samples—excessive length differences enable judges to take shortcuts, pairs where answer correctness is itself decisive do not require quality judgment, and unanimous agreement among strong models indicates differences that are too obvious.
+
+3. **Criteria Design**:
+
+    - *Function*: Define multiple evaluation dimensions covering core capabilities for multimodal judgment.
+    - *Mechanism*: Three principles are followed—practicality (reflecting common judge use cases), specificity (non-overlapping criteria), and generality (assessing fundamental capability dimensions rather than content-specific aspects). Five criteria for open-ended generation: Completeness & Coverage, Visual Grounding & Details, Factuality / No Hallucination, Creativity & Expressiveness, and Clarity & Coherence. Five criteria for verifiable reasoning: Visual Grounding, Logic Coherence & Consistency, Factuality / No Hallucination, Reflection & Exploration, and Conciseness & Efficiency.
+    - *Design Motivation*: Criteria were iteratively refined from a synthesis of existing MLLM-as-a-Judge benchmark criteria, ensuring mutual complementarity and non-redundancy.
+
+4. **Three New Evaluation Metrics (PAcc/TOS/CMR)**:
+
+    - *Function*: Measure the pluralistic criteria-following capability of judge models from different perspectives.
+    - **PAcc (Pluralistic Adherence Accuracy)**: $\text{PAcc} = \frac{1}{|X|} \sum_{x \in X} \mathbb{I}[\bigwedge_{c \in C_x} \hat{y}_{x,c} = y_{x,c}]$—a prompt is considered correctly handled only when all criteria are judged correctly; measures holistic multi-criteria adherence.
+    - **TOS (Trade-Off Sensitivity)**: On samples with inter-criterion conflicts, assesses whether the judge at least perceives that different criteria should yield different preference directions (requiring only that at least one conflicting criterion pair be predicted in opposite directions); measures flexibility rather than exact accuracy.
+    - **CMR (Conflict Matching Rate)**: On conflicting criterion pairs, assesses whether the judge not only detects the conflict but also resolves the direction in alignment with human judgment; the most stringent metric.
+    - *Design Motivation*: PAcc captures holistic requirements; TOS detects whether a judge is criterion-agnostic (outputting the same direction for all criteria); CMR provides fine-grained assessment of conflict resolution. Together, the three metrics characterize capability levels from lenient to strict.
+
+### Annotation Procedure and Quality Assurance
+
+The annotation team consists of 9 CS PhD students with backgrounds in multimodal AI and STEM. Annotators first labeled 20 seed samples (10 open-ended + 10 reasoning) in a group calibration session to align understanding, then proceeded to formal annotation. Each sample was assigned to 3 annotators for cross-validation; annotators evaluated one criterion at a time, judging which response is better (ties capped at 10%) and providing a brief rationale. Preference aggregation retained only unanimous or two-to-one-with-tie samples; project leads manually reviewed rationales and discarded inconsistent or redundant annotations. The total annotation effort was 289 hours, yielding Cohen's $\kappa$ of 0.718 for open-ended tasks and 0.805 for reasoning tasks, indicating substantial agreement.
+
+## Key Experimental Results
+
+### Main Results: Open-Ended Generation Split
+
+| Model | PAcc (%) | CMR (%) | TOS (%) | Criterion Avg (%) |
+|-------|----------|---------|---------|-------------------|
+| o4-mini | **32.78** | **43.11** | 64.56 | **69.67** |
+| Claude-3.7-Sonnet | 31.77 | 42.32 | 64.08 | 67.37 |
+| GPT-4o | 31.44 | 44.91 | **66.02** | 69.57 |
+| o3 | 31.10 | 42.71 | 62.62 | 69.16 |
+| GPT-5 | 29.77 | 38.52 | 62.62 | 68.51 |
+| InternVL3.5-38B (best open-source) | 30.43 | 33.73 | 64.08 | 65.10 |
+| InternVL3-78B | 29.10 | 32.53 | 56.31 | 64.71 |
+| MiMo-VL-7B | 29.10 | 39.52 | 65.53 | 63.37 |
+| Qwen2.5-VL-72B | 28.43 | 35.53 | 60.68 | 63.84 |
+| R1-Reward-7B (best fine-tuned) | 17.73 | 20.36 | 45.63 | 55.83 |
+| Qwen2.5-VL-7B | 9.41 | 17.28 | 36.14 | 54.39 |
+
+### Main Results: Verifiable Reasoning Split
+
+| Model | PAcc (%) | CMR (%) | TOS (%) | Criterion Avg (%) |
+|-------|----------|---------|---------|-------------------|
+| o4-mini | **53.17** | **65.84** | 83.49 | **80.85** |
+| GPT-5 | 45.24 | 56.58 | 78.90 | 77.41 |
+| o3 | 44.44 | 62.28 | 82.57 | 77.86 |
+| GPT-4o | 41.27 | 55.16 | **84.40** | 69.79 |
+| Gemini-2.5-Pro | 41.27 | 52.33 | 75.93 | 73.06 |
+| InternVL3.5-38B (best open-source) | 37.30 | 47.69 | 75.23 | 69.82 |
+| MiMo-VL-7B | 37.30 | 41.99 | 71.56 | 66.30 |
+| Qwen2.5-VL-72B | 32.54 | 45.91 | 77.06 | 64.48 |
+| InternVL3-8B | 26.98 | 39.50 | 66.06 | 66.22 |
+| R1-Reward-7B | 19.05 | 24.56 | 62.39 | 54.50 |
+
+### Ablation Study: Effect of Critic Fine-Tuning on Individual Criteria (Open-Ended Generation)
+
+| Model | Completeness | Grounding | Hallucination | Expressiveness | Clarity | Avg |
+|-------|-------------|-----------|---------------|----------------|---------|-----|
+| Qwen2.5-VL-7B (base) | 56.12 | 51.70 | 48.20 | 64.12 | 51.82 | 54.39 |
+| R1-Reward-7B | 59.29 | **60.71** | 49.72 | 55.44 | 53.98 | 55.83 |
+| UnifiedReward-7B | 57.96 | **52.23** | 52.49 | 57.51 | 55.68 | 55.17 |
+| LLaVA-Critic-R1-7B | 55.31 | **57.59** | 46.96 | 63.73 | 55.11 | 55.74 |
+
+All Qwen-based fine-tuned judges show consistent improvement on the Visual Grounding criterion (51.70 → 52.23–60.71), while gains on other criteria are inconsistent or even negative.
+
+### Key Findings
+
+- **Multi-criteria judgment is extremely challenging**: The strongest model, o4-mini, achieves only 32.78% PAcc on open-ended generation and 53.17% on reasoning, demonstrating that even SOTA models cannot simultaneously make correct judgments across all criteria.
+- **Open-ended tasks are harder than reasoning tasks**: All models perform significantly worse on open-ended generation than on reasoning tasks, reflecting the subjectivity of open-ended tasks and their higher demands on fine-grained visual perception.
+- **No model dominates across all criteria**: o4-mini leads on Logic and Efficiency, but is surpassed by o3 on Hallucination (84.21% vs. 79.31%) and by Gemini-2.5-Pro on Grounding (79.01% vs. 77.78%).
+- **Open-source models lag further on conflict detection**: CMR drops by approximately 9.4 points (open-ended) and 18.1 points (reasoning) from closed-source to open-source models, a much larger gap than the 4–11 point difference in per-criterion accuracy.
+- **Critic fine-tuning only improves Visual Grounding**: Fine-tuned judges consistently improve on Grounding, but show limited or negative gains on other criteria and conflict resolution, as training signals are holistic preferences rather than criterion-level.
+- **Reasoning fine-tuning weakens trade-off sensitivity**: GRPO fine-tuned models show improved reasoning capabilities but lower TOS and CMR scores, indicating that holistic accuracy rewards are detrimental to inter-criterion conflict awareness.
+- **Test-time scaling has limited effect**: Majority voting yields consistent improvements for o4-mini (PAcc 32.78 → 37.12), but results are inconsistent and high-variance for other models.
+- **Closed-source model ceiling aligns with human agreement**: The best per-criterion accuracy of closed-source models correlates with Cohen's $\kappa$ at $r=0.73, p=0.024$, while open-source models show only $r=0.36, p=0.344$.
+
+## Highlights & Insights
+
+- Multi-Crit is the first multi-criteria multimodal judge benchmark, filling the gap in criterion-level evaluation; 68.9% (open-ended) and 86.5% (reasoning) of samples in the dataset contain inter-criterion preference conflicts.
+- The PAcc/TOS/CMR metrics form a hierarchical evaluation framework from lenient to strict, revealing systematic deficiencies that per-criterion accuracy alone cannot capture.
+- 289 hours of high-quality human annotation (Cohen's $\kappa$ of 0.718/0.805) with three-stage filtering ensure that samples exhibit genuine fine-grained criterion-level differences.
+- The finding that critic fine-tuning only improves Grounding carries important implications for building better judge training methods—criterion-level training signals, rather than holistic preferences, are needed.
+- The high correlation between closed-source model ceilings and human annotator agreement suggests that the next challenge lies in achieving evaluation alignment that surpasses human-level performance.
+
+## Limitations & Future Work
+
+- Only pairwise comparison is supported; multi-criteria evaluation in the pointwise scoring setting warrants further exploration.
+- Criteria remain relatively general; domain-specific criteria (medical, legal, code) require further extension.
+- Annotation costs are high (289 hours for a team of 9), and scaling up requires semi-automated annotation pipelines.
+- Ties are capped at 10%, which may exclude truly indistinguishable borderline samples.
+- Only generative judges are evaluated; the multi-criteria capability of BT-style reward models should also be investigated.
+- Open-source models lag behind across all metrics, highlighting the urgent need for criterion-level critic training data and multi-criteria RLHF methods.
+
+## Related Work & Insights
+
+- **LMM-as-a-Judge**: GPT-4V first demonstrated evaluation capabilities aligned with human judgment; subsequent works such as LLaVA-Critic and R1-Reward fine-tune open-source alternatives, but training signals remain holistic preferences.
+- **Judge Benchmarks**: MLLM-as-a-Judge first assessed LMMs as judges; VL-Rewardbench and MM-RLHF Bench extend coverage to multiple scenarios, but all use single preference labels.
+- **Criteria Following**: Preliminary exploration exists in the text LLM domain (e.g., embedding criterion-level differences or summarizing criteria from human rationales); Multi-Crit extends this to the multimodal setting and introduces conflict detection.
+- **Insights**: Training multi-criteria judges requires criterion-level annotated data and criterion-aware reward signals, rather than relying solely on holistic preferences.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐⭐ — First multi-criteria multimodal judge benchmark; the PAcc/TOS/CMR three-metric framework is elegantly designed.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation of 25 models, with rich ablations covering fine-tuned judges, reasoning fine-tuning, test-time scaling, and human ceiling analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, detailed data, and rigorous criteria definitions.
+- **Value**: ⭐⭐⭐⭐ — Reveals systematic deficiencies in current judge systems; the finding that critic fine-tuning only improves Grounding provides important guidance for future research.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
+- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
+- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
+- [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
+
+<!-- RELATED:END -->

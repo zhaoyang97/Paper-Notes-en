@@ -1,0 +1,154 @@
+---
+title: >-
+  [Paper Note] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models
+description: >-
+  [CVPR 2026][LLM Alignment][Video Diffusion Models] LocalDPO is proposed to perform localized preference alignment at the detail level by applying random spatiotemporal Bézier-masked local corruption to real high-quality videos to construct negative samples (single inference pass, no external ranking), paired with a region-aware DPO loss. The method consistently outperforms vanilla DPO and SFT on Wan2.1 and CogVideoX in terms of video quality.
+tags:
+  - CVPR 2026
+  - LLM Alignment
+  - Video Diffusion Models
+  - DPO Preference Optimization
+  - Local Corruption
+  - Region-Aware Loss
+  - Spatiotemporal Mask
+date: 2026-05-08
+content_hash: c98c8ed3d8e605e7
+---
+
+# LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models
+
+**Conference**: CVPR 2026
+**arXiv**: [2601.04068](https://arxiv.org/abs/2601.04068)
+**Code**: Available
+**Area**: Video Generation / LLM Alignment
+**Keywords**: Video Diffusion Models, DPO Preference Optimization, Local Corruption, Region-Aware Loss, Spatiotemporal Mask
+
+## TL;DR
+LocalDPO is proposed to perform localized preference alignment at the detail level by applying random spatiotemporal Bézier-masked local corruption to real high-quality videos to construct negative samples (single inference pass, no external ranking), paired with a region-aware DPO loss. The method consistently outperforms vanilla DPO and SFT on Wan2.1 and CogVideoX in terms of video quality.
+
+## Background & Motivation
+
+**State of the Field**: Text-to-video diffusion models (VDMs) can generate high-quality videos but frequently exhibit flickering, motion inconsistency, and local artifacts. DPO has been introduced as a post-training preference alignment strategy.
+
+**Three Key Limitations of Existing DPO Methods**:
+   - **(1) High Cost and Inefficiency**: Multiple videos per prompt must be generated and ranked by human annotators or critic models, incurring high inference and annotation costs.
+   - **(2) Ambiguous Global Scoring**: A video with a high overall score may still exhibit local deficiencies (e.g., globally smooth but flickering in a specific region), resulting in noisy or contradictory supervision signals.
+   - **(3) Neglect of Region-Level Preference**: Scoring is performed at the global video level, ignoring local artifacts and fine-grained details that are critical to human perception.
+
+**Root Cause**: DPO requires high-quality positive–negative sample pairs, but existing methods construct pairs at the global level → local quality differences cannot be captured → the model cannot learn to correct fine-grained defects.
+
+**Starting Point**: Use real videos as positive samples (naturally higher quality than model-generated outputs) and locally corrupt versions as negative samples (single inference pass, quality guaranteed to be lower than the positive sample and only within specific regions).
+
+**Core Idea**: (1) Random Bézier curves generate spatiotemporal masks to select corruption regions; (2) the pre-trained VDM itself performs inpainting within the masked region to generate negative samples; (3) a region-aware DPO loss computes preference differences exclusively within the masked region.
+
+## Method
+
+### Overall Architecture
+Real video $\mathbf{x}^w$ + text prompt → **3D Mask Generation** (Bézier curves) → **Spatiotemporal Local Corruption** (VDM inpainting within mask) → negative sample $\mathbf{x}^l$ → **Region-Aware DPO Training** (preference loss computed only within mask) → improved VDM.
+
+### Key Designs
+
+1. **3D Mask Generation (Corruption Region Selection)**:
+
+    - **Function**: Randomly generates irregular closed regions in the spatiotemporal domain of the video as corruption masks.
+    - **Mechanism**: Randomly generate $P$ cubic Bézier curves in the first frame → connect head-to-tail to form a closed contour → apply random rotation/translation → broadcast across frames to form a 3D spatiotemporal mask → downsample via VAE to obtain the final $\mathbf{M}$.
+    - **Design Motivation**: Irregular shapes simulate the natural boundaries of real-world local artifacts, avoiding the artificial appearance of rectangular masks.
+
+2. **Spatiotemporal Local Corruption (Negative Sample Generation)**:
+
+    - **Function**: Uses the pre-trained VDM to "inpaint" the masked region, generating locally degraded negative samples.
+    - **Mechanism**: Add noise to the original video latent $\mathbf{z}_0^{orig}$ up to timestep $k = \lceil T \times \alpha \rceil$ → iteratively denoise → **per-step latent fusion**:
+    $$\mathbf{z}_{t-1} = \mathbf{M} \odot \hat{\mathbf{z}}_{t-1} + (1-\mathbf{M}) \odot \mathbf{z}_{t-1}^{orig}$$
+      Inside the mask: model denoising output (lower quality than the original); outside the mask: original content precisely preserved.
+    - **Key Detail**: At each step, the unmasked region is re-noised to the corresponding timestep to ensure a consistent noise level inside and outside the mask, preventing distribution mismatch that would cause denoising failures.
+    - **Design Motivation**: Negative samples are generated by the model itself → their quality deficiencies precisely reflect the model's current capability boundary → training signals are maximally relevant.
+
+3. **Region-Aware DPO Loss**:
+
+    - **Function**: Computes preference differences exclusively within the masked region.
+    - **Mechanism**:
+    $$\mathcal{L}_{RA-DPO} = -\mathbb{E}\left[\log\sigma\left(-\beta \cdot (1+\eta(\alpha)) \cdot \mathbb{E}_t[\Delta'_w - \Delta'_l]\right)\right]$$
+      where $\Delta'_* = \frac{N_M}{\|\mathbf{M}\|_1}\left(\|\mathbf{M} \odot (\mathbf{y}^* - f_\theta)\|^2 - \|\mathbf{M} \odot (\mathbf{y}^* - f_{\tilde{\theta}})\|^2\right)$
+    - $\eta(\alpha) = \frac{\alpha - \alpha_l}{\alpha_h - \alpha_l}$: dynamically adjusts penalty strength according to the degree of corruption.
+    - **Design Motivation**: Computing the loss only in regions with actual quality differences avoids gradient signal dilution from mask-exterior regions where no difference exists, thereby accelerating convergence.
+
+4. **Mixed Training Objective**:
+
+    - $\mathcal{L}_{total} = \lambda_{RA-DPO}\mathcal{L}_{RA-DPO} + \lambda_{DPO}\mathcal{L}_{DPO} + \lambda_{SFT}\mathcal{L}_{SFT}$
+    - Global DPO and SFT serve as regularization to prevent excessive focus on local regions at the expense of global structure.
+    - **Design Motivation**: Although region-aware DPO is precise, it may overfit local patterns; global losses preserve the model's overall capability.
+
+### Data Construction
+63K high-quality Pexels videos annotated with Qwen2.5-VL → negative samples generated via a single inference pass per video (approximately 1/4 the GPU time of vanilla DPO).
+
+## Key Experimental Results
+
+### Main Results (VBench Evaluation)
+
+| Method | Aesthetic Quality | Imaging Quality | HPS-v2 | PickScore | VQ | TA |
+|------|:---:|:---:|:---:|:---:|:---:|:---:|
+| CogVideoX-2B (baseline) | baseline | baseline | baseline | baseline | baseline | baseline |
+| + SFT | marginal gain | marginal gain | marginal gain | marginal gain | gain | gain |
+| + Vanilla DPO | gain | gain | gain | gain | gain | gain |
+| **+ LocalDPO** | **best** | **best** | **best** | **best** | **best** | **best** |
+
+Consistent improvements over all post-training methods are also observed on Wan2.1.
+
+### Preference Pair Construction Efficiency (Figure 1c)
+
+| Method | GPU Time / Pair | External Evaluation Required |
+|------|-----------|-------------|
+| Vanilla DPO | ~4x | Critic model / human annotation |
+| **LocalDPO** | **~1x** | **None** |
+
+### Ablation Study
+
+| Configuration | Aesthetic Score | Imaging Quality | Notes |
+|------|-------|---------|------|
+| Global DPO only | baseline | baseline | Vanilla method |
+| RA-DPO only | gain but unstable | gain but unstable | Lacks regularization |
+| RA-DPO + Global DPO | better | better | Complementary |
+| **RA-DPO + DPO + SFT** | **best** | **best** | Most stable with all three |
+| Rectangular mask vs. Bézier mask | Bézier better | Bézier better | Natural boundaries more effective |
+
+### Key Findings
+- Qualitative analysis of LocalDPO shows significantly richer **local details** in the corrected videos — sharper object textures, facial expressions, and edges of dynamic objects.
+- The quality gap between positive and negative samples is clear and consistent (real video > model-corrupted version), eliminating the ranking ambiguity present in vanilla DPO.
+- The choice of $\alpha$ (corruption noise level) affects training signal strength — too large yields pure noise with no learning value; too small yields negligible differences.
+- SFT regularization in the mixed training objective is critical for maintaining global quality.
+
+## Highlights & Insights
+- **Self-Generated Negative Samples**: The model's own insufficient inpainting capability within local regions serves as the source of negative signals — the quality deficiency of negative samples is perfectly calibrated to the model's current capability, providing automatically scaled training signal strength. As training progresses, the model improves → negative sample quality also improves → forming a natural curriculum learning dynamic.
+- **Breakthrough in Region-Level vs. Global-Level Preference Granularity**: This work achieves region-level preference alignment in video DPO for the first time. Human perception of video quality is indeed local in nature (noticing flickering in a specific object rather than global degradation).
+- **Engineering Elegance of Bézier Spatiotemporal Masks**: Irregular closed regions generated by random Bézier curves simulate the natural morphology of real local artifacts, demonstrating greater effectiveness than rectangular masks.
+- **Qualitative Efficiency Advantage**: Single inference pass with no external evaluation reduces GPU time to 1/4 of vanilla DPO, making preference alignment feasible in resource-constrained settings.
+
+## Limitations & Future Work
+- The position and size of Bézier masks are random — future work could explore intelligently selecting the most informative corruption regions based on the model's current weaknesses.
+- Latent-space corruption may not precisely correspond to perceptual degradation in pixel space — VAE decoding errors may introduce false positives.
+- Validation is currently limited to text-to-video; applicability to image-to-video and video-to-video settings remains to be explored.
+- The three $\lambda$ weights in the mixed loss objective require manual tuning.
+
+## Related Work & Insights
+- **vs. Vanilla Video DPO**: Requires multiple sampling passes and global scoring → high cost and ambiguous signals. LocalDPO uses a single inference pass with local signals → efficient and precise.
+- **vs. Diffusion DPO (image)**: Image DPO also suffers from global scoring issues; the region-aware idea from LocalDPO can be directly transferred.
+- **vs. SFT**: SFT treats all training samples equally and cannot learn relative quality differences. DPO explicitly learns preference directions through positive–negative pairs.
+- **vs. InstructPix2Pix and similar editing methods**: Those methods modify content semantics, whereas LocalDPO optimizes generation quality only — complementary optimization dimensions.
+
+## Rating
+- **Novelty**: ⭐⭐⭐⭐⭐ The concept of local corruption to generate high-confidence negative samples combined with a region-aware DPO loss is elegant and effective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Validated on both Wan2.1 and CogVideoX with thorough ablation studies.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Motivation analysis (three key limitations) is clear and compelling; the method pipeline is intuitive.
+- **Value**: ⭐⭐⭐⭐⭐ A general-purpose video quality preference alignment framework excelling in both efficiency and effectiveness.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](../../AAAI2026/llm_alignment/rethinking_direct_preference_optimization_in_diffusion_models.md)
+- [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/llm_alignment/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
+- [\[CVPR 2026\] PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization](physmodpo_physicallyplausible_humanoid_motion_with.md)
+- [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
+- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/llm_alignment/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+
+<!-- RELATED:END -->

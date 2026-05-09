@@ -1,0 +1,132 @@
+---
+title: >-
+  [Paper Note] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments
+description: >-
+  [NeurIPS 2025][Multimodal VLM][Active visual reasoning] This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs the CLEVR-AVR simulation benchmark and the AVR-152k dataset (with rich CoT annotations), and trains the PhysVLM-AVR model to iteratively acquire information through a perception–reasoning–action closed loop in partially observable interactive environments, significantly outperforming existing MLLMs.
+tags:
+  - NeurIPS 2025
+  - Multimodal VLM
+  - Active visual reasoning
+  - partially observable environments
+  - multi-step interaction
+  - Chain-of-Thought
+  - embodied intelligence
+date: 2026-05-08
+content_hash: beba30dec95991df
+---
+
+# PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments
+
+**Conference**: NeurIPS 2025
+**arXiv**: [2510.21111](https://arxiv.org/abs/2510.21111)
+**Code**: [GitHub](https://anonymous.4open.science/r/anonymous-je99tt)
+**Area**: Multimodal VLM
+**Keywords**: Active visual reasoning, partially observable environments, multi-step interaction, Chain-of-Thought, embodied intelligence
+
+## TL;DR
+This paper proposes the Active Visual Reasoning (AVR) task paradigm, constructs the CLEVR-AVR simulation benchmark and the AVR-152k dataset (with rich CoT annotations), and trains the PhysVLM-AVR model to iteratively acquire information through a perception–reasoning–action closed loop in partially observable interactive environments, significantly outperforming existing MLLMs.
+
+## Background & Motivation
+
+- **State of the Field**: Current multimodal large language models (MLLMs) have achieved remarkable progress in visual reasoning, demonstrating strong performance on tasks such as object counting and VQA. However, nearly all such models rely on **static, fully observable** visual inputs—given a complete image, the model directly infers an answer.
+- **Limitations of Prior Work**: This passive reasoning paradigm is fundamentally limited in real-world physical environments: information is often **partially observable**, with objects occluded, stacked, or outside the field of view. Existing research suffers from **paradigm fragmentation**: classical visual reasoning tasks (e.g., CLEVR) assume complete information and involve no interaction; embodied question answering (e.g., OpenEQA) includes interaction but focuses on passively observing video sequences; embodied exploration methods emphasize navigation success rather than goal-directed information acquisition for reasoning.
+- **Root Cause**: No existing method effectively bridges reasoning with strategic sequential information-gathering actions.
+- **Paper Goals**: Inspired by human active perception, this paper proposes the AVR task, extending visual reasoning to partially observable interactive environments. The agent must: (1) actively acquire information through sequential physical actions; (2) integrate multi-step observations for coherent reasoning; and (3) dynamically adjust decisions based on incremental visual feedback.
+
+## Method
+
+### Overall Architecture
+AVR is formalized as a **closed-loop perception–reasoning–action** paradigm. At each timestep $t$, the agent receives a partial observation $o_t$, maintains an observation history $h_t = \{o_0, \ldots, o_t\}$, and generates a reasoning trace $\text{Think}_t = f_{\text{reason}}(Q, h_t, A)$ conditioned on the question $Q$ and history $h_t$. If sufficient information is available, the agent outputs an answer; otherwise, it selects the optimal information-gathering action:
+
+$$a_t = \arg\max_{a_t \in A} \mathbb{E}_{o_{t+1} \sim E(h_t, a_t)} [I(Y; y_{t+1} | h_{t+1}, Q)]$$
+
+The core idea of this formulation is to select the action that **maximizes expected information gain**, framing the problem as a higher-order Markov decision process (MDP).
+
+### Key Designs
+
+1. **CLEVR-AVR Simulation Benchmark**:
+
+    - Built on the Genesis physics simulation platform, extending the classical CLEVR dataset into an interactive embodied environment.
+    - Covers 10 occlusion types, 10 stacking types, and 10 composite scene types.
+    - The action space includes object manipulation and viewpoint transformation.
+    - Each question is paired with a final answer option and intermediate [Action] options, requiring the model to judge whether current information is sufficient.
+    - **Design Motivation**: A well-controlled yet information-rich evaluation environment is needed to comprehensively measure active reasoning capabilities.
+
+2. **AVR-152k Dataset (Three-Tier Progressive Structure)**:
+
+    - **AVR-Caption (100k)**: Dense scene descriptions based on ScanNet, RT1, and other environments, establishing foundational visual perception capabilities.
+    - **AVR-Embodied Reasoning (50k)**: Multi-image sequences paired with spatiotemporal reasoning QA; descriptions generated by Gemini and reasoning chains generated by DeepSeek-R1.
+    - **AVR-Core (2k)**: The core component, collected from 640 real tabletop scenes using UMI devices and annotated by human experts with structured CoT comprising three key reasoning steps: (i) uncertainty identification, (ii) action-conditioned information gain prediction, and (iii) information-maximizing action selection.
+    - **Design Motivation**: AVR-Core models the task as a higher-order MDP; its CoT annotations explicitly teach the model a human-like active information-seeking reasoning process.
+
+3. **PhysVLM-AVR Model**:
+
+    - Architecture similar to LLaVA: Qwen2.5-3B as the LLM decoder and SigLIP-400M as the visual encoder.
+    - Key modification: a max pooling layer is inserted after the visual encoder output, reducing the number of visual tokens by 3×, enabling efficient multi-image reasoning.
+    - **Design Motivation**: The AVR task requires processing multi-step observation sequences; reducing visual tokens helps scale context capacity.
+
+### Loss & Training
+A four-stage incremental training strategy with mixed data is adopted:
+- **Stage 1**: Alignment stage; only the connector (2×MLP) is trained using LLaVA-Pretrain data.
+- **Stage 2.1**: Single-image understanding; full-parameter fine-tuning using LLaVA-OneVision data.
+- **Stage 2.2**: Comprehensive visual understanding; training on M4-Instruct + AVR-Caption.
+- **Stage 3**: General and active reasoning; fine-tuning on Reason-RFT-129k + AM-DeepSeek-R1-100k + AVR-Embodied + AVR-Core.
+
+## Key Experimental Results
+
+### Main Results
+
+| Model | $ACC_{ISJ}$ (Info. Sufficiency Judgment) | $IGR$ (Info. Gain Rate) | $ACC_{FA}$ (Final Answer) |
+|------|------|------|------|
+| LLaVA-OV-7B | 0 | 0 | 0 |
+| Qwen2.5-VL-7B | 4.9 | 3.7 | 2.6 |
+| Embodied-Reasoner-7B | 20.2 | 10.9 | 1.6 |
+| GPT-4o | **88.4** | **50.8** | **45.7** |
+| AVR-Qwen2.5-VL-7B | 89.3 | 34.7 | 38.1 |
+| PhysVLM-AVR-3B | **90.5** | 29.9 | 39.7 |
+
+### Ablation Study
+
+| Configuration | $ACC_{ISJ}$ | $IGR$ | $ACC_{FA}$ | Notes |
+|------|---------|------|------|------|
+| Full Model | 90.5 | 29.9 | 39.7 | Complete model |
+| w/o CoT | 47.6 | 18.0 | 16.9 | CoT annotations are critical for supervising reasoning steps |
+| w/o AVR-Core | 16.4 | 11.2 | 2.3 | AVR-Core is the foundation of active reasoning capability |
+
+### Key Findings
+- Existing open-source MLLMs and passive reasoning models score near zero on CLEVR-AVR, demonstrating that passive capabilities do not transfer to active reasoning.
+- Embodied-Reasoner-7B can detect incomplete information (20.2% ISJ) but is almost unable to act and reason correctly (1.6% FA), revealing a fundamental limitation of current embodied models.
+- PhysVLM-AVR-3B surpasses GPT-4o on information sufficiency judgment with only 3B parameters (90.5% vs. 88.4%).
+- The gap between high ISJ and relatively low FA indicates that the model has learned to recognize "when to act," but "selecting the optimal action and integrating multi-step information" remains the core challenge.
+
+## Highlights & Insights
+- **Novel Task Definition**: This work is the first to extend visual reasoning from static, fully observable settings to dynamic, partially observable interactive environments, bridging the gap between passive reasoning and active embodied understanding.
+- **Elegant CoT Design**: The three-step CoT in AVR-Core (uncertainty assessment → information gain prediction → strategic decision-making) precisely emulates the human cognitive process of active information seeking, and is the key factor enabling a small model to surpass GPT-4o.
+- **Rigorous Experimental Design**: CLEVR-AVR simulation data has no overlap with training data; three complementary evaluation metrics comprehensively assess each component of active reasoning.
+
+## Limitations & Future Work
+- Final answer accuracy (39.7%) remains substantially below GPT-4o (45.7%); multi-step information integration capability requires further improvement.
+- AVR-Core contains only 2k samples and is limited to tabletop scenes; scalability to complex open-world environments has not been validated.
+- Current evaluation is restricted to simulation environments; a sim-to-real gap exists for deployment of active reasoning in real physical worlds.
+
+## Related Work & Insights
+- **vs. Embodied Reasoner**: PhysVLM-AVR emphasizes strategic action selection driven by information gain, rather than simple navigation task completion.
+- **vs. OpenEQA/RoboVQA**: AVR places the closed-loop relationship between reasoning and action at its core, requiring that the model's actions be driven by reasoning demands.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐⭐ First to define the AVR task; the higher-order MDP formalization is novel and pioneering in combining active information acquisition with visual reasoning.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The benchmark design is comprehensive and ablations are sufficient, but evaluation is limited to simulation with no real-world deployment.
+- Writing Quality: ⭐⭐⭐⭐⭐ Problem motivation is clearly articulated; the logical chain from human cognition to AI paradigm is complete.
+- Value: ⭐⭐⭐⭐ Reveals fundamental deficiencies of MLLMs in active reasoning, laying the groundwork for future research.
+
+<!-- RELATED:START -->
+
+## Related Papers
+
+- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
+- [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
+- [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
+- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
+- [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
+
+<!-- RELATED:END -->

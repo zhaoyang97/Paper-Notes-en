@@ -32,7 +32,10 @@
 {% set _is_paper = page and not page.is_homepage and not _is_index %}
 
 {# Prefer frontmatter `title:` (SEO-tuned) over nav entry / H1 (page.title). #}
-{% set _seo_title = ((page.meta.title if page and page.meta and page.meta.title else page.title) | e) %}
+{# _seo_title_raw is the unescaped form for JSON-LD (uses | tojson). #}
+{# _seo_title is HTML-escaped for use in OG / Twitter meta attribute values. #}
+{% set _seo_title_raw = (page.meta.title if page and page.meta and page.meta.title else page.title) %}
+{% set _seo_title = _seo_title_raw | e %}
 
 <!-- OpenGraph & Twitter Card -->
 <meta property="og:site_name" content="{{ config.site_name }}" />
@@ -45,15 +48,19 @@
 <meta name="twitter:title" content="{{ _seo_title }}" />
 <meta name="twitter:description" content="{{ page.meta.description }}" />
 
+{# All JSON-LD string values use | tojson (NOT | e) to avoid GSC "Bad escape
+   sequence in string" errors. HTML-escape produces &amp; / &quot; etc. which
+   pollute JSON output, and never escapes the literal \ that crashes the JSON
+   parser when titles/descriptions contain LaTeX (\theta, \boldsymbol, ...) #}
 {% if page.is_homepage %}
 <!-- JSON-LD: WebSite (homepage) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "{{ config.site_name }}",
-  "url": "{{ page.canonical_url }}",
-  "description": "{{ page.meta.description | e }}",
+  "name": {{ config.site_name | tojson }},
+  "url": {{ page.canonical_url | tojson }},
+  "description": {{ page.meta.description | tojson }},
   "author": {
     "@type": "Person",
     "name": "ZhaoYang",
@@ -67,13 +74,13 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "{{ _seo_title }}",
-  "description": "{{ page.meta.description | e }}",
-  "url": "{{ page.canonical_url }}",
+  "name": {{ _seo_title_raw | tojson }},
+  "description": {{ page.meta.description | tojson }},
+  "url": {{ page.canonical_url | tojson }},
   "isPartOf": {
     "@type": "WebSite",
-    "name": "{{ config.site_name }}",
-    "url": "{{ config.site_url }}"
+    "name": {{ config.site_name | tojson }},
+    "url": {{ config.site_url | tojson }}
   }
 }
 </script>
@@ -83,12 +90,12 @@
 {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "name": "{{ _seo_title }}",
-  "headline": "{{ _seo_title }}",
-  "description": "{{ page.meta.description | e }}",
-  "url": "{{ page.canonical_url }}",
-  "datePublished": "{{ page.meta.date | default(config.extra.build_date | default('')) }}",
-  "dateModified": "{{ page.meta.date | default(config.extra.build_date | default('')) }}",
+  "name": {{ _seo_title_raw | tojson }},
+  "headline": {{ _seo_title_raw | tojson }},
+  "description": {{ page.meta.description | tojson }},
+  "url": {{ page.canonical_url | tojson }},
+  "datePublished": {{ (page.meta.date | default(config.extra.build_date | default(''))) | string | tojson }},
+  "dateModified": {{ (page.meta.date | default(config.extra.build_date | default(''))) | string | tojson }},
   "author": {
     "@type": "Person",
     "name": "ZhaoYang",

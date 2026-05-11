@@ -181,7 +181,7 @@ GOLA outperforms LoRA by 1.2%/0.9% (PR/SR) while reducing trainable parameters b
 
 ## Related Papers
 
-- [\[CVPR 2026\] TCEI: Dual-level Adaptation for Multi-Object Tracking via Test-Time Calibration](../../CVPR2026/video_understanding/tcei_dual_level_adaptation_multi_object_tracking.md)
+- [\[CVPR 2026\] TCEI: Dual-level Adaptation for Multi-Object Tracking via Test-Time Calibration](../../CVPR2026/video_understanding/tcei_test_time_calibration_experience_intuition_mot.md)
 - [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](../../CVPR2026/video_understanding/tcei_test_time_calibration_experience_intuition_mot.md)
 - [\[ICCV 2025\] XTrack: Multimodal Training Boosts RGB-X Video Object Trackers](../../ICCV2025/video_understanding/xtrack_multimodal_training_boosts_rgb-x_video_object_trackers.md)
 - [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](../../CVPR2026/video_understanding/unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)

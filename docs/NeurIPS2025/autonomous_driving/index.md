@@ -10,7 +10,7 @@ description: >-
 
 **🧠 NeurIPS2025** · **50** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (105)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (58)](../../AAAI2026/autonomous_driving/index.md) · [📹 ICCV2025 (98)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (88)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (58)](../../AAAI2026/autonomous_driving/index.md) · [📹 ICCV2025 (93)](../../ICCV2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Autonomous Driving ×9 · Agents ×5 · Multimodal/VLM ×4 · Time-Series Forecasting ×3 · Remote Sensing ×3
 

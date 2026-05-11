@@ -181,7 +181,7 @@ PhysVid surpasses the 14B model in physics commonsense with only 1.7B parameters
 
 ## Related Papers
 
-- [\[ICLR 2026\] Generative Value Conflicts Reveal LLM Priorities](../../ICLR2026/llm_nlp/generative_value_conflicts_reveal_llm_priorities.md)
+- [\[ICLR 2026\] Generative Value Conflicts Reveal LLM Priorities](../../ICLR2026/llm_nlp/quamo_quaternion_motions_for_vision-based_3d_human_kinematics_capture.md)
 - [\[NeurIPS 2025\] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models](../../NeurIPS2025/llm_nlp/geocad_local_geometry-controllable_cad_generation_with_large_language_models.md)
 - [\[ICLR 2026\] ConflictScope: Generative Value Conflicts Reveal LLM Priorities](../../ICLR2026/llm_nlp/quamo_quaternion_motions_for_vision-based_3d_human_kinematics_capture.md)
 - [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](../../NeurIPS2025/llm_nlp/spectral_conditioning_of_attention_improves_transformer_performance.md)

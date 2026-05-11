@@ -156,7 +156,7 @@ Mixed-precision quantization comparison (prompt-guided image transformation):
 
 ## Related Papers
 
-- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
+- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all-in-one_slider_for_attribute_manipulation_in_diffusion_models.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
 - [\[AAAI 2026\] Multi-Aspect Cross-modal Quantization for Generative Recommendation](../../AAAI2026/image_generation/multi-aspect_cross-modal_quantization_for_generative_recommendation.md)
 - [\[CVPR 2026\] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis](wadi_weight_direction-aware_distillation_for_one-step_image_synthesis.md)

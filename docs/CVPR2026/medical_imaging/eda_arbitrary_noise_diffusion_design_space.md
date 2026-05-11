@@ -141,10 +141,10 @@ EDA achieves the best performance on both full-image and non-shadow regions; the
 
 ## Related Papers
 
-- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models (EDA)](elucidating_the_design_space_of_arbitrary-noise-based_diffusion_models.md)
+- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models (EDA)](eda_arbitrary_noise_diffusion_design_space.md)
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
 - [\[CVPR 2026\] RelativeFlow: Taming Medical Image Denoising Learning with Noisy Reference](relativeflow_taming_medical_image_denoising_learning_with_noisy_reference.md)
-- [\[CVPR 2026\] Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning](accelerating_stroke_mri_with_diffusion_probabilist.md)
+- [\[CVPR 2026\] Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning](accelerating_stroke_mri_with_diffusion_probabilistic_models_through_large-scale_.md)
 - [\[CVPR 2026\] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation](sd_fsmis_adapting_stable_diffusion_for_few_shot_medical_image_segmentation.md)
 
 </div>

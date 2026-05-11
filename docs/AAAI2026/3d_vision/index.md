@@ -10,7 +10,7 @@ description: >-
 
 **🤖 AAAI2026** · **74** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (252)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (65)](../../ICLR2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (268)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (254)](../../ICCV2025/3d_vision/index.md)
 
 🔥 **Top topics:** 3D Gaussian Splatting ×19 · Point Cloud ×14 · Segmentation ×7 · Shape Completion ×5 · Dynamic Scenes ×4
 

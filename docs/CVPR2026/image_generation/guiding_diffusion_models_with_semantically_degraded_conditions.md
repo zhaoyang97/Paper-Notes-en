@@ -148,7 +148,7 @@ CDG yields the largest gains on Differentiation (+3.64) and Comparison (+2.36), 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions (CDG)](cdg_condition_degradation_guidance_diffusion.md)
+- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions (CDG)](guiding_diffusion_models_with_semantically_degraded_conditions.md)
 - [\[CVPR 2026\] Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models](erasure_or_erosion_evaluating_compositional_degradation_in_unlearned_text-to-ima.md)
 - [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
 - [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)

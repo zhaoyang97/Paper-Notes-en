@@ -100,7 +100,7 @@ Evaluated on both synthetic and real images, compared against prior methods incl
 - [\[CVPR 2026\] Guiding a Diffusion Model by Swapping Its Tokens](guiding_a_diffusion_model_by_swapping_its_tokens.md)
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
 - [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
-- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
+- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all-in-one_slider_for_attribute_manipulation_in_diffusion_models.md)
 
 </div>
 

@@ -10,7 +10,7 @@ description: >-
 
 **💬 ACL2026** · **52** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (287)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (93)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (92)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (151)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (142)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (241)](../../CVPR2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (91)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (91)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (150)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (135)](../../ICCV2025/multimodal_vlm/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×35 · Reasoning ×11 · LLM ×11 · Adversarial Robustness ×4 · Agents ×3
 

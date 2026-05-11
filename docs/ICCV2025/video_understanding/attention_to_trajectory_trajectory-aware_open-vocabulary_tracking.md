@@ -129,7 +129,7 @@ The TCR module requires no training. TraCLIP is initialized from CLIP ViT-L/14 w
 - [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
 - [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
-- [\[CVPR 2026\] TrajTok: Learning Trajectory Tokens Enhances Video Understanding](../../CVPR2026/video_understanding/trajtok_trajectory_token_video_understanding.md)
+- [\[CVPR 2026\] TrajTok: Learning Trajectory Tokens Enhances Video Understanding](../../CVPR2026/video_understanding/trajtok_learning_trajectory_tokens_enables_better_video_understanding.md)
 
 </div>
 

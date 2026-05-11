@@ -134,7 +134,7 @@ The base architecture utilizes FLUX.1-Krea [dev] as the diffusion backbone, PulI
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
 - [\[CVPR 2026\] Guiding a Diffusion Model by Swapping Its Tokens](guiding_a_diffusion_model_by_swapping_its_tokens.md)
-- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
+- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all-in-one_slider_for_attribute_manipulation_in_diffusion_models.md)
 - [\[ICCV 2025\] NullSwap: Proactive Identity Cloaking Against Deepfake Face Swapping](../../ICCV2025/image_generation/nullswap_proactive_identity_cloaking_against_deepfake_face_swapping.md)
 
 </div>

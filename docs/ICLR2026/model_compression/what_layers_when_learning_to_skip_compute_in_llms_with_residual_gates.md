@@ -179,7 +179,7 @@ After INT4 quantization, generation accuracy is retained at 94.4% and log-likeli
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
 - [\[NeurIPS 2025\] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs](../../NeurIPS2025/model_compression/matryoshka_pilot_learning_to_drive_black-box_llms_with_llms.md)
 - [\[ICLR 2026\] Draft-based Approximate Inference for LLMs](draft-based_approximate_inference_for_llms.md)
-- [\[CVPR 2026\] ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation](../../CVPR2026/model_compression/arche_autoregressive_residual_compression_with_hyperprior_and_excitation.md)
+- [\[CVPR 2026\] ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation](../../CVPR2026/model_compression/arche_autoregressive_residual_compression_with_hyp.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](steering_moe_llms_via_expert_deactivation.md)
 
 </div>

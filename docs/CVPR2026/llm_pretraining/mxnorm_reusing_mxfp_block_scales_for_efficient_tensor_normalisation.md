@@ -203,7 +203,7 @@ MXFP dequantized tensor's $r^2$ goodness-of-fit asymptotically approaches 1 with
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](lottiegpt_vector_animation_generation.md)
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
-- [\[CVPR 2026\] Watch and Learn: Learning to Use Computers from Online Videos](watch_and_learn_computer_use_from_videos.md)
+- [\[CVPR 2026\] Watch and Learn: Learning to Use Computers from Online Videos](watch_and_learn_learning_to_use_computers_from_online_videos.md)
 - [\[CVPR 2026\] Linking Modality Isolation in Heterogeneous Collaborative Perception](linking_modality_isolation_in_heterogeneous_collaborative_perception.md)
 
 </div>

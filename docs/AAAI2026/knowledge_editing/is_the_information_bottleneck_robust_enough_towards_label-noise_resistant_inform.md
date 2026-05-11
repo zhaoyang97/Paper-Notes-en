@@ -141,7 +141,7 @@ LaT-IB achieves 73.40%, substantially outperforming GIB (64.30%) and various imp
 
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](../../ICLR2026/knowledge_editing/eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 - [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Training Examples](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_training_examples.md)
-- [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Data in LLMs](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_data_in_llms.md)
+- [\[ICLR 2026\] Rote Learning Considered Useful: Generalizing over Memorized Data in LLMs](../../ICLR2026/knowledge_editing/rote_learning_considered_useful_generalizing_over_memorized_training_examples.md)
 - [\[ACL 2026\] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing](../../ACL2026/knowledge_editing/evoedit_evolving_null-space_alignment_for_robust_and_efficient_knowledge_editing.md)
 - [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](multiplicative_orthogonal_sequential_editing_for_language_models.md)
 

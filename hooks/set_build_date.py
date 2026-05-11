@@ -9,9 +9,43 @@ look "updated on 2026-04-14" forever).
 from datetime import date
 from pathlib import Path
 import json
+import re
+
+
+RAW_ANGLE_TOKEN_RE = re.compile(
+    r"<(?=(?:\d|[.;=]|/?>(?!\w)|/[A-Z][A-Z0-9_-]*>|[A-Z][A-Z0-9_-]*>))"
+)
+
+
+def _patch_mkdocs_raw_html_scanner():
+    """Allow Markdown text tokens like `<;>` without rewriting source notes."""
+    try:
+        import mkdocs.structure.pages as pages
+    except Exception:  # pragma: no cover
+        return
+
+    preprocessor = getattr(pages, "_RawHTMLPreprocessor", None)
+    handler = getattr(pages, "_HTMLHandler", None)
+    if preprocessor is None or handler is None:
+        return
+    if getattr(preprocessor, "_paper_notes_angle_patch", False):
+        return
+
+    def run(self, lines):
+        parser = handler()
+        scanner_text = RAW_ANGLE_TOKEN_RE.sub("&lt;", "\n".join(lines))
+        parser.feed(scanner_text)
+        parser.close()
+        self.present_anchor_ids = parser.present_anchor_ids
+        return lines
+
+    preprocessor.run = run
+    preprocessor._paper_notes_angle_patch = True
 
 
 def on_config(config, **kwargs):
+    _patch_mkdocs_raw_html_scanner()
+
     extra = config.setdefault("extra", {})
     extra["build_date"] = date.today().isoformat()
 
